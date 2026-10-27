@@ -61,6 +61,16 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
   const hasQuery = q.trim() !== "";
   const main = result.hits.filter((h) => h.match !== "partial");
   const partial = result.hits.filter((h) => h.match === "partial");
+  // 関連候補のうち、Topic・発信者の必須条件にはすべて一致し、未一致が「語」だけのもの（主題には到達している）
+  const required = new Set(result.requiredKeys);
+  const unitByKey = new Map(result.analysis.units.map((u) => [u.key, u]));
+  const subjectUnits = result.analysis.units.filter((u) => u.kind !== "term" && required.has(u.key));
+  const missingTerms = (h: Hit) =>
+    result.requiredKeys.filter((k) => !h.matchedKeys.includes(k)).map((k) => unitByKey.get(k)!).filter((u) => u.kind === "term");
+  const subjectMatched =
+    subjectUnits.length === 0
+      ? []
+      : partial.filter((h) => subjectUnits.every((u) => h.matchedKeys.includes(u.key)) && missingTerms(h).length > 0);
   const fullCount = main.filter((h) => h.match === "full").length;
   const recognizedCount = main.length - fullCount;
   const recognizedOnly = recognizedCount > 0;
@@ -195,9 +205,17 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
             </p>
           )}
           {hasQuery && main.length === 0 && partial.length > 0 && (
-            <p className="notice">
-              すべての条件に一致する資料はありません。下に、一部の条件だけに関連する候補を条件ごとに表示しています。
-            </p>
+            subjectMatched.length > 0 ? (
+              <p className="notice">
+                主題（{subjectUnits.map(unitLabel).join("・")}）に一致する資料は{subjectMatched.length}件あります。ただし、質問から取り出した語（
+                {[...new Set(subjectMatched.flatMap((h) => missingTerms(h)))].map((u) => `「${u.matched}」`).join("")}
+                など）が資料の題名・紹介文・Topic に見つからないため、「条件に一致」には数えていません。その資料が質問に答えているかは、各資料で確かめてください。
+              </p>
+            ) : (
+              <p className="notice">
+                すべての条件に一致する資料はありません。下に、一部の条件だけに関連する候補を条件ごとに表示しています。
+              </p>
+            )
           )}
 
           {result.hits.length === 0 ? (
@@ -231,7 +249,9 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
                   ))}
                 </ol>
               )}
-              {partial.length > 0 && <PartialCandidates hits={partial} units={result.analysis.units} open={main.length === 0} />}
+              {partial.length > 0 && (
+                <PartialCandidates hits={partial} units={result.analysis.units} requiredKeys={result.requiredKeys} open={main.length === 0} />
+              )}
             </>
           )}
         </section>
@@ -241,12 +261,14 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
 }
 
 /** 一部の条件だけに一致した候補を、一致した条件の組み合わせごとにまとめて表示する */
-function PartialCandidates({ hits, units, open }: { hits: Hit[]; units: Unit[]; open: boolean }) {
+function PartialCandidates({ hits, units, requiredKeys, open }: { hits: Hit[]; units: Unit[]; requiredKeys: string[]; open: boolean }) {
   const labelOf = new Map(units.map((u) => [u.key, unitLabel(u)]));
   const groups = new Map<string, Hit[]>();
+  const missingOf = new Map<string, string>();
   for (const h of hits) {
     const key = h.matchedKeys.map((k) => labelOf.get(k)).join("・");
     groups.set(key, [...(groups.get(key) ?? []), h]);
+    missingOf.set(key, requiredKeys.filter((k) => !h.matchedKeys.includes(k)).map((k) => labelOf.get(k)).join("・"));
   }
   return (
     <details className="partial-candidates" open={open}>
@@ -256,6 +278,7 @@ function PartialCandidates({ hits, units, open }: { hits: Hit[]; units: Unit[]; 
           <h3>
             {label} にだけ一致 <span className="result-count">{list.length}件</span>
           </h3>
+          {missingOf.get(label) && <p className="muted partial-missing">一致しなかった条件：{missingOf.get(label)}</p>}
           <ol className="result-list">
             {list.map((h) => (
               <li key={h.resource.id}>

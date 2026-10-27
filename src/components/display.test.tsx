@@ -114,6 +114,22 @@ describe("画面全体の描画", () => {
     }
   });
 
+  it("Phase 2B：主題に一致し、抽出した語だけが未一致の候補は、そのことを案内する（判定は変えない）", () => {
+    const cases: [string, string, string[]][] = [
+      ["レーンをフリーズしたいとき、なぜタワーの手前でミニオンを止めるの？", "主題（Topic「フリーズ」）に一致する資料は", ["「レーン」", "「ミニオン」"]],
+      ["VeigarV2がリコールするタイミングを説明している動画を見たい。", "主題（発信者「Veigar v2」・Topic「リコール」）に一致する資料は", ["「説明」"]],
+    ];
+    for (const [q, subject, terms] of cases) {
+      const html = text(renderToStaticMarkup(<SearchPage q={q} filters={{}} />));
+      expect(html, q).toContain("条件に一致：0件"); // 検索エンジンの判定（full 0件）はそのまま
+      expect(html, q).toContain(subject);
+      for (const t of terms) expect(html, q).toContain(t);
+      expect(html, q).toContain("「条件に一致」には数えていません");
+      expect(html, q).not.toContain("すべての条件に一致する資料はありません");
+      expect(html, q).toContain("一致しなかった条件：");
+    }
+  });
+
   it("未知語があるときは、条件に含めなかったことを明示する", () => {
     const html = text(renderToStaticMarkup(<SearchPage q="VeigarV2 ダメージ計算" filters={{}} />));
     expect(html).toContain("「ダメージ計算」は資料中に見つからなかったため、検索条件に含めていません");

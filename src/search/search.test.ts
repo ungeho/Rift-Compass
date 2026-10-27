@@ -133,6 +133,25 @@ describe("10. 該当資料がない検索で、無関係な結果を出さない
   });
 });
 
+describe("Phase 2B：既存資料への到達（P03・P10）", () => {
+  it("P03：「ミニオンに狙われる」で Minion の Wiki と VeigarV2 のミニオンアグロ動画に到達し、候補は膨らまない", () => {
+    const r = search("相手チャンピオンを殴るとミニオンに狙われるのはどういう条件？");
+    const top3 = r.hits.slice(0, 3).map((h) => h.resource.id);
+    expect(top3).toEqual(expect.arrayContaining(["res-wiki-minion", "res-yt-veigarv2-minion-aggro"]));
+    expect(r.hits.length).toBeLessThanOrEqual(5);
+  });
+
+  it("「狙われる」単独（ガンクの文脈）ではミニオンアグロに一致しない", () => {
+    const units = analyzeQuery("ジャングラーにガンクで狙われる").units;
+    expect(units.some((u) => u.kind === "topic" && u.topic.id === "minion-aggro")).toBe(false);
+  });
+
+  it("P10：フラッシュの CD の質問で Flash の Wiki が1位・条件に一致", () => {
+    const r = search("フラッシュのクールダウンは、昔と今でどう変わった？");
+    expect(r.hits[0]).toMatchObject({ resource: { id: "res-wiki-flash" }, match: "full" });
+  });
+});
+
 describe("レビュー指摘1：未知語を含む検索を「条件に一致」と表示しない", () => {
   it.each([
     ["VeigarV2 ダメージ計算", "ダメージ計算"],

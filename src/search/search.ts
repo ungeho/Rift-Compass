@@ -246,6 +246,8 @@ export interface SearchResult {
   hits: Hit[];
   /** 検索条件に一致した資料（match === "full"）の数 */
   completeCount: number;
+  /** 「条件に一致」の判定で必須とした概念（Unit.key）。表示で、どの条件が未一致かを示すために使う */
+  requiredKeys: string[];
   /** 絞り込み前の公開対象件数 */
   totalPublic: number;
 }
@@ -259,13 +261,13 @@ export function search(query: string, filters: Filters = {}, idx: DataIndex = de
 
   if (!normalize(query)) {
     const hits = pool.map((resource): Hit => ({ resource, score: 0, matchedUnits: 0, matchedKeys: [], match: "full", complete: true }));
-    return { analysis, hits, completeCount: hits.length, totalPublic };
+    return { analysis, hits, completeCount: hits.length, totalPublic, requiredKeys: [] };
   }
-  if (units.length === 0) return { analysis, hits: [], completeCount: 0, totalPublic };
+  if (units.length === 0) return { analysis, hits: [], completeCount: 0, totalPublic, requiredKeys: [] };
   // 資料中にない語（主題とみられる語）があり、認識できたのが一般語だけの場合は、
   // 主題と無関係な資料を一般語の一致だけで出さない（例：「ドラゴンソウルの効果」の「効果」）
   if (analysis.ignored.length > 0 && units.every((u) => u.kind === "term")) {
-    return { analysis, hits: [], completeCount: 0, totalPublic };
+    return { analysis, hits: [], completeCount: 0, totalPublic, requiredKeys: [] };
   }
 
   // 条件に一致：具体的な概念（大分類の Topic や、資料の1/4を超えて現れる語ではないもの）にすべて一致した資料。
@@ -302,7 +304,7 @@ export function search(query: string, filters: Filters = {}, idx: DataIndex = de
     LEVEL_ORDER.indexOf(b.resource.verification.level) - LEVEL_ORDER.indexOf(a.resource.verification.level) ||
     (a.resource.title ?? "").localeCompare(b.resource.title ?? ""),
   );
-  return { analysis, hits, completeCount: hits.filter((h) => h.complete).length, totalPublic };
+  return { analysis, hits, completeCount: hits.filter((h) => h.complete).length, totalPublic, requiredKeys: [...required] };
 }
 
 /** 絞り込み候補ごとの件数（その項目以外の条件を適用した結果で数える）*/
