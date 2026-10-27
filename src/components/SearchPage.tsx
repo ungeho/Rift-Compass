@@ -3,7 +3,9 @@ import { index } from "../data/dataset";
 import { eraLabel, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/labels";
 import type { Level } from "../data/types";
 import { facetCounts, search, type FilterKey, type Filters, type Hit, type Unit } from "../search/search";
+import { externalSearchUrls } from "../lib/links";
 import { homeHref, rememberList, replaceHash, topicHref } from "../router";
+import { ExternalLink } from "./common";
 import { ResourceCard } from "./ResourceCard";
 
 const EXAMPLES = [
@@ -182,6 +184,9 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
               {result.analysis.ignored.length > 0 && (
                 <p className="muted">資料中に見つからず、検索条件に含めなかった語：{result.analysis.ignored.join("、")}</p>
               )}
+              {result.hits.length > 0 && (
+                <p className="muted">検索語に一致した資料が、質問に直接答えているとは限りません。各資料の紹介と確認レベルを確かめてください。</p>
+              )}
             </div>
           )}
 
@@ -221,7 +226,10 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
           {result.hits.length === 0 ? (
             <div className="empty">
               <p>
-                <strong>該当する資料は見つかりませんでした。</strong>
+                <strong>この検索条件では、Rift Compass に登録された公開資料から一致する資料が見つかりませんでした。</strong>
+              </p>
+              <p className="muted">
+                Rift Compass が収録している資料は一部だけです。ここで見つからなくても、その話題を扱う資料が存在しないという意味ではありません。
               </p>
               <ul>
                 <li>別の言い方（例：「Lv2」「レベル2」「level 2 spike」）や英語でも試してください。</li>
@@ -254,9 +262,34 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
               )}
             </>
           )}
+
+          {hasQuery && <ExternalSearch query={q} />}
         </section>
       </div>
     </div>
+  );
+}
+
+/** 収録資料の外を探すための導線。外部の検索 API は呼ばず、利用者がリンクを開いたときだけ検索語が外部へ送られる */
+function ExternalSearch({ query }: { query: string }) {
+  const urls = externalSearchUrls(query);
+  if (!urls) return null;
+  return (
+    <aside className="external-search" aria-labelledby="external-search-heading">
+      <h3 id="external-search-heading">Rift Compass の外で探す</h3>
+      <p className="muted">
+        リンクを開くと、入力した検索語が Google または YouTube に送られ、新しいタブで検索結果が表示されます。外部の検索結果は Rift
+        Compass では確認しておらず、答えが見つかるとは限りません。内容が正しいか、現在のパッチで有効かは、各資料で確かめてください。
+      </p>
+      <ul className="external-links">
+        <li>
+          <ExternalLink href={urls.google}>Google で検索</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={urls.youtube}>YouTube で検索</ExternalLink>
+        </li>
+      </ul>
+    </aside>
   );
 }
 

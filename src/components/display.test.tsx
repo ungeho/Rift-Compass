@@ -98,7 +98,8 @@ describe("画面全体の描画", () => {
 
   it("0件のとき、言い換えと絞り込み解除を案内する", () => {
     const html = text(renderToStaticMarkup(<SearchPage q="qwertyuiop" filters={{ lang: "ja" }} />));
-    expect(html).toContain("該当する資料は見つかりませんでした");
+    expect(html).toContain("この検索条件では、Rift Compass に登録された公開資料から一致する資料が見つかりませんでした");
+    expect(html).toContain("その話題を扱う資料が存在しないという意味ではありません");
     expect(html).toContain("絞り込みを解除する");
   });
 
@@ -128,6 +129,43 @@ describe("画面全体の描画", () => {
       expect(html, q).not.toContain("すべての条件に一致する資料はありません");
       expect(html, q).toContain("一致しなかった条件：");
     }
+  });
+
+  describe("Phase 3A：外部探索の導線", () => {
+    const externalAnchors = (markup: string) =>
+      [...markup.matchAll(/<a [^>]*href="(https:\/\/www\.(?:google|youtube)\.com\/[^"]*)"[^>]*>/g)].map((m) => ({ tag: m[0], href: m[1].replace(/&amp;/g, "&") }));
+
+    it("検索語が空なら表示しない", () => {
+      const markup = renderToStaticMarkup(<SearchPage q="" filters={{}} />);
+      expect(markup).not.toContain("Rift Compass の外で探す");
+      expect(externalAnchors(markup)).toHaveLength(0);
+    });
+
+    it.each([
+      ["0件", "ザヤとラカンのシナジー"],
+      ["関連候補のみ", "Dopa ウェーブ管理"],
+      ["条件に一致あり", "VeigarV2 リコール"],
+    ])("%s（%s）でも外部検索でき、リンクは新しいタブ・noopener noreferrer", (_label, q) => {
+      const markup = renderToStaticMarkup(<SearchPage q={q} filters={{}} />);
+      const html = text(markup);
+      expect(html).toContain("Rift Compass の外で探す");
+      expect(html).toContain("入力した検索語が Google または YouTube に送られ");
+      expect(html).toContain("答えが見つかるとは限りません");
+      const anchors = externalAnchors(markup);
+      expect(anchors.map((a) => new URL(a.href).hostname)).toEqual(["www.google.com", "www.youtube.com"]);
+      for (const a of anchors) {
+        expect(a.tag).toContain('target="_blank"');
+        expect(a.tag).toContain('rel="noopener noreferrer"');
+      }
+      expect(new URL(anchors[0].href).searchParams.get("q")).toBe(`${q} League of Legends`);
+    });
+
+    it("外部の情報を検証済みとは表示しない", () => {
+      const html = text(renderToStaticMarkup(<SearchPage q="VeigarV2 リコール" filters={{}} />));
+      expect(html).toContain("Rift Compass では確認しておらず");
+      expect(html).toContain("検索語に一致した資料が、質問に直接答えているとは限りません");
+      expect(html).not.toMatch(OVERCLAIM);
+    });
   });
 
   it("未知語があるときは、条件に含めなかったことを明示する", () => {

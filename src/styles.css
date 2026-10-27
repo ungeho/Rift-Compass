@@ -122,6 +122,10 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .empty { background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); padding: 14px 18px; }
 
 .result-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.external-search { margin-top: 22px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 0.88rem; }
+.external-search h3 { font-size: 0.92rem; margin: 0 0 4px; font-weight: 600; color: var(--muted); }
+.external-search p { margin: 4px 0; }
+.external-links { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 14px; }
 .partial-candidates { margin-top: 18px; border-top: 1px dashed var(--border); padding-top: 10px; }
 .partial-candidates > summary { cursor: pointer; font-weight: 600; color: var(--muted); }
 .partial-group h3 { font-size: 0.95rem; margin: 14px 0 8px; font-weight: 600; }

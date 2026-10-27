@@ -1,6 +1,40 @@
 import { describe, expect, it } from "vitest";
 import { index } from "../data/dataset";
-import { youtubeAt } from "./links";
+import { externalSearchUrls, youtubeAt } from "./links";
+
+describe("Phase 3A：外部検索の URL", () => {
+  const params = (url: string) => new URL(url).searchParams;
+
+  it("日本語の質問を、League of Legends を添えてそのまま渡す", () => {
+    const u = externalSearchUrls("ドラゴンソウルの種類ごとの効果を詳しく知りたい。")!;
+    expect(new URL(u.google).origin + new URL(u.google).pathname).toBe("https://www.google.com/search");
+    expect(params(u.google).get("q")).toBe("ドラゴンソウルの種類ごとの効果を詳しく知りたい。 League of Legends");
+    expect(new URL(u.youtube).origin + new URL(u.youtube).pathname).toBe("https://www.youtube.com/results");
+    expect(params(u.youtube).get("search_query")).toBe("ドラゴンソウルの種類ごとの効果を詳しく知りたい。 League of Legends");
+  });
+
+  it("英語・記号（& ? # + / % = 引用符）を含んでも壊れず、ほかのパラメータが混ざらない", () => {
+    const q = `Ahri vs Veigar & "item build" ? #mid +100% a/b=c`;
+    const u = externalSearchUrls(q)!;
+    expect([...params(u.google).keys()]).toEqual(["q"]);
+    expect(params(u.google).get("q")).toBe(`${q} League of Legends`);
+    expect([...params(u.youtube).keys()]).toEqual(["search_query"]);
+    expect(params(u.youtube).get("search_query")).toBe(`${q} League of Legends`);
+    expect(new URL(u.google).hash).toBe("");
+  });
+
+  it("LoL を示す語が既にあれば重ねない。空白は整理する", () => {
+    expect(params(externalSearchUrls("  how   to freeze  LoL ")!.google).get("q")).toBe("how to freeze LoL");
+    expect(params(externalSearchUrls("League of Legends baron timer")!.google).get("q")).toBe("League of Legends baron timer");
+    // 「lol」を含む別の単語では重ねる判定にしない
+    expect(params(externalSearchUrls("lollipop")!.google).get("q")).toBe("lollipop League of Legends");
+  });
+
+  it("空・空白だけの検索語では URL を作らない", () => {
+    expect(externalSearchUrls("")).toBeNull();
+    expect(externalSearchUrls("   　")).toBeNull();
+  });
+});
 
 describe("7. YouTube の開始時間付き URL", () => {
   it("既存のクエリ（v=）を保ったまま t を付ける", () => {

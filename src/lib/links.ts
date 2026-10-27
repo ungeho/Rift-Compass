@@ -13,5 +13,21 @@ export function youtubeAt(url: string, seconds: number): string | null {
   return u.toString();
 }
 
+/** 検索語が League of Legends の話だと分かる語を含むか */
+const MENTIONS_LOL = /league\s*of\s*legends|(?<![a-z0-9])lol(?![a-z0-9])|リーグ・?オブ・?レジェンド/i;
+
+/** 利用者が自分で開く外部検索（Google / YouTube）の URL。検索語が空なら null。
+ *  Rift Compass からは検索 API を呼ばず、利用者がリンクを開いたときに初めて外部へ検索語が送られる。 */
+export function externalSearchUrls(query: string): { google: string; youtube: string } | null {
+  const q = query.normalize("NFKC").replace(/\s+/g, " ").trim();
+  if (!q) return null;
+  const terms = MENTIONS_LOL.test(q) ? q : `${q} League of Legends`;
+  const google = new URL("https://www.google.com/search");
+  google.searchParams.set("q", terms);
+  const youtube = new URL("https://www.youtube.com/results");
+  youtube.searchParams.set("search_query", terms);
+  return { google: google.toString(), youtube: youtube.toString() };
+}
+
 /** 外部リンクの安全な属性 */
 export const externalLinkProps = { target: "_blank", rel: "noopener noreferrer" } as const;
