@@ -1,22 +1,87 @@
 # Rift Compass
 
-League of Legends（LoL）の知識を **探し・関連付け・再評価する** ためのWebアプリ（構想段階）です。
+League of Legends（LoL）の知識を **探し・関連付け・再評価する** ためのWebアプリです。
 
 日本語・英語の無料公開資料（Wiki、公式資料、YouTube、専門家・高レートプレイヤー・OTPの解説など）にアクセスしやすくすることを目的とします。既存の高品質な教材を活用し、資料全文の転載や独自教材の大量制作は行いません。
 
-## 現在の状態：Phase 0（調査・設計のみ）
+## 現在の状態：Phase 1（検索・資料閲覧Webアプリの初期実装）
 
-Phase 0 では知識モデルの調査・設計・検証だけを行いました。**アプリ本体、依存パッケージ、開発サーバーはまだありません。**
+- 知りたいことを日本語・英語で入力して、無料公開教材を検索できます。
+- Topic（複数の分類に属せる）から資料をたどれます。
+- 資料詳細では、原典へのリンク、動画の区間（開始時間付き）、翻訳元、根拠の状態を確認できます。
+- バックエンド・データベース・外部APIは使いません。データは `data/sample-resources.json`（正本）を静的に読み込みます。
+
+## セットアップと起動
+
+必要なもの：Node.js 22.12 以上（テストに使う Vitest の要件。動作確認は Node.js 24.19.0 / npm 11.17.0）。環境変数は不要です。
+
+```bash
+# 初回だけ
+npm install
+
+# 普段の起動（これだけ）
+npm run dev
+```
+
+ブラウザで **http://localhost:5173/** を開きます。
+
+| コマンド | 内容 |
+|---|---|
+| `npm run dev` | 開発サーバーを起動（http://localhost:5173/）。依存関係の再インストールなどは行いません |
+| `npm run build` | 型チェックのあと、`dist/` に静的ファイルを出力 |
+| `npm run preview` | `dist/` を配信して確認（http://localhost:4173/）。先に `npm run build` が必要 |
+| `npm run test` | Vitest のテストと、Phase 0 のデータ検査（`npm run validate:data`）を実行 |
+| `npm run typecheck` | TypeScript の型チェックのみ |
+| `npm run validate:data` | `tools/validate-sample-data.js` とその不正データ検出テスト |
+| `npm run eval:desk` | Phase 0 の机上検索照合（参考値）|
+
+`dist/` はハッシュ形式のURL（`#/r/<資料ID>` など）と相対パスを使うため、静的ホスティングのどのパスに置いてもリロードやURL共有で同じ画面を再表示できます。外部への公開（デプロイ）はまだ行っていません。
+
+## 画面
+
+| URL | 画面 |
+|---|---|
+| `#/` | 検索・資料一覧（`?q=検索語&lang=&type=&topic=&creator=&era=&level=` で条件を保持）|
+| `#/r/<資料ID>` | 資料詳細 |
+| `#/topics` | Topic 一覧 |
+| `#/topic/<TopicID>` | Topic 詳細（上位・下位の Topic と資料）|
+
+通常の一覧・検索に出すのは、**無料アクセスを確認した確認レベルL2以上の資料** だけです。L0 などの未確認の候補はデータに残していますが、表示しません。
+
+確認レベル（L2・L3 など）は **資料をどこまで確認したか** を示すもので、ゲーム内での検証を意味しません。Phase 0 時点で、現行パッチのゲーム内で検証した知識ノートはありません。
+
+## 検索の仕組み（概要）
+
+[docs/retrieval-evaluation.md](docs/retrieval-evaluation.md) の方式Bを基本にしています。
+
+- 検索対象は、資料のタイトル・発信者名・日本語の紹介文、Topic の日英の表示名と別名です。
+- 入力から、Topic の別名（例：「Lv2」「レベル2」「level 2 spike」）と発信者名（例：「VeigarV2」「Dopa」）を見つけ、日英の対応をとります。
+- 残った語は、資料中に実在する語だけを使います。使わなかった語は画面に表示します。
+- 結果は「条件に一致」「認識できた条件に一致（資料中にない語は条件に含めていない）」「一部の条件に関連する候補」に分けて表示します。関連候補は別の欄に、一致した条件ごとにまとめます。大分類（例：lane）や多くの資料に現れる語は、具体的な主題より軽く扱います。
+- 主題が資料中にない検索は0件として案内します。
+- 知識ノート本文や動画区間は検索に混ぜず、詳細画面での案内に使います。
+
+## ディレクトリ
+
+| パス | 内容 |
+|---|---|
+| `src/` | Webアプリ（React + TypeScript + Vite）|
+| `src/data/` | 正本 JSON の読み込み、索引の派生生成、表示ラベル |
+| `src/search/` | 検索・絞り込みと、評価用質問 |
+| `src/components/` | 画面 |
+| `data/sample-resources.json` | データの正本（資料38件、うち公開対象36件）|
+| `docs/` | Phase 0 の調査・設計文書 |
+| `tools/` | Phase 0 のデータ検査と机上照合（Node.js のみ、CommonJS）|
+
+## Phase 0 の成果物
 
 | 成果物 | 内容 |
 |---|---|
 | [docs/knowledge-model.md](docs/knowledge-model.md) | 軽量スキーマ（Resource / Topic / KnowledgeNote / Evidence / Relation）と拡張方針 |
 | [docs/source-research.md](docs/source-research.md) | 実在教材の調査結果と確認状態 |
 | [docs/case-studies.md](docs/case-studies.md) | 6ケースの検証 |
-| [docs/retrieval-evaluation.md](docs/retrieval-evaluation.md) | 検索方式の比較（机上評価）と評価用質問 |
+| [docs/retrieval-evaluation.md](docs/retrieval-evaluation.md) | 検索方式の比較と評価用質問（Phase 1 の実測を含む）|
 | [docs/phase0-report.md](docs/phase0-report.md) | 結果、問題点、コスト評価、推奨案 |
-| [data/sample-resources.json](data/sample-resources.json) | スキーマ準拠のサンプルデータ（資料38件、うち36件は実在とメタデータを確認済み） |
-| [tools/](tools/) | サンプルデータの検査（`node tools/validate-sample-data.js`、不正データの検出テストは `node --test tools/validate-sample-data.test.js`）と机上の検索照合（`node tools/desk-retrieval-check.js`）。Node.js のみで動き、依存パッケージなし |
 
 ## 基本方針
 
@@ -35,11 +100,9 @@ Phase 0 では知識モデルの調査・設計・検証だけを行いました
 - 有料コンテンツの本文、動画のダウンロード、無許可の大量文字起こし、全文転載は行いません。
 - 本文を確認していない資料は、タイトルから内容を推測して「検証済み」にしません（確認レベル L0〜L4 で区別します）。
 
-## 今後のローカル開発方針（アプリ実装段階で適用）
+## ローカル開発の方針
 
-- 普段の画面確認は、原則として `npm run dev` だけで起動できるようにする。
-- 複数の起動コマンドが必要な場合は、可能な限り `package.json` の scripts にまとめる。
-- それでも複雑になる場合は、Windows PowerShell 向けの `startDev.ps1` などを検討する。
-- 初回セットアップ手順、必要な環境変数、起動方法、アクセス先をこの README に日本語で記載する。
-- 起動のたびに依存関係の再インストールやデータベースの変更などを実行しない。
-- 不要な独自起動スクリプトは追加せず、標準的な npm コマンドで済むならそれを優先する。
+- 普段の画面確認は `npm run dev` だけで起動する。
+- 複数の起動コマンドが必要になった場合は、`package.json` の scripts にまとめる。
+- 起動のたびに依存関係の再インストールやデータの変更を行わない。
+- 標準的な npm コマンドで済む限り、独自の起動スクリプトは追加しない。

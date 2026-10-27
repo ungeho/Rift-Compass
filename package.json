@@ -1,0 +1,28 @@
+{
+  "name": "rift-compass",
+  "version": "0.1.0",
+  "private": true,
+  "description": "League of Legends の無料公開教材を日英で探すためのナレッジブラウザ",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run && npm run validate:data",
+    "validate:data": "node tools/validate-sample-data.js && node --test tools/validate-sample-data.test.js",
+    "eval:desk": "node tools/desk-retrieval-check.js"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
