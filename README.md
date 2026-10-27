@@ -4,11 +4,14 @@ League of Legends（LoL）の知識を **探し・関連付け・再評価する
 
 日本語・英語の無料公開資料（Wiki、公式資料、YouTube、専門家・高レートプレイヤー・OTPの解説など）にアクセスしやすくすることを目的とします。既存の高品質な教材を活用し、資料全文の転載や独自教材の大量制作は行いません。
 
-## 現在の状態：Phase 1（検索・資料閲覧Webアプリの初期実装）
+## 現在の状態：Phase 3A・3B 完了（外部探索の導線と、静的サイトとしての公開準備）
 
-- 知りたいことを日本語・英語で入力して、無料公開教材を検索できます。
+- 知りたいことを日本語・英語で入力して、無料公開教材を検索できます（Phase 1）。
 - Topic（複数の分類に属せる）から資料をたどれます。
 - 資料詳細では、原典へのリンク、動画の区間（開始時間付き）、翻訳元、根拠の状態を確認できます。
+- 検索結果は「条件に一致」「認識できた条件に一致」「関連候補」に分けて表示します。新しい18問による評価と、既存資料への到達の改善を行いました（Phase 2A・2B、[docs/phase2-retrieval-audit.md](docs/phase2-retrieval-audit.md)）。
+- 収録資料で見つからないときのために、Google・YouTube での検索リンクを表示します（Phase 3A）。
+- 本番ビルド（`dist/`）が静的ホスティングでそのまま動くことを確認しました（Phase 3B）。
 - バックエンド・データベース・外部APIは使いません。データは `data/sample-resources.json`（正本）を静的に読み込みます。
 
 ## セットアップと起動
@@ -35,7 +38,16 @@ npm run dev
 | `npm run validate:data` | `tools/validate-sample-data.js` とその不正データ検出テスト |
 | `npm run eval:desk` | Phase 0 の机上検索照合（参考値）|
 
-`dist/` はハッシュ形式のURL（`#/r/<資料ID>` など）と相対パスを使うため、静的ホスティングのどのパスに置いてもリロードやURL共有で同じ画面を再表示できます。外部への公開（デプロイ）はまだ行っていません。
+`dist/` はハッシュ形式のURL（`#/r/<資料ID>` など）と相対パスを使うため、静的ホスティングのどのパスに置いてもリロードやURL共有で同じ画面を再表示できます。
+
+## 公開（GitHub Pages）
+
+公開先：**https://ungeho.github.io/Rift-Compass/**
+
+- デプロイは手動です。GitHub の Actions 画面で「Deploy to GitHub Pages」（`.github/workflows/deploy-pages.yml`）を選び、「Run workflow」で `main` を指定して実行します。
+- ワークフローは `npm ci` → `npm run test` → `npm run build` を行い、`dist/` を GitHub Pages に配置します。テストかビルドが失敗すると公開しません。
+- `main` への push だけでは公開内容は更新されません。公開中の内容は、最後にワークフローを実行した時点の `main` です。
+- リポジトリの Settings → Pages の Source は「GitHub Actions」にします。生成した `dist/` を Git に commit したり、公開用のブランチを作ったりはしません。
 
 ## 画面
 
