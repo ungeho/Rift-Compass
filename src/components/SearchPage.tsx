@@ -6,6 +6,7 @@ import { facetCounts, search, type FilterKey, type Filters, type Hit, type Unit 
 import { externalSearchUrls } from "../lib/links";
 import { homeHref, rememberList, replaceHash, topicHref } from "../router";
 import { ExternalLink } from "./common";
+import { QuestionEntrances } from "./DecisionPages";
 import { ResourceCard } from "./ResourceCard";
 
 const EXAMPLES = [
@@ -126,7 +127,12 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
         </div>
       </section>
 
-      {!hasQuery && activeFilters.length === 0 && <TopicEntrances />}
+      {!hasQuery && activeFilters.length === 0 && (
+        <>
+          <QuestionEntrances />
+          <TopicEntrances />
+        </>
+      )}
 
       <div className="results-layout">
         <aside className="filters" aria-label="絞り込み">

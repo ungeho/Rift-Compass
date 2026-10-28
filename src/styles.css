@@ -187,6 +187,8 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .comparison-details > summary { cursor: pointer; font-weight: 600; }
 .comparison h4 { margin: 12px 0 4px; font-size: 0.9rem; }
 .comparison .criterion { background: var(--bg); }
+/* 比較の判定は長いので、狭い画面では折り返す（.badge は nowrap）*/
+.comparison .badge { white-space: normal; }
 .decision-source { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; margin: 10px 0; list-style: none; }
 .decision-source p { margin: 4px 0; }
 .decision-diagram { margin: 0; }

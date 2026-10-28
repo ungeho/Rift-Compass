@@ -60,3 +60,18 @@ test("Phase 6B の追加ファイルも合わせて検査し、同じ出典の�
   assert.match(lt.read, /Phase 5E で.*／.*Phase 6B で/);
   assert.equal(lt.coverage.unread_ja, side.coverage_updates.find((u) => u.source === "src-loltheory").unread_ja);
 });
+
+test("発見性レビューの追加ファイルも合わせて検査し、6B の出典に確認範囲を積み重ねる（6B のファイルは変更しない）", () => {
+  const ctx = loadMerged();
+  const wave = require("../../data/experiments/wave-technique-decisions.json");
+  for (const u of wave.units) assert.ok(ctx.du.units.some((x) => x.id === u.id), u.id);
+  assert.equal(require("../../data/experiments/side-wave-decisions.json").units.length, 5);
+  const yz = ctx.du.sources.find((s) => s.id === "src-yzwsh");
+  assert.match(yz.read, /Phase 6B で.*／発見性レビューで/);
+  assert.equal(yz.coverage.unread_ja, "ファストプッシュの節");
+  // 単一の古い記事にもとづき、現行での成立を確認できない材料は、歴史的な説明・未検証として記録する
+  const aggro = ctx.du.units.find((u) => u.id === "du-first-wave-aggro-release");
+  assert.equal(aggro.proposed_status, "unverified");
+  assert.match(aggro.patch_dependency_ja, /26\.10/);
+  assert.ok(aggro.unknowns_ja.some((s) => s.includes("ゲーム内では検証していない")));
+});

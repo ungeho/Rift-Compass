@@ -4,23 +4,25 @@ import { describe, expect, it } from "vitest";
 import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
+import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { DIAGRAMS, NONE_PARTIAL, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { DIAGRAMS, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
+import { SearchPage } from "./SearchPage";
 import { ResourceDetail } from "./ResourceDetail";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const list = (topic = "") => renderToStaticMarkup(<DecisionIndex topic={topic} />);
 const detail = (id: string) => renderToStaticMarkup(<DecisionDetail id={id} />);
-// Phase 5B（29件）と Phase 5E・6B の判断材料を合わせたもの
-const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCriteria as unknown as { units: DecisionUnit[] }).units, ...(rawSideWave as unknown as { units: DecisionUnit[] }).units];
+// Phase 5B（29件）と Phase 5E・6B・発見性レビューの判断材料を合わせたもの
+const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCriteria as unknown as { units: DecisionUnit[] }).units, ...(rawSideWave as unknown as { units: DecisionUnit[] }).units, ...(rawWaveTechnique as unknown as { units: DecisionUnit[] }).units];
 const OVERCLAIM = /(?<!未)検証済み|(?<!未)確認済みの仕様|仕様として確認済み|ゲーム内で検証済み|おすすめ|推奨します|すべきです/;
 
 describe("表示している主張は実験データと一致する", () => {
-  it("試験表示は実験データの23件（Phase 5D の9件＋Phase 5E の5件＋Phase 6A の5件＋Phase 6B の4件）で、内容を書き換えていない", () => {
-    expect(SHOWCASE_IDS).toHaveLength(23);
+  it("試験表示は実験データの25件（Phase 5D の9件＋Phase 5E の5件＋Phase 6A の5件＋Phase 6B の4件＋発見性レビューの2件）で、内容を書き換えていない", () => {
+    expect(SHOWCASE_IDS).toHaveLength(25);
     expect(new Set(SHOWCASE_IDS).size).toBe(SHOWCASE_IDS.length);
     for (const u of showcaseDecisions) expect(u).toBe(units.find((x) => x.id === u.id));
   });
@@ -155,13 +157,13 @@ describe("資料詳細との接続・URL", () => {
   });
 });
 
-describe("Phase 5E・6B：具体的な目安と資料間の比較", () => {
+describe("Phase 5E・6B・発見性レビュー：具体的な目安と資料間の比較", () => {
   type CritFile = {
     criteria: { id: string; unit_id: string | null; value_ja: string; target_ja: string; observe_ja: string; context_ja: string; locator: string }[];
     comparisons: { id: string; items: string[]; verdict: string; undetermined_ja: string[] }[];
   };
   // Phase 5E と 6B の目安・比較を合わせて検査する
-  const files = [rawCriteria, rawSideWave] as unknown as CritFile[];
+  const files = [rawCriteria, rawSideWave, rawWaveTechnique] as unknown as CritFile[];
   const crit: CritFile = { criteria: files.flatMap((f) => f.criteria), comparisons: files.flatMap((f) => f.comparisons) };
   const compareList = (id: string) => renderToStaticMarkup(<DecisionIndex topic="" compare={id} />);
 
@@ -321,5 +323,54 @@ describe("Phase 6C：ウェーブの模式図", () => {
     expect(svg).toContain("<desc");
     expect(svg).not.toMatch(/ミニマップ|\+\d|必ず/);
     expect(svg).not.toMatch(/<image|href=/);
+  });
+});
+
+describe("知りたいことから探す（発見性レビュー）", () => {
+  const home = () => renderToStaticMarkup(<SearchPage q="" filters={{}} />);
+  const PRIORITY: [string, string][] = [
+    ["放置したウェーブはどちらへ進む？", "du-wave-drift-by-meeting-point"],
+    ["スロープッシュには何体多く必要？", "du-slow-push-advantage-by-position"],
+    ["敵の次のウェーブは、ミニマップのどこにいる？", "du-minimap-next-enemy-wave"],
+  ];
+
+  it("優先の3件を含む疑問が、トップ画面と判断材料の一覧の両方から、試験表示の詳細へ1クリックでつながる", () => {
+    for (const [q, id] of PRIORITY) expect(QUESTION_ENTRANCES).toContainEqual({ question_ja: q, unit_id: id });
+    for (const markup of [home(), list()]) {
+      expect(text(markup)).toContain("知りたいことから探す");
+      for (const e of QUESTION_ENTRANCES) {
+        expect(SHOWCASE_IDS).toContain(e.unit_id);
+        expect(markup).toContain(`href="${decisionHref(e.unit_id)}">${e.question_ja}</a>`);
+        expect(text(detail(e.unit_id))).not.toContain("試験表示の対象にありません");
+      }
+    }
+    expect(new Set(QUESTION_ENTRANCES.map((e) => e.unit_id)).size).toBe(QUESTION_ENTRANCES.length);
+  });
+
+  it("検索語を入れたとき・Topic で絞ったときは、入口を出さない（検索結果と絞り込みを変えない）", () => {
+    expect(text(renderToStaticMarkup(<SearchPage q="how to freeze a lane" filters={{}} />))).not.toContain("知りたいことから探す");
+    expect(text(list("slow-push"))).not.toContain("知りたいことから探す");
+  });
+
+  it("現行での成立を確認できない du-first-wave-aggro-release は、歴史的な説明として記録し、試験表示・入口に出さない", () => {
+    const aggro = units.find((u) => u.id === "du-first-wave-aggro-release")!;
+    expect(aggro.statement_ja).toMatch(/^【2019年の歴史的な説明・現行での成立は未確認】/);
+    expect(aggro.proposed_status).toBe("unverified");
+    expect(aggro.patch_dependency_ja).toContain("パッチ26.10");
+    expect(SHOWCASE_IDS).not.toContain("du-first-wave-aggro-release");
+    expect(QUESTION_ENTRANCES.map((e) => e.unit_id)).not.toContain("du-first-wave-aggro-release");
+    expect(text(detail("du-first-wave-aggro-release"))).toContain("試験表示の対象にありません");
+    for (const markup of [home(), list()]) expect(markup).not.toContain('href="#/decision/du-first-wave-aggro-release"');
+  });
+
+  it("表示する追加の2件は、原典の時期・未検証を表示し、「必ず」「確定」と言い切らない", () => {
+    const big = text(detail("du-slow-push-big-wave-trade"));
+    expect(big).toContain("大きなウェーブで戦いやすいことと、ガンクに安全なことは別");
+    expect(text(detail("du-lvl1-contest-or-concede"))).toContain("相手のウェーブが自分より少し大きい。たいてい3体ほど多い");
+    for (const id of ["du-lvl1-contest-or-concede", "du-slow-push-big-wave-trade"]) {
+      // 判断材料のデータ自体に、言い切りの表現を使わない（画面共通の説明文は対象外）
+      expect(JSON.stringify(units.find((u) => u.id === id))).not.toMatch(/必ず|確定/);
+      expect(text(detail(id))).toContain("ゲーム内では検証していない");
+    }
   });
 });

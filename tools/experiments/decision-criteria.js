@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Phase 5E：具体的な判断基準（data/experiments/decision-criteria.json）の検査
 // Phase 6B：同じ形の追加ファイル（data/experiments/side-wave-decisions.json）も合わせて検査する
+// 発見性レビュー：同じ形の追加ファイル（data/experiments/wave-technique-decisions.json）も合わせて検査する
 //
 //   node tools/experiments/decision-criteria.js check
 //
@@ -14,7 +15,7 @@ const ROOT = path.join(__dirname, "..", "..");
 const VERDICTS = ["conflict", "different_conditions", "undetermined"];
 
 // Phase 5B の判断材料に追加するファイル（この順に合わせる）
-const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json"];
+const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json", "wave-technique-decisions.json"];
 
 /** 追加ファイルを1つにまとめる。追加で読んだ範囲は順に積み重ね、未読の範囲は後のファイルの記録を使う */
 function mergeExtras(files) {
@@ -81,6 +82,6 @@ module.exports = { loadMerged, checkCriteria, mergeExtras, applyCoverage, VERDIC
 if (require.main === module) {
   const ctx = loadMerged();
   const errors = [...check(ctx), ...checkCriteria(ctx)];
-  console.log(errors.length ? errors.join("\n") : `OK：判断材料 ${ctx.du.units.length}件（うち Phase 5E・6B ${ctx.crit.units.length}件）、目安 ${ctx.crit.criteria.length}件、比較 ${ctx.crit.comparisons.length}組`);
+  console.log(errors.length ? errors.join("\n") : `OK：判断材料 ${ctx.du.units.length}件（うち追加ファイル ${ctx.crit.units.length}件）、目安 ${ctx.crit.criteria.length}件、比較 ${ctx.crit.comparisons.length}組`);
   process.exit(errors.length ? 1 : 0);
 }

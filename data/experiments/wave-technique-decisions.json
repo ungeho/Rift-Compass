@@ -1,0 +1,213 @@
+{
+  "about": "判断材料の発見性レビューで調べたウェーブ操作の実験データ（レベル1のウェーブ、最初のウェーブのアグロ、スロープッシュの大きなウェーブ）。du-first-wave-aggro-release は2019年の歴史的な説明で、現行パッチでの成立を確認できないため試験表示しない（最終確認で判断）。形は Phase 6B の side-wave-decisions.json と同じ。選定理由・見送ったテーマは docs/experiments/wave-discovery-review.md。Phase 5B・5E・6B のファイルは変更しない。",
+  "checked_at": "2026-10-28",
+  "coverage_updates": [
+    {
+      "source": "src-yzwsh",
+      "read_added": "発見性レビューで「3. スロープッシュ」の節の全体（メリット・デメリット・作り方）を確認",
+      "unread_ja": "ファストプッシュの節"
+    },
+    {
+      "source": "src-wiki-minion",
+      "read_added": "発見性レビューで Behavior の最初のウェーブ（ゴースト状態）・ターゲットの優先順位の該当文",
+      "unread_ja": "ページの後半（全体の約半分）"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-phroxzon-wm01",
+      "resource_id": null,
+      "candidate_key": null,
+      "url": "https://www.youtube.com/watch?v=AXizLAdYCmY",
+      "author": "Riot Phroxzon（Riot Games のゲームデザイナー、YouTube）",
+      "published": "2021-09-14",
+      "read": "「Wave Management 01: Contest or Concede at Levels 1-3」の全編（7分7秒）を、視聴ページの文字起こし表示で確認",
+      "coverage": { "status": "full" }
+    },
+    {
+      "id": "src-honeydip2019",
+      "resource_id": null,
+      "candidate_key": null,
+      "url": "https://dignitas.gg/articles/how-to-control-farm-and-minion-waves-like-a-pro-player",
+      "author": "honeydip（Dignitas）",
+      "published": "2019-12-20",
+      "read": "「Types of wave freezing」の Freeze の節",
+      "coverage": { "status": "partial", "unread_ja": "Perma-Freeze・Hard Push・Slow Push・Farming・Final Tips の節" }
+    }
+  ],
+  "units": [
+    {
+      "id": "du-lvl1-contest-or-concede",
+      "statement_ja": "レベル1では、ウェーブを押して取り合うか、相手に押させる（譲る）かを決めておく。決め手は、レベル1〜3のそれぞれで対面とどちらが強いかと、敵ジャングラーが序盤にガンクする型かどうか。",
+      "kind": "decision",
+      "problem_ja": "レベル1でウェーブを押すか、相手に押させるか",
+      "observations_ja": [
+        "レベル1・2・3のそれぞれで、自分と対面のどちらが強いか（キルの脅威・接近手段）",
+        "敵ジャングラーが、遠くから当てられる確実に近い CC を持つガンク型か、1周目を狩り切りたいファーム型か",
+        "相手が、体力を削られずにウェーブを減らせる余地をくれるか"
+      ],
+      "goal_ja": "序盤の危険な時間を、ファームを失わずに切り抜ける",
+      "action_ja": "押すなら数の有利でレベル2先行と有利なトレードを狙う。譲るならラストヒットだけを取り、相手を攻撃するのはミニオンのアグロをすぐ外せるときだけにする（原典）",
+      "reasons": [
+        { "basis": "source", "text": "押すと数の有利でレベル2先行と有利なトレードを得られるが、レーン中央より前でファームすることになり、オールインとガンクにさらされる（Phroxzon）" },
+        { "basis": "source", "text": "譲ると危険な位置まで出てファームしなくてよく、ラストヒットが危ないときは1体諦めても、ウェーブは自分側へ押してくる（Phroxzon）" },
+        { "basis": "source", "text": "相手チャンピオンを攻撃すると、ミニオンのアグロで敵ミニオンが自軍ミニオンではなく自分を攻撃し、ウェーブが相手側へ戻っていく（Phroxzon）" }
+      ],
+      "alternatives_ja": [
+        "ガンク型の敵ジャングラーには、押さないか、敵ジャングラーが出てくる前に敵タワーへ素早く押し込み、ウェーブが自分側へ戻る間にガンクを避ける（Phroxzon）",
+        "ファーム型の敵ジャングラーなら、ワードを置いた側に寄っていれば、押してもたいてい問題ない（Phroxzon）"
+      ],
+      "costs_ja": [
+        "譲るときに相手のウェーブを大きくしすぎると、経験値が溜まって相手にレベルの有利とトレードの有利を与える（Phroxzon）"
+      ],
+      "conditions_ja": [
+        "レーンの強さが近い組み合わせ（原典の言い方で1段階以内）なら、押してウェーブの主導権を取るのがたいてい良い。ただし押すとガンクを避けられない場合は除く（Phroxzon）",
+        "接近手段とキルの脅威が高い相手には、レベル1で自分が強くても、数の有利だけでは戦えない（原典の例：TF 対イレリア）",
+        "ジャングルの組み合わせが互角以上で、レーンも勝っているなら押してよい。味方ジャングラーとカウンターガンクを合わせるとなお良い（Phroxzon）"
+      ],
+      "exceptions_ja": [
+        "記載なし（全体を確認）"
+      ],
+      "scope": {
+        "roles": ["all"],
+        "champions": "原典の例はツイステッド・フェイト対イレリア。ファーム型の例はオラフ・カーサス・ケイン・カ＝ジックス・マスター・イー、ガンク型の例はジャーヴァンIV・レク＝サイ・グラガス・エリス",
+        "matchup": "レベル1〜3のレーンの強さと、ジャングラーの型（ファーム型・ガンク型）の組み合わせで決める"
+      },
+      "patch_dependency_ja": "2021年の動画で、チャンピオンの強さやジャングラーの型は当時のもの。ミニオンのアグロは、パッチ26.10（2026-05-12）で「敵チャンピオンが味方ミニオンを攻撃したとき」の条件が外れた。動画の「相手チャンピオンへの攻撃でアグロを引く」は、Wiki の現行の優先順位と矛盾しないが、ゲーム内では確認していない",
+      "unknowns_ja": [
+        "レーンの強さの序列（原典の bucket）の一覧は、この動画では示していない",
+        "シリーズの後の回（より詳しい説明があると原典が予告）は確認していない",
+        "ゲーム内では検証していない"
+      ],
+      "topic_ids": ["wave-management", "lane-priority", "level-2", "minion-aggro"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-phroxzon-wm01", "locator": { "start_sec": 21, "end_sec": 409, "label": "0:21〜6:49（例：0:53〜3:26、譲るときのウェーブの大きさ：3:30〜4:00、決め方：4:05〜6:20）" }, "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-mid-lvl1-no-hard-push", "type": "complements", "note_ja": "AI の整理：ミッドで満タンのウェーブに全力で押さない（別の著者）のに対し、こちらは押すか譲るかを対面とジャングラーの組み合わせで決める" },
+        { "to": "du-bounce-after-crash", "type": "complements", "note_ja": "AI の整理：ガンク型のジャングラーが出てくる前に押し込み、戻るウェーブでガンクを避けるのは、跳ね返りの利用にあたる" },
+        { "to": "du-trade-checklist", "type": "complements", "note_ja": "AI の整理：ミニオンのアグロを確かめてから仕掛けるという点が共通する（別の著者）" }
+      ]
+    },
+    {
+      "id": "du-first-wave-aggro-release",
+      "statement_ja": "【2019年の歴史的な説明・現行での成立は未確認】最初のウェーブで敵ミニオンのアグロを一度自分に取り、自軍ミニオンとぶつかるときに外すと、敵ミニオン6体が自軍の先頭のミニオンに攻撃を集める、と2019年の記事はフリーズの作り方として書く。",
+      "kind": "decision",
+      "problem_ja": "最初のウェーブで、自分がファームしやすい位置にウェーブを置くにはどうするか",
+      "observations_ja": [
+        "最初の敵ウェーブが近づいているか",
+        "自軍ミニオンと敵ミニオンがぶつかる直前か"
+      ],
+      "goal_ja": "自軍のミニオンが先に減るようにして、ウェーブを自分がファームしやすい位置に置き、相手のゴールドと経験値を減らす（原典はフリーズとして書く）",
+      "action_ja": "敵の最初のウェーブのアグロを取り、ウェーブ同士がぶつかるときにアグロを外す（原典）",
+      "reasons": [
+        { "basis": "source", "text": "アグロが外れると、敵ミニオン6体が自軍の先頭のミニオンに攻撃を集める。自軍のミニオンは敵の複数のミニオンに攻撃を分けるので、自軍のミニオンが先に倒れる（honeydip）" },
+        { "basis": "source", "text": "最初のウェーブ同士がぶつかると、ミニオンは距離に関係なく敵の近接ミニオン3体に攻撃を分ける（Wiki。何もしない場合の挙動）" },
+        { "basis": "ai", "text": "何もしなければ攻撃が分かれるのに対し、アグロを外した直後は先頭の1体に集まる、という差で効くと考えられる。原典はこの対比を書いていない" }
+      ],
+      "alternatives_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "costs_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "conditions_ja": [
+        "最初のウェーブ（原典）"
+      ],
+      "exceptions_ja": [
+        "AI の整理（原典には書かれていない）：最初のウェーブはゴースト状態で、チャンピオンがかなり近づくまで敵チャンピオンを無視する（Wiki）。アグロを取るには敵ウェーブに近づく必要があり、その間に対面から攻撃を受けうる"
+      ],
+      "scope": {
+        "roles": ["all"],
+        "champions": "確認範囲に記載なし（未読の範囲あり）",
+        "matchup": "確認範囲に記載なし（未読の範囲あり）"
+      },
+      "patch_dependency_ja": "2019年の記事。パッチ26.10 で、敵チャンピオンが味方ミニオンを攻撃したときにミニオンの優先順位に入る処理が削除された。敵ミニオンを攻撃してアグロを取る方法なら、まさにこの削除された条件にあたる。原典はアグロの取り方を書いておらず、現行パッチで同じ結果になる根拠は見つからなかった",
+      "unknowns_ja": [
+        "アグロの取り方（近づくだけか、攻撃するか）と、立つ位置は原典に書かれていない。近づくだけの場合、ゴースト状態の最初のウェーブは「チャンピオンがかなり近づくまで」敵チャンピオンを無視する（Wiki）ため、どこで取れるかも分からない",
+        "アグロを外した後に6体が先頭の1体へ攻撃を集めることと、最初のウェーブがぶつかったとき近接ミニオン3体に攻撃を分ける特殊な処理（Wiki）の関係は、Wiki に書かれていない",
+        "アグロの外し方（距離・草むら）は書かれていない。草むらでアグロを外してウェーブを引く操作がパッチ26.10 で変わったとする記事（esports.gg）は、HTTP 403 で確認できていない",
+        "ゴースト状態の時間（トップ・ボット28秒、ミッド18秒：Wiki）との関係は確認していない",
+        "敵ウェーブの進路や、ぶつかる位置を変える効果は、原典に書かれていない",
+        "ゲーム内では検証していない"
+      ],
+      "topic_ids": ["minion-aggro", "freeze", "wave-management"],
+      "proposed_status": "unverified",
+      "evidence": [
+        { "source": "src-honeydip2019", "locator": "Types of wave freezing／Freeze", "evidence_type": "empirical_claim", "checked_level": "L3" },
+        { "source": "src-wiki-minion", "locator": "Behavior（最初のウェーブ・ターゲットの優先順位）", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-freeze-extra-casters-loltheory", "type": "complements", "note_ja": "AI の整理：フリーズで残す数（別の著者）に対し、こちらは最初のウェーブでの作り方" },
+        { "to": "du-wave-drift-by-meeting-point", "type": "complements", "note_ja": "AI の整理：何もしないときのウェーブの動きの原則に対し、こちらはアグロで攻撃先を変える操作。ぶつかる位置を変える操作ではない" }
+      ]
+    },
+    {
+      "id": "du-slow-push-big-wave-trade",
+      "statement_ja": "スロープッシュは、相手がミニオンを攻撃できない状況（トレードで勝った、ガンクの圧力で前に出られない）で作り始め、大きなウェーブを、相手が仕掛けてきたときのミニオン込みのトレードやタワーダイブに使う。",
+      "kind": "decision",
+      "problem_ja": "スロープッシュの大きなウェーブを、どんな状況で作り、何に使うか",
+      "observations_ja": [
+        "相手がミニオンを攻撃できる状況か（体力の差、ガンクの圧力）",
+        "自軍のミニオンが敵より少し多いか"
+      ],
+      "goal_ja": "大きなウェーブで、戦闘・ダイブ・リコール・ロームの選択肢を作る",
+      "action_ja": "自軍のミニオンを敵より少し多くし、ラストヒットだけを通常攻撃で取る（原典）",
+      "reasons": [
+        { "basis": "source", "text": "周りに味方ミニオンが多いので、相手が攻撃してきたとき、ミニオンを含めたトレードで有利を取りやすい（がりある）" },
+        { "basis": "source", "text": "大量の味方ミニオンと一緒にタワーダイブを狙いやすく、準備に時間がかかるので味方と動きを合わせやすい（がりある）" },
+        { "basis": "source", "text": "大きなウェーブを押し込むと、相手はタワー下で処理に追われ、その間にリコールやロームができる（がりある。原典は「ノーリスク」と書く）" }
+      ],
+      "alternatives_ja": [
+        "相手がロームしたら、ファストプッシュに切り替えて、タワーにミニオンを処理させる（がりある）"
+      ],
+      "costs_ja": [
+        "原典は、状況が整っていればリスクは少ないとする。具体的な代償は確認範囲に記載なし"
+      ],
+      "conditions_ja": [
+        "主導権を完全に握っているとき（がりある）",
+        "相手がミニオンを攻撃できない状況（がりある）"
+      ],
+      "exceptions_ja": [
+        "AI の整理（原典には書かれていない）：大きなウェーブで戦いやすいことと、ガンクに安全なことは別。押していく間は前に出ているので、ガンクの危険は残る（Riot Phroxzon の動画は、押すとガンクにさらされるとする）"
+      ],
+      "scope": {
+        "roles": ["all"],
+        "champions": "遠距離チャンピオンなら、タワー下の相手にハラスできる（がりある）",
+        "matchup": "確認範囲に記載なし（未読の範囲あり）"
+      },
+      "patch_dependency_ja": "2026年2月の記事。パッチの記載はない。現行パッチでは確認していない",
+      "unknowns_ja": [
+        "トップに限った説明は、確認範囲にない",
+        "敵ジャングラーの位置と、押していく時機の関係は書かれていない",
+        "ゲーム内では検証していない"
+      ],
+      "topic_ids": ["slow-push", "wave-management", "trading"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-yzwsh", "locator": "3. スロープッシュ（メリット・デメリット・作り方）", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-wave-state-by-next-action", "type": "complements", "note_ja": "AI の整理：ダイブなら2〜3ウェーブのスロープッシュ（別の著者）。こちらは作り始める条件と、大きなウェーブでの戦い方" },
+        { "to": "du-early-slow-push-avoid", "type": "condition_differs", "note_ja": "AI の整理：2019年の記事は序盤のスロープッシュを避けるとする。こちらは時期でなく、相手がミニオンを攻撃できない状況を条件にする" },
+        { "to": "du-slow-push-advantage-by-position", "type": "complements", "note_ja": "AI の整理：何体多くするかは、ぶつかる位置で変わる（別の著者）" }
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "crit-concede-size-phroxzon",
+      "unit_id": "du-lvl1-contest-or-concede",
+      "about_ja": "ウェーブを譲るときの、相手のウェーブの大きさ",
+      "value_ja": "相手のウェーブが自分より少し大きい。たいてい3体ほど多い",
+      "target_ja": "相手のウェーブが自分のウェーブより多いミニオンの数（種類の区別なし）",
+      "observe_ja": "両軍のミニオンの数",
+      "context_ja": "2021年の動画。レベル1でウェーブを譲る場面。大きすぎると相手にレベルとトレードの有利を与え、小さすぎると自分側へ押してこなくなる。フリーズで残す数（別の比較）とは場面が違う",
+      "source": "src-phroxzon-wm01",
+      "locator": "3:30〜4:00",
+      "basis": "source"
+    }
+  ],
+  "comparisons": []
+}

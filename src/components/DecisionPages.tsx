@@ -2,7 +2,7 @@
 // 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, isNone,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, isNone, QUESTION_ENTRANCES,
   isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
   type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionUnit,
 } from "../data/decisions";
@@ -167,6 +167,25 @@ function ComparisonView({ m }: { m: DecisionComparison }) {
   );
 }
 
+/** 知りたいことから探す：自然文の疑問から、試験表示の判断材料へ直接移動する（トップ画面と判断材料の一覧で共通）*/
+export function QuestionEntrances() {
+  return (
+    <section className="question-entrances" aria-labelledby="question-entrances-heading">
+      <h2 id="question-entrances-heading">知りたいことから探す</h2>
+      <p className="muted">ウェーブ操作の判断材料（試験）に移動します。原典の主張と AI の整理を分けて表示し、ゲーム内では検証していません。</p>
+      <ul className="chips">
+        {QUESTION_ENTRANCES.map((e) => (
+          <li key={e.unit_id}>
+            <a className="chip" href={decisionHref(e.unit_id)}>
+              {e.question_ja}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function DecisionIndex({ topic, compare }: { topic: string; compare?: string }) {
   const t = topic ? index.topicById.get(topic) : undefined;
   const list = topic ? (t ? decisionsForTopic(topic) : []) : showcaseDecisions;
@@ -176,8 +195,10 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
       <h1>判断材料（試験）</h1>
       <DecisionNotice />
       <p className="muted">
-        Phase 5B・5E・6B で抽出した判断材料のうち、試験的に{showcaseDecisions.length}件を表示しています。教材の検索とは別の画面です。似た状況でも条件で結論が変わる材料（有利／不利、押す／押さない、過去のパッチ）を並べてあるので、状況と成立条件を比べてください。
+        Phase 5B・5E・6B と発見性レビューで抽出した判断材料のうち、試験的に{showcaseDecisions.length}件を表示しています。教材の検索とは別の画面です。似た状況でも条件で結論が変わる材料（有利／不利、押す／押さない、過去のパッチ）を並べてあるので、状況と成立条件を比べてください。
       </p>
+
+      {!topic && !compare && <QuestionEntrances />}
 
       <nav aria-label="Topic で絞り込む">
         <ul className="chips">
@@ -232,7 +253,7 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
         </ul>
       )}
       <p className="muted">
-        抽出日 {decisionsCheckedAt}（Phase 5B）・{criteriaCheckedAt}（Phase 5E）・{sideWaveCheckedAt}（Phase 6B）。選ばなかった判断材料と理由は、リポジトリの docs/experiments/decision-browse.md・decision-criteria.md・decision-showcase-expansion.md・side-wave-decisions.md に記録しています。
+        抽出日 {decisionsCheckedAt}（Phase 5B）・{criteriaCheckedAt}（Phase 5E）・{sideWaveCheckedAt}（Phase 6B）・{waveTechniqueCheckedAt}（発見性レビュー）。選ばなかった判断材料と理由は、リポジトリの docs/experiments/decision-browse.md・decision-criteria.md・decision-showcase-expansion.md・side-wave-decisions.md・wave-discovery-review.md に記録しています。
       </p>
     </div>
   );

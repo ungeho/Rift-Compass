@@ -1,11 +1,12 @@
 // Phase 5D：判断材料（試験）の閲覧用データ。
 // data/experiments/decision-units.json（Phase 5B）と、同じ形の追加ファイル decision-criteria.json（Phase 5E）・
-// side-wave-decisions.json（Phase 6B）（追加の判断材料・具体的な目安・資料間の比較）をそのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
+// side-wave-decisions.json（Phase 6B）・wave-technique-decisions.json（発見性レビュー）（追加の判断材料・具体的な目安・資料間の比較）をそのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
 // 実験データは変更しない。検索・推奨には使わず、Topic による明示的な絞り込みと閲覧だけに使う。
 // 選ばなかった判断材料と理由は docs/experiments/decision-browse.md に記録している。
 import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
+import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.json";
 import sideWaveDiagramUrl from "../../docs/experiments/side-wave-diagram.svg";
 import { index } from "./dataset";
 
@@ -103,8 +104,9 @@ interface CriteriaData extends DecisionData {
 const base = raw as unknown as DecisionData;
 const criteriaFile = rawCriteria as unknown as CriteriaData;
 const sideWaveFile = rawSideWave as unknown as CriteriaData;
+const waveTechniqueFile = rawWaveTechnique as unknown as CriteriaData;
 // 追加ファイルを順に合わせる（tools/experiments/decision-criteria.js の loadMerged と同じ規則）
-const extraFiles = [criteriaFile, sideWaveFile];
+const extraFiles = [criteriaFile, sideWaveFile, waveTechniqueFile];
 const extra = {
   coverage_updates: extraFiles.flatMap((f) => f.coverage_updates),
   sources: extraFiles.flatMap((f) => f.sources),
@@ -124,7 +126,7 @@ const data: DecisionData = {
 };
 
 /**
- * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
+ * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
  * 確認箇所が明確なもの。条件の違い（有利／不利、押す／押さない、現行／過去のパッチ）を並べて比べられるよう、
  * 対になる材料を含め、著者が偏らないようにした。
  */
@@ -157,7 +159,23 @@ export const SHOWCASE_IDS = [
   "du-slow-push-advantage-by-position",
   "du-minimap-next-enemy-wave",
   "du-bounce-after-crash",
+  // 発見性レビュー：レベル1・スロープッシュの大きなウェーブ（docs/experiments/wave-discovery-review.md）。
+  // du-first-wave-aggro-release は2019年の歴史的な説明で現行パッチでの成立を確認できないため、実用的な手順と誤解されないよう表示しない
+  "du-lvl1-contest-or-concede",
+  "du-slow-push-big-wave-trade",
 ] as const;
+
+/**
+ * 「知りたいことから探す」の入口。利用者が判断材料のタイトル・ID・Topic を知らなくても、自然文の疑問から既存の判断材料に届くようにする。
+ * 新しい検索はせず、疑問と判断材料を手で対応させる（リンクはここだけで管理し、トップ画面と判断材料の一覧の両方が使う）。
+ */
+export const QUESTION_ENTRANCES: { question_ja: string; unit_id: (typeof SHOWCASE_IDS)[number] }[] = [
+  { question_ja: "放置したウェーブはどちらへ進む？", unit_id: "du-wave-drift-by-meeting-point" },
+  { question_ja: "スロープッシュには何体多く必要？", unit_id: "du-slow-push-advantage-by-position" },
+  { question_ja: "敵の次のウェーブは、ミニマップのどこにいる？", unit_id: "du-minimap-next-enemy-wave" },
+  { question_ja: "レベル1でウェーブを押す？相手に押させる？", unit_id: "du-lvl1-contest-or-concede" },
+  { question_ja: "スロープッシュの大きなウェーブは、何に使う？", unit_id: "du-slow-push-big-wave-trade" },
+];
 
 /** 判断材料に付ける模式図（Phase 6C）。原典の画像ではなく、原典の説明をもとに作ったオリジナルの図 */
 export interface DecisionDiagram {
@@ -188,6 +206,7 @@ export const sourceById = new Map(data.sources.map((s) => [s.id, s]));
 export const decisionsCheckedAt = data.checked_at;
 export const criteriaCheckedAt = criteriaFile.checked_at;
 export const sideWaveCheckedAt = sideWaveFile.checked_at;
+export const waveTechniqueCheckedAt = waveTechniqueFile.checked_at;
 
 export const allCriteria: DecisionCriterion[] = extra.criteria;
 export const comparisons: DecisionComparison[] = extra.comparisons;
