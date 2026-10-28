@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
+import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import { index } from "../data/dataset";
 import { NONE_PARTIAL, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
@@ -12,13 +13,13 @@ import { ResourceDetail } from "./ResourceDetail";
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const list = (topic = "") => renderToStaticMarkup(<DecisionIndex topic={topic} />);
 const detail = (id: string) => renderToStaticMarkup(<DecisionDetail id={id} />);
-// Phase 5B（29件）と Phase 5E の判断材料を合わせたもの
-const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCriteria as unknown as { units: DecisionUnit[] }).units];
+// Phase 5B（29件）と Phase 5E・6B の判断材料を合わせたもの
+const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCriteria as unknown as { units: DecisionUnit[] }).units, ...(rawSideWave as unknown as { units: DecisionUnit[] }).units];
 const OVERCLAIM = /(?<!未)検証済み|(?<!未)確認済みの仕様|仕様として確認済み|ゲーム内で検証済み|おすすめ|推奨します|すべきです/;
 
 describe("表示している主張は実験データと一致する", () => {
-  it("試験表示は実験データの19件（Phase 5D の9件＋Phase 5E の5件＋Phase 6A の5件）で、内容を書き換えていない", () => {
-    expect(SHOWCASE_IDS).toHaveLength(19);
+  it("試験表示は実験データの23件（Phase 5D の9件＋Phase 5E の5件＋Phase 6A の5件＋Phase 6B の4件）で、内容を書き換えていない", () => {
+    expect(SHOWCASE_IDS).toHaveLength(23);
     expect(new Set(SHOWCASE_IDS).size).toBe(SHOWCASE_IDS.length);
     for (const u of showcaseDecisions) expect(u).toBe(units.find((x) => x.id === u.id));
   });
@@ -153,11 +154,14 @@ describe("資料詳細との接続・URL", () => {
   });
 });
 
-describe("Phase 5E：具体的な目安と資料間の比較", () => {
-  const crit = rawCriteria as unknown as {
+describe("Phase 5E・6B：具体的な目安と資料間の比較", () => {
+  type CritFile = {
     criteria: { id: string; unit_id: string | null; value_ja: string; target_ja: string; observe_ja: string; context_ja: string; locator: string }[];
     comparisons: { id: string; items: string[]; verdict: string; undetermined_ja: string[] }[];
   };
+  // Phase 5E と 6B の目安・比較を合わせて検査する
+  const files = [rawCriteria, rawSideWave] as unknown as CritFile[];
+  const crit: CritFile = { criteria: files.flatMap((f) => f.criteria), comparisons: files.flatMap((f) => f.comparisons) };
   const compareList = (id: string) => renderToStaticMarkup(<DecisionIndex topic="" compare={id} />);
 
   it("目安は、数値と対象・見る方法・前提・確認箇所を同じ項目の中で表示する", () => {
@@ -194,7 +198,7 @@ describe("Phase 5E：具体的な目安と資料間の比較", () => {
     expect(text(lv2)).toContain("最初のウェーブ6体＋次のウェーブの前衛3体");
     // どの比較・一覧・詳細でも、リンク先は試験表示の対象だけ
     const shown = new Set<string>(SHOWCASE_IDS);
-    const pages = [list(), ...["cmp-freeze-minion-count", "cmp-recall-criteria", "cmp-lv2-minion-count"].map(compareList), ...SHOWCASE_IDS.map(detail)];
+    const pages = [list(), ...crit.comparisons.map((m) => compareList(m.id)), ...SHOWCASE_IDS.map(detail)];
     for (const markup of pages) {
       for (const m of markup.matchAll(/href="#\/decision\/([^"]+)"/g)) expect(shown.has(m[1])).toBe(true);
     }
@@ -246,5 +250,39 @@ describe("Phase 5E 最終確認：原典の文脈の訂正と表現", () => {
     const freeze = text(compareList("cmp-freeze-minion-count"));
     expect(freeze).toContain("公開日：2019-07-14");
     expect(freeze).toContain("公開日：2026-02-25");
+  });
+});
+
+describe("Phase 6B：サイドウェーブの方向とミニマップ", () => {
+  const compareList = (id: string) => renderToStaticMarkup(<DecisionIndex topic="" compare={id} />);
+
+  it("ミニマップの判断材料は、原典の「同じ位置」と、AI が整理した例外・未確認の資料を区別して出す", () => {
+    const html = text(detail("du-minimap-next-enemy-wave"));
+    expect(html).toContain("原典は「自分たちのウェーブと同じ位置」とする");
+    expect(html).toContain("AI の整理（原典には書かれていない）");
+    expect(html).toContain("HTTP 403 になり、確認していない");
+    // 「必ず同じ位置にある」とは表示しない
+    expect(html).not.toMatch(/必ず(同じ位置|存在)/);
+  });
+
+  it("位置で要る数が変わる目安は、何の差か・場面（スロープッシュ）とともに出る", () => {
+    const html = text(detail("du-slow-push-advantage-by-position"));
+    expect(html).toContain("自陣側でぶつかる：多くて2〜3体／敵陣側でぶつかる：4〜5体");
+    expect(html).toContain("自分のウェーブが相手のウェーブより多いミニオンの数");
+    expect(html).toContain("フリーズの数ではない");
+    // 原典に理由がない推論は AI の解釈として出す
+    expect(detail("du-slow-push-advantage-by-position")).toMatch(/AI の解釈<\/span>\s*敵陣側では敵の援軍が先に着く/);
+  });
+
+  it("比較の判定：放置したウェーブは「判断できない」、位置と数の有利は「直接は比較できない」", () => {
+    expect(text(compareList("cmp-unattended-even-wave"))).toContain("矛盾かどうか判断できない");
+    expect(text(compareList("cmp-advantage-by-position"))).toContain("条件や数え方が違い、直接は比較できない（同じ条件で矛盾しないかは未確認）");
+  });
+
+  it("試験表示しない du-advantage-type-melee-vs-caster は、比較に目安だけを出し、リンクも詳細も出さない", () => {
+    const markup = compareList("cmp-advantage-by-position");
+    expect(text(markup)).toContain("その種類（キャスターか近接）で3体の有利");
+    expect(markup).not.toContain('href="#/decision/du-advantage-type-melee-vs-caster"');
+    expect(text(detail("du-advantage-type-melee-vs-caster"))).toContain("試験表示の対象にありません");
   });
 });

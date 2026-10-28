@@ -1,0 +1,435 @@
+{
+  "about": "Phase 6B の実験データ（サイドウェーブの方向予測とミニマップ）。形は Phase 5E の decision-criteria.json と同じで、(1) 新しい判断材料、(2) 具体的な目安（criteria）、(3) 資料間の比較（comparisons）、(4) 既存の出典で今回追加で読んだ範囲（coverage_updates）を記録する。Phase 5B・5E のファイルは変更しない。数値は原典の言い方のまま、何の差か・対象・観測方法・前提とともに残し、一般則に変換しない。basis は source（原典が明示）か ai（AI の整理）。原典にない例外・理由は「AI の整理」「AI の解釈」と明記する。閲覧画面（src/data/decisions.ts）が読み込む。詳細は docs/experiments/side-wave-decisions.md。",
+  "checked_at": "2026-10-28",
+  "coverage_updates": [
+    {
+      "source": "src-digwave",
+      "read_added": "Phase 6B で「How to Set Up a Slow Push」の節を追加で確認",
+      "unread_ja": "冒頭・結論の節"
+    },
+    {
+      "source": "src-loltheory",
+      "read_added": "Phase 6B で「How to Slow Push」「Bot Lane」の節を追加で確認",
+      "unread_ja": "冒頭・速く押す方法・トップの節"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-xcewl",
+      "resource_id": null,
+      "candidate_key": "https://lol-guide.com/articles/xcewl",
+      "url": "https://www.lol-guide.com/articles/xcewl",
+      "author": "がりある（lol-guide.com）",
+      "published": "2026-02-25",
+      "read": "Phase 6B で「1.ウェーブコントロールとは」「4. ウェーブが動く根本的な法則」の①②③の冒頭",
+      "coverage": { "status": "partial", "unread_ja": "2・3節の後半と、4節③以降の節" }
+    },
+    {
+      "id": "src-yzwsh",
+      "resource_id": null,
+      "candidate_key": "https://lol-guide.com/articles/yzwsh",
+      "url": "https://www.lol-guide.com/articles/yzwsh",
+      "author": "がりある（lol-guide.com）",
+      "published": "2026-02-25",
+      "read": "Phase 6B で「1. プルウェーブ」「2. フリーズウェーブ」「3. スロープッシュ」の冒頭と「バウンスウェーブ」「まとめ」",
+      "coverage": { "status": "partial", "unread_ja": "スロープッシュの後半と、ファストプッシュの節" }
+    },
+    {
+      "id": "src-dig2020",
+      "resource_id": null,
+      "candidate_key": null,
+      "url": "https://dignitas.gg/articles/blogs/Unknown/14139/mastering-wave-control-in-league-of-legends",
+      "author": "bagelsen314（Dignitas）",
+      "published": "2020-01-16",
+      "read": "Phase 6B で The Basics・Why・How の各節（一部の段落は要点だけ）",
+      "coverage": { "status": "partial", "unread_ja": "Why と How の節の一部の段落（後半の文）" }
+    },
+    {
+      "id": "src-wiki-farm",
+      "resource_id": null,
+      "candidate_key": null,
+      "url": "https://wiki.leagueoflegends.com/en-us/Farm",
+      "author": "League of Legends Wiki（コミュニティ編集、CC BY-SA 3.0）",
+      "published": "最終更新 2026-02-01",
+      "read": "Phase 6B で「Wave Management」の節（Fast Push・Slow Push・Freezing を含む）",
+      "coverage": { "status": "partial", "unread_ja": "Fundamentals・The Farming Loop・CS Chart の節" }
+    },
+    {
+      "id": "src-wiki-minion",
+      "resource_id": "res-wiki-minion",
+      "candidate_key": null,
+      "url": "https://wiki.leagueoflegends.com/en-us/Minion_(League_of_Legends)",
+      "author": "League of Legends Wiki（コミュニティ編集）",
+      "published": "未確認（版の記載なし）",
+      "read": "Phase 6B で Minion waves・Behavior・Sidelane Speed・Wave Strategy の該当文",
+      "coverage": { "status": "partial", "unread_ja": "ページの後半（全体の約半分）" }
+    }
+  ],
+  "units": [
+    {
+      "id": "du-wave-drift-by-meeting-point",
+      "statement_ja": "両軍のミニオンの数と体力がほぼ同じなら、ぶつかっている位置を見る。自陣タワー寄りでぶつかっていれば、放っておいても相手側へ押し始め、敵タワー寄りなら自分側へ押し返される。",
+      "kind": "decision",
+      "problem_ja": "サイドのウェーブを放置したら、どちらへ進むか",
+      "observations_ja": [
+        "両軍のミニオンの数と残り体力がほぼ同じか",
+        "ぶつかっている位置（中央／自陣タワー寄り／敵タワー寄り）"
+      ],
+      "goal_ja": "ウェーブを触るか放置するかを決める前に、次の動きを予測する",
+      "action_ja": "「今は放置しても相手側へ押していく」かどうかを判断する（原典）",
+      "reasons": [
+        { "basis": "source", "text": "自タワーに近い側は、相手のミニオンが全て着く前に攻撃を始め、次のウェーブが戦場に着くまでの距離も短い（lol-guide）" },
+        { "basis": "source", "text": "ウェーブがぶつかる線が一方のネクサスに近いほど、その側の味方ミニオンが早く着いて補強する（Wiki）" },
+        { "basis": "source", "text": "触らなければ、どのウェーブの状態もいずれ中央（neutral）に戻る。理由は、タワーがミニオンより硬く、ダメージも大きいため（Wiki）" }
+      ],
+      "alternatives_ja": [
+        "ミニオンの数の有利を作って押し続ける。数が多い方が基本的に押す（lol-guide）"
+      ],
+      "costs_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "conditions_ja": [
+        "両軍のミニオンの数・体力が同じ（lol-guide の前提）",
+        "プレイヤーがウェーブに触らない"
+      ],
+      "exceptions_ja": [
+        "ミニオンの数に差があれば、基本的に数が多い方が押す（lol-guide）",
+        "ミニオンの強化（チームの平均レベル・獲得したタワーの数）やスーパーミニオンで、両軍のウェーブが同じ強さでなくなる（lol-guide・Wiki）",
+        "Dignitas（2020）は、同じ強さのウェーブはランダムな結果を経て、いずれどちらかへ押すとする。位置には触れていない（資料間の比較を参照）"
+      ],
+      "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+      "patch_dependency_ja": "ミニオンの出現間隔・強化の仕様に依存する。Wiki は版の記載がない。パッチ26.21 のパッチノートには、レーンのミニオンの変更の記載はない（それ以前のパッチは個別に確認していない）",
+      "unknowns_ja": [
+        "「ほぼ同じ」をどこまでの差とみなすかは、原典に数値がない",
+        "どのくらいの時間で押し返されるかは、原典に書かれていない",
+        "ゲーム内では検証していない"
+      ],
+      "topic_ids": ["wave-management", "freeze", "slow-push"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-xcewl", "locator": "4. ウェーブが動く根本的な法則／① ウェーブの仕組み・② 数的優位の場合", "evidence_type": "empirical_claim", "checked_level": "L3" },
+        { "source": "src-wiki-farm", "locator": "Wave Management（wave line・wave state・neutral の説明と、その後の段落）", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-half-push-gets-frozen", "type": "complements", "note_ja": "AI の整理：中途半端に押すと敵タワー手前で止まる理由（敵の援軍が先に着く）が、この原則にあたる" },
+        { "to": "du-slow-push-advantage-by-position", "type": "complements", "note_ja": "AI の整理：位置で押し返す力が違うので、押し続けるのに要る数の有利も位置で違う（別の著者）" }
+      ]
+    },
+    {
+      "id": "du-slow-push-advantage-by-position",
+      "statement_ja": "スロープッシュに要るミニオンの数の有利は、ぶつかる位置で変わる。自陣側でぶつかっていれば少なくてよく（多くて2〜3体）、敵陣側なら多く要る（4〜5体）（2019年の記事）。",
+      "kind": "decision",
+      "problem_ja": "スロープッシュを作るのに、どれだけ数の有利を作ればよいか",
+      "observations_ja": [
+        "ぶつかっている位置（自陣側か敵陣側か）",
+        "自分のウェーブが相手のウェーブより何体多いか"
+      ],
+      "goal_ja": "大きなウェーブを作る",
+      "action_ja": "敵のキャスターミニオン（攻城ミニオンがいればそれも）を倒して数の有利を保ち、自分のウェーブにゆっくり相手を倒させる（原典）",
+      "reasons": [
+        { "basis": "source", "text": "自分のウェーブにゆっくり相手を倒させると、次のウェーブが合流して大きなウェーブになる" },
+        { "basis": "ai", "text": "敵陣側では敵の援軍が先に着くので、より大きな有利が要ると考えられる（AI の解釈。Dignitas はこの理由を書いていない）" }
+      ],
+      "alternatives_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "costs_ja": [
+        "序盤に行うと、レーンで問題が起きて多くのリソースを失うことがある（同じ記事の When to Slow Push の節）"
+      ],
+      "conditions_ja": [
+        "相手がウェーブを処理しない（原典：相手が放置すると、ウェーブはとても大きくなる）"
+      ],
+      "exceptions_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+      "patch_dependency_ja": "2019年の記事。ミニオンの性能・出現の仕様は当時の記述で、現行パッチでは確認していない",
+      "unknowns_ja": [
+        "「2〜3体」「4〜5体」は、自分のウェーブが相手より何体多いかの差と読める（AI の解釈）。近接・キャスターを区別するかは書かれていない",
+        "中央でぶつかる場合の数は書かれていない",
+        "フリーズの数ではない（フリーズで残す数は、別の資料間の比較を参照）",
+        "ゲーム内・現行パッチでは確認していない"
+      ],
+      "topic_ids": ["slow-push", "wave-management"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-digwave", "locator": "How to Set Up a Slow Push", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-early-slow-push-avoid", "type": "complements", "note_ja": "AI の整理：同じ記事の「いつ使うか」（序盤は避ける）に対し、こちらは「どう作るか」" },
+        { "to": "du-advantage-type-melee-vs-caster", "type": "complements", "note_ja": "AI の整理：別の著者（Dignitas、2020年）は、どの種類で有利を作るかと、続けるのに要る数（3体）を書く" }
+      ]
+    },
+    {
+      "id": "du-advantage-type-melee-vs-caster",
+      "statement_ja": "数の有利は、どの種類のミニオンが多いかで押し方が変わる。キャスターの有利はゆっくり大きくなり、近接の有利は非常に速く押す。手入れなしで続けるには、その種類で3体の有利が要る（2020年の記事）。",
+      "kind": "decision",
+      "problem_ja": "スロープッシュと速いプッシュを、どう作り分けるか",
+      "observations_ja": [
+        "自分のウェーブで多く残っているのが、近接かキャスターか",
+        "その種類で相手より何体多いか"
+      ],
+      "goal_ja": "意図した速さでウェーブを押す",
+      "action_ja": "スロープッシュなら、わずかな有利を作ってラストヒットだけを取り、相手にウェーブを削らせない（原典）",
+      "reasons": [
+        { "basis": "source", "text": "キャスターの有利はウェーブを着実に大きくし、近接の有利は非常に速く押す（Dignitas）" },
+        { "basis": "source", "text": "敵のキャスターを先に倒して近接を長く残すと、わずかな数の有利ができ、2〜3ウェーブかけて大きなウェーブになる（LoL Theory）" }
+      ],
+      "alternatives_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "costs_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "conditions_ja": [
+        "相手にウェーブを削らせない（原典：前に出てきたら罰する）"
+      ],
+      "exceptions_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+      "patch_dependency_ja": "2020年の記事。ミニオンの性能は当時の記述で、現行パッチでは確認していない",
+      "unknowns_ja": [
+        "「3体の有利」は、その種類で自軍が相手より多い数と読める（AI の解釈）",
+        "lol-guide（xcewl）は、メイジ（キャスター）や大砲が相手より多いほど押す速度が速いとする。「キャスターの有利はゆっくり」との関係は、何と比べた速さかが違い、原典からは判断できない（AI の整理）",
+        "ゲーム内・現行パッチでは確認していない"
+      ],
+      "topic_ids": ["slow-push", "fast-push", "wave-management"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-dig2020", "locator": "How（スロープッシュとフリーズの作り方の段落）", "evidence_type": "empirical_claim", "checked_level": "L3" },
+        { "source": "src-loltheory", "locator": "How to Slow Push", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": []
+    },
+    {
+      "id": "du-minimap-next-enemy-wave",
+      "statement_ja": "相手をリコール・キルでレーンから外し、敵タワー下まで押し込むときは、ミニマップで相手の次のウェーブの位置を確かめておく（原典は「自分たちのウェーブと同じ位置」とする）。押し込んだウェーブは跳ね返るので、そこからガンクにつなげる。",
+      "kind": "decision",
+      "problem_ja": "押し込んだ後、次の敵ウェーブがいつどこに来るかをどう知るか",
+      "observations_ja": [
+        "ミニマップ上の、自分たちの次のウェーブの位置",
+        "相手がレーンにいないか（リコール・デス）",
+        "相手のサモナースペルがあるか"
+      ],
+      "goal_ja": "跳ね返ったウェーブ（相手のスロープッシュ）で、ガンクしやすい状況を作る",
+      "action_ja": "スキルと通常攻撃でウェーブを相手のタワー下に入れ、跳ね返ったウェーブでガンクする（原典）",
+      "reasons": [
+        { "basis": "source", "text": "相手のタワー下にウェーブを入れると、跳ね返って相手のスロープッシュの形になり、ガンクしやすくなる" },
+        { "basis": "source", "text": "相手のサモナースペルがないときに行うと、ガンクで有利を広げられる" }
+      ],
+      "alternatives_ja": [
+        "大きな有利があれば、ソロキルを狙うか、フリーズにする（原典）"
+      ],
+      "costs_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "conditions_ja": [
+        "相手をリコールさせたか、キルしてレーンから外したとき（原典）"
+      ],
+      "exceptions_ja": [
+        "AI の整理（原典には書かれていない）：「同じ位置」になるのは、両軍の新しいウェーブが同じ時刻に出て、同じ速さで進む場合。Wiki の出現間隔（30秒ごと）とサイドレーンの移動速度の増加は両軍に共通だが、すでにぶつかっているウェーブ、タワーで止まっているウェーブ、スーパーミニオンがいるウェーブには当てはまらない可能性がある"
+      ],
+      "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+      "patch_dependency_ja": "出現間隔（30秒ごと、14:00 から25秒、30:00 から20秒）とサイドレーンの移動速度の増加（最初のウェーブの後から14:00まで）は Wiki の記述で、版の記載はない。パッチ26.21 のパッチノートには変更の記載はない",
+      "unknowns_ja": [
+        "原典は「同じ位置」と書くだけで、例外を書いていない",
+        "Mobalytics のガイドに同じ趣旨（両軍のウェーブは鏡のように対応する）があると検索結果の要約に出たが、本文は自動取得で HTTP 403 になり、確認していない",
+        "ゲーム内では検証していない"
+      ],
+      "topic_ids": ["wave-management", "fast-push"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-dauwk", "locator": "4.ハードプッシュからのバウンスウェーブ（具体的な手順）", "evidence_type": "empirical_claim", "checked_level": "L3" },
+        { "source": "src-wiki-minion", "locator": "Minion waves（出現間隔）／Sidelane Speed（サイドレーンの移動速度の増加）", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-bounce-after-crash", "type": "complements", "note_ja": "AI の整理：跳ね返りがいつも起きるとは限らない（Dignitas、2020年）" }
+      ]
+    },
+    {
+      "id": "du-bounce-after-crash",
+      "statement_ja": "ウェーブを敵タワーに押し込むと、タワーが自軍ミニオンを倒している間に敵の次のウェーブが先に着き、次のウェーブは自分側へ押し返されやすい（バウンス）。リコールやロームの前に押し込むのはこのため。ただし、押し込んだ後に必ず跳ね返るとは限らない。",
+      "kind": "decision",
+      "problem_ja": "押し込んだ後、ウェーブはどう戻ってくるか。それをリコールやロームにどう使うか",
+      "observations_ja": [
+        "ウェーブが敵タワーに入ったか",
+        "ウェーブが今どちらへ進んでいるか（ロームの前に確かめる）"
+      ],
+      "goal_ja": "レーンを離れている間に、ウェーブで損をしない",
+      "action_ja": "速く押して敵タワーにウェーブを入れ、相手がタワー下で処理している間にリコール・ロームする（原典）",
+      "reasons": [
+        { "basis": "source", "text": "タワーが自軍ミニオンを攻撃している間に敵の次のウェーブが着くと、ぶつかる位置が敵側に寄り、相手のウェーブが先に攻撃を始めるので、相手のスロープッシュの形になる（lol-guide）" },
+        { "basis": "source", "text": "戻ってくる頃には、跳ね返った敵のウェーブが自陣側に来ている。相手タワーまで押すことは、数分後に自分のタワー前でウェーブが止まるための準備になる（lol-guide）" },
+        { "basis": "source", "text": "サポートのロームは、ウェーブを敵タワーに押し込んでから離れるのが最もきれい。ウェーブが自分側へ跳ね返るので、ADC は自陣タワーの近くで安全にファームできる（LoL Theory）" }
+      ],
+      "alternatives_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "costs_ja": [
+        "確認範囲に記載なし（未読の範囲あり）"
+      ],
+      "conditions_ja": [
+        "ウェーブが敵タワーまで届いている",
+        "サポートがロームする前に、ウェーブが敵側へ流れていないか確かめる。流れているなら、先にそれを崩してから離れる（LoL Theory。ADC がフリーズされる危険がある）"
+      ],
+      "exceptions_ja": [
+        "押し込んだ後に、いつも跳ね返るとは限らない（Dignitas、2020年）",
+        "新しいウェーブが来るよりかなり前に押し込み終わると、次のウェーブは影響を受けずにぶつかる（リセット。Dignitas、2020年）"
+      ],
+      "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+      "patch_dependency_ja": "タワーとミニオンの性能に依存する。現行パッチでは確認していない",
+      "unknowns_ja": [
+        "どのくらいの大きさのウェーブを押し込めば跳ね返るかは、原典に数値がない",
+        "跳ね返らない条件は、Dignitas（2020年）が「必ずではない」と書くだけで、具体的には書かれていない",
+        "ゲーム内では検証していない"
+      ],
+      "topic_ids": ["fast-push", "recall", "roaming", "wave-management"],
+      "proposed_status": "empirical",
+      "evidence": [
+        { "source": "src-yzwsh", "locator": "バウンスウェーブ（仕組み・活用方法）", "evidence_type": "empirical_claim", "checked_level": "L3" },
+        { "source": "src-dig2020", "locator": "The Basics（Resets・Crashes・Bounces の段落）", "evidence_type": "empirical_claim", "checked_level": "L3" },
+        { "source": "src-loltheory", "locator": "Bot Lane（Support roam windows）", "evidence_type": "empirical_claim", "checked_level": "L3" }
+      ],
+      "relations": [
+        { "to": "du-fast-push-on-enemy-recall", "type": "complements", "note_ja": "AI の整理：対面が帰ったときに押すかの判断（Dignitas、2019年）に対し、押した後のウェーブの戻り方" },
+        { "to": "du-plates-vs-clean-recall", "type": "complements", "note_ja": "AI の整理：押した後は次の行動（ワード・ローム・リコール）を決めておく、という同じ LoL Theory の記事の別の節" }
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "crit-slowpush-position-digwave",
+      "unit_id": "du-slow-push-advantage-by-position",
+      "about_ja": "スロープッシュに要る数の有利",
+      "value_ja": "自陣側でぶつかる：多くて2〜3体／敵陣側でぶつかる：4〜5体",
+      "target_ja": "自分のウェーブが相手のウェーブより多いミニオンの数（原典は minion advantage と書き、種類を区別していない）",
+      "observe_ja": "ぶつかっている位置と、両軍のミニオンの数",
+      "context_ja": "2019年の記事。スロープッシュを作る場面で、フリーズの数ではない。中央でぶつかる場合は書いていない",
+      "source": "src-digwave",
+      "locator": "How to Set Up a Slow Push",
+      "basis": "source"
+    },
+    {
+      "id": "crit-push-type-dig2020",
+      "unit_id": "du-advantage-type-melee-vs-caster",
+      "about_ja": "手入れなしで続くプッシュに要る数の有利",
+      "value_ja": "その種類（キャスターか近接）で3体の有利",
+      "target_ja": "近接かキャスターか、どちらかの種類で自軍が相手より多い数（差と読むのは AI の解釈）",
+      "observe_ja": "自分のウェーブで多く残っているミニオンの種類と数",
+      "context_ja": "2020年の記事。キャスターの有利ならゆっくり大きくなり、近接の有利なら非常に速く押す。ぶつかる位置は書いていない",
+      "source": "src-dig2020",
+      "locator": "How（スロープッシュの作り方の段落）",
+      "basis": "source"
+    },
+    {
+      "id": "crit-freeze-dig2020",
+      "unit_id": null,
+      "about_ja": "フリーズで相手に残す数の有利",
+      "value_ja": "おおむねキャスター3体（the magic number）",
+      "target_ja": "相手のウェーブがキャスターで持つ有利",
+      "observe_ja": "相手のウェーブのキャスターの数と、ぶつかっている位置",
+      "context_ja": "2020年の記事。相手のウェーブを自陣タワーの近くに保ち、川より自陣側のレーンでぶつかるようにしたうえで、ラストヒットだけで保つ場面",
+      "source": "src-dig2020",
+      "locator": "How（フリーズの作り方の段落）",
+      "basis": "source"
+    },
+    {
+      "id": "crit-freeze-wiki-nexus",
+      "unit_id": null,
+      "about_ja": "フリーズに要る敵ミニオンの多さと位置",
+      "value_ja": "ぶつかる線がネクサスに近いほど、フリーズに要る敵ミニオンは多くなる。ラストヒットの分を考えると、有利はわずかにマイナス",
+      "target_ja": "相手のウェーブが自分のウェーブより多い数（数値はない）",
+      "observe_ja": "ぶつかっている線の位置",
+      "context_ja": "Wiki の一般的な説明（版の記載なし）。具体的な体数は書いていない",
+      "source": "src-wiki-farm",
+      "locator": "Wave Management（Freezing）",
+      "basis": "source"
+    },
+    {
+      "id": "crit-unattended-xcewl",
+      "unit_id": "du-wave-drift-by-meeting-point",
+      "about_ja": "数・体力が同じウェーブを放置したときの動き",
+      "value_ja": "中央以外で均衡していれば、反対側へ押し返される（自陣寄りなら相手側へ、敵陣寄りなら自分側へ）",
+      "target_ja": "両軍の数・体力が同じウェーブ",
+      "observe_ja": "ぶつかっている位置",
+      "context_ja": "2026年の記事。理由は援軍の到着時間の差。数の差がある場合は、基本的に数が多い方が押す",
+      "source": "src-xcewl",
+      "locator": "4. ウェーブが動く根本的な法則／① ウェーブの仕組み",
+      "basis": "source"
+    },
+    {
+      "id": "crit-unattended-wiki",
+      "unit_id": "du-wave-drift-by-meeting-point",
+      "about_ja": "触らないウェーブの状態の動き",
+      "value_ja": "どのウェーブの状態も、いずれ中央（neutral）に戻る",
+      "target_ja": "プレイヤーが触らないウェーブ",
+      "observe_ja": "ぶつかっている線の位置",
+      "context_ja": "Wiki の一般的な説明（最終更新 2026-02-01）。理由はタワーがミニオンより硬く、ダメージも大きいため。ネクサスに近い側の援軍が早く着くことは、別の段落に書かれている",
+      "source": "src-wiki-farm",
+      "locator": "Wave Management（neutral の説明の後の段落）",
+      "basis": "source"
+    },
+    {
+      "id": "crit-unattended-dig2020",
+      "unit_id": null,
+      "about_ja": "同じ強さのウェーブの動き",
+      "value_ja": "ランダムな結果を経て、いずれどちらかへ押す",
+      "target_ja": "ミニオンの強さが同じウェーブ",
+      "observe_ja": "ミニオンの強さ（数・体力）",
+      "context_ja": "2020年の記事。同じ状態は短い間しか続かないとする。ぶつかる位置には触れていない",
+      "source": "src-dig2020",
+      "locator": "The Basics（even state の段落）",
+      "basis": "source"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "cmp-unattended-even-wave",
+      "title_ja": "数・体力が同じウェーブを放置すると、どう動くか",
+      "goal_ja": "放置したウェーブの次の動きを予測する",
+      "items": ["crit-unattended-xcewl", "crit-unattended-wiki", "crit-unattended-dig2020"],
+      "differences_ja": [
+        "lol-guide（2026年）：中央以外で均衡していれば、反対側へ押し返される",
+        "Wiki（最終更新 2026-02-01）：どの状態もいずれ中央に戻る",
+        "Dignitas（2020年）：ランダムな結果を経て、いずれどちらかへ押す"
+      ],
+      "premise_differences_ja": [
+        "lol-guide と Wiki は、ぶつかる位置を条件にしている。Dignitas は位置に触れず、強さが同じかどうかだけを書く",
+        "lol-guide の理由は援軍の到着時間の差、Wiki の「中央に戻る」の理由はタワーの強さ（到着時間の差は別の段落）",
+        "Dignitas の「同じ状態」は、最初のウェーブがぶつかる場面を主な例にしている"
+      ],
+      "verdict": "undetermined",
+      "verdict_ja": "lol-guide と Wiki は「中央へ戻る向き」で一致する。Dignitas は位置を条件にしていないため、同じ条件で矛盾しているかは判断できない",
+      "undetermined_ja": [
+        "Dignitas の「ランダム」が中央でぶつかる場合だけを指すのかは、原典から分からない",
+        "どれもゲーム内では検証していない。どのくらいの時間で中央へ戻るかは、どの資料にも数値がない"
+      ]
+    },
+    {
+      "id": "cmp-advantage-by-position",
+      "title_ja": "ぶつかる位置と、要るミニオンの数の有利",
+      "goal_ja": "ウェーブを押す・止めるのに、何体の差が要るかを位置とともに知る",
+      "items": ["crit-slowpush-position-digwave", "crit-push-type-dig2020", "crit-freeze-dig2020", "crit-freeze-wiki-nexus"],
+      "related_note": null,
+      "differences_ja": [
+        "Dignitas（2019年、スロープッシュ）：自陣側なら多くて2〜3体、敵陣側なら4〜5体",
+        "Dignitas（2020年、押し続ける）：その種類で3体",
+        "Dignitas（2020年、フリーズ）：相手にキャスター3体、川より自陣側でぶつける",
+        "Wiki（フリーズ）：ネクサスに近いほど多くの敵ミニオンが要る（体数なし）"
+      ],
+      "premise_differences_ja": [
+        "スロープッシュ（自分のウェーブを多くする）とフリーズ（相手のウェーブを多くする）で、数える側が逆",
+        "2019年の記事は種類を区別せず、2020年の記事は種類（キャスターか近接か）を区別する",
+        "2019年の記事と Wiki は位置で数が変わるとし、2020年の記事のスロープッシュの3体は位置に触れていない",
+        "フリーズで残す数そのものの比較は、Phase 5E の「フリーズで残す敵ミニオンの数」にある"
+      ],
+      "verdict": "different_conditions",
+      "verdict_ja": "スロープッシュとフリーズで数える側が違い、種類の区別と位置の扱いも違うため、直接は比較できない。2019年の記事と Wiki は、ぶつかる位置で要る数が変わる点で一致する（AI の整理）",
+      "undetermined_ja": [
+        "2019年と2020年の記事は、どちらも Dignitas のサイトだが著者が違う（Ahrivve、bagelsen314）。独立した裏付けとして強く数えるかは判断していない",
+        "どの数値も、ゲーム内・現行パッチでは確認していない"
+      ]
+    }
+  ]
+}

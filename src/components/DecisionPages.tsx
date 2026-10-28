@@ -2,7 +2,7 @@
 // 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, criterionOf, decisionById, decisionsCheckedAt, decisionsForTopic, isNone,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, criterionOf, decisionById, decisionsCheckedAt, decisionsForTopic, isNone,
   isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
   type DecisionComparison, type DecisionCriterion, type DecisionUnit,
 } from "../data/decisions";
@@ -176,7 +176,7 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
       <h1>判断材料（試験）</h1>
       <DecisionNotice />
       <p className="muted">
-        Phase 5B・5E で抽出した判断材料のうち、試験的に{showcaseDecisions.length}件を表示しています。教材の検索とは別の画面です。似た状況でも条件で結論が変わる材料（有利／不利、押す／押さない、過去のパッチ）を並べてあるので、状況と成立条件を比べてください。
+        Phase 5B・5E・6B で抽出した判断材料のうち、試験的に{showcaseDecisions.length}件を表示しています。教材の検索とは別の画面です。似た状況でも条件で結論が変わる材料（有利／不利、押す／押さない、過去のパッチ）を並べてあるので、状況と成立条件を比べてください。
       </p>
 
       <nav aria-label="Topic で絞り込む">
@@ -232,7 +232,7 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
         </ul>
       )}
       <p className="muted">
-        抽出日 {decisionsCheckedAt}（Phase 5B）・{criteriaCheckedAt}（Phase 5E）。選ばなかった判断材料と理由は、リポジトリの docs/experiments/decision-browse.md と decision-criteria.md に記録しています。
+        抽出日 {decisionsCheckedAt}（Phase 5B）・{criteriaCheckedAt}（Phase 5E）・{sideWaveCheckedAt}（Phase 6B）。選ばなかった判断材料と理由は、リポジトリの docs/experiments/decision-browse.md・decision-criteria.md・decision-showcase-expansion.md・side-wave-decisions.md に記録しています。
       </p>
     </div>
   );

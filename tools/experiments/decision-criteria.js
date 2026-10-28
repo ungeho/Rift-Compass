@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 // Phase 5E：具体的な判断基準（data/experiments/decision-criteria.json）の検査
+// Phase 6B：同じ形の追加ファイル（data/experiments/side-wave-decisions.json）も合わせて検査する
 //
 //   node tools/experiments/decision-criteria.js check
 //
 // 新しい判断材料は Phase 5B の decision-units.json と合わせて、既存の check()（decision-units.js）で検査する。
-// 目安（criteria）と比較（comparisons）は、ここで検査する。Phase 5B のファイルは変更しない。
+// 目安（criteria）と比較（comparisons）は、ここで検査する。Phase 5B・5E のファイルは変更しない。
 "use strict";
 const path = require("path");
 const { load, check } = require("./decision-units");
@@ -12,15 +13,31 @@ const { load, check } = require("./decision-units");
 const ROOT = path.join(__dirname, "..", "..");
 const VERDICTS = ["conflict", "different_conditions", "undetermined"];
 
-/** Phase 5B と 5E の判断材料・出典を合わせる。5E で追加で読んだ範囲は、出典の確認範囲に反映する */
+// Phase 5B の判断材料に追加するファイル（この順に合わせる）
+const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json"];
+
+/** 追加ファイルを1つにまとめる。追加で読んだ範囲は順に積み重ね、未読の範囲は後のファイルの記録を使う */
+function mergeExtras(files) {
+  const merged = { coverage_updates: [], sources: [], units: [], criteria: [], comparisons: [] };
+  for (const f of files) for (const k of Object.keys(merged)) merged[k].push(...f[k]);
+  return merged;
+}
+
+/** 出典に、追加で読んだ範囲を反映する */
+function applyCoverage(sources, updates) {
+  return sources.map((s) => {
+    const us = updates.filter((u) => u.source === s.id);
+    if (!us.length) return s;
+    const last = us[us.length - 1];
+    return { ...s, read: [s.read, ...us.map((u) => u.read_added)].join("／"), coverage: { status: "partial", unread_ja: last.unread_ja } };
+  });
+}
+
+/** Phase 5B と追加ファイル（5E・6B）の判断材料・出典を合わせる */
 function loadMerged() {
   const base = load();
-  const crit = require(path.join(ROOT, "data", "experiments", "decision-criteria.json"));
-  const updates = new Map(crit.coverage_updates.map((u) => [u.source, u]));
-  const sources = [...base.du.sources, ...crit.sources].map((s) => {
-    const u = updates.get(s.id);
-    return u ? { ...s, read: `${s.read}／${u.read_added}`, coverage: { status: "partial", unread_ja: u.unread_ja } } : s;
-  });
+  const crit = mergeExtras(EXTRA_FILES.map((f) => require(path.join(ROOT, "data", "experiments", f))));
+  const sources = applyCoverage([...base.du.sources, ...crit.sources], crit.coverage_updates);
   return { ...base, crit, du: { ...base.du, sources, units: [...base.du.units, ...crit.units] } };
 }
 
@@ -59,11 +76,11 @@ function checkCriteria(ctx = loadMerged()) {
   return errors;
 }
 
-module.exports = { loadMerged, checkCriteria, VERDICTS };
+module.exports = { loadMerged, checkCriteria, mergeExtras, applyCoverage, VERDICTS, EXTRA_FILES };
 
 if (require.main === module) {
   const ctx = loadMerged();
   const errors = [...check(ctx), ...checkCriteria(ctx)];
-  console.log(errors.length ? errors.join("\n") : `OK：判断材料 ${ctx.du.units.length}件（うち Phase 5E ${ctx.crit.units.length}件）、目安 ${ctx.crit.criteria.length}件、比較 ${ctx.crit.comparisons.length}組`);
+  console.log(errors.length ? errors.join("\n") : `OK：判断材料 ${ctx.du.units.length}件（うち Phase 5E・6B ${ctx.crit.units.length}件）、目安 ${ctx.crit.criteria.length}件、比較 ${ctx.crit.comparisons.length}組`);
   process.exit(errors.length ? 1 : 0);
 }

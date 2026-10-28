@@ -48,3 +48,15 @@ test("フリーズの数値は平均や統一をせず、資料ごとの数値�
   assert.ok(values.some((v) => v.includes("2〜3体")) && values.some((v) => v.includes("3〜4体多く")));
   assert.equal(cmp.verdict, "different_conditions"); // 条件の違いを矛盾として扱わない
 });
+
+test("Phase 6B の追加ファイルも合わせて検査し、同じ出典の確認範囲は 5E・6B の順に積み重ねる", () => {
+  const ctx = loadMerged();
+  const side = require("../../data/experiments/side-wave-decisions.json");
+  for (const u of side.units) assert.ok(ctx.du.units.some((x) => x.id === u.id), u.id);
+  for (const c of side.criteria) assert.ok(ctx.crit.criteria.some((x) => x.id === c.id), c.id);
+  // Phase 5E のファイルは9件のまま（6B は別のファイルに追加している）
+  assert.equal(require("../../data/experiments/decision-criteria.json").units.length, 9);
+  const lt = ctx.du.sources.find((s) => s.id === "src-loltheory");
+  assert.match(lt.read, /Phase 5E で.*／.*Phase 6B で/);
+  assert.equal(lt.coverage.unread_ja, side.coverage_updates.find((u) => u.source === "src-loltheory").unread_ja);
+});

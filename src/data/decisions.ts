@@ -1,10 +1,11 @@
 // Phase 5D：判断材料（試験）の閲覧用データ。
-// data/experiments/decision-units.json（Phase 5B）と decision-criteria.json（Phase 5E：追加の判断材料・具体的な目安・資料間の比較）を
-// そのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
+// data/experiments/decision-units.json（Phase 5B）と、同じ形の追加ファイル decision-criteria.json（Phase 5E）・
+// side-wave-decisions.json（Phase 6B）（追加の判断材料・具体的な目安・資料間の比較）をそのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
 // 実験データは変更しない。検索・推奨には使わず、Topic による明示的な絞り込みと閲覧だけに使う。
 // 選ばなかった判断材料と理由は docs/experiments/decision-browse.md に記録している。
 import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
+import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import { index } from "./dataset";
 
 export interface DecisionReason {
@@ -84,7 +85,7 @@ export interface DecisionComparison {
   title_ja: string;
   goal_ja: string;
   items: string[];
-  related_note?: string;
+  related_note?: string | null;
   differences_ja: string[];
   premise_differences_ja: string[];
   verdict: "conflict" | "different_conditions" | "undetermined";
@@ -99,20 +100,30 @@ interface CriteriaData extends DecisionData {
 }
 
 const base = raw as unknown as DecisionData;
-const extra = rawCriteria as unknown as CriteriaData;
-// Phase 5E で追加で読んだ範囲を、Phase 5B の出典の確認範囲に反映する（Phase 5B のファイルは変更しない）
-const updates = new Map(extra.coverage_updates.map((u) => [u.source, u]));
+const criteriaFile = rawCriteria as unknown as CriteriaData;
+const sideWaveFile = rawSideWave as unknown as CriteriaData;
+// 追加ファイルを順に合わせる（tools/experiments/decision-criteria.js の loadMerged と同じ規則）
+const extraFiles = [criteriaFile, sideWaveFile];
+const extra = {
+  coverage_updates: extraFiles.flatMap((f) => f.coverage_updates),
+  sources: extraFiles.flatMap((f) => f.sources),
+  units: extraFiles.flatMap((f) => f.units),
+  criteria: extraFiles.flatMap((f) => f.criteria),
+  comparisons: extraFiles.flatMap((f) => f.comparisons),
+};
+// 追加で読んだ範囲を、出典の確認範囲に積み重ねる。未読の範囲は後のファイルの記録を使う（Phase 5B・5E のファイルは変更しない）
 const data: DecisionData = {
   checked_at: base.checked_at,
   sources: [...base.sources, ...extra.sources].map((s) => {
-    const u = updates.get(s.id);
-    return u ? { ...s, read: `${s.read}／${u.read_added}`, coverage: { status: "partial", unread_ja: u.unread_ja } } : s;
+    const us = extra.coverage_updates.filter((u) => u.source === s.id);
+    if (!us.length) return s;
+    return { ...s, read: [s.read, ...us.map((u) => u.read_added)].join("／"), coverage: { status: "partial", unread_ja: us[us.length - 1].unread_ja } };
   }),
   units: [...base.units, ...extra.units],
 };
 
 /**
- * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
+ * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
  * 確認箇所が明確なもの。条件の違い（有利／不利、押す／押さない、現行／過去のパッチ）を並べて比べられるよう、
  * 対になる材料を含め、著者が偏らないようにした。
  */
@@ -139,12 +150,19 @@ export const SHOWCASE_IDS = [
   "du-fast-push-on-enemy-recall",
   "du-half-push-gets-frozen",
   "du-lv2-duo-minion-count",
+  // Phase 6B：サイドウェーブの方向とミニマップ。観測→解釈→予測→行動→例外が原典で読み取れるもの
+  // （選定理由と表示しなかった材料は docs/experiments/side-wave-decisions.md）
+  "du-wave-drift-by-meeting-point",
+  "du-slow-push-advantage-by-position",
+  "du-minimap-next-enemy-wave",
+  "du-bounce-after-crash",
 ] as const;
 
 const unitById = new Map(data.units.map((u) => [u.id, u]));
 export const sourceById = new Map(data.sources.map((s) => [s.id, s]));
 export const decisionsCheckedAt = data.checked_at;
-export const criteriaCheckedAt = extra.checked_at;
+export const criteriaCheckedAt = criteriaFile.checked_at;
+export const sideWaveCheckedAt = sideWaveFile.checked_at;
 
 export const allCriteria: DecisionCriterion[] = extra.criteria;
 export const comparisons: DecisionComparison[] = extra.comparisons;
