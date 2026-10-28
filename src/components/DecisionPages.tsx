@@ -295,7 +295,7 @@ function SourceList({ u }: { u: DecisionUnit }) {
 }
 
 /** 出典1件（確認箇所・動画の該当時間へのリンク・確認の範囲）。判断材料の出典と、具体例の出典で共通 */
-function SourceItem({ e }: { e: DecisionEvidence }) {
+function SourceItem({ e, timeLinkShownAbove = false }: { e: DecisionEvidence; timeLinkShownAbove?: boolean }) {
   const s = sourceById.get(e.source);
   if (!s) return <li>出典の記録が見つかりません（{e.source}）</li>;
   const r = s.resource_id ? index.resourceById.get(s.resource_id) : undefined;
@@ -324,7 +324,7 @@ function SourceItem({ e }: { e: DecisionEvidence }) {
         <dt>確認箇所</dt>
         <dd>
           {loc.text}
-          {at && loc.startSec !== undefined && (
+          {at && loc.startSec !== undefined && !timeLinkShownAbove && (
             <>
               {" "}
               <ExternalLink href={at}>{formatSeconds(loc.startSec)}から</ExternalLink>
@@ -357,12 +357,22 @@ function SourceItem({ e }: { e: DecisionEvidence }) {
 /** 具体例1件。原典の主張・仕様の記述・AI の整理・未確認事項を分け、具体例の出典は判断材料の出典とは別に出す */
 function ExampleView({ x }: { x: DecisionExample }) {
   const spec = x.spec_source ? sourceById.get(x.spec_source) : undefined;
+  // 原典の該当時間へのリンクは、原典の主張のすぐ横に出す（出典カードでは重ねて出さない）
+  const src = sourceById.get(x.evidence.source);
+  const loc = locatorOf(x.evidence);
+  const at = src && loc.startSec !== undefined ? youtubeAt(src.url, loc.startSec) : null;
   return (
     <article className="decision-example">
       <h3>{x.title_ja}</h3>
       <ul className="reason-list">
         <li className="reason reason-source">
           <span className="badge">原典の主張</span> {x.source_ja}
+          {at && loc.startSec !== undefined && (
+            <>
+              {" "}
+              <ExternalLink href={at}>動画の{formatSeconds(loc.startSec)}から見る</ExternalLink>
+            </>
+          )}
         </li>
         {x.spec_ja && (
           <li className="reason reason-source">
@@ -381,7 +391,7 @@ function ExampleView({ x }: { x: DecisionExample }) {
       <ListSection title="未確認事項" items={x.unverified_ja} />
       <p className="muted">{x.scope_ja}</p>
       <ul className="decision-sources">
-        <SourceItem e={x.evidence} />
+        <SourceItem e={x.evidence} timeLinkShownAbove={at !== null} />
       </ul>
     </article>
   );

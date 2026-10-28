@@ -408,6 +408,27 @@ describe("既存の判断材料の具体例（Evi 選手のムンド対ジャッ
     for (const id of SHOWCASE_IDS.filter((x) => x !== ID)) expect(text(detail(id))).not.toContain("具体例（原典の実戦例）");
   });
 
+  it("動画の5:30へのリンクは「原典の主張」のすぐ横に1つだけ出し、具体例の出典カードでは重ねて出さない", () => {
+    const markup = detail(ID);
+    const example = markup.slice(markup.indexOf('id="examples-heading"'), markup.indexOf('id="patch-heading"'));
+    const claim = example.match(/<li class="reason reason-source"><span class="badge">原典の主張<\/span>.*?<\/li>/s)![0];
+    expect(claim).toContain('href="https://www.youtube.com/watch?v=1ZYEnr2BTe4&amp;t=330s"');
+    expect(text(claim)).toContain("動画の5:30から見る");
+    expect(example.match(/t=330s/g)).toHaveLength(1);
+    const card = example.slice(example.indexOf('class="decision-source"'));
+    expect(card).not.toContain("t=330s");
+    expect(text(card)).toContain("5:30〜5:56（ナレーションとテロップ）");
+    expect(text(card)).not.toContain("該当時間へのリンクは");
+    // 確認箇所・確認の範囲・確認レベル・公開日は出典カードに残す
+    expect(text(card)).toContain("確認の範囲");
+    expect(text(card)).toContain("確認レベル");
+    expect(text(card)).toContain("2026-09-03（太平洋時間）");
+  });
+
+  it("ほかの判断材料の出典カードでは、時刻リンクの場所を変えない", () => {
+    expect(detail("du-dopa-tf-fizz-pull-wave")).toMatch(/<dt>確認箇所<\/dt><dd>[^]*?t=77s/);
+  });
+
   it("言い切らず、5:57 の大砲ミニオンの話は未確認事項にだけ置き、26.10 で削除された条件と混同しない", () => {
     const x = ex[0];
     expect(JSON.stringify(x)).not.toMatch(/必ず|確定/);
