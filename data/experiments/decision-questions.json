@@ -1,0 +1,138 @@
+{
+ "about": "Phase 5C の質問セットと、人手で決めた期待値。検索（A・B・C）を実行する前に作成し、その後は変更していない。primary は回答に欠かせない判断材料、acceptable は上位にあってよい関連材料、traps は否定・条件の取り違えで上位に来ると誤りになる材料。expected_none が true の質問は「該当なし」が正解。注意：判断材料（Phase 5B）も期待値も同じ AI が作ったので、評価には作成者の偏りが入りうる。",
+ "created_at": "2026-10-28",
+ "questions": [
+  {
+   "id": "Q1",
+   "text": "劣勢のミッドで、ウェーブを押してリコールするべきか、自陣側に置いておくべきか迷う",
+   "category": ["条件で結論が変わる", "代替案の比較", "否定"],
+   "primary": ["du-behind-keep-wave-own-side"],
+   "acceptable": ["du-half-push-gets-frozen", "du-mid-recall-4th-wave", "du-behind-farm-first", "du-freeze-when-behind-dignitas", "du-when-in-doubt-back-off", "du-plates-vs-clean-recall", "du-wave-state-by-next-action"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "劣勢時はスキルでウェーブを処理せず自陣側に保つ（kjumg）が中心。押すなら押し切れる条件（マナ・体力・敵ジャングラー不在。recall）が要り、中途半端に押すと相手にフリーズされる（mmlgg）。押す・押さないの両方の条件を並べる必要がある"
+  },
+  {
+   "id": "Q2",
+   "text": "有利なときにフリーズしないほうがいいのはどんなとき？",
+   "category": ["否定", "条件で結論が変わる"],
+   "primary": ["du-freeze-not-always"],
+   "acceptable": ["du-wave-state-by-next-action", "du-mid-freeze-hard"],
+   "traps": ["du-freeze-when-behind-dignitas"],
+   "expected_none": false,
+   "rationale_ja": "有利時にフリーズをやめる理由（マップ圧力・オブジェクト）は mmlgg。LoL Theory のテンポの考え方が補う。不利時にフリーズする部品（Dignitas）は条件が逆なので、上位なら取り違え"
+  },
+  {
+   "id": "Q3",
+   "text": "対面がロームしたら、追いかけるのとウェーブを押すのはどちらがいい？",
+   "category": ["代替案の比較", "条件で結論が変わる", "複数の判断材料"],
+   "primary": ["du-roam-do-not-chase", "du-roam-counter-action"],
+   "acceptable": ["du-mid-freeze-hard", "du-dopa-tf-save-ult", "du-roam-signs", "du-mid-ward-center"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "原則は追わずに押す（wftjm）。追ってよい条件（視界・味方の優勢）、LoL Theory の「踏み出したのを見てから追う」、Dopa の TF の例外（R がある）を条件つきで並べる必要がある"
+  },
+  {
+   "id": "Q4",
+   "text": "不利なマッチアップでは、防御ブーツと攻撃アイテムのどちらを先に買うべき？",
+   "category": ["代替案の比較", "条件で結論が変わる"],
+   "primary": ["du-behind-safer-build"],
+   "acceptable": ["du-behind-measure-gap", "du-matchup-decompose-disadvantage"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "hydfd が「安定性かダメージか」「味方が勝ちそうなら安定、勝負なら武器」を述べる。トップの例であり、メイジの具体的なアイテムは原典にない（部分的にしか答えられない）"
+  },
+  {
+   "id": "Q5",
+   "text": "敵ジャングラーが見えないとき、レーンでトレードを仕掛けてもいい？",
+   "category": ["複数の判断材料", "条件で結論が変わる"],
+   "primary": ["du-jungler-hovering-trap", "du-trade-checklist"],
+   "acceptable": ["du-roam-counter-action", "du-when-in-doubt-back-off"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "MetaBot のチェックリストと「敵ジャングラーが近いと罠」。位置不明でタワーを殴らない（wftjm）が補う"
+  },
+  {
+   "id": "Q6",
+   "text": "TFでフィズ相手のとき、Rでサイドにガンクしに行くべき？",
+   "category": ["マッチアップが重要", "対象パッチが重要", "否定"],
+   "primary": ["du-dopa-tf-save-ult"],
+   "acceptable": ["du-dopa-tf-fizz-pull-wave", "du-dopa-tf-fizz-cd-window"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "Dopa（2016年の内容）は R をサイドのガンクに使わずフィズのロームに備える。現行の TF・フィズのキットで成り立つかは未確認と添える必要がある"
+  },
+  {
+   "id": "Q7",
+   "text": "今のパッチで、ミッドの最初のリコールは何ウェーブ目がいい？",
+   "category": ["対象パッチが重要"],
+   "primary": ["du-mid-recall-4th-wave"],
+   "acceptable": ["du-plates-vs-clean-recall", "du-wave-state-by-next-action"],
+   "traps": [],
+   "expected_none": false,
+   "answer_must_hold": true,
+   "rationale_ja": "唯一の材料はパッチ10.14（2020年）の記事。「今のパッチで」には答えられないので、材料は示しつつ判断は保留する必要がある"
+  },
+  {
+   "id": "Q8",
+   "text": "ブラッドミアでリサンドラとアニビアを相手にするとき、キーストーンは同じでいい？",
+   "category": ["マッチアップが重要", "条件で結論が変わる"],
+   "primary": ["du-vlad-keystone-by-matchup"],
+   "acceptable": ["du-keystone-by-fight-length", "du-short-trade-vs-bruiser"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "lolgaren の2記事で、対リサンドラは死神の残り火、対アニビアは征服者。同じ著者の2記事なので、独立した裏付けではない"
+  },
+  {
+   "id": "Q9",
+   "text": "メレーの相手に、序盤からAAでハラスしないほうがいいのはなぜ？",
+   "category": ["否定", "マッチアップが重要"],
+   "primary": ["du-dopa-tf-fizz-pull-wave"],
+   "acceptable": ["du-trade-checklist", "du-behind-keep-wave-own-side"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "Dopa の TF 対フィズ（ラストヒットだけでウェーブを引く）。ただし対フィズの例で、メレー全般に一般化できるかは原典にない"
+  },
+  {
+   "id": "Q10",
+   "text": "ドラゴンとヴォイドグラブが同時に取れそうなとき、どちらを優先するべき？",
+   "category": ["今の29件では回答できない"],
+   "primary": [],
+   "acceptable": [],
+   "traps": ["du-freeze-not-always"],
+   "expected_none": true,
+   "rationale_ja": "ヴォイドグラブの価値を扱う記事（lol-guide vmcxd）は候補にあるが、判断材料には抽出していない。29件には該当なし"
+  },
+  {
+   "id": "Q11",
+   "text": "サポートとして、いつミッドにロームしに行けばいい？",
+   "category": ["今の29件では回答できない"],
+   "primary": [],
+   "acceptable": [],
+   "traps": ["du-roam-do-not-chase", "du-roam-counter-action", "du-roam-signs"],
+   "expected_none": true,
+   "rationale_ja": "サポートのロームの時機（res-garen-support-roam）は判断材料に抽出していない。ローム対応の部品は「対面のロームへの対処」で、質問とは立場が逆（自分がロームする側）なので、出したら誤り"
+  },
+  {
+   "id": "Q12",
+   "text": "負けた試合で、自分の判断が悪かったのか運が悪かったのかを見分けたい",
+   "category": ["振り返り"],
+   "primary": ["du-review-separate-decision-from-result"],
+   "acceptable": ["du-trade-checklist"],
+   "traps": [],
+   "expected_none": false,
+   "rationale_ja": "Thinking in Bets（結果と判断を分ける）。原典は書籍の要約が中心で、LoL の具体的な適用は薄い"
+  },
+  {
+   "id": "Q13",
+   "text": "フリーズするとき、敵のミニオンは何体残すのが正しい？",
+   "category": ["資料間で数値が違う", "対象パッチが重要"],
+   "primary": ["du-freeze-when-behind-dignitas"],
+   "acceptable": ["du-half-push-gets-frozen", "du-freeze-not-always"],
+   "traps": [],
+   "expected_none": false,
+   "answer_must_hold": true,
+   "rationale_ja": "資料ごとに数が違う（2〜3体、3体以上、3〜4体多く）。どれが現行で正しいかは未確認なので、違いを示して断定しない必要がある。lol-guide の「3〜4体多く」は Phase 5A の E3 にあり、29件の部品には数値として入っていない"
+  }
+ ]
+}

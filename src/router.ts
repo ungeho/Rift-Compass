@@ -3,6 +3,8 @@
 //   #/r/<id>        資料詳細
 //   #/topics        Topic 一覧
 //   #/topic/<id>    Topic 詳細
+//   #/decisions?topic=…  判断材料（試験）の一覧（Topic で絞り込み。compare=… で資料間の比較を開く）
+//   #/decision/<id>      判断材料（試験）の詳細
 import { useSyncExternalStore } from "react";
 import { FILTER_KEYS, type Filters } from "./search/search";
 
@@ -10,7 +12,9 @@ export type Route =
   | { name: "home"; q: string; filters: Filters }
   | { name: "resource"; id: string }
   | { name: "topic"; id: string }
-  | { name: "topics" };
+  | { name: "topics" }
+  | { name: "decisions"; topic: string; compare?: string }
+  | { name: "decision"; id: string };
 
 export function parseHash(hash: string): Route {
   const raw = hash.replace(/^#/, "") || "/";
@@ -20,6 +24,11 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "topic" && seg[1]) return { name: "topic", id: seg[1] };
   if (seg[0] === "topics") return { name: "topics" };
   const params = new URLSearchParams(queryString);
+  if (seg[0] === "decision" && seg[1]) return { name: "decision", id: seg[1] };
+  if (seg[0] === "decisions") {
+    const compare = params.get("compare");
+    return compare ? { name: "decisions", topic: params.get("topic") ?? "", compare } : { name: "decisions", topic: params.get("topic") ?? "" };
+  }
   const filters: Filters = {};
   for (const key of FILTER_KEYS) {
     const v = params.get(key);
@@ -41,6 +50,14 @@ export function homeHref(q: string, filters: Filters = {}): string {
 
 export const resourceHref = (id: string) => `#/r/${encodeURIComponent(id)}`;
 export const topicHref = (id: string) => `#/topic/${encodeURIComponent(id)}`;
+export function decisionsHref(topic = "", compare = ""): string {
+  const params = new URLSearchParams();
+  if (topic) params.set("topic", topic);
+  if (compare) params.set("compare", compare);
+  const q = params.toString();
+  return q ? `#/decisions?${q}` : "#/decisions";
+}
+export const decisionHref = (id: string) => `#/decision/${encodeURIComponent(id)}`;
 
 const listeners = new Set<() => void>();
 const notify = () => listeners.forEach((l) => l());

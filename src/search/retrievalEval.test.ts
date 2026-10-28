@@ -35,7 +35,11 @@ describe("評価用質問の実測", () => {
     expect(expected).toBeGreaterThan(0);
   });
 
-  it("該当資料がない Q04 では、すべての語に一致する資料を出さない", () => {
-    expect(rows.find((r) => r.id === "Q04")!.complete).toBe(0);
+  // Q04 は旧38件では該当なし（条件に一致0件）だった。Phase 4B で追加した該当資料1件を期待資料にしている。
+  // 該当資料がない検索の確認は、search.test.ts の「Dopaの古いルーン選択を学びたい」で続ける。
+  it("Q04 では、期待資料（Dopa の TF 対フィズの日本語字幕版）だけがすべての語に一致し、1位に出る", () => {
+    const q04 = rows.find((r) => r.id === "Q04")!;
+    expect(q04.complete).toBe(1);
+    expect(q04.ranks).toBe("1");
   });
 });

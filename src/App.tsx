@@ -4,11 +4,15 @@ import { useRoute, type Route } from "./router";
 import { ResourceDetail } from "./components/ResourceDetail";
 import { SearchPage } from "./components/SearchPage";
 import { TopicIndex, TopicPage } from "./components/TopicPages";
+import { DecisionDetail, DecisionIndex } from "./components/DecisionPages";
+import { decisionById } from "./data/decisions";
 
 function pageTitle(route: Route): string {
   if (route.name === "resource") return index.resourceById.get(route.id)?.title ?? "資料";
   if (route.name === "topic") return index.topicById.get(route.id)?.label_ja ?? "Topic";
   if (route.name === "topics") return "Topic 一覧";
+  if (route.name === "decisions") return "判断材料（試験）";
+  if (route.name === "decision") return decisionById(route.id)?.statement_ja ?? "判断材料（試験）";
   return route.q ? `「${route.q}」の検索結果` : "";
 }
 
@@ -37,6 +41,7 @@ export function App() {
         <nav aria-label="メイン">
           <a href="#/">検索</a>
           <a href="#/topics">Topic 一覧</a>
+          <a href="#/decisions">判断材料（試験）</a>
         </nav>
       </header>
       <main id="main" tabIndex={-1}>
@@ -44,6 +49,8 @@ export function App() {
         {route.name === "resource" && <ResourceDetail id={route.id} />}
         {route.name === "topic" && <TopicPage id={route.id} />}
         {route.name === "topics" && <TopicIndex />}
+        {route.name === "decisions" && <DecisionIndex topic={route.topic} compare={route.compare} />}
+        {route.name === "decision" && <DecisionDetail id={route.id} />}
       </main>
       <footer className="site-footer">
         <p>

@@ -159,6 +159,9 @@ function unitScore(r: Resource, u: Unit, p: Prepared): number {
     // 別名そのもの（例：「トリンケット」）がタイトルや紹介文にある資料を、同じ Topic の中で上にする
     const f = p.fields.get(r.id);
     if (s > 0 && f && (f.title.includes(u.matched) || f.summary.includes(u.matched))) s += 3;
+    // 大分類の別名は一般語（例：「対面」）なので、語として検索した場合と同じく、タイトルにあれば一致とみなす。
+    // タイトルにその語がある資料は、その大分類を直接付けた資料と同じ強さで扱う
+    else if (s === 0 && category && f && f.title.includes(u.matched)) s = 4;
     return s;
   }
   const f = p.fields.get(r.id);

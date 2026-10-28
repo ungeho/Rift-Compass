@@ -1,0 +1,346 @@
+{
+ "about": "Phase 5E の実験データ。Phase 5B の decision-units.json は変更せず、このファイルで (1) 新しい判断材料、(2) 具体的な目安（criteria）、(3) 資料間の比較（comparisons）、(4) Phase 5B の出典で今回追加で読んだ範囲（coverage_updates）を記録する。数値は原典の言い方のまま、対象・観測方法・前提とともに残し、一般則に変換しない。basis は source（原典が明示）か ai（AI の整理）。閲覧画面（src/data/decisions.ts）が読み込む。",
+ "checked_at": "2026-10-28",
+ "coverage_updates": [
+  { "source": "src-loltheory", "read_added": "Phase 5E で「The Three Wave States」「How to Freeze a Lane」の節を追加で確認", "unread_ja": "冒頭・スロープッシュと速く押す方法・トップとボットの節" },
+  { "source": "src-digwave", "read_added": "Phase 5E で「Learn the Minion Spawn Rates」「How to Properly Set A Freeze」「Reasons to Fast Push」の節を追加で確認", "unread_ja": "冒頭・スロープッシュの作り方・結論の節" }
+ ],
+ "sources": [
+  { "id": "src-suftp", "resource_id": null, "candidate_key": "https://lol-guide.com/articles/suftp", "url": "https://www.lol-guide.com/articles/suftp", "author": "がりある（lol-guide.com）", "published": "2025-09-21", "read": "全節（Phase 5A で前半、Phase 5E で「リコールのタイミングを判断する」「リコールのタイミングを見逃すと？」）", "coverage": { "status": "full" } },
+  { "id": "src-hwxrp", "resource_id": "res-lg-hwxrp", "url": "https://www.lol-guide.com/articles/hwxrp", "author": "がりある（lol-guide.com）", "published": "2025-12-13", "read": "「トラッキングの前提」とステップ1〜4の節", "coverage": { "status": "partial", "unread_ja": "冒頭（Phase 4B で取得済み、今回は読み直していない）" } },
+  { "id": "src-vdxoz", "resource_id": null, "candidate_key": "https://lol-guide.com/articles/vdxoz", "url": "https://www.lol-guide.com/articles/vdxoz", "author": "がりある（lol-guide.com）", "published": "2025-08-19", "read": "「なぜレベル2先行が重要なのか」「具体的な方法」「ワードアトラス」「ビッグウェーブ」「相手がレベル2になりそうな時」の節", "coverage": { "status": "partial", "unread_ja": "冒頭・「レベル2になった後のアクション」の1〜2" } },
+  { "id": "src-timeline", "resource_id": "res-garen-timeline", "url": "https://lolgaren.com/timeline/", "author": "北川楓（LoLGaren）", "published": "2024-09-24", "read": "「ミッドタロン編」〜「アムムの予定」の6節", "coverage": { "status": "partial", "unread_ja": "冒頭・「LoLの要素（レーン編）」・終わりに・著者・免責事項の節" } },
+  { "id": "src-odors", "resource_id": null, "candidate_key": "https://lol-guide.com/articles/odors", "url": "https://www.lol-guide.com/articles/odors", "author": "がりある（lol-guide.com）", "published": "2025-08-17", "read": "Phase 5A で前半（「スキルダメージと通常攻撃の違い」「序盤の通常攻撃がレーン戦を左右する理由」の冒頭）", "coverage": { "status": "partial", "unread_ja": "「序盤の通常攻撃が…」の後半・「通常攻撃の注意点」" } },
+  { "id": "src-dauwk", "resource_id": "res-lg-dauwk", "url": "https://www.lol-guide.com/articles/dauwk", "author": "がりある（lol-guide.com）", "published": "2026-02-25", "read": "Phase 5A で5場面のうち1〜4", "coverage": { "status": "partial", "unread_ja": "5つ目の場面" } }
+ ],
+ "units": [
+  {
+   "id": "du-recall-resource-threshold",
+   "statement_ja": "リコールは、ウェーブを敵タワーに押し込んだ後に行う。押し込めていなくても、体力・マナが少ない（半分を切った）ときや、重要なオブジェクトの出現前（約1分半前）は、リコールを選択肢に入れる。",
+   "kind": "decision",
+   "problem_ja": "いつリコールするか",
+   "observations_ja": ["ウェーブを敵タワーに押し込めたか", "自分の体力・マナの割合", "所持ゴールド", "ドラゴン・ヴォイドグラブ・リフトヘラルドの出現時刻", "テレポートを持っているか"],
+   "goal_ja": "経験値・ゴールドの損を出さずに、戦闘の前に状態を整える",
+   "action_ja": "押し込んでからリコールする。体力・マナが半分を切ったら、押し込めていなくてもリコールを選択肢に入れる。オブジェクトの約1分半前には帰る（例：8分のヴォイドグラブ）",
+   "reasons": [
+    { "basis": "source", "text": "押し込めていない状態で帰ると、相手のミニオンが自陣のタワーに倒され、経験値とゴールドの損が出る" },
+    { "basis": "source", "text": "リソースが少ない状態でレーンに残っても、何もできない" },
+    { "basis": "source", "text": "重要なオブジェクトでは戦闘が起こる可能性が高いので、その前に状態を整える" }
+   ],
+   "alternatives_ja": ["テレポートを持っていて戻る時間を短縮できる場合は別（原典）", "コアアイテムが完成しそうな場合は、リコールの時機をずらすこともある（原典）"],
+   "costs_ja": ["押し込めていないときに帰ると、経験値とゴールドの損（原典）"],
+   "conditions_ja": ["「半分を切った段階」は「状況にもよりますが」と前置きされた目安（原典）"],
+   "exceptions_ja": ["テレポートを持っている場合は、オブジェクト前のリコールを少し遅めにしてもよい（原典）"],
+   "scope": { "roles": ["all"], "champions": "記載なし（全体を確認）", "matchup": "記載なし（全体を確認）" },
+   "patch_dependency_ja": "ヴォイドグラブの出現時刻（8分）は記事時点（2025年）の仕様。現行は未確認",
+   "unknowns_ja": ["「半分」が体力とマナのどちらか一方か、両方かは書かれていない"],
+   "topic_ids": ["recall", "wave-management", "decision-making"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-suftp", "locator": "リコールのタイミングを判断する（レーンを押し込んだ後／リソースが少ない場合／中立オブジェクトのスポーン前）", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [
+    { "to": "du-mid-recall-4th-wave", "type": "condition_differs", "note_ja": "lolgaren（2020年）はミッドの最初のリコールを4ウェーブ目の押し切りで決める。こちらは時期を問わない一般的な基準で、体力・マナ・オブジェクトを見る" },
+    { "to": "du-plates-vs-clean-recall", "type": "same_conclusion_independent", "note_ja": "LoL Theory も押してからきれいに帰ることを重視する（独立した著者）" }
+   ],
+   "extraction": { "method_A_found": true, "method_B_found": true }
+  },
+  {
+   "id": "du-recall-sync-allies",
+   "statement_ja": "中盤以降は、リコールの時機を味方と合わせる。自分だけ1ウェーブ多く取ってから帰ると、視界取りや戦闘で人数差が生まれる。",
+   "kind": "decision",
+   "problem_ja": "味方がリコールしたとき、自分も帰るか、もう1ウェーブ取るか",
+   "observations_ja": ["味方がリコールしたか", "試合の時間帯（序盤か中盤以降か）"],
+   "goal_ja": "味方とのテンポのずれ（視界・人数差）を防ぐ",
+   "action_ja": "可能な限り、味方とリコールの時機を合わせる",
+   "reasons": [
+    { "basis": "source", "text": "自分だけ追加で1ウェーブ取ってから帰ると、味方が視界を取りに行きづらくなり、戦闘が起きたときに人数差が生まれる" },
+    { "basis": "source", "text": "序盤はまだよいが、中盤以降は致命的なミスになる" }
+   ],
+   "alternatives_ja": ["記載なし（全体を確認）"],
+   "costs_ja": ["もう1ウェーブ分のゴールド・経験値（AI の解釈。原典は代償を書いていない）"],
+   "conditions_ja": ["中盤以降（原典）"],
+   "exceptions_ja": ["記載なし（全体を確認）"],
+   "scope": { "roles": ["all"], "champions": "記載なし（全体を確認）", "matchup": "記載なし（全体を確認）" },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": ["「中盤」が何分以降かは書かれていない"],
+   "topic_ids": ["recall", "decision-making"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-suftp", "locator": "リコールのタイミングを判断する（味方のリコールと合わせる）／リコールのタイミングを見逃すと？", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [{ "to": "du-recall-resource-threshold", "type": "same_author_restated", "note_ja": "同じ記事の別の基準" }],
+   "extraction": { "method_A_found": true, "method_B_found": true }
+  },
+  {
+   "id": "du-jungle-tracking-cs-div4",
+   "statement_ja": "敵ジャングラーが見えたら、スコアボードの CS と足元のバフを確かめる。1キャンプ＝4CS なので、CS÷4 で狩ったキャンプ数が分かり、バフの色と合わせて1周目のスタート位置と次の行き先を推定できる。",
+   "kind": "decision",
+   "problem_ja": "敵ジャングラーが一瞬見えたとき、そこから何を読み取るか",
+   "observations_ja": ["スコアボード（Tab）の敵ジャングラーの CS", "足元のバフ（青・赤）", "見えた場所（例：ラプター）"],
+   "goal_ja": "敵ジャングラーの動きを「点」ではなく「線」で予測する",
+   "action_ja": "見えるたびに CS÷4 とバフを確かめる。原典の例：アムムがラプターで見え、CS 8・赤バフなら、赤→クルーグ→ラプターと来ており、次は青バフ側",
+   "reasons": [
+    { "basis": "source", "text": "ジャングルキャンプは、バフも通常キャンプもすべて1キャンプ＝4CS として数えられる" },
+    { "basis": "source", "text": "バフの種類を見れば、1周目のスタート位置と行き先をほとんどの場合で確定できる" }
+   ],
+   "alternatives_ja": ["レベル1でインベードして敵のジャングルにワードを置き、スタート位置を見る（原典）"],
+   "costs_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "conditions_ja": ["ゲーム序盤の、動きがある程度パターン化されている時期（原典）"],
+   "exceptions_ja": ["2周目以降にカウンタージャングルやガンクをすると、予測は格段に難しくなり、視界による情報が必要になる（原典）"],
+   "scope": { "roles": ["all"], "champions": "アムム（例）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "「1キャンプ＝4CS」はキャンプの CS の数え方に依存する。現行の仕様では未確認",
+   "unknowns_ja": ["Phase 4B の判断の部品 D1 と同じ出典。Phase 5B の29件には入っていない"],
+   "topic_ids": ["jungle-tracking", "vision"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-hwxrp", "locator": "トラッキングの前提:点ではなく線で", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [{ "to": "du-jungler-hovering-trap", "type": "complements", "note_ja": "MetaBot は「敵ジャングラーの位置を追ってから前に出る」とだけ述べ、追い方は書かない。こちらは追い方の手順（独立した著者）" }],
+   "extraction": { "method_A_found": true, "method_B_found": false, "note_ja": "見出し「トラッキングの前提」には方式Bの規則の語がない" }
+  },
+  {
+   "id": "du-jungle-tracking-timers",
+   "statement_ja": "1周目は3:30のリフトスカトルでの遭遇から動線の向きを、2周目はキャンプの再出現タイマー（バフ5分、ほか2分15秒）から位置を予測する。中盤以降は予測より視界を重視する。",
+   "kind": "decision",
+   "problem_ja": "ワードがなくても、敵ジャングラーの動線を予測したい",
+   "observations_ja": ["3:30 のスカトルでジャングラー同士がぶつかったか", "敵のキャンプがいつ再出現するか", "2周目以降にガンク・カウンタージャングルがあったか"],
+   "goal_ja": "敵ジャングラーの位置を見失わない",
+   "action_ja": "スカトルでぶつかれば同じ向きの動線と判断する。スカトルの後に敵の森にワードを置き、キャンプの出現時刻から動線を把握する。姿が見えない2周目は、1周目と同じ順に狩っているとみる",
+   "reasons": [
+    { "basis": "source", "text": "スカトルでぶつかった場合、お互いの動線が同じ向きだったと分かる（周回速度によっては確定できない）" },
+    { "basis": "source", "text": "2周目も1周目と同じように中立クリープを狩るので、再出現タイマーから位置を把握できる" }
+   ],
+   "alternatives_ja": ["中盤以降は、チーム全員で敵のジャングルに視界を取る（原典）"],
+   "costs_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "conditions_ja": ["序盤（動きがパターン化されている時期）", "ガンクに向かった場合は別（原典）"],
+   "exceptions_ja": ["周回速度によっては、スカトルでの遭遇から向きを確定できない（原典）"],
+   "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "スカトルの出現（3:30）と再出現タイマー（バフ5分、ほか2分15秒）は記事時点（2025年）の仕様。現行は未確認",
+   "unknowns_ja": [],
+   "topic_ids": ["jungle-tracking", "vision"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-hwxrp", "locator": "ステップ2：1周目の動き（3:30〜3:45）／ステップ3：2周目（4:00〜）／ステップ4：視界", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [
+    { "to": "du-jungle-tracking-cs-div4", "type": "same_author_restated", "note_ja": "同じ記事の別の手順" },
+    { "to": "du-mid-join-scuttle-checklist", "type": "same_conclusion_independent", "note_ja": "lolgaren も3:30のスカトルを序盤の予定の基準にしている（独立した著者）" }
+   ],
+   "extraction": { "method_A_found": true, "method_B_found": false }
+  },
+  {
+   "id": "du-lv2-duo-minion-count",
+   "statement_ja": "ボットレーンでは、最初のウェーブ6体と次のウェーブの前衛3体を倒すとレベル2になる。相手が先にレベル2になりそうなら、近ければ競り合い、そうでなければタワー下まで下がる。",
+   "kind": "decision",
+   "problem_ja": "ボットレーンで、レベル2先行を狙うか、下がるか",
+   "observations_ja": ["倒したミニオンの数（最初のウェーブ6体、次のウェーブの前衛3体）", "相手がレベル2になりそうか、自分と近いか"],
+   "goal_ja": "相手より先にスキルを2つ使える時間を作る、または相手の先行で倒されない",
+   "action_ja": "ADC はミニオンに通常攻撃を入れ続け、サポートはその空間を作る。相手が先になりそうで差があれば、CS を落としてもタワー下まで下がる",
+   "reasons": [
+    { "basis": "source", "text": "レベル2で使えるスキルが2つになり、ボットは2人なので「スキル2つ対1つ」の差が2倍になる" },
+    { "basis": "source", "text": "CS をいくつか落としても、デスするよりははるかにまし" }
+   ],
+   "alternatives_ja": ["タイミングが非常に近ければ、ラストヒットを奪い合って全力で競り合う（原典）", "ワールドアトラスの処刑を2ウェーブ目に使う（原典）"],
+   "costs_ja": ["下がる場合、CS を落とす（原典）"],
+   "conditions_ja": ["ボットレーン（2人で経験値を分ける）の前提"],
+   "exceptions_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "scope": { "roles": ["bot", "support"], "champions": "ノーチラス（例）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "必要なミニオン数は、ミニオンの経験値と共有比率に依存する。正式データの知識ノート（kn-level2-minion-count、26.1 の値から計算）と一致する",
+   "unknowns_ja": [],
+   "topic_ids": ["level-2", "experience", "trading"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-vdxoz", "locator": "レベル2先行するための具体的な方法／相手がレベル2になりそうな時の対処法", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [{ "to": "du-trade-checklist", "type": "same_conclusion_independent", "note_ja": "MetaBot もレベル2・6の先行をトレードの判断材料に挙げる（独立した著者）" }],
+   "extraction": { "method_A_found": true, "method_B_found": true }
+  },
+  {
+   "id": "du-mid-lvl1-no-hard-push",
+   "statement_ja": "ミッドでは、レベル1から満タンのミニオンにスキルを撃って全力で押さない。マナが切れ、ウェーブが敵タワー前で止められて3:30付近でガンクされ、押せても敵ジャングラーが1周目の最中でやることがない。",
+   "kind": "decision",
+   "problem_ja": "ミッドでレベル1から全力でウェーブを押すべきか",
+   "observations_ja": ["自分のマナ", "敵ジャングラーが1周目の最中か（試合開始〜3:30）"],
+   "goal_ja": "序盤にマナを失わず、ガンクを受けない",
+   "action_ja": "レベル1から全力でミニオンを攻撃しない（原典の例：タロンが満タンの6体に W を当てていた）",
+   "reasons": [
+    { "basis": "source", "text": "マナが切れる" },
+    { "basis": "source", "text": "ウェーブが敵タワー前で止められるので、3:30 付近でジャングラーにガンクされる" },
+    { "basis": "source", "text": "押せたとしても、ジャングラーが1周目を回っている最中なので、やることがない" }
+   ],
+   "alternatives_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "costs_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "conditions_ja": ["レベル1・試合開始直後（原典の例）"],
+   "exceptions_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "scope": { "roles": ["mid"], "champions": "タロン（例）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "3:30 のスカトル・ジャングラーの1周目の時間に依存（記事は2024年）",
+   "unknowns_ja": ["タロン以外（メイジなどマナの多いチャンピオン）でも同じかは書かれていない"],
+   "topic_ids": ["wave-management", "fast-push", "role-mid"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-timeline", "locator": "実際にコーチングであった例　ミッドタロン編", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [
+    { "to": "du-half-push-gets-frozen", "type": "same_conclusion_independent", "note_ja": "lol-guide も、押し切れないプッシュは敵タワー前で止まると述べる（独立した著者）" },
+    { "to": "du-mid-freeze-hard", "type": "condition_differs", "note_ja": "LoL Theory はミッドのウェーブ管理を「ロームの時間を作る速いプッシュ」中心とする。こちらはレベル1・1周目の時間帯の話で、時期が違う" }
+   ],
+   "extraction": { "method_A_found": true, "method_B_found": false }
+  },
+  {
+   "id": "du-mid-join-scuttle-checklist",
+   "statement_ja": "ミッドは、序盤のジャングルでの戦闘や3:30のスカトル戦に合流する予定で動く。合流できないのは、ミニマップを見ていない、体力が少ない、ワンコンボ分のマナがない、ウェーブを押し付けられている、自分だけフラッシュとイグナイトが落ちている、のいずれかのとき。",
+   "kind": "decision",
+   "problem_ja": "序盤のスカトル戦に、ミッドが合流できるか",
+   "observations_ja": ["ミニマップ", "自分の体力", "ワンコンボ分のマナがあるか", "ウェーブを自陣タワーに押し付けられているか", "フラッシュとイグナイトが自分だけ落ちていないか"],
+   "goal_ja": "戦闘が起きたときに素早く合流する",
+   "action_ja": "体力を減らさず、ミニオンを押し付けられないように無難に戦い、3:30 のスカトルでの戦闘を待つ",
+   "reasons": [
+    { "basis": "source", "text": "最初から予定が立てられているので、戦闘が起きたときに素早く合流できる" },
+    { "basis": "source", "text": "タロンで対面と必死に戦うと、相手の体力より先にタロンのマナが切れる（AD アサシンでマナが少ないため）" }
+   ],
+   "alternatives_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "costs_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "conditions_ja": ["タロン（電撃＋イグナイト）とアムムの組み合わせの例", "ジャングラー側は、フルクリアしてレベル4で3:30のスカトルに着けるか（原典）"],
+   "exceptions_ja": ["ミッドもトップも序盤が弱い場合、ジャングラーはトップスタートしてボットのスカトルを取る方がよい（原典）"],
+   "scope": { "roles": ["mid", "jungle"], "champions": "タロン、アムム（例）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "3:30 のスカトル、統計（LoLALYTICS 2024/09/24）は記事時点のもの。現行は未確認",
+   "unknowns_ja": ["記事中の統計は確認していない"],
+   "topic_ids": ["jungle-tracking", "role-mid", "decision-making"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-timeline", "locator": "タロンの予定／アムムの予定", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [{ "to": "du-mid-lvl1-no-hard-push", "type": "same_author_restated", "note_ja": "同じ記事" }],
+   "extraction": { "method_A_found": true, "method_B_found": false }
+  },
+  {
+   "id": "du-freeze-extra-casters-loltheory",
+   "statement_ja": "フリーズは、タワーの射程のすぐ外で敵キャスターミニオンを3〜4体多く残し、ラストヒットだけを取る。15分以降は価値が下がり、レート帯によって効き方が違う。",
+   "kind": "decision",
+   "problem_ja": "フリーズをどう作り、いつまで価値があるか",
+   "observations_ja": ["敵キャスターミニオンの数が自軍より何体多いか", "ウェーブの位置（タワーの射程のすぐ外か）", "試合時間（15分の前か後か）", "レート帯"],
+   "goal_ja": "ウェーブを自分側に止め、相手の CS を奪う",
+   "action_ja": "敵キャスターを3〜4体多く残し、ラストヒットだけを取る",
+   "reasons": [
+    { "basis": "source", "text": "敵のウェーブがわずかに多いので、ウェーブが自分側に留まる" },
+    { "basis": "source", "text": "15分以降は、レーンでの妨害よりも圧力とマップの動きが報われる" },
+    { "basis": "source", "text": "シルバー以下では相手が対処法（ロームして別の場所で圧力をかける）を知らないことが多い。ダイヤ以上では、相手が帰っている間に1〜2CS を奪う程度に短くフリーズし、自分で解く" }
+   ],
+   "alternatives_ja": ["15分以降は、スロープッシュや速いプッシュの方がほぼ常に良い（原典）"],
+   "costs_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "conditions_ja": ["タワーの射程のすぐ外（原典）", "15分より前（原典）"],
+   "exceptions_ja": ["レート帯によって効き方が違う（原典）"],
+   "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "ミニオンの構成に依存。記事の時期は未確認",
+   "unknowns_ja": ["フリーズの詳しい解説は別の記事にあると書かれており、未確認"],
+   "topic_ids": ["freeze", "wave-management"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-loltheory", "locator": "How to Freeze a Lane", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [
+    { "to": "du-freeze-when-behind-dignitas", "type": "condition_differs", "note_ja": "Dignitas は「キャスターを2〜3体残す」（押し切れずに帰るとき）、古い記事は「満タンのキャスター3体以上」。数え方（残す数と、多い数）と状況が違う" },
+    { "to": "du-freeze-not-always", "type": "same_conclusion_independent", "note_ja": "どちらも、フリーズが常に最善ではない場面を挙げる（独立した著者）" }
+   ],
+   "extraction": { "method_A_found": true, "method_B_found": false, "note_ja": "見出し「How to Freeze a Lane」には方式Bの規則の語がない" }
+  },
+  {
+   "id": "du-fast-push-on-enemy-recall",
+   "statement_ja": "対面がリコールしたら、すぐにウェーブを速く押す。ただし、押して帰って戻るまでがウェーブの跳ね返りに間に合うかを確かめ、間に合わないほど大きいなら、削ってフリーズかスロープッシュにする。",
+   "kind": "decision",
+   "problem_ja": "対面がレーンを離れたとき、ウェーブをどうするか",
+   "observations_ja": ["対面がレーンにいないか", "ウェーブの大きさ", "押して帰って戻る時間"],
+   "goal_ja": "相手にミニオンを失わせる、タワーにダメージを与える",
+   "action_ja": "対面がいないことを確かめてから速く押す。間に合わないなら、ウェーブを削ってフリーズかスロープッシュにする",
+   "reasons": [
+    { "basis": "source", "text": "押すのが間に合わないと、敵のウェーブが自分と自陣のタワーに向かって押してくる" },
+    { "basis": "source", "text": "速く押すとウェーブが押し続けるので、自分もマップをロームできる" }
+   ],
+   "alternatives_ja": ["速く押してから対面のロームについていくか、タワーを狙い続けるかを選ぶ（原典）"],
+   "costs_ja": ["確認範囲に記載なし（未読の範囲あり）"],
+   "conditions_ja": ["対面がレーンにいないこと（原典）"],
+   "exceptions_ja": ["ウェーブが大きすぎて間に合わない場合（原典）"],
+   "scope": { "roles": ["all"], "champions": "確認範囲に記載なし（未読の範囲あり）", "matchup": "確認範囲に記載なし（未読の範囲あり）" },
+   "patch_dependency_ja": "2019年の記事。ミニオンの出現間隔（30秒）などは当時の記述で、現行は未確認",
+   "unknowns_ja": [],
+   "topic_ids": ["fast-push", "wave-management", "recall"],
+   "proposed_status": "empirical",
+   "evidence": [{ "source": "src-digwave", "locator": "Reasons to Fast Push", "evidence_type": "empirical_claim", "checked_level": "L3" }],
+   "relations": [{ "to": "du-roam-counter-action", "type": "same_conclusion_independent", "note_ja": "lol-guide も、対面がいない間にウェーブを押してミニオンを失わせるとする（独立した著者）" }],
+   "extraction": { "method_A_found": true, "method_B_found": true }
+  }
+ ],
+ "criteria": [
+  { "id": "crit-trade-2of5", "unit_id": "du-trade-checklist", "about_ja": "トレードを仕掛けてよいか", "value_ja": "5つの有利のうち2〜3つ", "target_ja": "ミニオンアグロ・相手のスキルの CD・レベル・サモナースペル・持久力（回復とアイテム）", "observe_ja": "盤面で見える情報（原典：ほぼすべて見ようとすれば見える）", "context_ja": "目的は「体力の有利を取ること」で、キルの基準ではない。「通常は十分（usually enough）」という言い方で、必ずではない", "source": "src-metabot", "locator": "How to trade in lane: the five-advantage checklist（冒頭）", "basis": "source" },
+  { "id": "crit-trade-window", "unit_id": "du-trade-checklist", "about_ja": "相手が主要スキルを使った後の攻め時", "value_ja": "6〜8秒", "target_ja": "相手の主要なポーク・ギャップクローザー・スタン", "observe_ja": "相手がミニオンや空振りでスキルを使った瞬間を見る", "context_ja": "スキルが戻るまでの時間。チャンピオンやスキルレベルで変わるかは書かれていない", "source": "src-metabot", "locator": "How to trade in lane（2. Cooldowns）", "basis": "source" },
+  { "id": "crit-freeze-digwave-recall", "unit_id": null, "about_ja": "リコールの前に作るフリーズ", "value_ja": "キャスターミニオン2〜3体を残す", "target_ja": "（原典に明記なし。文脈から敵のキャスターとみるのは AI の解釈）", "observe_ja": "残っているキャスターの数", "context_ja": "押し切るのが間に合わないとき、ウェーブを止めて安全に帰るため（少しの CS は失う）", "source": "src-digwave", "locator": "When to Recall", "basis": "source" },
+  { "id": "crit-freeze-digfreeze", "unit_id": "du-freeze-when-behind-dignitas", "about_ja": "フリーズを保つための敵ミニオン", "value_ja": "満タンのキャスター3体以上が自分に向かって押している状態。自軍の各ウェーブが近接3体・キャスター6体以上と戦う", "target_ja": "敵のキャスターミニオン", "observe_ja": "自分に向かってくる満タンの敵キャスターの数", "context_ja": "タワーの近く（ただしタワーがミニオンを撃たない位置）でフリーズを保つとき。古い記事", "source": "src-digfreeze", "locator": "本文（キャスター3体以上の段落）", "basis": "source" },
+  { "id": "crit-freeze-loltheory", "unit_id": "du-freeze-extra-casters-loltheory", "about_ja": "フリーズの作り方", "value_ja": "敵キャスターを3〜4体多く残す", "target_ja": "敵のキャスターミニオン（自軍より多い数）", "observe_ja": "敵と自軍のキャスターの差", "context_ja": "タワーの射程のすぐ外で、ラストヒットだけを取る。15分以降は価値が下がる", "source": "src-loltheory", "locator": "How to Freeze a Lane", "basis": "source" },
+  { "id": "crit-freeze-mmlgg", "unit_id": null, "about_ja": "自陣側でフリーズを維持する条件", "value_ja": "敵のミニオンを自軍より3〜4体多く残し続ける", "target_ja": "敵のミニオン（種類の指定なし）", "observe_ja": "敵と自軍のミニオンの差", "context_ja": "相手が押してきても、相手がミニオンに与えたのと同じだけ削って差を保つ。差が少なすぎると到着時間の差で解ける", "source": "src-mmlgg", "locator": "3. 「ラストヒットだけ取っていればフリーズできる」という勘違い", "basis": "source" },
+  { "id": "crit-freeze-dauwk", "unit_id": null, "about_ja": "プルからのフリーズ", "value_ja": "敵のミニオンが自陣ミニオンより3〜4体多い状態を維持する", "target_ja": "敵のミニオン（種類の指定なし）", "observe_ja": "敵と自軍のミニオンの差", "context_ja": "不利なマッチアップ・敵ジャングラーの位置が不明なときに、相手に押させて自陣タワーの手前で作る", "source": "src-dauwk", "locator": "2. 敵のガンクを完封し、味方を呼ぶ「プルからのフリーズ」", "basis": "source" },
+  { "id": "crit-freeze-diamond-brief", "unit_id": "du-freeze-extra-casters-loltheory", "about_ja": "高レート帯でのフリーズの長さ", "value_ja": "1〜2CS を奪う程度に短く", "target_ja": "相手が帰っている間のフリーズ", "observe_ja": "相手がベースから戻っている途中か", "context_ja": "ダイヤ以上の話として書かれている。シルバー以下では長くフリーズしても対処されないことが多い", "source": "src-loltheory", "locator": "How to Freeze a Lane（2つ目の注意点）", "basis": "source" },
+  { "id": "crit-recall-mid-4th", "unit_id": "du-mid-recall-4th-wave", "about_ja": "ミッドの最初のリコール", "value_ja": "4ウェーブ目（3ウェーブ目の大砲をためて一緒に押し切る）", "target_ja": "ミッド", "observe_ja": "何ウェーブ目か、マナと体力、敵ジャングラーが近くにいないか", "context_ja": "パッチ10.14（2020年）の記事。4ウェーブ目が敵ジャングラーの来る直前、という当時の時間の見積もり", "source": "src-recall", "locator": "ミッドは4ウェーブ目を押しきりたい", "basis": "source" },
+  { "id": "crit-recall-half", "unit_id": "du-recall-resource-threshold", "about_ja": "押し込めていないときのリコール", "value_ja": "体力・マナが半分を切った段階", "target_ja": "自分の体力・マナ", "observe_ja": "体力・マナのバー", "context_ja": "「状況にもよりますが」と前置きされた、リコールを選択肢に入れる目安", "source": "src-suftp", "locator": "リコールのタイミングを判断する（リソースが少ない場合）", "basis": "source" },
+  { "id": "crit-recall-objective", "unit_id": "du-recall-resource-threshold", "about_ja": "オブジェクト前のリコール", "value_ja": "出現の約1分半前（例：8分のヴォイドグラブ）", "target_ja": "ドラゴン・ヴォイドグラブ・リフトヘラルド", "observe_ja": "オブジェクトの出現時刻", "context_ja": "テレポートがあれば少し遅めでもよい。ヴォイドグラブの時刻は記事時点（2025年）の仕様", "source": "src-suftp", "locator": "リコールのタイミングを判断する（中立オブジェクトのスポーン前）", "basis": "source" },
+  { "id": "crit-jg-cs4", "unit_id": "du-jungle-tracking-cs-div4", "about_ja": "敵ジャングラーが狩ったキャンプ数", "value_ja": "CS÷4（1キャンプ＝4CS）", "target_ja": "敵ジャングラーの CS", "observe_ja": "スコアボード（Tab）と足元のバフ", "context_ja": "序盤の1周目。2周目以降のカウンタージャングル・ガンクでは予測が難しくなる", "source": "src-hwxrp", "locator": "トラッキングの前提:点ではなく線で", "basis": "source" },
+  { "id": "crit-jg-respawn", "unit_id": "du-jungle-tracking-timers", "about_ja": "2周目の位置の予測", "value_ja": "バフは5分、ほかのキャンプは2分15秒で再出現", "target_ja": "中立クリープ", "observe_ja": "キャンプを狩った時刻", "context_ja": "記事時点（2025年）の仕様。ガンクに向かった場合は別", "source": "src-hwxrp", "locator": "ステップ3：2周目の「線」を予測する（4:00〜）", "basis": "source" },
+  { "id": "crit-scuttle-330", "unit_id": "du-mid-join-scuttle-checklist", "about_ja": "序盤の合流の予定", "value_ja": "3:30 のスカトル。ジャングラーはフルクリアしてレベル4で着けるか", "target_ja": "ミッドとジャングラー", "observe_ja": "時刻、ジャングラーのレベル", "context_ja": "2024年の記事。タロンとアムムの例", "source": "src-timeline", "locator": "タロンの予定／アムムの予定", "basis": "source" },
+  { "id": "crit-lv2-duo", "unit_id": "du-lv2-duo-minion-count", "about_ja": "ボットレーンでレベル2になるミニオン数", "value_ja": "最初のウェーブ6体＋次のウェーブの前衛3体（計9体）", "target_ja": "ボットレーン（2人）", "observe_ja": "倒したミニオンの数", "context_ja": "2人で経験値を分けるレーン", "source": "src-vdxoz", "locator": "レベル2先行するための具体的な方法", "basis": "source" },
+  { "id": "crit-lv2-solo-odors", "unit_id": null, "about_ja": "ソロレーンでレベル2に先行する方法", "value_ja": "最初のウェーブと、次のウェーブのメレーミニオンを全て倒す（文字どおりなら計9体）", "target_ja": "ソロレーン", "observe_ja": "倒したミニオンの数", "context_ja": "「全て倒すと先行できる」という書き方で、必要な最小数かどうかは書かれていない。「計9体」は AI が文字どおりに数えたもの", "source": "src-odors", "locator": "序盤の通常攻撃がレーン戦を左右する理由（序盤のプッシュレース）", "basis": "source" }
+ ],
+ "comparisons": [
+  {
+   "id": "cmp-freeze-minion-count",
+   "title_ja": "フリーズで残す敵ミニオンの数",
+   "goal_ja": "ウェーブを自分側に止める（フリーズを作る・保つ）",
+   "items": ["crit-freeze-digwave-recall", "crit-freeze-digfreeze", "crit-freeze-loltheory", "crit-freeze-mmlgg", "crit-freeze-dauwk"],
+   "differences_ja": [
+    "数えるものが違う：Dignitas の2記事は「残っている（押してくる）キャスターの数」、LoL Theory は「敵キャスターが自軍より多い数」、lol-guide の2記事は「敵ミニオン（種類を問わない）が自軍より多い数」",
+    "数値：2〜3体残す（Dignitas 2019）、満タンのキャスター3体以上（古い Dignitas）、キャスター3〜4体多く（LoL Theory）、ミニオン3〜4体多く（lol-guide）"
+   ],
+   "premise_differences_ja": [
+    "Dignitas 2019 の2〜3体は、押し切れずに帰るときの一時的なフリーズの話",
+    "古い Dignitas は、タワー近くで長く保つ話",
+    "LoL Theory は、タワーの射程のすぐ外で、15分より前、レート帯で効き方が違うという条件つき",
+    "lol-guide の2記事（同じ著者）は、自陣側で保つ話と、不利時に相手に押させて作る話"
+   ],
+   "verdict": "different_conditions",
+   "verdict_ja": "数える対象（残る数か、差か）と状況（帰る前か、保つか、作るか）が違うため、直接は比較できない。同じ条件にそろえたときに矛盾しないかは、原典からは確認できない",
+   "undetermined_ja": [
+    "「キャスターが3体以上残る」と「3〜4体多い」が、同じウェーブの状態を指すかは、原典からは決められない",
+    "どの数値が現行のミニオンの体力・攻撃力で正しいかは、どの資料も検証していない",
+    "lol-guide の2記事は同じ著者で、独立した裏付けではない"
+   ]
+  },
+  {
+   "id": "cmp-recall-criteria",
+   "title_ja": "リコールの判断基準",
+   "goal_ja": "経験値・ゴールドを失わずに帰り、状態を整える",
+   "items": ["crit-recall-mid-4th", "crit-recall-half", "crit-recall-objective", "crit-freeze-digwave-recall"],
+   "differences_ja": [
+    "lolgaren（2020年）：ミッドの最初のリコールを「4ウェーブ目の押し切り」というウェーブの番号で決める",
+    "lol-guide：体力・マナの割合（半分）と、オブジェクトの時刻（約1分半前）で決める",
+    "Dignitas（2019年）：帰る前に速く押す。間に合わなければキャスター2〜3体を残してフリーズしてから帰る",
+    "LoL Theory：数値はなく、プレートのためにきれいなリコールを犠牲にしないとする（du-plates-vs-clean-recall）"
+   ],
+   "premise_differences_ja": [
+    "lolgaren は試合開始直後の最初のリコール（ミッド）に限った話",
+    "lol-guide は時期を問わない一般の基準で、中盤以降は味方と合わせることも加える",
+    "Dignitas は押し切れない場合の代わりの手段"
+   ],
+   "verdict": "different_conditions",
+   "verdict_ja": "見る観測項目（ウェーブの番号、体力・マナ、時刻、押し切れるか）と対象の時期が違うため、直接は比較できない。4つとも「押し込んでから帰る」を基本にしている点は共通。同じ状況で互いに矛盾しないかは確認していない",
+   "undetermined_ja": [
+    "4ウェーブ目（2020年）と約1分半前（2025年）の時刻が、現行のジャングラーの到着やオブジェクトの時刻と合うかは未確認",
+    "体力・マナの「半分」が両方か一方かは書かれていない"
+   ]
+  },
+  {
+   "id": "cmp-lv2-minion-count",
+   "title_ja": "レベル2になるミニオンの数",
+   "goal_ja": "相手より先にレベル2になる",
+   "items": ["crit-lv2-duo", "crit-lv2-solo-odors"],
+   "related_note": "kn-level2-minion-count",
+   "differences_ja": [
+    "lol-guide（ボット）：6体＋前衛3体（計9体）",
+    "lol-guide（ソロ）：最初のウェーブ＋次のウェーブのメレーを全て（文字どおりなら計9体）",
+    "正式データの知識ノート（26.1 の値から計算、導出）：ソロは7体（6体＋近接1体）、2人で分けるレーンは9体"
+   ],
+   "premise_differences_ja": [
+    "ボットとソロでは経験値の共有比率が違う（知識ノートの前提）",
+    "ソロの記事は「全て倒すと先行できる」という書き方で、必要な最小数を述べてはいない"
+   ],
+   "verdict": "undetermined",
+   "verdict_ja": "ボットの9体は知識ノートと一致する。ソロの記述は、文字どおり9体と読むと知識ノートの7体と合わないが、「十分条件」の書き方なので、同じ条件での矛盾かどうかは判断できない",
+   "undetermined_ja": [
+    "ソロの記事の著者が9体を必要数と考えているかは、原典からは分からない",
+    "知識ノートは計算（26.1 の値）で、ゲーム内では検証していない"
+   ]
+  }
+ ]
+}

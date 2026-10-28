@@ -1,8 +1,9 @@
 import { index, isPublic } from "../data/dataset";
+import { decisionsForResource } from "../data/decisions";
 import { BASIS_LABELS, CREATOR_KIND_LABELS, eraLabel, formatSeconds, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/labels";
 import { youtubeAt } from "../lib/links";
 import { plainText } from "../lib/plainText";
-import { lastListHref, resourceHref } from "../router";
+import { decisionHref, decisionsHref, lastListHref, resourceHref } from "../router";
 import { ExternalLink, LevelBadge, TopicChips } from "./common";
 import { NoteCard } from "./NoteCard";
 
@@ -29,6 +30,7 @@ export function ResourceDetail({ id }: { id: string }) {
     .filter((n) => n !== undefined);
   const original = r.derived_from ? index.resourceById.get(r.derived_from) : undefined;
   const translations = index.translationsOf.get(r.id) ?? [];
+  const decisions = decisionsForResource(r.id);
 
   return (
     <div className="detail">
@@ -144,6 +146,23 @@ export function ResourceDetail({ id }: { id: string }) {
               );
             })}
           </ol>
+        </section>
+      )}
+
+      {decisions.length > 0 && (
+        <section aria-labelledby="decisions-heading">
+          <h2 id="decisions-heading">この資料から抽出した判断材料（試験）</h2>
+          <p className="muted">
+            AI がこの資料から取り出した判断の記録です。解説者の主張で、ゲーム内では検証していません。推奨ではないので、状況と成立条件は各判断材料の詳細で確かめてください。
+            <a href={decisionsHref()}>判断材料（試験）について</a>
+          </p>
+          <ul>
+            {decisions.map((d) => (
+              <li key={d.id}>
+                <a href={decisionHref(d.id)}>{d.statement_ja}</a>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

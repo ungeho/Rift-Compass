@@ -1,0 +1,51 @@
+[
+  {
+    "id": "lol-guide",
+    "kind": "sitemap",
+    "url": "https://www.lol-guide.com/sitemap.xml",
+    "include": "^https://www\\.lol-guide\\.com/articles/[a-z0-9]+$",
+    "article_selector": "<article class=\"lg-reading-article\"",
+    "title_tags": true,
+    "creator": { "name": null, "kind": null },
+    "creator_aliases": {
+      "がりある": { "name": "がりある（lol-guide.com）", "kind": "pro_player" }
+    },
+    "language": "ja",
+    "delay_ms": 1000,
+    "notes": "robots.txt で /articles は許可（2026-10-28 確認）。サイトマップに題名がないため、未知の記事だけ記事ページを1回ずつ取得する。著者は記事ページの article:author"
+  },
+  {
+    "id": "lolgaren",
+    "kind": "wordpress",
+    "base": "https://lolgaren.com",
+    "max": 100,
+    "creator": { "name": "北川楓（LoLGaren）", "kind": "coach" },
+    "language": "ja",
+    "delay_ms": 1000,
+    "notes": "robots.txt は /wp-admin/ 以外を許可（2026-10-28 確認）。公開 REST API で新しい順に取得"
+  },
+  {
+    "id": "yt-goru",
+    "kind": "youtube-channel",
+    "handle": "@goru6666",
+    "creator": { "name": "goru", "kind": "fan_translator" },
+    "language": "ja",
+    "notes": "Dopa の解説・講義の日本語字幕版の投稿者（Phase 4B）。一覧ページは新しい順の約30本だけ"
+  },
+  {
+    "id": "yt-dopaenglish",
+    "kind": "youtube-channel",
+    "handle": "@dopaenglish",
+    "creator": { "name": "Dopa English", "kind": "fan_translator" },
+    "language": "en",
+    "notes": "Dopa の講義の英語字幕版（既存資料あり）"
+  },
+  {
+    "id": "yt-veigarv2",
+    "kind": "youtube-channel",
+    "handle": "@VeigarV2",
+    "creator": { "name": "Veigar v2", "kind": "coach" },
+    "language": "en",
+    "notes": "MID・メイジの解説（既存資料あり）"
+  }
+]

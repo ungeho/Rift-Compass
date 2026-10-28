@@ -8,7 +8,7 @@ import { SearchPage } from "./SearchPage";
 import { TopicIndex, TopicPage } from "./TopicPages";
 
 const detail = (id: string) => renderToStaticMarkup(<ResourceDetail id={id} />);
-const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ");
+const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 // 「未検証」「検証は行っていません」は良いが、「検証済み」と単独で言い切る表示は禁止
 const OVERCLAIM = /(?<!未)検証済み(?!として扱わない)|(?<!未)確認済みの仕様|仕様として確認済み|ゲーム内で検証済み/;
 
@@ -93,7 +93,7 @@ describe("画面全体の描画", () => {
     expect(html).toContain("何を知りたいですか？");
     expect(html).toContain("質問の例");
     expect(html).toContain("Topic から探す");
-    expect(html).toContain("資料一覧 36件");
+    expect(html).toContain("資料一覧 73件");
   });
 
   it("0件のとき、言い換えと絞り込み解除を案内する", () => {
@@ -104,20 +104,22 @@ describe("画面全体の描画", () => {
   });
 
   it("一部一致のときは、条件に一致した資料と関連候補を分け、候補を条件ごとにまとめる", () => {
-    for (const q of ["Dopaの古いウェーブ管理を学びたい", "Dopa ウェーブ管理"]) {
+    // Phase 4B で Dopa のウェーブ管理を扱う資料を追加したため、検索語を VeigarV2 とロームの組み合わせに替えた
+    for (const q of ["VeigarV2 ローム", "VeigarV2のローム"]) {
       const html = text(renderToStaticMarkup(<SearchPage q={q} filters={{}} />));
       expect(html, q).toContain("条件に一致：0件・認識できた条件に一致：0件・関連候補：12件");
       expect(html, q).toContain("すべての条件に一致する資料はありません");
-      expect(html, q).toContain("発信者「Official dopa / Dopa English」 にだけ一致");
-      expect(html, q).toContain("Topic「ウェーブ管理」 にだけ一致");
+      expect(html, q).toContain("発信者「Veigar v2」 にだけ一致");
+      expect(html, q).toContain("Topic「ローム」 にだけ一致");
       expect(html, q).toContain("一部の条件に一致");
       expect(html, q).not.toContain("認識できた条件に一致 "); // カードのバッジ（認識できた条件に一致）は出ない
     }
   });
 
   it("Phase 2B：主題に一致し、抽出した語だけが未一致の候補は、そのことを案内する（判定は変えない）", () => {
+    // フリーズの質問（P04）は、Phase 4B の資料追加で「レーン」が多くの資料に現れる一般的な語になり、
+    // 「認識できた条件に一致」が1件出るようになったため、このケースから外した（下の別テストで確認する）
     const cases: [string, string, string[]][] = [
-      ["レーンをフリーズしたいとき、なぜタワーの手前でミニオンを止めるの？", "主題（Topic「フリーズ」）に一致する資料は", ["「レーン」", "「ミニオン」"]],
       ["VeigarV2がリコールするタイミングを説明している動画を見たい。", "主題（発信者「Veigar v2」・Topic「リコール」）に一致する資料は", ["「説明」"]],
     ];
     for (const [q, subject, terms] of cases) {
@@ -129,6 +131,22 @@ describe("画面全体の描画", () => {
       expect(html, q).not.toContain("すべての条件に一致する資料はありません");
       expect(html, q).toContain("一致しなかった条件：");
     }
+  });
+
+  it("資料中にない語を含む検索では、それ以外に一致した資料を「認識できた条件に一致」として出す", () => {
+    // Phase 4B までは P04（フリーズ）で確かめていたが、Phase 5A の資料追加で「手前」が資料中に現れたため、別の検索語で確かめる
+    const html = text(renderToStaticMarkup(<SearchPage q="ウェーブ管理 未知の技能" filters={{}} />));
+    expect(html).toContain("条件に一致：0件・認識できた条件に一致：");
+    expect(html).toContain("「未知」「技能」は資料中に見つからなかったため、検索条件に含めていません");
+  });
+
+  it("Phase 5A：フリーズの質問（P04）では、「手前」を含む新しい資料が条件に一致する", () => {
+    // 一致した「手前」は「敵タワー手前」の意味で、質問の「タワーの手前」とは向きが違う（語の一致による偶然。docs/experiments/candidate-pipeline.md）
+    const q = "レーンをフリーズしたいとき、なぜタワーの手前でミニオンを止めるの？";
+    const html = text(renderToStaticMarkup(<SearchPage q={q} filters={{}} />));
+    expect(html).toContain("条件に一致：1件");
+    expect(html).toContain("ウェーブコントロールについて勘違いしがちなこと");
+    expect(html).toContain("Advanced guide: Freezing your lane");
   });
 
   describe("Phase 3A：外部探索の導線", () => {

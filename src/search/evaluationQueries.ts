@@ -1,5 +1,5 @@
 // docs/retrieval-evaluation.md の評価用質問（Q01〜Q24）と期待資料。
-// tools/desk-retrieval-check.js の机上照合と同じ質問・期待資料を使う。
+// tools/desk-retrieval-check.js の机上照合と同じ質問・期待資料を使う（Q04 だけは Phase 4B で更新。机上照合は Phase 0 の記録として残す）。
 export interface EvalQuery {
   id: string;
   query: string;
@@ -10,7 +10,9 @@ export const EVAL_QUERIES: EvalQuery[] = [
   { id: "Q01", query: "敵のスキルを避けた後に仕掛ける理由を知りたい", expected: ["res-metabot-trading-2026", "res-wiki-cooldown"] },
   { id: "Q02", query: "Lv2先行が有利になる条件は？", expected: ["res-wiki-experience", "res-metabot-trading-2026"] },
   { id: "Q03", query: "level 2 how many minions bot lane", expected: ["res-wiki-experience"] },
-  { id: "Q04", query: "Dopaの古いウェーブ管理を学びたい", expected: [] },
+  // Q04 は Phase 0〜3（資料38件）では該当資料がなく、期待資料は「なし」だった（実測：条件に一致0件・関連候補12件）。
+  // Phase 4B で該当資料（Dopa の TF 対フィズの日本語字幕版）を追加したため、期待資料をその1件に更新した。
+  { id: "Q04", query: "Dopaの古いウェーブ管理を学びたい", expected: ["res-yt-goru-dopa-fizz-ep2"] },
   { id: "Q05", query: "VeigarV2のリコール解説はどこ？", expected: ["res-yt-veigarv2-recall-timer", "res-yt-veigarv2-coaching-ruu"] },
   { id: "Q06", query: "昔の視界管理の知識は今も利用できる？", expected: ["res-engadget-wards-2014", "res-wiki-v3-14", "res-wiki-sight-ward"] },
   { id: "Q07", query: "特定チャンピオンの対面別ビルドを知りたい（ベイガー）", expected: ["res-yt-veigarv2-veigar-guide-s16"] },

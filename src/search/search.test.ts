@@ -34,6 +34,26 @@ describe("1. 日英の Topic 別名から同じ資料に到達できる", () => 
     const units = analyzeQuery("abcdef").units;
     expect(units.filter((u) => u.kind === "topic")).toHaveLength(0);
   });
+
+  it("大分類と具体的な Topic が同じ別名を持たない（同じ長さの一致では大分類が採用され、必須条件にならないため）", () => {
+    const owners = new Map<string, Set<string>>();
+    for (const t of index.data.topics) {
+      for (const term of [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en].map(normalize)) {
+        if (!owners.has(term)) owners.set(term, new Set());
+        owners.get(term)!.add(t.kind);
+      }
+    }
+    const shared = [...owners].filter(([, kinds]) => kinds.has("category") && kinds.has("concept")).map(([term]) => term);
+    expect(shared).toEqual([]);
+  });
+
+  it.each([
+    ["CDトラッキング", "jungle-tracking"],
+    ["レーンをイーブンに保つ", "playing-from-behind"],
+  ])("「%s」は %s に一致しない（誤一致しやすい別名を外した）", (q, topicId) => {
+    const units = analyzeQuery(q).units;
+    expect(units.some((u) => u.kind === "topic" && u.topic.id === topicId)).toBe(false);
+  });
 });
 
 describe("2. 発信者名で検索できる", () => {
@@ -48,8 +68,10 @@ describe("2. 発信者名で検索できる", () => {
   it("Dopa は公式チャンネルと非公式翻訳の両方に一致し、それらを Dopa を題材にした第三者の資料より上に出す", () => {
     const hits = search("Dopa").hits;
     const creators = hits.map((h) => h.resource.creator.name);
-    expect(new Set(creators)).toEqual(new Set(["Official dopa", "Dopa English", "Alliyan LoL Channel"]));
-    expect(creators.at(-1)).toBe("Alliyan LoL Channel");
+    // goru は Phase 4B で追加した、Dopa の講義・解説動画の日本語字幕版の投稿者
+    expect(new Set(creators)).toEqual(new Set(["Official dopa", "Dopa English", "Alliyan LoL Channel", "goru"]));
+    const firstThirdParty = creators.findIndex((c) => c !== "Official dopa" && c !== "Dopa English");
+    expect(creators.slice(firstThirdParty).every((c) => c === "Alliyan LoL Channel" || c === "goru")).toBe(true);
   });
 });
 
@@ -102,9 +124,9 @@ describe("5. L0・無料未確認の資料は通常の一覧・検索に出な�
     for (const id of hidden) expect(r).not.toContain(id);
   });
 
-  it("データからは削除していない（38件のまま）", () => {
-    expect(index.resources).toHaveLength(38);
-    expect(index.publicResources).toHaveLength(36);
+  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件）", () => {
+    expect(index.resources).toHaveLength(75);
+    expect(index.publicResources).toHaveLength(73);
   });
 
   it("絞り込みでも出ない", () => {
@@ -122,14 +144,15 @@ describe("10. 該当資料がない検索で、無関係な結果を出さない
     expect(search("qwertyuiop").analysis.ignored).toContain("qwertyuiop");
   });
 
-  it("Dopa のウェーブ管理資料は存在しないため、すべての語に一致する結果は0件", () => {
-    const r = search("Dopaの古いウェーブ管理を学びたい");
+  // Phase 4B で Dopa のウェーブ管理の資料を追加したため、該当資料がない例を Dopa のルーン選択に替えた
+  it("Dopa のルーン選択の資料は存在しないため、すべての語に一致する結果は0件", () => {
+    const r = search("Dopaの古いルーン選択を学びたい");
     expect(r.completeCount).toBe(0);
     expect(r.hits.every((h) => !h.complete)).toBe(true);
   });
 
   it("空の検索は公開対象の全件を返す", () => {
-    expect(ids("")).toHaveLength(36);
+    expect(ids("")).toHaveLength(73);
   });
 });
 
@@ -174,12 +197,45 @@ describe("レビュー指摘1：未知語を含む検索を「条件に一致」
 });
 
 describe("レビュー指摘2：複数概念の順位と部分一致", () => {
-  it("Dopa のウェーブ管理資料はないので、条件に一致する資料は0件・候補は概念ごとに分かれる", () => {
+  it("Dopa のルーン選択の資料はないので、条件に一致する資料は0件・候補は概念ごとに分かれる", () => {
+    const r = search("Dopaの古いルーン選択を学びたい");
+    expect(r.hits.filter((h) => h.match !== "partial")).toHaveLength(0);
+    // どの候補も、Dopa とルーン選択の両方には一致していない
+    expect(r.hits.every((h) => h.matchedKeys.length === 1)).toBe(true);
+  });
+
+  // 「ルーン」「ビルド」「サモスペ」「アイテム」は、以前は大分類（ビルド・ルーン・サモスペ）の別名として一致し、
+  // 必須条件にならないため、発信者の資料がすべて「条件に一致」になっていた
+  it.each(["Dopa ルーン", "Dopa ビルド", "Dopa サモスペ", "Dopa アイテム", "Dopa runes", "Dopa summoners", "Dopa build"])(
+    "「%s」は、ルーン・ビルドを扱わない Dopa の資料を条件に一致にしない",
+    (q) => {
+      const r = search(q);
+      expect(r.completeCount).toBe(0);
+      expect(r.hits.some((h) => h.resource.creator.name === "Official dopa")).toBe(true);
+    },
+  );
+
+  it.each([
+    ["VeigarV2 ビルド", ["res-yt-veigarv2-veigar-guide-s16", "res-yt-veigarv2-pro-items"]],
+    ["VeigarV2 ルーン", ["res-yt-veigarv2-veigar-guide-s16"]],
+    ["VeigarV2 サモスペ", ["res-yt-veigarv2-veigar-guide-s16", "res-yt-veigarv2-jungle-decisions"]],
+  ])("「%s」は、その主題を扱う VeigarV2 の資料だけが条件に一致する", (q, expected) => {
+    const full = search(q).hits.filter((h) => h.complete).map((h) => h.resource.id);
+    expect(full.sort()).toEqual([...expected].sort());
+  });
+
+  it("Q07 のベイガーのガイドは、ビルド（具体的な Topic）に一致したまま1位に出る", () => {
+    const r = search("特定チャンピオンの対面別ビルドを知りたい（ベイガー）");
+    expect(r.hits[0].resource.id).toBe("res-yt-veigarv2-veigar-guide-s16");
+    expect(r.hits[0].match).not.toBe("partial");
+  });
+
+  it("Dopa のウェーブ管理は条件に一致する1件だけを出し、ほかの候補は概念ごとに分かれる", () => {
     for (const q of ["Dopa ウェーブ管理", "Dopaの古いウェーブ管理を学びたい"]) {
       const r = search(q);
-      expect(r.hits.filter((h) => h.match !== "partial")).toHaveLength(0);
-      // どの候補も、Dopa とウェーブ管理の両方には一致していない
-      expect(r.hits.every((h) => h.matchedKeys.length === 1)).toBe(true);
+      expect(r.hits.filter((h) => h.match !== "partial").map((h) => h.resource.id)).toEqual(["res-yt-goru-dopa-fizz-ep2"]);
+      // 候補はどれも、Dopa とウェーブ管理の両方には一致していない
+      expect(r.hits.filter((h) => h.match === "partial").every((h) => h.matchedKeys.length === 1)).toBe(true);
     }
   });
 
@@ -196,7 +252,15 @@ describe("レビュー指摘2：複数概念の順位と部分一致", () => {
   });
 
   it("発信者を題材にした第三者の資料も、発信者名で見つかる", () => {
-    expect(search("Dopa TF 解説 日本語").hits[0]).toMatchObject({ resource: { id: "res-yt-alliyan-dopa-tf-2019" }, match: "full" });
+    // Phase 4B で Dopa の日本語字幕版（発信者は翻訳者の goru）も同じ条件に一致するようになったため、先頭とは限らない
+    const full = search("Dopa TF 解説 日本語").hits.filter((h) => h.match === "full").map((h) => h.resource.id);
+    expect(full).toContain("res-yt-alliyan-dopa-tf-2019");
+  });
+
+  it("大分類の別名（「対面」）がタイトルにある資料は、その大分類を付けた資料と同じく一致として扱う", () => {
+    // res-lg-wftjm には「対面」の大分類（レーニング）以下の Topic がないが、タイトルが「対面がロームに行った時に…」
+    expect(ids("対面")).toContain("res-lg-wftjm");
+    expect(ids("対面がロームしたら追いかけるべき？")[0]).toBe("res-lg-wftjm");
   });
 
   it("日本語の語はひらがなで区切る（「いつ導入された」→「導入」）", () => {

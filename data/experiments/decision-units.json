@@ -1,0 +1,2280 @@
+{
+ "about": "Phase 5B の実験データ。判断の部品（decision unit）を、KnowledgeNote（kind: decision）と Evidence に対応づけて記録する。正式データではなく、アプリは読み込まない。本文・字幕の転載はせず、要旨を日本語で書く。reasons の basis は source（原典が明示）か ai（AI の解釈）。原典から確認できない項目は、出典の全体を確認した場合は「記載なし（全体を確認）」、未読の範囲がある場合は「確認範囲に記載なし（未読の範囲あり）」と書き分ける（sources[].coverage）。",
+ "checked_at": "2026-10-28",
+ "sources": [
+  {
+   "id": "src-kjumg",
+   "resource_id": "res-lg-kjumg",
+   "url": "https://www.lol-guide.com/articles/kjumg",
+   "author": "がりある（lol-guide.com）",
+   "published": "2025-08-17",
+   "read": "方式B（見出しで2節）→ 方式A（全節）",
+   "coverage": {
+    "status": "full"
+   }
+  },
+  {
+   "id": "src-wftjm",
+   "resource_id": "res-lg-wftjm",
+   "url": "https://www.lol-guide.com/articles/wftjm",
+   "author": "がりある（lol-guide.com）",
+   "published": "2025-08-17",
+   "read": "方式B（見出しで5節）→ 方式A（全節）",
+   "coverage": {
+    "status": "full"
+   }
+  },
+  {
+   "id": "src-hydfd",
+   "resource_id": null,
+   "candidate_key": "https://lol-guide.com/articles/hydfd",
+   "url": "https://www.lol-guide.com/articles/hydfd",
+   "author": "がりある（lol-guide.com）",
+   "published": "2025-08-19",
+   "read": "方式A（全節）。Phase 5A で規則により保留（他ロール固有）、抜き取り確認で収録候補",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "「ルーンで対策する」の節の後半"
+   }
+  },
+  {
+   "id": "src-mmlgg",
+   "resource_id": "res-lg-mmlgg",
+   "url": "https://www.lol-guide.com/articles/mmlgg",
+   "author": "がりある（lol-guide.com）",
+   "published": "2026-02-25",
+   "read": "Phase 5A で全文を確認済み（今回は再読なし）",
+   "coverage": {
+    "status": "full"
+   }
+  },
+  {
+   "id": "src-itembuild2",
+   "resource_id": "res-garen-itembuild2",
+   "url": "https://lolgaren.com/itembuild2/",
+   "author": "北川楓（LoLGaren）",
+   "published": "未確認（パッチ12.14の時に執筆と記載）",
+   "read": "方式B（冒頭・終わりに）→ 方式A（全節）",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "「身も蓋もないサポート最強ルーン」「関連図書など」の節"
+   }
+  },
+  {
+   "id": "src-recall",
+   "resource_id": null,
+   "candidate_key": null,
+   "url": "https://lolgaren.com/recall/",
+   "author": "北川楓（LoLGaren）",
+   "published": "2020-07-17（更新 2022-08-10）",
+   "read": "方式A（全節）。Phase 4B で保留。候補一覧（最新100件）には含まれない",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "冒頭と「終わりに」の節"
+   }
+  },
+  {
+   "id": "src-lissandra",
+   "resource_id": "res-garen-lissandra-counter",
+   "url": "https://lolgaren.com/lissandra-counter/",
+   "author": "北川楓（LoLGaren）",
+   "published": "2026-07-10",
+   "read": "方式A（帝国の指令・カウンターピック・ブラッドミア・フェイの節）",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "ゲームプラン・射程とスキル・攻撃パターン・対面が意識すべきアイテムとルーン・終わりに の節"
+   }
+  },
+  {
+   "id": "src-tib",
+   "resource_id": "res-garen-thinkinginbets",
+   "url": "https://lolgaren.com/thinkinginbets/",
+   "author": "北川楓（LoLGaren）",
+   "published": "未確認",
+   "read": "方式A（意思決定の質・戦略1〜3・5の節。全体の約4割）",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "意思決定の質を妨げる要因・ティルト・戦略4（真実探求グループ）・オデュッセウス契約・誓い瓶・終わりに の節（全体の約6割）"
+   }
+  },
+  {
+   "id": "src-vlad",
+   "resource_id": "res-garen-2610vladmia-anivia",
+   "url": "https://lolgaren.com/2610vladmia-anivia/",
+   "author": "北川楓（LoLGaren）",
+   "published": "2026-05-26",
+   "read": "Phase 5A の確認範囲（不利の理由・コンボ・ビルドとルーン）。比較のためだけに使用",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "アニビアの弱点の節の後半と、Phase 5A で確認範囲に含めなかった節"
+   }
+  },
+  {
+   "id": "src-metabot",
+   "resource_id": "res-metabot-trading-2026",
+   "url": "https://metabot.gg/en/league/guides/laning-phase-trading-fundamentals",
+   "author": "MetaBot.GG（著者名記載なし）",
+   "published": "未確認",
+   "read": "方式B（見出しで3節）→ 方式A（時間帯別・FAQ）",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "冒頭・Get the Winning Edge・FAQ のうち3問・More Guides"
+   }
+  },
+  {
+   "id": "src-loltheory",
+   "resource_id": "res-loltheory-wave-2026",
+   "url": "https://blog.loltheory.gg/wave-management-league-of-legends/",
+   "author": "Griffin Wood（LoL Theory）",
+   "published": "未確認",
+   "read": "方式A（When to Use・Mid Lane・Common Mistakes の節）",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "冒頭・三つの状態・各状態の作り方（フリーズ・スロープッシュ・速く押す）・トップとボットの節"
+   }
+  },
+  {
+   "id": "src-digfreeze",
+   "resource_id": "res-dignitas-freeze-advanced",
+   "url": "https://dignitas.gg/articles/Blogs/League%20of%20Legends/1223/Advanced-guide-Freezing-your-lane",
+   "author": "Chillwang（Dignitas）",
+   "published": "未確認（古い記事）",
+   "read": "方式A（全文）",
+   "coverage": {
+    "status": "full"
+   }
+  },
+  {
+   "id": "src-digwave",
+   "resource_id": "res-dignitas-wave-2019",
+   "url": "https://dignitas.gg/articles/blogs/League-of-Legends/13779/a-guide-to-improving-your-wave-management-in-league-of-legends",
+   "author": "Ahrivve（Dignitas）",
+   "published": "2019-07-14",
+   "read": "方式A（When to Recall・When to Freeze・When to Slow Push の節）",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "冒頭・ミニオンの出現間隔・フリーズの作り方・スロープッシュの作り方・速く押す理由・結論 の節"
+   }
+  },
+  {
+   "id": "src-dopa2",
+   "resource_id": "res-yt-goru-dopa-fizz-ep2",
+   "url": "https://www.youtube.com/watch?v=IO8tqkt1GQk",
+   "author": "Dopa（日本語字幕：goru）",
+   "published": "未確認（原典は2016年のプレシーズン前の内容と Phase 4B で記録）",
+   "read": "日本語字幕を YouTube の文字起こし表示で確認（0:00〜6:45、11:36〜14:54）。6:45〜11:36 は未確認",
+   "coverage": {
+    "status": "partial",
+    "unread_ja": "字幕の6:45〜11:36と、14:54以降"
+   }
+  }
+ ],
+ "units": [
+  {
+   "id": "du-behind-keep-wave-own-side",
+   "statement_ja": "劣勢のミッドでは、序盤にスキルでウェーブを処理せず、ウェーブをレーン中央より自陣側に保つ。",
+   "kind": "decision",
+   "problem_ja": "ミッドで劣勢になったとき、ウェーブをどう扱うか",
+   "observations_ja": [
+    "主導権を失っている",
+    "序盤でスキルのダメージが低い"
+   ],
+   "goal_ja": "相手が強くなる時期までの不利を広げず、次に勝てる時間帯まで耐える",
+   "action_ja": "範囲スキルでむやみにミニオンを巻き込まない。ウェーブを中央より自陣側に寄せて維持する",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "下手にスキルでウェーブを処理すると、相手にフリーズされ、ソロキルやガンクの圧力を受け続ける"
+    },
+    {
+     "basis": "source",
+     "text": "自陣側にあれば、ダメージ交換を仕掛けやすく、ガンクの圧力もかけられる"
+    },
+    {
+     "basis": "source",
+     "text": "相手にダメージを与えておくと、気軽にロームさせない牽制になる"
+    }
+   ],
+   "alternatives_ja": [
+    "プッシュ力だけで負けていてダメージ交換は張り合える場合は、押されても構わないので相手の体力を削る（原典）"
+   ],
+   "costs_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "conditions_ja": [
+    "劣勢であること",
+    "序盤（スキルダメージが低い時期）"
+   ],
+   "exceptions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "メイジ同士の例（具体名なし）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "パッチに依存する記述は確認範囲になし",
+   "unknowns_ja": [
+    "自陣側に保つ具体的な手順（何体残すか）は、この記事では書かれていない"
+   ],
+   "topic_ids": [
+    "wave-management",
+    "playing-from-behind",
+    "role-mid"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-kjumg",
+     "locator": "3. 「耐える」ためのレーン状況を作り出す",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-dopa-tf-fizz-pull-wave",
+     "type": "same_conclusion_independent",
+     "note_ja": "Dopa も TF 対フィズでウェーブを自分側に寄せる。理由は対面の特性（メレーでウェーブを戻せない）で、条件が違う"
+    },
+    {
+     "to": "du-mid-freeze-hard",
+     "type": "condition_differs",
+     "note_ja": "LoL Theory はミッドでのフリーズは難しいとする。自陣側に保つことと、完全なフリーズは別"
+    },
+    {
+     "to": "du-freeze-when-behind-dignitas",
+     "type": "same_conclusion_independent",
+     "note_ja": "Dignitas（2019）も不利なら自陣タワー近くでフリーズして追いつくとする"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "方式Bの規則（見出しに理由・条件の語）では、この節の見出しを選ばなかった"
+   }
+  },
+  {
+   "id": "du-behind-estimate-spike",
+   "statement_ja": "劣勢のときは、自分のチャンピオンがいつ巻き返せるか（レベル・アイテムの時期）を見積もり、それまで耐えることを目標にする。",
+   "kind": "decision",
+   "problem_ja": "劣勢のレーンで、何を目標に耐えればよいか",
+   "observations_ja": [
+    "自分のチャンピオンのパワースパイクの時期",
+    "次のリコール・1コアの完成時期"
+   ],
+   "goal_ja": "耐える期間に具体的な目標を持つ",
+   "action_ja": "次のリコールまでか、1コアまでか、特定のレベルまでかを見積もる",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "チャンピオンによって強くなる時期が違うので、いつ主導権を取り返せるかの目安があると、それまでの耐え方が決まる"
+    }
+   ],
+   "alternatives_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "costs_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "conditions_ja": [
+    "原典の例：シンドラはQが進化するレベル7〜8以降、アニーはRを取るレベル6"
+   ],
+   "exceptions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "シンドラ、アニー（例）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "スキルの強化時期はチャンピオンの調整に依存する。現行パッチでの値は未確認",
+   "unknowns_ja": [
+    "例に挙げたレベルが現行のキットと一致するか"
+   ],
+   "topic_ids": [
+    "playing-from-behind",
+    "role-mid",
+    "mage"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-kjumg",
+     "locator": "2. 「いつなら勝てるか」の展望を持つ",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-farm-first",
+     "type": "same_author_restated",
+     "note_ja": "不利マッチアップの記事（同じ著者）でも「勝てる時間帯」を明確にするとある。同じ著者なので独立した裏付けではない"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-behind-measure-gap",
+   "statement_ja": "劣勢の度合いは、相手との差が魔力の上がるアイテム・ブーツ・主要アイテムの完成かどうかで測り、まだ戦えるなら軽いトレードで相手の体力を削る。",
+   "kind": "decision",
+   "problem_ja": "どれくらい負けているのかを判断したい",
+   "observations_ja": [
+    "アイテム差の種類（サファイアクリスタル・女神の涙など火力に直結しないものか、魔力・ブーツ・ロストチャプターなどか）",
+    "ウェーブに触れないほどの差か、プッシュ力だけの差か"
+   ],
+   "goal_ja": "次の一手を決める",
+   "action_ja": "差の種類を確認し、まだ戦える余地があれば軽くダメージ交換して相手の体力を削る",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "火力に直結しないアイテムだけの差なら大きな問題になりにくい。魔力アイテムやブーツ、主要アイテムの差はダメージ差として現れる"
+    },
+    {
+     "basis": "source",
+     "text": "相手の体力を削ると、ロームさせない牽制になる"
+    }
+   ],
+   "alternatives_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "costs_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "conditions_ja": [
+    "メイジ同士の対面の例"
+   ],
+   "exceptions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "メイジ",
+    "matchup": "メイジ同士"
+   },
+   "patch_dependency_ja": "アイテム名（ロストチャプターなど）は現行アイテムに依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "playing-from-behind",
+    "itemization",
+    "role-mid",
+    "mage"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-kjumg",
+     "locator": "1. 自身の「負け度合い」を正確に把握する",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-roam-do-not-chase",
+   "statement_ja": "対面のミッドがロームしても、基本的には追いかけない。追うのは、相手の位置が視界で見えていて、ローム先の味方が明確に優勢か戦闘が長引きそうなときだけ。",
+   "kind": "decision",
+   "problem_ja": "対面がロームしたとき、追いかけるべきか",
+   "observations_ja": [
+    "川のワードで相手ミッドが見えているか",
+    "ローム先の味方レーンの優劣",
+    "相手がアサシン（カタリナ・フィズ・ルブランなど）か"
+   ],
+   "goal_ja": "ロームによる損を最小にし、自分が倒されない",
+   "action_ja": "原則として追わない（条件がそろったときだけ追う）",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "ロームするふりをして草むらで待ち伏せしている可能性があり、挟み撃ちにされやすい"
+    },
+    {
+     "basis": "source",
+     "text": "後から追っても他レーンに着くまで約15秒かかり、状況が終わっていることが多い"
+    }
+   ],
+   "alternatives_ja": [
+    "カウンターアクション（du-roam-counter-action）"
+   ],
+   "costs_ja": [
+    "ローム先の味方を助けられない（AI の解釈。原典は追わない理由だけを書く）"
+   ],
+   "conditions_ja": [
+    "追ってよい条件：川にワードがあり相手ミッドが見えている、かつ、ローム先の味方が明確に優勢か戦闘が長引きそう"
+   ],
+   "exceptions_ja": [
+    "上の条件がそろった場合"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "相手がアサシンのときに特に危険（原典の例）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "なし（移動時間の約15秒はマップに依存）",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "roaming",
+    "role-mid",
+    "vision",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-wftjm",
+     "locator": "2. ロームを「追いかける」のは基本的にNG／待ち伏せのリスク／追いかける条件",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-mid-freeze-hard",
+     "type": "condition_differs",
+     "note_ja": "LoL Theory は「相手がロームに踏み出したのを見たら追う」も選択肢に挙げ、アサシンの偽ロームにも注意する。待ち伏せの危険は共通、追う条件の書き方が違う（独立した著者）"
+    },
+    {
+     "to": "du-dopa-tf-save-ult",
+     "type": "condition_differs",
+     "note_ja": "Dopa は TF 対フィズで「フィズがロームするならついていく」とする。TF の R がある対面という条件つきの例外"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-roam-counter-action",
+   "statement_ja": "対面のロームを追わない代わりに、ウェーブを押し込んで相手にミニオンを失わせる。ただし敵ジャングラーや相手ミッドの位置が不明ならタワーは殴らない。",
+   "kind": "decision",
+   "problem_ja": "追いかけない場合に、何をすればロームの利益を相殺できるか",
+   "observations_ja": [
+    "自分のプッシュ力",
+    "敵ジャングラー・相手ミッドの位置が見えているか",
+    "自分の体力・アイテム"
+   ],
+   "goal_ja": "相手のロームのメリットを相殺する",
+   "action_ja": "次のウェーブを素早く押し込む。安全ならタワープレートを取る。押し込んだ後にワードを置き直すかリコールする。逆サイドへのロームやタワーダイブも検討する",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "相手のミニオンを失わせれば、こちらが主導権を取れる時間が早まる"
+    },
+    {
+     "basis": "source",
+     "text": "位置が不明なままタワーを殴ると、背後から挟み撃ちにされる"
+    }
+   ],
+   "alternatives_ja": [
+    "逆サイドへのローム・タワーダイブ（原典）",
+    "何も有効な行動がない場合もある（原典）"
+   ],
+   "costs_ja": [
+    "プレートを欲張ると倒される危険（原典）"
+   ],
+   "conditions_ja": [
+    "安全を確保できる範囲で圧力をかける"
+   ],
+   "exceptions_ja": [
+    "敵ジャングラーまたは相手ミッドの位置が不明なときは、タワーを殴らない"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "記載なし（全体を確認）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "タワープレートの仕組みに依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "roaming",
+    "wave-management",
+    "role-mid"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-wftjm",
+     "locator": "3. カウンターアクションを積極的に行う",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    },
+    {
+     "source": "src-kjumg",
+     "locator": "5. カウンターアクションを積極的に行う",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-plates-vs-clean-recall",
+     "type": "condition_differs",
+     "note_ja": "LoL Theory はプレートのためにきれいなリコールを犠牲にしないとする。wftjm は「安全なら」プレートを取る。独立した著者で、条件の置き方が違う"
+    },
+    {
+     "to": "du-jungler-hovering-trap",
+     "type": "same_conclusion_independent",
+     "note_ja": "MetaBot も敵ジャングラーの位置を確かめずに前に出るなとする"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true,
+    "note_ja": "同じ著者の2記事に同じ内容があり、根拠としては1つと数える"
+   }
+  },
+  {
+   "id": "du-roam-signs",
+   "statement_ja": "対面がウェーブを強く押し始めたらロームの兆候とみて、味方に知らせる。普段から相手の体力・マナを削っておくとロームしにくくなる。",
+   "kind": "decision",
+   "problem_ja": "ロームを後手ではなく事前に防ぎたい",
+   "observations_ja": [
+    "毎ウェーブ、相手がプッシュを強めてくるか",
+    "相手の体力・マナの残り"
+   ],
+   "goal_ja": "ロームを未然に防ぐ、または被害を小さくする",
+   "action_ja": "兆候があれば「敵が行方不明」や「危険」のピンで味方に知らせる。レーン戦で相手の体力を削っておく",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "体力やマナに余裕がある相手はロームできる。少ない相手はロームの危険が高い"
+    }
+   ],
+   "alternatives_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "costs_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "conditions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "exceptions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "記載なし（全体を確認）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "roaming",
+    "role-mid",
+    "lane-priority"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-wftjm",
+     "locator": "4. ロームの「兆候」を事前にコールする",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-mid-ward-center",
+   "statement_ja": "ミッドでは、レーン中央と横の草むらにワードを置き、相手がどちらにロームしたか（またはリコールしたか）を判別できるようにする。",
+   "kind": "decision",
+   "problem_ja": "相手ミッドが視界から消えたとき、どこへ行ったか分からない",
+   "observations_ja": [
+    "相手ミッドが視界から消えた"
+   ],
+   "goal_ja": "トップとボットの両方に行方不明のピンを鳴らすしかない状態を避ける",
+   "action_ja": "ミッド中央の草むら・ジャングルの入り口付近にワードを置く",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "行き先が分からないと、トップとボット両方が警戒を強いられ、味方が有利なときでも安全策しか取れなくなる"
+    },
+    {
+     "basis": "source",
+     "text": "中央に置けば、相手がリコールしただけかどうかも分かる"
+    }
+   ],
+   "alternatives_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "costs_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "conditions_ja": [
+    "相手がオラクルレンズを持つ、草むらにコントロールワードがある可能性に注意（原典）"
+   ],
+   "exceptions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "記載なし（全体を確認）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "ワード・トリンケットの仕様に依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "vision",
+    "roaming",
+    "role-mid"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-wftjm",
+     "locator": "1. 相手のローム先を正確に把握する",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    },
+    {
+     "source": "src-kjumg",
+     "locator": "4. 防御的なワード設置を徹底する",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "同じ著者の2記事。根拠は1つと数える"
+   }
+  },
+  {
+   "id": "du-matchup-decompose-disadvantage",
+   "statement_ja": "不利なマッチアップでは、まず「なぜ不利か」を、勝てなくなる時間帯・アイテム・特定のプレイに分けて理解し、勝てる時間帯にだけ戦う。",
+   "kind": "decision",
+   "problem_ja": "不利な対面でどう戦えばよいか",
+   "observations_ja": [
+    "どの時間帯から勝てなくなるか",
+    "試合を通してずっと勝てないのか",
+    "特定のアイテムを買われると勝てないのか",
+    "特定のプレイをされると勝てないのか"
+   ],
+   "goal_ja": "勝てる時間帯と戦い方を明確にする",
+   "action_ja": "勝てる時間帯は積極的にダメージ交換し、勝てない時間帯はファームに専念する",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "不利の要素を分解すると、勝てる時間帯と戦い方が明確になる（原典の例：レネクトン対グラガスでは序盤はレネクトン有利、アイテムとスキルレベルでグラガスが対応できるようになる）"
+    }
+   ],
+   "alternatives_ja": [
+    "ルーン・アイテムで不利を和らげる（du-behind-safer-build）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "exceptions_ja": [
+    "ゲームを通して相手をするのが難しいマッチアップもある（原典の例：クレッド対フィオラ）"
+   ],
+   "scope": {
+    "roles": [
+     "top"
+    ],
+    "champions": "レネクトン、グラガス（例）",
+    "matchup": "トップの例。MID にも当てはまるかは AI の解釈"
+   },
+   "patch_dependency_ja": "例のマッチアップの有利不利はパッチに依存",
+   "unknowns_ja": [
+    "MID の具体例は原典にない"
+   ],
+   "topic_ids": [
+    "matchup",
+    "playing-from-behind",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-hydfd",
+     "locator": "1. 「カウンター要素」を理解する",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-estimate-spike",
+     "type": "same_author_restated",
+     "note_ja": "同じ著者。独立した裏付けではない"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-behind-safer-build",
+   "statement_ja": "不利な対面では、攻撃的なキーストーン・スノーボール用のアイテムを控え、防御的なルーン・早めの防御ブーツで安定性を上げることを検討する。勝負に行くなら武器を買う。",
+   "kind": "decision",
+   "problem_ja": "不利な対面で、火力と耐久のどちらを優先して買うか",
+   "observations_ja": [
+    "相手のダメージの種類",
+    "味方が勝ちそうか",
+    "自分が勝負に行きたいか"
+   ],
+   "goal_ja": "不利な状況を和らげる",
+   "action_ja": "防御的なブーツを早めに買う、ボーンアーマー・息継ぎなどの防御ルーン、スノーボール用アイテム（赤月の刃など）を控える",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "防御的なブーツはダメージを大きく減らし、移動速度でガンク対策にもなる（ダメージは伸びない）"
+    },
+    {
+     "basis": "source",
+     "text": "「安定性を上げるのか」「ダメージを入れやすくするのか」を考えて選ぶ"
+    }
+   ],
+   "alternatives_ja": [
+    "勝負に行きたいなら積極的に武器を買う（原典）"
+   ],
+   "costs_ja": [
+    "ダメージが伸びない（原典）"
+   ],
+   "conditions_ja": [
+    "味方が勝ちそうならブーツで安定性を上げるべき（原典）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "top"
+    ],
+    "champions": "レネクトン（征服者→プレスアタックの例）",
+    "matchup": "トップの例"
+   },
+   "patch_dependency_ja": "ルーン・アイテム名は現行の仕様に依存。未確認",
+   "unknowns_ja": [
+    "MID・メイジでの具体的な防御アイテムは原典にない"
+   ],
+   "topic_ids": [
+    "matchup",
+    "itemization",
+    "runes",
+    "playing-from-behind"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-hydfd",
+     "locator": "2. ルーンとアイテムで不利を和らげる（ルーン・アイテム）",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-when-in-doubt-back-off",
+     "type": "same_conclusion_independent",
+     "note_ja": "MetaBot も不利なら引いてファームし、次のスパイクを待つとする（独立した著者）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-behind-farm-first",
+   "statement_ja": "序盤に不利な対面では無理なダメージ交換を避けてファームを最優先にし、大きなウェーブが来るときに仕掛けたり、不用意にプッシュしたりしない。",
+   "kind": "decision",
+   "problem_ja": "不利な対面のレーンで何を優先するか",
+   "observations_ja": [
+    "大きなウェーブが来るタイミング",
+    "味方ジャングラーが近いか",
+    "自分の体力"
+   ],
+   "goal_ja": "ゴールド差を広げない",
+   "action_ja": "CS を優先する。相手にフリーズさせないようにウェーブを管理する。味方ジャングラーが近く、体力を保てているならウェーブを止めてガンクを呼ぶ",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "不用意にミニオンを触ってプッシュウェーブにしたり、大きなウェーブのときに仕掛けたりすると、ガンクやタワーダイブの危険が生まれる"
+    },
+    {
+     "basis": "source",
+     "text": "体力を削られすぎるとガンクを呼ぶことも難しくなる"
+    }
+   ],
+   "alternatives_ja": [
+    "ガンクを呼んで相手を倒す（序盤有利・中盤以降不利のマッチアップで特に有効、と原典）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "序盤に不利なマッチアップ"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "top"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "トップの例"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "matchup",
+    "wave-management",
+    "playing-from-behind"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-hydfd",
+     "locator": "3. レーンでの立ち回りで大切なこと",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-keep-wave-own-side",
+     "type": "same_author_restated",
+     "note_ja": "同じ著者（ミッド編）。独立した裏付けではない"
+    },
+    {
+     "to": "du-when-in-doubt-back-off",
+     "type": "same_conclusion_independent",
+     "note_ja": "MetaBot（独立した著者）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-freeze-not-always",
+   "statement_ja": "有利でも常にフリーズが最善ではない。フリーズ中はレーンから動けず、マップへの圧力とオブジェクトを失う。",
+   "kind": "decision",
+   "problem_ja": "勝っているレーンで、いつフリーズをやめるか",
+   "observations_ja": [
+    "オブジェクトの出現時刻",
+    "相手がファームを捨てて動くか",
+    "味方ジャングラーが敵陣に入りたいか"
+   ],
+   "goal_ja": "レーンの有利を試合の勝利につなげる",
+   "action_ja": "スロープッシュで大きなウェーブを押し付け、ダイブ・ワード設置・他レーンの援護に使う",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "フリーズ中はレーンから動けず、相手がロームしたりジャングルに入ったりすると味方が数的不利になる"
+    }
+   ],
+   "alternatives_ja": [
+    "フリーズを続けてゴールド・経験値を奪う"
+   ],
+   "costs_ja": [
+    "フリーズで奪えたはずのゴールド・経験値"
+   ],
+   "conditions_ja": [
+    "オブジェクトの前、相手が動くとき"
+   ],
+   "exceptions_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "記載なし（全体を確認）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "オブジェクトの種類（ヴォイドグラブなど）に依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "freeze",
+    "wave-management",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-mmlgg",
+     "locator": "2. 「有利なら常にフリーズが最強」という勘違い",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-wave-state-by-next-action",
+     "type": "same_conclusion_independent",
+     "note_ja": "LoL Theory：フリーズは自分のテンポを差し出して相手のテンポを奪う。独立した著者が別の言い方で同じ代償を示す"
+    },
+    {
+     "to": "du-freeze-when-behind-dignitas",
+     "type": "condition_differs",
+     "note_ja": "Dignitas（2019）はフリーズ中に相手がロームできるので、ワードとピンで備えるとする。代償の扱いが違う"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": null,
+    "note_ja": "Phase 5A の E2 と同じ。今回は再読していない"
+   }
+  },
+  {
+   "id": "du-half-push-gets-frozen",
+   "statement_ja": "ウェーブ処理が遅いのに中途半端に速く押すと、味方ミニオンが敵タワーに届く前に止まり、敵タワー手前（相手がフリーズしやすい場所）でウェーブが固まる。",
+   "kind": "decision",
+   "problem_ja": "スキルで速く押せば相手をタワー下に押し込めると考えてしまう",
+   "observations_ja": [
+    "自分のウェーブ処理速度",
+    "マナ",
+    "次の敵ウェーブの位置"
+   ],
+   "goal_ja": "押すなら敵タワーまで確実に押し切る",
+   "action_ja": "押し切れないなら速く押さない。安全にリコール・ロームしたいときは、あえてスロープッシュで大きなウェーブを作る",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "押し切る前に敵ウェーブとぶつかると、相手にとって最高にフリーズしやすい場所でウェーブが止まる"
+    }
+   ],
+   "alternatives_ja": [
+    "スロープッシュ（原典）"
+   ],
+   "costs_ja": [
+    "記載なし（全体を確認）"
+   ],
+   "conditions_ja": [
+    "ウェーブ処理が遅い、マナが足りない、次の敵ウェーブとの距離を計算していない"
+   ],
+   "exceptions_ja": [
+    "ボットでは2人で体を使ってウェーブを止められる（原典）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "記載なし（全体を確認）",
+    "matchup": "記載なし（全体を確認）"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "fast-push",
+    "freeze",
+    "wave-management"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-mmlgg",
+     "locator": "4. 「とりあえずスキルで早くプッシュすればいい」という勘違い",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-keep-wave-own-side",
+     "type": "same_author_restated",
+     "note_ja": "同じ著者。「押すとフリーズされる」は共通だが、こちらは劣勢に限らない"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": null,
+    "note_ja": "Phase 5A の確認範囲。P04 で「敵タワー手前」が質問の「自陣タワー手前」と文字列だけで一致した記述"
+   }
+  },
+  {
+   "id": "du-dopa-tf-fizz-pull-wave",
+   "statement_ja": "TF 対フィズでは、序盤は AA でハラスせずラストヒットだけを取り、ウェーブを自分のタワー側へ引く。敵のキャスターミニオンを自分のタワーに倒させない。",
+   "kind": "decision",
+   "problem_ja": "メレーのフィズに対して、TF は序盤どうウェーブを扱うか",
+   "observations_ja": [
+    "フィズがミニオンを AA で殴り始めたか",
+    "敵キャスターミニオンが自分のタワーに近づいているか"
+   ],
+   "goal_ja": "フィズにとって不利で、自分に有利なレーンの状態を作る",
+   "action_ja": "ラストヒットだけを取る。敵キャスターミニオンがタワーに入らないよう、少しミニオンの攻撃を受け止める（メレーミニオンはタワーに倒されてよい）。その後、フィズが CS を取ろうとするたびにハラスする",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "自分がタワーの近くにいるので、フィズはハラスできない"
+    },
+    {
+     "basis": "source",
+     "text": "フィズはメレーなので、ウェーブを押し切ってリセットできない。E の範囲で押せるが、E は逃げのスキルなので、押した状態で使うとガンクを受ける"
+    },
+    {
+     "basis": "source",
+     "text": "この距離はフィズにとってジャングラーのガンクを受けやすい"
+    }
+   ],
+   "alternatives_ja": [
+    "多くの TF がする「メレー相手に序盤から AA でハラス」「押して CS を取らせずにハラス」を、Dopa はよくある間違いとする（原典）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "対面がウェーブを戻す手段の乏しいメレー（フィズ）",
+    "ハラスより CS を優先する（原典）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "ツイステッド・フェイト",
+    "matchup": "対フィズ"
+   },
+   "patch_dependency_ja": "2016年プレシーズン前の内容（アイテムなどは現行と異なる）。ミニオン・タワーの基本は大きく変わっていないとみるのは AI の推測で、未確認",
+   "unknowns_ja": [
+    "6:45〜11:36 の字幕は未確認"
+   ],
+   "topic_ids": [
+    "wave-management",
+    "matchup",
+    "champ-twisted-fate",
+    "role-mid"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-dopa2",
+     "locator": {
+      "start_sec": 77,
+      "end_sec": 286,
+      "label": "1:17〜4:46"
+     },
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-keep-wave-own-side",
+     "type": "same_conclusion_independent",
+     "note_ja": "結論（自分側に寄せる）は同じ。lol-guide は劣勢を理由に、Dopa は対面の特性を理由にしている"
+    },
+    {
+     "to": "du-mid-freeze-hard",
+     "type": "exception_of",
+     "note_ja": "ミッドのフリーズは難しいという一般論に対し、ウェーブを戻せないメレー相手では成り立つ、という具体的な例外"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "チャプターも説明欄の要約もないので、方式Bは適用できない"
+   }
+  },
+  {
+   "id": "du-dopa-tf-fizz-cd-window",
+   "statement_ja": "フィズが E を使ったら、その CD 中は無防備なので攻める。押し込んだらトップ・ボット側にワードを置き、ガンクされたら迷わずフラッシュを使う。",
+   "kind": "decision",
+   "problem_ja": "TF 対フィズのレーンで、いつ攻め、どう安全を確保するか",
+   "observations_ja": [
+    "フィズの E の使用",
+    "ウェーブが押しているか"
+   ],
+   "goal_ja": "安全にハラスとファームを続ける",
+   "action_ja": "E の CD 中に攻撃的にプレイする。押しているときはワードを置く。ガンクされたらフラッシュを使う。押し返されるときは、スキルで一気に押さずゆっくり押す",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "E の CD 中、フィズは無防備"
+    },
+    {
+     "basis": "source",
+     "text": "フラッシュを温存して生き残れる場合もあるが危険なので、ガンクされたら思い切って使う"
+    },
+    {
+     "basis": "source",
+     "text": "イグナイトを持っているので、フィズは攻撃的にトレードできない"
+    }
+   ],
+   "alternatives_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "costs_ja": [
+    "フラッシュを失う（AI の解釈）"
+   ],
+   "conditions_ja": [
+    "フラッシュ＋イグナイトを持つ（原典の選択）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "ツイステッド・フェイト",
+    "matchup": "対フィズ"
+   },
+   "patch_dependency_ja": "2016年の内容。フィズの E の性能は現行と異なる可能性があり、未確認",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "trading",
+    "cooldown",
+    "matchup",
+    "champ-twisted-fate"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-dopa2",
+     "locator": {
+      "start_sec": 323,
+      "end_sec": 405,
+      "label": "5:23〜6:45"
+     },
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-trade-checklist",
+     "type": "same_conclusion_independent",
+     "note_ja": "MetaBot の「主要スキルを無駄にした直後がトレードの窓」と同じ原則（独立した著者・時代）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-dopa-tf-save-ult",
+   "statement_ja": "TF 対フィズでは、R をサイドのガンクに使わず、レーンで不利になったフィズのロームを阻止・失敗させるために取っておく。",
+   "kind": "decision",
+   "problem_ja": "TF の R をいつ使うか",
+   "observations_ja": [
+    "フィズがレーンで CS を取れず不利か",
+    "フィズがロームしようとしているか"
+   ],
+   "goal_ja": "キルの取れていないフィズをミッドに縛り付けたまま集団戦に参加させる",
+   "action_ja": "サイドでキルが取れそうでも R を使わない。フィズがロームしたらついていき、しないならレーンで圧倒し続ける",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "レーンで負けているフィズは、ゴールド・経験値の不利を取り返そうとロームする。そのロームを阻止するために R を使う"
+    },
+    {
+     "basis": "source",
+     "text": "TF が R を持っているだけで、敵のトップやボットは圧力を感じる"
+    }
+   ],
+   "alternatives_ja": [
+    "R でサイドのガンクに行く（TF の一般的な使い方。原典はこの対面では選ばないとする）"
+   ],
+   "costs_ja": [
+    "サイドでのキルの機会（原典：キルが取れるからといって使わないで）"
+   ],
+   "conditions_ja": [
+    "レーンでフィズを圧倒して主導権を持っていること"
+   ],
+   "exceptions_ja": [
+    "これ自体が「TF の R はサイドのガンクに使う」という一般的な使い方に対する、対面ごとの例外"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "ツイステッド・フェイト",
+    "matchup": "対フィズ"
+   },
+   "patch_dependency_ja": "TF の R の性能に依存。2016年の内容で未確認",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "roaming",
+    "matchup",
+    "champ-twisted-fate",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-dopa2",
+     "locator": {
+      "start_sec": 696,
+      "end_sec": 785,
+      "label": "11:36〜13:05"
+     },
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-roam-do-not-chase",
+     "type": "condition_differs",
+     "note_ja": "lol-guide は基本的に追わない。Dopa は TF の R があるので、フィズのロームについていく"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-trade-checklist",
+   "statement_ja": "トレードの前に、ミニオンアグロ・相手のスキルの CD・レベル差・サモナースペル・持久力の5つを確認し、2〜3個が自分に有利なときに仕掛ける。相手のミニオンウェーブの中では仕掛けない。",
+   "kind": "decision",
+   "problem_ja": "いつダメージ交換を仕掛けるか",
+   "observations_ja": [
+    "ウェーブがどちら側にあるか",
+    "相手が主要スキルを無駄にしたか",
+    "レベル2・6の先行",
+    "相手のフラッシュなどの有無",
+    "回復手段・ポーション"
+   ],
+   "goal_ja": "体力の有利を作る",
+   "action_ja": "5項目を確認し、2〜3個そろったら仕掛ける",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "相手ミニオンの近くで相手を殴ると、周囲のミニオンが自分を狙い、トレードで勝った分が消える"
+    },
+    {
+     "basis": "source",
+     "text": "相手が主要スキルを無駄にした後の約6〜8秒は、仕掛ける窓になる"
+    },
+    {
+     "basis": "source",
+     "text": "チェックリストは気分に左右されず、失敗したときにどの項目を見落としたか振り返れる"
+    }
+   ],
+   "alternatives_ja": [
+    "ポーク・オールイン・引く、の3つから対面に合うものを選ぶ（原典）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "5つすべては不要。2〜3個で足りることが多い（原典）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "ドランブレードなどの開始アイテム、ミニオン構成（3メレー・3キャスター）は現行仕様に依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "trading",
+    "minion-aggro",
+    "cooldown",
+    "level-2",
+    "summoner-spells"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-metabot",
+     "locator": "How to trade in lane: the five-advantage checklist／Why the checklist beats raw aggression",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-when-in-doubt-back-off",
+   "statement_ja": "迷ったら引く。レベル・CD・ウェーブで不利なら、フリーズかラストヒットで安全にファームし、ジャングラーか次のスパイクを待つ。",
+   "kind": "decision",
+   "problem_ja": "攻めるか安全に行くか迷う",
+   "observations_ja": [
+    "レベル・CD・ウェーブの状態でどちらが有利か"
+   ],
+   "goal_ja": "五分の運任せのトレードで不利にならない",
+   "action_ja": "下がってファームし、体力を保つ",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "五分でファームして体力を保つ方が、ほとんどの場合、運任せのトレードより良い。前に出ていて体力が低くなければガンクで倒されない"
+    },
+    {
+     "basis": "source",
+     "text": "プラチナ未満の多くのプレイヤーは、受け身すぎるより、攻撃を強いてレーンに負ける"
+    }
+   ],
+   "alternatives_ja": [
+    "ポーク",
+    "オールイン（レベルスパイクを先に取った、相手の主要 CD が落ちているとき）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "レベル・CD・ウェーブの状態で遅れているとき"
+   ],
+   "exceptions_ja": [
+    "チェックリストで有利なら攻める（原典）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [
+    "「プラチナ未満の多くは攻撃を強いて負ける」の根拠（データ）は示されていない"
+   ],
+   "topic_ids": [
+    "trading",
+    "playing-from-behind",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-metabot",
+     "locator": "Poke, all-in, or back off?／FAQ: Is it better to play aggressive or safe",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-farm-first",
+     "type": "same_conclusion_independent",
+     "note_ja": "lol-guide（独立した著者）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true,
+    "note_ja": "FAQ の部分は方式Bの範囲外"
+   }
+  },
+  {
+   "id": "du-jungler-hovering-trap",
+   "statement_ja": "敵ジャングラーが近くにいるときは、普段なら取るべきトレードも罠になる。前に出る前に両方のジャングラーの位置を追う。",
+   "kind": "decision",
+   "problem_ja": "敵ジャングラーの位置が分からないときに何を優先するか",
+   "observations_ja": [
+    "敵ジャングラーの位置・最後に見えた場所"
+   ],
+   "goal_ja": "トレードに勝って 2対1 で倒されることを避ける",
+   "action_ja": "両方のジャングラーを追跡してから前に出る",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "勝ったはずのトレードが、2対1 で倒される結果になる"
+    }
+   ],
+   "alternatives_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "costs_ja": [
+    "トレードの機会を見送る（AI の解釈）"
+   ],
+   "conditions_ja": [
+    "2〜6分のポークと圧力の時間帯（原典の区分）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [
+    "ジャングラーの位置を推定する具体的な方法は、この記事にない（Phase 4B の D1 が別資料で扱う）"
+   ],
+   "topic_ids": [
+    "trading",
+    "jungle-tracking"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-metabot",
+     "locator": "A model laning phase, minute by minute（2:00–6:00）／Common trading mistakes",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-roam-counter-action",
+     "type": "same_conclusion_independent",
+     "note_ja": "lol-guide：位置が不明ならタワーを殴らない"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "方式Bで選んだ節にはなく、時間帯別の節と表にあった"
+   }
+  },
+  {
+   "id": "du-short-trade-vs-bruiser",
+   "statement_ja": "レネクトン・ダリウスのような短期戦のブルーザーには、相手のスキルがあって自分のスキルがない時間に戦わない。征服者のように時間とともに強くなるルーンの相手とは、戦闘を長引かせない。",
+   "kind": "decision",
+   "problem_ja": "同じトレードの仕方が、対面によって通用しない",
+   "observations_ja": [
+    "相手の主要スキルの CD",
+    "相手のキーストーン（征服者など）"
+   ],
+   "goal_ja": "相手の得意な時間・長さで戦わない",
+   "action_ja": "相手が CS を取りに来たときにポークし、ギャップクローザーが落ちたときに罰する。戦闘は短く切る",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "レネクトンやダリウスは最初の3秒に勝ち、その後の10秒に負けるので、バーストして離れたがる"
+    },
+    {
+     "basis": "source",
+     "text": "征服者は戦いが続くほど強くなる"
+    }
+   ],
+   "alternatives_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "対面が短期戦のブルーザー、または時間で強くなるキーストーン"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "レネクトン、ダリウス（相手の例）",
+    "matchup": "対ブルーザー"
+   },
+   "patch_dependency_ja": "征服者の性能に依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "trading",
+    "matchup",
+    "runes"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-metabot",
+     "locator": "Match the trade to your champion／FAQ: How do I trade against a short-range bruiser",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-keystone-by-fight-length",
+     "type": "same_conclusion_independent",
+     "note_ja": "lolgaren：キーストーンを戦闘時間で選ぶ。戦闘の長さで判断が変わる点が共通（独立した著者）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "FAQ は方式Bの範囲外"
+   }
+  },
+  {
+   "id": "du-wave-state-by-next-action",
+   "statement_ja": "ウェーブの状態は「次に何をしたいか」で選ぶ。リコール・ロームなら速く押す、ガンクを誘うならフリーズ、ダイブなら2〜3ウェーブのスロープッシュ、オブジェクト前ならスロープッシュしてから離れる。",
+   "kind": "principle",
+   "problem_ja": "フリーズ・スロープッシュ・速く押す、のどれを選ぶか",
+   "observations_ja": [
+    "次にしたい行動（リコール、ローム、ガンク、ダイブ、オブジェクト）"
+   ],
+   "goal_ja": "ウェーブの処理を次の行動のための時間（テンポ）に変える",
+   "action_ja": "次の行動に合うウェーブの状態を作る",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "速く押すと次のウェーブまで時間ができる。フリーズは相手が CS のために前に出るので狙いやすい。スロープッシュは複数ウェーブがタワーの攻撃を受け止める"
+    },
+    {
+     "basis": "source",
+     "text": "フリーズは自分のテンポを差し出して相手のテンポを奪う"
+    }
+   ],
+   "alternatives_ja": [
+    "表の6通り（原典）"
+   ],
+   "costs_ja": [
+    "フリーズ：自分のテンポ（原典）"
+   ],
+   "conditions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "exceptions_ja": [
+    "ミッドではフリーズが難しい（du-mid-freeze-hard）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "wave-management",
+    "freeze",
+    "slow-push",
+    "fast-push",
+    "recall"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-loltheory",
+     "locator": "When to Use Each Wave State",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-freeze-not-always",
+     "type": "same_conclusion_independent",
+     "note_ja": "lol-guide（独立した著者）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true,
+    "note_ja": "見出しに when がある"
+   }
+  },
+  {
+   "id": "du-mid-freeze-hard",
+   "statement_ja": "ミッドはレーンが短く両側からガンクされやすいので、フリーズは難しい。ミッドのウェーブ管理は、ロームの時間を作るための速いプッシュと、大砲ウェーブの時機が中心になる。",
+   "kind": "principle",
+   "problem_ja": "ミッドでもトップ・ボットと同じようにフリーズしてよいか",
+   "observations_ja": [
+    "レーンの長さ",
+    "両側からのガンクの危険"
+   ],
+   "goal_ja": "ミッドに合ったウェーブ管理をする",
+   "action_ja": "速く押してロームの時間を作る。相手がロームしたら、できるだけ速く押し、相手が踏み出したのを見てから追うか、タワーにダメージを与えて CS を奪う",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "レーンが短いので、フリーズされても相手はあまり歩かずに CS を取れる"
+    },
+    {
+     "basis": "source",
+     "text": "ミッドは両側からガンクを受けやすい"
+    }
+   ],
+   "alternatives_ja": [
+    "押して下がり、情報が得られるまで待つ（アサシンの偽ロームへの対策。原典）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "ミッドの一般論"
+   ],
+   "exceptions_ja": [
+    "アサシンは視界を消して偽のロームをし、追ってきた相手を草むらで倒すことがある（原典）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "マップの形に依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "wave-management",
+    "freeze",
+    "roaming",
+    "role-mid"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-loltheory",
+     "locator": "How Wave Management Differs by Lane — Mid Lane",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-keep-wave-own-side",
+     "type": "condition_differs",
+     "note_ja": "lol-guide は劣勢時にウェーブを自陣側に保つ。完全なフリーズと「自陣側に保つ」の違いは、原典どうしでは明示されていない"
+    },
+    {
+     "to": "du-dopa-tf-fizz-pull-wave",
+     "type": "exception_of",
+     "note_ja": "メレーでウェーブを戻せない相手には、ミッドでも自陣側に引く戦術が成り立つ（Dopa）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "見出しが「Mid Lane」だけで、方式Bの規則では選ばれない"
+   }
+  },
+  {
+   "id": "du-plates-vs-clean-recall",
+   "statement_ja": "タワープレートのために、時機の良いリコールを犠牲にしない。押すなら、その後の行動（ワード・ローム・リコール・タワーへの圧力）を決めておく。",
+   "kind": "decision",
+   "problem_ja": "押し込んだ後にプレートを取るか、リコールするか",
+   "observations_ja": [
+    "自分の体力",
+    "フラッシュ・視界の有無",
+    "次のウェーブの状態"
+   ],
+   "goal_ja": "次のウェーブの周期でテンポを失わない",
+   "action_ja": "きれいなリコールを優先する",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "1枚余分にプレートを取ろうと残ると、ウェーブの戻り方が悪くなり、体力が減り、次の周期のテンポを失うことが多い"
+    },
+    {
+     "basis": "source",
+     "text": "押した後に何もせずレーンで待つなら、押した意味がない"
+    },
+    {
+     "basis": "source",
+     "text": "フラッシュも視界もないまま押すと、ガンク1回で CS 以上を失う"
+    }
+   ],
+   "alternatives_ja": [
+    "安全ならプレートを取る（wftjm）"
+   ],
+   "costs_ja": [
+    "プレートのゴールド"
+   ],
+   "conditions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "タワープレートの仕組みに依存",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "recall",
+    "wave-management",
+    "fast-push"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-loltheory",
+     "locator": "Common Wave Management Mistakes",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-roam-counter-action",
+     "type": "condition_differs",
+     "note_ja": "lol-guide は安全ならプレートを取る。独立した著者で、優先の置き方が違う"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-early-slow-push-avoid",
+   "statement_ja": "スロープッシュは中盤以降に使い、序盤は避ける（2019年の記事）。",
+   "kind": "decision",
+   "problem_ja": "スロープッシュをいつ使うか",
+   "observations_ja": [
+    "試合の段階"
+   ],
+   "goal_ja": "ロームやオブジェクトへの圧力に使う",
+   "action_ja": "中盤以降にスロープッシュを作り、他の場所で行動する。相手が素早く押し返してきたらレーンに戻る",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "序盤に行うと、レーンで問題が起き、多くのリソースを失うことがある"
+    },
+    {
+     "basis": "source",
+     "text": "大きなウェーブは相手の注意をオブジェクトからそらす"
+    }
+   ],
+   "alternatives_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "costs_ja": [
+    "序盤に行った場合のリソースの損（原典）"
+   ],
+   "conditions_ja": [
+    "中盤以降"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "2019年の記事。ミニオン・タワープレートの仕組みは当時と異なる可能性があり、未確認",
+   "unknowns_ja": [
+    "序盤に避ける理由の具体的な中身（どんな問題か）は書かれていない"
+   ],
+   "topic_ids": [
+    "slow-push",
+    "wave-management",
+    "roaming"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-digwave",
+     "locator": "When to Slow Push and Why",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "phase5a-E4-cheat-recall",
+     "type": "conflicts_with",
+     "note_ja": "lol-guide のチートリコール（res-lg-dauwk、2026年）は、序盤の1・2ウェーブをスロープッシュする。時代（2019年と2026年）と、対象（序盤の大砲ウェーブ前の特定の手順）が違う。どちらが現行で正しいかは未確認"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-freeze-when-behind-dignitas",
+   "statement_ja": "対面に不利で CS 差がついているときは、自陣タワーの近く（ただしタワーがミニオンを撃たない位置）でフリーズし、安全にファームしながら相手に前に出させる。フリーズ中は相手がロームできるので、ワードと味方への連絡で備える。",
+   "kind": "decision",
+   "problem_ja": "不利な対面で差を縮めたい",
+   "observations_ja": [
+    "CS 差（原典の例：30）",
+    "ガンクを繰り返し受けているか"
+   ],
+   "goal_ja": "ガンクを避けつつ追いつく。相手を前に出させて味方のガンクを呼ぶ",
+   "action_ja": "自陣タワーの近く（タワーがミニオンを撃たない位置）でフリーズを作り、安全にファームする。2019年の記事のこの節（When to Freeze）は、残すミニオンの数を書いていない。古い Dignitas の記事は、タワーの近くで保つときに、満タンの敵キャスター3体以上が自分に向かって押してくる状態を保つとする",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "タワー近くでフリーズすると、敵ジャングラーがガンクする機会を見つけにくく、相手は CS のために前に出る"
+    },
+    {
+     "basis": "source",
+     "text": "タワーがミニオンを撃つと、ウェーブが押し返されてフリーズが崩れる"
+    }
+   ],
+   "alternatives_ja": [
+    "フリーズの壊し方：自分のウェーブを敵タワーに押し込むか、ジャングラーに手伝ってもらう（原典）"
+   ],
+   "costs_ja": [
+    "相手がロームできる（原典）"
+   ],
+   "conditions_ja": [
+    "ラストヒットも押す力になるので、序盤にフリーズしたいなら最初のウェーブはラストヒットしないこともある（古い記事）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "不利な対面"
+   },
+   "patch_dependency_ja": "2019年と、それより古い記事。ミニオンの数や体力は現行と異なる可能性があり、未確認",
+   "unknowns_ja": [
+    "不利時のフリーズで残すミニオンの数は、2019年の記事の該当節（When to Freeze）には書かれていない。同じ記事の「キャスター2〜3体を残す」は、押し切るのが間に合わずに帰る前にウェーブを止める場面の記述（When to Recall）で、この判断の手順ではない（Phase 5E で原典を確認して訂正）"
+   ],
+   "topic_ids": [
+    "freeze",
+    "playing-from-behind",
+    "wave-management"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-digwave",
+     "locator": "When to Freeze, Why you Freeze Waves and How to Break Them",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    },
+    {
+     "source": "src-digfreeze",
+     "locator": "本文（場所・ミニオンの数・壊し方）",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-behind-keep-wave-own-side",
+     "type": "same_conclusion_independent",
+     "note_ja": "lol-guide（独立した著者）"
+    },
+    {
+     "to": "du-freeze-not-always",
+     "type": "condition_differs",
+     "note_ja": "どちらもフリーズ中は相手が動けると認めるが、lol-guide は有利時にフリーズをやめる理由に、Dignitas は不利時のフリーズの注意点に使う"
+    },
+    {
+     "to": "phase5a-E3-freeze-minion-count",
+     "type": "condition_differs",
+     "note_ja": "残す数は資料ごとに数え方と場面が違う：Dignitas 2019 の2〜3体は帰る前に止める場面（この判断の手順ではない）、古い Dignitas は満タンのキャスター3体以上（タワー近くで保つ）、lol-guide は自軍より3〜4体多く。数値の現行での正しさは未確認"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  },
+  {
+   "id": "du-mid-recall-4th-wave",
+   "statement_ja": "ミッドの最初のリコールは、3ウェーブ目（大砲）をためて4ウェーブ目と一緒に押し切った後に行う。敵ジャングラーが来る直前の時間だから。",
+   "kind": "decision",
+   "problem_ja": "ミッドで最初のリコールをいつするか",
+   "observations_ja": [
+    "自分のマナ・体力",
+    "敵ジャングラーが近くにいないか",
+    "何ウェーブ目か"
+   ],
+   "goal_ja": "ミニオンを失わずにリコールし、ガンクも避ける",
+   "action_ja": "最初は押さず、3ウェーブ目をためて、4ウェーブ目が来たら大きなウェーブで押し切ってリコールする",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "ミニオンが失われるのは、自分がいないとき（リコール中）にタワーに食われるかミニオン同士で倒れるとき。だからリコールは押し切ったときか、相手がいないプルレーンのときだけ"
+    },
+    {
+     "basis": "source",
+     "text": "4ウェーブ目は敵ジャングラーが来る直前のタイミングで、押し切ればガンクを回避したも同然"
+    },
+    {
+     "basis": "source",
+     "text": "コアアイテムまで帰らずにお金をためると、まともな対面ならプレートを削られるかソロキルされる"
+    }
+   ],
+   "alternatives_ja": [
+    "トップ・ボットは2ウェーブ目を押し切る（レーンが長いのでジャングラーが間に合うため。原典）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "マナと体力が残っている",
+    "近くに敵ジャングラーがいない"
+   ],
+   "exceptions_ja": [
+    "プッシュ力がなく対面も倒せないチャンピオンは、一度押されるとリセットできない（du-no-push-champion-tp）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "例：ツイステッド・フェイト",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "パッチ10.14（2020年）の記事。ジャングルの1周目の時間、タワープレート、開始アイテムは現在と違う可能性があり、現行で4ウェーブ目が適切かは未確認",
+   "unknowns_ja": [
+    "現行のジャングラーの到着時刻との対応"
+   ],
+   "topic_ids": [
+    "recall",
+    "wave-management",
+    "role-mid",
+    "jungle-tracking"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-recall",
+     "locator": "序盤のリコールタイミングは2つだけ／いつ押しきるのか？／ミッドは4ウェーブ目を押しきりたい",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-plates-vs-clean-recall",
+     "type": "same_conclusion_independent",
+     "note_ja": "押し切ってからきれいにリコールする点が共通（LoL Theory、独立した著者）"
+    },
+    {
+     "to": "phase5a-E4-cheat-recall",
+     "type": "condition_differs",
+     "note_ja": "チートリコール（lol-guide）は大砲の3ウェーブ目で押して帰る。主に上下レーンの戦術とされる"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true,
+    "note_ja": "見出しに「いつ」がある節が中心"
+   }
+  },
+  {
+   "id": "du-no-push-champion-tp",
+   "statement_ja": "対面を倒せずプッシュ力もないチャンピオンは、一度押されるとウェーブをリセットできないので、トップかミッドならテレポートを持つ。",
+   "kind": "decision",
+   "problem_ja": "押し切る手段がないチャンピオンは、いつリコールすればよいか",
+   "observations_ja": [
+    "自分のプッシュ力",
+    "対面を倒せるか"
+   ],
+   "goal_ja": "リコールでミニオンを大きく失わない",
+   "action_ja": "テレポートを持つ",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "プッシュ力がないチャンピオンは押されたレーンをリセットできず、帰るたびにミニオンを失う。トップがテレポートを持つことが多いのは、中盤に合流するためではない"
+    }
+   ],
+   "alternatives_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "costs_ja": [
+    "他のサモナースペル（AI の解釈）"
+   ],
+   "conditions_ja": [
+    "原典の例：ナサス、カサディン"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "top",
+     "mid"
+    ],
+    "champions": "ナサス、カサディン（例）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "テレポートの仕様（2020年当時）に依存。現行のテレポートの制限は未確認",
+   "unknowns_ja": [],
+   "topic_ids": [
+    "recall",
+    "summoner-spells",
+    "wave-management"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-recall",
+     "locator": "対面が倒せないしプッシュ力もないチャンピオンの場合／最悪な状況を考える",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-keystone-by-fight-length",
+   "statement_ja": "キーストーンは、その対面での戦闘時間に合わせて選ぶ。短い戦闘で倒し切りたいならバースト型、長い殴り合いなら征服者などを選ぶ。",
+   "kind": "decision",
+   "problem_ja": "同じチャンピオンでも、対面によってキーストーンを変えるべきか",
+   "observations_ja": [
+    "対面との戦闘の長さ",
+    "キーストーンを発動しやすいか",
+    "相手が硬いか柔らかいか"
+   ],
+   "goal_ja": "チャンスのときに倒し切る、相手を逃がさない",
+   "action_ja": "原典の例：アクシャン対ダイアナでは、アクシャンはプレスアタック、ダイアナは電撃",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "アクシャンがフリートフットワークだと、チャンスのときにダイアナを倒せない。ダイアナが征服者だと、バーストが少なく相手を逃がす"
+    },
+    {
+     "basis": "source",
+     "text": "魂の収穫はトップとミッドでは発動させにくいので、代わりに電撃を使う"
+    },
+    {
+     "basis": "source",
+     "text": "征服者は、ジャングラーを含めた2対2でないと役に立たない場面がある（アクシャン対エイトロックス）"
+    }
+   ],
+   "alternatives_ja": [
+    "相手に硬いチャンピオンが多ければプレスアタック、柔らかいならフリートフットワーク（アクシャンの例。原典）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "ソロキューのサモナーズリフト（原典の前提）"
+   ],
+   "exceptions_ja": [
+    "メイジがレーンで魂の収穫を使うなら追火を入れると強い（原典）"
+   ],
+   "scope": {
+    "roles": [
+     "mid",
+     "top",
+     "bot"
+    ],
+    "champions": "アクシャン、ダイアナ、エイトロックス（例）",
+    "matchup": "対面ごと"
+   },
+   "patch_dependency_ja": "パッチ12.14の記事。ルーンの性能・種類は変わっている可能性があり、未確認",
+   "unknowns_ja": [
+    "メイジの具体的な対面例は原典にない"
+   ],
+   "topic_ids": [
+    "runes",
+    "matchup",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-itembuild2",
+     "locator": "戦闘時間に合わせて使う／アクシャン対ダイアナ／アクシャン対エイトロックス／発動回数が多いほど強い",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-short-trade-vs-bruiser",
+     "type": "same_conclusion_independent",
+     "note_ja": "MetaBot（独立した著者）"
+    },
+    {
+     "to": "du-vlad-keystone-by-matchup",
+     "type": "same_author_restated",
+     "note_ja": "同じ著者の別記事での具体例"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false,
+    "note_ja": "方式Bでは冒頭の「基準の名前」だけが取れ、理由と例は見出しが対面名だけの節にあった"
+   }
+  },
+  {
+   "id": "du-vlad-keystone-by-matchup",
+   "statement_ja": "同じブラッドミアでも、対リサンドラでは死神の残り火、対アニビアでは征服者を選ぶ。相手のスキルを避けて自分の Q を当て続けられるかで、キーストーンの向き不向きが変わる。",
+   "kind": "decision",
+   "problem_ja": "同じ戦術・ビルドが、別のマッチアップで通用しないのはなぜか",
+   "observations_ja": [
+    "相手の得意距離と射程",
+    "相手のスロウ・壁などの妨害",
+    "自分の Q を当て続けられるか"
+   ],
+   "goal_ja": "対面ごとに勝ちやすい構成を選ぶ",
+   "action_ja": "対リサンドラ：死神の残り火、イグナイト、ドランリング。リサンドラ Q を避けて Q を当て続ける。対アニビア：征服者、ドランヘルム、シュレリアの戦歌",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "リサンドラの Q はミニオンを挟まなければ横に歩くだけで当たらず、得意距離は W の450（リサンドラの記事）"
+    },
+    {
+     "basis": "source",
+     "text": "死神の残り火は、レーン戦で Q を当てにくい相手には弱い。アニビア相手ならはっきりと征服者に劣る（アニビアの記事）"
+    },
+    {
+     "basis": "ai",
+     "text": "2つの記事を並べると、同じキーストーンの評価が「Q を当て続けられるか」という条件で分かれている。この共通の条件は AI の整理で、原典が一般化して述べてはいない"
+    }
+   ],
+   "alternatives_ja": [
+    "対リサンドラ：嵐乗りの勇躍＋ゴーストで細々とプレイする（原典）"
+   ],
+   "costs_ja": [
+    "スケーリングの構えだと、リサンドラの序盤のハラスで1キルや CS 差30以上をつけられる（原典）"
+   ],
+   "conditions_ja": [
+    "パッチ26.13（リサンドラ）、26.10（アニビア）の記事"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "mid"
+    ],
+    "champions": "ブラッドミア",
+    "matchup": "対リサンドラ、対アニビア"
+   },
+   "patch_dependency_ja": "キーストーン・アイテムの性能に依存（パッチ26.10・26.13）",
+   "unknowns_ja": [
+    "記事中の統計（LOLALYTICS）は確認していない"
+   ],
+   "topic_ids": [
+    "matchup",
+    "runes",
+    "mage",
+    "role-mid"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-lissandra",
+     "locator": "リサンドラへのカウンターピック／ブラッドミア（バトルメイジ全般）",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    },
+    {
+     "source": "src-vlad",
+     "locator": "ルーンおよびキーストーン",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-keystone-by-fight-length",
+     "type": "same_author_restated",
+     "note_ja": "同じ著者。独立した裏付けではない"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": false
+   }
+  },
+  {
+   "id": "du-review-separate-decision-from-result",
+   "statement_ja": "振り返りでは、結果の良し悪しと意思決定の良し悪しを分けて考える（結果主義を避ける）。確信度を0か10ではなく、0〜10の尺度で表す。",
+   "kind": "principle",
+   "problem_ja": "負けた・倒されたプレイの原因をどう分析するか",
+   "observations_ja": [
+    "結果（倒された、勝った）",
+    "そのときの判断の根拠と確信度"
+   ],
+   "goal_ja": "運の良し悪しに左右されずに判断の質を上げる",
+   "action_ja": "良い判断・悪い結果、悪い判断・良い結果を区別する。判断の確信度を段階で表す",
+   "reasons": [
+    {
+     "basis": "source",
+     "text": "良い結果が良い判断から来たとは限らず、悪い結果が悪い判断から来たとも限らない。結果だけで判断を評価すると、判断を無視するのと同じ"
+    }
+   ],
+   "alternatives_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "costs_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "conditions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "exceptions_ja": [
+    "確認範囲に記載なし（未読の範囲あり）"
+   ],
+   "scope": {
+    "roles": [
+     "all"
+    ],
+    "champions": "確認範囲に記載なし（未読の範囲あり）",
+    "matchup": "確認範囲に記載なし（未読の範囲あり）"
+   },
+   "patch_dependency_ja": "なし",
+   "unknowns_ja": [
+    "原典は書籍（Thinking in Bets）の要約が中心で、LoL の具体的な場面への適用は、確認した範囲では薄い"
+   ],
+   "topic_ids": [
+    "review-learning",
+    "decision-making"
+   ],
+   "proposed_status": "empirical",
+   "evidence": [
+    {
+     "source": "src-tib",
+     "locator": "意思決定の質とは何か／1. 「よくわからない」を受け入れる／3. 結果から意思決定を分離する",
+     "evidence_type": "empirical_claim",
+     "checked_level": "L3"
+    }
+   ],
+   "relations": [
+    {
+     "to": "du-roam-do-not-chase",
+     "type": "complements",
+     "note_ja": "lol-guide（ロームへの対処）は「追うべきだったかはリプレイで後から確認する」と、具体的な場面での適用を書いている（独立した著者）"
+    }
+   ],
+   "extraction": {
+    "method_A_found": true,
+    "method_B_found": true
+   }
+  }
+ ]
+}

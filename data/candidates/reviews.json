@@ -1,0 +1,281 @@
+{
+ "https://lol-guide.com/articles/czikf": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "見出しと冒頭",
+  "reason": "時間帯別の確認事項。主導権の有無で行動を分ける"
+ },
+ "https://lol-guide.com/articles/dauwk": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "depth_confirmed": "deep",
+  "method": "本文（5場面のうち1〜4）",
+  "reason": "場面ごとに、活用する条件・手順・行わない場合・注意点がある",
+  "registered_as": "res-lg-dauwk"
+ },
+ "https://lol-guide.com/articles/fwihm": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "他ロール固有（P3）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "相手のロームに対し、同じ行動で対抗するか、別の場所で反撃するかの2択という原則。サポートの例だが、MID のローム対応（既存の res-lg-wftjm）と関係する"
+ },
+ "https://lol-guide.com/articles/hinmy": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "他ロール固有（P3）",
+  "decision": "hold",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "ガンクを受ける原因（無計画なプッシュ、ワードの位置、敵の位置が不明なときの強気）。トップ向けだが原則は MID にも当てはまる"
+ },
+ "https://lol-guide.com/articles/hovcx": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "hold",
+  "depth_confirmed": "shallow",
+  "method": "見出しと選定基準の節",
+  "reason": "おすすめチャンピオンの紹介。判断の理由は選定基準だけ"
+ },
+ "https://lol-guide.com/articles/hydfd": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "他ロール固有（P3）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の前半",
+  "reason": "不利な理由（時間帯・アイテム・特定のプレイ）を分析し、勝てる時間帯で戦いそれ以外はファームする、ルーン・アイテムで和らげる、という手順。トップの例だが MID にも当てはまる"
+ },
+ "https://lol-guide.com/articles/iqlaw": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "method": "冒頭のみ",
+  "reason": "深さは未確定（冒頭はシャットダウンゴールドの仕組みの説明）"
+ },
+ "https://lol-guide.com/articles/jloku": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "method": "冒頭と見出し",
+  "reason": "深さは未確定（購入の優先順位の見出しはある）"
+ },
+ "https://lol-guide.com/articles/lcwud": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文全体",
+  "reason": "対応策ごとに代償（他レーンのウェーブ処理、人数をかけすぎたときのオブジェクト）と、タワーを折る速さという前提がある。規則では深さ「低」で保留していた"
+ },
+ "https://lol-guide.com/articles/mmlgg": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "depth_confirmed": "deep",
+  "method": "本文全体",
+  "reason": "主導権がないとウェーブは作れない、有利でも常にフリーズが最善ではない、などを理由と条件つきで説明",
+  "registered_as": "res-lg-mmlgg"
+ },
+ "https://lol-guide.com/articles/msvkd": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "コントロールワードの用途を理由つきで説明。ロール別の優先度は未確認"
+ },
+ "https://lol-guide.com/articles/odors": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "序盤に通常攻撃が重要な理由（マナ・硬直・Lv2先行）。ミッドを題材にした共通の考え方"
+ },
+ "https://lol-guide.com/articles/suftp": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "リコールの目的とタイミングの判断基準。既存資料（ターンの概念）と一部重なる"
+ },
+ "https://lol-guide.com/articles/unpmb": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "パワースパイクの定義とチャンピオン別の例、不利なときは待つという使い方。規則では深さ「低」で保留していた"
+ },
+ "https://lol-guide.com/articles/vmcxd": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "深さの推定が低い",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の前半",
+  "reason": "ヴォイドグラブの価値と、サイドの主導権がない構成では取っても意味が薄いという条件、ドラゴンとの比較がある。規則の過小評価"
+ },
+ "https://lol-guide.com/articles/wbzfd": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "他ロール固有（P3）",
+  "decision": "hold",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "征服者・不死者の握撃のスタック管理とトレード。近接のトップ向けで、MID への適用は一部（近接・バトルメイジ）"
+ },
+ "https://lol-guide.com/articles/wslna": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "深さの推定が低い",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の前半",
+  "reason": "スコアボードを見る理由と、得られる情報の使い方（ジャングラーの CS から位置を推定など）。規則の過小評価"
+ },
+ "https://lolgaren.com/2610vladmia-anivia": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "depth_confirmed": "deep",
+  "method": "本文（不利の理由・コンボ・ビルドとルーンの節）",
+  "reason": "不利の理由3点と、それに対する構成の理由がある。パッチ26.10の前提",
+  "registered_as": "res-garen-2610vladmia-anivia"
+ },
+ "https://lolgaren.com/265xerath": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "method": "冒頭と見出し",
+  "reason": "深さは未確定（ビルドガイド。今季に強くなった理由の記述はある）"
+ },
+ "https://lolgaren.com/266cassiopeia": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "深さの推定が低い",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "冒頭とルーンの節",
+  "reason": "ルーンを1つずつ理由つきで選んでいる。パッチ26.6の前提。ビルドガイドの型だが、理由の説明がある"
+ },
+ "https://lolgaren.com/beginner-strategy": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "method": "冒頭と見出し",
+  "reason": "深さは未確定（学習方法の記事。LoL での具体的な適用は未確認）"
+ },
+ "https://lolgaren.com/concept-eq": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "判定できない",
+  "decision": "hold",
+  "depth_confirmed": null,
+  "method": "冒頭とロール別の節",
+  "reason": "EQ の概念とロール別の要求度。試合の判断に使える内容かは、確認した範囲では判断できない"
+ },
+ "https://lolgaren.com/dorans-shield-is-it-weak": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "hold",
+  "method": "冒頭と見出し",
+  "reason": "トップレーナー向け（P3）。題名からは MID と推定されていた"
+ },
+ "https://lolgaren.com/jungle-tiamat-first-item": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "深さの推定が低い",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "冒頭〜条件の節",
+  "reason": "ゴールド効率の計算と、AA 主体のジャングラーに限るという線引きを理由とともに説明。ジャングル向け（P2）でパッチ26.16の前提。規則の過小評価"
+ },
+ "https://lolgaren.com/lol-cognitive-load": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "判定できない",
+  "decision": "hold",
+  "depth_confirmed": "shallow",
+  "method": "見出しと要所",
+  "reason": "負けている試合での心の持ち方。試合中の判断への具体的な適用は確認した範囲では薄い"
+ },
+ "https://lolgaren.com/lol-three-choices-mana-management": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の要所",
+  "reason": "自己啓発系の記事だが、キーストーン・サモナースペル・スタートアイテムをプランA・Bの2つに絞る具体的な適用がある（今後の収録方針による評価）"
+ },
+ "youtube:979rQPbh-Dc": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "解説のないプレイ動画の可能性",
+  "decision": "hold",
+  "depth_confirmed": null,
+  "method": "公開メタデータのみ",
+  "reason": "説明欄なし、字幕は韓国語の自動生成だけ。日本語・英語の解説はないとみられるが、本編は未確認"
+ },
+ "youtube:9KXgqOimaGc": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "判定できない",
+  "decision": "candidate",
+  "depth_confirmed": null,
+  "method": "公開メタデータ（チャプター10個）のみ",
+  "reason": "フリーズとプレッシャーの比較など、マクロの判断の分析とみられる。英語の題名にロール・Topic の語がなく分類できなかった。本編未確認"
+ },
+ "youtube:bMEjfiZ_YIc": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "解説のないプレイ動画の可能性",
+  "decision": "candidate",
+  "depth_confirmed": null,
+  "method": "公開メタデータのみ（本編未確認）",
+  "reason": "題名・説明欄に解説の翻訳とあり、英語字幕がある。「Gameplay」の語で誤って保留にしていた（規則を修正）"
+ },
+ "youtube:g5dW46rurMc": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "判定できない",
+  "decision": "candidate",
+  "depth_confirmed": null,
+  "method": "公開メタデータのみ（本編未確認）",
+  "reason": "Dopa のインベード講義の日本語字幕版（305秒、2020年）。題名の「インベイド」が Topic の別名「インベード」と表記が違い、分類できなかった。既存の講義（2023年、1155秒）とは別の動画。字幕トラックは韓国語の自動生成だけで、日本語字幕の形式は未確認"
+ },
+ "youtube:rxu4NxmaoR4": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "解説のないプレイ動画の可能性",
+  "decision": "hold",
+  "depth_confirmed": null,
+  "method": "公開メタデータ（チャプター8個）のみ",
+  "reason": "ドラフト形式についての意見の解説で、プレイ動画ではない（「SoloQ」の語で誤って保留にしていた。規則を修正）。MID の判断材料としての優先度は低い"
+ },
+ "youtube:TdZJmVxq4AM": {
+  "checked_at": "2026-10-28",
+  "checked_by": "AI（Claude）",
+  "sample": "保留の層化抽出（Phase 5A 最終確認）",
+  "rule_reason": "解説のないプレイ動画の可能性",
+  "decision": "candidate",
+  "depth_confirmed": null,
+  "method": "公開メタデータ（チャプター5個）のみ",
+  "reason": "試合の段階ごとに目標を立てる練習方法の解説。題名の「Gameplay」で誤って保留にしていた（規則を修正）"
+ }
+}

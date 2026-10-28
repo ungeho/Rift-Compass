@@ -175,6 +175,23 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .note-list ul { margin: 0; padding-left: 1.3em; font-size: 0.9rem; }
 .evidence-list li { margin: 6px 0; }
 
+/* 判断材料（試験） */
+.reason-list, .relation-list { padding-left: 1.2em; }
+.reason-list li, .relation-list li { margin: 6px 0; }
+.reason-ai { color: var(--muted); }
+.decision-sources { padding-left: 0; }
+.criteria-list { padding-left: 0; list-style: none; }
+.criterion { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 8px 14px; margin: 10px 0; }
+.criterion-value { margin: 2px 0 6px; }
+.comparison-details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; margin: 8px 0; }
+.comparison-details > summary { cursor: pointer; font-weight: 600; }
+.comparison h4 { margin: 12px 0 4px; font-size: 0.9rem; }
+.comparison .criterion { background: var(--bg); }
+.decision-source { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; margin: 10px 0; list-style: none; }
+.decision-source p { margin: 4px 0; }
+.note-list h3 { margin: 10px 0 2px; font-size: 0.9rem; }
+.chip[aria-current="page"] { border-color: var(--accent); font-weight: 600; }
+
 .topic-tree, .topic-tree ul { list-style: none; padding-left: 1.1em; }
 .topic-tree { padding-left: 0; }
 .topic-tree > li { margin: 10px 0; font-weight: 600; }
