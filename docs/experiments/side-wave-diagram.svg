@@ -1,39 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" width="640" height="330" font-family="sans-serif" font-size="13">
-  <title>模式図：ぶつかる位置と、放置したウェーブの動き（Phase 6B）</title>
-  <!-- オリジナルの模式図。原典の画像は使っていない。原典で確認できた条件だけを描く -->
-  <rect width="640" height="330" fill="#ffffff"/>
-  <text x="20" y="26" font-size="15" font-weight="bold" fill="#222">模式図：ぶつかる位置と、放置したウェーブの動き</text>
-  <text x="20" y="46" fill="#555">前提：両軍のミニオンの数・体力が同じで、プレイヤーが触らない</text>
-  <text x="20" y="62" font-size="11" fill="#777">出典：lol-guide「ウェーブコントロールとは？」（がりある）・League of Legends Wiki「Farm」</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 526" width="360" height="526" font-family="sans-serif" font-size="13" role="img" aria-labelledby="t d">
+  <title id="t">模式図：ぶつかる位置と、放置したウェーブの動き（Phase 6B）</title>
+  <desc id="d">両軍のミニオンの数・体力が同じで、プレイヤーが触らない場合。自陣タワー寄りでぶつかると相手側へ押し始め、中央では大きくは動かず、敵タワー寄りでは自分側へ押し返される。理由は、タワーに近い側の援軍が先に着くため。原典の説明に基づく模式図で、ゲーム内の結果を保証しない。</desc>
+  <!-- オリジナルの模式図。原典の画像は使っていない。原典で確認できた条件だけを描く。
+       Phase 6C：スマートフォン幅（390px）でも文字が12px以上で読めるよう、縦長に描き直し、文字は13px以上にした（内容・矢印の向きは Phase 6B と同じ）。
+       アプリ（判断材料 du-wave-drift-by-meeting-point の詳細）もこのファイルをそのまま読み込む -->
+  <rect width="360" height="526" fill="#ffffff"/>
+  <text x="12" y="26" font-size="15" font-weight="bold" fill="#222">模式図：ぶつかる位置と放置したウェーブ</text>
+  <text x="12" y="50" fill="#444">前提：両軍のミニオンの数・体力が同じで、</text>
+  <text x="12" y="68" fill="#444">　　　プレイヤーが触らない</text>
 
-  <!-- 3つの場合。各行：レーン（自陣タワー〜敵タワー）、ぶつかる位置、矢印 -->
+  <!-- 各行：レーン（左＝自陣タワー、右＝敵タワー）、ぶつかる位置（黒丸）、放置したときの向き（矢印） -->
   <g id="row-own">
-    <text x="20" y="88" fill="#222">自陣タワー寄り</text>
-    <rect x="130" y="76" width="22" height="18" fill="#3b6fb6"/><text x="128" y="110" font-size="11" fill="#3b6fb6">自陣タワー</text>
-    <rect x="578" y="76" width="22" height="18" fill="#b6453b"/><text x="566" y="110" font-size="11" fill="#b6453b">敵タワー</text>
-    <line x1="152" y1="85" x2="578" y2="85" stroke="#999" stroke-width="2"/>
-    <circle cx="240" cy="85" r="8" fill="#222"/>
-    <line x1="252" y1="85" x2="330" y2="85" stroke="#2a7a2a" stroke-width="3"/><polygon points="330,79 342,85 330,91" fill="#2a7a2a"/>
-    <text x="262" y="104" font-size="12" fill="#2a7a2a">相手側へ押し始める</text>
+    <text x="12" y="100" fill="#222">① 自陣タワー寄りでぶつかる</text>
+    <rect x="12" y="111" width="22" height="18" fill="#3b6fb6"/>
+    <rect x="326" y="111" width="22" height="18" fill="#b6453b"/>
+    <line x1="34" y1="120" x2="326" y2="120" stroke="#999" stroke-width="2"/>
+    <circle cx="90" cy="120" r="8" fill="#222"/>
+    <line x1="102" y1="120" x2="168" y2="120" stroke="#2a7a2a" stroke-width="3"/><polygon points="168,114 180,120 168,126" fill="#2a7a2a"/>
+    <text x="12" y="148" fill="#3b6fb6">自陣タワー</text>
+    <text x="348" y="148" fill="#b6453b" text-anchor="end">敵タワー</text>
+    <text x="96" y="148" fill="#2a7a2a">→ 相手側へ押し始める</text>
   </g>
   <g id="row-mid">
-    <text x="20" y="148" fill="#222">中央</text>
-    <rect x="130" y="136" width="22" height="18" fill="#3b6fb6"/><rect x="578" y="136" width="22" height="18" fill="#b6453b"/>
-    <line x1="152" y1="145" x2="578" y2="145" stroke="#999" stroke-width="2"/>
-    <circle cx="365" cy="145" r="8" fill="#222"/>
-    <text x="300" y="132" font-size="12" fill="#555">大きくは動かない（Wiki：neutral）</text>
+    <text x="12" y="180" fill="#222">② 中央でぶつかる</text>
+    <rect x="12" y="191" width="22" height="18" fill="#3b6fb6"/>
+    <rect x="326" y="191" width="22" height="18" fill="#b6453b"/>
+    <line x1="34" y1="200" x2="326" y2="200" stroke="#999" stroke-width="2"/>
+    <circle cx="180" cy="200" r="8" fill="#222"/>
+    <text x="180" y="228" fill="#444" text-anchor="middle">大きくは動かない（Wiki：neutral）</text>
   </g>
   <g id="row-enemy">
-    <text x="20" y="208" fill="#222">敵タワー寄り</text>
-    <rect x="130" y="196" width="22" height="18" fill="#3b6fb6"/><rect x="578" y="196" width="22" height="18" fill="#b6453b"/>
-    <line x1="152" y1="205" x2="578" y2="205" stroke="#999" stroke-width="2"/>
-    <circle cx="490" cy="205" r="8" fill="#222"/>
-    <line x1="478" y1="205" x2="400" y2="205" stroke="#b07a00" stroke-width="3"/><polygon points="400,199 388,205 400,211" fill="#b07a00"/>
-    <text x="372" y="224" font-size="12" fill="#b07a00">自分側へ押し返される</text>
+    <text x="12" y="260" fill="#222">③ 敵タワー寄りでぶつかる</text>
+    <rect x="12" y="271" width="22" height="18" fill="#3b6fb6"/>
+    <rect x="326" y="271" width="22" height="18" fill="#b6453b"/>
+    <line x1="34" y1="280" x2="326" y2="280" stroke="#999" stroke-width="2"/>
+    <circle cx="270" cy="280" r="8" fill="#222"/>
+    <line x1="258" y1="280" x2="192" y2="280" stroke="#8a5a00" stroke-width="3"/><polygon points="192,274 180,280 192,286" fill="#8a5a00"/>
+    <text x="268" y="308" fill="#8a5a00" text-anchor="end">自分側へ押し返される ←</text>
   </g>
 
-  <text x="20" y="246" fill="#222">理由（原典）：タワーに近い側は、援軍が先に着き、相手のミニオンが全て着く前に攻撃を始める。</text>
-  <text x="20" y="270" fill="#222">スロープッシュに要る数の有利（Dignitas 2019）：自陣側でぶつかる → 多くて2〜3体／敵陣側 → 4〜5体</text>
-  <text x="20" y="300" font-size="11" fill="#777">模式図。距離・位置は正確ではない。数の差・ミニオンの強化・スーパーミニオンがあると当てはまらない。</text>
-  <text x="20" y="316" font-size="11" fill="#777">ゲーム内・現行パッチでは検証していない（Rift Compass Phase 6B）。</text>
+  <text x="12" y="342" fill="#222">理由（原典）：タワーに近い側は援軍が先に着き、</text>
+  <text x="12" y="360" fill="#222">相手のミニオンが揃う前に攻撃を始める。</text>
+  <text x="12" y="392" fill="#555">模式図。距離・位置は正確ではない。</text>
+  <text x="12" y="410" fill="#555">数の差・ミニオンの強化・スーパーミニオンが</text>
+  <text x="12" y="428" fill="#555">あると当てはまらない。</text>
+  <text x="12" y="446" fill="#555">ゲーム内・現行パッチでは検証しておらず、</text>
+  <text x="12" y="464" fill="#555">結果を保証しない。</text>
+  <text x="12" y="494" fill="#555">出典：lol-guide「ウェーブコントロールとは？」</text>
+  <text x="12" y="512" fill="#555">（がりある）・League of Legends Wiki「Farm」</text>
 </svg>

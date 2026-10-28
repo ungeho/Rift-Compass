@@ -5,7 +5,8 @@ import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import { index } from "../data/dataset";
-import { NONE_PARTIAL, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { readFileSync } from "node:fs";
+import { DIAGRAMS, NONE_PARTIAL, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { ResourceDetail } from "./ResourceDetail";
@@ -284,5 +285,41 @@ describe("Phase 6B：サイドウェーブの方向とミニマップ", () => {
     expect(text(markup)).toContain("その種類（キャスターか近接）で3体の有利");
     expect(markup).not.toContain('href="#/decision/du-advantage-type-melee-vs-caster"');
     expect(text(detail("du-advantage-type-melee-vs-caster"))).toContain("試験表示の対象にありません");
+  });
+});
+
+describe("Phase 6C：ウェーブの模式図", () => {
+  const DRIFT = "du-wave-drift-by-meeting-point";
+
+  it("模式図は du-wave-drift-by-meeting-point の詳細だけに、代替テキスト・前提・注意書き・出典とともに出る", () => {
+    expect(DIAGRAMS.map((d) => d.unit_id)).toEqual([DRIFT]);
+    const d = DIAGRAMS[0];
+    const markup = detail(DRIFT);
+    expect(markup).toContain(`alt="${d.alt}"`);
+    const html = text(markup);
+    expect(html).toContain("図解（模式図）");
+    expect(html).toContain(d.compares_ja);
+    for (const p of d.premises_ja) expect(html).toContain(p);
+    expect(html).toContain("原典の画像ではありません");
+    expect(html).toContain("実際のゲーム内で同じ結果になることを保証しません");
+    for (const id of d.sources) expect(markup).toContain(`href="${sourceById.get(id)!.url}"`);
+    // 図の出典は判断材料の出典に含まれる
+    const u = showcaseDecisions.find((x) => x.id === DRIFT)!;
+    for (const id of d.sources) expect(u.evidence.map((e) => e.source)).toContain(id);
+    // 他の判断材料には出ない
+    for (const id of SHOWCASE_IDS.filter((x) => x !== DRIFT)) expect(text(detail(id))).not.toContain("図解（模式図）");
+  });
+
+  it("図の前提・向きは判断材料と一致し、数値別の結果やミニマップは描かない", () => {
+    const svg = readFileSync(new URL("../../docs/experiments/side-wave-diagram.svg", import.meta.url), "utf8");
+    const u = showcaseDecisions.find((x) => x.id === DRIFT)!;
+    expect(u.conditions_ja).toContain("両軍のミニオンの数・体力が同じ（lol-guide の前提）");
+    expect(svg).toContain("前提：両軍のミニオンの数・体力が同じ");
+    expect(svg).toMatch(/自陣タワー寄りでぶつかる[\s\S]*相手側へ押し始める[\s\S]*敵タワー寄りでぶつかる[\s\S]*自分側へ押し返される/);
+    expect(svg).toContain("結果を保証しない");
+    expect(svg).toContain("<title");
+    expect(svg).toContain("<desc");
+    expect(svg).not.toMatch(/ミニマップ|\+\d|必ず/);
+    expect(svg).not.toMatch(/<image|href=/);
   });
 });

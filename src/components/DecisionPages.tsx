@@ -2,9 +2,9 @@
 // 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, criterionOf, decisionById, decisionsCheckedAt, decisionsForTopic, isNone,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, isNone,
   isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
-  type DecisionComparison, type DecisionCriterion, type DecisionUnit,
+  type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionUnit,
 } from "../data/decisions";
 import { formatSeconds, KIND_LABELS, STATUS_LABELS } from "../data/labels";
 import type { NoteStatus } from "../data/types";
@@ -328,6 +328,43 @@ function SourceList({ u }: { u: DecisionUnit }) {
   );
 }
 
+/** 模式図（Phase 6C）。原典の説明をもとにしたオリジナルの図で、ゲーム内の結果を保証しない */
+function DiagramView({ d }: { d: DecisionDiagram }) {
+  return (
+    <figure className="decision-diagram">
+      <p className="muted">
+        <span className="badge status status-inference">模式図</span> 原典の説明をもとに Rift Compass が作った図です（原典の画像ではありません）。距離・位置は正確ではなく、実際のゲーム内で同じ結果になることを保証しません。ゲーム内・現行パッチでは検証していません。
+      </p>
+      <dl className="info">
+        <dt>比べているもの</dt>
+        <dd>{d.compares_ja}</dd>
+        <dt>図が成り立つ前提</dt>
+        <dd>
+          <ul>
+            {d.premises_ja.map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ul>
+        </dd>
+      </dl>
+      <img src={d.src} alt={d.alt} width={360} height={526} loading="lazy" />
+      <figcaption className="muted">
+        対応する判断材料：この判断材料。出典：
+        {d.sources.map((id, i) => {
+          const s = sourceById.get(id);
+          return (
+            <span key={id}>
+              {i > 0 && "・"}
+              {s ? <ExternalLink href={s.url}>{s.author}</ExternalLink> : id}
+            </span>
+          );
+        })}
+        （確認箇所は「出典と確認範囲」）
+      </figcaption>
+    </figure>
+  );
+}
+
 function Relations({ u }: { u: DecisionUnit }) {
   if (!u.relations.length) return null;
   return (
@@ -416,6 +453,15 @@ export function DecisionDetail({ id }: { id: string }) {
           ))}
         </ul>
       </section>
+
+      {diagramsForUnit(u.id).length > 0 && (
+        <section aria-labelledby="diagram-heading">
+          <h2 id="diagram-heading">図解（模式図）</h2>
+          {diagramsForUnit(u.id).map((d) => (
+            <DiagramView key={d.src} d={d} />
+          ))}
+        </section>
+      )}
 
       <section aria-labelledby="conditions-heading">
         <h2 id="conditions-heading">条件・代替案・代償</h2>

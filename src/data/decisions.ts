@@ -6,6 +6,7 @@
 import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
+import sideWaveDiagramUrl from "../../docs/experiments/side-wave-diagram.svg";
 import { index } from "./dataset";
 
 export interface DecisionReason {
@@ -157,6 +158,30 @@ export const SHOWCASE_IDS = [
   "du-minimap-next-enemy-wave",
   "du-bounce-after-crash",
 ] as const;
+
+/** 判断材料に付ける模式図（Phase 6C）。原典の画像ではなく、原典の説明をもとに作ったオリジナルの図 */
+export interface DecisionDiagram {
+  unit_id: string;
+  src: string;
+  alt: string;
+  compares_ja: string;
+  premises_ja: string[];
+  sources: string[];
+}
+
+// SVG は docs/experiments/ の1ファイルだけを管理し、ビルド時にアセットとして読み込む（複製しない）
+export const DIAGRAMS: DecisionDiagram[] = [
+  {
+    unit_id: "du-wave-drift-by-meeting-point",
+    src: sideWaveDiagramUrl,
+    alt:
+      "模式図。両軍のミニオンの数・体力が同じで、プレイヤーが触らない場合の3つの例。自陣タワー寄りでぶつかると相手側へ押し始め、中央では大きくは動かず、敵タワー寄りでは自分側へ押し返される。理由は、タワーに近い側の援軍が先に着くため。",
+    compares_ja: "ウェーブがぶつかる位置（自陣タワー寄り・中央・敵タワー寄り）と、放置したときにウェーブが進む向き",
+    premises_ja: ["両軍のミニオンの数と体力が同じ", "プレイヤーがウェーブに触らない", "ミニオンの強化やスーパーミニオンで、どちらかのウェーブが強くなっていない"],
+    sources: ["src-xcewl", "src-wiki-farm"],
+  },
+];
+export const diagramsForUnit = (unitId: string) => DIAGRAMS.filter((d) => d.unit_id === unitId);
 
 const unitById = new Map(data.units.map((u) => [u.id, u]));
 export const sourceById = new Map(data.sources.map((s) => [s.id, s]));
