@@ -28,15 +28,21 @@ npm run dev
 
 ブラウザで **http://localhost:5173/** を開きます。
 
-| コマンド | 内容 |
-|---|---|
-| `npm run dev` | 開発サーバーを起動（http://localhost:5173/）。依存関係の再インストールなどは行いません |
-| `npm run build` | 型チェックのあと、`dist/` に静的ファイルを出力 |
-| `npm run preview` | `dist/` を配信して確認（http://localhost:4173/）。先に `npm run build` が必要 |
-| `npm run test` | Vitest のテストと、Phase 0 のデータ検査（`npm run validate:data`）を実行 |
-| `npm run typecheck` | TypeScript の型チェックのみ |
-| `npm run validate:data` | `tools/validate-sample-data.js` とその不正データ検出テスト |
-| `npm run eval:desk` | Phase 0 の机上検索照合（参考値）|
+よく使うコマンド：
+
+- `npm run dev`：開発サーバーを起動します（http://localhost:5173/）。依存関係の再インストールなどは行いません。
+- `npm run test`：すべてのテストを実行します（画面・検索のテスト、データ検査、候補収集のテスト、判断材料の実験のテスト）。
+- `npm run typecheck`：TypeScript の型チェックだけを行います。
+- `npm run build`：型チェックのあと、`dist/` に静的ファイルを出力します。
+- `npm run preview`：`dist/` を配信して確認します（http://localhost:4173/）。先に `npm run build` が必要です。
+
+個別に実行するコマンド：
+
+- `npm run validate:data`：資料データ（`data/sample-resources.json`）の検査と、不正データを検出できるかのテスト。
+- `npm run test:candidates`：候補収集のテストだけを実行します。
+- `npm run test:experiments`：判断材料の実験データの検査とテストだけを実行します。
+- `npm run candidates`：教材候補の集計を表示します（`tools/candidates/collect.js`）。`npm run candidates -- collect` は外部サイトから候補を収集し、`-- annotate` は保存済みの候補を分類し直します。
+- `npm run eval:desk`：初期の設計段階に行った机上の検索照合です。過去の評価の記録用で、参考値です。
 
 `dist/` はハッシュ形式のURL（`#/r/<資料ID>` など）と相対パスを使うため、静的ホスティングのどのパスに置いてもリロードやURL共有で同じ画面を再表示できます。
 

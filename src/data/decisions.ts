@@ -112,7 +112,7 @@ const data: DecisionData = {
 };
 
 /**
- * 試験表示する判断材料（Phase 5D の9件と、Phase 5E の5件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
+ * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
  * 確認箇所が明確なもの。条件の違い（有利／不利、押す／押さない、現行／過去のパッチ）を並べて比べられるよう、
  * 対になる材料を含め、著者が偏らないようにした。
  */
@@ -132,6 +132,13 @@ export const SHOWCASE_IDS = [
   "du-jungle-tracking-cs-div4",
   "du-mid-lvl1-no-hard-push",
   "du-mid-join-scuttle-checklist",
+  // Phase 6A：観測項目・例外・代替案が原典に書かれていて、表示中の材料と別の場面・別の著者の視点を加えるもの
+  // （選定理由と選ばなかった材料は docs/experiments/decision-showcase-expansion.md）
+  "du-roam-counter-action",
+  "du-plates-vs-clean-recall",
+  "du-fast-push-on-enemy-recall",
+  "du-half-push-gets-frozen",
+  "du-lv2-duo-minion-count",
 ] as const;
 
 const unitById = new Map(data.units.map((u) => [u.id, u]));

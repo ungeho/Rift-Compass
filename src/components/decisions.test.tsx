@@ -17,8 +17,9 @@ const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCr
 const OVERCLAIM = /(?<!未)検証済み|(?<!未)確認済みの仕様|仕様として確認済み|ゲーム内で検証済み|おすすめ|推奨します|すべきです/;
 
 describe("表示している主張は実験データと一致する", () => {
-  it("試験表示は実験データの14件（Phase 5D の9件＋Phase 5E の5件）で、内容を書き換えていない", () => {
-    expect(SHOWCASE_IDS).toHaveLength(14);
+  it("試験表示は実験データの19件（Phase 5D の9件＋Phase 5E の5件＋Phase 6A の5件）で、内容を書き換えていない", () => {
+    expect(SHOWCASE_IDS).toHaveLength(19);
+    expect(new Set(SHOWCASE_IDS).size).toBe(SHOWCASE_IDS.length);
     for (const u of showcaseDecisions) expect(u).toBe(units.find((x) => x.id === u.id));
   });
 
@@ -186,10 +187,24 @@ describe("Phase 5E：具体的な目安と資料間の比較", () => {
     expect(text(compareList("cmp-lv2-minion-count"))).toContain("矛盾かどうか判断できない");
   });
 
-  it("比較に試験表示の対象外の判断材料の目安があっても、その判断材料へのリンクは作らない", () => {
-    const markup = compareList("cmp-lv2-minion-count");
-    expect(markup).not.toContain('href="#/decision/du-lv2-duo-minion-count"');
-    expect(text(markup)).toContain("最初のウェーブ6体＋次のウェーブの前衛3体");
+  it("比較から判断材料へのリンクは、試験表示の対象にだけ作る", () => {
+    // Phase 6A で du-lv2-duo-minion-count を試験表示に加えたので、Lv2 の比較からはリンクする
+    const lv2 = compareList("cmp-lv2-minion-count");
+    expect(lv2).toContain('href="#/decision/du-lv2-duo-minion-count"');
+    expect(text(lv2)).toContain("最初のウェーブ6体＋次のウェーブの前衛3体");
+    // どの比較・一覧・詳細でも、リンク先は試験表示の対象だけ
+    const shown = new Set<string>(SHOWCASE_IDS);
+    const pages = [list(), ...["cmp-freeze-minion-count", "cmp-recall-criteria", "cmp-lv2-minion-count"].map(compareList), ...SHOWCASE_IDS.map(detail)];
+    for (const markup of pages) {
+      for (const m of markup.matchAll(/href="#\/decision\/([^"]+)"/g)) expect(shown.has(m[1])).toBe(true);
+    }
+  });
+
+  it("試験表示の対象外の判断材料との関係は、内容を出さずに対象外と表示する", () => {
+    // du-roam-counter-action は du-jungler-hovering-trap（対象外）と関係を持つ
+    const html = text(detail("du-roam-counter-action"));
+    expect(html).toContain("試験表示の対象外の判断材料");
+    expect(html).not.toContain(units.find((x) => x.id === "du-jungler-hovering-trap")!.statement_ja);
   });
 
   it("Lv2 の比較は、正式データの知識ノート（導出）を併記する", () => {
