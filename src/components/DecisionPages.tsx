@@ -2,9 +2,9 @@
 // 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, isNone, QUESTION_ENTRANCES,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, examplesForUnit, isNone, QUESTION_ENTRANCES,
   isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
-  type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionUnit,
+  type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionUnit,
 } from "../data/decisions";
 import { formatSeconds, KIND_LABELS, STATUS_LABELS } from "../data/labels";
 import type { NoteStatus } from "../data/types";
@@ -287,65 +287,103 @@ function ListSection({ title, items }: { title: string; items: string[] }) {
 function SourceList({ u }: { u: DecisionUnit }) {
   return (
     <ul className="decision-sources">
-      {u.evidence.map((e, i) => {
-        const s = sourceById.get(e.source);
-        if (!s) return <li key={i}>出典の記録が見つかりません（{e.source}）</li>;
-        const r = s.resource_id ? index.resourceById.get(s.resource_id) : undefined;
-        const loc = locatorOf(e);
-        // 開始秒は、実験データに記録がある場合だけリンクにする（字幕で確認した区間）
-        const at = loc.startSec !== undefined ? youtubeAt(s.url, loc.startSec) : null;
-        return (
-          <li key={i} className="decision-source">
-            <p>
-              <strong>{s.author}</strong>
-              {r ? (
-                <>
-                  ：<a href={resourceHref(r.id)}>{r.title}</a>
-                </>
-              ) : (
-                <span className="muted">（Rift Compass の資料一覧には未収録）</span>
-              )}
-            </p>
-            <p className="open-original">
-              <ExternalLink href={s.url} className="button">
-                原典を開く
-              </ExternalLink>
-              <span className="muted url">{s.url}</span>
-            </p>
-            <dl className="info">
-              <dt>確認箇所</dt>
-              <dd>
-                {loc.text}
-                {at && loc.startSec !== undefined && (
-                  <>
-                    {" "}
-                    <ExternalLink href={at}>{formatSeconds(loc.startSec)}から</ExternalLink>
-                  </>
-                )}
-              </dd>
-              <dt>確認の範囲</dt>
-              <dd>
-                {s.coverage.status === "full" ? "全体を確認" : "一部だけを確認"}
-                {s.coverage.unread_ja && <div className="muted">未読：{s.coverage.unread_ja}</div>}
-                <div className="muted">作業記録：{s.read}</div>
-              </dd>
-              <dt>確認レベル</dt>
-              <dd>
-                {e.checked_level === "L3" ? (
-                  <>
-                    <LevelBadge level="L3" /> <span className="muted">AI が原典の本文・字幕を読んで抽出した段階です。人による確認や、ゲーム内での検証ではありません。</span>
-                  </>
-                ) : (
-                  e.checked_level
-                )}
-              </dd>
-              <dt>公開日</dt>
-              <dd>{s.published}</dd>
-            </dl>
-          </li>
-        );
-      })}
+      {u.evidence.map((e, i) => (
+        <SourceItem key={i} e={e} />
+      ))}
     </ul>
+  );
+}
+
+/** 出典1件（確認箇所・動画の該当時間へのリンク・確認の範囲）。判断材料の出典と、具体例の出典で共通 */
+function SourceItem({ e }: { e: DecisionEvidence }) {
+  const s = sourceById.get(e.source);
+  if (!s) return <li>出典の記録が見つかりません（{e.source}）</li>;
+  const r = s.resource_id ? index.resourceById.get(s.resource_id) : undefined;
+  const loc = locatorOf(e);
+  // 開始秒は、実験データに記録がある場合だけリンクにする（字幕で確認した区間）
+  const at = loc.startSec !== undefined ? youtubeAt(s.url, loc.startSec) : null;
+  return (
+    <li className="decision-source">
+      <p>
+        <strong>{s.author}</strong>
+        {r ? (
+          <>
+            ：<a href={resourceHref(r.id)}>{r.title}</a>
+          </>
+        ) : (
+          <span className="muted">（Rift Compass の資料一覧には未収録）</span>
+        )}
+      </p>
+      <p className="open-original">
+        <ExternalLink href={s.url} className="button">
+          原典を開く
+        </ExternalLink>
+        <span className="muted url">{s.url}</span>
+      </p>
+      <dl className="info">
+        <dt>確認箇所</dt>
+        <dd>
+          {loc.text}
+          {at && loc.startSec !== undefined && (
+            <>
+              {" "}
+              <ExternalLink href={at}>{formatSeconds(loc.startSec)}から</ExternalLink>
+            </>
+          )}
+        </dd>
+        <dt>確認の範囲</dt>
+        <dd>
+          {s.coverage.status === "full" ? "全体を確認" : "一部だけを確認"}
+          {s.coverage.unread_ja && <div className="muted">未読：{s.coverage.unread_ja}</div>}
+          <div className="muted">作業記録：{s.read}</div>
+        </dd>
+        <dt>確認レベル</dt>
+        <dd>
+          {e.checked_level === "L3" ? (
+            <>
+              <LevelBadge level="L3" /> <span className="muted">AI が原典の本文・字幕を読んで抽出した段階です。人による確認や、ゲーム内での検証ではありません。</span>
+            </>
+          ) : (
+            e.checked_level
+          )}
+        </dd>
+        <dt>公開日</dt>
+        <dd>{s.published}</dd>
+      </dl>
+    </li>
+  );
+}
+
+/** 具体例1件。原典の主張・仕様の記述・AI の整理・未確認事項を分け、具体例の出典は判断材料の出典とは別に出す */
+function ExampleView({ x }: { x: DecisionExample }) {
+  const spec = x.spec_source ? sourceById.get(x.spec_source) : undefined;
+  return (
+    <article className="decision-example">
+      <h3>{x.title_ja}</h3>
+      <ul className="reason-list">
+        <li className="reason reason-source">
+          <span className="badge">原典の主張</span> {x.source_ja}
+        </li>
+        {x.spec_ja && (
+          <li className="reason reason-source">
+            <span className="badge">仕様の記述</span> {x.spec_ja}
+            {spec && (
+              <>
+                （<ExternalLink href={spec.url}>{spec.author}</ExternalLink>）
+              </>
+            )}
+          </li>
+        )}
+        <li className="reason reason-ai">
+          <span className="badge status status-inference">AI の整理</span> {x.ai_ja}
+        </li>
+      </ul>
+      <ListSection title="未確認事項" items={x.unverified_ja} />
+      <p className="muted">{x.scope_ja}</p>
+      <ul className="decision-sources">
+        <SourceItem e={x.evidence} />
+      </ul>
+    </article>
   );
 }
 
@@ -491,6 +529,16 @@ export function DecisionDetail({ id }: { id: string }) {
         <ListSection title="代替案" items={u.alternatives_ja} />
         <ListSection title="代償・リスク" items={u.costs_ja} />
       </section>
+
+      {examplesForUnit(u.id).length > 0 && (
+        <section aria-labelledby="examples-heading">
+          <h2 id="examples-heading">具体例（原典の実戦例）</h2>
+          <p className="muted">上の判断材料とは別の出典の実例です。具体例の出典が裏付けるのは、その具体例だけです。</p>
+          {examplesForUnit(u.id).map((x) => (
+            <ExampleView key={x.id} x={x} />
+          ))}
+        </section>
+      )}
 
       <section aria-labelledby="patch-heading">
         <h2 id="patch-heading">パッチへの依存と未確認事項</h2>

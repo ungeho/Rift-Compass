@@ -5,9 +5,10 @@ import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.json";
+import rawExamples from "../../data/experiments/decision-examples.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { DIAGRAMS, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { DIAGRAMS, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
@@ -77,7 +78,9 @@ describe("出典・確認範囲・未確認事項", () => {
 
   it("動画の開始秒は、実験データに記録がある確認箇所だけリンクにする", () => {
     for (const u of showcaseDecisions) {
-      const withSec = u.evidence.filter((e) => typeof e.locator === "object" && e.locator.start_sec !== undefined).length;
+      // 判断材料の出典と、具体例の出典（既存の判断材料に付けた実戦例）を合わせて数える
+      const evidence = [...u.evidence, ...examplesForUnit(u.id).map((x) => x.evidence)];
+      const withSec = evidence.filter((e) => typeof e.locator === "object" && e.locator.start_sec !== undefined).length;
       const links = (detail(u.id).match(/(?:\?|&amp;)t=\d+s/g) ?? []).length; // HTML では & が &amp; になる
       expect(links).toBe(withSec);
     }
@@ -372,5 +375,46 @@ describe("知りたいことから探す（発見性レビュー）", () => {
       expect(JSON.stringify(units.find((u) => u.id === id))).not.toMatch(/必ず|確定/);
       expect(text(detail(id))).toContain("ゲーム内では検証していない");
     }
+  });
+});
+
+describe("既存の判断材料の具体例（Evi 選手のムンド対ジャックス）", () => {
+  const ID = "du-trade-checklist";
+  const ex = (rawExamples as unknown as { examples: { id: string; unit_id: string; source_ja: string; spec_ja: string; ai_ja: string; scope_ja: string; unverified_ja: string[] }[] }).examples;
+
+  it("du-trade-checklist の詳細に、具体例・原典の主張・仕様・AI の整理・未確認事項・範囲が分かれて出て、動画の5:30へのリンクがある", () => {
+    const markup = detail(ID);
+    const html = text(markup);
+    expect(html).toContain("具体例（原典の実戦例）");
+    expect(html).toContain("ムンド対ジャックス（トップ）");
+    expect(html).toContain(ex[0].source_ja);
+    expect(html).toContain(ex[0].spec_ja);
+    expect(markup).toMatch(/AI の整理<\/span>\s*反撃される可能性があると/);
+    for (const s of ex[0].unverified_ja) expect(html).toContain(s);
+    expect(html).toContain("上のチェックリスト全体の出典ではない");
+    expect(markup).toContain('href="https://www.youtube.com/watch?v=1ZYEnr2BTe4&amp;t=330s"');
+    expect(html).toContain("5:30から");
+    // 既存の出典（MetaBot.GG）へのリンクも残る
+    expect(markup).toContain('href="https://metabot.gg/en/league/guides/laning-phase-trading-fundamentals"');
+  });
+
+  it("具体例の出典は、判断材料全体の出典として出さない（evidence・見出しの出典・一覧のカードに Evi が入らない）", () => {
+    const u = showcaseDecisions.find((x) => x.id === ID)!;
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-metabot"]);
+    const header = detail(ID).match(/<p class="card-creator">.*?<\/p>/s)![0];
+    expect(text(header)).not.toContain("Evi");
+    // 一覧には具体例を出さない（一覧のカードの出典は判断材料の出典だけ）
+    expect(text(list())).not.toContain("Evi");
+    for (const id of SHOWCASE_IDS.filter((x) => x !== ID)) expect(text(detail(id))).not.toContain("具体例（原典の実戦例）");
+  });
+
+  it("言い切らず、5:57 の大砲ミニオンの話は未確認事項にだけ置き、26.10 で削除された条件と混同しない", () => {
+    const x = ex[0];
+    expect(JSON.stringify(x)).not.toMatch(/必ず|確定/);
+    expect([x.source_ja, x.spec_ja, x.ai_ja].join("")).not.toContain("大砲");
+    expect(x.unverified_ja.some((s) => s.includes("5:57") && s.includes("大砲"))).toBe(true);
+    expect(x.spec_ja).toContain("味方チャンピオンを攻撃している敵チャンピオン");
+    expect(x.spec_ja).toContain("パッチ26.10 で削除されたのは「敵チャンピオンが味方ミニオンを攻撃したとき」の条件で、これとは別");
+    expect(x.ai_ja).toContain("相手の意図は動画では確認していない");
   });
 });

@@ -75,3 +75,16 @@ test("発見性レビューの追加ファイルも合わせて検査し、6B �
   assert.match(aggro.patch_dependency_ja, /26\.10/);
   assert.ok(aggro.unknowns_ja.some((s) => s.includes("ゲーム内では検証していない")));
 });
+
+test("具体例は判断材料の evidence に加えず、具体例の出典が判断材料全体の出典に入ったら検出する", () => {
+  const ctx = loadMerged();
+  assert.equal(ctx.crit.examples.length, 1);
+  const x = ctx.crit.examples[0];
+  assert.equal(x.unit_id, "du-trade-checklist");
+  assert.ok(!ctx.du.units.find((u) => u.id === x.unit_id).evidence.some((e) => e.source === x.evidence.source));
+  assert.equal(x.evidence.locator.start_sec, 330);
+  // 検出できるか：具体例の出典を判断材料の evidence に入れると、エラーになる
+  const units = ctx.du.units.map((u) => (u.id === x.unit_id ? { ...u, evidence: [...u.evidence, x.evidence] } : u));
+  const errors = checkCriteria({ ...ctx, du: { ...ctx.du, units } });
+  assert.ok(errors.some((e) => e.includes("具体例の出典が判断材料の evidence にも入っている")));
+});

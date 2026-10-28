@@ -2,6 +2,7 @@
 // Phase 5E：具体的な判断基準（data/experiments/decision-criteria.json）の検査
 // Phase 6B：同じ形の追加ファイル（data/experiments/side-wave-decisions.json）も合わせて検査する
 // 発見性レビュー：同じ形の追加ファイル（data/experiments/wave-technique-decisions.json）も合わせて検査する
+// 具体例：既存の判断材料に付ける実戦例（data/experiments/decision-examples.json の examples）も検査する
 //
 //   node tools/experiments/decision-criteria.js check
 //
@@ -15,12 +16,12 @@ const ROOT = path.join(__dirname, "..", "..");
 const VERDICTS = ["conflict", "different_conditions", "undetermined"];
 
 // Phase 5B の判断材料に追加するファイル（この順に合わせる）
-const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json", "wave-technique-decisions.json"];
+const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json", "wave-technique-decisions.json", "decision-examples.json"];
 
 /** 追加ファイルを1つにまとめる。追加で読んだ範囲は順に積み重ね、未読の範囲は後のファイルの記録を使う */
 function mergeExtras(files) {
-  const merged = { coverage_updates: [], sources: [], units: [], criteria: [], comparisons: [] };
-  for (const f of files) for (const k of Object.keys(merged)) merged[k].push(...f[k]);
+  const merged = { coverage_updates: [], sources: [], units: [], criteria: [], comparisons: [], examples: [] };
+  for (const f of files) for (const k of Object.keys(merged)) merged[k].push(...(f[k] ?? []));
   return merged;
 }
 
@@ -74,6 +75,21 @@ function checkCriteria(ctx = loadMerged()) {
     const sources = new Set(m.items.map((id) => crit.criteria.find((c) => c.id === id)?.source));
     if (sources.size < 2) errors.push(`${m.id}: 比較する目安が1つの出典だけ`);
   }
+  // 具体例：判断材料の evidence には加えず、具体例の出典はその具体例だけを裏付ける
+  const exIds = new Set();
+  for (const x of crit.examples) {
+    if (exIds.has(x.id)) errors.push(`${x.id}: id が重複している`);
+    exIds.add(x.id);
+    if (!unitIds.has(x.unit_id)) errors.push(`${x.id}: 判断材料 ${x.unit_id} がない`);
+    for (const k of ["title_ja", "source_ja", "ai_ja", "scope_ja"]) if (!x[k]) errors.push(`${x.id}: ${k} がない`);
+    if (!x.unverified_ja?.length) errors.push(`${x.id}: 未確認事項が要る`);
+    if (x.spec_source && !srcIds.has(x.spec_source)) errors.push(`${x.id}: 出典 ${x.spec_source} がない`);
+    const e = x.evidence;
+    if (!e || !srcIds.has(e.source)) errors.push(`${x.id}: 出典 ${e?.source} がない`);
+    else if (du.units.find((u) => u.id === x.unit_id)?.evidence.some((ue) => ue.source === e.source)) errors.push(`${x.id}: 具体例の出典が判断材料の evidence にも入っている`);
+    if (!e?.locator) errors.push(`${x.id}: 確認箇所（locator）がない`);
+    for (const str of JSON.stringify(x).match(/"(?:[^"\\]|\\.)*"/g) || []) if (str.length > 400) errors.push(`${x.id}: 長すぎる文字列（${str.length}字）`);
+  }
   return errors;
 }
 
@@ -82,6 +98,6 @@ module.exports = { loadMerged, checkCriteria, mergeExtras, applyCoverage, VERDIC
 if (require.main === module) {
   const ctx = loadMerged();
   const errors = [...check(ctx), ...checkCriteria(ctx)];
-  console.log(errors.length ? errors.join("\n") : `OK：判断材料 ${ctx.du.units.length}件（うち追加ファイル ${ctx.crit.units.length}件）、目安 ${ctx.crit.criteria.length}件、比較 ${ctx.crit.comparisons.length}組`);
+  console.log(errors.length ? errors.join("\n") : `OK：判断材料 ${ctx.du.units.length}件（うち追加ファイル ${ctx.crit.units.length}件）、目安 ${ctx.crit.criteria.length}件、比較 ${ctx.crit.comparisons.length}組、具体例 ${ctx.crit.examples.length}件`);
   process.exit(errors.length ? 1 : 0);
 }

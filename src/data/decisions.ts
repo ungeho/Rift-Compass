@@ -1,12 +1,14 @@
 // Phase 5D：判断材料（試験）の閲覧用データ。
 // data/experiments/decision-units.json（Phase 5B）と、同じ形の追加ファイル decision-criteria.json（Phase 5E）・
-// side-wave-decisions.json（Phase 6B）・wave-technique-decisions.json（発見性レビュー）（追加の判断材料・具体的な目安・資料間の比較）をそのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
+// side-wave-decisions.json（Phase 6B）・wave-technique-decisions.json（発見性レビュー）・decision-examples.json（既存の判断材料の具体例）
+// （追加の判断材料・具体的な目安・資料間の比較・具体例）をそのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
 // 実験データは変更しない。検索・推奨には使わず、Topic による明示的な絞り込みと閲覧だけに使う。
 // 選ばなかった判断材料と理由は docs/experiments/decision-browse.md に記録している。
 import raw from "../../data/experiments/decision-units.json";
 import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.json";
+import rawExamples from "../../data/experiments/decision-examples.json";
 import sideWaveDiagramUrl from "../../docs/experiments/side-wave-diagram.svg";
 import { index } from "./dataset";
 
@@ -95,24 +97,47 @@ export interface DecisionComparison {
   undetermined_ja: string[];
 }
 
+/**
+ * 既存の判断材料に付ける具体例（原典の実戦例）。判断材料の evidence には加えない。
+ * 具体例の出典が裏付けるのはその具体例だけで、判断材料全体の出典ではない。
+ */
+export interface DecisionExample {
+  id: string;
+  unit_id: string;
+  title_ja: string;
+  /** 原典で確認した内容 */
+  source_ja: string;
+  /** 仕様上の根拠（任意）と、その出典 */
+  spec_ja?: string;
+  spec_source?: string;
+  /** AI の整理（原典には書かれていない）*/
+  ai_ja: string;
+  unverified_ja: string[];
+  scope_ja: string;
+  evidence: DecisionEvidence;
+}
+
 interface CriteriaData extends DecisionData {
   coverage_updates: { source: string; read_added: string; unread_ja: string }[];
   criteria: DecisionCriterion[];
   comparisons: DecisionComparison[];
+  examples?: DecisionExample[];
 }
 
 const base = raw as unknown as DecisionData;
 const criteriaFile = rawCriteria as unknown as CriteriaData;
 const sideWaveFile = rawSideWave as unknown as CriteriaData;
 const waveTechniqueFile = rawWaveTechnique as unknown as CriteriaData;
+const examplesFile = rawExamples as unknown as CriteriaData;
 // 追加ファイルを順に合わせる（tools/experiments/decision-criteria.js の loadMerged と同じ規則）
-const extraFiles = [criteriaFile, sideWaveFile, waveTechniqueFile];
+const extraFiles = [criteriaFile, sideWaveFile, waveTechniqueFile, examplesFile];
 const extra = {
   coverage_updates: extraFiles.flatMap((f) => f.coverage_updates),
   sources: extraFiles.flatMap((f) => f.sources),
   units: extraFiles.flatMap((f) => f.units),
   criteria: extraFiles.flatMap((f) => f.criteria),
   comparisons: extraFiles.flatMap((f) => f.comparisons),
+  examples: extraFiles.flatMap((f) => f.examples ?? []),
 };
 // 追加で読んだ範囲を、出典の確認範囲に積み重ねる。未読の範囲は後のファイルの記録を使う（Phase 5B・5E のファイルは変更しない）
 const data: DecisionData = {
@@ -210,6 +235,8 @@ export const waveTechniqueCheckedAt = waveTechniqueFile.checked_at;
 
 export const allCriteria: DecisionCriterion[] = extra.criteria;
 export const comparisons: DecisionComparison[] = extra.comparisons;
+/** 判断材料に付いた具体例 */
+export const examplesForUnit = (unitId: string) => extra.examples.filter((x) => x.unit_id === unitId);
 const criterionById = new Map(allCriteria.map((c) => [c.id, c]));
 export const criterionOf = (id: string) => criterionById.get(id);
 /** 判断材料に付いた具体的な目安 */

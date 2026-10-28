@@ -1,0 +1,38 @@
+{
+  "about": "既存の判断材料に付ける具体例（原典の実戦例）。判断材料は新しく作らず、判断材料の evidence にも加えない（具体例の出典が判断材料全体を裏付けるように見せないため）。具体例の出典が裏付けるのは、その具体例だけ。形は Phase 6B の side-wave-decisions.json と同じで、examples を加える。最初の1件は TOP 動画パイロット（docs/experiments/top-video-pilot.md）の項目1。",
+  "checked_at": "2026-10-29",
+  "coverage_updates": [],
+  "sources": [
+    {
+      "id": "src-evi-mundo-jax",
+      "resource_id": null,
+      "candidate_key": null,
+      "url": "https://www.youtube.com/watch?v=1ZYEnr2BTe4",
+      "author": "Evi（えびンモTV。説明欄によると福岡ソフトバンクホークス ゲーミング所属のプロ）",
+      "published": "2026-09-03（太平洋時間）",
+      "read": "TOP 動画パイロットで、字幕を 0:00〜12:45 と 30:49〜34:58、映像を 5:45〜6:01 だけ確認（docs/experiments/top-video-pilot.md）",
+      "coverage": { "status": "partial", "unread_ja": "12:45〜30:49 の字幕（キーワードの前後だけ確認）と、5:45〜6:01 以外の映像" }
+    }
+  ],
+  "units": [],
+  "criteria": [],
+  "comparisons": [],
+  "examples": [
+    {
+      "id": "ex-evi-mundo-jax-minion-retaliation",
+      "unit_id": "du-trade-checklist",
+      "title_ja": "ムンド対ジャックス（トップ）：自軍ミニオンの方が多いときの立ち位置",
+      "source_ja": "自軍ミニオンの方が多いウェーブでは下がりすぎず、相手に攻撃されたら自軍ミニオンが反撃できる範囲に立つ（動画のナレーションとテロップ）",
+      "spec_ja": "ミニオンは、味方チャンピオンを攻撃している敵チャンピオンを最優先で狙う（League of Legends Wiki の現行の記述）。パッチ26.10 で削除されたのは「敵チャンピオンが味方ミニオンを攻撃したとき」の条件で、これとは別",
+      "spec_source": "src-wiki-minion",
+      "ai_ja": "反撃される可能性があると、相手が攻撃を控える場合がある。つまり、ミニオンが実際に反撃しなくても、立ち位置そのものが相手の攻撃の判断に影響しうる。相手の意図は動画では確認していない",
+      "unverified_ja": [
+        "動画内でジャックスが攻撃を控えたように見えるか、その理由",
+        "5:57 付近で話している、大砲ミニオンと攻撃対象の変化（映像でも特定できなかったため、この具体例には含めない）",
+        "この立ち位置でトレードに勝てるか。対面・ウェーブの大きさ・ジャングラーの位置で変わる"
+      ],
+      "scope_ja": "この動画が裏付けるのは、この具体例（自軍ミニオンが多いときの立ち位置）だけ。上のチェックリスト全体の出典ではない。ムンド対ジャックスの実例で、ほかの対面にそのまま当てはまるとは限らない",
+      "evidence": { "source": "src-evi-mundo-jax", "locator": { "start_sec": 330, "end_sec": 356, "label": "5:30〜5:56（ナレーションとテロップ）" }, "evidence_type": "empirical_claim", "checked_level": "L3" }
+    }
+  ]
+}
