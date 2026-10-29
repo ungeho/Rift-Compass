@@ -47,7 +47,7 @@ function scopeText(u: DecisionUnit): string {
   return [roles, ...extra].filter(Boolean).join("／");
 }
 
-function DecisionCard({ u }: { u: DecisionUnit }) {
+export function DecisionCard({ u }: { u: DecisionUnit }) {
   return (
     <li className="card decision-card">
       <StatusBadges u={u} />

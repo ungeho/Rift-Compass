@@ -5,6 +5,7 @@
 //   #/topic/<id>    Topic 詳細
 //   #/decisions?topic=…  判断材料（試験）の一覧（Topic で絞り込み。compare=… で資料間の比較を開く）
 //   #/decision/<id>      判断材料（試験）の詳細
+//   #/explore?topic=…&d=…  知識の散策（試験）。d は興味からの距離（0〜100）
 import { useSyncExternalStore } from "react";
 import { FILTER_KEYS, type Filters } from "./search/search";
 
@@ -14,7 +15,15 @@ export type Route =
   | { name: "topic"; id: string }
   | { name: "topics" }
   | { name: "decisions"; topic: string; compare?: string }
-  | { name: "decision"; id: string };
+  | { name: "decision"; id: string }
+  | { name: "explore"; topic: string; distance: number };
+
+/** 散策の距離の既定値（近い寄り）*/
+export const DEFAULT_EXPLORE_DISTANCE = 30;
+const clampDistance = (v: string | null) => {
+  const n = v === null || v === "" ? NaN : Number(v);
+  return Number.isFinite(n) ? Math.min(100, Math.max(0, Math.round(n))) : DEFAULT_EXPLORE_DISTANCE;
+};
 
 export function parseHash(hash: string): Route {
   const raw = hash.replace(/^#/, "") || "/";
@@ -25,6 +34,7 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "topics") return { name: "topics" };
   const params = new URLSearchParams(queryString);
   if (seg[0] === "decision" && seg[1]) return { name: "decision", id: seg[1] };
+  if (seg[0] === "explore") return { name: "explore", topic: params.get("topic") ?? "", distance: clampDistance(params.get("d")) };
   if (seg[0] === "decisions") {
     const compare = params.get("compare");
     return compare ? { name: "decisions", topic: params.get("topic") ?? "", compare } : { name: "decisions", topic: params.get("topic") ?? "" };
@@ -58,6 +68,12 @@ export function decisionsHref(topic = "", compare = ""): string {
   return q ? `#/decisions?${q}` : "#/decisions";
 }
 export const decisionHref = (id: string) => `#/decision/${encodeURIComponent(id)}`;
+export function exploreHref(topic = "", distance = DEFAULT_EXPLORE_DISTANCE): string {
+  const params = new URLSearchParams();
+  if (topic) params.set("topic", topic);
+  params.set("d", String(distance));
+  return `#/explore?${params.toString()}`;
+}
 
 const listeners = new Set<() => void>();
 const notify = () => listeners.forEach((l) => l());

@@ -5,6 +5,7 @@ import { ResourceDetail } from "./components/ResourceDetail";
 import { SearchPage } from "./components/SearchPage";
 import { TopicIndex, TopicPage } from "./components/TopicPages";
 import { DecisionDetail, DecisionIndex } from "./components/DecisionPages";
+import { ExplorePage } from "./components/ExplorePage";
 import { decisionById } from "./data/decisions";
 
 function pageTitle(route: Route): string {
@@ -13,6 +14,7 @@ function pageTitle(route: Route): string {
   if (route.name === "topics") return "Topic 一覧";
   if (route.name === "decisions") return "判断材料（試験）";
   if (route.name === "decision") return decisionById(route.id)?.statement_ja ?? "判断材料（試験）";
+  if (route.name === "explore") return "知識を散策する（試験）";
   return route.q ? `「${route.q}」の検索結果` : "";
 }
 
@@ -42,6 +44,7 @@ export function App() {
           <a href="#/">検索</a>
           <a href="#/topics">Topic 一覧</a>
           <a href="#/decisions">判断材料（試験）</a>
+          <a href="#/explore">散策（試験）</a>
         </nav>
       </header>
       <main id="main" tabIndex={-1}>
@@ -51,6 +54,7 @@ export function App() {
         {route.name === "topics" && <TopicIndex />}
         {route.name === "decisions" && <DecisionIndex topic={route.topic} compare={route.compare} />}
         {route.name === "decision" && <DecisionDetail id={route.id} />}
+        {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} />}
       </main>
       <footer className="site-footer">
         <p>
