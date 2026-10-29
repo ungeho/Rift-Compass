@@ -20,7 +20,7 @@ function pageTitle(route: Route): string {
 
 export function App() {
   const route = useRoute();
-  const pageKey = route.name === "home" ? "home" : `${route.name}:${"id" in route ? route.id : ""}`;
+  const pageKey = route.name === "home" ? "home" : `${route.name}:${"id" in route ? route.id : ""}:${route.name === "decision" ? (route.example ?? "") : ""}`;
 
   useEffect(() => {
     const title = pageTitle(route);
@@ -28,7 +28,8 @@ export function App() {
   });
   // 一覧以外へ移動したら先頭から表示する（検索語の入力中はスクロール位置を保つ）
   useEffect(() => {
-    if (pageKey !== "home") window.scrollTo(0, 0);
+    // 具体例を指定した判断材料の URL では、移動先の位置は DecisionDetail が決める（ここで先頭に戻すと上書きしてしまう）
+    if (pageKey !== "home" && !(route.name === "decision" && route.example)) window.scrollTo(0, 0);
   }, [pageKey]);
 
   return (
@@ -53,7 +54,7 @@ export function App() {
         {route.name === "topic" && <TopicPage id={route.id} />}
         {route.name === "topics" && <TopicIndex />}
         {route.name === "decisions" && <DecisionIndex topic={route.topic} compare={route.compare} />}
-        {route.name === "decision" && <DecisionDetail id={route.id} />}
+        {route.name === "decision" && <DecisionDetail id={route.id} example={route.example} />}
         {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} />}
       </main>
       <footer className="site-footer">

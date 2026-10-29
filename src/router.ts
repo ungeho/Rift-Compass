@@ -4,7 +4,7 @@
 //   #/topics        Topic 一覧
 //   #/topic/<id>    Topic 詳細
 //   #/decisions?topic=…  判断材料（試験）の一覧（Topic で絞り込み。compare=… で資料間の比較を開く）
-//   #/decision/<id>      判断材料（試験）の詳細
+//   #/decision/<id>      判断材料（試験）の詳細（?example=… で、その具体例の位置へ移動する）
 //   #/explore?topic=…&d=…  知識の散策（試験）。d は興味からの距離（0〜100）
 import { useSyncExternalStore } from "react";
 import { FILTER_KEYS, type Filters } from "./search/search";
@@ -15,7 +15,7 @@ export type Route =
   | { name: "topic"; id: string }
   | { name: "topics" }
   | { name: "decisions"; topic: string; compare?: string }
-  | { name: "decision"; id: string }
+  | { name: "decision"; id: string; example?: string }
   | { name: "explore"; topic: string; distance: number };
 
 /** 散策の距離の既定値（近い寄り）*/
@@ -33,7 +33,10 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "topic" && seg[1]) return { name: "topic", id: seg[1] };
   if (seg[0] === "topics") return { name: "topics" };
   const params = new URLSearchParams(queryString);
-  if (seg[0] === "decision" && seg[1]) return { name: "decision", id: seg[1] };
+  if (seg[0] === "decision" && seg[1]) {
+    const example = params.get("example");
+    return example ? { name: "decision", id: seg[1], example } : { name: "decision", id: seg[1] };
+  }
   if (seg[0] === "explore") return { name: "explore", topic: params.get("topic") ?? "", distance: clampDistance(params.get("d")) };
   if (seg[0] === "decisions") {
     const compare = params.get("compare");
@@ -67,7 +70,8 @@ export function decisionsHref(topic = "", compare = ""): string {
   const q = params.toString();
   return q ? `#/decisions?${q}` : "#/decisions";
 }
-export const decisionHref = (id: string) => `#/decision/${encodeURIComponent(id)}`;
+export const decisionHref = (id: string, example?: string) =>
+  `#/decision/${encodeURIComponent(id)}${example ? `?example=${encodeURIComponent(example)}` : ""}`;
 export function exploreHref(topic = "", distance = DEFAULT_EXPLORE_DISTANCE): string {
   const params = new URLSearchParams();
   if (topic) params.set("topic", topic);

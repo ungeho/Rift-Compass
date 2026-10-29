@@ -1,8 +1,9 @@
 // Phase 5D：判断材料（試験）の一覧と詳細。
 // 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
+import { useEffect } from "react";
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
   isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
   type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionUnit,
 } from "../data/decisions";
@@ -391,6 +392,9 @@ function SourceItem({ e, timeLinkShownAbove = false }: { e: DecisionEvidence; ti
 }
 
 /** 具体例1件。原典の主張・仕様の記述・AI の整理・未確認事項を分け、具体例の出典は判断材料の出典とは別に出す */
+/** 具体例の要素の id（直接リンクの移動先）*/
+export const exampleAnchorId = (exampleId: string) => `example-${exampleId}`;
+
 function ExampleView({ x }: { x: DecisionExample }) {
   const spec = x.spec_source ? sourceById.get(x.spec_source) : undefined;
   // 原典の該当時間へのリンクは、原典の主張のすぐ横に出す（出典カードでは重ねて出さない）
@@ -398,8 +402,8 @@ function ExampleView({ x }: { x: DecisionExample }) {
   const loc = locatorOf(x.evidence);
   const at = src && loc.startSec !== undefined ? youtubeAt(src.url, loc.startSec) : null;
   return (
-    <article className="decision-example">
-      <h3>{x.title_ja}</h3>
+    <article className="decision-example" id={exampleAnchorId(x.id)} tabIndex={-1} aria-labelledby={`${exampleAnchorId(x.id)}-title`}>
+      <h3 id={`${exampleAnchorId(x.id)}-title`}>{x.title_ja}</h3>
       <ul className="reason-list">
         <li className="reason reason-source">
           <span className="badge">原典の主張</span> {x.source_ja}
@@ -504,8 +508,23 @@ function Relations({ u }: { u: DecisionUnit }) {
   );
 }
 
-export function DecisionDetail({ id }: { id: string }) {
+export function DecisionDetail({ id, example }: { id: string; example?: string }) {
   const u = decisionById(id);
+  // ?example=… で開いたときは、その具体例の位置へ移動し、焦点を移す（キーボードでも移動先が分かるように）。
+  // 別の判断材料の具体例や存在しない id なら、先頭から表示する（誤った位置へは移動しない）
+  const target = u && example ? exampleOf(u.id, example) : undefined;
+  useEffect(() => {
+    const el = target ? document.getElementById(exampleAnchorId(target.id)) : null;
+    if (el) {
+      el.scrollIntoView({ block: "start" });
+      el.focus({ preventScroll: true });
+      return;
+    }
+    // 移動先がない（指定なし・不正な id）ときは、前に移動した具体例に焦点を残さない
+    const active = document.activeElement;
+    if (active instanceof HTMLElement && active.id.startsWith("example-")) active.blur();
+    if (example) window.scrollTo(0, 0);
+  }, [id, example, target]);
   const back = (
     <p className="back">
       <a href={decisionsHref()}>← 判断材料（試験）の一覧</a>

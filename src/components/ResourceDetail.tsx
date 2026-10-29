@@ -1,5 +1,5 @@
 import { index, isPublic } from "../data/dataset";
-import { decisionsForResource } from "../data/decisions";
+import { decisionById, decisionsForResource, examplesForResource } from "../data/decisions";
 import { BASIS_LABELS, CREATOR_KIND_LABELS, eraLabel, formatSeconds, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/labels";
 import { youtubeAt } from "../lib/links";
 import { plainText } from "../lib/plainText";
@@ -31,6 +31,8 @@ export function ResourceDetail({ id }: { id: string }) {
   const original = r.derived_from ? index.resourceById.get(r.derived_from) : undefined;
   const translations = index.translationsOf.get(r.id) ?? [];
   const decisions = decisionsForResource(r.id);
+  // この資料を主たる出典とする具体例（判断材料全体の出典ではない）
+  const examples = examplesForResource(r.id);
 
   return (
     <div className="detail">
@@ -64,6 +66,23 @@ export function ResourceDetail({ id }: { id: string }) {
         <p>{plainText(r.summary_ja)}</p>
         <TopicChips ids={r.topic_ids} />
       </section>
+
+      {examples.length > 0 && (
+        <section aria-labelledby="examples-from-resource-heading">
+          <h2 id="examples-from-resource-heading">この資料に基づく具体例（試験）</h2>
+          <p className="muted">
+            判断材料に付けた具体例のうち、この資料を出典とするものです。この資料が裏付けるのは具体例だけで、判断材料全体の出典ではありません。ゲーム内では検証していません。
+          </p>
+          <ul>
+            {examples.map((x) => (
+              <li key={x.id}>
+                <a href={decisionHref(x.unit_id, x.id)}>{x.title_ja}</a>
+                <div className="muted">付いている判断材料：{decisionById(x.unit_id)?.statement_ja}</div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section aria-labelledby="info-heading">
         <h2 id="info-heading">資料の情報</h2>

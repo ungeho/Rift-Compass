@@ -8,7 +8,7 @@ import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.js
 import rawExamples from "../../data/experiments/decision-examples.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { DIAGRAMS, examplesForQuery, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { DIAGRAMS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
@@ -518,5 +518,48 @@ describe("具体例の2件目（lol-guide：相手にフラッシュがないと
     const header = detail(ID).match(/<p class="card-creator">.*?<\/p>/s)![0];
     expect(text(header)).not.toContain("がりある");
     expect(examplesForUnit(ID).map((x) => x.id)).toEqual(["ex-evi-mundo-jax-minion-retaliation", "ex-lg-qyxqb-enemy-no-flash"]);
+  });
+});
+
+describe("原典の資料から具体例への逆引き（案B）", () => {
+  const LG = "ex-lg-qyxqb-enemy-no-flash";
+  const resourcePage = (id: string) => renderToStaticMarkup(<ResourceDetail id={id} />);
+
+  it("具体例の主たる出典（evidence.source）の resource_id だけで結びつけ、仕様の補足や resource_id のない出典は使わない", () => {
+    expect(examplesForResource("res-lg-qyxqb").map((x) => x.id)).toEqual([LG]);
+    // Evi の具体例の仕様の補足（spec_source：Wiki Minion）は逆引きに使わない
+    expect(examplesForResource("res-wiki-minion")).toEqual([]);
+    // 判断材料本体の出典（MetaBot）の資料にも、具体例は出さない
+    expect(examplesForResource("res-metabot-trading-2026")).toEqual([]);
+    // 具体例が出るのは res-lg-qyxqb だけで、すべて試験表示の判断材料に付いたもの
+    const hits = index.resources.filter((r) => examplesForResource(r.id).length > 0).map((r) => r.id);
+    expect(hits).toEqual(["res-lg-qyxqb"]);
+    for (const r of index.resources) for (const x of examplesForResource(r.id)) expect(SHOWCASE_IDS).toContain(x.unit_id);
+    expect(new Set(examplesForResource("res-lg-qyxqb").map((x) => x.id)).size).toBe(examplesForResource("res-lg-qyxqb").length);
+  });
+
+  it("資料の詳細に「この資料に基づく具体例（試験）」の欄を、紹介の後・判断材料の欄とは別に出す。具体例がない資料には出さない", () => {
+    const markup = resourcePage("res-lg-qyxqb");
+    const html = text(markup);
+    expect(html).toContain("この資料に基づく具体例（試験）");
+    expect(html).toContain("この資料が裏付けるのは具体例だけで、判断材料全体の出典ではありません");
+    expect(markup).toContain(`href="${decisionHref("du-trade-checklist", LG)}"`);
+    expect(html).toContain("サモナースペルの確認：相手にフラッシュがないとき（ミッド向けの記事）");
+    expect(html).toContain("付いている判断材料：トレードの前に");
+    expect(markup.indexOf("この資料に基づく具体例（試験）")).toBeGreaterThan(markup.indexOf("紹介"));
+    // 判断材料本体の出典ではないので、「この資料から抽出した判断材料」の欄には出さない
+    expect(html).not.toContain("この資料から抽出した判断材料");
+    for (const id of ["res-metabot-trading-2026", "res-wiki-minion", "res-lg-dauwk"]) expect(text(resourcePage(id))).not.toContain("この資料に基づく具体例");
+    // 既存の「この資料から抽出した判断材料」の欄はそのまま
+    expect(text(resourcePage("res-metabot-trading-2026"))).toContain("この資料から抽出した判断材料（試験）");
+  });
+
+  it("移動先の具体例に id と焦点を受けられる属性があり、別の判断材料の具体例や存在しない id は対象にしない", () => {
+    const markup = detail("du-trade-checklist");
+    expect(markup).toContain(`id="example-${LG}" tabindex="-1"`);
+    expect(markup).toContain('id="example-ex-evi-mundo-jax-minion-retaliation" tabindex="-1"');
+    expect(exampleOf("du-trade-checklist", LG)?.id).toBe(LG);
+    expect(exampleOf("du-wave-drift-by-meeting-point", LG)).toBeUndefined();
+    expect(exampleOf("du-trade-checklist", "no-such-example")).toBeUndefined();
   });
 });

@@ -249,6 +249,31 @@ export const comparisons: DecisionComparison[] = extra.comparisons;
 /** 判断材料に付いた具体例 */
 export const examplesForUnit = (unitId: string) => extra.examples.filter((x) => x.unit_id === unitId);
 
+let examplesByResource: Map<string, DecisionExample[]> | undefined;
+/**
+ * この資料（Resource）を主たる出典とする具体例。試験表示の判断材料に付いたものだけを返す。
+ * 主たる出典は具体例の evidence.source だけで、仕様の補足（spec_source）は使わない。
+ * 出典の resource_id が null の具体例（動画など、資料一覧に未収録の出典）は、どの資料にも結びつけない。
+ * 索引は最初の呼び出しで1回だけ作る。
+ */
+export function examplesForResource(resourceId: string): DecisionExample[] {
+  if (!examplesByResource) {
+    examplesByResource = new Map();
+    for (const x of extra.examples) {
+      if (!showcaseSet.has(x.unit_id)) continue;
+      const rid = sourceById.get(x.evidence.source)?.resource_id;
+      if (!rid) continue;
+      const list = examplesByResource.get(rid) ?? [];
+      if (!list.some((y) => y.id === x.id)) list.push(x);
+      examplesByResource.set(rid, list);
+    }
+  }
+  return examplesByResource.get(resourceId) ?? [];
+}
+
+/** 判断材料に付いた具体例のうち、id が一致するもの（別の判断材料の具体例や、存在しない id には undefined）*/
+export const exampleOf = (unitId: string, exampleId: string) => examplesForUnit(unitId).find((x) => x.id === exampleId);
+
 // 検索語の比較用：全角・半角と大文字・小文字をそろえ、カタカナをひらがなにする（「えびンモ」と「えびんも」を同じに扱う）
 const foldKana = (str: string) =>
   str.normalize("NFKC").toLowerCase().replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
