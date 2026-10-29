@@ -387,7 +387,7 @@ describe("既存の判断材料の具体例（Evi 選手のムンド対ジャッ
   it("du-trade-checklist の詳細に、具体例・原典の主張・仕様・AI の整理・未確認事項・範囲が分かれて出て、動画の5:30へのリンクがある", () => {
     const markup = detail(ID);
     const html = text(markup);
-    expect(html).toContain("具体例（原典の実戦例）");
+    expect(html).toContain("具体例（別の出典）");
     expect(html).toContain("ムンド対ジャックス（トップ）");
     expect(html).toContain(ex[0].source_ja);
     expect(html).toContain(ex[0].spec_ja);
@@ -407,7 +407,7 @@ describe("既存の判断材料の具体例（Evi 選手のムンド対ジャッ
     expect(text(header)).not.toContain("Evi");
     // 一覧には具体例を出さない（一覧のカードの出典は判断材料の出典だけ）
     expect(text(list())).not.toContain("Evi");
-    for (const id of SHOWCASE_IDS.filter((x) => x !== ID)) expect(text(detail(id))).not.toContain("具体例（原典の実戦例）");
+    for (const id of SHOWCASE_IDS.filter((x) => x !== ID)) expect(text(detail(id))).not.toContain("具体例（別の出典）");
   });
 
   it("動画の5:30へのリンクは「原典の主張」のすぐ横に1つだけ出し、具体例の出典カードでは重ねて出さない", () => {
@@ -461,7 +461,7 @@ describe("検索画面から具体例へ（Evi・えび・えびんも）", () =
       const markup = page(q);
       const html = text(markup);
       expect(html).toContain("関連する判断材料の具体例");
-      expect(html).toContain("教材ではなく、判断材料に付けた原典の実戦例です。上の件数には含みません。");
+      expect(html).toContain("教材ではなく、判断材料に付けた、別の出典の具体例です。上の件数には含みません。");
       expect(html).toContain("この出典が裏付けるのは、この具体例だけです");
       expect(markup).toContain(`href="${decisionHref("du-trade-checklist")}"`);
       const r = search(q, {});
@@ -489,5 +489,34 @@ describe("ウェーブ模式図の「なぜそうなるか」", () => {
     expect(mid.basis).toBe("ai");
     expect(mid.text).toContain("ゲーム内では検証していない");
     expect(JSON.stringify(d.why)).not.toMatch(/必ず|確定/);
+  });
+});
+
+describe("具体例の2件目（lol-guide：相手にフラッシュがないとき）", () => {
+  const ID = "du-trade-checklist";
+  const ex = (rawExamples as unknown as { examples: { id: string; source_ja: string; ai_ja: string; scope_ja: string; unverified_ja: string[] }[] }).examples.find((e) => e.id === "ex-lg-qyxqb-enemy-no-flash")!;
+
+  it("記事の主張（反対の条件を含む）・AI の整理・未確認事項・範囲を分けて、du-trade-checklist の具体例として出す", () => {
+    const markup = detail(ID);
+    const html = text(markup);
+    expect(html).toContain("サモナースペルの確認：相手にフラッシュがないとき（ミッド向けの記事）");
+    expect(html).toContain(ex.source_ja);
+    // 照合で直した点：「ことがある」「相手が弱気になっているなら」、両方にフラッシュがないときの反対の条件
+    expect(ex.source_ja).toContain("レーンを下げることがあり");
+    expect(ex.source_ja).toContain("相手が弱気になっているなら");
+    expect(ex.source_ja).toContain("両方にフラッシュがないときは、お互いに慎重になることがある");
+    expect(markup).toMatch(/AI の整理<\/span>\s*上のチェックリストの「サモナースペル」の項目を/);
+    for (const u of ex.unverified_ja) expect(html).toContain(u);
+    expect(html).toContain("上のチェックリスト全体（5つの確認項目、2〜3個が有利なら仕掛けるという基準）の出典ではない");
+    expect(markup).toContain('href="https://www.lol-guide.com/articles/qyxqb"');
+    expect(JSON.stringify(ex)).not.toMatch(/必ず|確定/);
+  });
+
+  it("判断材料全体の出典には加えない（見出しの出典は MetaBot.GG のまま）", () => {
+    const u = showcaseDecisions.find((x) => x.id === ID)!;
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-metabot"]);
+    const header = detail(ID).match(/<p class="card-creator">.*?<\/p>/s)![0];
+    expect(text(header)).not.toContain("がりある");
+    expect(examplesForUnit(ID).map((x) => x.id)).toEqual(["ex-evi-mundo-jax-minion-retaliation", "ex-lg-qyxqb-enemy-no-flash"]);
   });
 });

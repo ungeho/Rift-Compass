@@ -198,7 +198,7 @@ export function RelatedExamples({ q }: { q: string }) {
       <h3 id="related-examples-heading">
         関連する判断材料の具体例 <span className="badge">判断材料（試験）</span>
       </h3>
-      <p className="muted">教材ではなく、判断材料に付けた原典の実戦例です。上の件数には含みません。</p>
+      <p className="muted">教材ではなく、判断材料に付けた、別の出典の具体例です。上の件数には含みません。</p>
       <ul className="result-list">
         {found.map((x) => {
           const u = decisionById(x.unit_id)!;
@@ -586,8 +586,8 @@ export function DecisionDetail({ id }: { id: string }) {
 
       {examplesForUnit(u.id).length > 0 && (
         <section aria-labelledby="examples-heading">
-          <h2 id="examples-heading">具体例（原典の実戦例）</h2>
-          <p className="muted">上の判断材料とは別の出典の実例です。具体例の出典が裏付けるのは、その具体例だけです。</p>
+          <h2 id="examples-heading">具体例（別の出典）</h2>
+          <p className="muted">上の判断材料とは別の出典の具体例です。具体例の出典が裏付けるのは、その具体例だけです。</p>
           {examplesForUnit(u.id).map((x) => (
             <ExampleView key={x.id} x={x} />
           ))}

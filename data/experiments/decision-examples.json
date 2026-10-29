@@ -1,5 +1,5 @@
 {
-  "about": "既存の判断材料に付ける具体例（原典の実戦例）。判断材料は新しく作らず、判断材料の evidence にも加えない（具体例の出典が判断材料全体を裏付けるように見せないため）。具体例の出典が裏付けるのは、その具体例だけ。形は Phase 6B の side-wave-decisions.json と同じで、examples を加える。最初の1件は TOP 動画パイロット（docs/experiments/top-video-pilot.md）の項目1。",
+  "about": "既存の判断材料に付ける具体例（別の出典による実戦例・具体化）。判断材料は新しく作らず、判断材料の evidence にも加えない（具体例の出典が判断材料全体を裏付けるように見せないため）。具体例の出典が裏付けるのは、その具体例だけ。形は Phase 6B の side-wave-decisions.json と同じで、examples を加える。最初の1件は TOP 動画パイロット（docs/experiments/top-video-pilot.md）の項目1。2件目は照合チェックの初回実験（docs/experiments/verification-check-pilot.md）で修正した P1。",
   "checked_at": "2026-10-29",
   "coverage_updates": [],
   "sources": [
@@ -12,6 +12,16 @@
       "published": "2026-09-03（太平洋時間）",
       "read": "TOP 動画パイロットで、字幕を 0:00〜12:45 と 30:49〜34:58、映像を 5:45〜6:01 だけ確認（docs/experiments/top-video-pilot.md）",
       "coverage": { "status": "partial", "unread_ja": "12:45〜30:49 の字幕（キーワードの前後だけ確認）と、5:45〜6:01 以外の映像" }
+    },
+    {
+      "id": "src-lg-qyxqb",
+      "resource_id": "res-lg-qyxqb",
+      "candidate_key": null,
+      "url": "https://www.lol-guide.com/articles/qyxqb",
+      "author": "がりある（lol-guide.com）",
+      "published": "2025-08-17",
+      "read": "照合チェックの初回実験で、記事の HTML を取得して本文の全体（約3,400字）を直接確認（docs/experiments/verification-check-pilot.md）。収録時に「フラッシュ」の2・3を再確認。画像は見ていない",
+      "coverage": { "status": "full" }
     }
   ],
   "units": [],
@@ -34,6 +44,20 @@
       "scope_ja": "この動画が裏付けるのは、この具体例（自軍ミニオンが多いときの立ち位置）だけ。上のチェックリスト全体の出典ではない。ムンド対ジャックスの実例で、ほかの対面にそのまま当てはまるとは限らない",
       "search_terms": ["Evi", "えび", "えびんも"],
       "evidence": { "source": "src-evi-mundo-jax", "locator": { "start_sec": 330, "end_sec": 356, "label": "5:30〜5:56（ナレーションとテロップ）" }, "evidence_type": "empirical_claim", "checked_level": "L3" }
+    },
+    {
+      "id": "ex-lg-qyxqb-enemy-no-flash",
+      "unit_id": "du-trade-checklist",
+      "title_ja": "サモナースペルの確認：相手にフラッシュがないとき（ミッド向けの記事）",
+      "source_ja": "相手にフラッシュがないときは、レーン戦で強気にダメージトレードを行い、プレッシャーをかけることが大切。相手はガンクで倒されるリスクが高まるので、レーンを下げることがあり、ロームのための「ターン」を作りやすくなる。相手が弱気になっているなら、トレードでも有利に立ちやすい。ただし、自分と相手の両方にフラッシュがないときは、お互いに慎重になることがある。その場合は、味方のジャングラーやサポートがミッドの近くにいる利点を活かしてトレードし、ワードを置いてガンクを警戒する（記事の主張）",
+      "ai_ja": "上のチェックリストの「サモナースペル」の項目を、フラッシュの有無という具体的な条件に当てはめた例として位置づけたのは AI の整理。記事自体はチェックリストに触れていない",
+      "unverified_ja": [
+        "記事はミッド向け。ほかのロールに当てはまるかは、記事の範囲外",
+        "ゲーム内では検証していない",
+        "記事の公開時（2025-08-17）から、フラッシュの仕様やクールダウンが変わったかは確認していない"
+      ],
+      "scope_ja": "この記事が裏付けるのは、この具体例（フラッシュの有無に応じたトレードの強さ）だけ。上のチェックリスト全体（5つの確認項目、2〜3個が有利なら仕掛けるという基準）の出典ではない",
+      "evidence": { "source": "src-lg-qyxqb", "locator": "フラッシュ：最も重要なサモナースペル／2. 相手にフラッシュがない場合・3. 自分と相手、両方にフラッシュがない場合", "evidence_type": "empirical_claim", "checked_level": "L3" }
     }
   ]
 }

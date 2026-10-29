@@ -98,7 +98,7 @@ export interface DecisionComparison {
 }
 
 /**
- * 既存の判断材料に付ける具体例（原典の実戦例）。判断材料の evidence には加えない。
+ * 既存の判断材料に付ける具体例（別の出典による実戦例・具体化）。判断材料の evidence には加えない。
  * 具体例の出典が裏付けるのはその具体例だけで、判断材料全体の出典ではない。
  */
 export interface DecisionExample {
