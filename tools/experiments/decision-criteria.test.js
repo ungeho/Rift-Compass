@@ -78,7 +78,10 @@ test("発見性レビューの追加ファイルも合わせて検査し、6B �
 
 test("具体例は判断材料の evidence に加えず、具体例の出典が判断材料全体の出典に入ったら検出する", () => {
   const ctx = loadMerged();
-  assert.equal(ctx.crit.examples.length, 2);
+  // 件数は固定しない：id の重複がなく、既知の具体例がそろっていることを確かめる
+  const ids = ctx.crit.examples.map((e) => e.id);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const id of ["ex-evi-mundo-jax-minion-retaliation", "ex-lg-qyxqb-enemy-no-flash", "ex-lg-uhrvk-harass-when-enemy-pushes"]) assert.ok(ids.includes(id), id);
   // どの具体例の出典も、判断材料の evidence には入っていない
   for (const e of ctx.crit.examples) assert.ok(!ctx.du.units.find((u) => u.id === e.unit_id).evidence.some((ue) => ue.source === e.evidence.source), e.id);
   const x = ctx.crit.examples.find((e) => e.id === "ex-evi-mundo-jax-minion-retaliation");

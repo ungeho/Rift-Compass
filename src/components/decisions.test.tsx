@@ -407,7 +407,8 @@ describe("既存の判断材料の具体例（Evi 選手のムンド対ジャッ
     expect(text(header)).not.toContain("Evi");
     // 一覧には具体例を出さない（一覧のカードの出典は判断材料の出典だけ）
     expect(text(list())).not.toContain("Evi");
-    for (const id of SHOWCASE_IDS.filter((x) => x !== ID)) expect(text(detail(id))).not.toContain("具体例（別の出典）");
+    // 具体例の欄は、具体例が付いた判断材料にだけ出る
+    for (const id of SHOWCASE_IDS.filter((x) => examplesForUnit(x).length === 0)) expect(text(detail(id))).not.toContain("具体例（別の出典）");
   });
 
   it("動画の5:30へのリンクは「原典の主張」のすぐ横に1つだけ出し、具体例の出典カードでは重ねて出さない", () => {
@@ -526,16 +527,23 @@ describe("原典の資料から具体例への逆引き（案B）", () => {
   const resourcePage = (id: string) => renderToStaticMarkup(<ResourceDetail id={id} />);
 
   it("具体例の主たる出典（evidence.source）の resource_id だけで結びつけ、仕様の補足や resource_id のない出典は使わない", () => {
-    expect(examplesForResource("res-lg-qyxqb").map((x) => x.id)).toEqual([LG]);
-    // Evi の具体例の仕様の補足（spec_source：Wiki Minion）は逆引きに使わない
+    // 既知の具体例は、それぞれの原典の資料から到達できる（期待する対応は、データから写さずにここに書く）
+    const KNOWN: Record<string, string> = { [LG]: "res-lg-qyxqb", "ex-lg-uhrvk-harass-when-enemy-pushes": "res-lg-uhrvk" };
+    for (const [ex, rid] of Object.entries(KNOWN)) expect(examplesForResource(rid).map((x) => x.id), rid).toContain(ex);
+    // Evi の具体例の仕様の補足（spec_source：Wiki Minion）は逆引きに使わない。resource_id のない動画の出典は、どの資料にも結びつけない
     expect(examplesForResource("res-wiki-minion")).toEqual([]);
     // 判断材料本体の出典（MetaBot）の資料にも、具体例は出さない
     expect(examplesForResource("res-metabot-trading-2026")).toEqual([]);
-    // 具体例が出るのは res-lg-qyxqb だけで、すべて試験表示の判断材料に付いたもの
-    const hits = index.resources.filter((r) => examplesForResource(r.id).length > 0).map((r) => r.id);
-    expect(hits).toEqual(["res-lg-qyxqb"]);
-    for (const r of index.resources) for (const x of examplesForResource(r.id)) expect(SHOWCASE_IDS).toContain(x.unit_id);
-    expect(new Set(examplesForResource("res-lg-qyxqb").map((x) => x.id)).size).toBe(examplesForResource("res-lg-qyxqb").length);
+    for (const r of index.resources) {
+      const list = examplesForResource(r.id);
+      // どの資料に出る具体例も、その資料を主たる出典とするもので、試験表示の判断材料に付いたもの。同じ具体例は重複しない
+      for (const x of list) {
+        expect(sourceById.get(x.evidence.source)?.resource_id, x.id).toBe(r.id);
+        expect(SHOWCASE_IDS).toContain(x.unit_id);
+      }
+      expect(new Set(list.map((x) => x.id)).size).toBe(list.length);
+      expect(list.map((x) => x.id)).not.toContain("ex-evi-mundo-jax-minion-retaliation");
+    }
   });
 
   it("資料の詳細に「この資料に基づく具体例（試験）」の欄を、紹介の後・判断材料の欄とは別に出す。具体例がない資料には出さない", () => {
@@ -561,5 +569,51 @@ describe("原典の資料から具体例への逆引き（案B）", () => {
     expect(exampleOf("du-trade-checklist", LG)?.id).toBe(LG);
     expect(exampleOf("du-wave-drift-by-meeting-point", LG)).toBeUndefined();
     expect(exampleOf("du-trade-checklist", "no-such-example")).toBeUndefined();
+  });
+});
+
+describe("具体例の3件目（lol-guide uhrvk）：収録するだけで原典の資料から到達できる", () => {
+  const EX = "ex-lg-uhrvk-harass-when-enemy-pushes";
+  const UNIT = "du-behind-keep-wave-own-side";
+
+  it("原典の資料 res-lg-uhrvk の詳細に、具体例への直接リンクが自動で出る（データの追加だけで、画面の変更なし）", () => {
+    expect(examplesForResource("res-lg-uhrvk").map((x) => x.id)).toEqual([EX]);
+    const markup = renderToStaticMarkup(<ResourceDetail id="res-lg-uhrvk" />);
+    expect(text(markup)).toContain("この資料に基づく具体例（試験）");
+    expect(markup).toContain(`href="${decisionHref(UNIT, EX)}"`);
+  });
+
+  it("判断材料の詳細に、照合で直した表現・反対の条件・例外・同じ著者であることを出し、判断材料の出典は変えない", () => {
+    const markup = detail(UNIT);
+    const html = text(markup);
+    expect(markup).toContain(`id="example-${EX}" tabindex="-1"`);
+    expect(html).toContain("のはあまりよくない"); // 原典の「あまりよくありません」に合わせた（「しない」と言い切らない）
+    expect(html).toContain("ほかのレーンに主導権があるなら、無理に取り返す必要はない");
+    expect(html).toContain("ここで勝負しなければ負けるというタイミングもある");
+    expect(html).toContain("同じ著者（がりある）の別の記事なので、独立した裏付けにはならない");
+    // 判断材料の要旨（ウェーブを自陣側に保つ）まで、この記事が裏付けているように見せない
+    expect(html).toContain("上の判断材料の要旨（スキルでウェーブを処理せず、ウェーブを自陣側に保つ）の出典ではない");
+    expect(html).toContain("記事は、ウェーブを自陣側に保つことについては述べていない");
+    const u = showcaseDecisions.find((x) => x.id === UNIT)!;
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-kjumg"]);
+    expect(exampleOf(UNIT, EX)?.id).toBe(EX);
+  });
+});
+
+describe("具体例を追加したときの共通の検査（件数に依存しない）", () => {
+  const all = (rawExamples as unknown as { examples: { id: string; unit_id: string; evidence: { source: string } }[] }).examples;
+
+  it("id が重複せず、既知の3件（Evi・フラッシュ差・主導権）がそろっている", () => {
+    const ids = all.map((x) => x.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const id of ["ex-evi-mundo-jax-minion-retaliation", "ex-lg-qyxqb-enemy-no-flash", "ex-lg-uhrvk-harass-when-enemy-pushes"]) expect(ids).toContain(id);
+  });
+
+  it("主たる出典が資料に結びつく具体例は、試験表示の判断材料に付いていれば、その資料の詳細から直接リンクされる", () => {
+    for (const x of all) {
+      const rid = sourceById.get(x.evidence.source)?.resource_id;
+      if (!rid || !SHOWCASE_IDS.includes(x.unit_id as (typeof SHOWCASE_IDS)[number])) continue;
+      expect(renderToStaticMarkup(<ResourceDetail id={rid} />), x.id).toContain(`href="${decisionHref(x.unit_id, x.id)}"`);
+    }
   });
 });
