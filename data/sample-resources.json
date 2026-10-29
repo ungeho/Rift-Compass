@@ -17,7 +17,7 @@
 
     { "id": "cooldown", "kind": "concept", "parent_ids": ["cat-basics", "cat-laning"], "label_ja": "クールダウン", "label_en": "Cooldown", "aliases_ja": ["CD", "クールタイム", "スキルが落ちている", "スキル切れ"], "aliases_en": ["CD", "cooldown window", "ability down"] },
     { "id": "ability-haste", "kind": "concept", "parent_ids": ["cooldown"], "label_ja": "スキルヘイスト", "label_en": "Ability haste", "aliases_ja": ["ヘイスト", "CDR", "クールダウン短縮"], "aliases_en": ["haste", "CDR", "cooldown reduction"] },
-    { "id": "trading", "kind": "concept", "parent_ids": ["cat-laning"], "label_ja": "トレード", "label_en": "Trading", "aliases_ja": ["殴り合い", "仕掛ける", "ダメージ交換", "ハラス"], "aliases_en": ["trade", "short trade", "all-in", "poke", "retaliation trade"] },
+    { "id": "trading", "kind": "concept", "parent_ids": ["cat-laning"], "label_ja": "トレード", "label_en": "Trading", "aliases_ja": ["殴り合い", "仕掛ける", "ダメージ交換", "ダメトレ", "ハラス"], "aliases_en": ["trade", "short trade", "all-in", "poke", "retaliation trade"] },
     { "id": "experience", "kind": "concept", "parent_ids": ["cat-basics"], "label_ja": "経験値・レベル", "label_en": "Experience", "aliases_ja": ["経験値", "XP", "レベル"], "aliases_en": ["XP", "exp", "level"] },
     { "id": "level-2", "kind": "concept", "parent_ids": ["experience", "cat-laning"], "label_ja": "Lv2先行", "label_en": "Level 2 first", "aliases_ja": ["レベル2先行", "Lv2先行", "レベル2", "Lv2"], "aliases_en": ["level 2 spike", "lvl 2", "level two first"] },
     { "id": "wave-management", "kind": "concept", "parent_ids": ["cat-laning"], "label_ja": "ウェーブ管理", "label_en": "Wave management", "aliases_ja": ["ウェーブ管理", "ウェーブコントロール", "ライン管理", "ミニオン管理"], "aliases_en": ["wave control", "wave manipulation"] },

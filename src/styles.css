@@ -194,6 +194,8 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .decision-diagram { margin: 0; }
 .decision-example { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; margin: 8px 0; }
 .decision-example h3 { margin: 4px 0; font-size: 1rem; }
+.related-examples { margin: 8px 0 14px; }
+.related-examples h3 { font-size: 1rem; margin: 4px 0; }
 .decision-diagram img { display: block; width: 100%; max-width: 420px; height: auto; border: 1px solid var(--border); border-radius: var(--radius); margin: 8px 0; }
 .note-list h3 { margin: 10px 0 2px; font-size: 0.9rem; }
 .chip[aria-current="page"] { border-color: var(--accent); font-weight: 600; }

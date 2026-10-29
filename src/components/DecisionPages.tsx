@@ -2,7 +2,7 @@
 // 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, examplesForUnit, isNone, QUESTION_ENTRANCES,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
   isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
   type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionUnit,
 } from "../data/decisions";
@@ -181,6 +181,42 @@ export function QuestionEntrances() {
             </a>
           </li>
         ))}
+      </ul>
+    </section>
+  );
+}
+
+/**
+ * 検索画面で、検索語に一致した「判断材料の具体例」を案内する。教材（Resource）の検索結果とは別の種類のデータとして出し、件数にも含めない。
+ * 具体例の出典が裏付けるのは、その具体例だけ（判断材料全体の出典ではない）。
+ */
+export function RelatedExamples({ q }: { q: string }) {
+  const found = examplesForQuery(q);
+  if (found.length === 0) return null;
+  return (
+    <section className="related-examples" aria-labelledby="related-examples-heading">
+      <h3 id="related-examples-heading">
+        関連する判断材料の具体例 <span className="badge">判断材料（試験）</span>
+      </h3>
+      <p className="muted">教材ではなく、判断材料に付けた原典の実戦例です。上の件数には含みません。</p>
+      <ul className="result-list">
+        {found.map((x) => {
+          const u = decisionById(x.unit_id)!;
+          const src = sourceById.get(x.evidence.source);
+          return (
+            <li key={x.id} className="card">
+              <p className="card-title">
+                <a href={decisionHref(u.id)}>{x.title_ja}</a>
+              </p>
+              <p className="card-creator">
+                具体例の出典：{src?.author ?? x.evidence.source}。この出典が裏付けるのは、この具体例だけです。
+              </p>
+              <p>
+                付いている判断材料：<a href={decisionHref(u.id)}>{u.statement_ja}</a>
+              </p>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
@@ -417,6 +453,14 @@ function DiagramView({ d }: { d: DecisionDiagram }) {
         </dd>
       </dl>
       <img src={d.src} alt={d.alt} width={360} height={526} loading="lazy" />
+      <h3>なぜそうなるか</h3>
+      <ul className="reason-list">
+        {d.why.map((r) => (
+          <li key={r.text} className={`reason reason-${r.basis}`}>
+            <span className={`badge ${r.basis === "ai" ? "status status-inference" : ""}`}>{r.basis === "source" ? "原典の説明" : "AI の整理"}</span> {r.text}
+          </li>
+        ))}
+      </ul>
       <figcaption className="muted">
         対応する判断材料：この判断材料。出典：
         {d.sources.map((id, i) => {

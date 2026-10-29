@@ -6,7 +6,7 @@ import { facetCounts, search, type FilterKey, type Filters, type Hit, type Unit 
 import { externalSearchUrls } from "../lib/links";
 import { homeHref, rememberList, replaceHash, topicHref } from "../router";
 import { ExternalLink } from "./common";
-import { QuestionEntrances } from "./DecisionPages";
+import { QuestionEntrances, RelatedExamples } from "./DecisionPages";
 import { ResourceCard } from "./ResourceCard";
 
 const EXAMPLES = [
@@ -195,6 +195,8 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
               )}
             </div>
           )}
+
+          {hasQuery && <RelatedExamples q={q} />}
 
           {activeFilters.length > 0 && (
             <p className="active-filters">

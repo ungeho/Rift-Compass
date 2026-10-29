@@ -8,10 +8,12 @@ import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.js
 import rawExamples from "../../data/experiments/decision-examples.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { DIAGRAMS, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { DIAGRAMS, examplesForQuery, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
+import { EVAL_QUERIES } from "../search/evaluationQueries";
+import { search } from "../search/search";
 import { ResourceDetail } from "./ResourceDetail";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
@@ -437,5 +439,55 @@ describe("既存の判断材料の具体例（Evi 選手のムンド対ジャッ
     expect(x.spec_ja).toContain("味方チャンピオンを攻撃している敵チャンピオン");
     expect(x.spec_ja).toContain("パッチ26.10 で削除されたのは「敵チャンピオンが味方ミニオンを攻撃したとき」の条件で、これとは別");
     expect(x.ai_ja).toContain("相手の意図は動画では確認していない");
+  });
+});
+
+describe("検索画面から具体例へ（Evi・えび・えびんも）", () => {
+  const EX = "ex-evi-mundo-jax-minion-retaliation";
+  const page = (q: string) => renderToStaticMarkup(<SearchPage q={q} filters={{}} />);
+
+  it("解説者名の検索語で、具体例が見つかる（大文字・カタカナの違いを問わない）", () => {
+    for (const q of ["Evi", "EVI", "evi 解説", "えび", "えびんも", "えびンモTV"]) expect(examplesForQuery(q).map((x) => x.id), q).toEqual([EX]);
+  });
+
+  it("関係のない語では出さない（英数字は単語の途中で一致させない）", () => {
+    for (const q of ["", "evidence", "review", "revive", "ダメトレ", "トレード"]) expect(examplesForQuery(q), q).toEqual([]);
+    // 既存の評価用の質問では、具体例を案内しない
+    for (const e of EVAL_QUERIES) expect(examplesForQuery(e.query), e.query).toEqual([]);
+  });
+
+  it("検索画面では、教材とは別の種類のデータとして案内し、du-trade-checklist へ移動できる。教材の件数は変えない", () => {
+    for (const q of ["Evi", "えび", "えびんも"]) {
+      const markup = page(q);
+      const html = text(markup);
+      expect(html).toContain("関連する判断材料の具体例");
+      expect(html).toContain("教材ではなく、判断材料に付けた原典の実戦例です。上の件数には含みません。");
+      expect(html).toContain("この出典が裏付けるのは、この具体例だけです");
+      expect(markup).toContain(`href="${decisionHref("du-trade-checklist")}"`);
+      const r = search(q, {});
+      const full = r.hits.filter((h) => h.match === "full").length;
+      expect(html).toContain(`条件に一致：${full}件`);
+    }
+    expect(text(page("ダメトレ"))).not.toContain("関連する判断材料の具体例");
+  });
+});
+
+describe("ウェーブ模式図の「なぜそうなるか」", () => {
+  it("原典の説明と AI の整理を分けて、模式図の近くに出す", () => {
+    const d = DIAGRAMS[0];
+    const markup = detail(d.unit_id);
+    expect(text(markup)).toContain("なぜそうなるか");
+    for (const r of d.why) {
+      expect(text(markup)).toContain(r.text);
+      const badge = r.basis === "source" ? "原典の説明" : "AI の整理";
+      expect(markup).toContain(`${badge}</span> ${r.text}`);
+    }
+    expect(d.why.some((r) => r.basis === "source")).toBe(true);
+    expect(d.why.some((r) => r.basis === "ai")).toBe(true);
+    // 中央での差は AI の整理で、未検証と書く
+    const mid = d.why.find((r) => r.text.startsWith("中央付近"))!;
+    expect(mid.basis).toBe("ai");
+    expect(mid.text).toContain("ゲーム内では検証していない");
+    expect(JSON.stringify(d.why)).not.toMatch(/必ず|確定/);
   });
 });

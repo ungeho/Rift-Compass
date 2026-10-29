@@ -114,6 +114,8 @@ export interface DecisionExample {
   ai_ja: string;
   unverified_ja: string[];
   scope_ja: string;
+  /** 検索画面で、この具体例を案内する語（解説者名など）。教材の検索とは別に、語の一致だけで案内する */
+  search_terms?: string[];
   evidence: DecisionEvidence;
 }
 
@@ -210,6 +212,8 @@ export interface DecisionDiagram {
   compares_ja: string;
   premises_ja: string[];
   sources: string[];
+  /** なぜそうなるか。原典にある説明（source）と、AI の整理（ai）を分けて持つ */
+  why: DecisionReason[];
 }
 
 // SVG は docs/experiments/ の1ファイルだけを管理し、ビルド時にアセットとして読み込む（複製しない）
@@ -222,6 +226,13 @@ export const DIAGRAMS: DecisionDiagram[] = [
     compares_ja: "ウェーブがぶつかる位置（自陣タワー寄り・中央・敵タワー寄り）と、放置したときにウェーブが進む向き",
     premises_ja: ["両軍のミニオンの数と体力が同じ", "プレイヤーがウェーブに触らない", "ミニオンの強化やスーパーミニオンで、どちらかのウェーブが強くなっていない"],
     sources: ["src-xcewl", "src-wiki-farm"],
+    why: [
+      { basis: "ai", text: "両軍の通常のミニオンは、同じ間隔で出現し、同じ条件で進む（Wiki「Minion」の出現間隔とサイドレーンの移動速度の記述を、両軍に共通とみた整理）。そのため、差が出るのはぶつかる位置になる" },
+      { basis: "source", text: "ぶつかる位置が一方のタワーに近いほど、その側の次のミニオンが早く着いて加わる（Wiki「Farm」・lol-guide）" },
+      { basis: "source", text: "先に援軍が着いた側は、相手のミニオンが揃う前に攻撃を始め、数の多い側として押し返す（lol-guide）" },
+      { basis: "source", text: "最初のウェーブ同士がぶつかるときは、ミニオンは距離に関係なく、敵の近接ミニオン3体に攻撃を分ける（Wiki「Minion」）" },
+      { basis: "ai", text: "中央付近では、どのミニオンに攻撃が集まるか、どれが先に倒れるかという小さな差で、進む向きが変わりうる。最初のウェーブは攻撃の分け方が特殊なので、差の出方は後のウェーブと同じとは限らない。どちらもゲーム内では検証していない" },
+    ],
   },
 ];
 export const diagramsForUnit = (unitId: string) => DIAGRAMS.filter((d) => d.unit_id === unitId);
@@ -237,6 +248,27 @@ export const allCriteria: DecisionCriterion[] = extra.criteria;
 export const comparisons: DecisionComparison[] = extra.comparisons;
 /** 判断材料に付いた具体例 */
 export const examplesForUnit = (unitId: string) => extra.examples.filter((x) => x.unit_id === unitId);
+
+// 検索語の比較用：全角・半角と大文字・小文字をそろえ、カタカナをひらがなにする（「えびンモ」と「えびんも」を同じに扱う）
+const foldKana = (str: string) =>
+  str.normalize("NFKC").toLowerCase().replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+/**
+ * 検索語に、具体例の案内語（search_terms）が含まれる具体例。試験表示の判断材料に付いたものだけを返す。
+ * 教材の検索結果には混ぜず、検索画面で別の種類のデータとして案内する。英数字の語は単語の途中では一致させない。
+ */
+export function examplesForQuery(query: string): DecisionExample[] {
+  const q = foldKana(query);
+  if (!q.trim()) return [];
+  return extra.examples.filter(
+    (x) =>
+      showcaseSet.has(x.unit_id) &&
+      (x.search_terms ?? []).some((term) => {
+        const t = foldKana(term);
+        if (/^[a-z0-9 ]+$/.test(t)) return new RegExp(`(?<![a-z0-9])${t}(?![a-z0-9])`).test(q);
+        return q.includes(t);
+      }),
+  );
+}
 const criterionById = new Map(allCriteria.map((c) => [c.id, c]));
 export const criterionOf = (id: string) => criterionById.get(id);
 /** 判断材料に付いた具体的な目安 */

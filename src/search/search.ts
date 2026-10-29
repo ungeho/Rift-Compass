@@ -19,6 +19,16 @@ function termRegex(term: string): RegExp {
   return isAscii(term) ? new RegExp(`(?<![a-z0-9])${body}s?(?![a-z0-9])`, "g") : new RegExp(body, "g");
 }
 
+const termRegexCache = new Map<string, RegExp>();
+/** 検索語が本文に含まれるか。英数字だけの語は、Topic の別名・発信者名と同じ規則（termRegex）で独立した単語として照合する
+ *  （例：「evi」は「review」「revive」に一致させない）。日本語を含む語は部分一致のまま。 */
+function containsTerm(text: string, term: string): boolean {
+  if (!isAscii(term)) return text.includes(term);
+  let re = termRegexCache.get(term);
+  if (!re) termRegexCache.set(term, (re = termRegex(term)));
+  return text.search(re) >= 0; // search は g フラグと lastIndex の影響を受けない
+}
+
 const EN_STOPWORDS = new Set(
   // lol / league / legends はゲーム名そのものなので、主題の区別に使えない
   "a an the to of in on for and or is are was be how what why when where which who can do does should i my me you your it this that with from about after before vs many much more most get learn guide video videos lol league legends game".split(" "),
@@ -143,7 +153,7 @@ export function analyzeQuery(query: string, idx: DataIndex = defaultIndex): Quer
       const key = `term:${term}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      if (p.corpus.includes(term)) units.push({ kind: "term", key, matched: term });
+      if (containsTerm(p.corpus, term)) units.push({ kind: "term", key, matched: term });
       else ignored.push(term);
     }
   }
@@ -172,7 +182,7 @@ function unitScore(r: Resource, u: Unit, p: Prepared): number {
   }
   if (!f) return 0;
   const t = u.matched;
-  const s = Math.max(f.title.includes(t) ? 6 : 0, f.creator.includes(t) ? 8 : 0, f.topicText.includes(t) ? 5 : 0, f.summary.includes(t) ? 3 : 0);
+  const s = Math.max(containsTerm(f.title, t) ? 6 : 0, containsTerm(f.creator, t) ? 8 : 0, containsTerm(f.topicText, t) ? 5 : 0, containsTerm(f.summary, t) ? 3 : 0);
   return s * termWeight(t, p);
 }
 
@@ -185,7 +195,7 @@ function termWeight(term: string, p: Prepared): number {
 
 function docFrequency(term: string, p: Prepared): number {
   let df = 0;
-  for (const f of p.fields.values()) if (`${f.title} ${f.creator} ${f.summary} ${f.topicText}`.includes(term)) df++;
+  for (const f of p.fields.values()) if (containsTerm(`${f.title} ${f.creator} ${f.summary} ${f.topicText}`, term)) df++;
   return df;
 }
 

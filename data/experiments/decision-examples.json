@@ -32,6 +32,7 @@
         "この立ち位置でトレードに勝てるか。対面・ウェーブの大きさ・ジャングラーの位置で変わる"
       ],
       "scope_ja": "この動画が裏付けるのは、この具体例（自軍ミニオンが多いときの立ち位置）だけ。上のチェックリスト全体の出典ではない。ムンド対ジャックスの実例で、ほかの対面にそのまま当てはまるとは限らない",
+      "search_terms": ["Evi", "えび", "えびんも"],
       "evidence": { "source": "src-evi-mundo-jax", "locator": { "start_sec": 330, "end_sec": 356, "label": "5:30〜5:56（ナレーションとテロップ）" }, "evidence_type": "empirical_claim", "checked_level": "L3" }
     }
   ]

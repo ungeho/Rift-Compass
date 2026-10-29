@@ -268,3 +268,35 @@ describe("レビュー指摘2：複数概念の順位と部分一致", () => {
     expect(units).toContain("導入");
   });
 });
+
+describe("別名「ダメトレ」（利用者のフィードバック）", () => {
+  const ids = (q: string) => search(q, {}).hits.map((h) => h.resource.id);
+  it("「ダメトレ」は Topic「トレード」として扱い、「ダメージ交換」「トレード」と同じ教材に届く", () => {
+    expect(search("ダメトレ", {}).analysis.units.map((u) => u.key)).toEqual(["topic:trading"]);
+    expect(ids("ダメトレ").length).toBeGreaterThan(0);
+    expect(ids("ダメトレ")).toEqual(ids("ダメージ交換"));
+    expect(ids("ダメトレ")).toEqual(ids("トレード"));
+  });
+  it("具体例の案内語（えび・えびんも）では、教材の検索結果を増やさない", () => {
+    for (const q of ["えび", "えびんも"]) expect(search(q, {}).hits).toHaveLength(0);
+  });
+});
+
+describe("英数字の検索語は独立した単語として照合する（利用者のフィードバック）", () => {
+  it("「Evi」は review・revive の途中に一致せず、教材を増やさない", () => {
+    const r = search("Evi", {});
+    expect(r.hits).toHaveLength(0);
+    expect(r.analysis.ignored).toEqual(["evi"]);
+  });
+  it("「review」「revive」そのものの検索は引き続き届く", () => {
+    expect(ids("review").length).toBeGreaterThan(0);
+    expect(ids("revive")).toContain("res-wiki-summoner-spell");
+  });
+  it("「bot」は発信者名 MetaBot.GG の途中に一致しない", () => {
+    expect(analyzeQuery("bot").units.map((u) => u.key)).not.toContain("term:bot");
+  });
+  it("日本語を含む語は、これまでどおり部分一致で照合する", () => {
+    expect(analyzeQuery("振り返り").units.length).toBeGreaterThan(0);
+    expect(ids("ダメトレ").length).toBe(7);
+  });
+});
