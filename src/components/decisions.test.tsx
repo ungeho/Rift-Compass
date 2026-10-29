@@ -528,7 +528,12 @@ describe("原典の資料から具体例への逆引き（案B）", () => {
 
   it("具体例の主たる出典（evidence.source）の resource_id だけで結びつけ、仕様の補足や resource_id のない出典は使わない", () => {
     // 既知の具体例は、それぞれの原典の資料から到達できる（期待する対応は、データから写さずにここに書く）
-    const KNOWN: Record<string, string> = { [LG]: "res-lg-qyxqb", "ex-lg-uhrvk-harass-when-enemy-pushes": "res-lg-uhrvk" };
+    const KNOWN: Record<string, string> = {
+      [LG]: "res-lg-qyxqb",
+      "ex-lg-uhrvk-harass-when-enemy-pushes": "res-lg-uhrvk",
+      "ex-garen-support-roam-timing": "res-garen-support-roam",
+      "ex-lg-ltnak-turn-length": "res-lg-ltnak",
+    };
     for (const [ex, rid] of Object.entries(KNOWN)) expect(examplesForResource(rid).map((x) => x.id), rid).toContain(ex);
     // Evi の具体例の仕様の補足（spec_source：Wiki Minion）は逆引きに使わない。resource_id のない動画の出典は、どの資料にも結びつけない
     expect(examplesForResource("res-wiki-minion")).toEqual([]);
@@ -615,5 +620,34 @@ describe("具体例を追加したときの共通の検査（件数に依存し�
       if (!rid || !SHOWCASE_IDS.includes(x.unit_id as (typeof SHOWCASE_IDS)[number])) continue;
       expect(renderToStaticMarkup(<ResourceDetail id={rid} />), x.id).toContain(`href="${decisionHref(x.unit_id, x.id)}"`);
     }
+  });
+});
+
+describe("連続収録の試験で加えた具体例（LoLGaren のサポートのローム、lol-guide のターン）", () => {
+  const CASES = [
+    {
+      ex: "ex-garen-support-roam-timing",
+      unit: "du-bounce-after-crash",
+      resource: "res-garen-support-roam",
+      unitSources: ["src-yzwsh", "src-dig2020", "src-loltheory"],
+      // 照合で直した点：「しないほうがいい場面」（言い切らない）、スロープッシュの条件、大きく負けている場合の例外
+      phrases: ["ロームしないほうがいい場面もあり", "スロープッシュ（2ウェーブくらいのビッグウェーブ）", "大きく負けている場合はローム自体が難しい", "いつも跳ね返るとは限らない"],
+    },
+    {
+      ex: "ex-lg-ltnak-turn-length",
+      unit: "du-plates-vs-clean-recall",
+      resource: "res-lg-ltnak",
+      unitSources: ["src-loltheory"],
+      // 照合で直した点：優位なときしかターンは来ない、リコールで相手にターンが渡る、相手がいつも対応できないとは書かれていない
+      phrases: ["ターンは、レーン戦で優位な状態でしか回ってこない", "相手にターンが渡る可能性がある", "相手がいつも対応できないとは書かれていない", "上の判断材料の要旨（タワープレートのために、時機の良いリコールを犠牲にしない）の出典ではない"],
+    },
+  ];
+  it.each(CASES)("$ex：原典の資料から直接リンクされ、照合で直した表現と範囲が出る。判断材料の出典は変えない", ({ ex, unit, resource, unitSources, phrases }) => {
+    expect(renderToStaticMarkup(<ResourceDetail id={resource} />)).toContain(`href="${decisionHref(unit, ex)}"`);
+    const markup = detail(unit);
+    expect(markup).toContain(`id="example-${ex}" tabindex="-1"`);
+    for (const ph of phrases) expect(text(markup)).toContain(ph);
+    const u = showcaseDecisions.find((x) => x.id === unit)!;
+    expect([...new Set(u.evidence.map((e) => e.source))]).toEqual(unitSources);
   });
 });
