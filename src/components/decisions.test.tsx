@@ -6,9 +6,10 @@ import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.json";
 import rawExamples from "../../data/experiments/decision-examples.json";
+import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { DIAGRAMS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { decisionsForResource, DIAGRAMS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
@@ -19,15 +20,23 @@ import { ResourceDetail } from "./ResourceDetail";
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const list = (topic = "") => renderToStaticMarkup(<DecisionIndex topic={topic} />);
 const detail = (id: string) => renderToStaticMarkup(<DecisionDetail id={id} />);
-// Phase 5B（29件）と Phase 5E・6B・発見性レビューの判断材料を合わせたもの
-const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCriteria as unknown as { units: DecisionUnit[] }).units, ...(rawSideWave as unknown as { units: DecisionUnit[] }).units, ...(rawWaveTechnique as unknown as { units: DecisionUnit[] }).units];
+// Phase 5B（29件）と Phase 5E・6B・発見性レビュー・新規判断材料の収録試験の判断材料を合わせたもの
+const units = [...(raw as unknown as { units: DecisionUnit[] }).units, ...(rawCriteria as unknown as { units: DecisionUnit[] }).units, ...(rawSideWave as unknown as { units: DecisionUnit[] }).units, ...(rawWaveTechnique as unknown as { units: DecisionUnit[] }).units, ...(rawNewUnits as unknown as { units: DecisionUnit[] }).units];
 const OVERCLAIM = /(?<!未)検証済み|(?<!未)確認済みの仕様|仕様として確認済み|ゲーム内で検証済み|おすすめ|推奨します|すべきです/;
 
 describe("表示している主張は実験データと一致する", () => {
-  it("試験表示は実験データの25件（Phase 5D の9件＋Phase 5E の5件＋Phase 6A の5件＋Phase 6B の4件＋発見性レビューの2件）で、内容を書き換えていない", () => {
-    expect(SHOWCASE_IDS).toHaveLength(25);
+  it("試験表示の判断材料は重複がなく、どれも実験データの同じ id の判断材料を書き換えずに指す（件数は固定しない）", () => {
     expect(new Set(SHOWCASE_IDS).size).toBe(SHOWCASE_IDS.length);
-    for (const u of showcaseDecisions) expect(u).toBe(units.find((x) => x.id === u.id));
+    expect(showcaseDecisions).toHaveLength(SHOWCASE_IDS.length);
+    for (const [i, id] of SHOWCASE_IDS.entries()) {
+      const u = units.find((x) => x.id === id);
+      expect(u, id).toBeDefined();
+      expect(showcaseDecisions[i]).toBe(u);
+    }
+    // 収録の段階ごとに表示に加えた判断材料が、どれも含まれている（データから写さず、手で挙げる）
+    for (const id of ["du-behind-keep-wave-own-side", "du-freeze-extra-casters-loltheory", "du-roam-counter-action", "du-wave-drift-by-meeting-point", "du-lvl1-contest-or-concede", "du-support-to-mid-when-bot-lost"]) {
+      expect(SHOWCASE_IDS, id).toContain(id);
+    }
   });
 
   it("一覧に9件の要旨と状況が出る", () => {
@@ -649,5 +658,66 @@ describe("連続収録の試験で加えた具体例（LoLGaren のサポート�
     for (const ph of phrases) expect(text(markup)).toContain(ph);
     const u = showcaseDecisions.find((x) => x.id === unit)!;
     expect([...new Set(u.evidence.map((e) => e.source))]).toEqual(unitSources);
+  });
+});
+
+describe("新規判断材料の収録試験（LoLGaren「レーン戦の結果で変わる！」の勝ちミッド＋負けボット）", () => {
+  const UNIT = "du-support-to-mid-when-bot-lost";
+  const u = units.find((x) => x.id === UNIT)!;
+
+  it("新しい判断材料は1件だけで、出典は既存の資料 res-garen-lane-2 に結びつき、資料の詳細から到達できる", () => {
+    expect((rawNewUnits as unknown as { units: DecisionUnit[] }).units.map((x) => x.id)).toEqual([UNIT]);
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-garen-lane-2"]);
+    expect(sourceById.get("src-garen-lane-2")?.resource_id).toBe("res-garen-lane-2");
+    expect(index.resourceById.get("res-garen-lane-2")).toBeDefined();
+    expect(decisionsForResource("res-garen-lane-2").map((x) => x.id)).toEqual([UNIT]);
+    const markup = renderToStaticMarkup(<ResourceDetail id="res-garen-lane-2" />);
+    expect(text(markup)).toContain("この資料から抽出した判断材料（試験）");
+    expect(markup).toContain(`href="${decisionHref(UNIT)}"`);
+    // 判断材料を作っただけで、具体例は加えていない
+    expect(examplesForUnit(UNIT)).toEqual([]);
+    expect(examplesForResource("res-garen-lane-2")).toEqual([]);
+  });
+
+  it("原典の条件（ミッドが勝ち・ボットが負けてタワーを先に折られた）と、サポートの行動・理由・代償を出す", () => {
+    const html = text(detail(UNIT));
+    expect(html).toContain("サポートはミッドへ行き、ワードを置く（原典）");
+    // ミッドが勝っていることと、ミッドのタワーが残っていることは別の条件として出す
+    expect(u.conditions_ja).toContain("ミッドが勝っている（原典の想定）");
+    expect(html).toContain("ミッドが勝っていることの定義ではない");
+    expect(html).toContain("サポートは大きく勝っても負けてもいない「普通の育ち」という前提");
+    expect(html).toContain("「Gemini Advanced」と表記されたまとめは、根拠に数えていない");
+    expect(html).toContain("先にボットのタワーを折られた（原典の定義）");
+    expect(html).toContain("マップにワードを置き続けること");
+    expect(html).toContain("こちらのマークスマンだけは戦闘に参加できない");
+    expect(u.scope.roles).toEqual(["support"]);
+  });
+
+  it("原典にない一般化をしない：AI の整理を区別し、対象を1パターンに限り、他の3パターンを説明しているように見せない", () => {
+    const html = text(detail(UNIT));
+    expect(u.reasons.filter((r) => r.basis === "ai").every((r) => r.text.startsWith("AI の整理"))).toBe(true);
+    expect(html).toContain("ミッドが勝ち・ボットが負けている場合だけ（記事の4パターンのうち1つ）");
+    expect(html).toContain("この判断材料では扱わない");
+    // 他のパターンの行動（ボットペアがミッドのタワーを折りに行く、など）や、ミッド・ボットの行動を判断材料として載せない
+    expect(html).not.toContain("ミッドタワーも折り");
+    expect(html).not.toContain("ミッドから動かない");
+    expect(u.action_ja).not.toMatch(/ミッドは|ボットは/);
+    expect(u.statement_ja).not.toMatch(/常に|必ず|どんな/);
+  });
+
+  it("パッチ14.19の記事であることと、現行パッチ・ゲーム内で確認していないことを出す", () => {
+    const html = text(detail(UNIT));
+    expect(html).toContain("記事はパッチ14.19のときに書かれた");
+    expect(html).toContain("現行パッチでこの判断が成り立つかは確認していない");
+    expect(html).toContain("ゲーム内では検証していない");
+    expect(html).toContain("具体的にどこへワードを置くかは、原典に書かれていない");
+  });
+
+  it("既存の判断材料に影響しない：既存の25件の並びと内容、ほかの資料の案内は変わらない", () => {
+    expect(SHOWCASE_IDS.slice(0, 25)).not.toContain(UNIT);
+    expect(SHOWCASE_IDS[25]).toBe(UNIT);
+    expect(u.relations).toEqual([]);
+    for (const x of showcaseDecisions) if (x.id !== UNIT) expect(x.relations.some((r) => r.to === UNIT)).toBe(false);
+    expect(decisionsForResource("res-garen-support-roam")).toEqual([]);
   });
 });

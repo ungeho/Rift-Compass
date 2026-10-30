@@ -1,6 +1,7 @@
 // Phase 5D：判断材料（試験）の閲覧用データ。
 // data/experiments/decision-units.json（Phase 5B）と、同じ形の追加ファイル decision-criteria.json（Phase 5E）・
-// side-wave-decisions.json（Phase 6B）・wave-technique-decisions.json（発見性レビュー）・decision-examples.json（既存の判断材料の具体例）
+// side-wave-decisions.json（Phase 6B）・wave-technique-decisions.json（発見性レビュー）・decision-examples.json（既存の判断材料の具体例）・
+// new-decision-units.json（新規判断材料の収録試験）
 // （追加の判断材料・具体的な目安・資料間の比較・具体例）をそのまま読み込み、表示する対象を SHOWCASE_IDS に絞る。
 // 実験データは変更しない。検索・推奨には使わず、Topic による明示的な絞り込みと閲覧だけに使う。
 // 選ばなかった判断材料と理由は docs/experiments/decision-browse.md に記録している。
@@ -9,6 +10,7 @@ import rawCriteria from "../../data/experiments/decision-criteria.json";
 import rawSideWave from "../../data/experiments/side-wave-decisions.json";
 import rawWaveTechnique from "../../data/experiments/wave-technique-decisions.json";
 import rawExamples from "../../data/experiments/decision-examples.json";
+import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import sideWaveDiagramUrl from "../../docs/experiments/side-wave-diagram.svg";
 import { index } from "./dataset";
 
@@ -131,8 +133,9 @@ const criteriaFile = rawCriteria as unknown as CriteriaData;
 const sideWaveFile = rawSideWave as unknown as CriteriaData;
 const waveTechniqueFile = rawWaveTechnique as unknown as CriteriaData;
 const examplesFile = rawExamples as unknown as CriteriaData;
+const newUnitsFile = rawNewUnits as unknown as CriteriaData;
 // 追加ファイルを順に合わせる（tools/experiments/decision-criteria.js の loadMerged と同じ規則）
-const extraFiles = [criteriaFile, sideWaveFile, waveTechniqueFile, examplesFile];
+const extraFiles = [criteriaFile, sideWaveFile, waveTechniqueFile, examplesFile, newUnitsFile];
 const extra = {
   coverage_updates: extraFiles.flatMap((f) => f.coverage_updates),
   sources: extraFiles.flatMap((f) => f.sources),
@@ -153,7 +156,7 @@ const data: DecisionData = {
 };
 
 /**
- * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
+ * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件、新規判断材料の収録試験の1件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
  * 確認箇所が明確なもの。条件の違い（有利／不利、押す／押さない、現行／過去のパッチ）を並べて比べられるよう、
  * 対になる材料を含め、著者が偏らないようにした。
  */
@@ -190,6 +193,8 @@ export const SHOWCASE_IDS = [
   // du-first-wave-aggro-release は2019年の歴史的な説明で現行パッチでの成立を確認できないため、実用的な手順と誤解されないよう表示しない
   "du-lvl1-contest-or-concede",
   "du-slow-push-big-wave-trade",
+  // 新規判断材料の収録試験：既存の判断材料に対応先がなかった原典から作った1件（docs/experiments/new-decision-unit-pilot.md）
+  "du-support-to-mid-when-bot-lost",
 ] as const;
 
 /**

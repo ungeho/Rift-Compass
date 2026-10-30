@@ -927,7 +927,7 @@
       "topic_ids": ["role-mid", "cat-macro", "playing-from-behind"],
       "summary_ja": "ミッドとボットの勝ち負けの4パターン（勝ち勝ち・勝ち負け・負け勝ち・負け負け）ごとに、ミッド・ボット・サポートがどこへ行き何をするかを整理する。タワーを外側から折る、2体目以降のドラゴンに集合する、などの前提も扱う。",
       "published_at": "2024-10-07",
-      "patch_context": { "stated_patch": null, "basis": "inferred_from_date", "era": "season14" },
+      "patch_context": { "stated_patch": "14.19", "basis": "stated", "era": "season14" },
       "access": { "free": true, "login_required": false },
       "verification": { "level": "L3", "checked_at": "2026-10-28", "method": "wordpress_rest_api+本文抽出", "notes": "公開APIで本文を取得し、見出し構成と本文を確認。" }
     },

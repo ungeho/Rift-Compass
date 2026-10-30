@@ -3,6 +3,7 @@
 // Phase 6B：同じ形の追加ファイル（data/experiments/side-wave-decisions.json）も合わせて検査する
 // 発見性レビュー：同じ形の追加ファイル（data/experiments/wave-technique-decisions.json）も合わせて検査する
 // 具体例：既存の判断材料に付ける実戦例（data/experiments/decision-examples.json の examples）も検査する
+// 新規判断材料の収録試験：同じ形の追加ファイル（data/experiments/new-decision-units.json）も合わせて検査する
 //
 //   node tools/experiments/decision-criteria.js check
 //
@@ -16,7 +17,7 @@ const ROOT = path.join(__dirname, "..", "..");
 const VERDICTS = ["conflict", "different_conditions", "undetermined"];
 
 // Phase 5B の判断材料に追加するファイル（この順に合わせる）
-const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json", "wave-technique-decisions.json", "decision-examples.json"];
+const EXTRA_FILES = ["decision-criteria.json", "side-wave-decisions.json", "wave-technique-decisions.json", "decision-examples.json", "new-decision-units.json"];
 
 /** 追加ファイルを1つにまとめる。追加で読んだ範囲は順に積み重ね、未読の範囲は後のファイルの記録を使う */
 function mergeExtras(files) {
