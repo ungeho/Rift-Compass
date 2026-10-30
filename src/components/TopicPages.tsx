@@ -1,6 +1,7 @@
 import { index } from "../data/dataset";
 import type { Topic } from "../data/types";
-import { homeHref, topicHref } from "../router";
+import { decisionsForTopic } from "../data/decisions";
+import { decisionsHref, homeHref, topicHref } from "../router";
 import { ResourceCard } from "./ResourceCard";
 
 /** Topic は複数の親を持てる（DAG）。各分類の下に同じ Topic が現れることがあるが、同じ経路上の循環は辿らない。 */
@@ -58,6 +59,8 @@ export function TopicPage({ id }: { id: string }) {
   const direct = index.publicResources.filter((r) => r.topic_ids.includes(t.id));
   const viaChildren = index.publicResources.filter((r) => !r.topic_ids.includes(t.id) && r.topic_ids.some((x) => desc.has(x)));
   const aliases = [...t.aliases_ja, ...t.aliases_en];
+  // 試験表示の判断材料（下位の Topic を含む）。0件なら案内を出さない（判断材料一覧の絞り込みと同じ数え方）
+  const decisionCount = decisionsForTopic(t.id).length;
 
   return (
     <div className="detail">
@@ -98,6 +101,11 @@ export function TopicPage({ id }: { id: string }) {
           この Topic で絞り込んで検索する
         </a>
       </p>
+      {decisionCount > 0 && (
+        <p>
+          <a href={decisionsHref(t.id)}>この Topic の判断材料（試験）{decisionCount}件を見る</a>
+        </p>
+      )}
 
       <h2>
         この Topic の資料 <span className="result-count">{direct.length}件</span>

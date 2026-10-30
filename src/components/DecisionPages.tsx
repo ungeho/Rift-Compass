@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { index } from "../data/dataset";
 import {
   comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
-  isShowcased, locatorOf, NONE_PARTIAL, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
+  isShowcased, locatorOf, NONE_PARTIAL, referencingDecisions, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
   type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionUnit,
 } from "../data/decisions";
 import { formatSeconds, KIND_LABELS, STATUS_LABELS } from "../data/labels";
@@ -482,28 +482,51 @@ function DiagramView({ d }: { d: DecisionDiagram }) {
   );
 }
 
+// 注記の先頭に「AI の整理：」がある記録もあるので、画面で付ける接頭辞と重ならないようにする（データは書き換えない）
+const AI_NOTE_PREFIX = "AI の整理：";
+const aiNote = (note: string) => AI_NOTE_PREFIX + (note.startsWith(AI_NOTE_PREFIX) ? note.slice(AI_NOTE_PREFIX.length) : note);
+
 function Relations({ u }: { u: DecisionUnit }) {
-  if (!u.relations.length) return null;
+  // 逆引き：この判断材料を参照している、試験表示の判断材料。こちらからも参照している相手は、上の一覧と重ねて出さない
+  const referencedBy = referencingDecisions(u.id).filter((x) => !u.relations.some((r) => r.to === x.id));
+  if (!u.relations.length && !referencedBy.length) return null;
   return (
     <section aria-labelledby="relations-heading">
       <h2 id="relations-heading">ほかの判断材料との関係</h2>
       <p className="muted">関係の数は、根拠の数ではありません。同じ著者の再説明は、独立した根拠として数えません。関係の説明は AI が整理したものです。</p>
-      <ul className="relation-list">
-        {u.relations.map((rel, i) => {
-          const other = isShowcased(rel.to) ? decisionById(rel.to) : undefined;
-          return (
-            <li key={i}>
-              <span className="badge">{RELATION_LABELS[rel.type] ?? rel.type}</span>{" "}
-              {other ? (
-                <a href={decisionHref(other.id)}>{other.statement_ja}</a>
-              ) : (
-                <span className="muted">{rel.to.startsWith("phase5a-") ? "Phase 5A の記録にある判断の部品" : "試験表示の対象外の判断材料"}</span>
-              )}
-              {rel.note_ja && <div className="muted">AI の整理：{rel.note_ja}</div>}
-            </li>
-          );
-        })}
-      </ul>
+      {u.relations.length > 0 && (
+        <ul className="relation-list">
+          {u.relations.map((rel, i) => {
+            const other = isShowcased(rel.to) ? decisionById(rel.to) : undefined;
+            return (
+              <li key={i}>
+                <span className="badge">{RELATION_LABELS[rel.type] ?? rel.type}</span>{" "}
+                {other ? (
+                  <a href={decisionHref(other.id)}>{other.statement_ja}</a>
+                ) : (
+                  <span className="muted">{rel.to.startsWith("phase5a-") ? "Phase 5A の記録にある判断の部品" : "試験表示の対象外の判断材料"}</span>
+                )}
+                {rel.note_ja && <div className="muted">{aiNote(rel.note_ja)}</div>}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      {referencedBy.length > 0 && (
+        <>
+          <h3>この判断材料を参照している判断材料</h3>
+          <p className="muted">
+            相手の判断材料の側に、この判断材料との関係が記録されています。関係の種類と説明は、相手の判断材料の詳細で確認してください（ここでは逆向きの主張として扱いません）。
+          </p>
+          <ul className="relation-list">
+            {referencedBy.map((x) => (
+              <li key={x.id}>
+                <a href={decisionHref(x.id)}>{x.statement_ja}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </section>
   );
 }

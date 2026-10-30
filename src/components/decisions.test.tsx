@@ -9,13 +9,14 @@ import rawExamples from "../../data/experiments/decision-examples.json";
 import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { decisionsForResource, DIAGRAMS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
 import { EVAL_QUERIES } from "../search/evaluationQueries";
 import { search } from "../search/search";
 import { ResourceDetail } from "./ResourceDetail";
+import { TopicPage } from "./TopicPages";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const list = (topic = "") => renderToStaticMarkup(<DecisionIndex topic={topic} />);
@@ -841,5 +842,89 @@ describe("新規判断材料の3件目（lol-guide qyxqb：相手がイグナイ
     expect(units.find((x) => x.id === "du-recall-resource-threshold")!.relations.some((r) => r.to === UNIT)).toBe(false);
     const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
     expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", EX, "ex-lg-uhrvk-harass-when-enemy-pushes", "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
+  });
+});
+
+describe("発見性：Topic からの導線・関係の逆引き・関係の表示", () => {
+  const topicPage = (id: string) => renderToStaticMarkup(<TopicPage id={id} />);
+  const inbound = (markup: string) => {
+    const i = markup.indexOf("この判断材料を参照している判断材料");
+    return i < 0 ? "" : markup.slice(i, markup.indexOf("</section>", i));
+  };
+
+  it("Topic「リコール」から、絞り込んだ判断材料一覧へ件数付きで移動でき、一覧の件数と一致する", () => {
+    const markup = topicPage("recall");
+    const n = decisionsForTopic("recall").length;
+    expect(n).toBeGreaterThan(0);
+    expect(markup).toContain(`href="${decisionsHref("recall")}"`);
+    expect(decisionsHref("recall")).toBe("#/decisions?topic=recall");
+    expect(text(markup)).toContain(`この Topic の判断材料（試験）${n}件を見る`);
+    expect(text(list("recall"))).toContain(`Topic「リコール」の判断材料：${n}件`);
+    const ids = decisionsForTopic("recall").map((u) => u.id);
+    for (const id of ["du-recall-resource-threshold", "du-early-recall-vs-ignite-with-tp"]) expect(ids).toContain(id);
+    // 既存の検索への導線と資料一覧はそのまま
+    expect(text(markup)).toContain("この Topic で絞り込んで検索する");
+    expect(text(markup)).toContain("この Topic の資料");
+  });
+
+  it("試験表示の判断材料が0件の Topic には、判断材料の案内を出さない", () => {
+    expect(decisionsForTopic("champ-jax")).toEqual([]);
+    const markup = topicPage("champ-jax");
+    expect(text(markup)).not.toContain("この Topic の判断材料");
+    expect(markup).not.toContain("#/decisions?topic=");
+    expect(text(markup)).toContain("この Topic で絞り込んで検索する");
+  });
+
+  it("通常のリコールの判断材料から、それを参照している P3 の判断材料へ逆引きで移動できる（関係データは片方向のまま）", () => {
+    const threshold = units.find((x) => x.id === "du-recall-resource-threshold")!;
+    expect(threshold.relations.some((r) => r.to === "du-early-recall-vs-ignite-with-tp")).toBe(false);
+    expect(referencingDecisions("du-recall-resource-threshold").map((x) => x.id)).toContain("du-early-recall-vs-ignite-with-tp");
+    const section = inbound(detail("du-recall-resource-threshold"));
+    expect(section).toContain(`href="${decisionHref("du-early-recall-vs-ignite-with-tp")}"`);
+  });
+
+  it("逆引きは、関係の種類・注記を逆向きの主張として出さず、独立した裏付けとしても数えない", () => {
+    const markup = detail("du-recall-resource-threshold");
+    const section = inbound(markup);
+    expect(section).not.toContain('class="badge"');
+    for (const label of Object.values(RELATION_LABELS)) expect(text(section)).not.toContain(label);
+    expect(text(section)).not.toContain("AI の整理");
+    expect(text(section)).toContain("逆向きの主張として扱いません");
+    expect(text(markup)).toContain("関係の数は、根拠の数ではありません");
+  });
+
+  it("双方向に記録された関係は、逆引きで重ねて出さない", () => {
+    // du-freeze-not-always と du-freeze-when-behind-dignitas は、互いに参照している
+    const a = units.find((x) => x.id === "du-freeze-not-always")!;
+    const b = units.find((x) => x.id === "du-freeze-when-behind-dignitas")!;
+    expect(a.relations.some((r) => r.to === b.id) && b.relations.some((r) => r.to === a.id)).toBe(true);
+    expect(inbound(detail(a.id))).not.toContain(`href="${decisionHref(b.id)}"`);
+    expect(inbound(detail(b.id))).not.toContain(`href="${decisionHref(a.id)}"`);
+  });
+
+  it("試験表示の対象外の判断材料は、逆引きにも出さない", () => {
+    // du-dopa-tf-save-ult（試験表示の対象外）は du-roam-do-not-chase を参照している
+    const hidden = units.find((x) => x.id === "du-dopa-tf-save-ult")!;
+    expect(SHOWCASE_IDS).not.toContain(hidden.id);
+    expect(hidden.relations.some((r) => r.to === "du-roam-do-not-chase")).toBe(true);
+    expect(referencingDecisions("du-roam-do-not-chase").map((x) => x.id)).not.toContain(hidden.id);
+    expect(text(detail("du-roam-do-not-chase"))).not.toContain(hidden.statement_ja);
+  });
+
+  it("condition_differs の表示は、結論の一致を前提にしない", () => {
+    expect(RELATION_LABELS.condition_differs).toBe("条件・文脈が異なる判断");
+    expect(RELATION_LABELS.condition_differs).not.toMatch(/結論|同じ|近い/);
+    expect(text(detail("du-early-recall-vs-ignite-with-tp"))).toContain("条件・文脈が異なる判断");
+    for (const id of SHOWCASE_IDS) expect(text(detail(id))).not.toContain("結論は近いが");
+  });
+
+  it("関係の注記で「AI の整理：」を二重に出さず、AI の整理であることは1回だけ明示する（データは書き換えない）", () => {
+    const withPrefix = units.filter((u) => SHOWCASE_IDS.includes(u.id as (typeof SHOWCASE_IDS)[number]) && u.relations.some((r) => r.note_ja?.startsWith("AI の整理：")));
+    expect(withPrefix.length).toBeGreaterThan(0);
+    for (const id of SHOWCASE_IDS) expect(text(detail(id))).not.toContain("AI の整理：AI の整理：");
+    const html = text(detail("du-early-recall-vs-ignite-with-tp"));
+    expect(html).toContain("AI の整理：同じ著者（がりある）の別の記事");
+    // 接頭辞のない注記にも、画面側で「AI の整理：」を付ける
+    expect(text(detail("du-recall-resource-threshold"))).toContain("AI の整理：lolgaren（2020年）はミッドの最初のリコールを");
   });
 });

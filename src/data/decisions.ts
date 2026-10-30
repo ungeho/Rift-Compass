@@ -324,6 +324,14 @@ const showcaseSet = new Set<string>(SHOWCASE_IDS);
 export const isShowcased = (id: string) => showcaseSet.has(id);
 export const decisionById = (id: string) => (showcaseSet.has(id) ? unitById.get(id) : undefined);
 
+/**
+ * この判断材料を relations で参照している、試験表示の判断材料（逆引き）。関係は片方向に記録しているので、
+ * 逆向きはここで導出する（データには重複登録しない）。関係の種類と注記は参照元の側の記述なので、逆向きの主張としては使わない
+ */
+export function referencingDecisions(unitId: string): DecisionUnit[] {
+  return showcaseDecisions.filter((u) => u.id !== unitId && u.relations.some((r) => r.to === unitId));
+}
+
 /** Topic（下位の Topic を含む）に付いている、試験表示の判断材料。該当がなければ空配列（判断を作り出さない）*/
 export function decisionsForTopic(topicId: string): DecisionUnit[] {
   const desc = index.descendants(topicId);
@@ -348,7 +356,8 @@ export const isNone = (s: string) => s === NONE_FULL || s === NONE_PARTIAL;
 export const RELATION_LABELS: Record<string, string> = {
   same_conclusion_independent: "別の著者が同じ結論を述べている",
   same_author_restated: "同じ著者の再説明（独立した根拠ではない）",
-  condition_differs: "結論は近いが、条件や理由が違う",
+  // 結論の一致を前提にしない（条件が違えば、行動の向きが逆になる関係もある）
+  condition_differs: "条件・文脈が異なる判断",
   exception_of: "例外の関係",
   conflicts_with: "主張が対立している",
   complements: "補い合う",
