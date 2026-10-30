@@ -665,8 +665,8 @@ describe("新規判断材料の収録試験（LoLGaren「レーン戦の結果�
   const UNIT = "du-support-to-mid-when-bot-lost";
   const u = units.find((x) => x.id === UNIT)!;
 
-  it("新しい判断材料は1件だけで、出典は既存の資料 res-garen-lane-2 に結びつき、資料の詳細から到達できる", () => {
-    expect((rawNewUnits as unknown as { units: DecisionUnit[] }).units.map((x) => x.id)).toEqual([UNIT]);
+  it("出典は既存の資料 res-garen-lane-2 に結びつき、資料の詳細から到達できる", () => {
+    expect((rawNewUnits as unknown as { units: DecisionUnit[] }).units.map((x) => x.id)).toContain(UNIT);
     expect(u.evidence.map((e) => e.source)).toEqual(["src-garen-lane-2"]);
     expect(sourceById.get("src-garen-lane-2")?.resource_id).toBe("res-garen-lane-2");
     expect(index.resourceById.get("res-garen-lane-2")).toBeDefined();
@@ -713,11 +713,70 @@ describe("新規判断材料の収録試験（LoLGaren「レーン戦の結果�
     expect(html).toContain("具体的にどこへワードを置くかは、原典に書かれていない");
   });
 
-  it("既存の判断材料に影響しない：既存の25件の並びと内容、ほかの資料の案内は変わらない", () => {
+  it("既存の判断材料に影響しない：先に表示していた25件の並びと内容、ほかの資料の案内は変わらない", () => {
     expect(SHOWCASE_IDS.slice(0, 25)).not.toContain(UNIT);
     expect(SHOWCASE_IDS[25]).toBe(UNIT);
     expect(u.relations).toEqual([]);
     for (const x of showcaseDecisions) if (x.id !== UNIT) expect(x.relations.some((r) => r.to === UNIT)).toBe(false);
     expect(decisionsForResource("res-garen-support-roam")).toEqual([]);
+  });
+});
+
+describe("新規判断材料の2件目（lol-guide uhrvk：味方が勝っているなら、無理に主導権を取り返さない）", () => {
+  const UNIT = "du-no-force-retake-when-allies-winning";
+  const EX = "ex-lg-uhrvk-harass-when-enemy-pushes";
+  const u = units.find((x) => x.id === UNIT)!;
+  const newUnits = (rawNewUnits as unknown as { units: DecisionUnit[]; sources: { id: string }[] });
+
+  it("新しい判断材料ファイルの id は重複せず、出典は具体例と同じ src-lg-uhrvk（res-lg-uhrvk）を使い、出典を二重に登録しない", () => {
+    const ids = newUnits.units.map((x) => x.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(ids).toEqual(expect.arrayContaining(["du-support-to-mid-when-bot-lost", UNIT]));
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-lg-uhrvk"]);
+    expect(sourceById.get("src-lg-uhrvk")?.resource_id).toBe("res-lg-uhrvk");
+    expect(newUnits.sources.map((s) => s.id)).not.toContain("src-lg-uhrvk");
+  });
+
+  it("原典の資料 res-lg-uhrvk の詳細から、判断材料へ自動でリンクされ、既存の具体例へのリンクも残る", () => {
+    expect(decisionsForResource("res-lg-uhrvk").map((x) => x.id)).toEqual([UNIT]);
+    const markup = renderToStaticMarkup(<ResourceDetail id="res-lg-uhrvk" />);
+    expect(text(markup)).toContain("この資料から抽出した判断材料（試験）");
+    expect(markup).toContain(`href="${decisionHref(UNIT)}"`);
+    expect(markup).toContain(`href="${decisionHref("du-behind-keep-wave-own-side", EX)}"`);
+    // 判断材料を作っただけで、具体例は加えていない
+    expect(examplesForUnit(UNIT)).toEqual([]);
+  });
+
+  it("原典の条件・行動・例外・未確認事項を出し、原典の言い方（「必要はない」「選択肢」）より強く言い切らない", () => {
+    const html = text(detail(UNIT));
+    expect(html).toContain("ほかのレーンに主導権がある、または味方が勝っている（原典）");
+    expect(html).toContain("原典は「必要はない」とする");
+    expect(html).toContain("原典は「待つ」を選択肢の1つとして書き、言い切っていない");
+    expect(html).toContain("ここで勝負しなければ負ける、というタイミングはある");
+    expect(html).toContain("待つか勝負するかをどう見分けるかは、原典に書かれていない");
+    expect(html).toContain("現行パッチでは確認していない");
+    expect(html).toContain("ゲーム内では検証していない");
+    expect(u.statement_ja).not.toMatch(/取り返さない。|待つべき|必ず/);
+  });
+
+  it("同じ記事の具体例・同じ著者の判断材料を、独立した裏付けとして扱わない", () => {
+    const html = text(detail(UNIT));
+    expect(html).toContain("同じ記事なので、互いの裏付けにはならない");
+    expect(u.relations.map((r) => r.type)).not.toContain("same_conclusion_independent");
+    expect(u.relations.find((r) => r.to === "du-behind-estimate-spike")?.note_ja).toContain("独立した裏付けではない");
+    // パワースパイクを待つ判断・トレードを避ける判断とは、理由の違いを書き分ける
+    expect(u.relations.find((r) => r.to === "du-behind-estimate-spike")?.note_ja).toContain("理由は自分のパワースパイク");
+    expect(u.relations.find((r) => r.to === "du-when-in-doubt-back-off")?.note_ja).toContain("条件と理由が違い");
+    // top・mid の例から、全ロール共通に広げない
+    expect(u.scope.roles).toEqual(["top", "mid"]);
+    expect(u.reasons.filter((r) => r.basis === "ai").every((r) => r.text.startsWith("AI の整理"))).toBe(true);
+  });
+
+  it("既存の表示26件と具体例5件を維持する", () => {
+    const before26 = SHOWCASE_IDS.slice(0, SHOWCASE_IDS.indexOf(UNIT));
+    expect(before26).toHaveLength(26);
+    expect(before26).toContain("du-support-to-mid-when-bot-lost");
+    const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
+    expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", "ex-lg-qyxqb-enemy-no-flash", EX, "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
   });
 });

@@ -156,7 +156,7 @@ const data: DecisionData = {
 };
 
 /**
- * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件、新規判断材料の収録試験の1件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
+ * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件、新規判断材料の収録試験の2件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
  * 確認箇所が明確なもの。条件の違い（有利／不利、押す／押さない、現行／過去のパッチ）を並べて比べられるよう、
  * 対になる材料を含め、著者が偏らないようにした。
  */
@@ -193,8 +193,9 @@ export const SHOWCASE_IDS = [
   // du-first-wave-aggro-release は2019年の歴史的な説明で現行パッチでの成立を確認できないため、実用的な手順と誤解されないよう表示しない
   "du-lvl1-contest-or-concede",
   "du-slow-push-big-wave-trade",
-  // 新規判断材料の収録試験：既存の判断材料に対応先がなかった原典から作った1件（docs/experiments/new-decision-unit-pilot.md）
+  // 新規判断材料の収録試験：既存の判断材料に対応先がなかった原典から作ったもの（docs/experiments/new-decision-unit-pilot.md）
   "du-support-to-mid-when-bot-lost",
+  "du-no-force-retake-when-allies-winning",
 ] as const;
 
 /**
