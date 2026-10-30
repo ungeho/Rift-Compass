@@ -3,13 +3,14 @@
 import { useEffect } from "react";
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, decisionsForQuery, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, decisionMatchesForQuery, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
   isShowcased, locatorOf, NONE_PARTIAL, referencingDecisions, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
-  type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionUnit,
+  type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionMatchBasis, type DecisionUnit,
 } from "../data/decisions";
 import { formatSeconds, KIND_LABELS, STATUS_LABELS } from "../data/labels";
 import type { NoteStatus } from "../data/types";
 import { youtubeAt } from "../lib/links";
+import { normalize } from "../search/search";
 import { decisionHref, decisionsHref, homeHref, resourceHref } from "../router";
 import { ExternalLink, LevelBadge, TopicChips } from "./common";
 
@@ -195,22 +196,48 @@ export function QuestionEntrances() {
  * 検索語に一致した判断材料。資料の検索結果とは種類も根拠も違うので、件数に含めず、閉じた状態で別に示す。
  * 出典が資料一覧にない判断材料にも、ここから到達できる。順位付けや件数での切り捨てはせず、一致したものをすべて出す
  */
+const topicLabel = (id: string) => index.topicById.get(id)?.label_ja ?? id;
+// Topic の名前が一致した語と同じなら、名前を繰り返さない（例：「リコール」Topic）。違うときは名前を示す（例：「フラッシュ」Topic「サモナースペル」）
+const topicName = (id: string, matched: string) => (normalize(topicLabel(id)) === matched ? "Topic" : `Topic「${topicLabel(id)}」`);
+
+/**
+ * 検索語の1つの条件について、照合で実際に成り立った根拠を短い文にする。「」内は実際に一致した語（略記を読み替えたときも、一致した部分だけ）。
+ * 付いている Topic で一致したときは、その Topic の名前に語があることは同じ事実の言い換えなので省く
+ */
+function basisText(bases: DecisionMatchBasis[]): string {
+  const hasTopic = bases.some((b) => b.kind === "topic");
+  const parts: string[] = [];
+  for (const b of bases) if (b.kind === "topic" && !b.viaTopicId) parts.push(topicName(b.topicId, b.matched));
+  const via = bases.filter((b): b is Extract<DecisionMatchBasis, { kind: "topic" }> => b.kind === "topic" && Boolean(b.viaTopicId));
+  if (via.length) parts.push(`${topicName(via[0].topicId, via[0].matched)}›${via.map((b) => topicLabel(b.viaTopicId!)).join("、")}`);
+  for (const b of bases) {
+    if (b.kind === "role") parts.push(`対象ロール（${b.role === "all" ? "共通" : (ROLE_LABELS[b.role] ?? b.role)}）`);
+    else if (b.kind === "body") parts.push("記述");
+    else if (b.kind === "topicName" && !hasTopic) parts.push("Topic名");
+  }
+  return `「${bases[0].matched}」${parts.join("・")}`;
+}
+
 export function RelatedDecisions({ q }: { q: string }) {
-  const found = decisionsForQuery(q);
-  if (found.length === 0) return null;
+  const matches = decisionMatchesForQuery(q);
+  if (matches.length === 0) return null;
+  const expanded = matches[0].expandedQuery;
   return (
     <details className="comparison-details related-decisions">
       <summary>
-        検索語に一致した判断材料 <span className="badge">判断材料（試験）</span>：{found.length}件
+        検索語に一致した判断材料 <span className="badge">判断材料（試験）</span>：{matches.length}件
       </summary>
       <p className="muted">
         資料の検索結果とは別に、判断材料の要旨・状況・成立条件と Topic を検索語で照合したものです。質問への答えや推奨ではありません。上の件数には含みません。
+        「一致」は候補に含めた理由です（「」＝一致した語、Topic＝付いている Topic、›＝その下位、記述＝判断材料の記述、Topic名＝Topic の名前・別名）。並び順は関連の強さを表しません。
+        {expanded && <>略記は読み替えて照合しています（照合に使った検索語：{expanded}）。</>}
       </p>
       <ul className="relation-list">
-        {found.map((u) => (
+        {matches.map(({ unit: u, bases }) => (
           <li key={u.id}>
             <a href={decisionHref(u.id)}>{u.statement_ja}</a>
             <span className="muted">（対象：{u.scope.roles.map((r) => ROLE_LABELS[r] ?? r).join("・")}／出典：{authorsOf(u)}）</span>
+            <div className="muted match-basis">一致：{bases.map(basisText).join(" ／ ")}</div>
           </li>
         ))}
       </ul>

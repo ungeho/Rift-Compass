@@ -342,40 +342,81 @@ export function decisionsForTopic(topicId: string): DecisionUnit[] {
 // ロールの Topic と、判断材料の対象ロール（scope.roles）の対応。「ロール共通」（all）の判断材料は、どのロールにも当てはまるものとして扱う
 const ROLE_TOPICS: Record<string, string> = { "role-mid": "mid" };
 
-const decisionTextCache = new Map<string, string>();
-/** 判断材料の照合に使う文（要旨・状況・目的・行動・見る情報・成立条件と、付いている Topic の名前・別名）*/
-function decisionText(u: DecisionUnit): string {
+const decisionTextCache = new Map<string, { body: string; topicNames: string }>();
+/**
+ * 判断材料の照合に使う文。body は判断材料の記述（要旨・状況・目的・行動・見る情報・成立条件）、
+ * topicNames は付いている Topic の名前・別名。一致の根拠を示せるよう、2つを分けて持つ
+ */
+function decisionText(u: DecisionUnit): { body: string; topicNames: string } {
   let s = decisionTextCache.get(u.id);
   if (s === undefined) {
-    const topicText = u.topic_ids.flatMap((id) => {
+    const topicNames = u.topic_ids.flatMap((id) => {
       const t = index.topicById.get(id);
       return t ? [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en] : [];
     });
-    s = normalize([u.statement_ja, u.problem_ja, u.goal_ja, u.action_ja, ...u.observations_ja, ...u.conditions_ja, ...topicText].join(" "));
+    s = {
+      body: normalize([u.statement_ja, u.problem_ja, u.goal_ja, u.action_ja, ...u.observations_ja, ...u.conditions_ja].join(" ")),
+      topicNames: normalize(topicNames.join(" ")),
+    };
     decisionTextCache.set(u.id, s);
   }
   return s;
 }
 
+/** 検索語の1つの条件を、判断材料が満たした根拠（照合で実際に成り立った条件。成り立ったものはすべて記録する）*/
+export type DecisionMatchBasis =
+  | { kind: "topic"; topicId: string; matched: string; viaTopicId?: string } // 判断材料に付いている Topic（matched は検索語のうち Topic と解釈した部分。viaTopicId は、検索語の Topic の下位として付いているもの）
+  | { kind: "role"; role: string; matched: string } // 判断材料の対象ロール（scope.roles）
+  | { kind: "body"; matched: string } // 判断材料の記述に、その語がある
+  | { kind: "topicName"; matched: string }; // 判断材料に付いている Topic の名前・別名に、その語がある
+
+export interface DecisionMatch {
+  unit: DecisionUnit;
+  /** 検索語の条件ごとの根拠（条件の順。どの条件も1つ以上の根拠をもつ）*/
+  bases: DecisionMatchBasis[][];
+  /** 「Lv1」などの略記を「レベル1」と読み替えたときの、照合に使った検索語 */
+  expandedQuery?: string;
+}
+
 /**
- * 検索語のすべての条件（Topic・語）に一致する、試験表示の判断材料。資料の検索結果とは別に示すためのもので、資料の順位は変えない。
+ * 検索語のすべての条件（Topic・語）に一致する、試験表示の判断材料と、その一致の根拠。資料の検索結果とは別に示すためのもので、資料の順位は変えない。
  * 出典が資料一覧にない判断材料にも、検索から到達できるようにする。発信者名を含む検索は、資料の発信者と判断材料の出典を混同しないよう対象外にする
  */
-export function decisionsForQuery(query: string): DecisionUnit[] {
+export function decisionMatchesForQuery(query: string): DecisionMatch[] {
   // 「Lv1」などの略記は、ここでだけ「レベル1」と読む（資料の検索結果は変えない）
-  const { units } = analyzeQuery(expandLevelAbbr(query));
+  const expanded = expandLevelAbbr(query);
+  const { units } = analyzeQuery(expanded);
   // 大分類（ロール・レーニングなど）や一般語だけの検索では、判断材料が広く一致しすぎるので出さない。具体的な Topic を1つ以上含むときだけ照合する
   if (units.some((x) => x.kind === "creator") || !units.some((x) => x.kind === "topic" && x.topic.kind !== "category")) return [];
-  return showcaseDecisions.filter((u) =>
-    units.every((x) => {
+  const textBases = (u: DecisionUnit, matched: string): DecisionMatchBasis[] => {
+    const text = decisionText(u);
+    return [
+      ...(containsTerm(text.body, matched) ? [{ kind: "body" as const, matched }] : []),
+      ...(containsTerm(text.topicNames, matched) ? [{ kind: "topicName" as const, matched }] : []),
+    ];
+  };
+  const matches: DecisionMatch[] = [];
+  for (const u of showcaseDecisions) {
+    const bases = units.map((x): DecisionMatchBasis[] => {
       if (x.kind === "topic") {
         const desc = index.descendants(x.topic.id);
         const role = ROLE_TOPICS[x.topic.id];
-        return u.topic_ids.some((t) => desc.has(t)) || (role !== undefined && u.scope.roles.some((r) => r === role || r === "all")) || containsTerm(decisionText(u), x.matched);
+        return [
+          ...u.topic_ids.filter((t) => desc.has(t)).map((t): DecisionMatchBasis => (t === x.topic.id ? { kind: "topic", topicId: t, matched: x.matched } : { kind: "topic", topicId: x.topic.id, matched: x.matched, viaTopicId: t })),
+          ...(role !== undefined ? u.scope.roles.filter((r) => r === role || r === "all").map((r): DecisionMatchBasis => ({ kind: "role", role: r, matched: x.matched })) : []),
+          ...textBases(u, x.matched),
+        ];
       }
-      return x.kind === "term" && containsTerm(decisionText(u), x.matched);
-    }),
-  );
+      return x.kind === "term" ? textBases(u, x.matched) : [];
+    });
+    if (bases.every((b) => b.length > 0)) matches.push({ unit: u, bases, ...(expanded !== normalize(query) ? { expandedQuery: expanded } : {}) });
+  }
+  return matches;
+}
+
+/** 検索語に一致する、試験表示の判断材料（decisionMatchesForQuery と同じ照合・同じ順）*/
+export function decisionsForQuery(query: string): DecisionUnit[] {
+  return decisionMatchesForQuery(query).map((m) => m.unit);
 }
 
 /** 正式資料を出典にもつ、試験表示の判断材料 */

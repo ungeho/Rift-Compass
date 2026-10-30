@@ -9,7 +9,7 @@ import rawExamples from "../../data/experiments/decision-examples.json";
 import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { comparisons, decisionsForQuery, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { comparisons, decisionMatchesForQuery, decisionsForQuery, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
@@ -1136,5 +1136,73 @@ describe("検索結果の判断材料の欄：一致件数で切り捨てない"
       expect(markup.indexOf('class="comparison-details related-decisions"')).toBeLessThan(markup.indexOf(`href="#/r/${r.hits[0].resource.id}"`));
       expect(text(markup)).toContain("上の件数には含みません");
     }
+  });
+});
+
+describe("検索結果の判断材料の欄：一致（候補に含めた理由）の表示", () => {
+  const page = (q: string) => renderToStaticMarkup(<SearchPage q={q} filters={{}} />);
+  const items = (q: string) => {
+    const m = page(q);
+    const i = m.indexOf('class="comparison-details related-decisions"');
+    const box = m.slice(i, m.indexOf("</details>", i));
+    return [...box.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((x) => ({ id: x[1].match(/href="#\/decision\/([^"?]+)"/)![1], basis: text(x[1].match(/一致：[\s\S]*?<\/div>/)![0]).trim() }));
+  };
+  const QS: [string, number][] = [["リコール", 10], ["対面がロームしたら追いかけるべき？", 8], ["ミッド Lv1 押す", 4], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
+
+  it("件数・順番・リンク先は、一致を出す前の照合（decisionsForQuery）と同じ", () => {
+    for (const [q, n] of QS) {
+      const ids = decisionsForQuery(q).map((u) => u.id);
+      expect(ids).toHaveLength(n);
+      expect(decisionMatchesForQuery(q).map((m) => m.unit.id)).toEqual(ids);
+      expect(items(q).map((x) => x.id)).toEqual(ids);
+    }
+  });
+
+  it("「リコール」では、Topic「リコール」が付いた6件と、記述にだけ「リコール」がある4件を区別して示す", () => {
+    const tagged = new Set(decisionsForTopic("recall").map((u) => u.id));
+    expect(tagged.size).toBe(6);
+    const list = items("リコール");
+    for (const x of list) {
+      if (tagged.has(x.id)) expect(x.basis).toBe("一致：「リコール」Topic・記述");
+      else expect(x.basis).toBe("一致：「リコール」記述");
+    }
+    expect(list.filter((x) => !tagged.has(x.id))).toHaveLength(4);
+  });
+
+  it("示す根拠は、実際の照合で成り立った条件だけ（Topic は付いているもの、ロールは対象ロールにあるもの）", () => {
+    for (const [q] of QS) {
+      for (const m of decisionMatchesForQuery(q)) {
+        for (const bases of m.bases) {
+          expect(bases.length).toBeGreaterThan(0);
+          for (const b of bases) {
+            if (b.kind === "topic") expect(m.unit.topic_ids).toContain(b.viaTopicId ?? b.topicId);
+            if (b.kind === "role") expect(m.unit.scope.roles).toContain(b.role);
+          }
+        }
+      }
+    }
+    // 「対面のロームを追わない」は Topic「ローム」が付き、「対面」は記述での一致（レーニングの下位の Topic は付いていない）
+    const chase = items("対面がロームしたら追いかけるべき？").find((x) => x.id === "du-roam-do-not-chase")!;
+    expect(chase.basis).toBe("一致：「ローム」Topic・記述 ／ 「対面」記述");
+    // レーニングの下位の Topic が付いている判断材料は、親子関係を › で示す
+    expect(items("対面がロームしたら追いかけるべき？").find((x) => x.id === "du-plates-vs-clean-recall")!.basis).toBe("一致：「ローム」記述 ／ 「対面」Topic「レーニング」›リコール、ウェーブ管理、ファストプッシュ");
+  });
+
+  it("別の言い方から解釈した Topic と、略記の読み替えは、検索語とともに示す", () => {
+    expect(items("相手のフラッシュがない トレード")[0].basis).toBe("一致：「フラッシュ」Topic「サモナースペル」・記述 ／ 「トレード」Topic・記述 ／ 「相手」記述");
+    expect(items("対面に負けている ウェーブ")[0].basis).toBe("一致：「対面に負けている」Topic「劣勢時の戦い方」 ／ 「ウェーブ」記述・Topic名");
+    const lv1 = items("ミッド Lv1 押す");
+    // 「Lv1」は「レベル1」と読み替えるが、実際に一致したのは「レベル」の部分なので、「レベル1」とは示さない
+    expect(lv1.find((x) => x.id === "du-mid-lvl1-no-hard-push")!.basis).toBe("一致：「レベル」記述 ／ 「ミッド」Topic「ミッドレーン」・対象ロール（ミッド）・記述");
+    expect(lv1.find((x) => x.id === "du-lvl1-contest-or-concede")!.basis).toBe("一致：「レベル」Topic「経験値・レベル」›Lv2先行・記述 ／ 「ミッド」対象ロール（共通）");
+    for (const x of lv1) expect(x.basis).not.toContain("レベル1");
+    expect(text(page("ミッド Lv1 押す"))).toContain("照合に使った検索語：ミッド レベル1 押す");
+    expect(text(page("ミッド レベル1 押す"))).not.toContain("照合に使った検索語");
+  });
+
+  it("並び順が関連の強さではないことと、答えや推奨ではないことを示す", () => {
+    const t = text(page("リコール"));
+    expect(t).toContain("並び順は関連の強さを表しません");
+    expect(t).toContain("質問への答えや推奨ではありません");
   });
 });
