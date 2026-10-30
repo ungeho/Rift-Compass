@@ -1206,3 +1206,32 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     expect(t).toContain("質問への答えや推奨ではありません");
   });
 });
+
+describe("スカトルの時刻：記事時点の 3:30 と、現行仕様（パッチ26.1以降 2:55）を区別する", () => {
+  it("ミッドの2件は、3:30 を記事時点の値として示し、現行の出現時刻と、未確認の範囲をパッチへの依存に書く", () => {
+    for (const id of ["du-mid-join-scuttle-checklist", "du-mid-lvl1-no-hard-push"]) {
+      const u = units.find((x) => x.id === id)!;
+      const html = text(detail(id));
+      expect(u.statement_ja).toContain("記事時点");
+      expect(u.patch_dependency_ja).toContain("パッチ26.1");
+      expect(u.patch_dependency_ja).toContain("2:55");
+      expect(html).toContain("確認していない");
+      // 原典の理由・成立条件の文は書き換えない
+      expect(u.reasons.every((r) => r.basis === "source")).toBe(true);
+    }
+    expect(units.find((x) => x.id === "du-mid-lvl1-no-hard-push")!.reasons.map((r) => r.text)).toContain("ウェーブが敵タワー前で止められるので、3:30 付近でジャングラーにガンクされる");
+    expect(units.find((x) => x.id === "du-mid-join-scuttle-checklist")!.conditions_ja).toContain("ジャングラー側は、フルクリアしてレベル4で3:30のスカトルに着けるか（原典）");
+    // 具体的な目安にも、記事時点の値であることを示す
+    expect(text(detail("du-mid-join-scuttle-checklist"))).toContain("3:30 は当時のスカトルの出現時刻（パッチ26.1以降は2:55）");
+  });
+});
+
+describe("ジャングルの CS÷4：資料での確認結果と、成り立つ前提・限界を示す", () => {
+  it("パッチへの依存に、Wiki とパッチノートでの確認範囲と、ゲーム内では未確認であることを書き、判断の意味は変えない", () => {
+    const u = units.find((x) => x.id === "du-jungle-tracking-cs-div4")!;
+    for (const s of ["revid 3989487", "全滅させると4CS", "小数の CS", "26.1〜26.21", "ゲーム内では確認していない", "レーンのミニオンの CS が混ざる", "端数"]) expect(u.patch_dependency_ja).toContain(s);
+    expect(u.patch_dependency_ja).not.toContain("現行の仕様では未確認");
+    expect(u.statement_ja).toContain("1キャンプ＝4CS なので、CS÷4 で狩ったキャンプ数が分かり");
+    expect(text(detail(u.id))).toContain("CS÷4 が成り立つのは狩り切ったキャンプだけの場合");
+  });
+});
