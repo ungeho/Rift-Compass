@@ -1027,3 +1027,27 @@ describe("比較・発見性：詳細上部の関係リンクと、Topic 絞り�
     expect(text(renderToStaticMarkup(<DecisionIndex topic="recall" compare={id} />))).toContain(`Topic「リコール」の判断材料：${decisionsForTopic("recall").length}件`);
   });
 });
+
+describe("通常のリコールの判断材料：テレポートの記述を、代替案ではなく押し込みの基準の例外として出す", () => {
+  const ID = "du-recall-resource-threshold";
+  const u = units.find((x) => x.id === ID)!;
+  // 見出し（h3）ごとに、その下の項目の文を取り出す
+  const section = (title: string) => {
+    const markup = detail(ID);
+    const i = markup.indexOf(`<h3>${title}</h3>`);
+    return i < 0 ? "" : text(markup.slice(i, markup.indexOf("</ul>", i)));
+  };
+
+  it("押し込みの基準に対するテレポートの除外は例外に置き、オブジェクト前の遅めのリコールとは別の項目にする", () => {
+    expect(u.exceptions_ja).toHaveLength(2);
+    expect(section("例外")).toContain("押し込んでからリコールする、という基準は、テレポートを持っていて戻ってくるまでの時間を短縮できる場合などは別（原典）");
+    expect(section("例外")).toContain("テレポートを持っている場合は、オブジェクト前のリコールを少し遅めにしてもよい（原典）");
+    expect(section("代替案")).not.toContain("テレポート");
+    expect(section("代替案")).toContain("コアアイテムが完成しそうな場合");
+  });
+
+  it("押し込みの基準がどう変わるかは断定せず、未確認事項に置く", () => {
+    expect(section("未確認事項")).toContain("押し込んでからリコールする基準がどう変わるかは、原典に書かれていない");
+    expect(text(detail(ID))).not.toMatch(/押し込まずに(帰って|リコールして)(よい|も)/);
+  });
+});
