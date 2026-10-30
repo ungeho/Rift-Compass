@@ -569,8 +569,10 @@ describe("原典の資料から具体例への逆引き（案B）", () => {
     expect(html).toContain("サモナースペルの確認：相手にフラッシュがないとき（ミッド向けの記事）");
     expect(html).toContain("付いている判断材料：トレードの前に");
     expect(markup.indexOf("この資料に基づく具体例（試験）")).toBeGreaterThan(markup.indexOf("紹介"));
-    // 判断材料本体の出典ではないので、「この資料から抽出した判断材料」の欄には出さない
-    expect(html).not.toContain("この資料から抽出した判断材料");
+    // 具体例を付けた判断材料（du-trade-checklist）は、この資料が本体の出典ではないので、「この資料から抽出した判断材料」の欄には出さない
+    // （この資料を本体の出典とする du-early-recall-vs-ignite-with-tp は、その欄に出る）
+    expect(decisionsForResource("res-lg-qyxqb").map((x) => x.id)).not.toContain("du-trade-checklist");
+    expect(markup).not.toContain(`href="${decisionHref("du-trade-checklist")}"`);
     for (const id of ["res-metabot-trading-2026", "res-wiki-minion", "res-lg-dauwk"]) expect(text(resourcePage(id))).not.toContain("この資料に基づく具体例");
     // 既存の「この資料から抽出した判断材料」の欄はそのまま
     expect(text(resourcePage("res-metabot-trading-2026"))).toContain("この資料から抽出した判断材料（試験）");
@@ -778,5 +780,66 @@ describe("新規判断材料の2件目（lol-guide uhrvk：味方が勝ってい
     expect(before26).toContain("du-support-to-mid-when-bot-lost");
     const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
     expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", "ex-lg-qyxqb-enemy-no-flash", EX, "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
+  });
+});
+
+describe("新規判断材料の3件目（lol-guide qyxqb：相手がイグナイト、自分がテレポートのときの早めのリコール）", () => {
+  const UNIT = "du-early-recall-vs-ignite-with-tp";
+  const EX = "ex-lg-qyxqb-enemy-no-flash";
+  const u = units.find((x) => x.id === UNIT)!;
+  const newUnits = rawNewUnits as unknown as { units: DecisionUnit[]; sources: { id: string }[] };
+
+  it("出典は具体例と同じ src-lg-qyxqb（res-lg-qyxqb）を使い、出典を二重に登録しない", () => {
+    const ids = newUnits.units.map((x) => x.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(ids).toContain(UNIT);
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-lg-qyxqb"]);
+    expect(sourceById.get("src-lg-qyxqb")?.resource_id).toBe("res-lg-qyxqb");
+    expect(newUnits.sources.map((s) => s.id)).not.toContain("src-lg-qyxqb");
+  });
+
+  it("res-lg-qyxqb の詳細から判断材料へ移動でき、フラッシュ差の具体例へのリンクも残る", () => {
+    expect(decisionsForResource("res-lg-qyxqb").map((x) => x.id)).toEqual([UNIT]);
+    const markup = renderToStaticMarkup(<ResourceDetail id="res-lg-qyxqb" />);
+    expect(markup).toContain(`href="${decisionHref(UNIT)}"`);
+    expect(markup).toContain(`href="${decisionHref("du-trade-checklist", EX)}"`);
+    expect(examplesForUnit(UNIT)).toEqual([]);
+  });
+
+  it("リコールの理由・代替行動・成立条件・未確認事項を出し、「イグナイト相手ならいつも早く帰る」と一般化しない", () => {
+    const html = text(detail(UNIT));
+    for (const s of [
+      "瞬間的なキルプレッシャーが高い",
+      "アイテムの差を作ってから戦う",
+      "強くダメージトレードをして相手を先に帰らせるのが「ベスト」",
+      "いつもより慎重・安全に",
+      "体力が減り、ポーションがなくなっている（原典）",
+      "イグナイト相手ならいつも早く帰る、という一般則ではない",
+      "どういうときに安全に強くトレードできるかは書かれていない",
+      "逆の構成（自分がイグナイト）は対象外",
+      "記事はミッド向け",
+      "公開後のパッチでの変更は確認していない",
+      "ゲーム内では検証していない",
+    ]) expect(html).toContain(s);
+    expect(u.scope.roles).toEqual(["mid"]);
+  });
+
+  it("既存のリコールの判断材料の理由を混ぜず、条件の違う関係（同じ著者）として扱う", () => {
+    const reasons = u.reasons.map((r) => r.text).join("\n");
+    for (const w of ["経験値", "ゴールドの損", "オブジェクト", "半分"]) expect(reasons).not.toContain(w);
+    expect(u.reasons.every((r) => r.basis === "source")).toBe(true);
+    const rel = u.relations.find((r) => r.to === "du-recall-resource-threshold")!;
+    expect(rel.type).toBe("condition_differs");
+    expect(rel.note_ja).toContain("矛盾とは扱わない");
+    expect(rel.note_ja).toContain("独立した裏付けではない");
+  });
+
+  it("既存の判断材料48件と具体例5件を変えない", () => {
+    const before = SHOWCASE_IDS.slice(0, SHOWCASE_IDS.indexOf(UNIT));
+    expect(before).toEqual(expect.arrayContaining(["du-support-to-mid-when-bot-lost", "du-no-force-retake-when-allies-winning", "du-trade-checklist", "du-recall-resource-threshold"]));
+    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(48);
+    expect(units.find((x) => x.id === "du-recall-resource-threshold")!.relations.some((r) => r.to === UNIT)).toBe(false);
+    const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
+    expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", EX, "ex-lg-uhrvk-harass-when-enemy-pushes", "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
   });
 });
