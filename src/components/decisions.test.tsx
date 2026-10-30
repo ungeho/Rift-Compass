@@ -9,12 +9,12 @@ import rawExamples from "../../data/experiments/decision-examples.json";
 import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { comparisons, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { comparisons, decisionsForQuery, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
 import { EVAL_QUERIES } from "../search/evaluationQueries";
-import { search } from "../search/search";
+import { analyzeQuery, search } from "../search/search";
 import { ResourceDetail } from "./ResourceDetail";
 import { TopicPage } from "./TopicPages";
 
@@ -1049,5 +1049,92 @@ describe("通常のリコールの判断材料：テレポートの記述を、�
   it("押し込みの基準がどう変わるかは断定せず、未確認事項に置く", () => {
     expect(section("未確認事項")).toContain("押し込んでからリコールする基準がどう変わるかは、原典に書かれていない");
     expect(text(detail(ID))).not.toMatch(/押し込まずに(帰って|リコールして)(よい|も)/);
+  });
+});
+
+describe("検索から判断材料への到達（資料の検索結果は変えない）", () => {
+  const ids = (q: string) => decisionsForQuery(q).map((u) => u.id);
+  const page = (q: string) => renderToStaticMarkup(<SearchPage q={q} filters={{}} />);
+  const box = (markup: string) => {
+    const i = markup.indexOf('class="comparison-details related-decisions"');
+    return i < 0 ? "" : markup.slice(i, markup.indexOf("</details>", i));
+  };
+
+  it("「対面に負けている」はレーンで負けていることとして Topic「劣勢時の戦い方」に結びつき、劣勢時のウェーブの判断材料に届く", () => {
+    expect(analyzeQuery("対面に負けている ウェーブ").units.some((x) => x.kind === "topic" && x.topic.id === "playing-from-behind")).toBe(true);
+    expect(ids("対面に負けている ウェーブ")).toEqual(expect.arrayContaining(["du-freeze-when-behind-dignitas", "du-behind-keep-wave-own-side"]));
+    // 「負けている」だけでは、試合全体の劣勢と同一視しない
+    expect(analyzeQuery("負けている ウェーブ").units.some((x) => x.kind === "topic")).toBe(false);
+    expect(ids("負けている ウェーブ")).toEqual([]);
+  });
+
+  it("「Lv1」「lvl 1」「レベル1」のどれでも、ミッドのレベル1の判断材料に届く。出典が資料一覧にない判断材料も含む", () => {
+    expect(decisionsForResource("res-garen-timeline").map((u) => u.id)).toContain("du-mid-lvl1-no-hard-push");
+    // du-lvl1-contest-or-concede は、資料一覧にある出典を持たない（資料の詳細からはたどれない）
+    expect(units.find((x) => x.id === "du-lvl1-contest-or-concede")!.evidence.every((e) => !sourceById.get(e.source)?.resource_id)).toBe(true);
+    for (const q of ["ミッド Lv1 押す", "ミッド lvl 1 押す", "ミッド レベル1 押す"]) {
+      expect(ids(q)).toEqual(expect.arrayContaining(["du-mid-lvl1-no-hard-push", "du-lvl1-contest-or-concede"]));
+      expect(box(page(q))).toContain(`href="${decisionHref("du-lvl1-contest-or-concede")}"`);
+    }
+  });
+
+  it("略記の読み替えは判断材料の照合だけで行い、資料の検索の解釈と結果は変えない", () => {
+    expect(analyzeQuery("ミッド Lv1 押す").ignored).toContain("lv1");
+    expect(search("ミッド Lv1 押す").hits.map((h) => h.resource.id)).toEqual(search("ミッド").hits.map((h) => h.resource.id));
+    // 「Lv2」は Topic の別名なので、資料の検索と同じ Topic のまま
+    expect(analyzeQuery("Lv2先行が有利になる条件は？").units.map((x) => x.matched)).toEqual(["lv2先行"]);
+  });
+
+  it("判断材料の欄は、資料の結果とは別に閉じた状態で出し、件数に含めない", () => {
+    const markup = page("対面に負けている ウェーブ");
+    const b = box(markup);
+    expect(b).not.toContain("open");
+    expect(text(b)).toContain("検索語に一致した判断材料");
+    expect(text(b)).toContain("上の件数には含みません");
+    expect(text(b)).toContain("質問への答えや推奨ではありません");
+    for (const u of decisionsForQuery("対面に負けている ウェーブ")) expect(b).toContain(`href="${decisionHref(u.id)}"`);
+  });
+
+  it("具体的な Topic を含まない検索・発信者名を含む検索・0件の検索では、判断材料の欄を出さない", () => {
+    expect(ids("ミッド")).toEqual([]); // 大分類だけ
+    expect(ids("ボットが負けている サポート")).toEqual([]); // 一般語だけ
+    expect(ids("VeigarV2のリコール解説はどこ？")).toEqual([]); // 発信者名を含む
+    expect(box(page("ドラゴン 集団戦 ポジション"))).toBe("");
+  });
+
+  it("既存の良好な経路（相手にフラッシュがないときのトレード）は、資料の1位と具体例への導線を保つ", () => {
+    expect(search("相手のフラッシュがない トレード").hits[0].resource.id).toBe("res-lg-qyxqb");
+    expect(renderToStaticMarkup(<ResourceDetail id="res-lg-qyxqb" />)).toContain(`href="${decisionHref("du-trade-checklist", "ex-lg-qyxqb-enemy-no-flash")}"`);
+    for (const id of ids("相手のフラッシュがない トレード")) expect(SHOWCASE_IDS).toContain(id);
+  });
+});
+
+describe("検索結果の判断材料の欄：一致件数で切り捨てない", () => {
+  const page = (q: string) => renderToStaticMarkup(<SearchPage q={q} filters={{}} />);
+  const box = (markup: string) => {
+    const i = markup.indexOf('class="comparison-details related-decisions"');
+    return i < 0 ? "" : markup.slice(i, markup.indexOf("</details>", i));
+  };
+  const links = (html: string) => [...html.matchAll(/href="#\/decision\/([^"?]+)"/g)].map((m) => m[1]);
+
+  it("6件以上一致しても、閉じた欄に全件を正確な件数で出す（例：対面のロームを追うか）", () => {
+    for (const q of ["対面がロームしたら追いかけるべき？", "リコール"]) {
+      const found = decisionsForQuery(q).map((u) => u.id);
+      expect(found.length).toBeGreaterThan(5);
+      const b = box(page(q));
+      expect(b).not.toContain("open");
+      expect(text(b)).toContain(`検索語に一致した判断材料 判断材料（試験） ：${found.length}件`);
+      expect(links(b)).toEqual(found);
+    }
+    expect(decisionsForQuery("対面がロームしたら追いかけるべき？").map((u) => u.id)).toContain("du-roam-do-not-chase");
+  });
+
+  it("欄を出しても、資料の検索結果（件数・順位）は変えない", () => {
+    for (const q of ["対面がロームしたら追いかけるべき？", "リコール"]) {
+      const r = search(q);
+      const markup = page(q);
+      expect(markup.indexOf('class="comparison-details related-decisions"')).toBeLessThan(markup.indexOf(`href="#/r/${r.hits[0].resource.id}"`));
+      expect(text(markup)).toContain("上の件数には含みません");
+    }
   });
 });

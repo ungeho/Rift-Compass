@@ -45,7 +45,7 @@
     { "id": "roaming", "kind": "concept", "parent_ids": ["cat-macro"], "label_ja": "ローム", "label_en": "Roaming", "aliases_ja": ["ローム", "ローミング"], "aliases_en": ["roam", "roaming"] },
     { "id": "runes", "kind": "concept", "parent_ids": ["cat-build"], "label_ja": "ルーン・キーストーン", "label_en": "Runes & keystones", "aliases_ja": ["ルーン", "キーストーン", "ルーン選択"], "aliases_en": ["runes", "rune", "keystone"] },
     { "id": "matchup", "kind": "concept", "parent_ids": ["cat-laning"], "label_ja": "マッチアップ・対面対策", "label_en": "Matchups", "aliases_ja": ["マッチアップ", "対面対策", "カウンターピック", "不利対面"], "aliases_en": ["matchup", "counter pick", "counterpick"] },
-    { "id": "playing-from-behind", "kind": "concept", "parent_ids": ["cat-macro"], "label_ja": "劣勢時の戦い方", "label_en": "Playing from behind", "aliases_ja": ["劣勢", "負けている試合", "不利な状況", "逆転"], "aliases_en": ["playing from behind", "comeback", "losing lane"] },
+    { "id": "playing-from-behind", "kind": "concept", "parent_ids": ["cat-macro"], "label_ja": "劣勢時の戦い方", "label_en": "Playing from behind", "aliases_ja": ["劣勢", "負けている試合", "不利な状況", "逆転", "対面に負けている", "レーン戦で負けている"], "aliases_en": ["playing from behind", "comeback", "losing lane"] },
     { "id": "decision-making", "kind": "concept", "parent_ids": ["cat-expert"], "label_ja": "判断・意思決定", "label_en": "Decision making", "aliases_ja": ["意思決定", "判断基準", "判断力"], "aliases_en": ["decision making", "decision-making", "decisions"] },
     { "id": "review-learning", "kind": "concept", "parent_ids": ["cat-expert"], "label_ja": "振り返り・学習方法", "label_en": "Review & learning", "aliases_ja": ["振り返り", "リプレイ", "言語化", "上達方法"], "aliases_en": ["vod review", "replay review", "replay"] }
   ],

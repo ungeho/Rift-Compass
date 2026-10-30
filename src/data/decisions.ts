@@ -13,6 +13,7 @@ import rawExamples from "../../data/experiments/decision-examples.json";
 import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import sideWaveDiagramUrl from "../../docs/experiments/side-wave-diagram.svg";
 import { index } from "./dataset";
+import { analyzeQuery, containsTerm, expandLevelAbbr, normalize } from "../search/search";
 
 export interface DecisionReason {
   basis: "source" | "ai";
@@ -336,6 +337,45 @@ export function referencingDecisions(unitId: string): DecisionUnit[] {
 export function decisionsForTopic(topicId: string): DecisionUnit[] {
   const desc = index.descendants(topicId);
   return showcaseDecisions.filter((u) => u.topic_ids.some((t) => desc.has(t)));
+}
+
+// ロールの Topic と、判断材料の対象ロール（scope.roles）の対応。「ロール共通」（all）の判断材料は、どのロールにも当てはまるものとして扱う
+const ROLE_TOPICS: Record<string, string> = { "role-mid": "mid" };
+
+const decisionTextCache = new Map<string, string>();
+/** 判断材料の照合に使う文（要旨・状況・目的・行動・見る情報・成立条件と、付いている Topic の名前・別名）*/
+function decisionText(u: DecisionUnit): string {
+  let s = decisionTextCache.get(u.id);
+  if (s === undefined) {
+    const topicText = u.topic_ids.flatMap((id) => {
+      const t = index.topicById.get(id);
+      return t ? [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en] : [];
+    });
+    s = normalize([u.statement_ja, u.problem_ja, u.goal_ja, u.action_ja, ...u.observations_ja, ...u.conditions_ja, ...topicText].join(" "));
+    decisionTextCache.set(u.id, s);
+  }
+  return s;
+}
+
+/**
+ * 検索語のすべての条件（Topic・語）に一致する、試験表示の判断材料。資料の検索結果とは別に示すためのもので、資料の順位は変えない。
+ * 出典が資料一覧にない判断材料にも、検索から到達できるようにする。発信者名を含む検索は、資料の発信者と判断材料の出典を混同しないよう対象外にする
+ */
+export function decisionsForQuery(query: string): DecisionUnit[] {
+  // 「Lv1」などの略記は、ここでだけ「レベル1」と読む（資料の検索結果は変えない）
+  const { units } = analyzeQuery(expandLevelAbbr(query));
+  // 大分類（ロール・レーニングなど）や一般語だけの検索では、判断材料が広く一致しすぎるので出さない。具体的な Topic を1つ以上含むときだけ照合する
+  if (units.some((x) => x.kind === "creator") || !units.some((x) => x.kind === "topic" && x.topic.kind !== "category")) return [];
+  return showcaseDecisions.filter((u) =>
+    units.every((x) => {
+      if (x.kind === "topic") {
+        const desc = index.descendants(x.topic.id);
+        const role = ROLE_TOPICS[x.topic.id];
+        return u.topic_ids.some((t) => desc.has(t)) || (role !== undefined && u.scope.roles.some((r) => r === role || r === "all")) || containsTerm(decisionText(u), x.matched);
+      }
+      return x.kind === "term" && containsTerm(decisionText(u), x.matched);
+    }),
+  );
 }
 
 /** 正式資料を出典にもつ、試験表示の判断材料 */

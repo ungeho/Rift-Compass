@@ -22,7 +22,7 @@ function termRegex(term: string): RegExp {
 const termRegexCache = new Map<string, RegExp>();
 /** 検索語が本文に含まれるか。英数字だけの語は、Topic の別名・発信者名と同じ規則（termRegex）で独立した単語として照合する
  *  （例：「evi」は「review」「revive」に一致させない）。日本語を含む語は部分一致のまま。 */
-function containsTerm(text: string, term: string): boolean {
+export function containsTerm(text: string, term: string): boolean {
   if (!isAscii(term)) return text.includes(term);
   let re = termRegexCache.get(term);
   if (!re) termRegexCache.set(term, (re = termRegex(term)));
@@ -112,6 +112,18 @@ function prepare(idx: DataIndex): Prepared {
   const p = { idx, matchers, corpus, fields };
   preparedCache.set(idx, p);
   return p;
+}
+
+const LEVEL_ABBR = /(?<![a-z0-9])lv(?:l)?\.?\s?(\d{1,2})(?![0-9])/g;
+
+/**
+ * 「Lv1」「lvl 1」などのレベルの略記を「レベル1」と書き換えた検索語。判断材料の照合だけで使い、資料の検索には使わない
+ * （資料の検索結果を変えないため）。「Lv2」のように略記そのものが Topic の別名にあるときは、そのまま残す
+ */
+export function expandLevelAbbr(query: string, idx: DataIndex = defaultIndex): string {
+  const p = prepare(idx);
+  const topicKeys = new Set(p.matchers.filter((m) => m.kind === "topic").map((m) => m.key.replace(/[\s.]/g, "")));
+  return normalize(query).replace(LEVEL_ABBR, (abbr, n: string) => (topicKeys.has(abbr.replace(/[\s.]/g, "")) ? abbr : `レベル${n}`));
 }
 
 export function analyzeQuery(query: string, idx: DataIndex = defaultIndex): QueryAnalysis {

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { index } from "../data/dataset";
 import {
-  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
+  comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, decisionsForQuery, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
   isShowcased, locatorOf, NONE_PARTIAL, referencingDecisions, RELATION_LABELS, ROLE_LABELS, showcaseDecisions, showcaseTopicIds, sourceById, VERDICT_LABELS,
   type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionUnit,
 } from "../data/decisions";
@@ -191,6 +191,33 @@ export function QuestionEntrances() {
  * 検索画面で、検索語に一致した「判断材料の具体例」を案内する。教材（Resource）の検索結果とは別の種類のデータとして出し、件数にも含めない。
  * 具体例の出典が裏付けるのは、その具体例だけ（判断材料全体の出典ではない）。
  */
+/**
+ * 検索語に一致した判断材料。資料の検索結果とは種類も根拠も違うので、件数に含めず、閉じた状態で別に示す。
+ * 出典が資料一覧にない判断材料にも、ここから到達できる。順位付けや件数での切り捨てはせず、一致したものをすべて出す
+ */
+export function RelatedDecisions({ q }: { q: string }) {
+  const found = decisionsForQuery(q);
+  if (found.length === 0) return null;
+  return (
+    <details className="comparison-details related-decisions">
+      <summary>
+        検索語に一致した判断材料 <span className="badge">判断材料（試験）</span>：{found.length}件
+      </summary>
+      <p className="muted">
+        資料の検索結果とは別に、判断材料の要旨・状況・成立条件と Topic を検索語で照合したものです。質問への答えや推奨ではありません。上の件数には含みません。
+      </p>
+      <ul className="relation-list">
+        {found.map((u) => (
+          <li key={u.id}>
+            <a href={decisionHref(u.id)}>{u.statement_ja}</a>
+            <span className="muted">（対象：{u.scope.roles.map((r) => ROLE_LABELS[r] ?? r).join("・")}／出典：{authorsOf(u)}）</span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
 export function RelatedExamples({ q }: { q: string }) {
   const found = examplesForQuery(q);
   if (found.length === 0) return null;
