@@ -838,7 +838,7 @@ describe("新規判断材料の3件目（lol-guide qyxqb：相手がイグナイ
   it("既存の判断材料48件と具体例5件を変えない", () => {
     const before = SHOWCASE_IDS.slice(0, SHOWCASE_IDS.indexOf(UNIT));
     expect(before).toEqual(expect.arrayContaining(["du-support-to-mid-when-bot-lost", "du-no-force-retake-when-allies-winning", "du-trade-checklist", "du-recall-resource-threshold"]));
-    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(48);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening")).toHaveLength(48);
     expect(units.find((x) => x.id === "du-recall-resource-threshold")!.relations.some((r) => r.to === UNIT)).toBe(false);
     const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
     expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", EX, "ex-lg-uhrvk-harass-when-enemy-pushes", "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
@@ -1147,7 +1147,7 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     const box = m.slice(i, m.indexOf("</details>", i));
     return [...box.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((x) => ({ id: x[1].match(/href="#\/decision\/([^"?]+)"/)![1], basis: text(x[1].match(/一致：[\s\S]*?<\/div>/)![0]).trim() }));
   };
-  const QS: [string, number][] = [["リコール", 10], ["対面がロームしたら追いかけるべき？", 8], ["ミッド Lv1 押す", 4], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
+  const QS: [string, number][] = [["リコール", 10], ["対面がロームしたら追いかけるべき？", 8], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
 
   it("件数・順番・リンク先は、一致を出す前の照合（decisionsForQuery）と同じ", () => {
     for (const [q, n] of QS) {
@@ -1233,5 +1233,41 @@ describe("ジャングルの CS÷4：資料での確認結果と、成り立つ�
     expect(u.patch_dependency_ja).not.toContain("現行の仕様では未確認");
     expect(u.statement_ja).toContain("1キャンプ＝4CS なので、CS÷4 で狩ったキャンプ数が分かり");
     expect(text(detail(u.id))).toContain("CS÷4 が成り立つのは狩り切ったキャンプだけの場合");
+  });
+});
+
+describe("新規判断材料の4件目（LoLGaren raptor-ward：ミッドの開幕ラプターワードの置き方）", () => {
+  const UNIT = "du-mid-raptor-ward-opening";
+  const u = units.find((x) => x.id === UNIT)!;
+  const newUnits = rawNewUnits as unknown as { units: DecisionUnit[]; sources: { id: string; resource_id: string | null; published: string }[] };
+
+  it("出典を1件追加し、試験表示の末尾に加える（既存の判断材料・出典は変えない）", () => {
+    const src = newUnits.sources.find((s) => s.id === "src-garen-raptor-ward")!;
+    expect(src.resource_id).toBeNull();
+    expect(src.published).toBe("2026-07-01");
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-garen-raptor-ward"]);
+    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
+    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(49);
+  });
+
+  it("置き方を条件つきの優先順位として示し、何ウェーブ目という固定の答えにしない", () => {
+    const html = text(detail(UNIT));
+    for (const s of ["プッシュして置く", "0:55", "開幕に強引に置く", "敵の青バフにはワードを置いてはいけない", "レベル1〜2でトレードに勝てない", "オラクルレンズ", "「良いのではないか」", "何ウェーブ目に置くか、という基準は扱っていない", "ゲーム内では確認していない"]) expect(html).toContain(s);
+    expect(u.statement_ja).not.toMatch(/ウェーブ目/);
+    // 原典の条件「味方ジャングルの反対側に置く」と、詳細を省いた場面・画像の扱いを残す
+    expect(u.alternatives_ja.join()).toContain("味方ジャングルの反対側に置く");
+    expect(html).toContain("レベル3のタイミングで味方の森を守るように置くことがある、と触れるだけ");
+    expect(html).toContain("原典の画像を参照する必要がある");
+    expect(u.scope.roles).toEqual(["mid"]);
+  });
+
+  it("時刻は55秒湧き（パッチ26.1）を前提にした記事時点の値として示し、同じ著者の別記事を裏付けに数えない", () => {
+    expect(u.patch_dependency_ja).toContain("パッチ26.1");
+    expect(u.patch_dependency_ja).toContain("記事時点");
+    expect(u.unknowns_ja.some((s) => s.includes("同じ著者なので独立した裏付けとしない"))).toBe(true);
+    expect(u.reasons.every((r) => r.basis === "source")).toBe(true);
+    const rel = u.relations.find((r) => r.to === "du-jungle-tracking-cs-div4")!;
+    expect(rel.type).toBe("complements");
+    expect(rel.note_ja).toContain("AI の整理");
   });
 });
