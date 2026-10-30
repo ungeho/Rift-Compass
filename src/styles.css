@@ -178,6 +178,9 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 /* 判断材料（試験） */
 .reason-list, .relation-list { padding-left: 1.2em; }
 .reason-list li, .relation-list li { margin: 6px 0; }
+.related-nav { font-size: 0.9rem; margin: 8px 0 0; }
+.related-nav p { margin: 0; }
+.related-nav .relation-list li { margin: 2px 0; overflow-wrap: anywhere; }
 .reason-ai { color: var(--muted); }
 .decision-sources { padding-left: 0; }
 .criteria-list { padding-left: 0; list-style: none; }

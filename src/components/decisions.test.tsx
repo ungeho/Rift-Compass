@@ -9,7 +9,7 @@ import rawExamples from "../../data/experiments/decision-examples.json";
 import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
-import { decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
+import { comparisons, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
 import { DecisionDetail, DecisionIndex } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
@@ -926,5 +926,104 @@ describe("発見性：Topic からの導線・関係の逆引き・関係の表�
     expect(html).toContain("AI の整理：同じ著者（がりある）の別の記事");
     // 接頭辞のない注記にも、画面側で「AI の整理：」を付ける
     expect(text(detail("du-recall-resource-threshold"))).toContain("AI の整理：lolgaren（2020年）はミッドの最初のリコールを");
+  });
+});
+
+describe("比較・発見性：詳細上部の関係リンクと、Topic 絞り込み時の表示順", () => {
+  const related = (markup: string) => {
+    const i = markup.indexOf('aria-label="関係する判断材料"');
+    return i < 0 ? "" : markup.slice(i, markup.indexOf("</nav>", i));
+  };
+  const hrefs = (html: string) => [...html.matchAll(/href="#\/decision\/([^"?]+)"/g)].map((m) => m[1]);
+
+  it("通常のリコールの判断材料の上部（状況と行動より前）から P3 へ、P3 の上部から通常のリコールへ移動できる", () => {
+    for (const [from, to] of [
+      ["du-recall-resource-threshold", "du-early-recall-vs-ignite-with-tp"],
+      ["du-early-recall-vs-ignite-with-tp", "du-recall-resource-threshold"],
+    ]) {
+      const markup = detail(from);
+      const i = markup.indexOf('aria-label="関係する判断材料"');
+      expect(i).toBeGreaterThan(markup.indexOf("</header>"));
+      expect(i).toBeLessThan(markup.indexOf('id="situation-heading"'));
+      expect(hrefs(related(markup))).toContain(to);
+    }
+  });
+
+  // 件数の上限は決めていない（収録時点の実データでは最大4件だったという観測で、不変条件ではない）
+  it("上部の関係リンクは、relations と逆引きの試験表示の相手だけを重複なしで出し、関係の種類・注記は出さない", () => {
+    for (const u of showcaseDecisions) {
+      const ids = hrefs(related(detail(u.id)));
+      const expected = new Set([...u.relations.map((r) => r.to).filter((to) => (SHOWCASE_IDS as readonly string[]).includes(to)), ...referencingDecisions(u.id).map((x) => x.id)]);
+      expect(new Set(ids).size).toBe(ids.length);
+      expect(new Set(ids)).toEqual(expected);
+      for (const id of ids) expect(SHOWCASE_IDS).toContain(id);
+      const section = text(related(detail(u.id)));
+      for (const label of Object.values(RELATION_LABELS)) expect(section).not.toContain(label);
+      expect(section).not.toContain("AI の整理");
+    }
+  });
+
+  it("関係する判断材料がないときは、上部の案内を出さない", () => {
+    const none = showcaseDecisions.filter((u) => !u.relations.some((r) => (SHOWCASE_IDS as readonly string[]).includes(r.to)) && referencingDecisions(u.id).length === 0);
+    expect(none.map((u) => u.id)).toContain("du-vlad-keystone-by-matchup");
+    for (const u of none) {
+      const markup = detail(u.id);
+      expect(markup).not.toContain('aria-label="関係する判断材料"');
+    }
+  });
+
+  it("試験表示の対象外の相手は、上部にも出さない", () => {
+    // du-dopa-tf-save-ult（対象外）は du-roam-do-not-chase を参照している
+    expect(hrefs(related(detail("du-roam-do-not-chase")))).not.toContain("du-dopa-tf-save-ult");
+    // du-no-force-retake-when-allies-winning の relations の相手は、どれも試験表示の対象外
+    const u = units.find((x) => x.id === "du-no-force-retake-when-allies-winning")!;
+    expect(u.relations.length).toBeGreaterThan(0);
+    expect(detail(u.id)).not.toContain('aria-label="関係する判断材料"');
+  });
+
+  it("上部では要旨を短く切り、全文は title と下部の関係欄に残す", () => {
+    const markup = detail("du-recall-resource-threshold");
+    const p3 = units.find((x) => x.id === "du-early-recall-vs-ignite-with-tp")!;
+    const top = related(markup);
+    expect(text(top)).toContain("相手がイグナイト、自分がテレポートのときは");
+    expect(top).toContain(`title="${p3.statement_ja}"`);
+    expect(text(markup.slice(markup.indexOf("relations-heading")))).toContain(p3.statement_ja);
+    expect(text(markup)).toContain("この判断材料を参照している判断材料");
+  });
+
+  it("Topic を指定したときは、絞り込み結果のカードを Topic の切り替えと資料間の比較より前に出す（件数・内容は同じ）", () => {
+    const markup = list("recall");
+    const firstCard = markup.indexOf('class="result-list"');
+    expect(firstCard).toBeGreaterThan(0);
+    expect(firstCard).toBeLessThan(markup.indexOf('aria-label="Topic で絞り込む"'));
+    expect(firstCard).toBeLessThan(markup.indexOf('id="comparisons-heading"'));
+    const ids = hrefs(markup.slice(firstCard, markup.indexOf('aria-label="Topic で絞り込む"')));
+    expect([...new Set(ids)]).toEqual(decisionsForTopic("recall").map((u) => u.id));
+    expect(text(markup)).toContain(`Topic「リコール」の判断材料：${decisionsForTopic("recall").length}件`);
+    // Topic の切り替えと資料間の比較は残る
+    expect(markup).toContain(`href="${decisionsHref("wave-management")}"`);
+    expect(markup).toContain('class="comparison-details"');
+  });
+
+  it("Topic 未指定の一覧は、Topic の切り替え → 資料間の比較 → 一覧の順のまま", () => {
+    const markup = list();
+    const nav = markup.indexOf('aria-label="Topic で絞り込む"');
+    const cmp = markup.indexOf('id="comparisons-heading"');
+    expect(nav).toBeLessThan(cmp);
+    expect(cmp).toBeLessThan(markup.indexOf('class="result-list"'));
+    expect(text(markup)).not.toContain("Topic を切り替える");
+  });
+
+  it("0件・存在しない Topic の表示と、?compare= の比較の展開を保つ", () => {
+    expect(text(list("champ-jax"))).toContain("このTopicには、試験表示の判断材料はありません。");
+    expect(text(list("no-such-topic"))).toContain("Topic「no-such-topic」は登録されていません。");
+    const id = comparisons[0].id;
+    for (const topic of ["", "recall"]) {
+      const markup = renderToStaticMarkup(<DecisionIndex topic={topic} compare={id} />);
+      expect(markup.match(/<details[^>]*open=""/g)).toHaveLength(1);
+      // compare を明示したときは、開いた比較を結果のカードより前に出す（Topic の有無を問わない）
+      expect(markup.indexOf('id="comparisons-heading"')).toBeLessThan(markup.indexOf('class="result-list"'));
+    }
+    expect(text(renderToStaticMarkup(<DecisionIndex topic="recall" compare={id} />))).toContain(`Topic「リコール」の判断材料：${decisionsForTopic("recall").length}件`);
   });
 });

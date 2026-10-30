@@ -227,6 +227,31 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
   const t = topic ? index.topicById.get(topic) : undefined;
   const list = topic ? (t ? decisionsForTopic(topic) : []) : showcaseDecisions;
   const topicIds = showcaseTopicIds();
+  // Topic だけを指定したときは、絞り込み結果のカードを先に見せる。compare で比較を明示したときは、開いた比較が結果の下に埋もれないよう従来の順にする
+  const resultsFirst = Boolean(topic) && !compare;
+  const results = (
+    <>
+      {topic && (
+        <h2>
+          Topic「{t ? t.label_ja : topic}」の判断材料：{list.length}件
+        </h2>
+      )}
+      {topic && !t && <p className="empty">Topic「{topic}」は登録されていません。</p>}
+      {t && list.length === 0 && (
+        <p className="empty">
+          このTopicには、試験表示の判断材料はありません。
+          <a href={homeHref("", { topic })}>このTopicの教材を探す</a>
+        </p>
+      )}
+      {list.length > 0 && (
+        <ul className="result-list">
+          {list.map((u) => (
+            <DecisionCard key={u.id} u={u} />
+          ))}
+        </ul>
+      )}
+    </>
+  );
   return (
     <div className="detail">
       <h1>判断材料（試験）</h1>
@@ -237,7 +262,11 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
 
       {!topic && !compare && <QuestionEntrances />}
 
+      {/* 結果を先に出すときも、Topic の切り替えと資料間の比較はその下に残す */}
+      {resultsFirst && results}
+
       <nav aria-label="Topic で絞り込む">
+        {resultsFirst && <h2>Topic を切り替える</h2>}
         <ul className="chips">
           <li>
             <a className="chip" href={decisionsHref()} aria-current={topic ? undefined : "page"}>
@@ -270,25 +299,7 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
         ))}
       </section>
 
-      {topic && (
-        <h2>
-          Topic「{t ? t.label_ja : topic}」の判断材料：{list.length}件
-        </h2>
-      )}
-      {topic && !t && <p className="empty">Topic「{topic}」は登録されていません。</p>}
-      {t && list.length === 0 && (
-        <p className="empty">
-          このTopicには、試験表示の判断材料はありません。
-          <a href={homeHref("", { topic })}>このTopicの教材を探す</a>
-        </p>
-      )}
-      {list.length > 0 && (
-        <ul className="result-list">
-          {list.map((u) => (
-            <DecisionCard key={u.id} u={u} />
-          ))}
-        </ul>
-      )}
+      {!resultsFirst && results}
       <p className="muted">
         抽出日 {decisionsCheckedAt}（Phase 5B）・{criteriaCheckedAt}（Phase 5E）・{sideWaveCheckedAt}（Phase 6B）・{waveTechniqueCheckedAt}（発見性レビュー）。選ばなかった判断材料と理由は、リポジトリの docs/experiments/decision-browse.md・decision-criteria.md・decision-showcase-expansion.md・side-wave-decisions.md・wave-discovery-review.md に記録しています。
       </p>
@@ -486,9 +497,46 @@ function DiagramView({ d }: { d: DecisionDiagram }) {
 const AI_NOTE_PREFIX = "AI の整理：";
 const aiNote = (note: string) => AI_NOTE_PREFIX + (note.startsWith(AI_NOTE_PREFIX) ? note.slice(AI_NOTE_PREFIX.length) : note);
 
+// 逆引き：この判断材料を参照している、試験表示の判断材料。こちらからも参照している相手は、relations の一覧と重ねて出さない
+const referencedByOnly = (u: DecisionUnit) => referencingDecisions(u.id).filter((x) => !u.relations.some((r) => r.to === x.id));
+
+// 上部の案内に出す、関係の相手（試験表示のものだけ、重複なし）。こちらの relations の相手が先、逆引きの相手が後
+function relatedShowcased(u: DecisionUnit): DecisionUnit[] {
+  const ids = [...new Set(u.relations.map((r) => r.to).filter((to) => to !== u.id && isShowcased(to)))];
+  return [...ids.map((to) => decisionById(to)!), ...referencedByOnly(u)];
+}
+
+// 上部の案内では要旨を短く切る（全文はリンクの title と、下部の関係欄で読める）
+const RELATED_SNIPPET_LENGTH = 46;
+const snippet = (s: string) => (s.length > RELATED_SNIPPET_LENGTH + 2 ? s.slice(0, RELATED_SNIPPET_LENGTH) + "…" : s);
+
+/**
+ * 要旨の近くに置く、関係の相手への直接リンク。関係の種類・説明は出さない（下部の関係欄に残す）。
+ * 逆引きの相手も同じ並びに入れるが、逆向きの主張や根拠の数としては扱わない
+ */
+function RelatedNav({ u }: { u: DecisionUnit }) {
+  const related = relatedShowcased(u);
+  if (!related.length) return null;
+  return (
+    <nav aria-label="関係する判断材料" className="related-nav">
+      <p className="muted">
+        関係する判断材料（{related.length}件）：関係の種類と説明は、下の「ほかの判断材料との関係」で確認してください。関係の数は根拠の数ではありません。
+      </p>
+      <ul className="relation-list">
+        {related.map((x) => (
+          <li key={x.id}>
+            <a href={decisionHref(x.id)} title={x.statement_ja}>
+              {snippet(x.statement_ja)}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 function Relations({ u }: { u: DecisionUnit }) {
-  // 逆引き：この判断材料を参照している、試験表示の判断材料。こちらからも参照している相手は、上の一覧と重ねて出さない
-  const referencedBy = referencingDecisions(u.id).filter((x) => !u.relations.some((r) => r.to === x.id));
+  const referencedBy = referencedByOnly(u);
   if (!u.relations.length && !referencedBy.length) return null;
   return (
     <section aria-labelledby="relations-heading">
@@ -571,6 +619,7 @@ export function DecisionDetail({ id, example }: { id: string; example?: string }
         <h1>{u.statement_ja}</h1>
         <p className="card-creator">出典：{authorsOf(u)}（{coverageOf(u)}）</p>
       </header>
+      <RelatedNav u={u} />
 
       <section aria-labelledby="situation-heading">
         <h2 id="situation-heading">状況と行動</h2>
