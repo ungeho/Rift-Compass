@@ -1304,3 +1304,16 @@ describe("新規判断材料の5件目（lol-guide kdutr：ミッドのレーン
     expect(units.find((x) => x.id === "du-mid-ward-center")!.relations).toEqual([]);
   });
 });
+
+describe("ジャングルの CS÷4：原典の例と、推定の確実さの限界を区別する", () => {
+  it("例は原典の読みとして残し、CS 8 と赤バフから分かる範囲と、経路・行き先が推定であることを例のすぐ後に示す", () => {
+    const u = units.find((x) => x.id === "du-jungle-tracking-cs-div4")!;
+    expect(u.action_ja).toContain("赤→クルーグ→ラプターと来ており、次は青バフ側に向かう、と原典は読む");
+    expect(u.action_ja).toContain("全滅させたキャンプが2つで、そのうち1つが赤バフということまで");
+    expect(u.action_ja).toContain("よくある一周目の順番を前提にした推定");
+    expect(u.action_ja).toContain("「殆どの場合で」確定できる");
+    // 原典の理由・成立条件・例外は変えない
+    expect(u.reasons.map((r) => r.text)).toContain("バフの種類を見れば、1周目のスタート位置と行き先をほとんどの場合で確定できる");
+    expect(text(detail(u.id))).toContain("原典の例：敵ラプターのワードにアムムが映り");
+  });
+});
