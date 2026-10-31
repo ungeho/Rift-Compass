@@ -838,7 +838,7 @@ describe("新規判断材料の3件目（lol-guide qyxqb：相手がイグナイ
   it("既存の判断材料48件と具体例5件を変えない", () => {
     const before = SHOWCASE_IDS.slice(0, SHOWCASE_IDS.indexOf(UNIT));
     expect(before).toEqual(expect.arrayContaining(["du-support-to-mid-when-bot-lost", "du-no-force-retake-when-allies-winning", "du-trade-checklist", "du-recall-resource-threshold"]));
-    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening")).toHaveLength(48);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening" && x.id !== "du-mid-ward-by-wave-state")).toHaveLength(48);
     expect(units.find((x) => x.id === "du-recall-resource-threshold")!.relations.some((r) => r.to === UNIT)).toBe(false);
     const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
     expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", EX, "ex-lg-uhrvk-harass-when-enemy-pushes", "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
@@ -1147,7 +1147,7 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     const box = m.slice(i, m.indexOf("</details>", i));
     return [...box.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((x) => ({ id: x[1].match(/href="#\/decision\/([^"?]+)"/)![1], basis: text(x[1].match(/一致：[\s\S]*?<\/div>/)![0]).trim() }));
   };
-  const QS: [string, number][] = [["リコール", 10], ["対面がロームしたら追いかけるべき？", 8], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
+  const QS: [string, number][] = [["リコール", 10], ["対面がロームしたら追いかけるべき？", 9], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
 
   it("件数・順番・リンク先は、一致を出す前の照合（decisionsForQuery）と同じ", () => {
     for (const [q, n] of QS) {
@@ -1246,8 +1246,8 @@ describe("新規判断材料の4件目（LoLGaren raptor-ward：ミッドの開�
     expect(src.resource_id).toBeNull();
     expect(src.published).toBe("2026-07-01");
     expect(u.evidence.map((e) => e.source)).toEqual(["src-garen-raptor-ward"]);
-    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
-    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(49);
+    expect(SHOWCASE_IDS.indexOf(UNIT)).toBe(SHOWCASE_IDS.indexOf("du-early-recall-vs-ignite-with-tp") + 1);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-ward-by-wave-state")).toHaveLength(49);
   });
 
   it("置き方を条件つきの優先順位として示し、何ウェーブ目という固定の答えにしない", () => {
@@ -1269,5 +1269,38 @@ describe("新規判断材料の4件目（LoLGaren raptor-ward：ミッドの開�
     const rel = u.relations.find((r) => r.to === "du-jungle-tracking-cs-div4")!;
     expect(rel.type).toBe("complements");
     expect(rel.note_ja).toContain("AI の整理");
+  });
+});
+
+describe("新規判断材料の5件目（lol-guide kdutr：ミッドのレーン戦中のワードを、ウェーブの状態で選ぶ）", () => {
+  const UNIT = "du-mid-ward-by-wave-state";
+  const u = units.find((x) => x.id === UNIT)!;
+  const newUnits = rawNewUnits as unknown as { units: DecisionUnit[]; sources: { id: string; resource_id: string | null; published: string }[] };
+
+  it("出典を1件追加し、試験表示の末尾に加える", () => {
+    const src = newUnits.sources.find((s) => s.id === "src-kdutr")!;
+    expect(src.resource_id).toBeNull();
+    expect(src.published).toBe("2025-08-17");
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-kdutr"]);
+    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
+    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(50);
+  });
+
+  it("ウェーブの状態ごとの置き場所・条件・代償を区別して示し、何ウェーブ目・何分という基準は作らない", () => {
+    const html = text(detail(UNIT));
+    for (const s of ["押し込めている：対面がタワー下で CS 処理に追われているとき", "五分：ウェーブがレーン中央で均衡しているか", "押されている：安全に置けるのは浅い位置だけ", "敵ラプター周辺", "ミッド横の草むらの少し奥", "どちら側に置くか", "対面と挟まれたり", "川を通ってくるガンクに気づけない", "原典の画像を参照する必要がある", "何ウェーブ目に置くか、ガンクが何分に来るかは、原典に書かれていない", "26.1以降のマップでの設置位置の有効性は確認していない"]) expect(html).toContain(s);
+    expect(u.statement_ja).not.toMatch(/ウェーブ目|\d+:\d+/);
+    expect(u.reasons.every((r) => r.basis === "source")).toBe(true);
+  });
+
+  it("開幕のラプターワードとは条件の違う判断として結び、同じ著者の記事を独立した裏付けに数えない", () => {
+    const opening = u.relations.find((r) => r.to === "du-mid-raptor-ward-opening")!;
+    expect(opening.type).toBe("condition_differs");
+    expect(opening.note_ja).toContain("別の著者");
+    const roam = u.relations.find((r) => r.to === "du-roam-counter-action")!;
+    expect(roam.note_ja).toContain("独立した裏付けではない");
+    expect(u.unknowns_ja.some((s) => s.includes("独立した裏付けとしない"))).toBe(true);
+    // 試験表示の対象外の du-mid-ward-center は変えない
+    expect(units.find((x) => x.id === "du-mid-ward-center")!.relations).toEqual([]);
   });
 });
