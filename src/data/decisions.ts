@@ -157,7 +157,7 @@ const data: DecisionData = {
 };
 
 /**
- * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件、新規判断材料の収録試験の5件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
+ * 試験表示する判断材料（Phase 5D の9件、Phase 5E の5件、Phase 6A の5件、Phase 6B の4件、発見性レビューの2件、新規判断材料の収録試験の6件）。選定基準：ロール共通・MID を優先し、理由と成立条件が具体的で、
  * 確認箇所が明確なもの。条件の違い（有利／不利、押す／押さない、現行／過去のパッチ）を並べて比べられるよう、
  * 対になる材料を含め、著者が偏らないようにした。
  */
@@ -200,6 +200,7 @@ export const SHOWCASE_IDS = [
   "du-early-recall-vs-ignite-with-tp",
   "du-mid-raptor-ward-opening",
   "du-mid-ward-by-wave-state",
+  "du-concede-objective-and-trade",
 ] as const;
 
 /**

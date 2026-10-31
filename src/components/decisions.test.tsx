@@ -838,7 +838,7 @@ describe("新規判断材料の3件目（lol-guide qyxqb：相手がイグナイ
   it("既存の判断材料48件と具体例5件を変えない", () => {
     const before = SHOWCASE_IDS.slice(0, SHOWCASE_IDS.indexOf(UNIT));
     expect(before).toEqual(expect.arrayContaining(["du-support-to-mid-when-bot-lost", "du-no-force-retake-when-allies-winning", "du-trade-checklist", "du-recall-resource-threshold"]));
-    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening" && x.id !== "du-mid-ward-by-wave-state")).toHaveLength(48);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening" && x.id !== "du-mid-ward-by-wave-state" && x.id !== "du-concede-objective-and-trade")).toHaveLength(48);
     expect(units.find((x) => x.id === "du-recall-resource-threshold")!.relations.some((r) => r.to === UNIT)).toBe(false);
     const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
     expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", EX, "ex-lg-uhrvk-harass-when-enemy-pushes", "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
@@ -1147,7 +1147,7 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     const box = m.slice(i, m.indexOf("</details>", i));
     return [...box.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((x) => ({ id: x[1].match(/href="#\/decision\/([^"?]+)"/)![1], basis: text(x[1].match(/一致：[\s\S]*?<\/div>/)![0]).trim() }));
   };
-  const QS: [string, number][] = [["リコール", 10], ["対面がロームしたら追いかけるべき？", 9], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
+  const QS: [string, number][] = [["リコール", 11], ["対面がロームしたら追いかけるべき？", 9], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
 
   it("件数・順番・リンク先は、一致を出す前の照合（decisionsForQuery）と同じ", () => {
     for (const [q, n] of QS) {
@@ -1158,7 +1158,7 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     }
   });
 
-  it("「リコール」では、Topic「リコール」が付いた6件と、記述にだけ「リコール」がある4件を区別して示す", () => {
+  it("「リコール」では、Topic「リコール」が付いた6件と、記述にだけ「リコール」がある5件を区別して示す", () => {
     const tagged = new Set(decisionsForTopic("recall").map((u) => u.id));
     expect(tagged.size).toBe(6);
     const list = items("リコール");
@@ -1166,7 +1166,7 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
       if (tagged.has(x.id)) expect(x.basis).toBe("一致：「リコール」Topic・記述");
       else expect(x.basis).toBe("一致：「リコール」記述");
     }
-    expect(list.filter((x) => !tagged.has(x.id))).toHaveLength(4);
+    expect(list.filter((x) => !tagged.has(x.id))).toHaveLength(5);
   });
 
   it("示す根拠は、実際の照合で成り立った条件だけ（Topic は付いているもの、ロールは対象ロールにあるもの）", () => {
@@ -1247,7 +1247,7 @@ describe("新規判断材料の4件目（LoLGaren raptor-ward：ミッドの開�
     expect(src.published).toBe("2026-07-01");
     expect(u.evidence.map((e) => e.source)).toEqual(["src-garen-raptor-ward"]);
     expect(SHOWCASE_IDS.indexOf(UNIT)).toBe(SHOWCASE_IDS.indexOf("du-early-recall-vs-ignite-with-tp") + 1);
-    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-ward-by-wave-state")).toHaveLength(49);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-ward-by-wave-state" && x.id !== "du-concede-objective-and-trade")).toHaveLength(49);
   });
 
   it("置き方を条件つきの優先順位として示し、何ウェーブ目という固定の答えにしない", () => {
@@ -1282,8 +1282,8 @@ describe("新規判断材料の5件目（lol-guide kdutr：ミッドのレーン
     expect(src.resource_id).toBeNull();
     expect(src.published).toBe("2025-08-17");
     expect(u.evidence.map((e) => e.source)).toEqual(["src-kdutr"]);
-    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
-    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(50);
+    expect(SHOWCASE_IDS.indexOf(UNIT)).toBe(SHOWCASE_IDS.indexOf("du-mid-raptor-ward-opening") + 1);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-concede-objective-and-trade")).toHaveLength(50);
   });
 
   it("ウェーブの状態ごとの置き場所・条件・代償を区別して示し、何ウェーブ目・何分という基準は作らない", () => {
@@ -1315,5 +1315,40 @@ describe("ジャングルの CS÷4：原典の例と、推定の確実さの限�
     // 原典の理由・成立条件・例外は変えない
     expect(u.reasons.map((r) => r.text)).toContain("バフの種類を見れば、1周目のスタート位置と行き先をほとんどの場合で確定できる");
     expect(text(detail(u.id))).toContain("原典の例：敵ラプターのワードにアムムが映り");
+  });
+});
+
+describe("新規判断材料の6件目（lol-guide jdgrp：敵がドラゴンなどを始めたとき、戦うか諦めて別の利益を取るか）", () => {
+  const UNIT = "du-concede-objective-and-trade";
+  const u = units.find((x) => x.id === UNIT)!;
+  const newUnits = rawNewUnits as unknown as { units: DecisionUnit[]; sources: { id: string; resource_id: string | null; published: string }[] };
+
+  it("正式資料 res-lg-jdgrp の出典を追加し、試験表示の末尾に加え、資料の詳細から判断材料へ移動できる", () => {
+    const src = newUnits.sources.find((s) => s.id === "src-lg-jdgrp")!;
+    expect(src.resource_id).toBe("res-lg-jdgrp");
+    expect(src.published).toBe("2025-09-30");
+    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
+    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(51);
+    expect(decisionsForResource("res-lg-jdgrp").map((x) => x.id)).toEqual([UNIT]);
+    expect(renderToStaticMarkup(<ResourceDetail id="res-lg-jdgrp" />)).toContain(`href="${decisionHref(UNIT)}"`);
+  });
+
+  it("3つの確認点・諦める条件・別の利益の候補とその条件・リコールして待つ選択を示し、無条件に「反対側を取る」とはしない", () => {
+    const html = text(detail(UNIT));
+    for (const s of ["自分・味方と敵の位置", "パワースパイク", "オブジェクト周辺の視界", "「明確に不利な点」があるとき", "敵のトップ側が孤立しているとき", "敵がドラゴン側のジャングルにいることが確定しているとき", "リコールして装備を整え、次の機会に備える方が良い場合もある", "十分にタンクできるチャンピオンがいれば", "ゲーム内では検証していない"]) expect(html).toContain(s);
+    expect(u.statement_ja).toContain("明確に不利なら諦める");
+    // 逆サイドのオブジェクトは出現していて狩り切れる見込みがあるときの選択肢で、その条件は AI の整理と示す。図は確認済み
+    expect(u.conditions_ja.some((s) => s.includes("その時点で出現していて") && s.includes("AI の整理"))).toBe(true);
+    expect(u.unknowns_ja.some((s) => s.includes("記事の図（マップ上の位置関係の例）は確認した"))).toBe(true);
+    expect(html).not.toContain("記事の図（位置関係の例）は見ていない");
+    expect(u.statement_ja).not.toMatch(/必ず/);
+    expect(u.reasons.every((r) => r.basis === "source")).toBe(true);
+  });
+
+  it("2026年のオブジェクトの変更は公式パッチノートで確認した範囲として示し、判断への影響は未確認とする", () => {
+    for (const s of ["アタカンの削除", "20:00", "ドラゴンの復讐", "削除はスイフトプレイだけ", "26.21までのパッチノート", "確認していない"]) expect(u.patch_dependency_ja).toContain(s);
+    expect(u.unknowns_ja.some((s) => s.includes("ドラゴンソウルに近いか"))).toBe(true);
+    const rel = u.relations.find((r) => r.to === "du-recall-resource-threshold")!;
+    expect(rel.note_ja).toContain("独立した裏付けではない");
   });
 });
