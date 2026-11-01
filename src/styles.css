@@ -204,6 +204,13 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .related-examples h3 { font-size: 1rem; margin: 4px 0; }
 .related-decisions .relation-list li { overflow-wrap: anywhere; }
 .related-decisions .match-basis { font-size: 0.85rem; }
+.related-notes .note-match { display: grid; gap: 4px; margin: 10px 0; overflow-wrap: anywhere; }
+.related-notes .note-match > p { margin: 0; }
+.related-notes .note-scope { font-size: 0.9rem; }
+.related-notes .note-scope ul { margin: 2px 0 0; padding-left: 1.2em; }
+.related-notes .match-basis { font-size: 0.85rem; }
+.related-notes-partial > summary { cursor: pointer; }
+.question-entrances .entrance-group { font-size: 0.95rem; margin: 10px 0 4px; }
 .decision-diagram img { display: block; width: 100%; max-width: 420px; height: auto; border: 1px solid var(--border); border-radius: var(--radius); margin: 8px 0; }
 .note-list h3 { margin: 10px 0 2px; font-size: 0.9rem; }
 .chip[aria-current="page"] { border-color: var(--accent); font-weight: 600; }

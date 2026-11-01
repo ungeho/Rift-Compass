@@ -7,6 +7,7 @@ import { externalSearchUrls } from "../lib/links";
 import { homeHref, rememberList, replaceHash, topicHref } from "../router";
 import { ExternalLink } from "./common";
 import { QuestionEntrances, RelatedDecisions, RelatedExamples } from "./DecisionPages";
+import { RelatedNotes } from "./RelatedNotes";
 import { ResourceCard } from "./ResourceCard";
 
 const EXAMPLES = [
@@ -198,6 +199,7 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
 
           {hasQuery && <RelatedExamples q={q} />}
           {hasQuery && <RelatedDecisions q={q} />}
+          {hasQuery && <RelatedNotes q={q} />}
 
           {activeFilters.length > 0 && (
             <p className="active-filters">

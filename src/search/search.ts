@@ -126,10 +126,14 @@ export function expandLevelAbbr(query: string, idx: DataIndex = defaultIndex): s
   return normalize(query).replace(LEVEL_ABBR, (abbr, n: string) => (topicKeys.has(abbr.replace(/[\s.]/g, "")) ? abbr : `レベル${n}`));
 }
 
-export function analyzeQuery(query: string, idx: DataIndex = defaultIndex): QueryAnalysis {
+/**
+ * 検索語から Topic の別名と発信者名を、長い一致から順に重ならないように取り出し、残りの文字列を返す。
+ * 資料の検索（analyzeQuery）と知識ノートの照合（noteSearch.ts）が共有する。残りの語の採否はここでは決めない
+ */
+export function matchQueryUnits(query: string, idx: DataIndex = defaultIndex): { units: Unit[]; residual: string } {
   const p = prepare(idx);
   const q = normalize(query);
-  if (!q) return { units: [], ignored: [] };
+  if (!q) return { units: [], residual: "" };
 
   // 1. Topic の別名と発信者名を、長い一致から順に重ならないように採用する
   const candidates: { m: Matcher; start: number; end: number; text: string }[] = [];
@@ -153,21 +157,34 @@ export function analyzeQuery(query: string, idx: DataIndex = defaultIndex): Quer
       : { kind: "creator", key: unitKey, creators: c.m.creators!, matched: c.text });
   }
 
-  // 2. 残りの語。資料中に実在する語だけを検索語にする（無関係な語で結果を水増ししない）
-  const residual = [...q].map((ch, i) => (taken[i] ? " " : ch)).join("");
-  const ignored: string[] = [];
+  return { units, residual: [...q].map((ch, i) => (taken[i] ? " " : ch)).join("") };
+}
+
+/**
+ * 残りの文字列を検索語に分ける（重複と、短すぎる語・一般語は除く）。
+ * 日本語はひらがな（助詞・送り仮名・活用語尾）で区切り、漢字・カタカナ・英数字の並びを語とみなす
+ * （例：「いつ導入された」→「導入」、「真似していい」→「真似」）
+ */
+export function splitResidualTerms(residual: string): string[] {
+  const out: string[] = [];
   for (const chunk of residual.split(/[\s、。，．,.!?？！「」『』()（）[\]・/:;"'〜~]+/)) {
-    // 日本語はひらがな（助詞・送り仮名・活用語尾）で区切り、漢字・カタカナ・英数字の並びを語とみなす
-    // 例：「いつ導入された」→「導入」、「真似していい」→「真似」
     const terms = hasCjk(chunk) ? chunk.split(/[぀-ゟ]+/) : [chunk];
     for (const term of terms) {
-      if ([...term].length < 2 || EN_STOPWORDS.has(term) || JA_STOPWORDS.has(term)) continue;
-      const key = `term:${term}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      if (containsTerm(p.corpus, term)) units.push({ kind: "term", key, matched: term });
-      else ignored.push(term);
+      if ([...term].length < 2 || EN_STOPWORDS.has(term) || JA_STOPWORDS.has(term) || out.includes(term)) continue;
+      out.push(term);
     }
+  }
+  return out;
+}
+
+export function analyzeQuery(query: string, idx: DataIndex = defaultIndex): QueryAnalysis {
+  const p = prepare(idx);
+  const { units, residual } = matchQueryUnits(query, idx);
+  // 2. 残りの語。資料中に実在する語だけを検索語にする（無関係な語で結果を水増ししない）
+  const ignored: string[] = [];
+  for (const term of splitResidualTerms(residual)) {
+    if (containsTerm(p.corpus, term)) units.push({ kind: "term", key: `term:${term}`, matched: term });
+    else ignored.push(term);
   }
   return { units, ignored };
 }

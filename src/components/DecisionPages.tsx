@@ -8,6 +8,7 @@ import {
   type DecisionComparison, type DecisionCriterion, type DecisionDiagram, type DecisionEvidence, type DecisionExample, type DecisionMatchBasis, type DecisionUnit,
 } from "../data/decisions";
 import { formatSeconds, KIND_LABELS, STATUS_LABELS } from "../data/labels";
+import { KNOWLEDGE_ENTRANCES } from "../data/questionEntrances";
 import type { NoteStatus } from "../data/types";
 import { youtubeAt } from "../lib/links";
 import { normalize } from "../search/search";
@@ -169,16 +170,31 @@ function ComparisonView({ m }: { m: DecisionComparison }) {
   );
 }
 
-/** 知りたいことから探す：自然文の疑問から、試験表示の判断材料へ直接移動する（トップ画面と判断材料の一覧で共通）*/
+/**
+ * 知りたいことから探す（トップ画面と判断材料の一覧で共通）。
+ * ウェーブ操作の疑問は試験表示の判断材料へ直接、そのほかの分野の疑問は、その文を検索語にした検索結果へ移動する
+ */
 export function QuestionEntrances() {
   return (
     <section className="question-entrances" aria-labelledby="question-entrances-heading">
       <h2 id="question-entrances-heading">知りたいことから探す</h2>
-      <p className="muted">ウェーブ操作の判断材料（試験）に移動します。原典の主張と AI の整理を分けて表示し、ゲーム内では検証していません。</p>
+      <p className="muted">原典の主張と AI の整理を分けて表示し、ゲーム内では検証していません。</p>
+      <h3 className="entrance-group">ウェーブ操作（判断材料に移動）</h3>
       <ul className="chips">
         {QUESTION_ENTRANCES.map((e) => (
           <li key={e.unit_id}>
             <a className="chip" href={decisionHref(e.unit_id)}>
+              {e.question_ja}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <h3 className="entrance-group">そのほかの分野（検索結果に移動）</h3>
+      <p className="muted">質問の文で検索し、資料・判断材料・知識ノートを表示します。一致した知識が、質問に正しく答えているとは限りません。</p>
+      <ul className="chips">
+        {KNOWLEDGE_ENTRANCES.map((e) => (
+          <li key={e.question_ja}>
+            <a className="chip" href={homeHref(e.question_ja)}>
               {e.question_ja}
             </a>
           </li>
