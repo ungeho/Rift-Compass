@@ -466,5 +466,32 @@
   "depth_confirmed": "deep",
   "method": "本文の全体（WordPress の公開 API。図は未確認）",
   "reason": "北川楓（26.15）。0:55に敵の青バフ上の茂みに入り、青の削れ方で敵の有無を判断、青の体力1000〜800（1:04〜1:08）で突っ込む、事前にスマイト計算とレベル2のスキルを決める、成功後・敵がいない場合の進め方。知識11件（T1〜T11）"
+ },
+ "https://lolgaren.com/cal": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "金銭効率の調査（docs/experiments/gold-efficiency-and-new-sources.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。図は未確認）",
+  "reason": "北川楓（パッチ13.21）。スノーボール時に挟むアイテム（女神の涙・ダークシール・カル）、アイテム枠6つの圧迫、ダークシールと女神の涙の両立の難しさ、チャンピオン別（カサディン・ブラッドミア）。GE11"
+ },
+ "https://lolgaren.com/14-8midryze": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "金銭効率の調査（docs/experiments/gold-efficiency-and-new-sources.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。図は未確認）",
+  "reason": "北川楓（パッチ14.8）。ライズはダブルキルなどがない限りダークシールを挟まず、コアアイテムを急ぐ（機会費用）。GE12"
+ },
+ "https://lolgaren.com/13-20dran": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "金銭効率の調査（docs/experiments/gold-efficiency-and-new-sources.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。統計の図は未確認）",
+  "reason": "北川楓（パッチ13.20）。ドランシリーズとダークシールの売却の損（ドランブレードを先に売ると180〜270ゴールド損）、ドランリングとダークシールの比較、当時の換算（AP 1＝21.75ゴールド）。GE13・GE14"
  }
 }

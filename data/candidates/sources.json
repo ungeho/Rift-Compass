@@ -110,5 +110,13 @@
     "language": "en",
     "delay_ms": 1000,
     "notes": "英語の攻略ブログ（LoL Theory。アイテム推奨アプリの運営元のブログ）。robots.txt は /ghost/ などを除き許可（2026-11-01 確認）。sitemap-posts.xml に144件。記事ページに article:author がないため、候補の発信者はサイト名「LoL Theory」とし、記事ごとの著者は本文を確認したときに reviews.json に書く"
+  },
+  {
+    "id": "yt-wataneko",
+    "kind": "youtube-channel",
+    "handle": "@LoLwataneko",
+    "creator": { "name": "watanekoLoL", "kind": "streamer" },
+    "language": "ja",
+    "notes": "2026-11-01 追加。チャンネルの説明（本人の記載）：元LJL解説、最高レート グランドマスター、得意ロール MID/JG/BOT/SUP/TOP。経歴は本人の記載のみで未確認。一覧ページは新しい順の約30本だけ"
   }
 ]
