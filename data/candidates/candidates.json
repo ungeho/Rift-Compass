@@ -7512,10 +7512,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "北川楓（26.15）。0:55に敵の青バフ上の茂みに入り、青の削れ方で敵の有無を判断、青の体力1000〜800（1:04〜1:08）で突っ込む、事前にスマイト計算とレベル2のスキルを決める、成功後・敵がいない場合の進め方。知識11件（T1〜T11）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "excerpt_features": {
    "roles": [],
    "topic_ids": [
@@ -20400,7 +20400,7 @@
    "reason": "既存資料 res-lg-mpbhg と同じ URL・動画",
    "by": "rule"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "medium",
   "categories": [
    "ミッド",
    "初心者向け",
@@ -32145,10 +32145,10 @@
   ],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "北川楓（26.13）。シンドラのスキル・射程・CD・怒りの破片、攻撃パターン、カウンター（フィズ・ブラッドミア・ゼラス）のルーン・スペル・アイテムと戦い方。数値は未照合。知識13件（S1〜S13）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "excerpt_features": {
    "roles": [
     "mid"
@@ -37124,10 +37124,10 @@
   ],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "ゆにか（2025年）。ジャングルの中盤：ファームの目安（10分60〜80CS、20分120〜150CS）、勝ち負けでキャッチとファームの比重を変える、相手が来る場所で待つ、オブジェクトにつなげる。アタカンは26.1で削除（旧仕様）。知識7件（Q1〜Q7）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "medium",
   "categories": [
    "ジャングル",
    "初心者向け"
@@ -121239,10 +121239,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "著者 Griffin Wood。ロームするロール、前提（押す・相手が見える・CD・味方）、機会費用（ウェーブ・プレート・キルの経験値の表）、時機、相手のロームへの対応、誘い、しないとき。知識15件（P1〜P15）",
+   "by": "review"
   },
-  "depth_confirmed": null
+  "depth_confirmed": "deep"
  },
  {
   "key": "https://blog.loltheory.gg/slow-push-lol",
@@ -121353,10 +121353,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "著者 Griffin Wood（記事ページの表示）。スノーボールの連鎖、スノーボール型とスケール型、シャットダウンの仕組み（V26.03 と明記、未照合）、有利の広げ方と返し方。「6:00のグラブ・ドラゴン」は26.1時点の公式と食い違う。知識11件（O1〜O11）",
+   "by": "review"
   },
-  "depth_confirmed": null
+  "depth_confirmed": "deep"
  },
  {
   "key": "https://blog.loltheory.gg/split-push-lol",

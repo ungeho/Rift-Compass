@@ -412,5 +412,59 @@
   "depth_confirmed": "deep",
   "method": "本文の全体（WordPress の公開 API。図は未確認）",
   "reason": "北川楓（26.10リライト、26.20の記述あり）。クリティカル200%・バーサーカー30%で後半も強くなった理由、ルーン・スペル・スキルオーダー・コンボ・ビルド、ドミニクとモータルの計算。知識18件（M1〜M18）"
+ },
+ "https://blog.loltheory.gg/snowballing-lol": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第3回（docs/experiments/knowledge-extraction-batch3.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（英語。図は未確認）",
+  "reason": "著者 Griffin Wood（記事ページの表示）。スノーボールの連鎖、スノーボール型とスケール型、シャットダウンの仕組み（V26.03 と明記、未照合）、有利の広げ方と返し方。「6:00のグラブ・ドラゴン」は26.1時点の公式と食い違う。知識11件（O1〜O11）"
+ },
+ "https://blog.loltheory.gg/roaming-lol": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第3回（docs/experiments/knowledge-extraction-batch3.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（英語。図は未確認）",
+  "reason": "著者 Griffin Wood。ロームするロール、前提（押す・相手が見える・CD・味方）、機会費用（ウェーブ・プレート・キルの経験値の表）、時機、相手のロームへの対応、誘い、しないとき。知識15件（P1〜P15）"
+ },
+ "https://lol-guide.com/articles/mjahs": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第3回（docs/experiments/knowledge-extraction-batch3.md）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の全体（図は未確認）",
+  "reason": "ゆにか（2025年）。ジャングルの中盤：ファームの目安（10分60〜80CS、20分120〜150CS）、勝ち負けでキャッチとファームの比重を変える、相手が来る場所で待つ、オブジェクトにつなげる。アタカンは26.1で削除（旧仕様）。知識7件（Q1〜Q7）"
+ },
+ "https://lol-guide.com/articles/mpbhg": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第3回（docs/experiments/knowledge-extraction-batch3.md）",
+  "depth_confirmed": "medium",
+  "method": "本文の全体（図は未確認）",
+  "reason": "がりある（2025年）。正式資料 res-lg-mpbhg（判断材料には未使用）。中盤のミッド：主導権＝先に押せる状態、チャンピオンがサイドと集団戦のどちらに強いかで単独か合流かを決める、メイジとアサシンの違い、オブジェクトの最低1分前。知識9件（R1〜R9）",
+  "registered_as": "res-lg-mpbhg"
+ },
+ "https://lolgaren.com/syndra-counter": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第3回（docs/experiments/knowledge-extraction-batch3.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。統計の図は未確認）",
+  "reason": "北川楓（26.13）。シンドラのスキル・射程・CD・怒りの破片、攻撃パターン、カウンター（フィズ・ブラッドミア・ゼラス）のルーン・スペル・アイテムと戦い方。数値は未照合。知識13件（S1〜S13）"
+ },
+ "https://lolgaren.com/blue-buff-invade": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第3回（docs/experiments/knowledge-extraction-batch3.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。図は未確認）",
+  "reason": "北川楓（26.15）。0:55に敵の青バフ上の茂みに入り、青の削れ方で敵の有無を判断、青の体力1000〜800（1:04〜1:08）で突っ込む、事前にスマイト計算とレベル2のスキルを決める、成功後・敵がいない場合の進め方。知識11件（T1〜T11）"
  }
 }
