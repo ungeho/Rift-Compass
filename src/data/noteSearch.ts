@@ -133,6 +133,9 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     units.push({ kind: "term", key: `term:${term}`, matched: term });
   };
   for (const term of splitResidualTerms(residual)) {
+    // 「対策」「使う側」などの視点の語は、注意（cues.side）で扱い、照合の条件にしない
+    // （ノートの本文に「対策側：」と書いたノートだけが残り、仕様のノートが落ちるのを防ぐ）
+    if (SIDE.test(term)) continue;
     if (containsTerm(noteCorpus, term)) push(term);
     else {
       // 日本語の複合語（例：「タワープレート」）は、ノートの記述にある2語に分けられるときだけ、2語として照合する
