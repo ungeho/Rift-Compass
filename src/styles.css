@@ -230,3 +230,6 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .explore-list { display: grid; gap: 16px; padding-left: 1.4em; margin: 12px 0; }
 .explore-list > li { min-width: 0; }
 .explore-summary { display: grid; gap: 6px; }
+.note-summary { display: grid; gap: 4px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.note-summary p { margin: 0; }
+.note-related ul { padding-left: 1.2em; }

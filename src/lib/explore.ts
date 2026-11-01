@@ -1,7 +1,7 @@
 // 知識の散策（試験）の抽選ロジック。画面やデータの読み込みから切り離し、乱数を注入して再現できるようにする。
 // 距離は Topic の構造による近似で、内容の近さ・遠さを保証しない。推薦や正しさの判定もしない。
 
-export type ExploreKind = "resource" | "decision";
+export type ExploreKind = "resource" | "decision" | "note";
 export type ExploreGroup = "near" | "middle" | "far";
 export const GROUPS: ExploreGroup[] = ["near", "middle", "far"];
 
@@ -10,7 +10,7 @@ export interface ExploreItem {
   kind: ExploreKind;
   id: string;
   topicIds: string[];
-  /** 同じ種類の知識への明示的な関係（判断材料の relations など）*/
+  /** 同じ種類の知識への明示的な関係（判断材料・知識ノートの relations など）*/
   relatedIds?: string[];
 }
 
@@ -278,6 +278,44 @@ export function pickMany(args: { items: ExploreItem[]; topicId: string; distance
   }
   const breakdown = Object.fromEntries(GROUPS.map((g) => [g, { planned: planned[g], drawn: take[g], available: available(g) }])) as GroupBreakdown;
   return { requested: count, picks, breakdown, eligible, short: picks.length < count, redistributed };
+}
+
+/** Topic を限定しない全体からの抽選の結果。距離（近い・中間・遠い）は持たない */
+export interface AllResult {
+  requested: number;
+  picks: ExploreItem[];
+  /** 抽選の対象（除外を除く）の件数 */
+  available: number;
+  short: boolean;
+  /** 表示済みの記録（1件ずつ見るとき）を使い切ったので、記録を空にしてから選んだ（直前の1件は除く）*/
+  cycled: boolean;
+}
+
+/**
+ * Topic を限定しない全体から、count 件を重複なしで選ぶ（散策の「すべて」）。
+ * 距離の分類（classify）と割合（groupWeights）は使わない。件数の多い Topic に偏らないよう、
+ * グループの中の抽選と同じ pickInGroup（先頭の Topic ごとに均等）で1件ずつ選ぶ。
+ * exclude は1件ずつ見るときの表示済みの記録。除外で候補がなくなったら、記録を空にして一巡し直す（直前の1件は除く）。
+ */
+export function pickAll(args: { items: ExploreItem[]; count: number; rng: () => number; exclude?: string[] }): AllResult {
+  const { items, count, rng } = args;
+  let exclude = new Set(args.exclude ?? []);
+  let cycled = false;
+  let pool = items.filter((x) => !exclude.has(keyOf(x)));
+  if (pool.length === 0 && items.length > 0) {
+    cycled = true;
+    const last = args.exclude?.[args.exclude.length - 1];
+    exclude = new Set(last && items.length > 1 ? [last] : []);
+    pool = items.filter((x) => !exclude.has(keyOf(x)));
+  }
+  const available = pool.length;
+  const picks: ExploreItem[] = [];
+  while (picks.length < count && pool.length > 0) {
+    const x = pickInGroup(pool, rng);
+    picks.push(x);
+    pool.splice(pool.indexOf(x), 1);
+  }
+  return { requested: count, picks, available, short: picks.length < count, cycled };
 }
 
 export { keyOf as exploreKey };

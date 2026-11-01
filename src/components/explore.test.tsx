@@ -3,10 +3,11 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { index, isPublic } from "../data/dataset";
 import { decisionById, SHOWCASE_IDS } from "../data/decisions";
-import { explorePool, exploreTopics } from "../data/explorePool";
-import { classify, exploreKey, pickMany, pickNext, type PickResult } from "../lib/explore";
-import { decisionHref, exploreHref, parseHash, resourceHref } from "../router";
-import { ExploreCard, ExplorePage, ManySummary } from "./ExplorePage";
+import { explorePool, exploreTopics, isPublicNote, publicNotes } from "../data/explorePool";
+import { classify, exploreKey, pickAll, pickMany, pickNext, type PickResult } from "../lib/explore";
+import { decisionHref, EXPLORE_ALL, exploreHref, noteHref, parseHash, resourceHref } from "../router";
+import { ExploreCard, ExplorePage, ManySummary, NoteSummary } from "./ExplorePage";
+import { NotePage } from "./NotePage";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const seq = (values: number[]) => {
@@ -153,5 +154,137 @@ describe("まとめて抽選（20・50・100件）", () => {
     const m = text(renderToStaticMarkup(<ManySummary many={fake} />));
     expect(m).toContain("近い 9件・中間 3件・遠い 8件");
     expect(m).toContain("割合どおりの配分（近い 5件・中間 10件・遠い 5件）に対して候補が足りない距離があったため");
+  });
+});
+
+describe("知識ノートを散策の対象にする", () => {
+  const notes = index.data.knowledge_notes;
+  const poolNotes = explorePool.filter((x) => x.kind === "note");
+
+  it("根拠が1件以上あり、根拠の資料がすべて公開対象のノートだけを対象にする（件数はデータから決める）", () => {
+    const expected = notes.filter((n) => {
+      const ev = index.data.evidence.filter((e) => e.note_id === n.id);
+      return ev.length > 0 && ev.every((e) => isPublic(index.resourceById.get(e.resource_id)!));
+    });
+    expect(poolNotes.map((x) => x.id).sort()).toEqual(expected.map((n) => n.id).sort());
+    expect(publicNotes).toHaveLength(expected.length);
+    // 根拠のないノート・公開していない資料を根拠に含むノートは対象外
+    expect(isPublicNote(index.noteById.get("kn-offense-as-defense")!)).toBe(false);
+    expect(isPublicNote(index.noteById.get("kn-level2-minion-count")!)).toBe(false);
+    // 追加した6件はすべて対象
+    for (const id of ["kn-diagonal-objective-trade", "kn-diagonal-trade-exceptions", "kn-turret-plates-permanent-261", "kn-turret-plates-fell-14min-pre-261", "kn-objective-prep-1min", "kn-immobile-mage-not-alone"]) {
+      expect(poolNotes.map((x) => x.id)).toContain(id);
+    }
+    // 散策の対象全体で、同じ種類・ID の重複はない
+    const keys = explorePool.map((x) => exploreKey(x));
+    expect(new Set(keys).size).toBe(keys.length);
+    expect(explorePool).toHaveLength(index.publicResources.length + SHOWCASE_IDS.length + expected.length);
+    // 関係は公開するノートどうしだけ
+    for (const x of poolNotes) for (const r of x.relatedIds ?? []) expect(poolNotes.map((y) => y.id)).toContain(r);
+  });
+
+  it("Topic の候補数にノートを含め、まとめて抽選しても重複しない", () => {
+    const t = exploreTopics().find((x) => x.id === "cat-macro")!;
+    expect(t.nearCount).toBe(classify(explorePool, "cat-macro", index).near.length);
+    const r = pickMany({ items: explorePool, topicId: "cat-macro", distance: 50, count: 100, graph: index, rng: seq([0.21, 0.77, 0.43]) });
+    const ks = r.picks.map((p) => exploreKey(p.item));
+    expect(new Set(ks).size).toBe(ks.length);
+    expect(r.picks.some((p) => p.item.kind === "note")).toBe(true);
+  });
+
+  it("一覧のカード：知識ノートと区別し、主張・種類・状態・ゲーム内未検証・時期の注意・詳細へのリンクを示す", () => {
+    const base = { group: "near" as const, fellBack: false, cycled: false, seen: [] };
+    const card = (id: string) => text(renderToStaticMarkup(<ExploreCard result={{ ...base, item: { kind: "note", id, topicIds: [] } } as PickResult} topicLabel="X" />));
+    const html = renderToStaticMarkup(<ExploreCard result={{ ...base, item: { kind: "note", id: "kn-turret-plates-fell-14min-pre-261", topicIds: [] } } as PickResult} topicLabel="X" />);
+    expect(html).toContain(`href="${noteHref("kn-turret-plates-fell-14min-pre-261")}"`);
+    const old = card("kn-turret-plates-fell-14min-pre-261");
+    for (const s of ["知識ノート", "仕様", "資料に記載あり", "パッチ26.1より前は", "ゲーム内での検証：未実施", "現行では適用できない（仕様変更）", "詳細と根拠を見る"]) expect(old).toContain(s);
+    const cur = card("kn-turret-plates-permanent-261");
+    expect(cur).toContain("時期：26.1");
+    expect(cur).toContain("現行環境への適用可能性：未確認");
+    expect(cur).not.toContain("現行環境でも確認済み");
+    const emp = card("kn-diagonal-objective-trade");
+    expect(emp).toContain("経験則・解説者の主張");
+    expect(emp).toContain("根拠の資料 3件");
+    // 公開しないノートは出さない
+    expect(card("kn-offense-as-defense")).toContain("この知識は表示の対象にありません");
+  });
+
+  it("詳細（#/note/<id>）：URL で開け、NoteCard で根拠の資料と確認箇所へ進め、関係するノートへつながる", () => {
+    expect(parseHash(noteHref("kn-diagonal-objective-trade"))).toEqual({ name: "note", id: "kn-diagonal-objective-trade" });
+    const html = renderToStaticMarkup(<NotePage id="kn-diagonal-objective-trade" />);
+    const t = text(html);
+    for (const r of ["res-lg-xcppa", "res-lg-jdgrp", "res-lg-pdvmw"]) expect(html).toContain(`href="${resourceHref(r)}"`);
+    expect(t).toContain("オブジェクトの確保の根拠にする"); // 確認箇所
+    expect(t).toContain("ゲーム内での検証：未実施");
+    expect(t).toContain("同じ著者（がりある）で、独立した裏付けではない");
+    expect(html).toContain(`href="${noteHref("kn-diagonal-trade-exceptions")}"`);
+    expect(t).toContain("成立条件・例外");
+    // 旧仕様のノート：現行の仕様として表示しない
+    const old = text(renderToStaticMarkup(<NotePage id="kn-turret-plates-fell-14min-pre-261" />));
+    expect(old).toContain("現行では適用できない（仕様変更）");
+    // 公開しないノート・存在しない ID は出さない
+    for (const id of ["kn-offense-as-defense", "kn-level2-minion-count", "no-such-note"]) {
+      expect(text(renderToStaticMarkup(<NotePage id={id} />))).toContain("知識ノートが見つかりません");
+    }
+  });
+});
+
+describe("散策の「すべて」（Topic を限定しない）", () => {
+  it("URL で共有でき、予約語 all は Topic の ID と重ならない", () => {
+    expect(EXPLORE_ALL).toBe("all");
+    expect(index.data.topics.some((t) => t.id === EXPLORE_ALL)).toBe(false);
+    expect(parseHash(exploreHref(EXPLORE_ALL, 30, 50))).toEqual({ name: "explore", topic: "all", distance: 30, count: 50 });
+    expect(exploreHref(EXPLORE_ALL, 30)).toBe("#/explore?topic=all&d=30");
+  });
+  it("画面：「すべて」を選べ、距離のスライダーを無効にし、割合の代わりに理由と種類ごとの件数を示す", () => {
+    const html = renderToStaticMarkup(<ExplorePage topic="all" distance={30} />);
+    const t = text(html);
+    expect(html).toMatch(/<option value="all" selected="">すべて（Topic を限定しない・\d+件）<\/option>/);
+    expect(html).toMatch(/<input[^>]*id="explore-distance"[^>]*disabled=""/);
+    expect(t).toContain("「すべて」は特定の Topic を選ばないため、Topic からの距離がありません");
+    expect(t).not.toContain("抽選の割合：近い");
+    const res = explorePool.filter((x) => x.kind === "resource").length;
+    const dec = explorePool.filter((x) => x.kind === "decision").length;
+    const nts = explorePool.filter((x) => x.kind === "note").length;
+    expect(t).toContain(`対象：${explorePool.length}件。教材 ${res}件・判断材料 ${dec}件・知識ノート ${nts}件`);
+    expect(html).not.toMatch(/<button[^>]*disabled[^>]*>20件を抽選する/);
+    expect(t).toContain("全体からまとめて表示します");
+    // 特定の Topic の画面は従来どおり（割合を示し、スライダーは有効）
+    const topicHtml = renderToStaticMarkup(<ExplorePage topic="freeze" distance={30} />);
+    expect(text(topicHtml)).toContain("抽選の割合：近い");
+    expect(topicHtml).not.toMatch(/<input[^>]*id="explore-distance"[^>]*disabled=""/);
+  });
+  it("実データ：全体から100件を重複なしで選び、教材・判断材料・知識ノートが含まれる。距離は作らない", () => {
+    const r = pickAll({ items: explorePool, count: 100, rng: seq([0.11, 0.62, 0.37, 0.88, 0.05]) });
+    expect(r.picks).toHaveLength(Math.min(100, explorePool.length));
+    expect(new Set(r.picks.map(exploreKey)).size).toBe(r.picks.length);
+    for (const k of ["resource", "decision", "note"]) expect(r.picks.some((x) => x.kind === k)).toBe(true);
+    const all = pickAll({ items: explorePool, count: explorePool.length + 50, rng: seq([0.3]) });
+    expect(all.picks).toHaveLength(explorePool.length);
+    expect(all.short).toBe(true);
+    // 「すべて」のカードは距離を表示せず、理由を「全体から」とする
+    const c = text(renderToStaticMarkup(<ExploreCard result={{ item: r.picks[0], group: "near", fellBack: false, cycled: false, seen: [] }} topicLabel="" scope="all" />));
+    expect(c).toContain("Topic を限定しない全体から選びました");
+    expect(c).not.toContain("距離：");
+  });
+});
+
+describe("知識ノートの表示の一貫性", () => {
+  it("ゲーム内で検証した根拠が将来加わったら、未実施と固定表示しない", () => {
+    const n = index.noteById.get("kn-turret-plates-permanent-261")!;
+    const tested = text(renderToStaticMarkup(<NoteSummary note={{ ...n, last_checked_patch: "26.21" }} evidence={[{ id: "ev-x", note_id: n.id, resource_id: "res-riot-patch-26-1-en", evidence_type: "in_game_test", locator: null, summary_ja: "x", checked_level: "L3", checked_at: "2026-11-01" }]} />));
+    expect(tested).toContain("ゲーム内での検証：パッチ 26.21 で検証");
+    expect(text(renderToStaticMarkup(<NoteSummary note={n} />))).toContain("ゲーム内での検証：未実施");
+  });
+  it("公開の条件は、散策・詳細・関係するノートのリンクで同じ", () => {
+    const pool = new Set(explorePool.filter((x) => x.kind === "note").map((x) => x.id));
+    for (const n of index.data.knowledge_notes) {
+      const shown = !text(renderToStaticMarkup(<NotePage id={n.id} />)).includes("知識ノートが見つかりません");
+      expect(shown).toBe(pool.has(n.id));
+      if (!shown) continue;
+      const html = renderToStaticMarkup(<NotePage id={n.id} />);
+      for (const m of html.matchAll(/href="#\/note\/([^"]+)"/g)) expect(pool.has(decodeURIComponent(m[1]))).toBe(true);
+    }
   });
 });

@@ -5,7 +5,8 @@
 //   #/topic/<id>    Topic 詳細
 //   #/decisions?topic=…  判断材料（試験）の一覧（Topic で絞り込み。compare=… で資料間の比較を開く）
 //   #/decision/<id>      判断材料（試験）の詳細（?example=… で、その具体例の位置へ移動する）
-//   #/explore?topic=…&d=…&n=…  知識の散策（試験）。d は興味からの距離（0〜100）、n は1回に抽選する件数（1・20・50・100。既定20）
+//   #/note/<id>     知識ノートの詳細（散策の対象になる、根拠がすべて公開資料のノート）
+//   #/explore?topic=…&d=…&n=…  知識の散策（試験）。topic=all は Topic を限定しない「すべて」。d は興味からの距離（0〜100）、n は1回に抽選する件数（1・20・50・100。既定20）
 import { useSyncExternalStore } from "react";
 import { FILTER_KEYS, type Filters } from "./search/search";
 
@@ -16,10 +17,13 @@ export type Route =
   | { name: "topics" }
   | { name: "decisions"; topic: string; compare?: string }
   | { name: "decision"; id: string; example?: string }
+  | { name: "note"; id: string }
   | { name: "explore"; topic: string; distance: number; count: ExploreCount };
 
 /** 散策の距離の既定値（近い寄り）*/
 export const DEFAULT_EXPLORE_DISTANCE = 30;
+/** 散策で Topic を限定しない「すべて」を表す topic の値（Topic の ID には使わない予約語）*/
+export const EXPLORE_ALL = "all";
 /** 散策で1回に抽選する件数の選択肢と既定値 */
 export const EXPLORE_COUNTS = [1, 20, 50, 100] as const;
 export type ExploreCount = (typeof EXPLORE_COUNTS)[number];
@@ -40,6 +44,7 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "r" && seg[1]) return { name: "resource", id: seg[1] };
   if (seg[0] === "topic" && seg[1]) return { name: "topic", id: seg[1] };
   if (seg[0] === "topics") return { name: "topics" };
+  if (seg[0] === "note" && seg[1]) return { name: "note", id: seg[1] };
   const params = new URLSearchParams(queryString);
   if (seg[0] === "decision" && seg[1]) {
     const example = params.get("example");
@@ -71,6 +76,7 @@ export function homeHref(q: string, filters: Filters = {}): string {
 
 export const resourceHref = (id: string) => `#/r/${encodeURIComponent(id)}`;
 export const topicHref = (id: string) => `#/topic/${encodeURIComponent(id)}`;
+export const noteHref = (id: string) => `#/note/${encodeURIComponent(id)}`;
 export function decisionsHref(topic = "", compare = ""): string {
   const params = new URLSearchParams();
   if (topic) params.set("topic", topic);

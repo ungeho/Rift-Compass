@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { classify, exploreKey, groupWeights, pickInGroup, pickMany, pickNext, type ExploreItem, type TopicGraph } from "./explore";
+import { classify, exploreKey, groupWeights, pickAll, pickInGroup, pickMany, pickNext, type ExploreItem, type TopicGraph } from "./explore";
 
 /** 再現できる乱数（mulberry32）*/
 function seeded(seed: number): () => number {
@@ -203,5 +203,48 @@ describe("まとめて抽選（pickMany）", () => {
     const e = pickMany({ items: [], topicId: "a1", distance: 50, count: 20, graph, rng: seeded(1) });
     expect(e.picks).toHaveLength(0);
     expect(e.short).toBe(true);
+  });
+});
+
+describe("Topic を限定しない全体からの抽選（pickAll）", () => {
+  const pool: ExploreItem[] = [
+    ...Array.from({ length: 30 }, (_, i) => ({ kind: "resource" as const, id: `r${i}`, topicIds: ["a1"] })),
+    ...Array.from({ length: 5 }, (_, i) => ({ kind: "decision" as const, id: `d${i}`, topicIds: ["b1"] })),
+    ...Array.from({ length: 5 }, (_, i) => ({ kind: "note" as const, id: `k${i}`, topicIds: ["a2"] })),
+  ];
+  it("要求件数まで重複なしに選び、全体より多く要求したら全体の件数だけ返す", () => {
+    for (const n of [1, 20, 40]) {
+      const r = pickAll({ items: pool, count: n, rng: seeded(n) });
+      expect(r.picks).toHaveLength(n);
+      expect(new Set(r.picks.map(exploreKey)).size).toBe(n);
+      expect(r.short).toBe(false);
+    }
+    const big = pickAll({ items: pool, count: 100, rng: seeded(1) });
+    expect(big.picks).toHaveLength(40);
+    expect(big.short).toBe(true);
+    expect(big.available).toBe(40);
+  });
+  it("件数の多い Topic に偏らない（少ない種類・Topic も序盤から出る）", () => {
+    // a1 が30件でも、先頭の Topic ごとに均等に選ぶので、最初の6件に b1・a2 が平均で半分以上入る
+    let other = 0;
+    for (let s = 0; s < 200; s++) other += pickAll({ items: pool, count: 6, rng: seeded(s) }).picks.filter((x) => x.topicIds[0] !== "a1").length;
+    expect(other / (200 * 6)).toBeGreaterThan(0.5);
+  });
+  it("1件ずつ：表示済みを除き、使い切ったら知らせて一巡し直し、直前の1件は続けて出さない", () => {
+    const small = pool.slice(0, 3);
+    let seen: string[] = [];
+    const shown: string[] = [];
+    const cycled: boolean[] = [];
+    for (let i = 0; i < 7; i++) {
+      const r = pickAll({ items: small, count: 1, rng: seeded(i), exclude: seen });
+      const k = exploreKey(r.picks[0]);
+      seen = r.cycled ? [seen[seen.length - 1], k] : [...seen, k];
+      shown.push(k);
+      cycled.push(r.cycled);
+    }
+    expect(new Set(shown.slice(0, 3)).size).toBe(3);
+    expect(cycled[3]).toBe(true);
+    for (let i = 1; i < shown.length; i++) expect(shown[i]).not.toBe(shown[i - 1]);
+    expect(pickAll({ items: [], count: 20, rng: seeded(1) }).picks).toHaveLength(0);
   });
 });
