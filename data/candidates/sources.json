@@ -67,7 +67,7 @@
     "fetch_pages": false,
     "creator": { "name": "Riot Games", "kind": "official" },
     "language": "ja",
-    "notes": "公式サイトの日本語のパッチノート。robots.txt のサイトマップ（sitemap_index.xml → ja-jp/sitemap_loc.xml）から URL だけを記録する（ページは取得しない）。題名・公開日は未取得"
+    "notes": "公式サイトの日本語のパッチノート。robots.txt のサイトマップ（sitemap_index.xml → ja-jp/sitemap_loc.xml）から URL だけを記録する（ページは取得しない）。題名・公開日は未取得。仕様・変更履歴を確かめる原典として使う。必要なパッチだけ、公式ページから og:title（題名。例「Patch 26.12 Notes」）と JSON-LD の datePublished（公開日。例 2026-06-09）を取得できることを確認した（2026-11-01）。ページ内のほかの publishedAt は関連記事の日付なので使わない"
   },
   {
     "id": "yt-enty",

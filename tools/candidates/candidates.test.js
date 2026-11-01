@@ -4,7 +4,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("fs");
 const path = require("path");
-const { youtubeId, normalizeUrl, candidateKey, titleSimilarity, mergeCandidates, classify, topicMatcher, structureOf, splitTitleTags, urlOnlyItems, stageOf, stageCounts, STAGES } = require("./lib");
+const { youtubeId, normalizeUrl, candidateKey, titleSimilarity, mergeCandidates, classify, topicMatcher, structureOf, splitTitleTags, urlOnlyItems, stageOf, stageCounts, STAGES, reviewQueue } = require("./lib");
 
 const dataset = require("../../data/sample-resources.json");
 const ctx = (extra = {}) => ({ now: "2026-10-28", resources: dataset.resources, topics: dataset.topics, reviews: {}, ...extra });
@@ -232,4 +232,63 @@ test("収録の段階：排他的な集計（各候補は1回）と累積（そ�
   assert.deepEqual(Object.values(exclusive), [1, 1, 1, 1, 1]);
   assert.deepEqual(STAGES.map((s) => cumulative[s]), [5, 4, 3, 2, 1]);
   assert.equal(Object.values(exclusive).reduce((a, b) => a + b, 0), list.length);
+});
+
+// ---------- 全ロール・全チャンピオンを対等に扱う（2026-11-01 の方針） ----------
+
+test("ロール・チャンピオンは保留の理由にしない：他ロール・ロール不明でも、深さの推定で振り分ける", () => {
+  const merged = (title, extra = {}) => mergeCandidates([], [item("https://example.com/" + encodeURIComponent(title), { title, ...extra })], ctx())[0];
+  const top = merged("トップのダリウスで対面ごとにトレードする理由と条件");
+  assert.equal(top.tier, "P3"); // 分類情報としては残す
+  assert.deepEqual(top.roles, ["top"]);
+  assert.equal(top.triage.status, "candidate");
+  const support = merged("サポートのワードを置く判断の基準とタイミング");
+  assert.equal(support.triage.status, "candidate");
+  const unknown = merged("この状況で何を優先するべきか、その理由");
+  assert.equal(unknown.tier, "unclassified");
+  assert.equal(unknown.triage.status, "candidate");
+  for (const c of [top, support, unknown]) assert.doesNotMatch(c.triage.reason, /他ロール|判定できない/);
+});
+
+test("チャンピオン別のガイドの語は減点しない。一覧・速報の語は減点する", () => {
+  const m = topicMatcher(dataset.topics);
+  const t = (title) => classify({ title, url: "https://example.com/x" }, m);
+  for (const title of ["ジャングルダイアナのビルドガイド【レベル3でリコールしても間に合う】", "ヤスオ完全攻略", "リヴェンのコンボ"]) {
+    assert.ok(!t(title).depth_signals.includes("題名が一覧・速報型"), title);
+  }
+  assert.ok(t("最新ティアリスト").depth_signals.includes("題名が一覧・速報型"));
+});
+
+test("確認の順番：深さの推定が高い順で、同じ深さではロールごとに交互に並べる（ロールで優劣をつけない）", () => {
+  const c = (key, depth, roles) => ({ key, depth_estimate: depth, roles });
+  const list = [c("a1", "high", ["mid"]), c("a2", "high", ["mid"]), c("a3", "high", ["mid"]), c("b1", "high", ["top"]), c("s1", "high", ["support"]), c("z1", "medium", ["mid"]), c("n1", "high", [])];
+  const order = reviewQueue(list).map((x) => x.key);
+  assert.deepEqual(order.slice(0, 4).sort(), ["a1", "b1", "n1", "s1"]); // 最初の一巡で、各ロールから1件ずつ
+  assert.equal(order[order.length - 1], "z1"); // 深さの推定が低い方は後
+  assert.equal(order.length, list.length);
+});
+
+test("確認の順番：同じ深さでは情報源ごとに交互に並べ、各情報源の中ではロールごとに交互に並べる（件数の上限なし）", () => {
+  const c = (key, src, roles, depth = "high") => ({ key, sources: [src], roles, depth_estimate: depth });
+  const list = [c("g1", "lolgaren", ["top"]), c("g2", "lolgaren", ["top"]), c("g3", "lolgaren", ["mid"]), c("l1", "lol-guide", ["mid"]), c("l2", "lol-guide", ["mid"]), c("y1", "yt-el", ["jungle"]), c("m1", "lolgaren", [], "medium")];
+  const order = reviewQueue(list);
+  assert.deepEqual(order.slice(0, 3).map((x) => x.sources[0]).sort(), ["lol-guide", "lolgaren", "yt-el"]); // 最初の一巡で各情報源から1件
+  const gs = order.filter((x) => x.sources[0] === "lolgaren" && x.depth_estimate === "high").map((x) => x.roles[0]);
+  assert.deepEqual(gs.slice(0, 2).sort(), ["mid", "top"]); // 情報源の中ではロールが交互
+  assert.equal(order.length, list.length); // 上限で落とさない
+  assert.equal(order[order.length - 1].key, "m1"); // 深さの推定が高い方が先
+  assert.deepEqual(reviewQueue(list).map((x) => x.key), order.map((x) => x.key)); // 決定的
+});
+
+test("URL だけの候補は「浅い」とせず、別の理由で保留する", () => {
+  const [u] = mergeCandidates([], urlOnlyItems(["https://www.example.com/ja-jp/news/patch-26-3-notes/"], { language: "ja" }).map((x) => ({ ...x, source: "s" })), ctx());
+  assert.equal(u.triage.status, "hold");
+  assert.match(u.triage.reason, /URL のみ/);
+  assert.doesNotMatch(u.triage.reason, /深さの推定が低い/);
+});
+
+test("付け直しは候補の並びを変えない（既存の候補の順を保つ）", () => {
+  const items = ["https://example.com/z", "https://example.com/a", "https://example.com/m"].map((u) => item(u));
+  const out = mergeCandidates([], items, ctx());
+  assert.deepEqual(out.map((c) => c.url), items.map((x) => x.url));
 });

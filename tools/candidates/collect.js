@@ -13,7 +13,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const { mergeCandidates, annotate, structureOf, splitTitleTags, TIER_ORDER, urlOnlyItems, stageCounts } = require("./lib");
+const { mergeCandidates, annotate, structureOf, splitTitleTags, reviewQueue, urlOnlyItems, stageCounts } = require("./lib");
 
 const ROOT = path.join(__dirname, "..", "..");
 const DIR = path.join(ROOT, "data", "candidates");
@@ -226,7 +226,8 @@ function report() {
   console.log(`候補 ${list.length}件`);
   show("情報源", count((c) => c.sources.join("+")));
   show("振り分け", count((c) => `${c.triage.status}(${c.triage.by})`));
-  show("優先区分", count((c) => c.tier));
+  show("対象範囲の区分（旧方針の優先区分。順番・保留には使わない）", count((c) => c.tier));
+  show("ロール", count((c) => (c.roles?.length ? c.roles.join("+") : "判定なし")));
   show("深さの推定", count((c) => c.depth_estimate));
   show("深さの確認", count((c) => c.depth_confirmed ?? "未確認"));
   show("発信者", count((c) => c.creator?.name ?? "不明"));
@@ -245,9 +246,10 @@ function report() {
   show("保留・除外の理由", count((c) => (c.triage.status === "candidate" ? null : c.existing_resource_id ? "既存資料と同じ URL・動画" : c.triage.reason)));
   const queue = list
     .filter((c) => c.triage.status === "candidate" && c.depth_confirmed == null)
-    .sort((a, b) => TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier) || ["high", "medium", "low"].indexOf(a.depth_estimate) - ["high", "medium", "low"].indexOf(b.depth_estimate));
+    ;
+  const ordered = reviewQueue(queue); // 深さの推定の順。同じ深さでは情報源ごと、その中でロールごとに交互に並べる（表示の順だけ）
   console.log(`\n深い確認の順番待ち（未確認の収録候補 ${queue.length}件。先頭20件）`);
-  for (const c of queue.slice(0, 20)) console.log(`  [${c.tier} ${c.depth_estimate}] ${c.title} — ${c.url}`);
+  for (const c of ordered.slice(0, 20)) console.log(`  [${c.depth_estimate} ${c.sources[0]} ${(c.roles || []).join("+") || "ロール判定なし"}] ${c.title} — ${c.url}`);
   // 規則による保留は確認の順番を後にするだけなので、理由ごとに未確認のものを少しずつ抜き取って確認する
   // （確認して reviews.json に書くと、次の回は別の資料が出る）
   const held = list.filter((c) => c.triage.status === "hold" && c.triage.by === "rule" && c.depth_confirmed == null);

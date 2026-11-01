@@ -108,8 +108,10 @@ const HAS_COMMENTARY = /commentary|解説|講義|概論|lecture|concept|breakdow
 
 // 理由・判断・条件を扱っていることを示す語（深さの暫定推定に使う）
 const REASON_WORDS = /なぜ|理由|判断|考え方|使い分け|条件|とは[？?]?|方法|コツ|仕組み|タイミング|違い|べき|基準|意識|原則|振り返り|上達|why|how\s?to|when\s?to|explained|principles?|mistakes?|decision|guide\s?to|fundamentals?|concepts?/i;
-// 一覧・速報・テンプレートとみられる語（理由の説明が少ない傾向）
-const SHALLOW_WORDS = /ティア(リスト)?|tier\s?list|ランキング|速報|最強チャンピオン|おすすめチャンピオン|パッチノート要約|skin|スキン|q&a|discord|完全ガイド|完全攻略|ビルドガイド|ビルド解説|ビルド・ルーン|ルーン・サモナー|build\s?guide|\bbuild\b(?!\s?path)|コンボ/i;
+// 一覧・速報とみられる語（理由の説明が少ない傾向）。
+// チャンピオン別のガイドを示す語（ビルドガイド・完全攻略・コンボなど）は、2026-11-01 から減点しない
+// （チャンピオン固有の知識を低く見積もらない。深さは本文の長さ・理由の見出しで推定する）
+const SHALLOW_WORDS = /ティア(リスト)?|tier\s?list|ランキング|速報|最強チャンピオン|おすすめチャンピオン|パッチノート要約|skin|スキン|q&a|discord/i;
 // 書評・メンタル・自己啓発（ジャンルだけで除外しない。判断・振り返り・学習の語があれば評価する）
 const MENTAL_WORDS = /メンタル|書評|本を読|読書|習慣|モチベーション|ティルト|tilt|mindset|自己啓発/i;
 const LEARNING_WORDS = /振り返り|リプレイ|言語化|上達|学習|練習|意思決定|判断|考え方|review|replay|learn|improve/i;
@@ -187,7 +189,7 @@ function classify(c, matchTopics) {
   };
   add(REASON_WORDS.test(c.title || ""), "題名に理由・判断の語", 2);
   add(ex.reason, "抜粋に理由・判断の語", 1);
-  add(SHALLOW_WORDS.test(c.title || ""), "題名が一覧・テンプレート型", -2);
+  add(SHALLOW_WORDS.test(c.title || ""), "題名が一覧・速報型", -2);
   add(topic_ids.some((t) => COMMON_TOPICS.has(t)), "判断に関わる Topic に一致", 1);
   const st = c.structure;
   if (st) {
@@ -201,6 +203,8 @@ function classify(c, matchTopics) {
   }
   const depth_estimate = score >= 3 ? "high" : score >= 1 ? "medium" : "low";
 
+  // tier は旧方針（MID・ロール共通を優先）の区分。対象のロール・範囲の分類情報として残すが、
+  // 2026-11-01 以降は振り分け（保留）にも確認の順番にも使わない（全ロール・全チャンピオンを対等に扱う）
   let tier;
   if (roles.includes("mid") || topic_ids.includes("mage")) tier = "P1-mid";
   else if (roles.length === 0 && (topic_ids.some((t) => COMMON_TOPICS.has(t)) || LEARNING_WORDS.test(text) || ex.learning || (c.categories || []).some((x) => COMMON_MARKERS.test(x)))) tier = "P1-common";
@@ -223,8 +227,9 @@ function ruleTriage(c) {
   if (SITE_META.test(c.title || "")) return { status: "excluded", reason: "サイト運営の記事（教材ではない）" };
   // 以下の「保留」は、確認の順番を後にするだけの暫定の振り分け（除外ではない。report の見直し枠で抜き取り確認する）
   if (c.type === "video" && LIKELY_NO_COMMENTARY.test(c.title || "") && !HAS_COMMENTARY.test(c.title || "")) return { status: "hold", reason: "解説のないプレイ動画の可能性（題名から推定）" };
-  if (c.tier === "P3") return { status: "hold", reason: "他ロール固有（P3）" };
-  if (c.tier === "unclassified") return { status: "hold", reason: "対象ロール・主題を題名から判定できない" };
+  // 特定のロール・チャンピオンに属すること、ロールを題名から判定できないことは、保留の理由にしない（2026-11-01 の方針）
+  // URL だけを見つけた候補は、内容を確認していないので「浅い」とは扱わず、別の理由で保留する
+  if (c.metadata_from === "sitemap_only") return { status: "hold", reason: "URL のみ（題名・日付・内容は未取得。浅いと確認したわけではない）" };
   if (mental && !learning) return { status: "hold", reason: "メンタル・自己啓発系で、判断・学習の語がない（ジャンルだけでは除外しない）" };
   if (c.depth_estimate === "low") return { status: "hold", reason: "深さの推定が低い（題名・構成から）" };
   return { status: "candidate", reason: "深い確認の対象（推定。内容は未確認）" };
@@ -232,7 +237,39 @@ function ruleTriage(c) {
 
 // ---------- 候補の統合（再実行しても候補が増殖しない） ----------
 
-const TIER_ORDER = ["P1-common", "P1-mid", "P2", "P3", "unclassified"];
+const TIER_ORDER = ["P1-common", "P1-mid", "P2", "P3", "unclassified"]; // 旧方針の区分の並び（表示用。順番には使わない）
+const DEPTH_ORDER = ["high", "medium", "low"];
+
+/** 並べた複数の列から、先頭から1件ずつ交互に取り出す（決定的） */
+function roundRobin(lanes) {
+  const out = [];
+  for (let i = 0; lanes.some((l) => i < l.length); i++) for (const l of lanes) if (i < l.length) out.push(l[i]);
+  return out;
+}
+const groupBy = (list, keyOf) => {
+  const m = new Map();
+  for (const c of list) {
+    const k = keyOf(c);
+    if (!m.has(k)) m.set(k, []);
+    m.get(k).push(c);
+  }
+  return [...m.keys()].sort().map((k) => m.get(k));
+};
+
+/**
+ * 確認の順番（report の表示だけに使う。候補の保持・採否には使わない）。
+ * 深さの推定が高い順。同じ深さの中では、情報源（最初に見つけた情報源）ごとに交互に並べ、
+ * 各情報源の中では主なロール（なければ「ロール不明」）ごとに交互に並べる。件数の上限は設けない。
+ */
+function reviewQueue(list) {
+  const out = [];
+  for (const d of DEPTH_ORDER) {
+    const same = list.filter((x) => x.depth_estimate === d).sort((a, b) => a.key.localeCompare(b.key));
+    const bySource = groupBy(same, (c) => (c.sources || [])[0] || "unknown").map((g) => roundRobin(groupBy(g, (c) => (c.roles || [])[0] || "none")));
+    out.push(...roundRobin(bySource));
+  }
+  return out;
+}
 
 /**
  * 既存の候補一覧に、新しく取得した項目を統合する。
@@ -311,7 +348,7 @@ function annotate(list, { resources, topics, reviews = {} }) {
       : { ...rule, by: "rule" };
     c.depth_confirmed = review?.depth_confirmed ?? null; // 本文・字幕を確認した結果。推定（depth_estimate）とは別
   }
-  return out.sort((a, b) => TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier) || a.key.localeCompare(b.key));
+  return out; // ファイルの並びは入力の順のまま（既存の候補の順を保ち、意味のある変更だけを差分にする。確認の順番は report で計算する）
 }
 
 const round = (x) => Math.round(x * 100) / 100;
@@ -376,6 +413,6 @@ function stageCounts(list, ctx) {
 
 module.exports = {
   youtubeId, normalizeUrl, candidateKey, normalizeTitle, titleSimilarity, topicMatcher, classify, ruleTriage,
-  mergeCandidates, annotate, structureOf, splitTitleTags, excerptFeatures, TIER_ORDER,
+  mergeCandidates, annotate, structureOf, splitTitleTags, excerptFeatures, TIER_ORDER, DEPTH_ORDER, reviewQueue, roundRobin,
   urlOnlyItems, stageOf, stageCounts, STAGES,
 };
