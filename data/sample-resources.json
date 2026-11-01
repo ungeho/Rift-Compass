@@ -1182,6 +1182,40 @@
       "patch_context": { "stated_patch": "26.10", "basis": "stated", "era": "season16" },
       "access": { "free": true, "login_required": false },
       "verification": { "level": "L3", "checked_at": "2026-10-28", "method": "wordpress_rest_api+本文抽出", "notes": "Phase 5A の候補収集（data/candidates）から登録。公開APIで本文を取得し、不利の理由・コンボ・ビルドとルーンの節を確認。2026-07-07更新。" }
+    },
+    {
+      "id": "res-lg-pdvmw",
+      "url": "https://www.lol-guide.com/articles/pdvmw",
+      "title": "マスターからLPを盛るための重要ポイント",
+      "type": "article",
+      "language": "ja",
+      "creator": {
+        "name": "がりある（lol-guide.com）",
+        "kind": "pro_player"
+      },
+      "topic_ids": [
+        "cat-macro",
+        "wave-management",
+        "jungle-tracking",
+        "review-learning"
+      ],
+      "summary_ja": "マスター帯で差がつく7つの点。小さな漏れ（テンポ）に気づく、敵ジャングラーの位置を最初のクリアから予想する（クリアの終点、2:55のスカトル）、オブジェクトの前のウェーブを逆算して作る（大きなウェーブを相手のタワーに当てて先に視界を取る）、フラッシュとアルティメットの時間を数える、サイドレーンに誰が行き誰が寄るか、不利な時はオブジェクトを交換する、僅差の試合の1場面を振り返る。",
+      "published_at": "2026-10-27",
+      "patch_context": {
+        "stated_patch": null,
+        "basis": "inferred_from_date",
+        "era": "season16"
+      },
+      "access": {
+        "free": true,
+        "login_required": false
+      },
+      "verification": {
+        "level": "L3",
+        "checked_at": "2026-11-01",
+        "method": "fetch+本文抽出",
+        "notes": "本文を取得し、見出し構成と本文の全体を確認。"
+      }
     }
   ],
   "knowledge_notes": [
@@ -1397,7 +1431,8 @@
     { "id": "ev-028", "note_id": "kn-midlaner-block-invade", "resource_id": "res-yt-dopaenglish-teacher-2", "evidence_type": "empirical_claim", "locator": { "section": "説明欄" }, "summary_ja": "説明欄の要約のみ。非公式翻訳。", "checked_level": "L2", "checked_at": "2026-10-27" },
     { "id": "ev-029", "note_id": "kn-level2-xp", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Minions" }, "summary_ja": "「Early game breakpoints haven't changed here」。近接 65⇒62、キャスター 32⇒31、砲台/スーパー 100⇒75、共有比率 95/62/…% ⇒ 100/65/…%", "checked_level": "L3", "checked_at": "2026-10-27" },
     { "id": "ev-030", "note_id": "kn-level2-minion-count", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "derivation", "locator": { "section": "Minions" }, "summary_ja": "種別ごとの経験値（ソロ値／2人共有値）から必要体数を計算", "checked_level": "L3", "checked_at": "2026-10-27" },
-    { "id": "ev-031", "note_id": "kn-level2-minion-count", "resource_id": "res-wiki-minion", "evidence_type": "derivation", "locator": { "section": "Wave composition" }, "summary_ja": "通常ウェーブは近接3・キャスター3、砲台は3ウェーブ目から（計算の前提）", "checked_level": "L3", "checked_at": "2026-10-27" }
+    { "id": "ev-031", "note_id": "kn-level2-minion-count", "resource_id": "res-wiki-minion", "evidence_type": "derivation", "locator": { "section": "Wave composition" }, "summary_ja": "通常ウェーブは近接3・キャスター3、砲台は3ウェーブ目から（計算の前提）", "checked_level": "L3", "checked_at": "2026-10-27" },
+    { "id": "ev-032", "note_id": "kn-engage-when-flash-down", "resource_id": "res-lg-pdvmw", "evidence_type": "empirical_claim", "locator": { "section": "フラッシュとアルティメットの時間を意識する" }, "summary_ja": "著者の経験則：相手ボットがフラッシュを使った直後は、戻るまでの約5分間がガンク・ロームの対象。サポート（レオナ・レル）のフラッシュが落ちればボットは強気にトレードしやすく、味方ミッドのフラッシュが落ちた直後は相手ジャングラーのガンクが成功しやすい。集団戦の入り方を決めるアルティメット（マルファイト・オーン）が落ちていれば、次のオブジェクトで戦いを始めやすい", "checked_level": "L3", "checked_at": "2026-11-01" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },

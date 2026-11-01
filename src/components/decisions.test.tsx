@@ -167,8 +167,8 @@ describe("資料詳細との接続・URL", () => {
     expect(parseHash(decisionHref("du-trade-checklist"))).toEqual({ name: "decision", id: "du-trade-checklist" });
   });
 
-  it("正式資料のデータは75件のまま", () => {
-    expect(index.resources).toHaveLength(75);
+  it("正式資料のデータは76件（新規判断材料の収録試験の7件目で res-lg-pdvmw を1件追加）", () => {
+    expect(index.resources).toHaveLength(76);
   });
 });
 
@@ -838,7 +838,7 @@ describe("新規判断材料の3件目（lol-guide qyxqb：相手がイグナイ
   it("既存の判断材料48件と具体例5件を変えない", () => {
     const before = SHOWCASE_IDS.slice(0, SHOWCASE_IDS.indexOf(UNIT));
     expect(before).toEqual(expect.arrayContaining(["du-support-to-mid-when-bot-lost", "du-no-force-retake-when-allies-winning", "du-trade-checklist", "du-recall-resource-threshold"]));
-    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening" && x.id !== "du-mid-ward-by-wave-state" && x.id !== "du-concede-objective-and-trade")).toHaveLength(48);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-raptor-ward-opening" && x.id !== "du-mid-ward-by-wave-state" && x.id !== "du-concede-objective-and-trade" && x.id !== "du-objective-wave-setup")).toHaveLength(48);
     expect(units.find((x) => x.id === "du-recall-resource-threshold")!.relations.some((r) => r.to === UNIT)).toBe(false);
     const exIds = (rawExamples as unknown as { examples: { id: string }[] }).examples.map((x) => x.id);
     expect(exIds).toEqual(expect.arrayContaining(["ex-evi-mundo-jax-minion-retaliation", EX, "ex-lg-uhrvk-harass-when-enemy-pushes", "ex-garen-support-roam-timing", "ex-lg-ltnak-turn-length"]));
@@ -1147,7 +1147,7 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     const box = m.slice(i, m.indexOf("</details>", i));
     return [...box.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((x) => ({ id: x[1].match(/href="#\/decision\/([^"?]+)"/)![1], basis: text(x[1].match(/一致：[\s\S]*?<\/div>/)![0]).trim() }));
   };
-  const QS: [string, number][] = [["リコール", 11], ["対面がロームしたら追いかけるべき？", 9], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
+  const QS: [string, number][] = [["リコール", 12], ["対面がロームしたら追いかけるべき？", 9], ["ミッド Lv1 押す", 5], ["対面に負けている ウェーブ", 3], ["相手のフラッシュがない トレード", 1]];
 
   it("件数・順番・リンク先は、一致を出す前の照合（decisionsForQuery）と同じ", () => {
     for (const [q, n] of QS) {
@@ -1158,9 +1158,9 @@ describe("検索結果の判断材料の欄：一致（候補に含めた理由�
     }
   });
 
-  it("「リコール」では、Topic「リコール」が付いた6件と、記述にだけ「リコール」がある5件を区別して示す", () => {
+  it("「リコール」では、Topic「リコール」が付いた7件と、記述にだけ「リコール」がある5件を区別して示す", () => {
     const tagged = new Set(decisionsForTopic("recall").map((u) => u.id));
-    expect(tagged.size).toBe(6);
+    expect(tagged.size).toBe(7);
     const list = items("リコール");
     for (const x of list) {
       if (tagged.has(x.id)) expect(x.basis).toBe("一致：「リコール」Topic・記述");
@@ -1247,7 +1247,7 @@ describe("新規判断材料の4件目（LoLGaren raptor-ward：ミッドの開�
     expect(src.published).toBe("2026-07-01");
     expect(u.evidence.map((e) => e.source)).toEqual(["src-garen-raptor-ward"]);
     expect(SHOWCASE_IDS.indexOf(UNIT)).toBe(SHOWCASE_IDS.indexOf("du-early-recall-vs-ignite-with-tp") + 1);
-    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-ward-by-wave-state" && x.id !== "du-concede-objective-and-trade")).toHaveLength(49);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-mid-ward-by-wave-state" && x.id !== "du-concede-objective-and-trade" && x.id !== "du-objective-wave-setup")).toHaveLength(49);
   });
 
   it("置き方を条件つきの優先順位として示し、何ウェーブ目という固定の答えにしない", () => {
@@ -1283,7 +1283,7 @@ describe("新規判断材料の5件目（lol-guide kdutr：ミッドのレーン
     expect(src.published).toBe("2025-08-17");
     expect(u.evidence.map((e) => e.source)).toEqual(["src-kdutr"]);
     expect(SHOWCASE_IDS.indexOf(UNIT)).toBe(SHOWCASE_IDS.indexOf("du-mid-raptor-ward-opening") + 1);
-    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-concede-objective-and-trade")).toHaveLength(50);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-concede-objective-and-trade" && x.id !== "du-objective-wave-setup")).toHaveLength(50);
   });
 
   it("ウェーブの状態ごとの置き場所・条件・代償を区別して示し、何ウェーブ目・何分という基準は作らない", () => {
@@ -1327,8 +1327,8 @@ describe("新規判断材料の6件目（lol-guide jdgrp：敵がドラゴンな
     const src = newUnits.sources.find((s) => s.id === "src-lg-jdgrp")!;
     expect(src.resource_id).toBe("res-lg-jdgrp");
     expect(src.published).toBe("2025-09-30");
-    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
-    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(51);
+    expect(SHOWCASE_IDS.indexOf(UNIT)).toBe(SHOWCASE_IDS.indexOf("du-mid-ward-by-wave-state") + 1);
+    expect(units.filter((x) => x.id !== UNIT && x.id !== "du-objective-wave-setup")).toHaveLength(51);
     expect(decisionsForResource("res-lg-jdgrp").map((x) => x.id)).toEqual([UNIT]);
     expect(renderToStaticMarkup(<ResourceDetail id="res-lg-jdgrp" />)).toContain(`href="${decisionHref(UNIT)}"`);
   });
@@ -1350,5 +1350,35 @@ describe("新規判断材料の6件目（lol-guide jdgrp：敵がドラゴンな
     expect(u.unknowns_ja.some((s) => s.includes("ドラゴンソウルに近いか"))).toBe(true);
     const rel = u.relations.find((r) => r.to === "du-recall-resource-threshold")!;
     expect(rel.note_ja).toContain("独立した裏付けではない");
+  });
+});
+
+describe("新規判断材料の7件目（lol-guide pdvmw：オブジェクトの前のウェーブを逆算して作る）", () => {
+  const UNIT = "du-objective-wave-setup";
+  const u = units.find((x) => x.id === UNIT)!;
+  const newUnits = rawNewUnits as unknown as { units: DecisionUnit[]; sources: { id: string; resource_id: string | null; published: string }[] };
+
+  it("出典を1件追加し、試験表示の末尾に加える", () => {
+    const src = newUnits.sources.find((s) => s.id === "src-lg-pdvmw")!;
+    expect(src.published).toBe("2026-10-27");
+    // 複数の判断材料から使えるよう、正式資料 res-lg-pdvmw に結ぶ
+    expect(src.resource_id).toBe("res-lg-pdvmw");
+    expect(decisionsForResource("res-lg-pdvmw").map((x) => x.id)).toEqual([UNIT]);
+    expect(renderToStaticMarkup(<ResourceDetail id="res-lg-pdvmw" />)).toContain(`href="${decisionHref(UNIT)}"`);
+    expect(u.evidence.map((e) => e.source)).toEqual(["src-lg-pdvmw"]);
+    expect(SHOWCASE_IDS[SHOWCASE_IDS.length - 1]).toBe(UNIT);
+    expect(units.filter((x) => x.id !== UNIT)).toHaveLength(52);
+  });
+
+  it("どのウェーブを・いつ・どの形で当てるか、相手に選ばせることと先に視界を取る理由、目安であることを示す", () => {
+    const html = text(detail(UNIT));
+    for (const s of ["約1分前までにリコール", "ドラゴンならミッドとボット、ヴォイドグラブならミッドとトップ", "2ウェーブほど前からラストヒットだけ", "ミニオンを捨ててオブジェクトに寄るかを選ばされる", "相手が先に視界を取り", "ただ押すのではなく、大きいウェーブにしてから当てる", "経験値・ゴールドの効率が悪くなる", "具体的な基準は書かれていない", "理由の同一性は未確認", "ゲーム内では検証していない"]) expect(html).toContain(s);
+    expect(u.reasons.every((r) => r.basis === "source")).toBe(true);
+  });
+
+  it("出現時刻は原典の値と公式・Wiki の仕様を分けて記録し、同じ著者の記事との関係は独立した裏付けにしない", () => {
+    for (const s of ["ドラゴン5:00、ヴォイドグラブ8:00", "revid 4079625", "revid 4015021", "バロン以外のエピックモンスターの出現時刻は変わっておらず", "ゲーム内では確認していない"]) expect(u.patch_dependency_ja).toContain(s);
+    for (const r of u.relations) expect(r.note_ja).toContain("同じ著者（がりある）の別の記事");
+    expect(u.relations.find((r) => r.to === "du-recall-resource-threshold")!.type).toBe("condition_differs");
   });
 });
