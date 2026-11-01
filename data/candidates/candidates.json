@@ -28223,10 +28223,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "ガレンの勝ち筋・射程・Q への合わせ方、カウンター（ケイル・チョ＝ガス・アーゴット）のルーン・アイテム、ランデュインとガレン E のクリティカルの計算（26.19）。知識14件（G1〜G14）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "excerpt_features": {
    "roles": [
     "mid",
@@ -36242,10 +36242,10 @@
   ],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "ジャングルの序盤：エメラルド帯までミッド＋サイド1つを勝たせる、レーンが有利ならまず相手のジャングルで視界、ダイブ、スマイトとオブジェクト、ドラゴン4つ。著者ゆにか（がりあるとは別）。知識8件（E1〜E8）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "medium",
   "categories": [
    "ジャングル",
    "初心者向け"
@@ -52541,10 +52541,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "レベル1のラプター・赤インベード（パッチ26.19）。2回目のスマイト2:06/2:20、ミニマップに映る秒、ラプター・赤のクリアタイム、0:55の奇襲、得意チャンピオン、ルーン。知識20件（F1〜F20）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "excerpt_features": {
    "roles": [
     "jungle"
@@ -59205,10 +59205,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "サポートの草むらの主導権、リコール後の3つの選択肢、相手ジャングラーの位置、相手ワードの数を数えて置いた場所を推測、フラッシュの有無。知識8件（B1〜B8）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "medium",
   "categories": [
    "サポート",
    "上級者向け",
@@ -59387,10 +59387,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "ADC の集団戦の攻撃対象の優先順位（自分を狙う敵→安全に届く敵の主力→フロントライン）と例外（孤立したキャリー、味方と同時に後衛へ入れる場合）、重要スキルにフラッシュを合わせる。知識10件（A1〜A10）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "categories": [
    "ボット",
    "初心者向け",
@@ -60002,10 +60002,10 @@
   "needs_review": [],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "ボットのリコールの判断基準（リソース、相手のリソース、キル・リコールさせた後、大きなウェーブ、高い素材）、ジリ貧なら即リコール、プレートを欲張らない。知識10件（D1〜D10）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "categories": [
    "ボット",
    "初心者向け",
@@ -60268,10 +60268,10 @@
   ],
   "triage": {
    "status": "candidate",
-   "reason": "深い確認の対象（推定。内容は未確認）",
-   "by": "rule"
+   "reason": "トップの時間帯別の判断（開幕のジャングラーの開始位置、4〜8分、8分グラブ前の7分リコール、14〜15分）。2025年の記事で、ガンクの時刻とプレート14分消滅は 26.1 で古い。知識13件（C1〜C13）",
+   "by": "review"
   },
-  "depth_confirmed": null,
+  "depth_confirmed": "deep",
   "categories": [
    "トップ",
    "中級者向け",

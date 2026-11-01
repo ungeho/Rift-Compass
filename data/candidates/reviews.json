@@ -295,5 +295,68 @@
   "depth_confirmed": "deep",
   "method": "本文の全体（WordPress の公開 API）。図は未確認",
   "reason": "敵のシュライン（視界525）がある時に赤チームでドラゴンを狩る方法。気づかれる経路3つと危険度の違い、ソロドラゴンの条件、シュラインを踏まない4つの方法、引っ張りと失敗時の立て直し、忍耐ゲージの仕様。パッチ26.18時点の記事。知識の候補は docs/experiments/source-catalog-trial.md"
+ },
+ "https://lol-guide.com/articles/ehbwc": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（図は未確認）",
+  "reason": "ADC の集団戦の攻撃対象の優先順位（自分を狙う敵→安全に届く敵の主力→フロントライン）と例外（孤立したキャリー、味方と同時に後衛へ入れる場合）、重要スキルにフラッシュを合わせる。知識10件（A1〜A10）"
+ },
+ "https://lol-guide.com/articles/cyxze": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の全体（図は未確認）",
+  "reason": "サポートの草むらの主導権、リコール後の3つの選択肢、相手ジャングラーの位置、相手ワードの数を数えて置いた場所を推測、フラッシュの有無。知識8件（B1〜B8）"
+ },
+ "https://lol-guide.com/articles/nxldr": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（図は未確認）",
+  "reason": "トップの時間帯別の判断（開幕のジャングラーの開始位置、4〜8分、8分グラブ前の7分リコール、14〜15分）。2025年の記事で、ガンクの時刻とプレート14分消滅は 26.1 で古い。知識13件（C1〜C13）"
+ },
+ "https://lol-guide.com/articles/khneg": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（図は未確認）",
+  "reason": "ボットのリコールの判断基準（リソース、相手のリソース、キル・リコールさせた後、大きなウェーブ、高い素材）、ジリ貧なら即リコール、プレートを欲張らない。知識10件（D1〜D10）"
+ },
+ "https://lol-guide.com/articles/cnhhs": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の全体（図は未確認）",
+  "reason": "ジャングルの序盤：エメラルド帯までミッド＋サイド1つを勝たせる、レーンが有利ならまず相手のジャングルで視界、ダイブ、スマイトとオブジェクト、ドラゴン4つ。著者ゆにか（がりあるとは別）。知識8件（E1〜E8）"
+ },
+ "https://lolgaren.com/level1-raptor-red-invade": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。図は未確認）",
+  "reason": "レベル1のラプター・赤インベード（パッチ26.19）。2回目のスマイト2:06/2:20、ミニマップに映る秒、ラプター・赤のクリアタイム、0:55の奇襲、得意チャンピオン、ルーン。知識20件（F1〜F20）"
+ },
+ "https://lolgaren.com/garencounter": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第1回（docs/experiments/knowledge-extraction-batch1.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。統計の図は未確認）",
+  "reason": "ガレンの勝ち筋・射程・Q への合わせ方、カウンター（ケイル・チョ＝ガス・アーゴット）のルーン・アイテム、ランデュインとガレン E のクリティカルの計算（26.19）。知識14件（G1〜G14）"
  }
 }
