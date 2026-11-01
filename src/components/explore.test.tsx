@@ -4,9 +4,9 @@ import { describe, expect, it } from "vitest";
 import { index, isPublic } from "../data/dataset";
 import { decisionById, SHOWCASE_IDS } from "../data/decisions";
 import { explorePool, exploreTopics } from "../data/explorePool";
-import { classify, pickNext, type PickResult } from "../lib/explore";
+import { classify, exploreKey, pickMany, pickNext, type PickResult } from "../lib/explore";
 import { decisionHref, exploreHref, parseHash, resourceHref } from "../router";
-import { ExploreCard, ExplorePage } from "./ExplorePage";
+import { ExploreCard, ExplorePage, ManySummary } from "./ExplorePage";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const seq = (values: number[]) => {
@@ -42,14 +42,22 @@ describe("抽選対象", () => {
 
 describe("散策の画面", () => {
   it("URL で Topic と距離を持ち、範囲外の距離は 0〜100 に収める", () => {
-    expect(parseHash(exploreHref("freeze", 70))).toEqual({ name: "explore", topic: "freeze", distance: 70 });
-    expect(parseHash("#/explore?d=250")).toEqual({ name: "explore", topic: "", distance: 100 });
-    expect(parseHash("#/explore")).toEqual({ name: "explore", topic: "", distance: 30 });
+    expect(parseHash(exploreHref("freeze", 70))).toEqual({ name: "explore", topic: "freeze", distance: 70, count: 20 });
+    expect(parseHash("#/explore?d=250")).toEqual({ name: "explore", topic: "", distance: 100, count: 20 });
+    expect(parseHash("#/explore")).toEqual({ name: "explore", topic: "", distance: 30, count: 20 });
+    // 件数は 1・20・50・100 だけ。既定（20）は URL に書かず、既存の URL と同じ形
+    expect(exploreHref("freeze", 70)).toBe("#/explore?topic=freeze&d=70");
+    for (const n of [1, 50, 100] as const) expect(parseHash(exploreHref("freeze", 70, n))).toEqual({ name: "explore", topic: "freeze", distance: 70, count: n });
+    // 不正値・空値・未指定は既定の20件
+    for (const q of ["n=7", "n=", "n=abc", "n=-1", "n=1000", "n=0", ""]) {
+      expect(parseHash(`#/explore?topic=freeze&d=70${q ? "&" + q : ""}`)).toEqual({ name: "explore", topic: "freeze", distance: 70, count: 20 });
+    }
   });
   it("Topic・距離・ボタンがあり、割合と候補数を示す。Topic を選ぶまでボタンは押せない。おすすめとは書かない", () => {
-    const empty = renderToStaticMarkup(<ExplorePage topic="" distance={30} />);
+    // 1件ずつ（従来の表示）
+    const empty = renderToStaticMarkup(<ExplorePage topic="" distance={30} count={1} />);
     expect(empty).toMatch(/<button[^>]*disabled=""[^>]*>別の知識を見る<\/button>/);
-    const markup = renderToStaticMarkup(<ExplorePage topic="freeze" distance={50} />);
+    const markup = renderToStaticMarkup(<ExplorePage topic="freeze" distance={50} count={1} />);
     expect(markup).toContain('<label for="explore-topic">');
     expect(markup).toContain('<label for="explore-distance">');
     expect(markup).toContain('type="range"');
@@ -87,5 +95,63 @@ describe("候補切れ・切り替えの知らせ", () => {
     const both = notice({ cycled: true, fellBack: true });
     expect(both).toContain("選んだ距離の候補は直前に表示した1件だけなので、「中間」の候補から");
     expect(both).not.toContain("最初から表示し直しています");
+  });
+});
+
+describe("まとめて抽選（20・50・100件）", () => {
+  it("件数の選択欄があり、既定は20件。ボタンは件数を示し、Topic を選ぶまで押せない。段階的に表示すると説明する", () => {
+    const empty = text(renderToStaticMarkup(<ExplorePage topic="" distance={30} />));
+    expect(empty).toContain("1回に表示する件数");
+    const markup = renderToStaticMarkup(<ExplorePage topic="freeze" distance={30} />);
+    expect(markup).toContain('<label for="explore-count">');
+    expect(markup).toMatch(/<option value="20" selected="">20件<\/option>/);
+    for (const n of ["1件ずつ", "50件", "100件"]) expect(text(markup)).toContain(n);
+    expect(markup).toMatch(/<button[^>]*>20件を抽選する<\/button>/);
+    expect(text(markup)).toContain("20件ずつ表示します");
+    expect(renderToStaticMarkup(<ExplorePage topic="" distance={30} count={100} />)).toMatch(/<button[^>]*disabled=""[^>]*>100件を抽選する<\/button>/);
+  });
+
+  it("実データ：どの Topic・距離・件数でも、重複なしで、割合が0の距離の候補を使わない", () => {
+    const rng = seq([0.13, 0.57, 0.91, 0.33, 0.71]);
+    for (const t of exploreTopics()) {
+      for (const d of [0, 30, 50, 100]) {
+        for (const n of [1, 20, 50, 100]) {
+          const r = pickMany({ items: explorePool, topicId: t.id, distance: d, count: n, graph: index, rng });
+          const ks = r.picks.map((p) => exploreKey(p.item));
+          expect(new Set(ks).size).toBe(ks.length);
+          expect(ks.length).toBeLessThanOrEqual(n);
+          for (const p of r.picks) expect(r.eligible).toContain(p.group);
+          const avail = r.eligible.reduce((m, g) => m + r.breakdown[g].available, 0);
+          expect(ks.length).toBe(Math.min(n, avail));
+        }
+      }
+    }
+    // 全体（107件）でも100件を重複なしに選べる
+    const all = pickMany({ items: explorePool, topicId: "freeze", distance: 50, count: 100, graph: index, rng });
+    expect(explorePool.length).toBeGreaterThanOrEqual(100);
+    expect(new Set(all.picks.map((p) => exploreKey(p.item))).size).toBe(all.picks.length);
+  });
+
+  it("候補が足りないときは、表示した件数・対象の距離・使わなかった距離を示し、重複で埋めないと書く", () => {
+    const r = pickMany({ items: explorePool, topicId: "freeze", distance: 0, count: 100, graph: index, rng: seq([0.4]) });
+    expect(r.short).toBe(true);
+    const m = text(renderToStaticMarkup(<ManySummary many={r} />));
+    expect(m).toContain(`100件を抽選し、${r.picks.length}件を表示します`);
+    expect(m).toContain(`選んだ距離で抽選の対象になる候補（近い）は合計 ${r.picks.length}件`);
+    expect(m).toContain("割合が0%の「中間」「遠い」の候補や、同じ知識の重複で件数を埋めていません");
+  });
+
+  it("配り直したときは、割合どおりの配分と実際の件数を示す", () => {
+    const fake = {
+      requested: 20,
+      picks: [],
+      eligible: ["near", "middle", "far"],
+      short: false,
+      redistributed: true,
+      breakdown: { near: { planned: 5, drawn: 9, available: 30 }, middle: { planned: 10, drawn: 3, available: 3 }, far: { planned: 5, drawn: 8, available: 30 } },
+    } as Parameters<typeof ManySummary>[0]["many"];
+    const m = text(renderToStaticMarkup(<ManySummary many={fake} />));
+    expect(m).toContain("近い 9件・中間 3件・遠い 8件");
+    expect(m).toContain("割合どおりの配分（近い 5件・中間 10件・遠い 5件）に対して候補が足りない距離があったため");
   });
 });

@@ -175,4 +175,109 @@ export function pickNext(args: {
   return { item, group, middleReason, fellBack, cycled, seen: [...seen, keyOf(item)] };
 }
 
+/** 複数件の抽選の1件 */
+export interface ManyPick {
+  item: ExploreItem;
+  group: ExploreGroup;
+  middleReason?: MiddleReason;
+}
+
+/** グループごとの内訳（planned：割合どおりの件数、drawn：実際に選んだ件数、available：候補の件数）*/
+export type GroupBreakdown = Record<ExploreGroup, { planned: number; drawn: number; available: number }>;
+
+export interface ManyResult {
+  requested: number;
+  picks: ManyPick[];
+  breakdown: GroupBreakdown;
+  /** 割合が0より大きい距離のグループ（抽選の対象）*/
+  eligible: ExploreGroup[];
+  /** 候補が足りず、要求より少ない件数になった */
+  short: boolean;
+  /** あるグループの候補が足りず、その分を割合が0より大きい別のグループから選んだ */
+  redistributed: boolean;
+}
+
+/** 最大剰余法で、合計 total を重みに比例して整数に分ける */
+function apportion(total: number, weights: Partial<Record<ExploreGroup, number>>): Record<ExploreGroup, number> {
+  const gs = GROUPS.filter((g) => (weights[g] ?? 0) > 0);
+  const sum = gs.reduce((n, g) => n + weights[g]!, 0);
+  const out: Record<ExploreGroup, number> = { near: 0, middle: 0, far: 0 };
+  if (sum === 0 || total <= 0) return out;
+  const exact = gs.map((g) => ({ g, v: (total * weights[g]!) / sum }));
+  for (const e of exact) out[e.g] = Math.floor(e.v);
+  let rest = total - exact.reduce((n, e) => n + Math.floor(e.v), 0);
+  // 端数の大きい順（同じなら GROUPS の順）に1件ずつ足す
+  for (const e of [...exact].sort((a, b) => b.v - Math.floor(b.v) - (a.v - Math.floor(a.v)) || GROUPS.indexOf(a.g) - GROUPS.indexOf(b.g))) {
+    if (rest <= 0) break;
+    out[e.g]++;
+    rest--;
+  }
+  return out;
+}
+
+/**
+ * 複数件をまとめて抽選する（1回の結果の中で同じ知識を重複させない）。
+ * 1. 対象は距離の割合が0より大きいグループだけ。割合が0のグループ（無関係な距離）からは選ばない。
+ * 2. 要求件数を割合に比例して各グループに配分する（最大剰余法）。
+ * 3. 候補が配分より少ないグループは候補の件数までにし、足りない分は、まだ候補が残る対象のグループへ
+ *    割合に比例して配分し直す（redistributed）。それでも足りなければ、選べた件数だけを返す（short）。
+ * 4. グループの中では、件数の多い Topic に偏らないよう pickInGroup で1件ずつ、重複なしで選ぶ。
+ * 5. 表示の順は、各グループの残りの件数に比例した抽選で混ぜる。
+ * 1件だけを順に見る使い方（一巡・直前の1件の除外・別グループへの切り替え）は pickNext を使う。
+ */
+export function pickMany(args: { items: ExploreItem[]; topicId: string; distance: number; count: number; graph: TopicGraph; rng: () => number }): ManyResult {
+  const { items, topicId, distance, count, graph, rng } = args;
+  const c = classify(items, topicId, graph);
+  const w = groupWeights(distance);
+  const eligible = GROUPS.filter((g) => w[g] > 0);
+  const available = (g: ExploreGroup) => c[g].length;
+  const planned = apportion(count, w);
+  // 候補の件数で上限を付け、足りない分を、候補が残る対象のグループへ割合に比例して配り直す
+  const take: Record<ExploreGroup, number> = { near: 0, middle: 0, far: 0 };
+  for (const g of eligible) take[g] = Math.min(planned[g], available(g));
+  let redistributed = false;
+  for (let guard = 0; guard < 3; guard++) {
+    const missing = count - GROUPS.reduce((n, g) => n + take[g], 0);
+    const open = eligible.filter((g) => take[g] < available(g));
+    if (missing <= 0 || open.length === 0) break;
+    const extra = apportion(missing, Object.fromEntries(open.map((g) => [g, w[g]])));
+    for (const g of open) {
+      const add = Math.min(extra[g], available(g) - take[g]);
+      if (add > 0) redistributed = true;
+      take[g] += add;
+    }
+  }
+  // 各グループから重複なしで選ぶ
+  const chosen: Record<ExploreGroup, ExploreItem[]> = { near: [], middle: [], far: [] };
+  for (const g of eligible) {
+    const pool = [...c[g]];
+    for (let i = 0; i < take[g]; i++) {
+      const x = pickInGroup(pool, rng);
+      chosen[g].push(x);
+      pool.splice(pool.indexOf(x), 1);
+    }
+  }
+  // 残りの件数に比例して混ぜる
+  const picks: ManyPick[] = [];
+  const left = { ...take };
+  while (GROUPS.some((g) => left[g] > 0)) {
+    const total = GROUPS.reduce((n, g) => n + left[g], 0);
+    let r = rng() * total;
+    let group = GROUPS.find((g) => left[g] > 0)!;
+    for (const g of GROUPS) {
+      if (left[g] === 0) continue;
+      if (r < left[g]) {
+        group = g;
+        break;
+      }
+      r -= left[g];
+    }
+    const item = chosen[group][take[group] - left[group]];
+    left[group]--;
+    picks.push({ item, group, middleReason: group === "middle" ? c.middleReason.get(keyOf(item)) : undefined });
+  }
+  const breakdown = Object.fromEntries(GROUPS.map((g) => [g, { planned: planned[g], drawn: take[g], available: available(g) }])) as GroupBreakdown;
+  return { requested: count, picks, breakdown, eligible, short: picks.length < count, redistributed };
+}
+
 export { keyOf as exploreKey };

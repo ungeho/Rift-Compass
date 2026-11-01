@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { classify, exploreKey, groupWeights, pickInGroup, pickNext, type ExploreItem, type TopicGraph } from "./explore";
+import { classify, exploreKey, groupWeights, pickInGroup, pickMany, pickNext, type ExploreItem, type TopicGraph } from "./explore";
 
 /** 再現できる乱数（mulberry32）*/
 function seeded(seed: number): () => number {
@@ -129,5 +129,79 @@ describe("近い候補が1件だけの Topic", () => {
     expect(second.group).toBe("middle");
     expect(second.fellBack).toBe(true);
     expect(second.cycled).toBe(true);
+  });
+});
+
+describe("まとめて抽選（pickMany）", () => {
+  // 近い（a1）40件、中間（a2）30件、遠い（b1）30件の合計100件
+  const big: ExploreItem[] = [
+    ...Array.from({ length: 40 }, (_, i) => ({ kind: "resource" as const, id: `n${i}`, topicIds: [i % 2 ? "a1" : "A"] })),
+    ...Array.from({ length: 30 }, (_, i) => ({ kind: "resource" as const, id: `m${i}`, topicIds: ["a2"] })),
+    ...Array.from({ length: 30 }, (_, i) => ({ kind: "decision" as const, id: `f${i}`, topicIds: ["b1"] })),
+  ];
+  const keys = (r: ReturnType<typeof pickMany>) => r.picks.map((p) => exploreKey(p.item));
+  const groupsOf = (r: ReturnType<typeof pickMany>) => {
+    const n = { near: 0, middle: 0, far: 0 };
+    for (const p of r.picks) n[p.group]++;
+    return n;
+  };
+
+  it("1・20・50・100件を、1回の結果の中で重複なしに選ぶ（候補が十分なとき）", () => {
+    for (const count of [1, 20, 50, 100]) {
+      const r = pickMany({ items: big, topicId: "a1", distance: 50, count, graph, rng: seeded(count) });
+      expect(r.picks).toHaveLength(count);
+      expect(new Set(keys(r)).size).toBe(count);
+      expect(r.short).toBe(false);
+    }
+  });
+
+  it("距離の割合どおりに配分する（距離50で20件：近い5・中間10・遠い5）", () => {
+    // 近い＝a1 とその下位。A（大分類）だけの20件は中間に入る
+    const items: ExploreItem[] = [
+      ...Array.from({ length: 20 }, (_, i) => ({ kind: "resource" as const, id: `n${i}`, topicIds: ["a1"] })),
+      ...Array.from({ length: 20 }, (_, i) => ({ kind: "resource" as const, id: `m${i}`, topicIds: ["a2"] })),
+      ...Array.from({ length: 20 }, (_, i) => ({ kind: "resource" as const, id: `f${i}`, topicIds: ["b1"] })),
+    ];
+    const r = pickMany({ items, topicId: "a1", distance: 50, count: 20, graph, rng: seeded(2) });
+    expect(groupsOf(r)).toEqual({ near: 5, middle: 10, far: 5 });
+    expect(r.breakdown.middle).toEqual({ planned: 10, drawn: 10, available: 20 });
+    expect(r.redistributed).toBe(false);
+  });
+
+  it("候補が足りなければ、割合が0のグループや重複で埋めず、選べた件数と理由を返す", () => {
+    // 距離0は近いだけ。近い候補は a1 の20件
+    const r = pickMany({ items: big, topicId: "a1", distance: 0, count: 100, graph, rng: seeded(4) });
+    expect(r.eligible).toEqual(["near"]);
+    expect(r.picks).toHaveLength(r.breakdown.near.available);
+    expect(r.picks.every((p) => p.group === "near")).toBe(true);
+    expect(new Set(keys(r)).size).toBe(r.picks.length);
+    expect(r.short).toBe(true);
+    expect(r.breakdown.far.drawn).toBe(0);
+  });
+
+  it("あるグループが足りないときは、割合が0より大きい別のグループにだけ配り直す", () => {
+    // 近い（a1）20件・中間（a2）3件・遠い（b1）20件。距離50では中間に10件配分されるが3件しかない
+    const few: ExploreItem[] = [
+      ...Array.from({ length: 20 }, (_, i) => ({ kind: "resource" as const, id: `n${i}`, topicIds: ["a1"] })),
+      ...Array.from({ length: 3 }, (_, i) => ({ kind: "resource" as const, id: `m${i}`, topicIds: ["a2"] })),
+      ...Array.from({ length: 20 }, (_, i) => ({ kind: "resource" as const, id: `f${i}`, topicIds: ["b1"] })),
+    ];
+    const r = pickMany({ items: few, topicId: "a1", distance: 50, count: 20, graph, rng: seeded(6) });
+    expect(r.picks).toHaveLength(20);
+    expect(r.breakdown.middle.drawn).toBe(3);
+    expect(r.redistributed).toBe(true);
+    expect(r.breakdown.near.drawn + r.breakdown.far.drawn).toBe(17);
+    // 距離0なら中間・遠いは割合が0なので使わない
+    const z = pickMany({ items: few, topicId: "a1", distance: 0, count: 50, graph, rng: seeded(6) });
+    expect(z.breakdown.middle.drawn + z.breakdown.far.drawn).toBe(0);
+  });
+
+  it("同じ乱数の種なら同じ結果、候補が0件なら空", () => {
+    const a = pickMany({ items: big, topicId: "a1", distance: 70, count: 50, graph, rng: seeded(9) });
+    const b = pickMany({ items: big, topicId: "a1", distance: 70, count: 50, graph, rng: seeded(9) });
+    expect(keys(a)).toEqual(keys(b));
+    const e = pickMany({ items: [], topicId: "a1", distance: 50, count: 20, graph, rng: seeded(1) });
+    expect(e.picks).toHaveLength(0);
+    expect(e.short).toBe(true);
   });
 });

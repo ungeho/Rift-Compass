@@ -227,3 +227,6 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .explore-controls .button { justify-self: start; }
 .explore-card { display: grid; gap: 6px; }
 .explore-card .card-meta { margin: 0; }
+.explore-list { display: grid; gap: 16px; padding-left: 1.4em; margin: 12px 0; }
+.explore-list > li { min-width: 0; }
+.explore-summary { display: grid; gap: 6px; }

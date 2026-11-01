@@ -55,7 +55,7 @@ export function App() {
         {route.name === "topics" && <TopicIndex />}
         {route.name === "decisions" && <DecisionIndex topic={route.topic} compare={route.compare} />}
         {route.name === "decision" && <DecisionDetail id={route.id} example={route.example} />}
-        {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} />}
+        {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} count={route.count} />}
       </main>
       <footer className="site-footer">
         <p>

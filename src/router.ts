@@ -5,7 +5,7 @@
 //   #/topic/<id>    Topic 詳細
 //   #/decisions?topic=…  判断材料（試験）の一覧（Topic で絞り込み。compare=… で資料間の比較を開く）
 //   #/decision/<id>      判断材料（試験）の詳細（?example=… で、その具体例の位置へ移動する）
-//   #/explore?topic=…&d=…  知識の散策（試験）。d は興味からの距離（0〜100）
+//   #/explore?topic=…&d=…&n=…  知識の散策（試験）。d は興味からの距離（0〜100）、n は1回に抽選する件数（1・20・50・100。既定20）
 import { useSyncExternalStore } from "react";
 import { FILTER_KEYS, type Filters } from "./search/search";
 
@@ -16,10 +16,18 @@ export type Route =
   | { name: "topics" }
   | { name: "decisions"; topic: string; compare?: string }
   | { name: "decision"; id: string; example?: string }
-  | { name: "explore"; topic: string; distance: number };
+  | { name: "explore"; topic: string; distance: number; count: ExploreCount };
 
 /** 散策の距離の既定値（近い寄り）*/
 export const DEFAULT_EXPLORE_DISTANCE = 30;
+/** 散策で1回に抽選する件数の選択肢と既定値 */
+export const EXPLORE_COUNTS = [1, 20, 50, 100] as const;
+export type ExploreCount = (typeof EXPLORE_COUNTS)[number];
+export const DEFAULT_EXPLORE_COUNT: ExploreCount = 20;
+const parseCount = (v: string | null): ExploreCount => {
+  const n = Number(v);
+  return (EXPLORE_COUNTS as readonly number[]).includes(n) ? (n as ExploreCount) : DEFAULT_EXPLORE_COUNT;
+};
 const clampDistance = (v: string | null) => {
   const n = v === null || v === "" ? NaN : Number(v);
   return Number.isFinite(n) ? Math.min(100, Math.max(0, Math.round(n))) : DEFAULT_EXPLORE_DISTANCE;
@@ -37,7 +45,7 @@ export function parseHash(hash: string): Route {
     const example = params.get("example");
     return example ? { name: "decision", id: seg[1], example } : { name: "decision", id: seg[1] };
   }
-  if (seg[0] === "explore") return { name: "explore", topic: params.get("topic") ?? "", distance: clampDistance(params.get("d")) };
+  if (seg[0] === "explore") return { name: "explore", topic: params.get("topic") ?? "", distance: clampDistance(params.get("d")), count: parseCount(params.get("n")) };
   if (seg[0] === "decisions") {
     const compare = params.get("compare");
     return compare ? { name: "decisions", topic: params.get("topic") ?? "", compare } : { name: "decisions", topic: params.get("topic") ?? "" };
@@ -72,10 +80,11 @@ export function decisionsHref(topic = "", compare = ""): string {
 }
 export const decisionHref = (id: string, example?: string) =>
   `#/decision/${encodeURIComponent(id)}${example ? `?example=${encodeURIComponent(example)}` : ""}`;
-export function exploreHref(topic = "", distance = DEFAULT_EXPLORE_DISTANCE): string {
+export function exploreHref(topic = "", distance = DEFAULT_EXPLORE_DISTANCE, count: ExploreCount = DEFAULT_EXPLORE_COUNT): string {
   const params = new URLSearchParams();
   if (topic) params.set("topic", topic);
   params.set("d", String(distance));
+  if (count !== DEFAULT_EXPLORE_COUNT) params.set("n", String(count)); // 既定の件数は URL に書かない（既存の URL と同じ形）
   return `#/explore?${params.toString()}`;
 }
 
