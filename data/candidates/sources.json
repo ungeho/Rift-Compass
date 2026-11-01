@@ -100,5 +100,15 @@
     "creator": { "name": "Evi（えびンモTV）", "kind": "pro_player" },
     "language": "ja",
     "notes": "lol-guide.com の pro-guides（プロ Evi のトップチャンピオン・マッチアップ解説）から発見（2026-11-01）。チャンネル名「えびンモTV」は動画ページの投稿者名で確認。経歴は未確認"
+  },
+  {
+    "id": "loltheory-blog",
+    "kind": "sitemap",
+    "url": "https://blog.loltheory.gg/sitemap-posts.xml",
+    "include": "^https://blog.loltheory.gg/[a-z0-9-]+/?$",
+    "creator": { "name": "LoL Theory", "kind": "media" },
+    "language": "en",
+    "delay_ms": 1000,
+    "notes": "英語の攻略ブログ（LoL Theory。アイテム推奨アプリの運営元のブログ）。robots.txt は /ghost/ などを除き許可（2026-11-01 確認）。sitemap-posts.xml に144件。記事ページに article:author がないため、候補の発信者はサイト名「LoL Theory」とし、記事ごとの著者は本文を確認したときに reviews.json に書く"
   }
 ]

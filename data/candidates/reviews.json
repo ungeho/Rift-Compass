@@ -358,5 +358,59 @@
   "depth_confirmed": "deep",
   "method": "本文の全体（WordPress の公開 API。統計の図は未確認）",
   "reason": "ガレンの勝ち筋・射程・Q への合わせ方、カウンター（ケイル・チョ＝ガス・アーゴット）のルーン・アイテム、ランデュインとガレン E のクリティカルの計算（26.19）。知識14件（G1〜G14）"
+ },
+ "https://blog.loltheory.gg/tower-dive-lol": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第2回（docs/experiments/knowledge-extraction-batch2.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（英語。図は未確認）",
+  "reason": "著者 Griffin Wood（記事ページの表示）。タワーの Reinforced Armor（ミニオンなしで80%軽減、3秒の遅れ）と Warming Up（+50%/発、最大+150%）の区別、アグロの優先順位と1400の切り替え、ダイブ前のチェックリスト、向くチャンピオン。仕様の説明は Wiki の引用が多く、未照合。知識18件（H1〜H18）"
+ },
+ "https://blog.loltheory.gg/split-push-lol": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第2回（docs/experiments/knowledge-extraction-batch2.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（英語。図は未確認）",
+  "reason": "著者 Griffin Wood。スプリットの条件（1対1・ウェーブクリア・逃げ）、相手の3つの選択肢、テレポート、インヒビターの仕組み、するとき・しないとき・失敗例。知識14件（I1〜I14）"
+ },
+ "https://blog.loltheory.gg/kiting-lol": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第2回（docs/experiments/knowledge-extraction-batch2.md）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の全体（英語。図は未確認）",
+  "reason": "著者 Griffin Wood。通常攻撃の3段階と後隙のキャンセル、用語の区別、アタックムーブの設定、練習向きのチャンピオン、カイトされる側の対策、練習法。知識10件（J1〜J10）"
+ },
+ "https://lol-guide.com/articles/qwgsg": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第2回（docs/experiments/knowledge-extraction-batch2.md）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の全体（図は未確認）",
+  "reason": "ゆにか。タワーダイブの3条件（相手の体力2〜3割以下、ミニオン、他の相手が来られない）、タワーの攻撃を受ける役、向くチャンピオン、ジャングラーの位置とテレポートの確認。知識9件（K1〜K9）"
+ },
+ "https://lol-guide.com/articles/kldll": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第2回（docs/experiments/knowledge-extraction-batch2.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（図は未確認）",
+  "reason": "ゆにか（2025年）。ヘラルドはミッドのタワー優先、勝っていれば保持・負けていれば即使用、反対側に出して時間稼ぎ、操縦で戦闘を起こす。サイド2本目のタワーの250ゴールドの差は26.1で旧値の可能性。知識11件（L1〜L11）"
+ },
+ "https://lolgaren.com/akshan-mid-build": {
+  "checked_at": "2026-11-01",
+  "checked_by": "AI（Claude）",
+  "sample": "知識抽出の第2回（docs/experiments/knowledge-extraction-batch2.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。図は未確認）",
+  "reason": "北川楓（26.10リライト、26.20の記述あり）。クリティカル200%・バーサーカー30%で後半も強くなった理由、ルーン・スペル・スキルオーダー・コンボ・ビルド、ドミニクとモータルの計算。知識18件（M1〜M18）"
  }
 }
