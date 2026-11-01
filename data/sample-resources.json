@@ -1399,6 +1399,72 @@
       "generalizability": "role_specific",
       "patch_dependencies": ["system:jungle-camps", "map:summoners-rift"],
       "last_checked_patch": null
+    },
+    {
+      "id": "kn-diagonal-objective-trade",
+      "kind": "decision",
+      "statement_ja": "相手が一方のサイドのオブジェクトに人数をかけたら、反対側でタワー・オブジェクトなどの利益を取り、損を交換にする。",
+      "topic_ids": ["decision-making", "cat-macro"],
+      "status": "empirical",
+      "notes_ja": "根拠の3件はいずれも同じ著者（がりある）で、独立した裏付けではない。別の著者（ゆにか〔kldll〕、LoL Theory〔split-push〕）の同じ主張は、原典が正式資料になれば根拠に追加できる。",
+      "source_person": "がりある",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-diagonal-trade-exceptions",
+      "kind": "principle",
+      "statement_ja": "対角線の交換は、オブジェクトの価値が大きく違う、相手がヴォイドグラブ・ヘラルドの瞳でタワーを速く壊せる、行動の速さが違う（逆側に遅れて着く・ウェーブが遠い・視界がない・相手のテレポート）ときには成り立たないことがある。",
+      "topic_ids": ["decision-making", "cat-macro"],
+      "status": "empirical",
+      "conditions_ja": ["比べる2つの利益の価値が近い", "反対側で動き出せる位置・ウェーブ・視界がある"],
+      "source_person": "がりある",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-turret-plates-permanent-261",
+      "kind": "mechanic",
+      "statement_ja": "パッチ26.1から、ネクサスタワー以外のすべてのタワーにプレートがあり、外側のタワーのプレートは14分で落ちずに恒久になった。外側のタワーは11分から毎分耐性15・プレートの価値10ゴールドを失う（最大 −60・−40）。",
+      "topic_ids": ["cat-basics"],
+      "status": "source_stated",
+      "historical": { "valid_from": "26.1", "valid_until": null, "current_applicability": "unknown", "applicability_note_ja": "26.1時点の公式パッチノートの記載。26.3でプレート（Bulwark）の耐性が変わったことを Wiki の履歴で確認しており、26.2以降の全体は未確認。valid_until が null なのは終了時期が未確認という意味で、現在も同じという意味ではない。" },
+      "patch_dependencies": ["system:turret-plating"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-turret-plates-fell-14min-pre-261",
+      "kind": "mechanic",
+      "statement_ja": "パッチ26.1より前は、外側のタワーのプレートは14分で落ち、以後プレートのゴールドは得られなかった。",
+      "topic_ids": ["cat-basics", "season-history"],
+      "status": "source_stated",
+      "historical": { "valid_from": null, "valid_until": null, "current_applicability": "superseded", "applicability_note_ja": "26.1で変更された旧仕様。導入時期を調べていないため、valid_from を書けず、既存の規則（valid_until には valid_from が要る）により valid_until も書けない。旧仕様であることは current_applicability（superseded）と注記で示す。2025年の解説記事（lol-guide nxldr）もこの旧仕様で書かれている。" },
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-objective-prep-1min",
+      "kind": "decision",
+      "statement_ja": "ドラゴン・ヘラルドなどのオブジェクトの前は、最低でも約1分前までにリコール・コンディションの準備を済ませ、戦えるかを判断する。",
+      "topic_ids": ["recall", "cat-macro"],
+      "status": "empirical",
+      "notes_ja": "同じ著者（がりある）の2記事。ほかに同じ著者で「約1分半前」（suftp、正式資料ではない）、トップ向けに「8分のグラブの前は7分ごろ」（nxldr、正式資料ではない）がある。目安が違うので統合しない。",
+      "source_person": "がりある",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-immobile-mage-not-alone",
+      "kind": "decision",
+      "statement_ja": "機動力の低いメイジは、視界がない・相手ジャングラーが怖いときは単独で動かない（視界を優先し、リコールするか味方と動く）。",
+      "topic_ids": ["mage", "role-mid", "vision"],
+      "status": "empirical",
+      "notes_ja": "別の著者（LoL Theory roaming「Immobile control mages … should not roam」）が同じ判断を述べる。原典を正式資料にすれば根拠に追加でき、著者の違う裏付けになる。",
+      "source_person": "がりある",
+      "generalizability": "role_specific",
+      "patch_dependencies": [],
+      "last_checked_patch": null
     }
   ],
   "evidence": [
@@ -1432,7 +1498,16 @@
     { "id": "ev-029", "note_id": "kn-level2-xp", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Minions" }, "summary_ja": "「Early game breakpoints haven't changed here」。近接 65⇒62、キャスター 32⇒31、砲台/スーパー 100⇒75、共有比率 95/62/…% ⇒ 100/65/…%", "checked_level": "L3", "checked_at": "2026-10-27" },
     { "id": "ev-030", "note_id": "kn-level2-minion-count", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "derivation", "locator": { "section": "Minions" }, "summary_ja": "種別ごとの経験値（ソロ値／2人共有値）から必要体数を計算", "checked_level": "L3", "checked_at": "2026-10-27" },
     { "id": "ev-031", "note_id": "kn-level2-minion-count", "resource_id": "res-wiki-minion", "evidence_type": "derivation", "locator": { "section": "Wave composition" }, "summary_ja": "通常ウェーブは近接3・キャスター3、砲台は3ウェーブ目から（計算の前提）", "checked_level": "L3", "checked_at": "2026-10-27" },
-    { "id": "ev-032", "note_id": "kn-engage-when-flash-down", "resource_id": "res-lg-pdvmw", "evidence_type": "empirical_claim", "locator": { "section": "フラッシュとアルティメットの時間を意識する" }, "summary_ja": "著者の経験則：相手ボットがフラッシュを使った直後は、戻るまでの約5分間がガンク・ロームの対象。サポート（レオナ・レル）のフラッシュが落ちればボットは強気にトレードしやすく、味方ミッドのフラッシュが落ちた直後は相手ジャングラーのガンクが成功しやすい。集団戦の入り方を決めるアルティメット（マルファイト・オーン）が落ちていれば、次のオブジェクトで戦いを始めやすい", "checked_level": "L3", "checked_at": "2026-11-01" }
+    { "id": "ev-032", "note_id": "kn-engage-when-flash-down", "resource_id": "res-lg-pdvmw", "evidence_type": "empirical_claim", "locator": { "section": "フラッシュとアルティメットの時間を意識する" }, "summary_ja": "著者の経験則：相手ボットがフラッシュを使った直後は、戻るまでの約5分間がガンク・ロームの対象。サポート（レオナ・レル）のフラッシュが落ちればボットは強気にトレードしやすく、味方ミッドのフラッシュが落ちた直後は相手ジャングラーのガンクが成功しやすい。集団戦の入り方を決めるアルティメット（マルファイト・オーン）が落ちていれば、次のオブジェクトで戦いを始めやすい", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-033", "note_id": "kn-diagonal-objective-trade", "resource_id": "res-lg-xcppa", "evidence_type": "empirical_claim", "locator": { "section": "オブジェクトの確保の根拠にする" }, "summary_ja": "相手がドラゴンならトップはタワーとヘラルド・グラブ、相手がヘラルドならボットはドラゴン（2025-08）", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-034", "note_id": "kn-diagonal-objective-trade", "resource_id": "res-lg-jdgrp", "evidence_type": "empirical_claim", "locator": { "section": "代わりに何をするべきか？" }, "summary_ja": "諦めるなら逆サイドのオブジェクトやダイブで利益を交換（2025-09）", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-035", "note_id": "kn-diagonal-objective-trade", "resource_id": "res-lg-pdvmw", "evidence_type": "empirical_claim", "locator": { "section": "有利な時は焦らず、不利な時はオブジェクトを交換しよう" }, "summary_ja": "相手がドラゴンに集まったら反対側のタワー・キャンプ（2026-10）", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-036", "note_id": "kn-diagonal-trade-exceptions", "resource_id": "res-lg-xcppa", "evidence_type": "empirical_claim", "locator": { "section": "対角線の法則が成り立たない場合" }, "summary_ja": "価値の差・行動の速さの差の2つの例外（2025-08。ヘラルドの瞳・グラブの現行の効果は未確認）", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-037", "note_id": "kn-turret-plates-permanent-261", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Turrets / Outer Turrets" }, "summary_ja": "Plates are now permanent instead of falling off at 14 minutes ほか", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-038", "note_id": "kn-turret-plates-fell-14min-pre-261", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Outer Turrets" }, "summary_ja": "変更前の値「Turret plates drop at 14 minutes, awarding no further gold」", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-039", "note_id": "kn-objective-prep-1min", "resource_id": "res-lg-pdvmw", "evidence_type": "empirical_claim", "locator": { "section": "オブジェクトの前のウェーブを逆算して作ろう" }, "summary_ja": "約1分前までにリコール", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-040", "note_id": "kn-objective-prep-1min", "resource_id": "res-lg-mpbhg", "evidence_type": "empirical_claim", "locator": { "section": "3. オブジェクトを意識する" }, "summary_ja": "最低でも1分前に戦えるか判断", "checked_level": "L3", "checked_at": "2026-11-01" },
+    { "id": "ev-041", "note_id": "kn-immobile-mage-not-alone", "resource_id": "res-lg-mpbhg", "evidence_type": "empirical_claim", "locator": { "section": "2. 自分のチャンピオンの「コンセプト」を意識する" }, "summary_ja": "フェイ・オリアナ等", "checked_level": "L3", "checked_at": "2026-11-01" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },
@@ -1445,6 +1520,8 @@
     { "id": "rel-008", "from": "kn-jax-e-mechanic", "to": "kn-trade-on-key-cd", "type": "applies_to" },
     { "id": "rel-009", "from": "kn-flash-cd", "to": "kn-engage-when-flash-down", "type": "reason_for" },
     { "id": "rel-010", "from": "kn-trade-on-key-cd", "to": "kn-engage-when-flash-down", "type": "generalizes" },
-    { "id": "rel-011", "from": "kn-hist-ward-limit-v3-14", "to": "kn-hist-ward-full-duration-2014", "type": "context_of" }
+    { "id": "rel-011", "from": "kn-hist-ward-limit-v3-14", "to": "kn-hist-ward-full-duration-2014", "type": "context_of" },
+    { "id": "rel-012", "from": "kn-diagonal-trade-exceptions", "to": "kn-diagonal-objective-trade", "type": "condition_of" },
+    { "id": "rel-013", "from": "kn-turret-plates-fell-14min-pre-261", "to": "kn-turret-plates-permanent-261", "type": "context_of" }
   ]
 }
