@@ -1,0 +1,923 @@
+{
+ "about": "知識抽出バッチの行から作った下書き（tools/experiments/knowledge-drafts.js draft）に、確認の判断（decision）を付けた実証。decision は AI の提案で、人の確認を経ていない。公開データ（data/sample-resources.json）には入れていない。検証：node tools/experiments/knowledge-drafts.js check data/experiments/knowledge-draft-pilot.json",
+ "created_at": "2026-11-01",
+ "drafts": [
+  {
+   "row": "第2回 N3",
+   "source": {
+    "letter": "N",
+    "title": "Patch 26.1 Notes",
+    "url": "https://www.leagueoflegends.com/en-us/news/game-updates/patch-26-1-notes/",
+    "author": "Riot Games（公式）",
+    "published": "英語、2026-01-07（JSON-LD の datePublished）",
+    "candidate_key": null,
+    "resource_id": "res-riot-patch-26-1-en",
+    "resource_level": "L3"
+   },
+   "record": {
+    "heading": "N. パッチ26.1 の公式パッチノート（Riot Games、英語）",
+    "section": "外側のタワー",
+    "type": "仕様",
+    "conditions": null,
+    "check": "済（公式）",
+    "relations": "**第1回 C11 は旧仕様**（14分の消滅）。H17 と一致"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "第1回 C11",
+     "H17"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": true,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b2-n3",
+    "kind": "mechanic",
+    "statement_ja": "プレートは14分で落ちなくなり、恒久になった。耐性：「14分で40に設定」⇒「11分から毎分15を失い、最大 −60」",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "Riot Games",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b2-n3",
+    "note_id": "kn-draft-b2-n3",
+    "resource_id": "res-riot-patch-26-1-en",
+    "evidence_type": "source_fact",
+    "locator": {
+     "section": "外側のタワー"
+    },
+    "summary_ja": "プレートは14分で落ちなくなり、恒久になった。耐性：「14分で40に設定」⇒「11分から毎分15を失い、最大 −60」",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": []
+   },
+   "review": [
+    {
+     "field": "topic_ids",
+     "reason": "記述から Topic を提案できない"
+    },
+    {
+     "field": "merge",
+     "reason": "同じ資料を根拠にする既存ノート：kn-level2-xp・kn-level2-minion-count・kn-turret-plates-permanent-261・kn-turret-plates-fell-14min-pre-261。この行が既に登録済みでないかを確かめる"
+    }
+   ],
+   "decision": {
+    "action": "add_evidence",
+    "merge_into": "kn-turret-plates-permanent-261",
+    "evidence": {
+     "checked_level": "L3",
+     "checked_at": "2026-11-01",
+     "locator": {
+      "section": "Turrets / Outer Turrets"
+     }
+    },
+    "reason_ja": "既存ノートの元になった行。同じ資料の根拠（ev-037）があるので、登録済みとして扱われるはず",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第3回 R7",
+   "source": {
+    "letter": "R",
+    "title": "中盤以降の立ち回り:ミッドレーン視点",
+    "url": "https://www.lol-guide.com/articles/mpbhg",
+    "author": "がりある（lol-guide.com）",
+    "published": "日本語、2025-08-17",
+    "candidate_key": "https://lol-guide.com/articles/mpbhg",
+    "resource_id": "res-lg-mpbhg",
+    "resource_level": "L3"
+   },
+   "record": {
+    "heading": "R. 中盤以降のミッド（がりある、日本語、2025年）",
+    "section": "3",
+    "type": "著者",
+    "conditions": "—",
+    "check": "原典のみ",
+    "relations": "**同じ著者の複数の記事**：pdvmw ③「約1分前」、第1回 C9「7分ごろ」、suftp「約1分半前」。R は「最低でも1分前」"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "第1回 C9"
+    ]
+   },
+   "flags": {
+    "same_author": true,
+    "differs": false,
+    "agrees": false,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b3-r7",
+    "kind": null,
+    "statement_ja": "オブジェクトが湧いていなければ、相手のジャングルのキャンプやタワーを狙う（周辺の視界を取る）。ドラゴン・ヘラルドの最低1分前には、戦えるかを判断してコンディションを整える",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "がりある",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b3-r7",
+    "note_id": "kn-draft-b3-r7",
+    "resource_id": "res-lg-mpbhg",
+    "evidence_type": "empirical_claim",
+    "locator": {
+     "section": "3"
+    },
+    "summary_ja": "オブジェクトが湧いていなければ、相手のジャングルのキャンプやタワーを狙う（周辺の視界を取る）。ドラゴン・ヘラルドの最低1分前には、戦えるかを判断してコンディションを整える",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": [
+     "vision"
+    ]
+   },
+   "review": [
+    {
+     "field": "kind",
+     "reason": "principle・decision・hypothesis のどれかを人が決める（記録の種類からは区別できない）"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述に Topic の名前・別名が現れたものを提案：vision。採否は人が決める"
+    },
+    {
+     "field": "merge",
+     "reason": "同じ資料を根拠にする既存ノート：kn-objective-prep-1min・kn-immobile-mage-not-alone。この行が既に登録済みでないかを確かめる"
+    },
+    {
+     "field": "evidence",
+     "reason": "同じ著者の記述は独立した裏付けにしない"
+    }
+   ],
+   "decision": {
+    "action": "add_evidence",
+    "merge_into": "kn-objective-prep-1min",
+    "evidence": {
+     "checked_level": "L3",
+     "checked_at": "2026-11-01"
+    },
+    "reason_ja": "既存ノートの根拠（ev-040）と同じ記述。節の書き方（「3」と「3. オブジェクトを意識する」）が違っても二重登録しない",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第3回 R4",
+   "source": {
+    "letter": "R",
+    "title": "中盤以降の立ち回り:ミッドレーン視点",
+    "url": "https://www.lol-guide.com/articles/mpbhg",
+    "author": "がりある（lol-guide.com）",
+    "published": "日本語、2025-08-17",
+    "candidate_key": "https://lol-guide.com/articles/mpbhg",
+    "resource_id": "res-lg-mpbhg",
+    "resource_level": "L3"
+   },
+   "record": {
+    "heading": "R. 中盤以降のミッド（がりある、日本語、2025年）",
+    "section": "2",
+    "type": "著者",
+    "conditions": "ミッドのメイジ",
+    "check": "原典のみ",
+    "relations": "**経験則の共通点**：P3（LoL Theory「動けないコントロールメイジはロームしない」）。著者・言語が違う"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "P3"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": true,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b3-r4",
+    "kind": null,
+    "statement_ja": "機動力の低いメイジ（フェイ・オリアナ）は、先に押せても視界次第でタワー下に圧力をかけきれない。視界を優先し、ワードがない・相手ジャングラーが怖いならリコールするか、ミッドが押せていれば味方に視界の支援を頼む",
+    "topic_ids": [],
+    "status": "unverified",
+    "conditions_ja": [
+     "ミッドのメイジ"
+    ],
+    "source_person": "がりある",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b3-r4",
+    "note_id": "kn-draft-b3-r4",
+    "resource_id": "res-lg-mpbhg",
+    "evidence_type": "empirical_claim",
+    "locator": {
+     "section": "2"
+    },
+    "summary_ja": "機動力の低いメイジ（フェイ・オリアナ）は、先に押せても視界次第でタワー下に圧力をかけきれない。視界を優先し、ワードがない・相手ジャングラーが怖いならリコールするか、ミッドが押せていれば味方に視界の支援を頼む",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": [
+     "recall",
+     "vision",
+     "mage"
+    ]
+   },
+   "review": [
+    {
+     "field": "kind",
+     "reason": "principle・decision・hypothesis のどれかを人が決める（記録の種類からは区別できない）"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述に Topic の名前・別名が現れたものを提案：recall・vision・mage。採否は人が決める"
+    },
+    {
+     "field": "merge",
+     "reason": "同じ資料を根拠にする既存ノート：kn-objective-prep-1min・kn-immobile-mage-not-alone。この行が既に登録済みでないかを確かめる"
+    }
+   ],
+   "decision": {
+    "action": "add_evidence",
+    "merge_into": "kn-immobile-mage-not-alone",
+    "evidence": {
+     "checked_level": "L3",
+     "checked_at": "2026-11-01"
+    },
+    "reason_ja": "既存ノートの根拠（ev-041）と同じ記述",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第2回 N7",
+   "source": {
+    "letter": "N",
+    "title": "Patch 26.1 Notes",
+    "url": "https://www.leagueoflegends.com/en-us/news/game-updates/patch-26-1-notes/",
+    "author": "Riot Games（公式）",
+    "published": "英語、2026-01-07（JSON-LD の datePublished）",
+    "candidate_key": null,
+    "resource_id": "res-riot-patch-26-1-en",
+    "resource_level": "L3"
+   },
+   "record": {
+    "heading": "N. パッチ26.1 の公式パッチノート（Riot Games、英語）",
+    "section": "タワー",
+    "type": "仕様",
+    "conditions": null,
+    "check": "済（公式）",
+    "relations": "H15 と一致"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "H15"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": true,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b2-n7",
+    "kind": "mechanic",
+    "statement_ja": "「プレートはミニオン・遠距離チャンピオンから17%少なく受ける」⇒「タワーは近接チャンピオンから20%多く受ける」。タワーの真の視界 1095⇒1100",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "Riot Games",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b2-n7",
+    "note_id": "kn-draft-b2-n7",
+    "resource_id": "res-riot-patch-26-1-en",
+    "evidence_type": "source_fact",
+    "locator": {
+     "section": "タワー"
+    },
+    "summary_ja": "「プレートはミニオン・遠距離チャンピオンから17%少なく受ける」⇒「タワーは近接チャンピオンから20%多く受ける」。タワーの真の視界 1095⇒1100",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": [
+     "vision"
+    ]
+   },
+   "review": [
+    {
+     "field": "topic_ids",
+     "reason": "記述に Topic の名前・別名が現れたものを提案：vision。採否は人が決める"
+    },
+    {
+     "field": "merge",
+     "reason": "同じ資料を根拠にする既存ノート：kn-level2-xp・kn-level2-minion-count・kn-turret-plates-permanent-261・kn-turret-plates-fell-14min-pre-261。この行が既に登録済みでないかを確かめる"
+    }
+   ],
+   "decision": {
+    "action": "new_note",
+    "note": {
+     "id": "kn-pilot-turret-melee-bonus-261",
+     "kind": "mechanic",
+     "topic_ids": [
+      "cat-basics"
+     ],
+     "statement_ja": "パッチ26.1から、タワーは近接チャンピオンから20%多くダメージを受ける（それまでの「プレートはミニオン・遠距離チャンピオンから17%少なく受ける」から変更）。",
+     "historical": {
+      "valid_from": "26.1",
+      "valid_until": null,
+      "current_applicability": "unknown",
+      "applicability_note_ja": "26.1時点の公式パッチノートの記載。26.2以降は未確認。"
+     },
+     "patch_dependencies": [
+      "system:turret"
+     ]
+    },
+    "evidence": {
+     "checked_level": "L3",
+     "checked_at": "2026-11-01",
+     "locator": {
+      "section": "Turrets"
+     },
+     "summary_ja": "Turrets take 20% more damage from melee champions（26.1）"
+    },
+    "reason_ja": "公式の仕様で、既存ノートにない。status は source_stated の条件（L3 の source_fact）を満たすが、昇格は人が決めるので unverified のまま",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第2回 H15",
+   "source": {
+    "letter": "H",
+    "title": "Tower Diving in LoL: How Turret Aggro Actually Works",
+    "url": "https://blog.loltheory.gg/tower-dive-lol/",
+    "author": "Griffin Wood（LoL Theory）",
+    "published": "英語、2026-05-06（更新 2026-08-25）",
+    "candidate_key": "https://blog.loltheory.gg/tower-dive-lol",
+    "resource_id": null,
+    "resource_level": null
+   },
+   "record": {
+    "heading": "H. タワーダイブとタワーのアグロ（LoL Theory、英語）",
+    "section": "計算",
+    "type": "原典の仕様説明",
+    "conditions": "—",
+    "check": "済（26.1 時点）：N の公式パッチノート（26.1「Turrets take 20% more damage from melee champions」）。26.2 以降は未確認",
+    "relations": "N7"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "N7"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": false,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b2-h15",
+    "kind": "mechanic",
+    "statement_ja": "近接チャンピオンはタワーに20%多くダメージを与える",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "Griffin Wood",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b2-h15",
+    "note_id": "kn-draft-b2-h15",
+    "resource_id": null,
+    "evidence_type": "empirical_claim",
+    "locator": {
+     "section": "計算"
+    },
+    "summary_ja": "近接チャンピオンはタワーに20%多くダメージを与える",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": []
+   },
+   "review": [
+    {
+     "field": "evidence.resource_id",
+     "reason": "原典が正式資料（Resource）に未登録。根拠を付けるには、人が正式資料にするか（確認レベル L2 以上・無料アクセスの確認）を判断する。自動では登録しない"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述から Topic を提案できない"
+    }
+   ],
+   "decision": {
+    "action": "skip",
+    "reason_ja": "N7 と同じ仕様を LoL Theory が説明している（1知識に複数の原典）。原典が正式資料ではないので根拠にしない。正式資料になれば、N7 のノートに empirical_claim の根拠として追加できる",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第2回 N10",
+   "source": {
+    "letter": "N",
+    "title": "Patch 26.1 Notes",
+    "url": "https://www.leagueoflegends.com/en-us/news/game-updates/patch-26-1-notes/",
+    "author": "Riot Games（公式）",
+    "published": "英語、2026-01-07（JSON-LD の datePublished）",
+    "candidate_key": null,
+    "resource_id": "res-riot-patch-26-1-en",
+    "resource_level": "L3"
+   },
+   "record": {
+    "heading": "N. パッチ26.1 の公式パッチノート（Riot Games、英語）",
+    "section": "スマイト",
+    "type": "仕様",
+    "conditions": null,
+    "check": "済（公式）",
+    "relations": "**第1回 E7・F8 の「600〜1200」「600」は旧値または1段目の値**（E7 の600〜1200は 26.1 より前の値と一致）"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "第1回 E7",
+     "F8",
+     "E7"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": true,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b2-n10",
+    "kind": "mechanic",
+    "statement_ja": "スマイトのダメージ 600/900/1200 ⇒ 600/1000/1400",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "Riot Games",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b2-n10",
+    "note_id": "kn-draft-b2-n10",
+    "resource_id": "res-riot-patch-26-1-en",
+    "evidence_type": "source_fact",
+    "locator": {
+     "section": "スマイト"
+    },
+    "summary_ja": "スマイトのダメージ 600/900/1200 ⇒ 600/1000/1400",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": []
+   },
+   "review": [
+    {
+     "field": "topic_ids",
+     "reason": "記述から Topic を提案できない"
+    },
+    {
+     "field": "merge",
+     "reason": "同じ資料を根拠にする既存ノート：kn-level2-xp・kn-level2-minion-count・kn-turret-plates-permanent-261・kn-turret-plates-fell-14min-pre-261。この行が既に登録済みでないかを確かめる"
+    }
+   ],
+   "decision": {
+    "action": "new_note",
+    "note": {
+     "id": "kn-pilot-smite-damage-261",
+     "kind": "mechanic",
+     "topic_ids": [
+      "summoner-spells"
+     ],
+     "statement_ja": "パッチ26.1で、スマイトのダメージは 600/900/1200 から 600/1000/1400 になった。",
+     "historical": {
+      "valid_from": "26.1",
+      "valid_until": null,
+      "current_applicability": "unknown",
+      "applicability_note_ja": "26.1時点の公式パッチノートの記載。26.2以降は未確認。第1回 E7・F8 の「600〜1200」は26.1より前の値。"
+     },
+     "patch_dependencies": [
+      "spell:smite"
+     ]
+    },
+    "evidence": {
+     "checked_level": "L3",
+     "checked_at": "2026-11-01",
+     "locator": {
+      "section": "Smite"
+     },
+     "summary_ja": "Smite damage 600/900/1200 ⇒ 600/1000/1400（26.1）"
+    },
+    "reason_ja": "公式の数値。旧値（第1回 E7・F8）とは時期の違いとして historical に残し、統合しない",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第3回 R5",
+   "source": {
+    "letter": "R",
+    "title": "中盤以降の立ち回り:ミッドレーン視点",
+    "url": "https://www.lol-guide.com/articles/mpbhg",
+    "author": "がりある（lol-guide.com）",
+    "published": "日本語、2025-08-17",
+    "candidate_key": "https://lol-guide.com/articles/mpbhg",
+    "resource_id": "res-lg-mpbhg",
+    "resource_level": "L3"
+   },
+   "record": {
+    "heading": "R. 中盤以降のミッド（がりある、日本語、2025年）",
+    "section": "2",
+    "type": "著者",
+    "conditions": "ミッドのアサシン系",
+    "check": "原典のみ",
+    "relations": "第2回 I1・I9（スプリットに必要な決闘・逃げ）"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "第2回 I1",
+     "I9"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": false,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b3-r5",
+    "kind": null,
+    "statement_ja": "機動力があり相手ジャングラーと遭遇しても問題ないチャンピオン（サイラス・アカリ）は、ある程度まで1人で視界を取ってよく、ソロキルも狙える",
+    "topic_ids": [],
+    "status": "unverified",
+    "conditions_ja": [
+     "ミッドのアサシン系"
+    ],
+    "source_person": "がりある",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b3-r5",
+    "note_id": "kn-draft-b3-r5",
+    "resource_id": "res-lg-mpbhg",
+    "evidence_type": "empirical_claim",
+    "locator": {
+     "section": "2"
+    },
+    "summary_ja": "機動力があり相手ジャングラーと遭遇しても問題ないチャンピオン（サイラス・アカリ）は、ある程度まで1人で視界を取ってよく、ソロキルも狙える",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": [
+     "vision"
+    ]
+   },
+   "review": [
+    {
+     "field": "kind",
+     "reason": "principle・decision・hypothesis のどれかを人が決める（記録の種類からは区別できない）"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述に Topic の名前・別名が現れたものを提案：vision。採否は人が決める"
+    },
+    {
+     "field": "merge",
+     "reason": "同じ資料を根拠にする既存ノート：kn-objective-prep-1min・kn-immobile-mage-not-alone。この行が既に登録済みでないかを確かめる"
+    }
+   ],
+   "decision": {
+    "action": "new_note",
+    "note": {
+     "id": "kn-pilot-mobile-mid-solo-vision",
+     "kind": "decision",
+     "topic_ids": [
+      "role-mid",
+      "vision"
+     ],
+     "statement_ja": "機動力があり相手ジャングラーと遭遇しても問題ないミッドのチャンピオン（例：サイラス・アカリ）は、ある程度まで1人で視界を取ってよい。"
+    },
+    "evidence": {
+     "checked_level": "L3",
+     "checked_at": "2026-11-01",
+     "locator": {
+      "section": "2. 自分のチャンピオンの「コンセプト」を意識する"
+     }
+    },
+    "relations": [
+     {
+      "to": "kn-immobile-mage-not-alone",
+      "type": "context_of"
+     }
+    ],
+    "reason_ja": "同じ節の R4（機動力の低いメイジは単独で動かない）とは、チャンピオンの機動力という条件で行動の向きが逆になる。統合せず別ノート＋関係にする",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第2回 H9",
+   "source": {
+    "letter": "H",
+    "title": "Tower Diving in LoL: How Turret Aggro Actually Works",
+    "url": "https://blog.loltheory.gg/tower-dive-lol/",
+    "author": "Griffin Wood（LoL Theory）",
+    "published": "英語、2026-05-06（更新 2026-08-25）",
+    "candidate_key": "https://blog.loltheory.gg/tower-dive-lol",
+    "resource_id": null,
+    "resource_level": null
+   },
+   "record": {
+    "heading": "H. タワーダイブとタワーのアグロ（LoL Theory、英語）",
+    "section": "チェックリスト",
+    "type": "著者（数値の目安）",
+    "conditions": "スクイシーの相手",
+    "check": "原典のみ",
+    "relations": "**相違（条件の違い）**：K2（ゆにか「相手の体力2〜3割以下のときだけ」）。対象（スクイシー・人数）と確実さの基準が違い、矛盾とは断定しない"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "K2"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": true,
+    "agrees": false,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b2-h9",
+    "kind": null,
+    "statement_ja": "目安：スクイシーで体力60%未満なら味方と2人でダイブ可、40%未満なら CC とサステインがあれば1人で可",
+    "topic_ids": [],
+    "status": "unverified",
+    "conditions_ja": [
+     "スクイシーの相手"
+    ],
+    "source_person": "Griffin Wood",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b2-h9",
+    "note_id": "kn-draft-b2-h9",
+    "resource_id": null,
+    "evidence_type": "empirical_claim",
+    "locator": {
+     "section": "チェックリスト"
+    },
+    "summary_ja": "目安：スクイシーで体力60%未満なら味方と2人でダイブ可、40%未満なら CC とサステインがあれば1人で可",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": [
+     "crowd-control"
+    ]
+   },
+   "review": [
+    {
+     "field": "evidence.resource_id",
+     "reason": "原典が正式資料（Resource）に未登録。根拠を付けるには、人が正式資料にするか（確認レベル L2 以上・無料アクセスの確認）を判断する。自動では登録しない"
+    },
+    {
+     "field": "kind",
+     "reason": "principle・decision・hypothesis のどれかを人が決める（記録の種類からは区別できない）"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述に Topic の名前・別名が現れたものを提案：crowd-control。採否は人が決める"
+    },
+    {
+     "field": "merge",
+     "reason": "関係・確認の記述に「相違・条件の違い・食い違い」がある。条件・数値・著者・パッチの違いを残すため、無条件に統合しない"
+    }
+   ],
+   "decision": {
+    "action": "skip",
+    "reason_ja": "原典（LoL Theory tower-dive）が正式資料ではない。K2（ゆにか、相手の体力2〜3割）とは対象・人数・基準が違うので、登録するときも統合しない",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第3回 O8",
+   "source": {
+    "letter": "O",
+    "title": "Snowballing in LoL: How Leads Compound and How Riot Stops Them",
+    "url": "https://blog.loltheory.gg/snowballing-lol/",
+    "author": "Griffin Wood（LoL Theory。記事ページの表示）",
+    "published": "英語、2026-05-06（更新 2026-08-25）",
+    "candidate_key": "https://blog.loltheory.gg/snowballing-lol",
+    "resource_id": null,
+    "resource_level": null
+   },
+   "record": {
+    "heading": "O. スノーボール（LoL Theory、英語）",
+    "section": "実践",
+    "type": "原典の仕様説明",
+    "conditions": "—",
+    "check": "公式仕様と食い違う：26.1 時点の出現はドラゴン5:00・グラブ8:00（第1回・第2回で確認済み）。原典の誤記か旧仕様とみられる",
+    "relations": "pdvmw ③・第1回 C9"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "第1回 C9"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": true,
+    "agrees": false,
+    "outdated": true,
+    "figure_unchecked": false,
+    "spec_unverified": true
+   },
+   "note": {
+    "id": "kn-draft-b3-o8",
+    "kind": "mechanic",
+    "statement_ja": "④の中で「6:00に湧くヴォイドグラブかドラゴン」と書いている",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "Griffin Wood",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b3-o8",
+    "note_id": "kn-draft-b3-o8",
+    "resource_id": null,
+    "evidence_type": "empirical_claim",
+    "locator": {
+     "section": "実践"
+    },
+    "summary_ja": "④の中で「6:00に湧くヴォイドグラブかドラゴン」と書いている",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": []
+   },
+   "review": [
+    {
+     "field": "evidence.resource_id",
+     "reason": "原典が正式資料（Resource）に未登録。根拠を付けるには、人が正式資料にするか（確認レベル L2 以上・無料アクセスの確認）を判断する。自動では登録しない"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述から Topic を提案できない"
+    },
+    {
+     "field": "historical",
+     "reason": "確認の記述「公式仕様と食い違う：26.1 時点の出現はドラゴン5:00・グラブ8:00（第1回・第2回で確認済み）。原典の誤記か旧仕様とみられる」：現行の仕様と食い違う・古い可能性。historical（current_applicability）を人が決める"
+    },
+    {
+     "field": "status",
+     "reason": "原典の仕様説明で、公式・Wiki との照合が済んでいない"
+    },
+    {
+     "field": "merge",
+     "reason": "関係・確認の記述に「相違・条件の違い・食い違い」がある。条件・数値・著者・パッチの違いを残すため、無条件に統合しない"
+    }
+   ],
+   "decision": {
+    "action": "skip",
+    "reason_ja": "原典の記述（6:00のグラブ・ドラゴン）が26.1の公式の出現時間と食い違う。誤記か旧仕様とみられ、知識として登録しない",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  },
+  {
+   "row": "第3回 U2",
+   "source": {
+    "letter": "U",
+    "title": "League of Legends Wiki「Turret」（照合のみ）",
+    "url": null,
+    "author": "コミュニティ Wiki",
+    "published": "英語、revid 4080007（2026-11-01 取得）",
+    "candidate_key": null,
+    "resource_id": null,
+    "resource_level": null
+   },
+   "record": {
+    "heading": "U. Wiki「Turret」での照合（第2回 H の仕様の説明）",
+    "section": null,
+    "type": null,
+    "conditions": null,
+    "check": "一致（同）",
+    "relations": "H4"
+   },
+   "refs": {
+    "notes": [],
+    "decisions": [],
+    "rows": [
+     "H4"
+    ]
+   },
+   "flags": {
+    "same_author": false,
+    "differs": false,
+    "agrees": false,
+    "outdated": false,
+    "figure_unchecked": false,
+    "spec_unverified": false
+   },
+   "note": {
+    "id": "kn-draft-b3-u2",
+    "kind": null,
+    "statement_ja": "Warming Up：チャンピオンに当たるたびに+50%、最大+150%。最後の命中から5秒でリセット、対象を変えてもリセットされない",
+    "topic_ids": [],
+    "status": "unverified",
+    "source_person": "コミュニティ Wiki",
+    "patch_dependencies": [],
+    "last_checked_patch": null
+   },
+   "evidence": {
+    "id": "ev-draft-b3-u2",
+    "note_id": "kn-draft-b3-u2",
+    "resource_id": null,
+    "evidence_type": null,
+    "locator": null,
+    "summary_ja": "Warming Up：チャンピオンに当たるたびに+50%、最大+150%。最後の命中から5秒でリセット、対象を変えてもリセットされない",
+    "checked_level": null,
+    "checked_at": null
+   },
+   "suggested": {
+    "topic_ids": []
+   },
+   "review": [
+    {
+     "field": "evidence.resource_id",
+     "reason": "原典が正式資料（Resource）に未登録。根拠を付けるには、人が正式資料にするか（確認レベル L2 以上・無料アクセスの確認）を判断する。自動では登録しない"
+    },
+    {
+     "field": "kind・evidence_type",
+     "reason": "記録に種類の列がない（照合の表）。照合先の資料と種類を人が決める"
+    },
+    {
+     "field": "kind",
+     "reason": "principle・decision・hypothesis のどれかを人が決める（記録の種類からは区別できない）"
+    },
+    {
+     "field": "topic_ids",
+     "reason": "記述から Topic を提案できない"
+    }
+   ],
+   "decision": {
+    "action": "skip",
+    "reason_ja": "Wiki の Turret ページが正式資料ではない。正式資料にすれば、Warming Up を1ノートにし、Wiki を source_fact、H4（LoL Theory）・K5（ゆにか）を empirical_claim の根拠として並べられる（1知識に複数の原典）",
+    "reviewed_by": "AI の提案（人の確認待ち）"
+   }
+  }
+ ]
+}

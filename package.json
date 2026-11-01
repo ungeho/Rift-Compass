@@ -13,7 +13,7 @@
     "eval:desk": "node tools/desk-retrieval-check.js",
     "candidates": "node tools/candidates/collect.js",
     "test:candidates": "node --test tools/candidates/candidates.test.js",
-    "test:experiments": "node --test tools/experiments/decision-units.test.js tools/experiments/decision-retrieval.test.js tools/experiments/decision-criteria.test.js"
+    "test:experiments": "node --test tools/experiments/decision-units.test.js tools/experiments/decision-retrieval.test.js tools/experiments/decision-criteria.test.js tools/experiments/knowledge-drafts.test.js"
   },
   "dependencies": {
     "react": "^19.3.1",
