@@ -58,7 +58,7 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
   });
 
   it("一致するノートがなければ何も出さない", () => {
-    expect(renderToStaticMarkup(<RelatedNotes q="バロンの出現時間" />)).toBe("");
+    expect(renderToStaticMarkup(<RelatedNotes q="バロン" />)).toBe("");
     expect(text(page("how to freeze a lane"))).toContain("検索語に一致した知識ノート");
     expect(index.data.knowledge_notes.length).toBeGreaterThan(publicNotes.length);
   });

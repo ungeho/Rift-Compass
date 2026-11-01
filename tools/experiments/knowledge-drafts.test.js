@@ -3,7 +3,7 @@ const test = require("node:test");
 const assert = require("node:assert");
 const fs = require("fs");
 const path = require("path");
-const { loadAll, draft, check } = require("./knowledge-drafts");
+const { loadAll, draft, check, normUrl } = require("./knowledge-drafts");
 
 const ROOT = path.join(__dirname, "..", "..");
 const DATA = path.join(ROOT, "data", "sample-resources.json");
@@ -35,8 +35,11 @@ test("すべての行を下書きにでき、status・確認レベルは昇格�
     // 原典の URL・著者・行の位置を保持する
     assert.ok(d.row && d.source && d.source.author);
   }
-  // 正式資料があるのは Patch 26.1（N）と mpbhg（R）の行だけ
-  assert.deepStrictEqual([...new Set(ds.filter((d) => d.evidence.resource_id).map((d) => d.source.letter))].sort(), ["N", "R"]);
+  // 資料が付くのは、原典の URL が正式資料と一致する原典の行だけ（2026-11-01 時点：N・R、正式収録で H・K が加わった）
+  const norm = normUrl;
+  const formal = new Set(data.resources.map((r) => norm(r.url)));
+  for (const d of ds) assert.strictEqual(Boolean(d.evidence.resource_id), Boolean(d.source.url && formal.has(norm(d.source.url))), d.row);
+  assert.deepStrictEqual([...new Set(ds.filter((d) => d.evidence.resource_id).map((d) => d.source.letter))].sort(), ["H", "K", "N", "R"]);
 });
 
 test("相違・同じ著者・古い記述は、統合しない理由・注意として review に残す", () => {
@@ -49,7 +52,8 @@ test("相違・同じ著者・古い記述は、統合しない理由・注意�
 test("実証：確認済みの下書きは既存の検証に通り、登録済みの行は二重に登録しない。公開データは変更しない", () => {
   const before = fs.readFileSync(DATA, "utf8");
   const r = check(pilot.drafts);
-  assert.deepStrictEqual(r.errors, []);
+  // 実証の後、N10（スマイト）は同じ主張で正式に収録された（kn-smite-damage-261）。check は二重の登録として止める
+  assert.deepStrictEqual(r.errors, ["第2回 N10: 同じ主張のノートが既にある"]);
   assert.deepStrictEqual(r.added, { notes: 3, evidence: 3 });
   for (const row of ["第2回 N3", "第3回 R7", "第3回 R4"]) assert.match(r.report.find((x) => x.row === row).result, /既に登録済み/);
   assert.strictEqual(r.report.filter((x) => /^登録しない/.test(x.result)).length, 4);
@@ -74,13 +78,13 @@ test("確認が足りない下書きは通さない", () => {
 
 test("原典1件ごとの処理：原典の記号で全行を下書きにでき、その原典を正式資料にすると全行に資料が付く（作業用のコピーで確認）", () => {
   const data = JSON.parse(fs.readFileSync(DATA, "utf8"));
-  const h = draft(["2:H"], data);
-  assert.strictEqual(h.length, 18);
+  const h = draft(["2:I"], data);
+  assert.strictEqual(h.length, 14);
   assert.ok(h.every((d) => d.evidence.resource_id === null));
   const copy = JSON.parse(JSON.stringify(data));
-  copy.resources.push({ id: "res-sim-h", url: h[0].source.url, creator: { name: h[0].source.author }, verification: { level: "L2" }, topic_ids: [] });
-  const after = draft(["2:H"], copy);
-  assert.ok(after.every((d) => d.evidence.resource_id === "res-sim-h"));
+  copy.resources.push({ id: "res-sim-i", url: h[0].source.url, creator: { name: h[0].source.author }, verification: { level: "L2" }, topic_ids: [] });
+  const after = draft(["2:I"], copy);
+  assert.ok(after.every((d) => d.evidence.resource_id === "res-sim-i"));
   // 資料を登録しても、status・確認レベルは決めない
   assert.ok(after.every((d) => d.note.status === "unverified" && d.evidence.checked_level === null));
   assert.throws(() => draft(["2:Z"], data), /行がない/);

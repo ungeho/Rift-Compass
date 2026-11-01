@@ -124,9 +124,9 @@ describe("5. L0・無料未確認の資料は通常の一覧・検索に出な�
     for (const id of hidden) expect(r).not.toContain(id);
   });
 
-  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件、新規判断材料の収録試験で1件追加して76件）", () => {
-    expect(index.resources).toHaveLength(76);
-    expect(index.publicResources).toHaveLength(74);
+  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件、新規判断材料の収録試験で1件追加して76件、2026-11-01 の正式収録で9件追加して85件）", () => {
+    expect(index.resources).toHaveLength(85);
+    expect(index.publicResources).toHaveLength(83);
   });
 
   it("絞り込みでも出ない", () => {
@@ -152,7 +152,7 @@ describe("10. 該当資料がない検索で、無関係な結果を出さない
   });
 
   it("空の検索は公開対象の全件を返す", () => {
-    expect(ids("")).toHaveLength(74);
+    expect(ids("")).toHaveLength(83);
   });
 });
 
