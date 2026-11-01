@@ -335,7 +335,47 @@ function structureOf(html) {
   return { chars: text.length, headings: headings.length, reason_headings: headings.filter((h) => REASON_HEADING.test(h)).length };
 }
 
+// ---------- 原典目録：URL だけの収集と、収録の段階 ----------
+
+/**
+ * サイトマップの URL だけを候補の項目にする（ページは取得しない）。
+ * 題名・公開日・更新日は取得していないので null のままにし、推測で埋めない。既知の URL は除く
+ */
+function urlOnlyItems(urls, src, known = () => false) {
+  return urls
+    .filter((url) => !known(url))
+    .slice(0, src.max_new ?? Infinity)
+    .map((url) => ({ url, title: null, published_at: null, updated_at: null, creator: src.creator || null, type: src.type || "article", language: src.language, metadata_from: "sitemap_only" }));
+}
+
+/** 収録の段階（各候補を、到達した一番上の段階に1回だけ数える。排他的な集計） */
+const STAGES = ["1 URL のみ", "2 メタデータ", "3 本文確認", "4 正式資料", "5 知識抽出"];
+
+/**
+ * @param {object} c  候補
+ * @param {{ reviews: Record<string, object>, extracted: Set<string> }} ctx
+ *   extracted は、判断材料の出典・知識ノートの根拠になっている正式資料の ID
+ */
+function stageOf(c, { reviews, extracted }) {
+  if (c.existing_resource_id && extracted.has(c.existing_resource_id)) return STAGES[4];
+  if (c.existing_resource_id) return STAGES[3];
+  if (reviews[c.key]) return STAGES[2];
+  if (c.metadata_from === "sitemap_only") return STAGES[0];
+  return STAGES[1];
+}
+
+/** 段階ごとの件数を、排他的（その段階にちょうどいる件数）と累積（その段階以上に到達した件数）の両方で返す */
+function stageCounts(list, ctx) {
+  const exclusive = Object.fromEntries(STAGES.map((s) => [s, 0]));
+  for (const c of list) exclusive[stageOf(c, ctx)]++;
+  const cumulative = {};
+  let acc = 0;
+  for (const s of [...STAGES].reverse()) cumulative[s] = acc += exclusive[s];
+  return { exclusive, cumulative };
+}
+
 module.exports = {
   youtubeId, normalizeUrl, candidateKey, normalizeTitle, titleSimilarity, topicMatcher, classify, ruleTriage,
   mergeCandidates, annotate, structureOf, splitTitleTags, excerptFeatures, TIER_ORDER,
+  urlOnlyItems, stageOf, stageCounts, STAGES,
 };

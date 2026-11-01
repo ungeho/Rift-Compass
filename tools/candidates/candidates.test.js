@@ -4,7 +4,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("fs");
 const path = require("path");
-const { youtubeId, normalizeUrl, candidateKey, titleSimilarity, mergeCandidates, classify, topicMatcher, structureOf, splitTitleTags } = require("./lib");
+const { youtubeId, normalizeUrl, candidateKey, titleSimilarity, mergeCandidates, classify, topicMatcher, structureOf, splitTitleTags, urlOnlyItems, stageOf, stageCounts, STAGES } = require("./lib");
 
 const dataset = require("../../data/sample-resources.json");
 const ctx = (extra = {}) => ({ now: "2026-10-28", resources: dataset.resources, topics: dataset.topics, reviews: {}, ...extra });
@@ -178,4 +178,58 @@ test("抜粋は手がかりに変えて捨てる：保存されず、再収集�
   assert.deepEqual(pick(once[0]), pick(mergeCandidates([], [{ ...withExcerpt }], ctx())[0]));
   assert.ok(once[0].depth_signals.includes("抜粋に理由・判断の語"));
   assert.equal(once[0].tier, "P1-mid");
+});
+
+// ---------- 原典目録：URL だけの収集と収録の段階 ----------
+
+const SRC = { id: "sitemap-test", creator: { name: "Riot Games", kind: "official" }, language: "ja" };
+const URLS = ["https://www.example.com/ja-jp/news/patch-26-1-notes/", "https://www.example.com/ja-jp/news/patch-26-2-notes/"];
+
+test("URL だけの候補：題名・公開日・更新日を推測せず null のまま、既知の URL と上限を守る", () => {
+  const items = urlOnlyItems(URLS, SRC);
+  assert.equal(items.length, 2);
+  for (const x of items) {
+    assert.equal(x.title, null);
+    assert.equal(x.published_at, null);
+    assert.equal(x.updated_at, null);
+    assert.equal(x.metadata_from, "sitemap_only");
+  }
+  assert.deepEqual(urlOnlyItems(URLS, SRC, (u) => u === URLS[0]).map((x) => x.url), [URLS[1]]);
+  assert.equal(urlOnlyItems(URLS, { ...SRC, max_new: 1 }).length, 1);
+  // 統合しても題名・日付は空のまま（URL の語から作らない）
+  const merged = mergeCandidates([], items.map((x) => ({ ...x, source: SRC.id })), ctx());
+  for (const c of merged) {
+    assert.equal(c.title, null);
+    assert.equal(c.published_at, null);
+  }
+});
+
+test("再収集で候補が増えない：同じ URL を URL だけで取り直しても、後で取得した題名が消えない", () => {
+  const once = mergeCandidates([], urlOnlyItems(URLS, SRC).map((x) => ({ ...x, source: SRC.id })), ctx());
+  const again = mergeCandidates(once, urlOnlyItems(URLS, SRC).map((x) => ({ ...x, source: SRC.id })), ctx({ now: "2026-11-02" }));
+  assert.equal(again.length, 2);
+  assert.equal(JSON.stringify(again), JSON.stringify(once));
+  // あとで記事ページから題名を取得した場合、URL だけの再収集で null に戻らない
+  const withTitle = mergeCandidates(again, [item(URLS[0], { source: SRC.id, title: "パッチ26.1ノート", metadata_from: "article_page" })], ctx());
+  const reCollected = mergeCandidates(withTitle, urlOnlyItems(URLS, SRC).map((x) => ({ ...x, source: SRC.id })), ctx());
+  assert.equal(reCollected.length, 2);
+  assert.equal(reCollected.find((c) => c.url === URLS[0]).title, "パッチ26.1ノート");
+});
+
+test("収録の段階：排他的な集計（各候補は1回）と累積（その段階以上）が一致する", () => {
+  const sctx = { reviews: { k3: {} }, extracted: new Set(["res-used"]) };
+  const list = [
+    { key: "k1", metadata_from: "sitemap_only", existing_resource_id: null },
+    { key: "k2", metadata_from: "article_page", existing_resource_id: null },
+    { key: "k3", metadata_from: "wordpress_api", existing_resource_id: null },
+    { key: "k4", metadata_from: "article_page", existing_resource_id: "res-unused" },
+    { key: "k5", metadata_from: "sitemap_only", existing_resource_id: "res-used" },
+  ];
+  assert.deepEqual(list.map((c) => stageOf(c, sctx)), STAGES);
+  // 本文確認の記録があっても、正式資料になっていれば上の段階に数える
+  assert.equal(stageOf({ key: "k3", metadata_from: "article_page", existing_resource_id: "res-unused" }, sctx), STAGES[3]);
+  const { exclusive, cumulative } = stageCounts(list, sctx);
+  assert.deepEqual(Object.values(exclusive), [1, 1, 1, 1, 1]);
+  assert.deepEqual(STAGES.map((s) => cumulative[s]), [5, 4, 3, 2, 1]);
+  assert.equal(Object.values(exclusive).reduce((a, b) => a + b, 0), list.length);
 });

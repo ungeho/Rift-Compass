@@ -18,11 +18,11 @@
     "id": "lolgaren",
     "kind": "wordpress",
     "base": "https://lolgaren.com",
-    "max": 100,
+    "max": 1400,
     "creator": { "name": "北川楓（LoLGaren）", "kind": "coach" },
     "language": "ja",
     "delay_ms": 1000,
-    "notes": "robots.txt は /wp-admin/ 以外を許可（2026-10-28 確認）。公開 REST API で新しい順に取得"
+    "notes": "robots.txt は /wp-admin/ 以外を許可（2026-10-28 確認）。公開 REST API で新しい順に取得。2026-11-01：全記事を対象にした（X-WP-Total 1289、WordPress の投稿アカウントは全件 author id 1（表示名「北川楓」）。全記事の実際の筆者が同じ人物であることの確認ではない）"
   },
   {
     "id": "yt-goru",
@@ -47,5 +47,58 @@
     "creator": { "name": "Veigar v2", "kind": "coach" },
     "language": "en",
     "notes": "MID・メイジの解説（既存資料あり）"
+  },
+  {
+    "id": "lol-guide-glossary",
+    "kind": "sitemap",
+    "url": "https://www.lol-guide.com/sitemap.xml",
+    "include": "^https://www\\.lol-guide\\.com/glossary/[0-9]+$",
+    "title_strip": "\\s*\\|\\s*用語集\\s*\\|\\s*LoL Guide$",
+    "creator": { "name": "LoL Guide（用語集）", "kind": "media" },
+    "language": "ja",
+    "delay_ms": 1000,
+    "notes": "lol-guide.com の用語集（2026-11-01 にサイトマップで66件）。用語の定義で、著者・日付はページにない。robots.txt で許可"
+  },
+  {
+    "id": "riot-patch-notes-ja",
+    "kind": "sitemap",
+    "url": "https://www.leagueoflegends.com/ja-jp/sitemap_loc.xml",
+    "include": "^https://www\\.leagueoflegends\\.com/ja-jp/news/game-updates/(league-of-legends-)?patch-[0-9]+-[0-9]+-notes/?$",
+    "fetch_pages": false,
+    "creator": { "name": "Riot Games", "kind": "official" },
+    "language": "ja",
+    "notes": "公式サイトの日本語のパッチノート。robots.txt のサイトマップ（sitemap_index.xml → ja-jp/sitemap_loc.xml）から URL だけを記録する（ページは取得しない）。題名・公開日は未取得"
+  },
+  {
+    "id": "yt-enty",
+    "kind": "youtube-channel",
+    "handle": "@entych925",
+    "creator": { "name": "えんてぃ", "kind": "pro_player" },
+    "language": "ja",
+    "notes": "lol-guide.com の pro-guides（元プロ えんてぃ のサポートチャンピオン解説）から発見（2026-11-01）。経歴は lol-guide のページの記載で、未確認"
+  },
+  {
+    "id": "yt-gariaru",
+    "kind": "youtube-channel",
+    "handle": "@howchallelol",
+    "creator": { "name": "がりある", "kind": "pro_player" },
+    "language": "ja",
+    "notes": "lol-guide.com の pro-guides（元プロ がりある のミッドチャンピオン・パッチ解説）から発見（2026-11-01）。lol-guide の記事の著者と同じ人物かは、チャンネル側で未確認"
+  },
+  {
+    "id": "yt-el",
+    "kind": "youtube-channel",
+    "handle": "@lolplayerEL",
+    "creator": { "name": "EL", "kind": "pro_player" },
+    "language": "ja",
+    "notes": "lol-guide.com の pro-guides（元プロ EL のジャングルチャンピオン・マクロ解説）から発見（2026-11-01）。経歴は未確認"
+  },
+  {
+    "id": "yt-evi",
+    "kind": "youtube-channel",
+    "handle": "channel/UCqWIpAZsfdtfh6qNDs1XQNA",
+    "creator": { "name": "Evi（えびンモTV）", "kind": "pro_player" },
+    "language": "ja",
+    "notes": "lol-guide.com の pro-guides（プロ Evi のトップチャンピオン・マッチアップ解説）から発見（2026-11-01）。チャンネル名「えびンモTV」は動画ページの投稿者名で確認。経歴は未確認"
   }
 ]

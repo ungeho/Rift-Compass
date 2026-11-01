@@ -13,7 +13,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const { mergeCandidates, annotate, structureOf, splitTitleTags, TIER_ORDER } = require("./lib");
+const { mergeCandidates, annotate, structureOf, splitTitleTags, TIER_ORDER, urlOnlyItems, stageCounts } = require("./lib");
 
 const ROOT = path.join(__dirname, "..", "..");
 const DIR = path.join(ROOT, "data", "candidates");
@@ -54,6 +54,8 @@ const adapters = {
     const xml = await get(src.url, { delay: 0 });
     const include = new RegExp(src.include);
     const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim()).filter((u) => include.test(u));
+    // URL の発見だけを記録する（ページは取得しない）。題名・日付は空のままにし、推測で埋めない（lib.js の urlOnlyItems）
+    if (src.fetch_pages === false) return { listed: urls.length, items: urlOnlyItems(urls, src, known) };
     const items = [];
     for (const url of urls) {
       if (known(url)) continue; // 既知の URL は取り直さない（再実行のコストを抑える）
@@ -61,7 +63,8 @@ const adapters = {
       const html = await get(url, { delay: src.delay_ms ?? 1000 });
       const meta = (re) => decode((re.exec(html) || [])[1]);
       const article = src.article_selector ? sliceArticle(html, src.article_selector) : html;
-      const rawTitle = meta(/property="og:title" content="([^"]*)"/) || meta(/<title>([^<]*)<\/title>/);
+      const ogTitle = meta(/property="og:title" content="([^"]*)"/) || meta(/<title>([^<]*)<\/title>/);
+      const rawTitle = src.title_strip ? ogTitle.replace(new RegExp(src.title_strip), "").trim() : ogTitle; // サイト名などの付記を外す
       const { title, tags } = src.title_tags ? splitTitleTags(rawTitle) : { title: rawTitle, tags: [] };
       items.push({
         url,
@@ -196,6 +199,26 @@ function reannotate() {
   console.log(`候補 ${list.length}件を付け直した`);
 }
 
+/**
+ * 収録の段階（lib.js の stageOf。新しい項目は作らず、既存のデータから導く）
+ *   1 URL のみ   ：サイトマップで URL だけを見つけた（題名・日付は未取得）
+ *   2 メタデータ ：題名・日付などを記事ページ・API・一覧ページから取得した（本文は未確認）
+ *   3 本文確認   ：reviews.json に本文・字幕の確認結果がある
+ *   4 正式資料   ：data/sample-resources.json に同じ URL の資料がある
+ *   5 知識抽出   ：その資料が判断材料の出典・知識ノートの根拠になっている
+ * ゲーム内での検証は別に数える（evidence の in_game_test）
+ */
+function stageContext() {
+  const d = readJson(FILES.dataset);
+  const extracted = new Set(d.evidence.map((e) => e.resource_id));
+  const expDir = path.join(ROOT, "data", "experiments");
+  for (const f of fs.readdirSync(expDir).filter((x) => x.endsWith(".json"))) {
+    const x = readJson(path.join(expDir, f));
+    for (const s of x.sources ?? []) if (s.resource_id) extracted.add(s.resource_id);
+  }
+  return { reviews: readJson(FILES.reviews, {}), extracted };
+}
+
 function report() {
   const list = readJson(FILES.candidates, []);
   const count = (f) => list.reduce((m, c) => m.set(f(c), (m.get(f(c)) || 0) + 1), new Map());
@@ -207,6 +230,15 @@ function report() {
   show("深さの推定", count((c) => c.depth_estimate));
   show("深さの確認", count((c) => c.depth_confirmed ?? "未確認"));
   show("発信者", count((c) => c.creator?.name ?? "不明"));
+  // 収録の段階（原典目録としての状態）。候補は公開済みの正式資料とは別に数える
+  const sctx = stageContext();
+  const { exclusive, cumulative } = stageCounts(list, sctx);
+  const line = (o) => Object.entries(o).map(([k, v]) => `${k} ${v}`).join("、");
+  console.log(`収録の段階（排他的：各候補を到達した一番上の段階に1回）：${line(exclusive)}`);
+  console.log(`収録の段階（累積：その段階以上に到達した件数）：${line(cumulative)}`);
+  for (const s of [...new Set(list.flatMap((c) => c.sources))].sort()) {
+    console.log(`  ${s}（排他的）：${line(stageCounts(list.filter((c) => c.sources.includes(s)), sctx).exclusive)}`);
+  }
   console.log(`URL の表記ゆれをまとめた候補：${list.filter((c) => c.url_variants.length).length}件`);
   console.log(`既存資料と同じ：${list.filter((c) => c.existing_resource_id).length}件`);
   console.log(`確認が必要な類似・翻訳の候補：${list.filter((c) => c.needs_review.length).length}件`);
