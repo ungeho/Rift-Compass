@@ -30,11 +30,11 @@ npm run dev
 
 よく使うコマンド：
 
-- `npm run dev`：開発サーバーを起動します（http://localhost:5173/）。依存関係の再インストールなどは行いません。
+- `npm run dev`：開発サーバーを起動します（`http://localhost:5173/`）。依存関係の再インストールなどは行いません。
 - `npm run test`：すべてのテストを実行します（画面・検索のテスト、データ検査、候補収集のテスト、判断材料の実験のテスト）。
 - `npm run typecheck`：TypeScript の型チェックだけを行います。
 - `npm run build`：型チェックのあと、`dist/` に静的ファイルを出力します。
-- `npm run preview`：`dist/` を配信して確認します（http://localhost:4173/）。先に `npm run build` が必要です。
+- `npm run preview`：`dist/` を配信して確認します（`http://localhost:4173/`）。先に `npm run build` が必要です。
 
 個別に実行するコマンド：
 
