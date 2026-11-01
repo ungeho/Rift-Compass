@@ -118,5 +118,15 @@
     "creator": { "name": "watanekoLoL", "kind": "streamer" },
     "language": "ja",
     "notes": "2026-11-01 追加。チャンネルの説明（本人の記載）：元LJL解説、最高レート グランドマスター、得意ロール MID/JG/BOT/SUP/TOP。経歴は本人の記載のみで未確認。一覧ページは新しい順の約30本だけ"
+  },
+  {
+    "id": "lolninja",
+    "kind": "wordpress",
+    "base": "https://lolninja.net",
+    "max": 200,
+    "creator": { "name": "LoL忍者", "kind": "fan_translator" },
+    "language": "ja",
+    "delay_ms": 1000,
+    "notes": "2026-11-01 追加。robots.txt は /wp-admin/ 以外を許可（2026-11-01 確認）。海外コミュニティ（主に Reddit）の投稿を翻訳してまとめるサイト。翻訳元と同じ内容は独立した裏付けにしない。投稿者は匿名が多く、主張の確認が要る。LoL 以外の話題の記事もある"
   }
 ]

@@ -37486,7 +37486,7 @@
    "lol-guide"
   ],
   "discovered_at": "2026-10-28",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-lg-qwgsg",
   "roles": [
    "jungle"
   ],
@@ -37498,9 +37498,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "ゆにか。タワーダイブの3条件（相手の体力2〜3割以下、ミニオン、他の相手が来られない）、タワーの攻撃を受ける役、向くチャンピオン、ジャングラーの位置とテレポートの確認。知識9件（K1〜K9）",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-lg-qwgsg と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "medium",
   "categories": [
@@ -121435,7 +121435,7 @@
    "loltheory-blog"
   ],
   "discovered_at": "2026-11-01",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-loltheory-tower-dive",
   "excerpt_features": {
    "roles": [],
    "topic_ids": [],
@@ -121454,9 +121454,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "著者 Griffin Wood（記事ページの表示）。タワーの Reinforced Armor（ミニオンなしで80%軽減、3秒の遅れ）と Warming Up（+50%/発、最大+150%）の区別、アグロの優先順位と1400の切り替え、ダイブ前のチェックリスト、向くチャンピオン。仕様の説明は Wiki の引用が多く、未照合。知識18件（H1〜H18）",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-loltheory-tower-dive と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },
@@ -126630,5 +126630,49 @@
    "by": "rule"
   },
   "depth_confirmed": null
+ },
+ {
+  "key": "https://lolninja.net/2026/09/16/50182",
+  "url": "https://lolninja.net/2026/09/16/50182/",
+  "title": "知っているだけで勝率が変わる、意外すぎるカウンタープレイ集",
+  "creator": {
+   "name": "いちずなイブリン（LoL忍者）",
+   "kind": "fan_translator"
+  },
+  "published_at": "2026-09-16",
+  "updated_at": "2026-09-16",
+  "type": "article",
+  "language": "ja",
+  "structure": {
+   "chars": 3852,
+   "headings": 2,
+   "reason_headings": 0
+  },
+  "metadata_from": "article_page",
+  "normalized_url": "https://lolninja.net/2026/09/16/50182",
+  "url_variants": [],
+  "sources": [
+   "lolninja"
+  ],
+  "discovered_at": "2026-11-01",
+  "existing_resource_id": null,
+  "roles": [],
+  "topic_ids": [
+   "matchup",
+   "crowd-control",
+   "itemization"
+  ],
+  "tier": "P2",
+  "depth_estimate": "medium",
+  "depth_signals": [
+   "判断に関わる Topic に一致"
+  ],
+  "needs_review": [],
+  "triage": {
+   "status": "candidate",
+   "reason": "Reddit（r/leagueoflegends）のスレッド「What are some less-known counterplay techs…」の翻訳まとめ。カウンタープレイの小技（デスダンスと回復、根の間に使えるスキル、飛翔物の判定、召喚ユニットからのスタックなど）約25件。翻訳元と同じ内容で、独立した裏付けではない",
+   "by": "review"
+  },
+  "depth_confirmed": "medium"
  }
 ]
