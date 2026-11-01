@@ -95,27 +95,29 @@ export function ExplorePage({ topic, distance, count = DEFAULT_EXPLORE_COUNT, rn
           ))}
         </select>
 
-        <label htmlFor="explore-distance">{isAll ? "興味からの距離（「すべて」では使いません）" : `興味からの距離：${distance}`}</label>
-        <input
-          id="explore-distance"
-          type="range"
-          min={0}
-          max={100}
-          step={10}
-          value={distance}
-          disabled={isAll}
-          aria-valuetext={`${distance}（近い ${percent(w.near)}・中間 ${percent(w.middle)}・遠い ${percent(w.far)}）`}
-          onChange={(e) => replaceHash(exploreHref(selected?.id ?? "", Number(e.target.value), count))}
-        />
+        {/* 「すべて」では距離を使わないので、スライダーを出さず、ここで一度だけ説明する（URL の d はそのまま残し、個別の Topic に戻したときに使う）*/}
         {isAll ? (
           <p className="muted explore-weights">
-            「すべて」は特定の Topic を選ばないため、Topic からの距離がありません。近い・中間・遠いの割合は使わず、全体から抽選します（対象：{explorePool.length}件。{kindLine(explorePool)}）。
+            Topic を限定せず、全体から抽選します。距離（近い・中間・遠い）は使いません（対象：{explorePool.length}件。{kindLine(explorePool)}）。
           </p>
         ) : (
-          <p className="muted explore-weights">
-            抽選の割合：近い {percent(w.near)}・中間 {percent(w.middle)}・遠い {percent(w.far)}
-            {counts && `（候補：近い ${counts.near}件・中間 ${counts.middle}件・遠い ${counts.far}件）`}
-          </p>
+          <>
+            <label htmlFor="explore-distance">興味からの距離：{distance}</label>
+            <input
+              id="explore-distance"
+              type="range"
+              min={0}
+              max={100}
+              step={10}
+              value={distance}
+              aria-valuetext={`${distance}（近い ${percent(w.near)}・中間 ${percent(w.middle)}・遠い ${percent(w.far)}）`}
+              onChange={(e) => replaceHash(exploreHref(selected?.id ?? "", Number(e.target.value), count))}
+            />
+            <p className="muted explore-weights">
+              抽選の割合：近い {percent(w.near)}・中間 {percent(w.middle)}・遠い {percent(w.far)}
+              {counts && `（候補：近い ${counts.near}件・中間 ${counts.middle}件・遠い ${counts.far}件）`}
+            </p>
+          </>
         )}
 
         <label htmlFor="explore-count">1回に表示する件数</label>
@@ -207,7 +209,7 @@ function AllView({ state, count, single, more }: { state: State; count: number; 
   );
 }
 
-/** 「すべて」の1件を ExploreCard に渡す形にする（group は使わない。scope="all" のカードは距離を表示しない）*/
+/** 「すべて」の1件を ExploreCard に渡す形にする（group は使わない。scope="all" のカードは距離と選んだ理由を表示しない。説明は画面上部で一度だけ）*/
 const asAllResult = (item: ExploreItem): PickResult => ({ item, group: "near", fellBack: false, cycled: false, seen: [] });
 
 const asResult = (p: ManyPick): PickResult => ({ item: p.item, group: p.group, middleReason: p.middleReason, fellBack: false, cycled: false, seen: [] });
@@ -254,7 +256,7 @@ export function ExploreCard({ result, topicLabel, scope = "topic" }: { result: P
       <p className="card-meta">
         <span className="badge">{resource ? "教材" : decision ? "判断材料（試験）" : "知識ノート"}</span> {scope === "topic" && <span className="badge">距離：{GROUP_LABELS[group]}</span>}
       </p>
-      <p className="muted">{scope === "all" ? "Topic を限定しない全体から選びました（距離はありません）。" : reasonText(result, topicLabel)}</p>
+      {scope === "topic" && <p className="muted">{reasonText(result, topicLabel)}</p>}
       {resource && <ResourceCard resource={resource} />}
       {note && <NoteSummary note={note} />}
       {decision && (

@@ -237,12 +237,13 @@ describe("散策の「すべて」（Topic を限定しない）", () => {
     expect(parseHash(exploreHref(EXPLORE_ALL, 30, 50))).toEqual({ name: "explore", topic: "all", distance: 30, count: 50 });
     expect(exploreHref(EXPLORE_ALL, 30)).toBe("#/explore?topic=all&d=30");
   });
-  it("画面：「すべて」を選べ、距離のスライダーを無効にし、割合の代わりに理由と種類ごとの件数を示す", () => {
+  it("画面：「すべて」を選べ、距離のスライダーを出さず、上部で一度だけ説明と種類ごとの件数を示す", () => {
     const html = renderToStaticMarkup(<ExplorePage topic="all" distance={30} />);
     const t = text(html);
     expect(html).toMatch(/<option value="all" selected="">すべて（Topic を限定しない・\d+件）<\/option>/);
-    expect(html).toMatch(/<input[^>]*id="explore-distance"[^>]*disabled=""/);
-    expect(t).toContain("「すべて」は特定の Topic を選ばないため、Topic からの距離がありません");
+    expect(html).not.toContain('id="explore-distance"');
+    expect(t).not.toContain("興味からの距離");
+    expect(t).toContain("Topic を限定せず、全体から抽選します。距離（近い・中間・遠い）は使いません");
     expect(t).not.toContain("抽選の割合：近い");
     const res = explorePool.filter((x) => x.kind === "resource").length;
     const dec = explorePool.filter((x) => x.kind === "decision").length;
@@ -253,7 +254,17 @@ describe("散策の「すべて」（Topic を限定しない）", () => {
     // 特定の Topic の画面は従来どおり（割合を示し、スライダーは有効）
     const topicHtml = renderToStaticMarkup(<ExplorePage topic="freeze" distance={30} />);
     expect(text(topicHtml)).toContain("抽選の割合：近い");
+    expect(topicHtml).toMatch(/<input[^>]*id="explore-distance"/);
     expect(topicHtml).not.toMatch(/<input[^>]*id="explore-distance"[^>]*disabled=""/);
+    expect(text(topicHtml)).toContain("興味からの距離：30");
+  });
+  it("「すべて」から個別の Topic に戻すと、URL に残した距離をそのまま使う", () => {
+    const html = renderToStaticMarkup(<ExplorePage topic="all" distance={70} count={50} />);
+    // Topic の選択肢を変えたときの URL は、距離と件数を保つ
+    expect(exploreHref("freeze", 70, 50)).toBe("#/explore?topic=freeze&d=70&n=50");
+    expect(parseHash(exploreHref(EXPLORE_ALL, 70, 50))).toEqual({ name: "explore", topic: "all", distance: 70, count: 50 });
+    expect(text(html)).not.toContain("興味からの距離");
+    expect(text(renderToStaticMarkup(<ExplorePage topic="freeze" distance={70} count={50} />))).toContain("興味からの距離：70");
   });
   it("実データ：全体から100件を重複なしで選び、教材・判断材料・知識ノートが含まれる。距離は作らない", () => {
     const r = pickAll({ items: explorePool, count: 100, rng: seq([0.11, 0.62, 0.37, 0.88, 0.05]) });
@@ -263,10 +274,13 @@ describe("散策の「すべて」（Topic を限定しない）", () => {
     const all = pickAll({ items: explorePool, count: explorePool.length + 50, rng: seq([0.3]) });
     expect(all.picks).toHaveLength(explorePool.length);
     expect(all.short).toBe(true);
-    // 「すべて」のカードは距離を表示せず、理由を「全体から」とする
-    const c = text(renderToStaticMarkup(<ExploreCard result={{ item: r.picks[0], group: "near", fellBack: false, cycled: false, seen: [] }} topicLabel="" scope="all" />));
-    expect(c).toContain("Topic を限定しない全体から選びました");
-    expect(c).not.toContain("距離：");
+    // 「すべて」のカードは距離も選んだ理由も繰り返さない。種類・詳細へのリンクなどカード固有の情報は残す
+    for (const item of r.picks.slice(0, 30)) {
+      const c = text(renderToStaticMarkup(<ExploreCard result={{ item, group: "near", fellBack: false, cycled: false, seen: [] }} topicLabel="" scope="all" />));
+      expect(c).not.toContain("全体から選びました");
+      expect(c).not.toContain("距離");
+      expect(c).toMatch(/教材|判断材料（試験）|知識ノート/);
+    }
   });
 });
 
