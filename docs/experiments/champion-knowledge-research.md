@@ -235,3 +235,36 @@
 - 正式資料の登録の判断（上の3）。登録後は、`knowledge-drafts.js` と同じ流れで下書き → 人の確認 → `check` に進める。チャンピオンの記録の行の形は、バッチの記録とほぼ同じ。
 - 攻略の原典（使う側の勝ち筋・ビルド、対策側の主張）を、チャンピオンごとに日本語・英語の各1〜2件読み、AI の推論（MZ27 など）と照合する。
 - 仮説（ZD8・ZD14・MK13・MZ6 など）は、ゲーム内の検証の候補として残す。
+
+## 6. 正式収録の状況（2026-11-01）
+
+仕様と、仕様からの明らかな推論を、21件のノートとして正式データに収録した（研究記録の46件の ID を反映。複数の ID を1ノートにまとめ、仮説は注記にした）（`docs/experiments/knowledge-intake-2026-11.md` §5）。資料は Wiki の4チャンピオン・Quicksilver Sash・Riot のパッチ14.8 を正式資料にした（res-wiki-malzahar・res-wiki-mordekaiser・res-wiki-zed・res-wiki-lux・res-wiki-quicksilver-sash・res-riot-patch-14-8-en）。行動妨害の定義は既存の res-wiki-cc-types を使った。
+
+| 研究記録の ID | 正式なノート |
+|---|---|
+| CC1 | kn-cc-root |
+| CC5 | kn-cc-suppression |
+| MZ1・MZ2 | kn-malzahar-e-spread |
+| MZ4・MZ5（MZ6 は注記） | kn-malzahar-e-spread-any-killer |
+| MZ7・MZ8・MZ11 | kn-malzahar-voidlings |
+| MZ18〜MZ20 | kn-malzahar-r-qss |
+| MZ22（MZ21 は注記） | kn-malzahar-r-leave-tether |
+| MZ24（MZ25 は注記） | kn-malzahar-void-shift |
+| MK1〜MK3 | kn-mordekaiser-r-realm |
+| MK4〜MK6 | kn-mordekaiser-r-resist-timing |
+| MK8 | kn-mordekaiser-r-cleanse-pre-148（旧仕様） |
+| MK9・MK10 | kn-mordekaiser-r-no-cleanse-148 |
+| MK12（MK13 は注記） | kn-mordekaiser-r-counter-before |
+| ZD1〜ZD4 | kn-zed-r-mark |
+| ZD9（ZD10・ZD11・ZD12 は注記） | kn-zed-r-stored-damage |
+| ZD17・ZD18 | kn-zed-r-mark-blockers |
+| ZD19 | kn-zed-r-zhonya-timing |
+| LX1 | kn-lux-q-root |
+| LX2・LX4 | kn-lux-q-zhonya |
+| LX8〜LX10 | kn-lux-illumination-r |
+| LX13 | kn-lux-combo-kill |
+
+- 仮説（MZ6・MK13 など）は、ノートの本文にせず注記に「仮説」と書いた。ゲーム内では検証していない。
+- 残りの64件（原典の著者の主張がない勝ち筋・連鎖の推論、ほかの CC の定義、Q・W・E の細部など）は、この研究記録に残す。
+- チャンピオン Topic の構造：新しい4件（champ-malzahar・champ-mordekaiser・champ-zed・champ-lux）は大分類 cat-champions を親に持つ。既存の3件（champ-jax は aa-negation、champ-veigar・champ-twisted-fate は cat-expert）は今回は動かしていないので、親の構造が異なる。揃えるかは別の作業で決める。
+- Topic のページは資料だけを表示し、知識ノートを表示しない（将来の改善候補）。チャンピオンのノートには、検索・散策・資料の詳細から届く。
