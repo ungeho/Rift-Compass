@@ -236,3 +236,65 @@
 - **Topic**：操作・フィジカル（カイト・スペーシング・スキルドッジ・アタックムーブ）の Topic がない。「カイト」「スペーシング」などを別名にすると資料の検索に影響するので、追加の前に影響を測る（tower-dive と同じ手順）。
 - **判断材料（DU）との関係**：ウェーブの多くの既存知識は判断材料（decision-units）で、KnowledgeNote との関係を張る形式がない。補足に対応を書くか、別の設計課題とする。
 - **時期**：tol2 の記事は2022年。仕様に触れる値（射程・AS・設定の名前）は時期を付ける。ドネキフ塾は2026年8月で、パッチの記載はない。
+
+## 10. 正式収録の結果（2026-11-02）
+
+### 追加数
+
+| 種類 | 追加 | 合計 |
+|---|---|---|
+| Resource | 6（tol2 4・ドネキフ塾 1・Wiki Attack speed 1） | 85→91（公開 83→89） |
+| KnowledgeNote | 37（tol2 の寄稿 20・ドネキフ塾 15・ラックス 2） | 82→119（公開 79→116） |
+| Evidence | 39 | 114→153 |
+| Relation | 19 | 34→53 |
+| Topic | 1（mechanics「操作技術・フィジカル」、親 cat-basics） | 45→46 |
+
+原典ごとの Evidence：tol2 right-click 8・aa 7・replay-study 4・otp 1、ドネキフ塾 16（新しいノート15＋kn-freeze-outside-tower への根拠1）、Wiki Attack speed 1、res-wiki-lux 2。
+
+### 抽出との対応
+
+- **tol2（TL1〜TL27）**：TL1・TL2 → kn-skill-three-layers、TL3・TL5 → kn-right-click-core-physical、TL6 → kn-skill-dodge-perpendicular、TL7 → kn-spacing-range-advantage、TL8 → kn-aa-footwork、TL9・TL11 → kn-cs-practice-rules、TL10 → kn-first-wave-melee-trim、TL12 → kn-practice-until-automatic、TL13 → kn-aa-as-a-skill（kn-vs-aa-negation-decision と context_of）、TL14 → kn-aa-five-components、TL16 → kn-aa-interval-from-attack-speed（mechanic・source_stated。根拠は Wiki、tol2 の計算例は empirical_claim）、TL17 → kn-kite-timing、TL18・TL19 → kn-attack-move-settings、TL20 → kn-attack-move-brush-tower、TL21 → kn-as-steroid-practice、TL22 → kn-input-before-output、TL23 → kn-play-video-vs-replay、TL24 → kn-copy-play-four-steps、TL26 → kn-evi-input-output-ratio（source_person は Evi）、TL27 → kn-otp-learning-steps。
+- **ドネキフ塾（DK1〜DK23）**：DK1・DK2・DK19・DK20 → kn-push-before-moving（DK2 は exceptions、DK19 は補足）、DK3 → kn-winning-overpush-cost、DK4・DK21 → kn-wave-by-15s-plan、DK5・DK7 → kn-push-slowpush-purposes、DK6 → kn-freeze-when-ahead-purposes、DK8 → kn-slow-push-how、DK9 → kn-freeze-four-minions、DK10 → kn-freeze-maintain-brush、DK11 → kn-freeze-outside-tower の根拠、DK12 → kn-cs-under-tower-shots、DK13 → kn-cannon-wave-timing、DK14・DK15 → kn-crash-bounce-recall、DK16 → kn-minimap-every-5-10s、DK17・DK18 → kn-remove-lose-conditions、DK22 → kn-learning-order-after-wave（source_person は Kreative、編集部が伝えたおすすめ）、DK23 → kn-cs-practice-annie（kn-cs-practice-rules と context_of）。
+- **発言者の区別**：ドネキフ塾のノートの source_person は「ドネキフ塾（監修：Kreative）」（編集部の文）。Kreative 本人として扱うのは DK22 だけで、DK11 の作図と DK16 の逸話は根拠の要約・補足に「監修者」と書いた。Evi の回答は tol2 の主張と分けた。
+- **2022年の記述**：tol2 の資料は era season12（公開日からの推定）。数値（射程・攻撃速度の例）・クライアントの設定の名前・例のチャンピオンは、ノートの補足に「2022年の時点」「現行と照合していない」と書いた。
+
+### 収録しなかったもの（理由を保持）
+
+| 抽出 | 理由 | 記録の場所 |
+|---|---|---|
+| TL4（右クリックの回数とレート） | データが示されていない印象 | kn-right-click-core-physical の補足 |
+| TL15（弾速のない通常攻撃はヤスオの W を無視する） | Wiki の Wind Wall（revid 4008635：タワー以外の敵の飛翔体を破壊）・Basic attack（revid 4091314）に、弾速のない攻撃が W を通るという記述がなく、照合できない | kn-aa-five-components の補足 |
+| TL25（本人の APM） | 個人の記録 | kn-copy-play-four-steps の補足 |
+| VS2（ラックス E でブッシュの中を見る） | ブッシュの規則の原典（Wiki Sight）が未登録で、AI の推論になる | vision-and-detection-research.md §9 |
+
+- **TL10 の照合**：Wiki の Minion（revid 4084248）のミニオンの攻撃対象の優先順位（味方チャンピオンを攻撃する敵 → … → 最も近い敵ミニオン）とは矛盾しないが、最初のウェーブで攻撃が分かれることは書かれていない。tol2 の主張（empirical）として収録し、照合できていないことを補足に書いた。Minion のページは今回正式資料に加えていない（既存の res-wiki-minion は前半だけ確認）。
+
+### 既存の知識との関係
+
+- **独立した裏付け**：DK11 は kn-freeze-outside-tower の4つ目の根拠（Dignitas 2件・LoL Theory・ドネキフ塾）。ドネキフ塾の記事は他の3件を引用していないので、著者の違う裏付けとして数えられる。ただし共通の元（一般的なウェーブ管理の解説）がある可能性は否定できないので、ノートの status は empirical のまま（検証済みにしない）。
+- **条件・数値の違い（統合しない）**：DK6（勝っているときのフリーズ）・DK9（4体）・DK14（押した後は返る）は、判断材料 du-freeze-when-behind-dignitas・du-freeze-not-always・du-advantage-type-melee-vs-caster・du-slow-push-advantage-by-position・du-bounce-after-crash と、ノートの補足の文で対応を示した（判断材料と KnowledgeNote の間に Relation の形式はないので、新しい形式は作っていない）。
+- **DK4** は du-wave-state-by-next-action と同じ原則（著者違い）で、補足に書いた。
+
+### Topic の追加と影響の測定
+
+- mechanics（操作技術・フィジカル、親 cat-basics）。別名：フィジカル・カイト・カイティング・スペーシング・スキルドッジ・アタックムーブ・引き撃ち・mechanical skill・kiting・spacing・attack move。
+- 英語名「Mechanics」・別名「mechanics」は、大分類 cat-basics の別名「mechanics」と重なり、テスト（大分類と具体的な Topic が同じ別名を持たない）に反したので使わず、「Mechanical skill」にした。
+- **散策**：既存の195件の、全46 Topic での近い・中間・遠いの分類は、Topic を追加しても追加しなくても変化なし（0件）。対象は 195→238件。mechanics の近い候補は18件。
+- **資料検索84件**（p72 → 最終）：同じ68件、新しい資料が加わっただけ12件、それに加えて件数の数え方（complete）が変わった2件（how to freeze a lane 7→8、なぜこのウェーブを押してはいけないのか 20→21）、ほかの違い2件。評価の質問の期待する資料は、すべて到達する。
+  - P02「ボットレーンで先にレベル2になるには…」：語「ミニオン」が資料の1/4以下になり（資料数の増加）、具体的な語として必須になった。上位2件（認識できた条件に一致）は同じで、関連候補が増えた。Topic の有無には関係しない。
+  - P04「レーンをフリーズしたいとき…」：関連候補の2番目にドネキフ塾の記事が入り、関連候補が増えた。
+  - Topic を付けたことによる違い（Topic なしで収録した場合との比較）は4件で、tol2・Wiki の資料が trading ではなく mechanics に付くため、関連候補での順位が変わっただけ。
+- **判断材料の検索**：変化なし。
+
+### テストの更新
+
+- 件数（資料 85→91、公開 83→89、トップ画面「資料一覧 89件」）。
+- 「Evi」の検索：tol2 の寄稿の要約が単語として Evi を含むので、一致は単語として含む資料（res-lolninja-tol2-replay-study）だけ、という形に変えた（review・revive の途中には引き続き一致しない）。
+- ノートにない語の例：「バロン」が kn-attack-move-brush-tower の語になったので、「アタカン」に変えた。
+- 散策の「すべて」のカード：知識ノートの本文に「距離」という語があるので、確かめる対象を距離のバッジ（「距離：」）と注意（「選んだ距離」）に絞った。
+- ノート検索の N11（フリーズしないほうがいいのは…）：ドネキフ塾のフリーズのノート3件が語で一致するので acceptable に加えた（expected_none は true のまま。しない場面を述べるノートはない）。
+
+### 目録の付け直し
+
+- 正式資料にした5件の候補（tol2 4件・ドネキフ塾1件）は、existing_resource_id が付いて registered になった（§8 の修正どおり、レビューの記録は保持）。正式資料に対応する候補は48→53件。
+- mechanics の Topic が、題名に「カイト」「スキルドッジ」「AA」などがある既存の候補12件に付いた（LoL Theory の kiting・attack move の記事、lolgaren の skilldodge・aa など）。意図どおりの分類で、操作技術の次の収録候補になる。

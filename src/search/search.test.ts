@@ -124,9 +124,9 @@ describe("5. L0・無料未確認の資料は通常の一覧・検索に出な�
     for (const id of hidden) expect(r).not.toContain(id);
   });
 
-  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件、新規判断材料の収録試験で1件追加して76件、2026-11-01 の正式収録で9件追加して85件）", () => {
-    expect(index.resources).toHaveLength(85);
-    expect(index.publicResources).toHaveLength(83);
+  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件、新規判断材料の収録試験で1件追加して76件、2026-11-01 の正式収録で9件追加して85件、2026-11-02 のプロ解説の収録で6件追加して91件）", () => {
+    expect(index.resources).toHaveLength(91);
+    expect(index.publicResources).toHaveLength(89);
   });
 
   it("絞り込みでも出ない", () => {
@@ -152,7 +152,7 @@ describe("10. 該当資料がない検索で、無関係な結果を出さない
   });
 
   it("空の検索は公開対象の全件を返す", () => {
-    expect(ids("")).toHaveLength(83);
+    expect(ids("")).toHaveLength(89);
   });
 });
 
@@ -284,9 +284,10 @@ describe("別名「ダメトレ」（利用者のフィードバック）", () =
 
 describe("英数字の検索語は独立した単語として照合する（利用者のフィードバック）", () => {
   it("「Evi」は review・revive の途中に一致せず、教材を増やさない", () => {
+    // 2026-11-02 から、tol2 の寄稿（Evi への質問を含む）の要約が単語として「Evi」を含む。一致するのは単語として含む資料だけ
     const r = search("Evi", {});
-    expect(r.hits).toHaveLength(0);
-    expect(r.analysis.ignored).toEqual(["evi"]);
+    for (const h of r.hits) expect(`${h.resource.title} ${h.resource.summary_ja}`).toMatch(/(^|[^A-Za-z])Evi([^A-Za-z]|$)/);
+    expect(r.hits.map((h) => h.resource.id)).toEqual(["res-lolninja-tol2-replay-study"]);
   });
   it("「review」「revive」そのものの検索は引き続き届く", () => {
     expect(ids("review").length).toBeGreaterThan(0);

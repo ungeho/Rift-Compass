@@ -7405,7 +7405,9 @@
    "learning": false
   },
   "roles": [],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "P1-common",
   "depth_estimate": "medium",
   "depth_signals": [
@@ -29872,7 +29874,8 @@
   ],
   "topic_ids": [
    "itemization",
-   "patch-reading"
+   "patch-reading",
+   "mechanics"
   ],
   "tier": "P1-mid",
   "depth_estimate": "high",
@@ -60408,7 +60411,9 @@
   "roles": [
    "bot"
   ],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "P3",
   "depth_estimate": "medium",
   "depth_signals": [
@@ -60983,7 +60988,9 @@
   "roles": [
    "bot"
   ],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "P3",
   "depth_estimate": "high",
   "depth_signals": [
@@ -85609,7 +85616,9 @@
   "roles": [
    "bot"
   ],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "P3",
   "depth_estimate": "medium",
   "depth_signals": [
@@ -92928,7 +92937,8 @@
   ],
   "topic_ids": [
    "itemization",
-   "patch-reading"
+   "patch-reading",
+   "mechanics"
   ],
   "tier": "P3",
   "depth_estimate": "medium",
@@ -100923,7 +100933,8 @@
   },
   "roles": [],
   "topic_ids": [
-   "patch-reading"
+   "patch-reading",
+   "mechanics"
   ],
   "tier": "unclassified",
   "depth_estimate": "medium",
@@ -101232,7 +101243,9 @@
    "learning": false
   },
   "roles": [],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "unclassified",
   "depth_estimate": "high",
   "depth_signals": [
@@ -101287,7 +101300,8 @@
   },
   "roles": [],
   "topic_ids": [
-   "patch-reading"
+   "patch-reading",
+   "mechanics"
   ],
   "tier": "unclassified",
   "depth_estimate": "high",
@@ -119592,7 +119606,8 @@
   },
   "roles": [],
   "topic_ids": [
-   "recall"
+   "recall",
+   "mechanics"
   ],
   "tier": "P1-common",
   "depth_estimate": "high",
@@ -120359,7 +120374,9 @@
    "learning": true
   },
   "roles": [],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "P1-common",
   "depth_estimate": "high",
   "depth_signals": [
@@ -129561,7 +129578,9 @@
   "discovered_at": "2026-11-02",
   "existing_resource_id": null,
   "roles": [],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "unclassified",
   "depth_estimate": "medium",
   "depth_signals": [
@@ -134458,9 +134477,11 @@
    "lolninja"
   ],
   "discovered_at": "2026-11-02",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-lolninja-tol2-right-click",
   "roles": [],
-  "topic_ids": [],
+  "topic_ids": [
+   "mechanics"
+  ],
   "tier": "unclassified",
   "depth_estimate": "medium",
   "depth_signals": [
@@ -134469,9 +134490,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。フィジカル（右クリック）の定義と練習。スキルドッジ（敵から自分への線に直角に動く）、スペーシング、AA＋移動、CS 練習の基本の3規則と応用の5規則、脳のリソースの考え方。知識の記録は TL1〜",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-lolninja-tol2-right-click と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },
@@ -134502,7 +134523,7 @@
    "lolninja"
   ],
   "discovered_at": "2026-11-02",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-lolninja-tol2-aa",
   "roles": [],
   "topic_ids": [],
   "tier": "unclassified",
@@ -134513,9 +134534,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。AA の5つの構成要素（硬直時間・モーション・弾速・射程・AS）、AS から AA の CD を計算する方法（2022年の値の例）、カイト、アタックムーブの設定と注意点（ブッシュのワードへ動く、チャンピオンオンリーターゲットを無視する）、カイト練習",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-lolninja-tol2-aa と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },
@@ -134546,7 +134567,7 @@
    "lolninja"
   ],
   "discovered_at": "2026-11-02",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-lolninja-tol2-replay-study",
   "roles": [],
   "topic_ids": [],
   "tier": "unclassified",
@@ -134557,9 +134578,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。プレイ動画研究の方法（インプットとアウトプット、プレイ動画とリプレイの使い分け、完コピの4段階）。Evi への質問と回答（tol2 が聞いたもの）を含む",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-lolninja-tol2-replay-study と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },
@@ -134590,7 +134611,7 @@
    "lolninja"
   ],
   "discovered_at": "2026-11-02",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-lolninja-tol2-otp",
   "roles": [],
   "topic_ids": [],
   "tier": "unclassified",
@@ -134600,9 +134621,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。OTP の進め方（統計サイト・Wiki・プラクティスツール・配信・ランクの5段階）と、トップの OTP 配信者の一覧（KR・CN・EU。多くはプロではない高ランクのプレイヤー）",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-lolninja-tol2-otp と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "medium"
  },
@@ -135726,7 +135747,7 @@
    "donekifu"
   ],
   "discovered_at": "2026-11-02",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-donekifu-wave-basics",
   "roles": [],
   "topic_ids": [
    "wave-management",
@@ -135741,9 +135762,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "ドネキフ塾の記事（著者表示はドネキフ塾）で、Kreative は「監修」。Kreative 本人の発言として明示されるのは、フリーズの位置の作図・10秒おきのアラームの逸話・次に学ぶ順番の3か所だけで、ほかは編集部の文。肩書き（東大卒・現プロ・10年連続チャレンジャー・元日本5位）はサイトの記載で未確認。知識の記録は DK1〜",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-donekifu-wave-basics と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },

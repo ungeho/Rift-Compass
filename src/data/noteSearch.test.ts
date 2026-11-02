@@ -135,8 +135,9 @@ describe("知識ノートの検索の規則", () => {
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {
     expect(noteMatchesForQuery("").matches).toEqual([]);
-    const r = noteMatchesForQuery("バロン");
+    // 「バロン」は 2026-11-02 から tol2 のアタックムーブのノートにある語になったので、ノートにない語の例を「アタカン」にする
+    const r = noteMatchesForQuery("アタカン");
     expect(r.matches).toEqual([]);
-    expect(r.ignored).toContain("バロン");
+    expect(r.ignored).toContain("アタカン");
   });
 });

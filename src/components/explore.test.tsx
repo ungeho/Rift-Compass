@@ -278,7 +278,9 @@ describe("散策の「すべて」（Topic を限定しない）", () => {
     for (const item of r.picks.slice(0, 30)) {
       const c = text(renderToStaticMarkup(<ExploreCard result={{ item, group: "near", fellBack: false, cycled: false, seen: [] }} topicLabel="" scope="all" />));
       expect(c).not.toContain("全体から選びました");
-      expect(c).not.toContain("距離");
+      // 距離のバッジ・距離の切り替えの注意を出さない（知識ノートの本文に「距離」という語があるのは構わない）
+      expect(c).not.toContain("距離：");
+      expect(c).not.toContain("選んだ距離");
       expect(c).toMatch(/教材|判断材料（試験）|知識ノート/);
     }
   });
