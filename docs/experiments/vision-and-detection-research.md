@@ -176,3 +176,8 @@
 - **VS2**（ブッシュの中を見る）は**登録しない**。ブッシュの規則の原典（Wiki Sight）が未登録で、res-wiki-lux だけでは AI の推論になるため。Sight のページを正式資料にしてから tactical_inference として検討する。
 - 2件とも Topic は champ-lux・vision。2件の間に context_of。§8 の「patch_dependencies に wiki-revid」は採らず、版は根拠の要約に書いた（既存のラックスのノートと同じ形）。
 - 他の55件（VD1〜VD12・VS3・VS4・VS6〜VS40・VT1〜VT5）は変更なし。
+
+## 10. ステルス・看破の正式登録（2026-11-02）
+
+- Wiki の Stealth・Sight・Control Ward・Oracle Lens・Spell shield と各チャンピオンのスキルのデータを正式資料にし、VD1〜VD11 と VS の一部（VS3・VS9・VS21・VS24〜VS37）を正式なノートにした。記録と、57件との対応は `stealth-detection-research.md` の §5。
+- 未登録のまま：VD12、各チャンピオンの個別の命中の確認（VS6〜VS8・VS10〜VS20・VS22・VS23）、VT1・VT2・VT4・VT5。
