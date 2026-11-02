@@ -116,34 +116,52 @@ const adapters = {
     return { listed, items };
   },
 
-  /** YouTube のチャンネルの動画一覧ページ（新しい順の約30本）から、動画 ID・題名・長さを取る（動画は取得しない）*/
+  /**
+   * YouTube のチャンネルの動画一覧ページ（新しい順の約30本）から、動画 ID・題名・長さを取る（動画は取得しない）。
+   * extra_pages（公開ページの URL。例：アップロードの再生リスト playlist?list=UU…、初期表示は約100本）と、
+   * include_playlists（チャンネルの公開の再生リストのページ）で範囲を広げる。続きの読み込み（/youtubei/）は
+   * robots.txt で不許可なので使わない。同じ動画は1件にまとめる
+   */
   async "youtube-channel"(src) {
-    const html = await get(`https://www.youtube.com/${src.handle}/videos`, { delay: src.delay_ms ?? 1000 });
-    const m = /var ytInitialData = (\{.+?\});<\/script>/s.exec(html);
-    if (!m) throw new Error(`ytInitialData not found: ${src.handle}`);
-    const items = [];
-    const walk = (o) => {
-      if (!o || typeof o !== "object") return;
-      const l = o.lockupViewModel;
-      if (l && l.contentType === "LOCKUP_CONTENT_TYPE_VIDEO") {
-        const badge = JSON.stringify(l.contentImage || {}).match(/"text":"(\d{1,2}(?::\d{2}){1,2})"/);
-        const rows = JSON.stringify(l.metadata || {}).match(/"content":"([^"]*前|[^"]*ago)"/);
-        items.push({
-          url: `https://www.youtube.com/watch?v=${l.contentId}`,
-          title: l.metadata?.lockupMetadataViewModel?.title?.content || null,
-          creator: src.creator || null,
-          duration_sec: badge ? badge[1].split(":").reduce((a, x) => a * 60 + Number(x), 0) : null,
-          published_hint: rows ? rows[1] : null, // 「6年前」など。正確な日付ではない
-          type: "video",
-          language: src.language,
-          metadata_from: "youtube_channel_page",
-        });
-        return;
-      }
-      for (const k in o) walk(o[k]);
-    };
-    walk(JSON.parse(m[1]));
-    return { listed: items.length, items };
+    const urls = [`https://www.youtube.com/${src.handle}/videos`, ...(src.extra_pages || [])];
+    if (src.include_playlists) {
+      const html = await get(`https://www.youtube.com/${src.handle}/playlists`, { delay: src.delay_ms ?? 1000 });
+      const ids = [...new Set([...html.matchAll(/"playlistId":"(PL[\w-]+)"/g)].map((m) => m[1]))];
+      for (const id of ids) urls.push(`https://www.youtube.com/playlist?list=${id}`);
+    }
+    const byId = new Map();
+    const pages = [];
+    for (const url of urls) {
+      const html = await get(url, { delay: src.delay_ms ?? 1000 });
+      const m = /var ytInitialData = (\{.+?\});<\/script>/s.exec(html);
+      if (!m) throw new Error(`ytInitialData not found: ${url}`);
+      const before = byId.size;
+      const walk = (o) => {
+        if (!o || typeof o !== "object") return;
+        const l = o.lockupViewModel;
+        if (l && l.contentType === "LOCKUP_CONTENT_TYPE_VIDEO") {
+          if (byId.has(l.contentId)) return;
+          const badge = JSON.stringify(l.contentImage || {}).match(/"text":"(\d{1,2}(?::\d{2}){1,2})"/);
+          const rows = JSON.stringify(l.metadata || {}).match(/"content":"([^"]*前|[^"]*ago)"/);
+          byId.set(l.contentId, {
+            url: `https://www.youtube.com/watch?v=${l.contentId}`,
+            title: l.metadata?.lockupMetadataViewModel?.title?.content || null,
+            creator: src.creator || null,
+            duration_sec: badge ? badge[1].split(":").reduce((a, x) => a * 60 + Number(x), 0) : null,
+            published_hint: rows ? rows[1] : null, // 「6年前」など。正確な日付ではない
+            type: "video",
+            language: src.language,
+            metadata_from: url.includes("playlist?") ? "youtube_playlist_page" : "youtube_channel_page",
+          });
+          return;
+        }
+        for (const k in o) walk(o[k]);
+      };
+      walk(JSON.parse(m[1]));
+      pages.push({ url, new_videos: byId.size - before });
+    }
+    if (urls.length > 1) console.log(`  ${src.id}：${pages.map((x) => `${x.url.replace("https://www.youtube.com/", "")} +${x.new_videos}`).join("、")}`);
+    return { listed: byId.size, items: [...byId.values()] };
   },
 };
 

@@ -305,3 +305,15 @@ test("付け直しは候補の並びを変えない（既存の候補の順を�
   const out = mergeCandidates([], items, ctx());
   assert.deepEqual(out.map((c) => c.url), items.map((x) => x.url));
 });
+
+test("Topic の照合：検索と同じ規則（長い一致を先に採る・あいまいなチャンピオン名・同じ範囲の別名は両方）", () => {
+  const m = topicMatcher(dataset.topics);
+  assert.deepEqual(m("サモナースペル"), ["summoner-spells"]); // 「ナー」（ナー）はほかの語の一部では採らない
+  assert.ok(!m("ナーフ後のルーン").includes("champ-gnar"));
+  assert.ok(!m("パワースパイクを理解しよう").includes("champ-pyke"));
+  assert.ok(m("ナーの対策").includes("champ-gnar"));
+  assert.deepEqual(m("ジンクスのビルド").filter((t) => t.startsWith("champ-")), ["champ-jinx"]); // ジンクスの中のジン（ジン）は採らない
+  assert.ok(m("ミッドゼドのビルドガイド").includes("champ-zed"));
+  const blind = m("ブラインド");
+  assert.ok(blind.includes("crowd-control") && blind.includes("aa-negation"));
+});

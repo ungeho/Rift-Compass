@@ -186,6 +186,16 @@
     "notes": "2026-11-02 追加。チャンネル ID UCJlNT_Qx6f46-zst6jydBdg（登録者3520人）。経歴（報道）：Andrei Pascu、LEC のトップ（Schalke 04・Rogue など）。現在の所属はこの記録では確認していない"
   },
   {
+    "id": "yt-botikalol",
+    "kind": "youtube-channel",
+    "handle": "@BOTikaLOL",
+    "creator": { "name": "ボチカ（BOTika）", "kind": "streamer" },
+    "language": "ja",
+    "extra_pages": ["https://www.youtube.com/playlist?list=UUmJdqFB68q1Z1PrM7M5Wpgw"],
+    "include_playlists": true,
+    "notes": "2026-11-02 追加。チャンネル ID UCmJdqFB68q1Z1PrM7M5Wpgw、登録者2.75万人・動画1195本・2013-01-20 登録（概要ページの表示、2026-11-02 確認）。概要欄の本人の記載は「最高レートJPサーバー100位：グランドマスター」（シーズン・LP の記載はない。依頼文の「シーズン14 グランドマスター 600LP」はこの日の概要欄では確認できなかった）。現在のレート・プロ経験は推測しない。チャンピオンのスキル説明から OTP の細かな技術までの解説を掲げる。取得：動画タブ（新しい順の約30本）＋アップロードの再生リスト（初期表示の約100本）＋公開の再生リスト。続きの読み込み（/youtubei/）は robots.txt で不許可のため、1195本の全件は取得できない"
+  },
+  {
     "id": "donekifu",
     "kind": "sitemap",
     "url": "https://donekifu.jp/sitemap.xml",

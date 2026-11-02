@@ -1,6 +1,8 @@
 // Phase 5A：教材候補の正規化・重複検出・暫定分類（依存パッケージなし。ネットワークに触れない純粋関数だけを置く）
 // 候補は data/candidates/ に置き、アプリ（data/sample-resources.json）とは分ける。
 "use strict";
+const fs = require("fs"); // あいまいな名前の一覧（src/search/ambiguousNames.json）を読むためだけに使う
+const path = require("path");
 
 // ---------- URL の正規化と重複キー ----------
 
@@ -124,21 +126,55 @@ const COMMON_TOPICS = new Set([
 ]);
 
 /** sample-resources の Topic 別名で、題名などに現れる Topic を拾う（大分類とチャンピオンの Topic は除く）*/
+/** あいまいなチャンピオン名の一覧（tools/gamedata/ingest.js ambiguity が作る。なければ空）*/
+function ambiguousNames() {
+  const f = path.join(__dirname, "../../src/search/ambiguousNames.json");
+  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, "utf8")) : { affixes: [], terms: {} };
+}
+
 function topicMatcher(topics) {
+  // 検索（src/search/search.ts）と同じ規則：長い一致を先に採り、重なる短い一致は採らない（ジンクスの中のジンなど）。
+  // あいまいなチャンピオン名（src/search/ambiguousNames.json）は、前後が別のカタカナに続く一致を採らない
+  const norm = (x) => x.normalize("NFKC").toLowerCase();
+  const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const amb = ambiguousNames();
+  const champNames = topics.filter((t) => (t.parent_ids || []).includes("cat-champions")).flatMap((t) => [t.label_ja, ...t.aliases_ja].map(norm)).filter((n) => [...n].length >= 3);
+  const affixes = [...new Set([...amb.affixes.map(norm), ...champNames])];
+  const ambTerms = new Set(Object.keys(amb.terms).map(norm));
   const entries = [];
   for (const t of topics) {
     if (t.kind === "category") continue;
     for (const raw of [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en]) {
-      const term = raw.normalize("NFKC").toLowerCase();
+      const term = norm(raw);
       if ([...term].length < 2) continue;
       const ascii = /^[\x20-\x7e]+$/.test(term);
-      const body = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s*");
-      entries.push({ id: t.id, re: new RegExp(ascii ? `(?<![a-z0-9])${body}s?(?![a-z0-9])` : body, "i") });
+      const body = esc(term).replace(/\s+/g, "\\s*");
+      let source = ascii ? `(?<![a-z0-9])${body}s?(?![a-z0-9])` : body;
+      if (ambTerms.has(term)) {
+        const aff = affixes.filter((a) => a !== term).sort((a, b) => b.length - a.length).map(esc).join("|");
+        source = `(?:(?<=${aff})|(?<![ァ-ヺー]))${body}(?:(?=${aff})|(?![ァ-ヺー]))`;
+      }
+      entries.push({ id: t.id, re: new RegExp(source, "gi") });
     }
   }
   const match = (text) => {
-    const s = (text || "").normalize("NFKC").toLowerCase();
-    return [...new Set(entries.filter((e) => e.re.test(s)).map((e) => e.id))];
+    const s = norm(text || "");
+    const hits = [];
+    for (const e of entries) for (const m of s.matchAll(e.re)) hits.push({ id: e.id, start: m.index, end: m.index + m[0].length });
+    hits.sort((a, b) => b.end - b.start - (a.end - a.start) || a.start - b.start);
+    const taken = new Array(s.length).fill(false);
+    const ids = [];
+    const spans = new Set();
+    for (const h of hits) {
+      if (h.end === h.start) continue;
+      // 同じ範囲に一致した別の Topic（同じ別名を持つ Topic。例：ブラインド＝CC・通常攻撃の無効化）は両方採る
+      if (spans.has(`${h.start}:${h.end}`)) { if (!ids.includes(h.id)) ids.push(h.id); continue; }
+      if (taken.slice(h.start, h.end).some(Boolean)) continue;
+      spans.add(`${h.start}:${h.end}`);
+      for (let i = h.start; i < h.end; i++) taken[i] = true;
+      if (!ids.includes(h.id)) ids.push(h.id);
+    }
+    return ids;
   };
   // 複数の文から取った Topic を、Topic の定義順に並べ直すための順番
   match.order = new Map(topics.map((t, i) => [t.id, i]));
