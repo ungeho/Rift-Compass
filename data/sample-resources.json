@@ -55,6 +55,7 @@
     { "id": "champ-lux", "kind": "concept", "parent_ids": ["cat-champions"], "label_ja": "ラックス", "label_en": "Lux", "aliases_ja": ["ラックス"], "aliases_en": ["Lux"] },
     { "id": "tower-dive", "kind": "concept", "parent_ids": ["cat-laning"], "label_ja": "タワーダイブ", "label_en": "Tower diving", "aliases_ja": ["ダイブ", "タワーダイブ", "タワー下"], "aliases_en": ["tower dive", "tower diving", "dive"] },
     { "id": "mechanics", "kind": "concept", "parent_ids": ["cat-basics"], "label_ja": "操作技術・フィジカル", "label_en": "Mechanical skill", "aliases_ja": ["フィジカル", "カイト", "カイティング", "スペーシング", "スキルドッジ", "アタックムーブ", "引き撃ち"], "aliases_en": ["mechanical skill", "kiting", "spacing", "attack move"] },
+    { "id": "role-quests", "kind": "concept", "parent_ids": ["cat-basics"], "label_ja": "ロールクエスト", "label_en": "Role quests", "aliases_ja": ["ロールクエスト", "ポジションクエスト"], "aliases_en": ["role quest", "role quests"] },
     { "id": "role-top", "kind": "category", "parent_ids": [], "label_ja": "トップレーン", "label_en": "Top lane", "aliases_ja": ["トップ", "トップレーナー", "TOP"], "aliases_en": ["top", "top lane", "top laner", "toplaner"] },
     { "id": "role-jungle", "kind": "category", "parent_ids": [], "label_ja": "ジャングル", "label_en": "Jungle", "aliases_ja": ["ジャングラー", "JG"], "aliases_en": ["jungle", "jungler", "jg"] },
     { "id": "role-bot", "kind": "category", "parent_ids": [], "label_ja": "ボットレーン", "label_en": "Bot lane", "aliases_ja": ["ボット", "ボトム", "ADC", "ボットレーナー"], "aliases_en": ["bot", "bot lane", "bottom", "adc", "ad carry"] },
@@ -450,7 +451,7 @@
       "published_at": "2026-01-07",
       "patch_context": { "stated_patch": "26.1", "basis": "stated", "era": "season16" },
       "access": { "free": true, "login_required": false },
-      "verification": { "level": "L3", "checked_at": "2026-10-27", "method": "webfetch", "notes": "Minions 節のみ確認（ページの約70%を取得）。Wiki の表記は V26.01。2026-11-01：知識抽出の第2回（N1〜N16）で、Turrets・Rift Herald・Voidgrubs・Smite・Jungle・Remake・Homeguard・Crystalline Overgrowth などの節を確認。" }
+      "verification": { "level": "L3", "checked_at": "2026-10-27", "method": "webfetch", "notes": "Minions 節のみ確認（ページの約70%を取得）。Wiki の表記は V26.01。2026-11-01：知識抽出の第2回（N1〜N16）で、Turrets・Rift Herald・Voidgrubs・Smite・Jungle・Remake・Homeguard・Crystalline Overgrowth などの節を確認。2026-11-02：Role Quests の節（Queuing Up・Completing Your Quest・各ポジション）を確認。" }
     },
     {
       "id": "res-dignitas-wave-2019",
@@ -1645,6 +1646,20 @@
       "patch_context": { "stated_patch": "revid 4088335（2026-10-20）", "basis": "stated", "era": "current" },
       "access": { "free": true, "login_required": false },
       "verification": { "level": "L3", "checked_at": "2026-11-02", "method": "MediaWiki API（モジュールの本文）", "notes": "revid 4088335。Lua のテーブルを JSON に変換して取り込み（public/gamedata/wiki-championdata/4088335、175項目・173チャンピオン）。数式で書かれた値（クレッドの hp_lvl = 84+1000/17）は計算し、元の式も残した。" }
+    },
+    {
+      "id": "res-wiki-role-quests",
+      "url": "https://wiki.leagueoflegends.com/en-us/Role_Quests",
+      "title": "Role Quests",
+      "type": "wiki",
+      "language": "en",
+      "creator": { "name": "League of Legends Wiki", "kind": "community_wiki" },
+      "topic_ids": ["role-quests", "role-top", "role-jungle", "role-mid", "role-bot", "role-support"],
+      "summary_ja": "パッチ 26.1 で導入されたロールクエストの解説。割り当てられたポジションごとのクエストの条件・ポイントの獲得・報酬と、V26.01〜V26.19 の変更履歴を記載。",
+      "published_at": null,
+      "patch_context": { "stated_patch": "V26.19 までの変更履歴（ページの更新 2026-10-27）", "basis": "stated", "era": "current" },
+      "access": { "free": true, "login_required": false },
+      "verification": { "level": "L3", "checked_at": "2026-11-02", "method": "ページの raw（?action=raw）", "notes": "Overview・Quests の表・Patch History を確認。revid は raw では取得できない（api.php は robots.txt で不許可）ため、Last-Modified（2026-10-27 17:20 GMT）を記録。" }
     }
   ],
   "knowledge_notes": [
@@ -1899,7 +1914,7 @@
       "id": "kn-role-quests-261",
       "kind": "mechanic",
       "statement_ja": "パッチ26.1で、ロールごとのクエストが導入された。トップ・ミッド・ボットなどは、テイクダウン・ミニオン・プレート・タワーなどでクエストのポイントを得る。",
-      "topic_ids": ["cat-basics", "patch-reading"],
+      "topic_ids": ["role-quests", "cat-basics", "patch-reading"],
       "status": "source_stated",
       "historical": { "valid_from": "26.1", "valid_until": null, "current_applicability": "unknown", "applicability_note_ja": "26.1時点の公式パッチノートの記載。26.2以降の変更は確認していない。valid_until が null なのは終了時期が未確認という意味で、現在も同じという意味ではない。" },
       "patch_dependencies": ["system:role-quests"],
@@ -2957,6 +2972,116 @@
       "generalizability": "general",
       "patch_dependencies": [],
       "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-overview",
+      "kind": "mechanic",
+      "statement_ja": "ロールクエストは、チャンピオン選択で割り当てられたポジションごとのクエスト。ポジションを指定するサモナーズリフトのキュー（カスタムを含む）でだけ有効で、ポジションの交換はチャンピオン選択中に行う。試合中は割り当てられたレーンでの行動でポイントを貯め、必要なポイントに達すると、そのポジション専用の報酬を得る。進捗はアイテム欄の横に表示され、達成は味方のチャットに通知され、視界内なら敵にも見える。",
+      "topic_ids": ["role-quests", "role-top", "role-jungle", "role-mid", "role-bot", "role-support"],
+      "status": "source_stated",
+      "notes_ja": "パッチ 26.1 で導入。トップ・ミッド・ボットのクエストは新規、ジャングル・サポートは既存のクエストの更新。スイフトプレイなどのローテーションモードでは無効（26.1 のパッチノート）。クラス（メイジ・マークスマンなど）ではなく、割り当てられたポジションのルール。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-lane-presence",
+      "kind": "mechanic",
+      "statement_ja": "（V26.09 以降）レーンのクエストのポイントは、割り当てられたレーンでの行動ほど多い。レーン外でのミニオン・タワー・プレートで得るポイントは、レーン内の25〜100%になり、レーン外のオブジェクトで得るポイントの減少（−75%）はクエストの進捗に応じて0%まで縮む。リコールすると12秒間は時間経過のポイントが止まり、レーンに2分いるごとに1分間はポイントを減らさずにロームできる。これはクエストのポイントの量の話で、ミニオンのゴールド・経験値の減少とは別。",
+      "topic_ids": ["role-quests", "role-top", "role-mid", "role-bot"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。26.1 では「レーンの最も外側の生存タワー付近より先」がレーン内の扱いだったが、V26.09 で「拠点の外のレーン全体」に変わった。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-top-current",
+      "kind": "mechanic",
+      "statement_ja": "トップのロールクエスト：1200ポイントで達成。ポイントは、キル関与15・ミニオン1体につき2（トップ以外ではそのポイントの25〜100%）・タワー50・プレート40・エピックモンスター30、時間経過で1:05 から3秒に1ポイント（トップでは5秒に7.5）。報酬は、レベル上限20、経験値＋600、以後の経験値＋11%、キル関与で経験値＋80、ロールクエスト枠に追加のサモナースペル「アンリーシュド・テレポート」（CD 390秒）。テレポートを持っている場合は、テレポートの後に最大体力35%のシールド（10秒）。",
+      "topic_ids": ["role-quests", "role-top"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。26.1 から V26.09（経験値 12.5%→11%、キル関与の経験値の追加）、V26.12（シールド 30%・30秒→35%・10秒）、V26.19（CD 420→390秒）で変わった。26.1 のパッチノートは、クエストのポイントとは別に、レーン外のミニオンのゴールド・経験値の25%減（レベル3まで）をこのポジションにも記載している。Wiki の現在の表のこの欄には記載がなく、変更履歴にも削除の記載はない（現在の有無は確かめていない）。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-jungle-current",
+      "kind": "mechanic",
+      "statement_ja": "ジャングルのロールクエスト：ジャングルのペットにおやつを35回与えて達成。報酬は、アンリーシュド・スマイトのプライマル・スマイトへの強化、ジャングルキャンプでゴールド＋10・経験値＋10、ジャングル・川で移動速度＋4%（戦闘外は8%）。",
+      "topic_ids": ["role-quests", "role-jungle"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。26.1 で必要数が40→35、達成後のゴールド・経験値・移動速度が追加（26.1 のパッチノート）。スマイトのダメージの変更（600/900/1200→600/1000/1400）は 26.1 のパッチノートの記載で、現在の値は照合していない。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-mid-current",
+      "kind": "mechanic",
+      "statement_ja": "ミッドのロールクエスト：1350ポイントで達成。ポイントは、キル関与25・ミニオン1体につき2（ミッド以外ではそのポイントの25〜100%）・タワー50・プレート40・エピックモンスター30・時間経過に加え、チャンピオンへのダメージの3%（近接）または1.5%（遠隔）。クエストのポイントとは別に、ミッド以外ではミニオンのゴールド・経験値がレベル3まで25%減る。報酬は、増加攻撃力の8%と魔力の8%、ティア2のブーツの専用ティア3ブーツへの無料の強化（例：ソーサラーシューズ→スペルスリンガーシューズ）。",
+      "topic_ids": ["role-quests", "role-mid"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。26.1 の「5分ごとの強化リコール」は V26.09 で削除され、代わりに 6% の攻撃力・魔力が追加、V26.11 で 8% に増えた。レーン外のミニオンのゴールド・経験値の減少は Wiki の表の記載。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-bot-current",
+      "kind": "mechanic",
+      "statement_ja": "ボットのロールクエスト：1350ポイントで達成。ポイントは、キル関与15・ミニオン1体につき3（ボット以外ではそのポイントの25〜100%）・タワー50・プレート40・エピックモンスター30・時間経過。報酬は、ゴールド＋300、以後ミニオンを倒すごとにゴールド＋2、キル関与でゴールド＋40、ブーツがロールクエスト枠に移り、アイテム枠が実質1つ増える。",
+      "topic_ids": ["role-quests", "role-bot"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。キル関与のゴールドは 26.1 の50から V26.09 で40に減った。26.1 のパッチノートは、クエストのポイントとは別に、レーン外のミニオンのゴールド・経験値の25%減（レベル3まで）をこのポジションにも記載している。Wiki の現在の表のこの欄には記載がなく、変更履歴にも削除の記載はない（現在の有無は確かめていない）。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-role-quest-support-current",
+      "kind": "mechanic",
+      "statement_ja": "サポートのロールクエスト：サポートアイテム（ワールドアトラス・ルーンコンパス）のクエストで得たゴールドと同じだけポイントになり、800ポイントで達成。クエストのポイントとは別に、ボット以外ではミニオンのゴールド・経験値がレベル5まで33%減る（サポートアイテムのクエストにも影響）。コントロールワードはロールクエスト枠に入れる。報酬は、サポートアイテムの強化（バウンティ・オブ・ワールドを経て上位のサポートアイテムへ）と、コントロールワードの値段40ゴールド。",
+      "topic_ids": ["role-quests", "role-support"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。V26.16 でポイントの量と、ボット以外のミニオンの減少（25%・レベル3まで→33%・レベル5まで）が変わった。",
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-hist-role-quest-261-top",
+      "kind": "mechanic",
+      "statement_ja": "（26.1 の導入時）トップのロールクエストの報酬は、以後の経験値＋12.5%、テレポートなしならアンリーシュド・テレポート（CD 7分）、テレポートありなら到着時に最大体力30%のシールド（30秒）だった。",
+      "topic_ids": ["role-quests", "role-top"],
+      "status": "source_stated",
+      "historical": { "valid_from": "V26.01", "valid_until": "V26.19", "current_applicability": "superseded", "applicability_note_ja": "V26.09（経験値 11%）・V26.12（シールド 35%・10秒）・V26.19（CD 390秒）で変わった。現在の値は kn-role-quest-top-current。" },
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-hist-role-quest-261-mid-recall",
+      "kind": "mechanic",
+      "statement_ja": "（26.1〜V26.08）ミッドのロールクエストの報酬には、5分ごとの強化リコール（詠唱8→4秒、キル関与で1分短縮）があった。",
+      "topic_ids": ["role-quests", "role-mid"],
+      "status": "source_stated",
+      "historical": { "valid_from": "V26.01", "valid_until": "V26.09", "current_applicability": "superseded", "applicability_note_ja": "V26.09 で削除され、増加攻撃力・魔力の6%（V26.11 で8%）に置き換わった。現在の値は kn-role-quest-mid-current。" },
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-hist-role-quest-261-bot",
+      "kind": "mechanic",
+      "statement_ja": "（26.1〜V26.08）ボットのロールクエストの報酬のキル関与のゴールドは＋50だった。",
+      "topic_ids": ["role-quests", "role-bot"],
+      "status": "source_stated",
+      "historical": { "valid_from": "V26.01", "valid_until": "V26.09", "current_applicability": "superseded", "applicability_note_ja": "V26.09 で＋40に減った。現在の値は kn-role-quest-bot-current。" },
+      "generalizability": "general",
+      "patch_dependencies": ["system:role-quests"],
+      "last_checked_patch": null
     }
   ],
   "evidence": [
@@ -3116,7 +3241,26 @@
     { "id": "ev-155", "note_id": "kn-stat-growth-formula", "resource_id": "res-wiki-champion-statistic", "evidence_type": "source_fact", "locator": { "section": "Primary growth formula / Growth by level" }, "summary_ja": "成長の式と、レベルごとの増分（72%・100%・128%）、Lv18 で17倍（revid 4069636）", "checked_level": "L3", "checked_at": "2026-11-02" },
     { "id": "ev-156", "note_id": "kn-as-growth-via-ratio", "resource_id": "res-wiki-champion-statistic", "evidence_type": "source_fact", "locator": { "section": "Attack speed growth" }, "summary_ja": "攻撃速度の成長は増加攻撃速度として反映率を掛ける式（revid 4069636）", "checked_level": "L3", "checked_at": "2026-11-02" },
     { "id": "ev-157", "note_id": "kn-as-growth-via-ratio", "resource_id": "res-wiki-attack-speed", "evidence_type": "source_fact", "locator": { "section": "Attack speed（計算式）" }, "summary_ja": "合計の攻撃速度＝基本値＋反映率×増加（revid 4073067）", "checked_level": "L3", "checked_at": "2026-11-02" },
-    { "id": "ev-158", "note_id": "kn-as-growth-via-ratio", "resource_id": "res-wiki-championdata-module", "evidence_type": "source_fact", "locator": { "section": "stats.as_ratio" }, "summary_ja": "チャンピオンごとの反映率の値（112項目で基本攻撃速度と違う。revid 4088335）", "checked_level": "L3", "checked_at": "2026-11-02" }
+    { "id": "ev-158", "note_id": "kn-as-growth-via-ratio", "resource_id": "res-wiki-championdata-module", "evidence_type": "source_fact", "locator": { "section": "stats.as_ratio" }, "summary_ja": "チャンピオンごとの反映率の値（112項目で基本攻撃速度と違う。revid 4088335）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-159", "note_id": "kn-role-quest-overview", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Overview / Announcement" }, "summary_ja": "割り当てられたポジション、対象のキュー、進捗の表示、達成の通知", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-160", "note_id": "kn-role-quest-overview", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Queuing Up / Completing Your Quest" }, "summary_ja": "26.1 での導入。ポジションの交換はチャンピオン選択中、スイフトプレイ・ローテーションモードでは無効", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-161", "note_id": "kn-role-quest-lane-presence", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Overview / Quests / Patch History V26.09" }, "summary_ja": "レーン外での減少、オブジェクトの減少の縮小、リコール後12秒、2分ごとに1分のローム猶予", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-162", "note_id": "kn-role-quest-top-current", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Quests（Top Lane）/ Patch History V26.09・V26.12・V26.19" }, "summary_ja": "条件・ポイント・報酬の現在の値と変更", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-163", "note_id": "kn-role-quest-top-current", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Top Lane" }, "summary_ja": "26.1 での導入時の値（レベル上限20・経験値＋600 など）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-164", "note_id": "kn-role-quest-jungle-current", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Quests（Jungle）" }, "summary_ja": "35ポイント、報酬", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-165", "note_id": "kn-role-quest-jungle-current", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Jungle" }, "summary_ja": "26.1 での変更（40→35、達成後の追加の報酬）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-166", "note_id": "kn-role-quest-mid-current", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Quests（Mid Lane）/ Patch History V26.09・V26.11" }, "summary_ja": "条件・報酬の現在の値と変更", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-167", "note_id": "kn-role-quest-mid-current", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Mid Lane" }, "summary_ja": "26.1 での導入（ブーツの強化、強化リコール）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-168", "note_id": "kn-role-quest-bot-current", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Quests（Bot Lane）/ Patch History V26.09" }, "summary_ja": "条件・報酬の現在の値と変更", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-169", "note_id": "kn-role-quest-bot-current", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Bot Lane" }, "summary_ja": "26.1 での導入（ブーツの枠など）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-170", "note_id": "kn-role-quest-support-current", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Quests（Support）/ Patch History V26.16" }, "summary_ja": "条件・報酬の現在の値と変更", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-171", "note_id": "kn-role-quest-support-current", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Support" }, "summary_ja": "26.1 での変更（コントロールワードの枠と値段）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-172", "note_id": "kn-hist-role-quest-261-top", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Top Lane" }, "summary_ja": "26.1 の報酬の値", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-173", "note_id": "kn-hist-role-quest-261-top", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Patch History V26.09・V26.12・V26.19" }, "summary_ja": "その後の変更", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-174", "note_id": "kn-hist-role-quest-261-mid-recall", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Mid Lane" }, "summary_ja": "26.1 の強化リコール", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-175", "note_id": "kn-hist-role-quest-261-mid-recall", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Patch History V26.09" }, "summary_ja": "強化リコールの削除", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-176", "note_id": "kn-hist-role-quest-261-bot", "resource_id": "res-riot-patch-26-1-en", "evidence_type": "source_fact", "locator": { "section": "Role Quests / Bot Lane" }, "summary_ja": "26.1 の値（＋50）", "checked_level": "L3", "checked_at": "2026-11-02" },
+    { "id": "ev-177", "note_id": "kn-hist-role-quest-261-bot", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Patch History V26.09" }, "summary_ja": "＋40への変更", "checked_level": "L3", "checked_at": "2026-11-02" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },
@@ -3173,6 +3317,18 @@
     { "id": "rel-052", "from": "kn-remove-lose-conditions", "to": "kn-push-before-moving", "type": "context_of" },
     { "id": "rel-053", "from": "kn-lux-e-sight", "to": "kn-lux-r-sight", "type": "context_of" },
     { "id": "rel-054", "from": "kn-stat-growth-formula", "to": "kn-as-growth-via-ratio", "type": "reason_for" },
-    { "id": "rel-055", "from": "kn-as-growth-via-ratio", "to": "kn-aa-interval-from-attack-speed", "type": "context_of" }
+    { "id": "rel-055", "from": "kn-as-growth-via-ratio", "to": "kn-aa-interval-from-attack-speed", "type": "context_of" },
+    { "id": "rel-056", "from": "kn-role-quest-overview", "to": "kn-role-quest-top-current", "type": "reason_for" },
+    { "id": "rel-057", "from": "kn-role-quest-overview", "to": "kn-role-quest-jungle-current", "type": "reason_for" },
+    { "id": "rel-058", "from": "kn-role-quest-overview", "to": "kn-role-quest-mid-current", "type": "reason_for" },
+    { "id": "rel-059", "from": "kn-role-quest-overview", "to": "kn-role-quest-bot-current", "type": "reason_for" },
+    { "id": "rel-060", "from": "kn-role-quest-overview", "to": "kn-role-quest-support-current", "type": "reason_for" },
+    { "id": "rel-061", "from": "kn-role-quest-lane-presence", "to": "kn-role-quest-top-current", "type": "context_of" },
+    { "id": "rel-062", "from": "kn-role-quest-lane-presence", "to": "kn-role-quest-mid-current", "type": "context_of" },
+    { "id": "rel-063", "from": "kn-role-quest-lane-presence", "to": "kn-role-quest-bot-current", "type": "context_of" },
+    { "id": "rel-064", "from": "kn-hist-role-quest-261-top", "to": "kn-role-quest-top-current", "type": "context_of" },
+    { "id": "rel-065", "from": "kn-hist-role-quest-261-mid-recall", "to": "kn-role-quest-mid-current", "type": "context_of" },
+    { "id": "rel-066", "from": "kn-hist-role-quest-261-bot", "to": "kn-role-quest-bot-current", "type": "context_of" },
+    { "id": "rel-067", "from": "kn-role-quests-261", "to": "kn-role-quest-overview", "type": "context_of" }
   ]
 }

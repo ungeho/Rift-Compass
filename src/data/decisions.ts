@@ -347,7 +347,13 @@ export function decisionsForTopic(topicId: string): DecisionUnit[] {
 // ロールの Topic と、判断材料の対象ロール（scope.roles）の対応。「ロール共通」（all）の判断材料は、どのロールにも当てはまるものとして扱う
 // 2026-11-02 に5ロール（role-top・role-jungle・role-bot・role-support）を加えたので、同じ対応を持たせる
 // （欠けていると、ロール共通の判断材料がロール名を含む検索から外れる）
-const ROLE_TOPICS: Record<string, string> = { "role-mid": "mid", "role-top": "top", "role-jungle": "jungle", "role-bot": "bot", "role-support": "support" };
+export const ROLE_TOPICS: Record<string, string> = { "role-mid": "mid", "role-top": "top", "role-jungle": "jungle", "role-bot": "bot", "role-support": "support" };
+
+/** 対象ロールにそのロールを明記した、試験表示の判断材料（ロール共通 all は含めない）*/
+export function decisionsForRole(topicId: string): DecisionUnit[] {
+  const role = ROLE_TOPICS[topicId];
+  return role ? showcaseDecisions.filter((u) => u.scope.roles.includes(role)) : [];
+}
 
 const decisionTextCache = new Map<string, { body: string; topicNames: string }>();
 /**

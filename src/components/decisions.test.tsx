@@ -167,8 +167,8 @@ describe("資料詳細との接続・URL", () => {
     expect(parseHash(decisionHref("du-trade-checklist"))).toEqual({ name: "decision", id: "du-trade-checklist" });
   });
 
-  it("正式資料のデータは94件（新規判断材料の収録試験の7件目で res-lg-pdvmw を1件追加して76件、2026-11-01 の正式収録で9件、2026-11-02 のプロ解説の収録で6件、同日のゲームデータの原典（Data Dragon・Wiki 2件）で3件追加して94件）", () => {
-    expect(index.resources).toHaveLength(94);
+  it("正式資料のデータは95件（新規判断材料の収録試験の7件目で res-lg-pdvmw を1件追加して76件、2026-11-01 の正式収録で9件、2026-11-02 のプロ解説の収録で6件、同日のゲームデータの原典（Data Dragon・Wiki 2件）で3件、ロールクエスト（Wiki）で1件追加して95件）", () => {
+    expect(index.resources).toHaveLength(95);
   });
 });
 
