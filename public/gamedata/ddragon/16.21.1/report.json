@@ -1,0 +1,1823 @@
+{
+ "version": "16.21.1",
+ "generated_at": "2026-11-02",
+ "coverage": {
+  "spells": 692,
+  "cooldown_nonzero": 672,
+  "cost_nonzero": 568,
+  "range_global_marker": 36,
+  "effect_all_zero_or_null": 460,
+  "datavalues_empty": 692,
+  "vars_empty": 692,
+  "tooltip_placeholders": 3364,
+  "tooltip_placeholders_resolvable": 41,
+  "maxrank": {
+   "1": 1,
+   "3": 168,
+   "4": 3,
+   "5": 509,
+   "6": 11
+  },
+  "costType": {
+   "No Cost": 92,
+   " {{ abilityresourcename }}": 556,
+   " Energy": 1,
+   "No cost": 1,
+   " {{ abilityresourcename }} per Second": 1,
+   " + {{ manacostpersecond }} Mana per second": 1,
+   " Mana per second": 1,
+   "% of current Health": 5,
+   " Health": 3,
+   "% Current Health": 1,
+   " Turret Kit & {{ cost }} Mana": 1,
+   " Mana Per Rocket": 1,
+   " Mana per Second": 2,
+   " Mana and {{ healthcost*100 }}% Current Health Per Second": 1,
+   " Mana (+{{ percentmanacostpersecond*100 }}% Max Mana per second)": 1,
+   " Mana": 6,
+   "Generates 1 Ferocity": 3,
+   " Heat": 3,
+   "Requires 100 Dragon Fury": 1,
+   "% Max Health, {{ cost }} Mana": 1,
+   " Mana, all Charges": 1,
+   "Passive": 4,
+   "% of max Health ({{ chargehealthtooltip }})": 1,
+   "% of current Health ({{ healthcosttooltip }})": 2,
+   "% of current Health ({{ tooltiphealthcost }})": 1,
+   "1 Seed": 1
+  }
+ },
+ "wiki_revid": 4088335,
+ "cross_check": {
+  "missing": [],
+  "diffs": [
+   {
+    "id": "Aatrox",
+    "form": "Aatrox",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ahri",
+    "form": "Ahri",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Akali",
+    "form": "Akali",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Akshan",
+    "form": "Akshan",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Alistar",
+    "form": "Alistar",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.75,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ambessa",
+    "form": "Ambessa",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Amumu",
+    "form": "Amumu",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.8,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Anivia",
+    "form": "Anivia",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Annie",
+    "form": "Annie",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.65,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Aphelios",
+    "form": "Aphelios",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ashe",
+    "form": "Ashe",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "AurelionSol",
+    "form": "Aurelion Sol",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Aurora",
+    "form": "Aurora",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Azir",
+    "form": "Azir",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Bard",
+    "form": "Bard",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Belveth",
+    "form": "Bel'Veth",
+    "stat": "mp",
+    "ddragon": 45,
+    "wiki": 0,
+    "status": "unresolved",
+    "note": "マナを持たないチャンピオン（Data Dragon の partype「（空）」、Wiki の resource「None」）。Wiki は0、Data Dragon は別の値で、項目の意味（リソースの上限か、なしか）の違いの可能性。どちらの意味かは確かめていない"
+   },
+   {
+    "id": "Belveth",
+    "form": "Bel'Veth",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 1.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Blitzcrank",
+    "form": "Blitzcrank",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Brand",
+    "form": "Brand",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Braum",
+    "form": "Braum",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Briar",
+    "form": "Briar",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Caitlyn",
+    "form": "Caitlyn",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.8,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Camille",
+    "form": "Camille",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.8,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Cassiopeia",
+    "form": "Cassiopeia",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Chogath",
+    "form": "Cho'Gath",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Corki",
+    "form": "Corki",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Darius",
+    "form": "Darius",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Diana",
+    "form": "Diana",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "DrMundo",
+    "form": "Dr. Mundo",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Draven",
+    "form": "Draven",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ekko",
+    "form": "Ekko",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Elise",
+    "form": "Elise",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Evelynn",
+    "form": "Evelynn",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ezreal",
+    "form": "Ezreal",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.75,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Fiddlesticks",
+    "form": "Fiddlesticks",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.65,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Fiora",
+    "form": "Fiora",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Fizz",
+    "form": "Fizz",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Galio",
+    "form": "Galio",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Gangplank",
+    "form": "Gangplank",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Garen",
+    "form": "Garen",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Gnar",
+    "form": "Gnar",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Gragas",
+    "form": "Gragas",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Graves",
+    "form": "Graves",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Gwen",
+    "form": "Gwen",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Hecarim",
+    "form": "Hecarim",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.7,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Heimerdinger",
+    "form": "Heimerdinger",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.7,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Hwei",
+    "form": "Hwei",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Illaoi",
+    "form": "Illaoi",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Irelia",
+    "form": "Irelia",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ivern",
+    "form": "Ivern",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Janna",
+    "form": "Janna",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "JarvanIV",
+    "form": "Jarvan IV",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Jax",
+    "form": "Jax",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.25,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Jayce",
+    "form": "Jayce",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.25,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Jhin",
+    "form": "Jhin",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Jhin",
+    "form": "Jhin",
+    "stat": "attackspeedperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "status": "explained",
+    "note": "Wiki の攻撃速度の反映率が0（成長・増加攻撃速度が攻撃速度に反映されない）。どちらの成長値でも合計の攻撃速度は同じ。Wiki の成長値が別の効果（パッシブ）に使われるかは扱わない"
+   },
+   {
+    "id": "Jinx",
+    "form": "Jinx",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "KSante",
+    "form": "K'Sante",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kaisa",
+    "form": "Kai'Sa",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.6,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kalista",
+    "form": "Kalista",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.75,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Karma",
+    "form": "Karma",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Karthus",
+    "form": "Karthus",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.25,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kassadin",
+    "form": "Kassadin",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.9,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Katarina",
+    "form": "Katarina",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kayle",
+    "form": "Kayle",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kayn",
+    "form": "Kayn",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kennen",
+    "form": "Kennen",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.75,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Khazix",
+    "form": "Kha'Zix",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kindred",
+    "form": "Kindred",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.25,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kled",
+    "form": "Kled",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Kled",
+    "form": "Kled",
+    "stat": "attackrange",
+    "ddragon": 125,
+    "wiki": 250,
+    "status": "unresolved",
+    "note": "形態が複数（Kled・Kled & Skaarl）。Data Dragon の値は形態が混ざって見える（どの形態とも全項目は一致しない）。どの形態の値かは確かめていない"
+   },
+   {
+    "id": "Kled",
+    "form": "Kled",
+    "stat": "movespeed",
+    "ddragon": 345,
+    "wiki": 305,
+    "status": "unresolved",
+    "note": "形態が複数（Kled・Kled & Skaarl）。Data Dragon の値は形態が混ざって見える（どの形態とも全項目は一致しない）。どの形態の値かは確かめていない"
+   },
+   {
+    "id": "KogMaw",
+    "form": "Kog'Maw",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Leblanc",
+    "form": "LeBlanc",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "LeeSin",
+    "form": "Lee Sin",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Leona",
+    "form": "Leona",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Lillia",
+    "form": "Lillia",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Lissandra",
+    "form": "Lissandra",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.7,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Locke",
+    "form": "Locke",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Lucian",
+    "form": "Lucian",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.9,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Lulu",
+    "form": "Lulu",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.6,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Lux",
+    "form": "Lux",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Malphite",
+    "form": "Malphite",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Malzahar",
+    "form": "Malzahar",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Maokai",
+    "form": "Maokai",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "MasterYi",
+    "form": "Master Yi",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Mel",
+    "form": "Mel",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Milio",
+    "form": "Milio",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "MissFortune",
+    "form": "Miss Fortune",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "MonkeyKing",
+    "form": "Wukong",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Mordekaiser",
+    "form": "Mordekaiser",
+    "stat": "mp",
+    "ddragon": 100,
+    "wiki": 0,
+    "status": "unresolved",
+    "note": "マナを持たないチャンピオン（Data Dragon の partype「Shield」、Wiki の resource「Shield」）。Wiki は0、Data Dragon は別の値で、項目の意味（リソースの上限か、なしか）の違いの可能性。どちらの意味かは確かめていない"
+   },
+   {
+    "id": "Mordekaiser",
+    "form": "Mordekaiser",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Morgana",
+    "form": "Morgana",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Naafiri",
+    "form": "Naafiri",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nami",
+    "form": "Nami",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nasus",
+    "form": "Nasus",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nautilus",
+    "form": "Nautilus",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Neeko",
+    "form": "Neeko",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nidalee",
+    "form": "Nidalee",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nilah",
+    "form": "Nilah",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nocturne",
+    "form": "Nocturne",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.6,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Nunu",
+    "form": "Nunu & Willump",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Olaf",
+    "form": "Olaf",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.7,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Orianna",
+    "form": "Orianna",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.6,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ornn",
+    "form": "Ornn",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Pantheon",
+    "form": "Pantheon",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Poppy",
+    "form": "Poppy",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Pyke",
+    "form": "Pyke",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Qiyana",
+    "form": "Qiyana",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Quinn",
+    "form": "Quinn",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Rakan",
+    "form": "Rakan",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Rammus",
+    "form": "Rammus",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.75,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "RekSai",
+    "form": "Rek'Sai",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Rell",
+    "form": "Rell",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Renata",
+    "form": "Renata Glasc",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Renekton",
+    "form": "Renekton",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.15,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Rengar",
+    "form": "Rengar",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Riven",
+    "form": "Riven",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Rumble",
+    "form": "Rumble",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ryze",
+    "form": "Ryze",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Samira",
+    "form": "Samira",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Sejuani",
+    "form": "Sejuani",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Seraphine",
+    "form": "Seraphine",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Sett",
+    "form": "Sett",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Shaco",
+    "form": "Shaco",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Shen",
+    "form": "Shen",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Shyvana",
+    "form": "Shyvana",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Singed",
+    "form": "Singed",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Sion",
+    "form": "Sion",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Sivir",
+    "form": "Sivir",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Skarner",
+    "form": "Skarner",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Smolder",
+    "form": "Smolder",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Sona",
+    "form": "Sona",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Soraka",
+    "form": "Soraka",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Swain",
+    "form": "Swain",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.7,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Sylas",
+    "form": "Sylas",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Syndra",
+    "form": "Syndra",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.9,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "TahmKench",
+    "form": "Tahm Kench",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Taliyah",
+    "form": "Taliyah",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Talon",
+    "form": "Talon",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Taric",
+    "form": "Taric",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Teemo",
+    "form": "Teemo",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Thresh",
+    "form": "Thresh",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Tristana",
+    "form": "Tristana",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Trundle",
+    "form": "Trundle",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Tryndamere",
+    "form": "Tryndamere",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "TwistedFate",
+    "form": "Twisted Fate",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Twitch",
+    "form": "Twitch",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Udyr",
+    "form": "Udyr",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Urgot",
+    "form": "Urgot",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Varus",
+    "form": "Varus",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Vayne",
+    "form": "Vayne",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.35,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Veigar",
+    "form": "Veigar",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.7,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Velkoz",
+    "form": "Vel'Koz",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1416,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Vex",
+    "form": "Vex",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.75,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Vi",
+    "form": "Vi",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Viego",
+    "form": "Viego",
+    "stat": "mp",
+    "ddragon": 10000,
+    "wiki": 0,
+    "status": "unresolved",
+    "note": "マナを持たないチャンピオン（Data Dragon の partype「None」、Wiki の resource「None」）。Wiki は0、Data Dragon は別の値で、項目の意味（リソースの上限か、なしか）の違いの可能性。どちらの意味かは確かめていない"
+   },
+   {
+    "id": "Viego",
+    "form": "Viego",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Viktor",
+    "form": "Viktor",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Vladimir",
+    "form": "Vladimir",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Volibear",
+    "form": "Volibear",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Warwick",
+    "form": "Warwick",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Xayah",
+    "form": "Xayah",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Xerath",
+    "form": "Xerath",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "XinZhao",
+    "form": "Xin Zhao",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Yasuo",
+    "form": "Yasuo",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2.5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Yone",
+    "form": "Yone",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Yorick",
+    "form": "Yorick",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 5,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Yunara",
+    "form": "Yunara",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Yuumi",
+    "form": "Yuumi",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zaahen",
+    "form": "Zaahen",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zac",
+    "form": "Zac",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zed",
+    "form": "Zed",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.4,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zeri",
+    "form": "Zeri",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 2,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Ziggs",
+    "form": "Ziggs",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.1,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zilean",
+    "form": "Zilean",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zoe",
+    "form": "Zoe",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.3,
+    "known_issue": true,
+    "status": "known_issue"
+   },
+   {
+    "id": "Zyra",
+    "form": "Zyra",
+    "stat": "attackdamageperlevel",
+    "ddragon": 0,
+    "wiki": 3.2,
+    "known_issue": true,
+    "status": "known_issue"
+   }
+  ],
+  "multiForm": [
+   {
+    "id": "Gnar",
+    "forms": [
+     "Gnar",
+     "Mega Gnar"
+    ],
+    "compared_with": "Gnar"
+   },
+   {
+    "id": "Kled",
+    "forms": [
+     "Kled",
+     "Kled & Skaarl"
+    ],
+    "compared_with": "Kled"
+   }
+  ],
+  "unexplained": 6,
+  "unresolved": 5
+ },
+ "known_issues": [
+  {
+   "field": "attackdamageperlevel",
+   "since": "16.5.1",
+   "reference": "https://github.com/RiotGames/developer-relations/issues/1144",
+   "note": "Data Dragon 16.5.1 以降、全チャンピオンの攻撃力の成長値が0になる不具合の報告（RiotGames/developer-relations #1144、2026-11-02 の確認で open）。16.4.1 では0はセナだけ（Wiki もセナは0）。",
+   "status": "excluded",
+   "detected": "173/173件が0"
+  }
+ ],
+ "wiki_only": [
+  "GnarBig",
+  "Kled"
+ ],
+ "as_ratio_differs_from_base": 112,
+ "as_ratio_missing": [],
+ "diff_from": "16.20.1",
+ "diff": {
+  "added": [],
+  "removed": [],
+  "changed": [
+   {
+    "id": "Azir",
+    "stats": [
+     {
+      "stat": "mpperlevel",
+      "from": 40,
+      "to": 50
+     }
+    ],
+    "spells": []
+   },
+   {
+    "id": "Darius",
+    "stats": [],
+    "spells": [
+     {
+      "slot": "Q",
+      "field": "cooldownBurn",
+      "from": "9/8/7/6/5",
+      "to": "9/7.75/6.5/5.25/4"
+     }
+    ]
+   },
+   {
+    "id": "Jinx",
+    "stats": [
+     {
+      "stat": "hp",
+      "from": 630,
+      "to": 610
+     }
+    ],
+    "spells": []
+   },
+   {
+    "id": "LeeSin",
+    "stats": [],
+    "spells": [
+     {
+      "slot": "W",
+      "field": "cooldownBurn",
+      "from": "7",
+      "to": "8"
+     }
+    ]
+   },
+   {
+    "id": "Locke",
+    "stats": [
+     {
+      "stat": "mpperlevel",
+      "from": 70,
+      "to": 60
+     }
+    ],
+    "spells": [
+     {
+      "slot": "W",
+      "field": "costBurn",
+      "from": "50/55/60/65/70",
+      "to": "60/65/70/75/80"
+     }
+    ]
+   },
+   {
+    "id": "MonkeyKing",
+    "stats": [
+     {
+      "stat": "hpregen",
+      "from": 3.5,
+      "to": 5.5
+     }
+    ],
+    "spells": []
+   },
+   {
+    "id": "Sion",
+    "stats": [
+     {
+      "stat": "hpperlevel",
+      "from": 87,
+      "to": 95
+     }
+    ],
+    "spells": []
+   },
+   {
+    "id": "Varus",
+    "stats": [],
+    "spells": [
+     {
+      "slot": "Q",
+      "field": "tooltip.en",
+      "from": null,
+      "to": null,
+      "note": "説明文が変わった（本文は各版のファイルにある）"
+     }
+    ]
+   },
+   {
+    "id": "Viktor",
+    "stats": [
+     {
+      "stat": "movespeed",
+      "from": 335,
+      "to": 330
+     }
+    ],
+    "spells": []
+   },
+   {
+    "id": "Yuumi",
+    "stats": [],
+    "spells": [
+     {
+      "slot": "E",
+      "field": "rangeBurn",
+      "from": "25000",
+      "to": "500"
+     }
+    ]
+   }
+  ]
+ }
+}

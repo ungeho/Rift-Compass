@@ -1,0 +1,36 @@
+{
+ "note": "ゲームのパッチ番号（26.x）と Data Dragon の配布バージョン（16.x.y）は別の番号として管理する。対応は下の根拠による照合で、Riot の公式の対応表は見つかっていない。番号が対応しても、Data Dragon の値とゲーム内の仕様が一致するとは限らない（既知の不具合・パッチノートとの食い違いがある）。Wiki の revid は Wiki のページの版で、ゲームのパッチではない。",
+ "checked_at": "2026-11-02",
+ "ddragon": [
+  {
+   "ddragon": "16.21.1",
+   "game_patch": "26.21",
+   "status": "照合による推定",
+   "evidence": [
+    { "kind": "日付", "detail": "Data Dragon 16.21.1 の champion.json の Last-Modified：2026-10-20 22:38 GMT。Wiki の V26.21（revid 4091663）のリリース日：2026-10-21" },
+    { "kind": "内容", "detail": "Data Dragon 16.20.1 → 16.21.1 の違いが、公式のパッチノート 26.21（res-riot-patch-26-21-en）の変更と一致：ジンクス 体力 630→610、ヴィクター 移動速度 335→330、リー・シン W の CD 7→8、ウーコン 体力回復 3.5→5.5、アジール マナ成長 40→50" },
+    { "kind": "取得時の現行", "detail": "2026-11-02 の realms/na.json の champion の版が 16.21.1" }
+   ],
+   "cautions": [
+    "ダリウス Q の CD：公式のパッチノート 26.21 は「9/8/7/6/5 ⇒ 9/8/7/6/4」、Data Dragon 16.21.1 と Wiki（Template:Data Darius/Decimate revid 4088338「9 to 4」）は「9/7.75/6.5/5.25/4」。出典のあいだの不一致として記録し、どちらがゲーム内の値かは確かめていない（どちらの値でも上書きしない）",
+    "攻撃力の成長値は Data Dragon の既知の不具合で全件0（パッチノートのジンクス 3.25→3/Level は Data Dragon に反映されていない）"
+   ]
+  },
+  {
+   "ddragon": "16.20.1",
+   "game_patch": "26.20",
+   "status": "日付による推定（内容は照合していない）",
+   "evidence": [
+    { "kind": "日付", "detail": "Data Dragon 16.20.1 の champion.json の Last-Modified：2026-10-06 21:13 GMT。Wiki の V26.20（revid 4089736）のリリース日：2026-10-07" }
+   ],
+   "cautions": ["パッチノート 26.20 との内容の照合はしていない"]
+  }
+ ],
+ "wiki_championdata": [
+  {
+   "revid": 4088335,
+   "timestamp": "2026-10-20T23:26:16Z",
+   "note": "Wiki のページの版。項目ごとの changes（例：V26.21）は、その項目を Wiki が最後に変更したと記録するパッチで、revid 全体がそのパッチの値という意味ではない。ジンクスは V26.21 の値（攻撃力成長 3・体力 610）になっている"
+  }
+ ]
+}

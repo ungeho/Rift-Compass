@@ -1,0 +1,29 @@
+{
+ "note": "",
+ "ddragon": [
+  {
+   "version": "16.21.1",
+   "fetched_at": "2026-11-02",
+   "champions": 173,
+   "realm_na_current_at_fetch": true
+  },
+  {
+   "version": "16.20.1",
+   "fetched_at": "2026-11-02",
+   "champions": 173,
+   "realm_na_current_at_fetch": false
+  }
+ ],
+ "wiki_championdata": [
+  {
+   "revid": 4088335,
+   "timestamp": "2026-10-20T23:26:16Z",
+   "fetched_at": "2026-11-02",
+   "champions": 175
+  }
+ ],
+ "current": {
+  "ddragon": "16.21.1",
+  "wiki_championdata": 4088335
+ }
+}

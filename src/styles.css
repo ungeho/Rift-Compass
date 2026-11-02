@@ -242,3 +242,12 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .topic-notes > li { margin: 8px 0; }
 .topic-note-via { margin: 0 0 4px; font-size: 0.85rem; }
 .note-related ul { padding-left: 1.2em; }
+
+/* チャンピオンの基本データ。表は横に長いので、狭い画面では表だけを横にスクロールする（ページ全体は広げない）*/
+.champion-data .table-scroll { overflow-x: auto; max-width: 100%; }
+.stat-table { border-collapse: collapse; font-size: 0.85rem; min-width: 560px; }
+.stat-table th, .stat-table td { border-bottom: 1px solid var(--border); padding: 4px 8px; text-align: right; vertical-align: top; }
+.stat-table th[scope="row"], .stat-table thead th:first-child { text-align: left; }
+.stat-table .badge { margin-left: 4px; }
+.spell-list { padding-left: 1.2em; }
+.spell-list li { margin-bottom: 6px; }

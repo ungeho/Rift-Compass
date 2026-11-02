@@ -345,7 +345,9 @@ export function decisionsForTopic(topicId: string): DecisionUnit[] {
 }
 
 // ロールの Topic と、判断材料の対象ロール（scope.roles）の対応。「ロール共通」（all）の判断材料は、どのロールにも当てはまるものとして扱う
-const ROLE_TOPICS: Record<string, string> = { "role-mid": "mid" };
+// 2026-11-02 に5ロール（role-top・role-jungle・role-bot・role-support）を加えたので、同じ対応を持たせる
+// （欠けていると、ロール共通の判断材料がロール名を含む検索から外れる）
+const ROLE_TOPICS: Record<string, string> = { "role-mid": "mid", "role-top": "top", "role-jungle": "jungle", "role-bot": "bot", "role-support": "support" };
 
 const decisionTextCache = new Map<string, { body: string; topicNames: string }>();
 /**

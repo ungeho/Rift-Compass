@@ -3,6 +3,7 @@
 // Note 本文や動画区間は検索対象にしない（方式Cは採用しない）。
 import { index as defaultIndex, LEVEL_ORDER, type DataIndex } from "../data/dataset";
 import type { Resource, Topic } from "../data/types";
+import ambiguousNames from "./ambiguousNames.json";
 
 export function normalize(s: string): string {
   return s.normalize("NFKC").toLowerCase().replace(/\s+/g, " ").trim();
@@ -71,15 +72,34 @@ function topicTerms(t: Topic): string[] {
   return [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en].map(normalize);
 }
 
+/**
+ * あいまいなチャンピオン名（例：「ナー」は「ナーフ」の一部、「アーリ」は「アーリー」の一部）は、
+ * 前後が別のカタカナに続く一致を採らない。ただしロール名などの決まった語・ほかのチャンピオン名との連結（例：ミッドアーリ）は採る。
+ * 対象の名前は tools/gamedata/ingest.js ambiguity がコーパスから作る（src/search/ambiguousNames.json）。
+ */
+const AMBIGUOUS_TERMS = new Set(Object.keys(ambiguousNames.terms).map(normalize));
+const KATAKANA = "[ァ-ヺー]";
+function ambiguousRegex(term: string, affixes: string[]): RegExp {
+  const aff = affixes.filter((a) => a !== term).sort((a, b) => b.length - a.length).map(escapeRe).join("|");
+  const body = [...term].map(escapeRe).join("");
+  return new RegExp(`(?:(?<=${aff})|(?<!${KATAKANA}))${body}(?:(?=${aff})|(?!${KATAKANA}))`, "g");
+}
+
 function prepare(idx: DataIndex): Prepared {
   const cached = preparedCache.get(idx);
   if (cached) return cached;
 
+  const championNames = idx.data.topics
+    .filter((t) => t.parent_ids.includes("cat-champions"))
+    .flatMap((t) => [t.label_ja, ...t.aliases_ja].map(normalize))
+    .filter((n) => [...n].length >= 3);
+  const affixes = [...new Set([...ambiguousNames.affixes.map(normalize), ...championNames])];
   const matchers: Matcher[] = [];
   for (const t of idx.data.topics) {
     for (const term of new Set(topicTerms(t))) {
       if ([...term].length < 2) continue; // 「B」のような1文字の別名は誤一致が多いため使わない
-      matchers.push({ kind: "topic", key: term, regex: termRegex(term), topic: t });
+      const regex = AMBIGUOUS_TERMS.has(term) ? ambiguousRegex(term, affixes) : termRegex(term);
+      matchers.push({ kind: "topic", key: term, regex, topic: t });
     }
   }
   const creatorKeys = new Map<string, Set<string>>();
@@ -315,7 +335,17 @@ export function search(query: string, filters: Filters = {}, idx: DataIndex = de
   // 条件に一致：具体的な概念（大分類の Topic や、資料の1/4を超えて現れる語ではないもの）にすべて一致した資料。
   //   一般的な概念は必須にせず、一致すれば順位を上げるだけにする（具体的な概念がない検索では全概念を必須にする）。
   // 関連候補：具体的な概念の一部にだけ一致した資料。一般的な概念だけの一致（「lane」だけなど）は候補にしない。
-  const specificUnits = units.filter((u) => isSpecific(u, p));
+  // 資料が1件も付いていない Topic（例：資料をまだ収録していないチャンピオン）は、満たせる資料がないので必須にしない。
+  // 語彙にない語（ignored）と同じく、一致は「認識できた条件に一致」にとどめる（Topic の追加で、他の条件に合う資料が消えないように）
+  const emptyTopic = (u: (typeof units)[number]) =>
+    // 大分類（ロールなど）はもともと必須にしないので対象外
+    u.kind === "topic" && u.topic.kind !== "category" && !idx.publicResources.some((r) => r.topic_ids.some((id) => idx.descendants(u.topic.id).has(id)));
+  const emptyTopics = units.filter(emptyTopic);
+  // 主題（資料のない Topic）のほかに一般語しかない場合は、語彙にない語と同じく、一般語の一致だけで資料を出さない
+  if (emptyTopics.length > 0 && units.every((u) => emptyTopic(u) || u.kind === "term")) {
+    return { analysis, hits: [], completeCount: 0, totalPublic, requiredKeys: [] };
+  }
+  const specificUnits = units.filter((u) => isSpecific(u, p) && !emptyTopic(u));
   const required = new Set((specificUnits.length > 0 ? specificUnits : units).map((u) => u.key));
   const priorityOf = new Map(units.map((u) => [u.key, unitPriority(u, p)]));
   const hits: Hit[] = [];
@@ -332,7 +362,7 @@ export function search(query: string, filters: Filters = {}, idx: DataIndex = de
     const matchedRequired = matchedKeys.filter((k) => required.has(k)).length;
     if (matchedRequired === 0) continue;
     const all = matchedRequired === required.size;
-    const match: MatchKind = all ? (analysis.ignored.length === 0 ? "full" : "recognized") : "partial";
+    const match: MatchKind = all ? (analysis.ignored.length === 0 && emptyTopics.length === 0 ? "full" : "recognized") : "partial";
     hits.push({ resource, score, matchedUnits: matchedKeys.length, matchedKeys, match, complete: match === "full" });
   }
   const rank = (h: Hit) => (h.match === "partial" ? 1 : 0);

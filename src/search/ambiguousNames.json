@@ -1,0 +1,144 @@
+{
+ "generated_at": "2026-11-02",
+ "ddragon": "16.21.1",
+ "corpus": {
+  "texts": 3404,
+  "katakana_runs": 1549
+ },
+ "rule": "日本語名の前後が別のカタカナに続く一致は採らない（affixes の語との連結は採る）",
+ "affixes": [
+  "トップ",
+  "ミッド",
+  "ミドル",
+  "ジャングル",
+  "サポート",
+  "ボット",
+  "ボトム",
+  "ビルド",
+  "ガイド",
+  "アイテム",
+  "ルーン",
+  "コンボ",
+  "カウンター",
+  "プレイヤー",
+  "キャリー",
+  "キャラ",
+  "チャレ",
+  "スキン"
+ ],
+ "terms": {
+  "アーリ": {
+   "topic": "champ-ahri",
+   "examples": [
+    "アーリーゲーム",
+    "アーリー"
+   ]
+  },
+  "バード": {
+   "topic": "champ-bard",
+   "examples": [
+    "ルクナバード"
+   ]
+  },
+  "エコー": {
+   "topic": "champ-ekko",
+   "examples": [
+    "ルーデンエコー"
+   ]
+  },
+  "ナー": {
+   "topic": "champ-gnar",
+   "examples": [
+    "サモナースペル",
+    "ナーフ",
+    "インナーゲーム"
+   ]
+  },
+  "フェイ": {
+   "topic": "champ-hwei",
+   "examples": [
+    "フェイズラッシュ",
+    "プロフェインハイドラ",
+    "フェイス"
+   ]
+  },
+  "ジン": {
+   "topic": "champ-jhin",
+   "examples": [
+    "ショウジン",
+    "マージン",
+    "エンジン"
+   ]
+  },
+  "ケイン": {
+   "topic": "champ-kayn",
+   "examples": [
+    "ケイニックルーケイン",
+    "シルバーケイン"
+   ]
+  },
+  "ルブラン": {
+   "topic": "champ-leblanc",
+   "examples": [
+    "ジャングルブランド"
+   ]
+  },
+  "ロック": {
+   "topic": "champ-locke",
+   "examples": [
+    "ブロック",
+    "メンタルブロック"
+   ]
+  },
+  "ルル": {
+   "topic": "champ-lulu",
+   "examples": [
+    "ジャングルルート",
+    "オーバーヒールルーン"
+   ]
+  },
+  "メル": {
+   "topic": "champ-mel",
+   "examples": [
+    "メルヴィン"
+   ]
+  },
+  "ナミ": {
+   "topic": "champ-nami",
+   "examples": [
+    "ダイナミック"
+   ]
+  },
+  "パイク": {
+   "topic": "champ-pyke",
+   "examples": [
+    "パワースパイク",
+    "スパイク"
+   ]
+  },
+  "ライズ": {
+   "topic": "champ-ryze",
+   "examples": [
+    "サプライズ"
+   ]
+  },
+  "ソナ": {
+   "topic": "champ-sona",
+   "examples": [
+    "パーソナル"
+   ]
+  },
+  "タリヤ": {
+   "topic": "champ-taliyah",
+   "examples": [
+    "スロータリヤ"
+   ]
+  },
+  "ゼリ": {
+   "topic": "champ-zeri",
+   "examples": [
+    "クレイジーゼリー"
+   ]
+  }
+ }
+}

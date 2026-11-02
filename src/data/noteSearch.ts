@@ -173,8 +173,9 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     // （「相手」のような一般的な1語だけの偶然の一致で候補を増やさない）
     const topicHit = units.some((u, i) => u.kind === "topic" && u.topic.kind !== "category" && bases[i].length > 0);
     if (!full && (units.length < 2 || hit * 2 < units.length || (!topicHit && hit < 2))) continue;
+    // Topic の名前（例：チャンピオン名）でも、ノートに Topic が付いておらず、名前が例外・反証の記述にだけあるときは同じ扱い
     const opposingOnly = bases.some(
-      (b, i) => units[i].kind === "term" && b.length > 0 && b.every((x) => x.kind === "field" && OPPOSING_FIELDS.includes(x.field)),
+      (b, i) => units[i].kind !== "creator" && b.length > 0 && b.every((x) => x.kind === "field" && OPPOSING_FIELDS.includes(x.field)),
     );
     result.matches.push({ note: n, bases, tier: full ? "full" : "partial", opposingOnly });
   }

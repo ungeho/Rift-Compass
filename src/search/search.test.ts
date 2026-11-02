@@ -124,9 +124,9 @@ describe("5. L0・無料未確認の資料は通常の一覧・検索に出な�
     for (const id of hidden) expect(r).not.toContain(id);
   });
 
-  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件、新規判断材料の収録試験で1件追加して76件、2026-11-01 の正式収録で9件追加して85件、2026-11-02 のプロ解説の収録で6件追加して91件）", () => {
-    expect(index.resources).toHaveLength(91);
-    expect(index.publicResources).toHaveLength(89);
+  it("データからは削除していない（Phase 4B で34件追加して72件、Phase 5A で3件追加して75件、新規判断材料の収録試験で1件追加して76件、2026-11-01 の正式収録で9件追加して85件、2026-11-02 のプロ解説の収録で6件追加して91件、同日のゲームデータの原典で3件追加して94件）", () => {
+    expect(index.resources).toHaveLength(94);
+    expect(index.publicResources).toHaveLength(92);
   });
 
   it("絞り込みでも出ない", () => {
@@ -152,7 +152,7 @@ describe("10. 該当資料がない検索で、無関係な結果を出さない
   });
 
   it("空の検索は公開対象の全件を返す", () => {
-    expect(ids("")).toHaveLength(89);
+    expect(ids("")).toHaveLength(92);
   });
 });
 
@@ -299,5 +299,34 @@ describe("英数字の検索語は独立した単語として照合する（利�
   it("日本語を含む語は、これまでどおり部分一致で照合する", () => {
     expect(analyzeQuery("振り返り").units.length).toBeGreaterThan(0);
     expect(ids("ダメトレ").length).toBe(7);
+  });
+});
+
+describe("全チャンピオンの Topic（2026-11-02）：あいまいな名前と、資料のない Topic", () => {
+  const topicsOf = (q: string) => analyzeQuery(q).units.filter((u) => u.kind === "topic").map((u) => (u.kind === "topic" ? u.topic.id : ""));
+  it("ほかのカタカナ語の一部になる名前は、その語の中では一致させない（ナー⊂ナーフ、アーリ⊂アーリーゲーム、エコー⊂ルーデンエコー）", () => {
+    expect(topicsOf("ナーフされたチャンピオン")).not.toContain("champ-gnar");
+    expect(topicsOf("アーリーゲームの動き方")).not.toContain("champ-ahri");
+    expect(topicsOf("ルーデンエコー")).not.toContain("champ-ekko");
+    expect(topicsOf("ショウジンの矛")).not.toContain("champ-jhin");
+    expect(topicsOf("ブロックする")).not.toContain("champ-locke");
+  });
+  it("単独・ロール名との連結・ほかの語との連結（ビルドなど）では一致する", () => {
+    expect(topicsOf("ナーの対策")).toContain("champ-gnar");
+    expect(topicsOf("ミッドアーリ")).toEqual(expect.arrayContaining(["role-mid", "champ-ahri"]));
+    expect(topicsOf("ジンクスのビルド")).toContain("champ-jinx"); // 長い名前が先
+    expect(topicsOf("ゼドビルド")).toContain("champ-zed");
+  });
+  it("資料のないチャンピオンの Topic は必須にせず、ほかの条件に合う資料は「認識できた条件に一致」で残す", () => {
+    const r = search("2026年のアーリ対面で、ベイガーはどのアイテムを積むべき？", {});
+    expect(r.hits[0].resource.id).toBe("res-yt-veigarv2-veigar-guide-s16");
+    expect(r.hits[0].match).toBe("recognized");
+  });
+  it("資料のない Topic と一般語だけの検索では、一般語だけの一致で資料を出さない（語彙にない語と同じ扱い）", () => {
+    expect(search("アーリのコンボ", {}).hits).toHaveLength(0);
+  });
+  it("ロール（大分類）は必須にしない：「ボットレーン」は大分類として認識し、Lv2 の資料に届く", () => {
+    expect(topicsOf("level 2 how many minions bot lane")).toContain("role-bot");
+    expect(search("level 2 how many minions bot lane", {}).hits.map((h) => h.resource.id)).toContain("res-riot-patch-26-1-en");
   });
 });

@@ -6,6 +6,7 @@ import { publicNotes } from "../data/explorePool";
 import { decisionsHref, homeHref, topicHref } from "../router";
 import { NoteSummary } from "./ExplorePage";
 import { ResourceCard } from "./ResourceCard";
+import { ChampionData } from "./ChampionData";
 
 /** 知識ノートの段階表示の1回分（件数の上限ではない。「さらに表示」で全件に届く）*/
 export const TOPIC_NOTE_PAGE_SIZE = 20;
@@ -163,6 +164,9 @@ export function TopicPage({ id }: { id: string }) {
           <a href={decisionsHref(t.id)}>この Topic の判断材料（試験）{decisionCount}件を見る</a>
         </p>
       )}
+
+      {/* チャンピオンの Topic は、取り込んだ基本データ（Data Dragon・Wiki）を必要なときに読む */}
+      {t.parent_ids.includes("cat-champions") && <ChampionData topicId={t.id} />}
 
       {(notes.direct.length > 0 || notes.via.length > 0) && (
         <section aria-labelledby="topic-notes-heading">
