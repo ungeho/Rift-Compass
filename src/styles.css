@@ -251,3 +251,10 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .stat-table .badge { margin-left: 4px; }
 .spell-list { padding-left: 1.2em; }
 .spell-list li { margin-bottom: 6px; }
+/* 表のセルには数値と出典の印だけを置き、説明は表の下の注記に出す */
+.stat-table .mark, .stat-notes .mark { font-size: 0.7em; color: var(--muted); margin-left: 2px; }
+.stat-notes { font-size: 0.85rem; color: var(--muted); padding-left: 1.2em; }
+.stat-notes li { margin-bottom: 4px; overflow-wrap: anywhere; }
+.wiki-skill { border-left: 2px solid var(--border); padding-left: 8px; margin: 6px 0; overflow-wrap: anywhere; }
+.wiki-leveling { margin: 2px 0; padding-left: 1.2em; }
+.wiki-skill details { margin-top: 2px; }

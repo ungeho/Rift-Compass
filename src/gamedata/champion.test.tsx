@@ -84,3 +84,73 @@ describe("基本データの表示用の行", () => {
     expect(html).toContain(dd.passive.name.ja!);
   });
 });
+
+describe("ステータス表の注記と、英語 Wiki のスキルの表示（2026-11-02）", () => {
+  const snapshot = (read<{ current: { wiki_snapshot: string } }>("public/gamedata/manifest.json")).current.wiki_snapshot;
+  const abilities = (key: string) => ({ snapshot, file: read<import("./wikiAbility").WikiAbilityFile>(`public/gamedata/wiki/${snapshot}/abilities/${key}.json`) });
+  const render = (id: string) => {
+    const dd = champ(id);
+    return renderToStaticMarkup(<ChampionDataBody data={{ version: v, dd, wiki: wiki(dd.key), prev: null, knownIssues, patch: null, abilities: abilities(dd.key) }} />);
+  };
+  it("表のセルには注記の文を入れず、除外・Wiki の版・形態・未検証の情報は表の下の注記に残す", () => {
+    const html = render("Aatrox");
+    const table = html.slice(html.indexOf("<table"), html.indexOf("</table>"));
+    expect(table).not.toContain("既知の不具合");
+    expect(table).not.toContain("revid");
+    expect(table).toContain("※1");
+    const notes = html.slice(html.indexOf('class="stat-notes"'));
+    expect(notes).toContain("既知の不具合");
+    expect(notes).toContain("issues/1144");
+    expect(notes).toContain(`revid ${manifest.current.wiki_championdata}`);
+    expect(notes).toContain("形態「Aatrox」");
+    expect(notes).toContain("ゲーム内では検証していません");
+  });
+  it("スキル：英語 Wiki の値（ランク別の基礎値・係数・CD）を示し、Data Dragon の穴埋めは表示しない", () => {
+    const html = render("Darius");
+    expect(html).toContain("Physical Damage (Blade)：50/80/110/140/170");
+    expect(html).toContain("(+ 100/110/120/130/140% AD)");
+    expect(html).toContain("CD 9/7.75/6.5/5.25/4");
+    expect(html).toContain("Template:Data_Darius/Decimate");
+    // 説明の文（「穴埋め（{{ }}）は表示しません」）以外に {{ が残らない
+    expect(html.replace("（{{ }}）", "")).not.toContain("{{");
+    expect(html).not.toContain("abilityresourcename");
+  });
+  it("Wiki のスキルのデータが未取得なら、値を埋めずに未取得と示す", () => {
+    const dd = champ("Darius");
+    const html = renderToStaticMarkup(<ChampionDataBody data={{ version: v, dd, wiki: wiki(dd.key), prev: null, knownIssues, patch: null, abilities: null }} />);
+    expect(html).toContain("英語 Wiki のスキルのデータは未取得です");
+    expect(html).not.toContain("Physical Damage (Blade)");
+  });
+});
+
+describe("公開前の最終確認（2026-11-02）：数値の正確性・ライセンスの表示", () => {
+  const snapshot = (read<{ current: { wiki_snapshot: string } }>("public/gamedata/manifest.json")).current.wiki_snapshot;
+  const render = (id: string) => {
+    const dd = champ(id);
+    return renderToStaticMarkup(<ChampionDataBody data={{ version: v, dd, wiki: wiki(dd.key), prev: null, knownIssues, patch: null, abilities: { snapshot, file: read(`public/gamedata/wiki/${snapshot}/abilities/${dd.key}.json`) } }} />);
+  };
+  it("1つの {{st}} の複数の組を別の行にする（ダリウス Q の Blade と Handle の係数を混ぜない）", () => {
+    const html = render("Darius");
+    expect(html).toContain("Physical Damage (Blade)：50/80/110/140/170 (+ 100/110/120/130/140% AD)</li>");
+    expect(html).toContain("Reduced Damage (Handle)：17.5/28/38.5/49/59.5 (+ 35/38.5/42/45.5/49% AD)");
+  });
+  it("Wiki の英語の説明文には、出典・寄稿者・ライセンス・改変の内容・継承の条件を表示する", () => {
+    const html = render("Lux");
+    expect(html).toContain("League of Legends Wiki の寄稿者");
+    expect(html).toContain("https://creativecommons.org/licenses/by-sa/3.0/");
+    expect(html).toContain("改変：Wiki の記法を簡略化");
+    expect(html).toContain("この改変した文章も CC BY-SA 3.0 で提供します");
+    expect(html).toContain("日本語の見出し・注記は Rift Compass が書いたもの");
+  });
+  it("値の数が Data Dragon の最大ランクと違う技は印を付ける。未解析の理由は日本語で示す", () => {
+    const html = render("Nidalee");
+    expect(html).toContain("値の数（4）が Data Dragon の最大ランク（5）と違います");
+    expect(render("Aatrox")).toContain("チャンピオンのレベル依存の式");
+  });
+  it("メル W の CD は Wiki と Data Dragon の両方を示す", () => {
+    const html = render("Mel");
+    expect(html).toContain("CD 38/35/32/29/26");
+    expect(html).toContain("CD 38/35/33/29/26秒");
+    expect(html).toContain("CD が Data Dragon と違う（どちらが現行かは未確認）");
+  });
+});

@@ -6,7 +6,6 @@ import {
   attackSpeedRow,
   CLASS_LABELS,
   closestForm,
-  placeholders,
   POSITION_TOPICS,
   RANGE_MARKER,
   SHOWN_LEVELS,
@@ -17,11 +16,12 @@ import {
   type KnownIssue,
   type WikiByKey,
 } from "../gamedata/champion";
+import { derivedProperties, fieldLabel, reasonLabel, showRatio, showValues, wikiPlain, type WikiAbilityFile, type WikiAbilityTemplate } from "../gamedata/wikiAbility";
 
 interface Manifest {
   ddragon: { version: string }[];
   wiki_championdata: { revid: number }[];
-  current: { ddragon: string; wiki_championdata?: number };
+  current: { ddragon: string; wiki_championdata?: number; wiki_snapshot?: string };
 }
 
 interface Loaded {
@@ -33,6 +33,8 @@ interface Loaded {
   knownIssues: KnownIssue[];
   /** Data Dragon の版とゲームのパッチの対応（public/gamedata/versions.json。照合による推定）*/
   patch: { game_patch: string; status: string } | null;
+  /** 英語 Wiki のスキルのデータ（取得日ごと）。未取得なら null */
+  abilities?: { snapshot: string; file: WikiAbilityFile } | null;
 }
 
 const BASE = `${import.meta.env.BASE_URL}gamedata/`;
@@ -54,7 +56,9 @@ async function load(topicId: string): Promise<Loaded | null> {
   const prev = prevVersion ? await getJson<DDragonChampion>(`ddragon/${prevVersion}/champions/${entry.id}.json`).then((d) => ({ version: prevVersion, dd: d })).catch(() => null) : null;
   const versions = await getJson<{ ddragon: { ddragon: string; game_patch: string; status: string }[] }>("versions.json").catch(() => null);
   const patch = versions?.ddragon.find((x) => x.ddragon === version) ?? null;
-  return { version, dd, wiki, prev, knownIssues: idx.known_issues ?? [], patch };
+  const snapshot = m.current.wiki_snapshot;
+  const abilityFile = snapshot ? await getJson<WikiAbilityFile>(`wiki/${snapshot}/abilities/${entry.key}.json`).catch(() => null) : null;
+  return { version, dd, wiki, prev, knownIssues: idx.known_issues ?? [], patch, abilities: abilityFile && snapshot ? { snapshot, file: abilityFile } : null };
 }
 
 /** Data Dragon の説明文のタグ（<br> <magicDamage> など）を表示用に除く（元の文はファイルにそのまま残す）*/
@@ -93,6 +97,33 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
   const rows = statRows(dd, form, knownIssues);
   const as = attackSpeedRow(dd, form);
   const changes = prev ? statChanges(prev.dd, dd) : [];
+  const abilities = data.abilities ?? null;
+  const wikiFor = (slot: string) => (abilities?.file.templates ?? []).filter((t) => t.slot === slot);
+  // 表の外に出す注記（除外・代替値・不一致）。情報は落とさず、表のセルには印だけを置く
+  const notes: { n: number; label: string; text: string; link?: string }[] = [];
+  for (const r of rows) {
+    const parts: string[] = [];
+    let link: string | undefined;
+    if (r.excluded) {
+      parts.push(
+        `成長値：Data Dragon の値 ${fmt(r.rawGrowth, 3)} は既知の不具合（${r.excluded.since} 以降・${r.excluded.detected}）のため採用しません。` +
+          (r.growthSource === "wiki" && wiki && form ? `Wiki（revid ${wiki.source.revid}・形態「${form.form}」）の値 ${fmt(r.growth, 3)} で計算しています。現行の値かはゲーム内で確認していません。` : "Wiki にも値がないため、Lv2 以降は不明です。"),
+      );
+      link = r.excluded.reference;
+    }
+    if (r.conflict) {
+      parts.push(
+        `Data Dragon と Wiki の値が違います（Data Dragon：基本 ${fmt(r.base, r.digits)}・成長 ${fmt(r.growth, 3)} ／ Wiki：基本 ${fmt(r.wikiBase, r.digits)}・成長 ${fmt(r.wikiGrowth, 3)}` +
+          (r.wikiLevels ? `。Wiki の値での Lv${SHOWN_LEVELS.join("・")}：${r.wikiLevels.map((v) => fmt(v, r.digits)).join("・")}` : "") +
+          "）。どちらが現行かは確かめていません。",
+      );
+    }
+    if (parts.length) notes.push({ n: notes.length + 1, label: r.label, text: `${r.label}の${parts.join(" ")}`, link });
+  }
+  const asNote = as.conflict
+    ? { n: notes.length + 1, label: "攻撃速度", text: `攻撃速度の値が Data Dragon と Wiki で違います（Data Dragon：基本 ${fmt(as.base, 3)}・成長 ${fmt(as.growthPercent, 2)}% ／ Wiki：基本 ${fmt(as.wikiBase, 3)}・成長 ${fmt(as.wikiGrowthPercent, 2)}%）。表は Data Dragon の成長値で計算しています。` }
+    : null;
+  if (asNote) notes.push(asNote);
   return (
     <>
       <p className="muted">
@@ -160,95 +191,80 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
             </tr>
           </thead>
           <tbody>
-            {rows.map((r) => (
-              <tr key={r.label}>
-                <th scope="row">
-                  {r.label}
-                  {r.conflict && <span className="badge partial">Wiki と不一致</span>}
-                  {r.excluded && <span className="badge partial">Data Dragon の成長値を除外</span>}
-                </th>
-                <td>
-                  {fmt(r.base, r.digits)}
-                  {r.conflict && r.wikiBase !== r.base && <div className="muted">Wiki：{fmt(r.wikiBase, r.digits)}</div>}
-                </td>
-                <td>
-                  {r.excluded ? (
-                    <>
-                      {r.growth === null ? "不明" : fmt(r.growth, 3)}
-                      <div className="muted">
-                        {r.growthSource === "wiki" && wiki && form ? `Wiki（revid ${wiki.source.revid}・形態「${form.form}」）の値。現行の値かはゲーム内で確認していません` : "Wiki にも値がないため不明"}
-                      </div>
-                      <div className="muted">
-                        Data Dragon の値 {fmt(r.rawGrowth, 3)} は既知の不具合（{r.excluded.since} 以降・{r.excluded.detected}）のため採用しません（<a href={r.excluded.reference}>報告</a>）
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {r.growth === null && r.wikiGrowth === null ? "—" : fmt(r.growth, 3)}
-                      {r.conflict && r.wikiGrowth !== r.growth && <div className="muted">Wiki：{fmt(r.wikiGrowth, 3)}</div>}
-                    </>
-                  )}
-                </td>
-                {r.levels.map((v, i) => (
-                  <td key={i}>
-                    {fmt(v, r.digits)}
-                    {r.wikiLevels && <div className="muted">Wiki：{fmt(r.wikiLevels[i], r.digits)}</div>}
+            {rows.map((r) => {
+              const note = notes.find((x) => x.label === r.label);
+              return (
+                <tr key={r.label}>
+                  <th scope="row">
+                    {r.label}
+                    {note && <sup className="mark">※{note.n}</sup>}
+                  </th>
+                  <td>{fmt(r.base, r.digits)}</td>
+                  <td>
+                    {r.excluded ? (r.growth === null ? "不明" : fmt(r.growth, 3)) : r.growth === null && r.wikiGrowth === null ? "—" : fmt(r.growth, 3)}
+                    {r.growthSource === "wiki" && <sup className="mark">W</sup>}
                   </td>
-                ))}
-              </tr>
-            ))}
+                  {r.levels.map((v, i) => (
+                    <td key={i}>
+                      {v === null && r.excluded ? "不明" : fmt(v, r.digits)}
+                      {r.growthSource === "wiki" && i > 0 && <sup className="mark">W</sup>}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
             <tr>
               <th scope="row">
                 攻撃速度
-                {as.conflict && <span className="badge partial">Wiki と不一致</span>}
+                {asNote && <sup className="mark">※{asNote.n}</sup>}
               </th>
-              <td>
-                {fmt(as.base, 3)}
-                <div className="muted">反映率：{as.ratio === null ? "不明" : fmt(as.ratio, 3)}</div>
-              </td>
-              <td>
-                {fmt(as.growthPercent, 2)}%{as.conflict && <div className="muted">Wiki：{fmt(as.wikiGrowthPercent, 2)}%</div>}
-              </td>
+              <td>{fmt(as.base, 3)}</td>
+              <td>{fmt(as.growthPercent, 2)}%</td>
               {as.levels.map((v, i) => (
-                <td key={i}>{fmt(v, 3)}</td>
+                <td key={i}>
+                  {v === null ? "—" : fmt(v, 3)}
+                  {v !== null && i > 0 && <sup className="mark">R</sup>}
+                </td>
               ))}
             </tr>
           </tbody>
         </table>
       </div>
-      <p className="muted">
-        各レベルの値は、成長の式（基本値＋成長値×(n−1)×(0.7025＋0.0175×(n−1))）で Data Dragon の値から計算し、アイテム・ルーンなどの増加は含みません。
-        攻撃速度は「基本攻撃速度＋(成長％)×反映率」で計算します（反映率は Wiki の値。Data Dragon にはありません）。上限（2.5 など）は適用していません。
-        Wiki と値が違う項目は、Wiki の値での計算も示します。どちらが現行の値かは確かめていません。
-        Data Dragon の既知の不具合で除外した成長値は、Wiki の値（なければ不明）で計算します。
-      </p>
+      <ul className="stat-notes">
+        <li>
+          <sup className="mark">W</sup>：Wiki（{wiki ? `revid ${wiki.source.revid}` : "未取得"}
+          {form ? `・形態「${form.form}」` : ""}）の値で計算。<sup className="mark">R</sup>：攻撃速度の反映率（Wiki の値：{as.ratio === null ? "不明" : fmt(as.ratio, 3)}）で計算。
+        </li>
+        {notes.map((x) => (
+          <li key={x.n}>
+            ※{x.n}　{x.text}
+            {x.link && (
+              <>
+                {" "}
+                （<a href={x.link}>不具合の報告</a>）
+              </>
+            )}
+          </li>
+        ))}
+        <li>
+          各レベルの値は成長の式（基本値＋成長値×(n−1)×(0.7025＋0.0175×(n−1))）で計算し、アイテム・ルーンなどの増加は含みません。攻撃速度は「基本攻撃速度＋(成長％)×反映率」で、上限（2.5 など）は適用していません。
+        </li>
+        <li>表の値は取得したデータからの計算で、ゲーム内では検証していません。</li>
+      </ul>
 
       <h3>スキル</h3>
       <p className="muted">
-        Data Dragon の説明文の数値は穴埋め（{"{{ }}"}）のままのことが多く、ダメージ・スケーリングは取得できていません。クールダウン・コスト・射程は Data Dragon の値をそのまま示します。
+        英語の LoL Wiki のスキルのデータを優先して示します（{abilities ? `取得日 ${abilities.snapshot}、各テンプレートの更新日時と原典へのリンクつき` : "このチャンピオンの Wiki のスキルのデータは未取得"}）。
+        数値と英語の説明文は <a href="https://wiki.leagueoflegends.com/en-us/">League of Legends Wiki</a> の寄稿者によるもの（<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>）で、日本語の見出し・注記は Rift Compass が書いたものです。
+        Data Dragon の説明文の穴埋め（{"{{ }}"}）は表示しません。Wiki から読み取れなかった値は「未解析」として原文の項目名と理由を示し、推測で埋めません。
       </p>
       <ul className="spell-list">
-        <li>
-          <strong>パッシブ：{dd.passive.name.ja ?? dd.passive.name.en}</strong> <span className="muted">{dd.passive.name.en}</span>
-          {(dd.passive.description.ja ?? dd.passive.description.en) && <div>{plain(dd.passive.description.ja ?? dd.passive.description.en)}</div>}
-        </li>
+        <SkillItem slot="I" title={`パッシブ：${dd.passive.name.ja ?? dd.passive.name.en}`} nameEn={dd.passive.name.en} ddLine={null} ddText={plain(dd.passive.description.ja ?? dd.passive.description.en)} templates={wikiFor("I")} loaded={!!abilities} />
         {dd.spells.map((s) => {
-          const ph = placeholders(s.tooltip.en);
           const marker = s.range.some((x) => x >= RANGE_MARKER);
-          return (
-            <li key={s.id}>
-              <strong>
-                {s.slot}：{s.name.ja ?? s.name.en}
-              </strong>{" "}
-              <span className="muted">{s.name.en}</span>
-              <div>
-                CD {s.cooldownBurn}秒・コスト {s.costBurn}
-                {s.costType.ja ? `（${s.costType.ja.trim()}）` : ""}・射程 {s.rangeBurn}
-                {marker && <span className="muted">（{RANGE_MARKER}以上は Data Dragon の大きな値。実際の射程とは限りません）</span>}・最大ランク {s.maxrank}
-              </div>
-              {ph.length > 0 && <div className="muted">説明文の未解決の穴埋め：{ph.length}件</div>}
-            </li>
-          );
+          const costType = (s.costType.ja ?? "").trim();
+          const ddLine = `Data Dragon ${version}：CD ${s.cooldownBurn}秒・コスト ${s.costBurn}${costType && !/\{\{/.test(costType) ? `（${costType}）` : ""}・射程 ${marker ? `${s.rangeBurn}（大きな値。実際の射程とは限らない）` : s.rangeBurn}・最大ランク ${s.maxrank}`;
+          return <SkillItem key={s.id} slot={s.slot} title={`${s.slot}：${s.name.ja ?? s.name.en}`} nameEn={s.name.en} ddLine={ddLine} ddText={null} templates={wikiFor(s.slot)} loaded={!!abilities} />;
         })}
       </ul>
 
@@ -269,5 +285,112 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
         </>
       )}
     </>
+  );
+}
+
+/** スキル1つ：英語 Wiki の値（優先）と Data Dragon の値。Wiki のテンプレートが複数（段階・形態）なら全部を出す */
+function SkillItem({ title, nameEn, ddLine, ddText, templates, loaded }: { slot: string; title: string; nameEn: string | null; ddLine: string | null; ddText: string | null; templates: WikiAbilityTemplate[]; loaded: boolean }) {
+  return (
+    <li>
+      <strong>{title}</strong> <span className="muted">{nameEn}</span>
+      {ddText && <div>{ddText}</div>}
+      {!loaded ? (
+        <div className="muted">英語 Wiki のスキルのデータは未取得です。</div>
+      ) : templates.length === 0 ? (
+        <div className="muted">英語 Wiki のこのスキルのデータは見つかっていません（未取得）。</div>
+      ) : (
+        templates.map((t) => <WikiTemplate key={t.title} t={t} />)
+      )}
+      {ddLine && <div className="muted">{ddLine}</div>}
+    </li>
+  );
+}
+
+function WikiTemplate({ t }: { t: WikiAbilityTemplate }) {
+  if (t.source.status !== 200) {
+    return (
+      <div className="wiki-skill">
+        <span className="muted">
+          Wiki：{t.name}（{t.source.status === 404 ? "ページなし" : `取得できず HTTP ${t.source.status}`}）
+        </span>
+      </div>
+    );
+  }
+  if (t.redirect_to) {
+    return (
+      <div className="wiki-skill">
+        <span className="muted">
+          Wiki：{t.name} は {t.redirect_to.replace(/^Template:Data [^/]+\//, "")} への転送（同じデータ）
+        </span>
+      </div>
+    );
+  }
+  const parsed = Object.entries(t.parsed ?? {});
+  const derived = derivedProperties(t);
+  const desc = ["description", "description2", "description3", "description4"].map((k) => wikiPlain(t.params?.[k])).filter(Boolean);
+  const updated = t.source.last_modified ? new Date(t.source.last_modified).toISOString().slice(0, 10) : "不明";
+  return (
+    <div className="wiki-skill">
+      <div>
+        <a href={t.source.url}>{t.name}</a>
+        <span className="muted">
+          （Wiki・{t.form !== t.name ? `形態 ${t.form}・` : ""}更新 {updated}）
+        </span>
+        {t.compare && <span className="badge">{t.compare.same ? "CD は Data Dragon と一致" : "CD が Data Dragon と違う（どちらが現行かは未確認）"}</span>}
+      </div>
+      {t.rank_note && (
+        <div className="muted">
+          値の数（{t.rank_note.value_counts.join("・")}）が Data Dragon の最大ランク（{t.rank_note.ddragon_maxrank}）と違います。Wiki の段階（究極スキルのランク・形態など）による値の可能性があります。
+        </div>
+      )}
+      {parsed.length > 0 && (
+        <div>
+          {parsed.map(([k, v], i) => (
+            <span key={k}>
+              {i > 0 && "・"}
+              {fieldLabel(k)} {showValues(v)}
+            </span>
+          ))}
+        </div>
+      )}
+      {(t.leveling ?? []).length > 0 && (
+        <ul className="wiki-leveling">
+          {(t.leveling ?? []).map((l, i) => (
+            <li key={i}>
+              {wikiPlain(l.label)}：{l.base ? showValues(l.base) : <span className="muted">未解析（{reasonLabel(l.reason)}）</span>} {l.ratios.map((r) => showRatio(r)).join(" ")}
+            </li>
+          ))}
+        </ul>
+      )}
+      {derived.length > 0 && (
+        <div className="muted">
+          式から導ける性質（係数の対象から自動で判定。ゲーム内では未検証、戦術的な結論ではない）：{derived.map((d) => d.label_ja).join("／")}
+        </div>
+      )}
+      {(t.unparsed ?? []).length > 0 && (
+        <details>
+          <summary className="muted">未解析の項目 {(t.unparsed ?? []).length}件</summary>
+          <ul>
+            {(t.unparsed ?? []).map((u, i) => (
+              <li key={i}>
+                {fieldLabel(u.field)}（{reasonLabel(u.reason)}）：<span className="muted">{wikiPlain(t.params?.[u.field] ?? "").slice(0, 160) || "原文を参照"}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+      {desc.length > 0 && (
+        <details>
+          <summary className="muted">Wiki の説明（英語・記法を簡略化して表示）</summary>
+          {desc.map((d, i) => (
+            <p key={i}>{d}</p>
+          ))}
+          <p className="muted">
+            出典：<a href={t.source.url}>{t.title}</a>（League of Legends Wiki の寄稿者）。ライセンス：<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>。
+            改変：Wiki の記法を簡略化して表示しています（訳はしていません）。この改変した文章も CC BY-SA 3.0 で提供します。
+          </p>
+        </details>
+      )}
+    </div>
   );
 }
