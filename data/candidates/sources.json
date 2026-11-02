@@ -128,5 +128,71 @@
     "language": "ja",
     "delay_ms": 1000,
     "notes": "2026-11-01 追加。robots.txt は /wp-admin/ 以外を許可（2026-11-01 確認）。海外コミュニティ（主に Reddit）の投稿を翻訳してまとめるサイト。翻訳元と同じ内容は独立した裏付けにしない。投稿者は匿名が多く、主張の確認が要る。LoL 以外の話題の記事もある"
+  },
+  {
+    "id": "yt-kreative",
+    "kind": "youtube-channel",
+    "handle": "@Kreative",
+    "creator": { "name": "Kreative", "kind": "streamer" },
+    "language": "ja",
+    "notes": "2026-11-02 追加。チャンネル ID UCSxp6TAsCPu4KufzibhLpjg、登録者7410人・動画181本・2017-05-16 登録（チャンネルページの表示）。チャンネルの説明文は空で、経歴・ランクの本人の記載はない。ドネキフ塾の記事（donekifu.jp）に「監修」として名前がある。kind の streamer は仮。一覧ページは新しい順の約30本だけ"
+  },
+  {
+    "id": "yt-ceros",
+    "kind": "youtube-channel",
+    "handle": "@Ceros1207",
+    "creator": { "name": "Ceros", "kind": "pro_player" },
+    "language": "ja",
+    "notes": "2026-11-02 追加。チャンネル ID UC3oYqJcGWTBvCWtleRTAuEA（YouTube の検索で「Ceros Official」、登録者2.33万人）。経歴（報道）：DetonatioN FocusMe（DFM）のミッドとして2014〜2022年に LJL で複数回優勝・Worlds 出場、2022年に選手を引退し DFM のコーチへ（GameBusiness.jp 2022-02-07・2022-04-16）。2023年7月の件で DFM を離れ、LJL 関連の活動を6か月禁止され、その後フリーで活動再開（KAI-YOU）。現在の所属・活動状態はこの記録では確認していない"
+  },
+  {
+    "id": "yt-eugeo",
+    "kind": "youtube-channel",
+    "handle": "@Eugeoch",
+    "creator": { "name": "Eugeo", "kind": "pro_player" },
+    "language": "ja",
+    "notes": "2026-11-02 追加。チャンネル ID UCmZKJG2_Q72_PrvvgJF-sSA（「Eugeo ch」、登録者2.87万人）。経歴（報道・統計サイト）：LJL のサポート。2020年に Burning Core Toyama でデビュー、2023〜2024年の LJL に出場（2024 Spring は AXC と記載）。2026年の Real Sound のインタビューで配信者大会のコーチとして紹介。本人の発言としてジャングルを主にしていた時期がある。現在の所属はこの記録では確認していない"
+  },
+  {
+    "id": "yt-nemesis",
+    "kind": "youtube-channel",
+    "handle": "@Nemesis_lol",
+    "creator": { "name": "Nemesis", "kind": "pro_player" },
+    "language": "en",
+    "notes": "2026-11-02 追加。チャンネル ID UCbMm7Vn6HCXquHX4ooqLIag（登録者28.9万人）。別チャンネル @Nemesis2_lol（UCCHTpCMyNkwxHj8sG7hwY_w）あり。経歴（報道）：Tim Lipovšek、元 Fnatic のミッド（2020年まで）、2021年から Gen.G の配信者、その後 Los Ratones のミッドとして競技に復帰（2025年の Sheep Esports のインタビュー）。現在の所属はこの記録では確認していない"
+  },
+  {
+    "id": "yt-nemesis2",
+    "kind": "youtube-channel",
+    "handle": "@Nemesis2_lol",
+    "creator": { "name": "Nemesis", "kind": "pro_player" },
+    "language": "en",
+    "notes": "2026-11-02 追加。Nemesis の2つ目のチャンネル（登録者9.79万人）。yt-nemesis と同じ人物"
+  },
+  {
+    "id": "yt-broxah",
+    "kind": "youtube-channel",
+    "handle": "@BroxahLoL",
+    "creator": { "name": "Broxah", "kind": "pro_player" },
+    "language": "en",
+    "notes": "2026-11-02 追加。チャンネル ID UCoO3LOWlgNi5A_oKlC9NUwQ（登録者21.5万人）。デンマーク出身のジャングラー（元 Fnatic などの競技経歴は、この記録では一次情報で確認していない）。同名の別人（木彫りの配信者 Broxh）と混同しない"
+  },
+  {
+    "id": "yt-odoamne",
+    "kind": "youtube-channel",
+    "handle": "@Odoamne",
+    "creator": { "name": "Odoamne", "kind": "pro_player" },
+    "language": "en",
+    "notes": "2026-11-02 追加。チャンネル ID UCJlNT_Qx6f46-zst6jydBdg（登録者3520人）。経歴（報道）：Andrei Pascu、LEC のトップ（Schalke 04・Rogue など）。現在の所属はこの記録では確認していない"
+  },
+  {
+    "id": "donekifu",
+    "kind": "sitemap",
+    "url": "https://donekifu.jp/sitemap.xml",
+    "include": "^https://donekifu.jp/lessons/(wave-management-basics|adc-improvement|top-improvement|adc-positioning|haldesu-jg-early-lv6|top-playstyle-types|worlds-2026-los-vs-t1-invals|practice-design|fix-one-thing|replay-review)$",
+    "creator": { "name": "ドネキフ塾", "kind": "media" },
+    "language": "ja",
+    "delay_ms": 1000,
+    "notes": "2026-11-02 追加。robots.txt は /lessons を許可（/coach/・/api などは不許可）。レッスン284件のうち274件は「ドネキフ 塾長」の監修で、プロ・元プロ・元プロコーチの監修は10件（Kreative 1・invals 4・NaiNa 2・りっきー 2・HALdesu 1。監修者の肩書きはサイトの記載で未確認）。include はその10件に限定した。監修者の発言と編集部の文を区別する"
   }
 ]

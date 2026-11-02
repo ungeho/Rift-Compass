@@ -71,6 +71,19 @@ test("個別確認の結果（reviews.json）は、再実行しても規則に�
   assert.equal(out[0].depth_confirmed, "shallow");
 });
 
+test("正式資料になった候補は、登録前のレビューの判断（candidate など）より registered を優先する。レビューの記録は消さない", () => {
+  const r = dataset.resources[0];
+  const reviews = { [candidateKey(r.url)]: { decision: "candidate", reason: "登録前の確認", depth_confirmed: "deep" } };
+  const out = mergeCandidates([], [item(r.url)], ctx({ reviews }));
+  assert.equal(out[0].existing_resource_id, r.id);
+  assert.equal(out[0].triage.status, "registered");
+  assert.equal(out[0].triage.by, "rule");
+  assert.equal(out[0].depth_confirmed, "deep");
+  // 実データ：既存資料に対応する候補は、すべて registered
+  const list = require("../../data/candidates/candidates.json");
+  for (const c of list.filter((x) => x.existing_resource_id)) assert.equal(c.triage.status, "registered", c.key);
+});
+
 test("深さは推定（depth_estimate）だけを付け、確認済み（depth_confirmed）にはしない", () => {
   const out = mergeCandidates([], [item("https://example.com/deep", { title: "なぜフリーズするのか：判断の基準", structure: { chars: 6000, headings: 8, reason_headings: 3 } })], ctx());
   assert.equal(out[0].depth_estimate, "high");

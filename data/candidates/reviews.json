@@ -504,5 +504,50 @@
   "depth_confirmed": "medium",
   "method": "本文の全体（記事ページ。翻訳元の Reddit のスレッドは開いていない）",
   "reason": "Reddit のスレッドの翻訳まとめ。投稿者（匿名）の主張を、翻訳者が選んで訳したもの。デスダンスとエイトロックス・ラースト（赤ケイン）の回復、根の間に使えるスキル（ジャーヴァン・リー・シン・サイラス・イラオイ・オーロラ）、シェンの Q と飛翔物、レルの Q とシールド、サイオンとフィオラの読み合い、召喚ユニットからのスタックなど。知識の記録は NJ1〜"
+ },
+ "https://lolninja.net/2022/10/12/34224": {
+  "checked_at": "2026-11-02",
+  "checked_by": "AI（Claude）",
+  "sample": "プロの解説の調査（docs/experiments/pro-sources-research.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。動画・図は未確認）",
+  "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。フィジカル（右クリック）の定義と練習。スキルドッジ（敵から自分への線に直角に動く）、スペーシング、AA＋移動、CS 練習の基本の3規則と応用の5規則、脳のリソースの考え方。知識の記録は TL1〜"
+ },
+ "https://lolninja.net/2022/11/07/34611": {
+  "checked_at": "2026-11-02",
+  "checked_by": "AI（Claude）",
+  "sample": "プロの解説の調査（docs/experiments/pro-sources-research.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。動画は未確認）",
+  "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。AA の5つの構成要素（硬直時間・モーション・弾速・射程・AS）、AS から AA の CD を計算する方法（2022年の値の例）、カイト、アタックムーブの設定と注意点（ブッシュのワードへ動く、チャンピオンオンリーターゲットを無視する）、カイト練習"
+ },
+ "https://lolninja.net/2022/11/28/34909": {
+  "checked_at": "2026-11-02",
+  "checked_by": "AI（Claude）",
+  "sample": "プロの解説の調査（docs/experiments/pro-sources-research.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "本文の全体（WordPress の公開 API。動画は未確認）",
+  "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。プレイ動画研究の方法（インプットとアウトプット、プレイ動画とリプレイの使い分け、完コピの4段階）。Evi への質問と回答（tol2 が聞いたもの）を含む"
+ },
+ "https://lolninja.net/2022/12/07/35047": {
+  "checked_at": "2026-11-02",
+  "checked_by": "AI（Claude）",
+  "sample": "プロの解説の調査（docs/experiments/pro-sources-research.md）",
+  "decision": "candidate",
+  "depth_confirmed": "medium",
+  "method": "本文の構成と主な節（WordPress の公開 API）。全文の精読はしていない",
+  "reason": "筆者は tol2 本人（記事の冒頭の自己紹介：当時 DFM Academy のトップ、LJL 2022 Spring は AXIZ、最高ランク JP チャレンジャー・KR マスター。2022年時点の本人の記載）。OTP の進め方（統計サイト・Wiki・プラクティスツール・配信・ランクの5段階）と、トップの OTP 配信者の一覧（KR・CN・EU。多くはプロではない高ランクのプレイヤー）"
+ },
+ "https://donekifu.jp/lessons/wave-management-basics": {
+  "checked_at": "2026-11-02",
+  "checked_by": "AI（Claude）",
+  "sample": "Kreative の調査（docs/experiments/pro-sources-research.md）",
+  "decision": "candidate",
+  "depth_confirmed": "deep",
+  "method": "記事ページの本文の全体（図は未確認）",
+  "reason": "ドネキフ塾の記事（著者表示はドネキフ塾）で、Kreative は「監修」。Kreative 本人の発言として明示されるのは、フリーズの位置の作図・10秒おきのアラームの逸話・次に学ぶ順番の3か所だけで、ほかは編集部の文。肩書き（東大卒・現プロ・10年連続チャレンジャー・元日本5位）はサイトの記載で未確認。知識の記録は DK1〜"
  }
 }

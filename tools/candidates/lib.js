@@ -343,7 +343,9 @@ function annotate(list, { resources, topics, reviews = {} }) {
     ];
     const rule = ruleTriage(c);
     const review = reviews[c.key];
-    c.triage = review?.decision
+    // 正式資料になった候補は、登録前のレビューの判断（candidate など）より「registered」を優先する
+    // （登録済みの資料を、未処理の候補として再び確認・登録しないため）。レビューの記録自体は残す
+    c.triage = review?.decision && !c.existing_resource_id
       ? { status: review.decision, reason: review.reason || "個別確認の結果", by: "review" }
       : { ...rule, by: "rule" };
     c.depth_confirmed = review?.depth_confirmed ?? null; // 本文・字幕を確認した結果。推定（depth_estimate）とは別
