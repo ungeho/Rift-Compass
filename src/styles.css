@@ -239,4 +239,6 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .explore-summary { display: grid; gap: 6px; }
 .note-summary { display: grid; gap: 4px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
 .note-summary p { margin: 0; }
+.topic-notes > li { margin: 8px 0; }
+.topic-note-via { margin: 0 0 4px; font-size: 0.85rem; }
 .note-related ul { padding-left: 1.2em; }

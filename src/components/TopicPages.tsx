@@ -1,8 +1,64 @@
+import { useState } from "react";
 import { index } from "../data/dataset";
-import type { Topic } from "../data/types";
+import type { KnowledgeNote, Topic } from "../data/types";
 import { decisionsForTopic } from "../data/decisions";
+import { publicNotes } from "../data/explorePool";
 import { decisionsHref, homeHref, topicHref } from "../router";
+import { NoteSummary } from "./ExplorePage";
 import { ResourceCard } from "./ResourceCard";
+
+/** 知識ノートの段階表示の1回分（件数の上限ではない。「さらに表示」で全件に届く）*/
+export const TOPIC_NOTE_PAGE_SIZE = 20;
+
+/** 旧仕様（現行では適用できない）のノートを後ろにする（同じ順位ではデータの順）*/
+const supersededLast = (a: KnowledgeNote, b: KnowledgeNote) =>
+  Number(a.historical?.current_applicability === "superseded") - Number(b.historical?.current_applicability === "superseded");
+
+/**
+ * Topic に付いた公開の知識ノート。direct＝この Topic が直接付いたもの、via＝下位の Topic だけで付いたもの（direct と重ならない）。
+ * 公開の条件は散策・検索・詳細と同じ publicNotes（isPublicNote）
+ */
+export function notesForTopic(topicId: string): { direct: KnowledgeNote[]; via: { note: KnowledgeNote; through: string[] }[] } {
+  const desc = index.descendants(topicId);
+  const direct = publicNotes.filter((n) => n.topic_ids.includes(topicId)).sort(supersededLast);
+  const via = publicNotes
+    .filter((n) => !n.topic_ids.includes(topicId) && n.topic_ids.some((x) => desc.has(x)))
+    .sort(supersededLast)
+    .map((note) => ({ note, through: note.topic_ids.filter((x) => x !== topicId && desc.has(x)) }));
+  return { direct, via };
+}
+
+/** 段階表示：最初に TOPIC_NOTE_PAGE_SIZE 件を出し、「さらに表示」で全件まで増やす */
+function NoteList({ items, label }: { items: { note: KnowledgeNote; through?: string[] }[]; label: string }) {
+  const [shown, setShown] = useState(TOPIC_NOTE_PAGE_SIZE);
+  return (
+    <>
+      <ol className="result-list topic-notes">
+        {items.slice(0, shown).map(({ note, through }) => (
+          <li key={note.id}>
+            {through && through.length > 0 && (
+              <p className="muted topic-note-via">
+                下位の Topic：
+                {through.map((id, i) => (
+                  <span key={id}>
+                    {i > 0 && "、"}
+                    <a href={topicHref(id)}>{index.topicById.get(id)?.label_ja ?? id}</a>
+                  </span>
+                ))}
+              </p>
+            )}
+            <NoteSummary note={note} />
+          </li>
+        ))}
+      </ol>
+      {shown < items.length && (
+        <button type="button" className="button" onClick={() => setShown(shown + TOPIC_NOTE_PAGE_SIZE)}>
+          {label}をさらに{Math.min(TOPIC_NOTE_PAGE_SIZE, items.length - shown)}件表示する（残り {items.length - shown}件）
+        </button>
+      )}
+    </>
+  );
+}
 
 /** Topic は複数の親を持てる（DAG）。各分類の下に同じ Topic が現れることがあるが、同じ経路上の循環は辿らない。 */
 function TopicTree({ topic, path }: { topic: Topic; path: Set<string> }) {
@@ -61,6 +117,7 @@ export function TopicPage({ id }: { id: string }) {
   const aliases = [...t.aliases_ja, ...t.aliases_en];
   // 試験表示の判断材料（下位の Topic を含む）。0件なら案内を出さない（判断材料一覧の絞り込みと同じ数え方）
   const decisionCount = decisionsForTopic(t.id).length;
+  const notes = notesForTopic(t.id);
 
   return (
     <div className="detail">
@@ -105,6 +162,29 @@ export function TopicPage({ id }: { id: string }) {
         <p>
           <a href={decisionsHref(t.id)}>この Topic の判断材料（試験）{decisionCount}件を見る</a>
         </p>
+      )}
+
+      {(notes.direct.length > 0 || notes.via.length > 0) && (
+        <section aria-labelledby="topic-notes-heading">
+          <h2 id="topic-notes-heading">
+            この Topic の知識ノート <span className="result-count">{notes.direct.length}件</span>
+            {notes.via.length > 0 && <span className="result-count">（下位の Topic のノート {notes.via.length}件）</span>}
+          </h2>
+          <p className="muted">
+            根拠の資料がすべて公開されている知識ノートです。ゲーム内では検証していません。旧仕様（現行では適用できない）のノートは後ろに並べます。
+          </p>
+          {notes.direct.length === 0 ? (
+            <p className="muted">この Topic が直接付いた知識ノートはありません。</p>
+          ) : (
+            <NoteList key={`direct-${t.id}`} items={notes.direct.map((note) => ({ note }))} label="この Topic のノート" />
+          )}
+          {notes.via.length > 0 && (
+            <>
+              <h3>下位の Topic の知識ノート</h3>
+              <NoteList key={`via-${t.id}`} items={notes.via} label="下位の Topic のノート" />
+            </>
+          )}
+        </section>
       )}
 
       <h2>
