@@ -13,7 +13,8 @@
     "eval:desk": "node tools/desk-retrieval-check.js",
     "candidates": "node tools/candidates/collect.js",
     "gamedata": "node tools/gamedata/ingest.js",
-    "test:gamedata": "node --test tools/gamedata/gamedata.test.js",
+    "test:gamedata": "node --test tools/gamedata/gamedata.test.js tools/gamedata/wiki.test.js",
+    "wiki": "node tools/gamedata/wiki-ingest.js",
     "test:candidates": "node --test tools/candidates/candidates.test.js",
     "test:experiments": "node --test tools/experiments/decision-units.test.js tools/experiments/decision-retrieval.test.js tools/experiments/decision-criteria.test.js tools/experiments/knowledge-drafts.test.js"
   },

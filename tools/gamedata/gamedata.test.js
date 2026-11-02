@@ -157,3 +157,31 @@ test("古い版も残す（manifest の全版にファイルがある）", () =>
   assert.ok(manifest.ddragon.length >= 2);
   for (const v of manifest.ddragon) assert.ok(fs.existsSync(path.join(ROOT, `public/gamedata/ddragon/${v.version}/index.json`)), v.version);
 });
+
+test("英語 Wiki の取り込み：取得日・ライセンス・取得の条件を記録し、全チャンピオンのスキルのファイルがある", () => {
+  const snap = manifest.current.wiki_snapshot;
+  assert.ok(snap, "manifest.current.wiki_snapshot");
+  const cov = read(`public/gamedata/wiki/${snap}/coverage.json`);
+  assert.equal(cov.license.name, "CC BY-SA 3.0");
+  assert.match(cov.access.robots, /api\.php/);
+  for (const d of ["abilities", "items", "runes", "modules", "units", "articles"]) {
+    const c = cov.domains[d];
+    assert.ok(c, d);
+    assert.equal(c.fetched + c.not_found + c.failed + 0, c.discovered, `${d}：発見＝取得＋未発見＋失敗`);
+  }
+  for (const c of ddIndex.champions) {
+    const f = read(`public/gamedata/wiki/${snap}/abilities/${c.key}.json`);
+    assert.ok(f.templates.length >= 5, c.id);
+    for (const t of f.templates) {
+      assert.match(t.source.url, /^https:\/\/wiki\.leagueoflegends\.com\/en-us\//);
+      if (t.source.status === 200 && !t.redirect_to) assert.ok(Object.keys(t.params).length > 0, `${t.title} の引数`);
+    }
+  }
+});
+
+test("ポジション → チャンピオンの一覧：出典の revid を持ち、全チャンピオンに届く", () => {
+  const p = read(`public/gamedata/wiki-championdata/${manifest.current.wiki_championdata}/positions.json`);
+  assert.equal(p.source.revid, manifest.current.wiki_championdata);
+  const all = new Set(Object.values(p.roles).flatMap((r) => r.client.map((c) => c.id)));
+  assert.equal(all.size, ddIndex.champions.length);
+});

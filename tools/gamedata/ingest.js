@@ -5,6 +5,7 @@
 //   node tools/gamedata/ingest.js wiki [--cache <file>]         LoL Wiki の Module:ChampionData/data（MediaWiki API）を JSON にする
 //   node tools/gamedata/ingest.js report <版> [<比べる版>]       スキルの取得範囲・Wiki との照合・版の違いを report.json に書く
 //   node tools/gamedata/ingest.js topics <版>                   全チャンピオンと5ロールの Topic を追加する（既存の Topic は変えない）
+//   node tools/gamedata/ingest.js positions                    ポジション → チャンピオンの一覧（Wiki の client_positions・external_positions）
 //   node tools/gamedata/ingest.js ambiguity <版>                ほかのカタカナ語の一部になるチャンピオン名を src/search/ambiguousNames.json に書く
 //
 // 出力：public/gamedata/（静的公開。画面は必要なチャンピオンのファイルだけを読む）。古い版は消さずに残す。
@@ -221,6 +222,46 @@ function ambiguity(version) {
   console.log(`あいまいな名前 ${Object.keys(terms).length}件：${Object.keys(terms).join("、")}`);
 }
 
+// ---------------------------------------------------------------------------
+// ポジション（担当レーン）→ チャンピオンの一覧。Topic の親子は変えず、ロールのページが読む。
+// 出典は Wiki の Module:ChampionData の client_positions（Riot クライアントの推奨）と external_positions（統計サイトでの使用）。
+// 同じチャンピオンは複数のポジションに入る（フレックス）。根拠のない所属は加えない
+const POSITION_ROLE = { Top: "role-top", Jungle: "role-jungle", Middle: "role-mid", Bottom: "role-bot", Support: "role-support" };
+
+function positions() {
+  const m = manifest();
+  const revid = m.current.wiki_championdata;
+  const ddv = m.current.ddragon;
+  const dir = path.join(OUT, "wiki-championdata", String(revid));
+  const source = readJson(path.join(dir, "index.json")).source;
+  const dd = readJson(path.join(OUT, "ddragon", ddv, "index.json")).champions;
+  const roles = Object.fromEntries(Object.values(POSITION_ROLE).map((r) => [r, { client: [], external: [] }]));
+  const unknown = new Set();
+  for (const c of dd) {
+    const f = path.join(dir, "by-key", `${c.key}.json`);
+    if (!fs.existsSync(f)) continue;
+    const forms = readJson(f).forms;
+    const base = forms.find((x) => Number(x.id) === Math.trunc(Number(x.id))) || forms[0];
+    const entry = { topic_id: c.topic_id, id: c.id, key: c.key, name: c.name };
+    for (const [field, list] of [["client_positions", "client"], ["external_positions", "external"]]) {
+      for (const p of base[field] || []) {
+        const role = POSITION_ROLE[p];
+        if (!role) { unknown.add(p); continue; }
+        roles[role][list].push(entry);
+      }
+    }
+  }
+  for (const r of Object.values(roles)) for (const l of ["client", "external"]) r[l].sort((a, b) => (a.name.ja || "").localeCompare(b.name.ja || "", "ja"));
+  writeJson(path.join(dir, "positions.json"), {
+    source,
+    ddragon: ddv,
+    note: "client＝Riot クライアントの推奨ポジション（Wiki の記載）、external＝統計サイトなどでの使用（Wiki の記載）。どちらも Wiki の版の時点の記載で、ゲーム内・統計で確かめていない。形態が複数のチャンピオンは基本の形態の記載を使う",
+    unknown_positions: [...unknown],
+    roles,
+  }, true);
+  console.log(Object.entries(roles).map(([r, v]) => `${r}: client ${v.client.length} / external ${v.external.length}`).join("、"));
+}
+
 async function main() {
   const [cmd, ...args] = process.argv.slice(2);
   const opt = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : null; };
@@ -229,6 +270,7 @@ async function main() {
   if (cmd === "report") return report(args[0], args[1] && !args[1].startsWith("--") ? args[1] : null);
   if (cmd === "topics") return topics(args[0]);
   if (cmd === "ambiguity") return ambiguity(args[0]);
+  if (cmd === "positions") return positions();
   console.log(fs.readFileSync(__filename, "utf8").split("\n").slice(1, 9).join("\n"));
   process.exitCode = 1;
 }

@@ -1,0 +1,4113 @@
+{
+ "source": {
+  "name": "League of Legends Wiki — Module:ChampionData/data",
+  "url": "https://wiki.leagueoflegends.com/en-us/Module:ChampionData/data",
+  "revid": 4088335,
+  "timestamp": "2026-10-20T23:26:16Z",
+  "fetched_at": "2026-11-02",
+  "license": "CC BY-SA 3.0（Wiki の記載）"
+ },
+ "ddragon": "16.21.1",
+ "note": "client＝Riot クライアントの推奨ポジション（Wiki の記載）、external＝統計サイトなどでの使用（Wiki の記載）。どちらも Wiki の版の時点の記載で、ゲーム内・統計で確かめていない。形態が複数のチャンピオンは基本の形態の記載を使う",
+ "unknown_positions": [],
+ "roles": {
+  "role-top": {
+   "client": [
+    {
+     "topic_id": "champ-urgot",
+     "id": "Urgot",
+     "key": "6",
+     "name": {
+      "en": "Urgot",
+      "ja": "アーゴット"
+     }
+    },
+    {
+     "topic_id": "champ-akali",
+     "id": "Akali",
+     "key": "84",
+     "name": {
+      "en": "Akali",
+      "ja": "アカリ"
+     }
+    },
+    {
+     "topic_id": "champ-ambessa",
+     "id": "Ambessa",
+     "key": "799",
+     "name": {
+      "en": "Ambessa",
+      "ja": "アンベッサ"
+     }
+    },
+    {
+     "topic_id": "champ-illaoi",
+     "id": "Illaoi",
+     "key": "420",
+     "name": {
+      "en": "Illaoi",
+      "ja": "イラオイ"
+     }
+    },
+    {
+     "topic_id": "champ-irelia",
+     "id": "Irelia",
+     "key": "39",
+     "name": {
+      "en": "Irelia",
+      "ja": "イレリア"
+     }
+    },
+    {
+     "topic_id": "champ-udyr",
+     "id": "Udyr",
+     "key": "77",
+     "name": {
+      "en": "Udyr",
+      "ja": "ウディア"
+     }
+    },
+    {
+     "topic_id": "champ-aatrox",
+     "id": "Aatrox",
+     "key": "266",
+     "name": {
+      "en": "Aatrox",
+      "ja": "エイトロックス"
+     }
+    },
+    {
+     "topic_id": "champ-aurora",
+     "id": "Aurora",
+     "key": "893",
+     "name": {
+      "en": "Aurora",
+      "ja": "オーロラ"
+     }
+    },
+    {
+     "topic_id": "champ-ornn",
+     "id": "Ornn",
+     "key": "516",
+     "name": {
+      "en": "Ornn",
+      "ja": "オーン"
+     }
+    },
+    {
+     "topic_id": "champ-olaf",
+     "id": "Olaf",
+     "key": "2",
+     "name": {
+      "en": "Olaf",
+      "ja": "オラフ"
+     }
+    },
+    {
+     "topic_id": "champ-ksante",
+     "id": "KSante",
+     "key": "897",
+     "name": {
+      "en": "K'Sante",
+      "ja": "カ・サンテ"
+     }
+    },
+    {
+     "topic_id": "champ-camille",
+     "id": "Camille",
+     "key": "164",
+     "name": {
+      "en": "Camille",
+      "ja": "カミール"
+     }
+    },
+    {
+     "topic_id": "champ-garen",
+     "id": "Garen",
+     "key": "86",
+     "name": {
+      "en": "Garen",
+      "ja": "ガレン"
+     }
+    },
+    {
+     "topic_id": "champ-gangplank",
+     "id": "Gangplank",
+     "key": "41",
+     "name": {
+      "en": "Gangplank",
+      "ja": "ガングプランク"
+     }
+    },
+    {
+     "topic_id": "champ-quinn",
+     "id": "Quinn",
+     "key": "133",
+     "name": {
+      "en": "Quinn",
+      "ja": "クイン"
+     }
+    },
+    {
+     "topic_id": "champ-gwen",
+     "id": "Gwen",
+     "key": "887",
+     "name": {
+      "en": "Gwen",
+      "ja": "グウェン"
+     }
+    },
+    {
+     "topic_id": "champ-kled",
+     "id": "Kled",
+     "key": "240",
+     "name": {
+      "en": "Kled",
+      "ja": "クレッド"
+     }
+    },
+    {
+     "topic_id": "champ-kayle",
+     "id": "Kayle",
+     "key": "10",
+     "name": {
+      "en": "Kayle",
+      "ja": "ケイル"
+     }
+    },
+    {
+     "topic_id": "champ-kennen",
+     "id": "Kennen",
+     "key": "85",
+     "name": {
+      "en": "Kennen",
+      "ja": "ケネン"
+     }
+    },
+    {
+     "topic_id": "champ-zaahen",
+     "id": "Zaahen",
+     "key": "904",
+     "name": {
+      "en": "Zaahen",
+      "ja": "ザーヘン"
+     }
+    },
+    {
+     "topic_id": "champ-sion",
+     "id": "Sion",
+     "key": "14",
+     "name": {
+      "en": "Sion",
+      "ja": "サイオン"
+     }
+    },
+    {
+     "topic_id": "champ-jayce",
+     "id": "Jayce",
+     "key": "126",
+     "name": {
+      "en": "Jayce",
+      "ja": "ジェイス"
+     }
+    },
+    {
+     "topic_id": "champ-shen",
+     "id": "Shen",
+     "key": "98",
+     "name": {
+      "en": "Shen",
+      "ja": "シェン"
+     }
+    },
+    {
+     "topic_id": "champ-jax",
+     "id": "Jax",
+     "key": "24",
+     "name": {
+      "en": "Jax",
+      "ja": "ジャックス"
+     }
+    },
+    {
+     "topic_id": "champ-singed",
+     "id": "Singed",
+     "key": "27",
+     "name": {
+      "en": "Singed",
+      "ja": "シンジド"
+     }
+    },
+    {
+     "topic_id": "champ-skarner",
+     "id": "Skarner",
+     "key": "72",
+     "name": {
+      "en": "Skarner",
+      "ja": "スカーナー"
+     }
+    },
+    {
+     "topic_id": "champ-sett",
+     "id": "Sett",
+     "key": "875",
+     "name": {
+      "en": "Sett",
+      "ja": "セト"
+     }
+    },
+    {
+     "topic_id": "champ-tahm-kench",
+     "id": "TahmKench",
+     "key": "223",
+     "name": {
+      "en": "Tahm Kench",
+      "ja": "タム・ケンチ"
+     }
+    },
+    {
+     "topic_id": "champ-darius",
+     "id": "Darius",
+     "key": "122",
+     "name": {
+      "en": "Darius",
+      "ja": "ダリウス"
+     }
+    },
+    {
+     "topic_id": "champ-chogath",
+     "id": "Chogath",
+     "key": "31",
+     "name": {
+      "en": "Cho'Gath",
+      "ja": "チョ＝ガス"
+     }
+    },
+    {
+     "topic_id": "champ-teemo",
+     "id": "Teemo",
+     "key": "17",
+     "name": {
+      "en": "Teemo",
+      "ja": "ティーモ"
+     }
+    },
+    {
+     "topic_id": "champ-dr-mundo",
+     "id": "DrMundo",
+     "key": "36",
+     "name": {
+      "en": "Dr. Mundo",
+      "ja": "ドクター・ムンド"
+     }
+    },
+    {
+     "topic_id": "champ-trundle",
+     "id": "Trundle",
+     "key": "48",
+     "name": {
+      "en": "Trundle",
+      "ja": "トランドル"
+     }
+    },
+    {
+     "topic_id": "champ-tryndamere",
+     "id": "Tryndamere",
+     "key": "23",
+     "name": {
+      "en": "Tryndamere",
+      "ja": "トリンダメア"
+     }
+    },
+    {
+     "topic_id": "champ-gnar",
+     "id": "Gnar",
+     "key": "150",
+     "name": {
+      "en": "Gnar",
+      "ja": "ナー"
+     }
+    },
+    {
+     "topic_id": "champ-nasus",
+     "id": "Nasus",
+     "key": "75",
+     "name": {
+      "en": "Nasus",
+      "ja": "ナサス"
+     }
+    },
+    {
+     "topic_id": "champ-heimerdinger",
+     "id": "Heimerdinger",
+     "key": "74",
+     "name": {
+      "en": "Heimerdinger",
+      "ja": "ハイマーディンガー"
+     }
+    },
+    {
+     "topic_id": "champ-pantheon",
+     "id": "Pantheon",
+     "key": "80",
+     "name": {
+      "en": "Pantheon",
+      "ja": "パンテオン"
+     }
+    },
+    {
+     "topic_id": "champ-fiora",
+     "id": "Fiora",
+     "key": "114",
+     "name": {
+      "en": "Fiora",
+      "ja": "フィオラ"
+     }
+    },
+    {
+     "topic_id": "champ-poppy",
+     "id": "Poppy",
+     "key": "78",
+     "name": {
+      "en": "Poppy",
+      "ja": "ポッピー"
+     }
+    },
+    {
+     "topic_id": "champ-volibear",
+     "id": "Volibear",
+     "key": "106",
+     "name": {
+      "en": "Volibear",
+      "ja": "ボリベア"
+     }
+    },
+    {
+     "topic_id": "champ-malphite",
+     "id": "Malphite",
+     "key": "54",
+     "name": {
+      "en": "Malphite",
+      "ja": "マルファイト"
+     }
+    },
+    {
+     "topic_id": "champ-mordekaiser",
+     "id": "Mordekaiser",
+     "key": "82",
+     "name": {
+      "en": "Mordekaiser",
+      "ja": "モルデカイザー"
+     }
+    },
+    {
+     "topic_id": "champ-yasuo",
+     "id": "Yasuo",
+     "key": "157",
+     "name": {
+      "en": "Yasuo",
+      "ja": "ヤスオ"
+     }
+    },
+    {
+     "topic_id": "champ-yone",
+     "id": "Yone",
+     "key": "777",
+     "name": {
+      "en": "Yone",
+      "ja": "ヨネ"
+     }
+    },
+    {
+     "topic_id": "champ-yorick",
+     "id": "Yorick",
+     "key": "83",
+     "name": {
+      "en": "Yorick",
+      "ja": "ヨリック"
+     }
+    },
+    {
+     "topic_id": "champ-rumble",
+     "id": "Rumble",
+     "key": "68",
+     "name": {
+      "en": "Rumble",
+      "ja": "ランブル"
+     }
+    },
+    {
+     "topic_id": "champ-riven",
+     "id": "Riven",
+     "key": "92",
+     "name": {
+      "en": "Riven",
+      "ja": "リヴェン"
+     }
+    },
+    {
+     "topic_id": "champ-renekton",
+     "id": "Renekton",
+     "key": "58",
+     "name": {
+      "en": "Renekton",
+      "ja": "レネクトン"
+     }
+    }
+   ],
+   "external": [
+    {
+     "topic_id": "champ-urgot",
+     "id": "Urgot",
+     "key": "6",
+     "name": {
+      "en": "Urgot",
+      "ja": "アーゴット"
+     }
+    },
+    {
+     "topic_id": "champ-akali",
+     "id": "Akali",
+     "key": "84",
+     "name": {
+      "en": "Akali",
+      "ja": "アカリ"
+     }
+    },
+    {
+     "topic_id": "champ-ambessa",
+     "id": "Ambessa",
+     "key": "799",
+     "name": {
+      "en": "Ambessa",
+      "ja": "アンベッサ"
+     }
+    },
+    {
+     "topic_id": "champ-illaoi",
+     "id": "Illaoi",
+     "key": "420",
+     "name": {
+      "en": "Illaoi",
+      "ja": "イラオイ"
+     }
+    },
+    {
+     "topic_id": "champ-irelia",
+     "id": "Irelia",
+     "key": "39",
+     "name": {
+      "en": "Irelia",
+      "ja": "イレリア"
+     }
+    },
+    {
+     "topic_id": "champ-wukong",
+     "id": "MonkeyKing",
+     "key": "62",
+     "name": {
+      "en": "Wukong",
+      "ja": "ウーコン"
+     }
+    },
+    {
+     "topic_id": "champ-vayne",
+     "id": "Vayne",
+     "key": "67",
+     "name": {
+      "en": "Vayne",
+      "ja": "ヴェイン"
+     }
+    },
+    {
+     "topic_id": "champ-udyr",
+     "id": "Udyr",
+     "key": "77",
+     "name": {
+      "en": "Udyr",
+      "ja": "ウディア"
+     }
+    },
+    {
+     "topic_id": "champ-aatrox",
+     "id": "Aatrox",
+     "key": "266",
+     "name": {
+      "en": "Aatrox",
+      "ja": "エイトロックス"
+     }
+    },
+    {
+     "topic_id": "champ-aurora",
+     "id": "Aurora",
+     "key": "893",
+     "name": {
+      "en": "Aurora",
+      "ja": "オーロラ"
+     }
+    },
+    {
+     "topic_id": "champ-ornn",
+     "id": "Ornn",
+     "key": "516",
+     "name": {
+      "en": "Ornn",
+      "ja": "オーン"
+     }
+    },
+    {
+     "topic_id": "champ-olaf",
+     "id": "Olaf",
+     "key": "2",
+     "name": {
+      "en": "Olaf",
+      "ja": "オラフ"
+     }
+    },
+    {
+     "topic_id": "champ-ksante",
+     "id": "KSante",
+     "key": "897",
+     "name": {
+      "en": "K'Sante",
+      "ja": "カ・サンテ"
+     }
+    },
+    {
+     "topic_id": "champ-camille",
+     "id": "Camille",
+     "key": "164",
+     "name": {
+      "en": "Camille",
+      "ja": "カミール"
+     }
+    },
+    {
+     "topic_id": "champ-karma",
+     "id": "Karma",
+     "key": "43",
+     "name": {
+      "en": "Karma",
+      "ja": "カルマ"
+     }
+    },
+    {
+     "topic_id": "champ-garen",
+     "id": "Garen",
+     "key": "86",
+     "name": {
+      "en": "Garen",
+      "ja": "ガレン"
+     }
+    },
+    {
+     "topic_id": "champ-gangplank",
+     "id": "Gangplank",
+     "key": "41",
+     "name": {
+      "en": "Gangplank",
+      "ja": "ガングプランク"
+     }
+    },
+    {
+     "topic_id": "champ-quinn",
+     "id": "Quinn",
+     "key": "133",
+     "name": {
+      "en": "Quinn",
+      "ja": "クイン"
+     }
+    },
+    {
+     "topic_id": "champ-gwen",
+     "id": "Gwen",
+     "key": "887",
+     "name": {
+      "en": "Gwen",
+      "ja": "グウェン"
+     }
+    },
+    {
+     "topic_id": "champ-gragas",
+     "id": "Gragas",
+     "key": "79",
+     "name": {
+      "en": "Gragas",
+      "ja": "グラガス"
+     }
+    },
+    {
+     "topic_id": "champ-kled",
+     "id": "Kled",
+     "key": "240",
+     "name": {
+      "en": "Kled",
+      "ja": "クレッド"
+     }
+    },
+    {
+     "topic_id": "champ-kayle",
+     "id": "Kayle",
+     "key": "10",
+     "name": {
+      "en": "Kayle",
+      "ja": "ケイル"
+     }
+    },
+    {
+     "topic_id": "champ-kennen",
+     "id": "Kennen",
+     "key": "85",
+     "name": {
+      "en": "Kennen",
+      "ja": "ケネン"
+     }
+    },
+    {
+     "topic_id": "champ-zaahen",
+     "id": "Zaahen",
+     "key": "904",
+     "name": {
+      "en": "Zaahen",
+      "ja": "ザーヘン"
+     }
+    },
+    {
+     "topic_id": "champ-sion",
+     "id": "Sion",
+     "key": "14",
+     "name": {
+      "en": "Sion",
+      "ja": "サイオン"
+     }
+    },
+    {
+     "topic_id": "champ-sylas",
+     "id": "Sylas",
+     "key": "517",
+     "name": {
+      "en": "Sylas",
+      "ja": "サイラス"
+     }
+    },
+    {
+     "topic_id": "champ-zac",
+     "id": "Zac",
+     "key": "154",
+     "name": {
+      "en": "Zac",
+      "ja": "ザック"
+     }
+    },
+    {
+     "topic_id": "champ-jayce",
+     "id": "Jayce",
+     "key": "126",
+     "name": {
+      "en": "Jayce",
+      "ja": "ジェイス"
+     }
+    },
+    {
+     "topic_id": "champ-shen",
+     "id": "Shen",
+     "key": "98",
+     "name": {
+      "en": "Shen",
+      "ja": "シェン"
+     }
+    },
+    {
+     "topic_id": "champ-jax",
+     "id": "Jax",
+     "key": "24",
+     "name": {
+      "en": "Jax",
+      "ja": "ジャックス"
+     }
+    },
+    {
+     "topic_id": "champ-singed",
+     "id": "Singed",
+     "key": "27",
+     "name": {
+      "en": "Singed",
+      "ja": "シンジド"
+     }
+    },
+    {
+     "topic_id": "champ-skarner",
+     "id": "Skarner",
+     "key": "72",
+     "name": {
+      "en": "Skarner",
+      "ja": "スカーナー"
+     }
+    },
+    {
+     "topic_id": "champ-smolder",
+     "id": "Smolder",
+     "key": "901",
+     "name": {
+      "en": "Smolder",
+      "ja": "スモルダー"
+     }
+    },
+    {
+     "topic_id": "champ-sett",
+     "id": "Sett",
+     "key": "875",
+     "name": {
+      "en": "Sett",
+      "ja": "セト"
+     }
+    },
+    {
+     "topic_id": "champ-tahm-kench",
+     "id": "TahmKench",
+     "key": "223",
+     "name": {
+      "en": "Tahm Kench",
+      "ja": "タム・ケンチ"
+     }
+    },
+    {
+     "topic_id": "champ-darius",
+     "id": "Darius",
+     "key": "122",
+     "name": {
+      "en": "Darius",
+      "ja": "ダリウス"
+     }
+    },
+    {
+     "topic_id": "champ-chogath",
+     "id": "Chogath",
+     "key": "31",
+     "name": {
+      "en": "Cho'Gath",
+      "ja": "チョ＝ガス"
+     }
+    },
+    {
+     "topic_id": "champ-twisted-fate",
+     "id": "TwistedFate",
+     "key": "4",
+     "name": {
+      "en": "Twisted Fate",
+      "ja": "ツイステッド・フェイト"
+     }
+    },
+    {
+     "topic_id": "champ-teemo",
+     "id": "Teemo",
+     "key": "17",
+     "name": {
+      "en": "Teemo",
+      "ja": "ティーモ"
+     }
+    },
+    {
+     "topic_id": "champ-dr-mundo",
+     "id": "DrMundo",
+     "key": "36",
+     "name": {
+      "en": "Dr. Mundo",
+      "ja": "ドクター・ムンド"
+     }
+    },
+    {
+     "topic_id": "champ-trundle",
+     "id": "Trundle",
+     "key": "48",
+     "name": {
+      "en": "Trundle",
+      "ja": "トランドル"
+     }
+    },
+    {
+     "topic_id": "champ-tryndamere",
+     "id": "Tryndamere",
+     "key": "23",
+     "name": {
+      "en": "Tryndamere",
+      "ja": "トリンダメア"
+     }
+    },
+    {
+     "topic_id": "champ-gnar",
+     "id": "Gnar",
+     "key": "150",
+     "name": {
+      "en": "Gnar",
+      "ja": "ナー"
+     }
+    },
+    {
+     "topic_id": "champ-nasus",
+     "id": "Nasus",
+     "key": "75",
+     "name": {
+      "en": "Nasus",
+      "ja": "ナサス"
+     }
+    },
+    {
+     "topic_id": "champ-heimerdinger",
+     "id": "Heimerdinger",
+     "key": "74",
+     "name": {
+      "en": "Heimerdinger",
+      "ja": "ハイマーディンガー"
+     }
+    },
+    {
+     "topic_id": "champ-pantheon",
+     "id": "Pantheon",
+     "key": "80",
+     "name": {
+      "en": "Pantheon",
+      "ja": "パンテオン"
+     }
+    },
+    {
+     "topic_id": "champ-fiora",
+     "id": "Fiora",
+     "key": "114",
+     "name": {
+      "en": "Fiora",
+      "ja": "フィオラ"
+     }
+    },
+    {
+     "topic_id": "champ-vladimir",
+     "id": "Vladimir",
+     "key": "8",
+     "name": {
+      "en": "Vladimir",
+      "ja": "ブラッドミア"
+     }
+    },
+    {
+     "topic_id": "champ-poppy",
+     "id": "Poppy",
+     "key": "78",
+     "name": {
+      "en": "Poppy",
+      "ja": "ポッピー"
+     }
+    },
+    {
+     "topic_id": "champ-volibear",
+     "id": "Volibear",
+     "key": "106",
+     "name": {
+      "en": "Volibear",
+      "ja": "ボリベア"
+     }
+    },
+    {
+     "topic_id": "champ-maokai",
+     "id": "Maokai",
+     "key": "57",
+     "name": {
+      "en": "Maokai",
+      "ja": "マオカイ"
+     }
+    },
+    {
+     "topic_id": "champ-malphite",
+     "id": "Malphite",
+     "key": "54",
+     "name": {
+      "en": "Malphite",
+      "ja": "マルファイト"
+     }
+    },
+    {
+     "topic_id": "champ-mordekaiser",
+     "id": "Mordekaiser",
+     "key": "82",
+     "name": {
+      "en": "Mordekaiser",
+      "ja": "モルデカイザー"
+     }
+    },
+    {
+     "topic_id": "champ-yasuo",
+     "id": "Yasuo",
+     "key": "157",
+     "name": {
+      "en": "Yasuo",
+      "ja": "ヤスオ"
+     }
+    },
+    {
+     "topic_id": "champ-yone",
+     "id": "Yone",
+     "key": "777",
+     "name": {
+      "en": "Yone",
+      "ja": "ヨネ"
+     }
+    },
+    {
+     "topic_id": "champ-yorick",
+     "id": "Yorick",
+     "key": "83",
+     "name": {
+      "en": "Yorick",
+      "ja": "ヨリック"
+     }
+    },
+    {
+     "topic_id": "champ-rumble",
+     "id": "Rumble",
+     "key": "68",
+     "name": {
+      "en": "Rumble",
+      "ja": "ランブル"
+     }
+    },
+    {
+     "topic_id": "champ-riven",
+     "id": "Riven",
+     "key": "92",
+     "name": {
+      "en": "Riven",
+      "ja": "リヴェン"
+     }
+    },
+    {
+     "topic_id": "champ-renekton",
+     "id": "Renekton",
+     "key": "58",
+     "name": {
+      "en": "Renekton",
+      "ja": "レネクトン"
+     }
+    },
+    {
+     "topic_id": "champ-rengar",
+     "id": "Rengar",
+     "key": "107",
+     "name": {
+      "en": "Rengar",
+      "ja": "レンガー"
+     }
+    },
+    {
+     "topic_id": "champ-warwick",
+     "id": "Warwick",
+     "key": "19",
+     "name": {
+      "en": "Warwick",
+      "ja": "ワーウィック"
+     }
+    }
+   ]
+  },
+  "role-jungle": {
+   "client": [
+    {
+     "topic_id": "champ-ivern",
+     "id": "Ivern",
+     "key": "427",
+     "name": {
+      "en": "Ivern",
+      "ja": "アイバーン"
+     }
+    },
+    {
+     "topic_id": "champ-amumu",
+     "id": "Amumu",
+     "key": "32",
+     "name": {
+      "en": "Amumu",
+      "ja": "アムム"
+     }
+    },
+    {
+     "topic_id": "champ-ambessa",
+     "id": "Ambessa",
+     "key": "799",
+     "name": {
+      "en": "Ambessa",
+      "ja": "アンベッサ"
+     }
+    },
+    {
+     "topic_id": "champ-evelynn",
+     "id": "Evelynn",
+     "key": "28",
+     "name": {
+      "en": "Evelynn",
+      "ja": "イブリン"
+     }
+    },
+    {
+     "topic_id": "champ-vi",
+     "id": "Vi",
+     "key": "254",
+     "name": {
+      "en": "Vi",
+      "ja": "ヴァイ"
+     }
+    },
+    {
+     "topic_id": "champ-viego",
+     "id": "Viego",
+     "key": "234",
+     "name": {
+      "en": "Viego",
+      "ja": "ヴィエゴ"
+     }
+    },
+    {
+     "topic_id": "champ-wukong",
+     "id": "MonkeyKing",
+     "key": "62",
+     "name": {
+      "en": "Wukong",
+      "ja": "ウーコン"
+     }
+    },
+    {
+     "topic_id": "champ-udyr",
+     "id": "Udyr",
+     "key": "77",
+     "name": {
+      "en": "Udyr",
+      "ja": "ウディア"
+     }
+    },
+    {
+     "topic_id": "champ-ekko",
+     "id": "Ekko",
+     "key": "245",
+     "name": {
+      "en": "Ekko",
+      "ja": "エコー"
+     }
+    },
+    {
+     "topic_id": "champ-elise",
+     "id": "Elise",
+     "key": "60",
+     "name": {
+      "en": "Elise",
+      "ja": "エリス"
+     }
+    },
+    {
+     "topic_id": "champ-khazix",
+     "id": "Khazix",
+     "key": "121",
+     "name": {
+      "en": "Kha'Zix",
+      "ja": "カ＝ジックス"
+     }
+    },
+    {
+     "topic_id": "champ-karthus",
+     "id": "Karthus",
+     "key": "30",
+     "name": {
+      "en": "Karthus",
+      "ja": "カーサス"
+     }
+    },
+    {
+     "topic_id": "champ-kindred",
+     "id": "Kindred",
+     "key": "203",
+     "name": {
+      "en": "Kindred",
+      "ja": "キンドレッド"
+     }
+    },
+    {
+     "topic_id": "champ-gragas",
+     "id": "Gragas",
+     "key": "79",
+     "name": {
+      "en": "Gragas",
+      "ja": "グラガス"
+     }
+    },
+    {
+     "topic_id": "champ-graves",
+     "id": "Graves",
+     "key": "104",
+     "name": {
+      "en": "Graves",
+      "ja": "グレイブス"
+     }
+    },
+    {
+     "topic_id": "champ-kayn",
+     "id": "Kayn",
+     "key": "141",
+     "name": {
+      "en": "Kayn",
+      "ja": "ケイン"
+     }
+    },
+    {
+     "topic_id": "champ-zaahen",
+     "id": "Zaahen",
+     "key": "904",
+     "name": {
+      "en": "Zaahen",
+      "ja": "ザーヘン"
+     }
+    },
+    {
+     "topic_id": "champ-zac",
+     "id": "Zac",
+     "key": "154",
+     "name": {
+      "en": "Zac",
+      "ja": "ザック"
+     }
+    },
+    {
+     "topic_id": "champ-shyvana",
+     "id": "Shyvana",
+     "key": "102",
+     "name": {
+      "en": "Shyvana",
+      "ja": "シヴァーナ"
+     }
+    },
+    {
+     "topic_id": "champ-jarvan-iv",
+     "id": "JarvanIV",
+     "key": "59",
+     "name": {
+      "en": "Jarvan IV",
+      "ja": "ジャーヴァンⅣ"
+     }
+    },
+    {
+     "topic_id": "champ-shaco",
+     "id": "Shaco",
+     "key": "35",
+     "name": {
+      "en": "Shaco",
+      "ja": "シャコ"
+     }
+    },
+    {
+     "topic_id": "champ-jax",
+     "id": "Jax",
+     "key": "24",
+     "name": {
+      "en": "Jax",
+      "ja": "ジャックス"
+     }
+    },
+    {
+     "topic_id": "champ-xin-zhao",
+     "id": "XinZhao",
+     "key": "5",
+     "name": {
+      "en": "Xin Zhao",
+      "ja": "シン・ジャオ"
+     }
+    },
+    {
+     "topic_id": "champ-skarner",
+     "id": "Skarner",
+     "key": "72",
+     "name": {
+      "en": "Skarner",
+      "ja": "スカーナー"
+     }
+    },
+    {
+     "topic_id": "champ-sejuani",
+     "id": "Sejuani",
+     "key": "113",
+     "name": {
+      "en": "Sejuani",
+      "ja": "セジュアニ"
+     }
+    },
+    {
+     "topic_id": "champ-zed",
+     "id": "Zed",
+     "key": "238",
+     "name": {
+      "en": "Zed",
+      "ja": "ゼド"
+     }
+    },
+    {
+     "topic_id": "champ-diana",
+     "id": "Diana",
+     "key": "131",
+     "name": {
+      "en": "Diana",
+      "ja": "ダイアナ"
+     }
+    },
+    {
+     "topic_id": "champ-taliyah",
+     "id": "Taliyah",
+     "key": "163",
+     "name": {
+      "en": "Taliyah",
+      "ja": "タリヤ"
+     }
+    },
+    {
+     "topic_id": "champ-dr-mundo",
+     "id": "DrMundo",
+     "key": "36",
+     "name": {
+      "en": "Dr. Mundo",
+      "ja": "ドクター・ムンド"
+     }
+    },
+    {
+     "topic_id": "champ-nidalee",
+     "id": "Nidalee",
+     "key": "76",
+     "name": {
+      "en": "Nidalee",
+      "ja": "ニダリー"
+     }
+    },
+    {
+     "topic_id": "champ-nunu-willump",
+     "id": "Nunu",
+     "key": "20",
+     "name": {
+      "en": "Nunu & Willump",
+      "ja": "ヌヌ＆ウィルンプ"
+     }
+    },
+    {
+     "topic_id": "champ-nocturne",
+     "id": "Nocturne",
+     "key": "56",
+     "name": {
+      "en": "Nocturne",
+      "ja": "ノクターン"
+     }
+    },
+    {
+     "topic_id": "champ-fiddlesticks",
+     "id": "Fiddlesticks",
+     "key": "9",
+     "name": {
+      "en": "Fiddlesticks",
+      "ja": "フィドルスティックス"
+     }
+    },
+    {
+     "topic_id": "champ-briar",
+     "id": "Briar",
+     "key": "233",
+     "name": {
+      "en": "Briar",
+      "ja": "ブライアー"
+     }
+    },
+    {
+     "topic_id": "champ-brand",
+     "id": "Brand",
+     "key": "63",
+     "name": {
+      "en": "Brand",
+      "ja": "ブランド"
+     }
+    },
+    {
+     "topic_id": "champ-hecarim",
+     "id": "Hecarim",
+     "key": "120",
+     "name": {
+      "en": "Hecarim",
+      "ja": "ヘカリム"
+     }
+    },
+    {
+     "topic_id": "champ-belveth",
+     "id": "Belveth",
+     "key": "200",
+     "name": {
+      "en": "Bel'Veth",
+      "ja": "ベル＝ヴェス"
+     }
+    },
+    {
+     "topic_id": "champ-poppy",
+     "id": "Poppy",
+     "key": "78",
+     "name": {
+      "en": "Poppy",
+      "ja": "ポッピー"
+     }
+    },
+    {
+     "topic_id": "champ-master-yi",
+     "id": "MasterYi",
+     "key": "11",
+     "name": {
+      "en": "Master Yi",
+      "ja": "マスター・イー"
+     }
+    },
+    {
+     "topic_id": "champ-rammus",
+     "id": "Rammus",
+     "key": "33",
+     "name": {
+      "en": "Rammus",
+      "ja": "ラムス"
+     }
+    },
+    {
+     "topic_id": "champ-lee-sin",
+     "id": "LeeSin",
+     "key": "64",
+     "name": {
+      "en": "Lee Sin",
+      "ja": "リー・シン"
+     }
+    },
+    {
+     "topic_id": "champ-lillia",
+     "id": "Lillia",
+     "key": "876",
+     "name": {
+      "en": "Lillia",
+      "ja": "リリア"
+     }
+    },
+    {
+     "topic_id": "champ-reksai",
+     "id": "RekSai",
+     "key": "421",
+     "name": {
+      "en": "Rek'Sai",
+      "ja": "レク＝サイ"
+     }
+    },
+    {
+     "topic_id": "champ-rengar",
+     "id": "Rengar",
+     "key": "107",
+     "name": {
+      "en": "Rengar",
+      "ja": "レンガー"
+     }
+    },
+    {
+     "topic_id": "champ-warwick",
+     "id": "Warwick",
+     "key": "19",
+     "name": {
+      "en": "Warwick",
+      "ja": "ワーウィック"
+     }
+    }
+   ],
+   "external": [
+    {
+     "topic_id": "champ-ivern",
+     "id": "Ivern",
+     "key": "427",
+     "name": {
+      "en": "Ivern",
+      "ja": "アイバーン"
+     }
+    },
+    {
+     "topic_id": "champ-amumu",
+     "id": "Amumu",
+     "key": "32",
+     "name": {
+      "en": "Amumu",
+      "ja": "アムム"
+     }
+    },
+    {
+     "topic_id": "champ-ambessa",
+     "id": "Ambessa",
+     "key": "799",
+     "name": {
+      "en": "Ambessa",
+      "ja": "アンベッサ"
+     }
+    },
+    {
+     "topic_id": "champ-evelynn",
+     "id": "Evelynn",
+     "key": "28",
+     "name": {
+      "en": "Evelynn",
+      "ja": "イブリン"
+     }
+    },
+    {
+     "topic_id": "champ-vi",
+     "id": "Vi",
+     "key": "254",
+     "name": {
+      "en": "Vi",
+      "ja": "ヴァイ"
+     }
+    },
+    {
+     "topic_id": "champ-viego",
+     "id": "Viego",
+     "key": "234",
+     "name": {
+      "en": "Viego",
+      "ja": "ヴィエゴ"
+     }
+    },
+    {
+     "topic_id": "champ-wukong",
+     "id": "MonkeyKing",
+     "key": "62",
+     "name": {
+      "en": "Wukong",
+      "ja": "ウーコン"
+     }
+    },
+    {
+     "topic_id": "champ-udyr",
+     "id": "Udyr",
+     "key": "77",
+     "name": {
+      "en": "Udyr",
+      "ja": "ウディア"
+     }
+    },
+    {
+     "topic_id": "champ-aatrox",
+     "id": "Aatrox",
+     "key": "266",
+     "name": {
+      "en": "Aatrox",
+      "ja": "エイトロックス"
+     }
+    },
+    {
+     "topic_id": "champ-ekko",
+     "id": "Ekko",
+     "key": "245",
+     "name": {
+      "en": "Ekko",
+      "ja": "エコー"
+     }
+    },
+    {
+     "topic_id": "champ-elise",
+     "id": "Elise",
+     "key": "60",
+     "name": {
+      "en": "Elise",
+      "ja": "エリス"
+     }
+    },
+    {
+     "topic_id": "champ-khazix",
+     "id": "Khazix",
+     "key": "121",
+     "name": {
+      "en": "Kha'Zix",
+      "ja": "カ＝ジックス"
+     }
+    },
+    {
+     "topic_id": "champ-karthus",
+     "id": "Karthus",
+     "key": "30",
+     "name": {
+      "en": "Karthus",
+      "ja": "カーサス"
+     }
+    },
+    {
+     "topic_id": "champ-kindred",
+     "id": "Kindred",
+     "key": "203",
+     "name": {
+      "en": "Kindred",
+      "ja": "キンドレッド"
+     }
+    },
+    {
+     "topic_id": "champ-gwen",
+     "id": "Gwen",
+     "key": "887",
+     "name": {
+      "en": "Gwen",
+      "ja": "グウェン"
+     }
+    },
+    {
+     "topic_id": "champ-gragas",
+     "id": "Gragas",
+     "key": "79",
+     "name": {
+      "en": "Gragas",
+      "ja": "グラガス"
+     }
+    },
+    {
+     "topic_id": "champ-graves",
+     "id": "Graves",
+     "key": "104",
+     "name": {
+      "en": "Graves",
+      "ja": "グレイブス"
+     }
+    },
+    {
+     "topic_id": "champ-kayn",
+     "id": "Kayn",
+     "key": "141",
+     "name": {
+      "en": "Kayn",
+      "ja": "ケイン"
+     }
+    },
+    {
+     "topic_id": "champ-zac",
+     "id": "Zac",
+     "key": "154",
+     "name": {
+      "en": "Zac",
+      "ja": "ザック"
+     }
+    },
+    {
+     "topic_id": "champ-shyvana",
+     "id": "Shyvana",
+     "key": "102",
+     "name": {
+      "en": "Shyvana",
+      "ja": "シヴァーナ"
+     }
+    },
+    {
+     "topic_id": "champ-jarvan-iv",
+     "id": "JarvanIV",
+     "key": "59",
+     "name": {
+      "en": "Jarvan IV",
+      "ja": "ジャーヴァンⅣ"
+     }
+    },
+    {
+     "topic_id": "champ-shaco",
+     "id": "Shaco",
+     "key": "35",
+     "name": {
+      "en": "Shaco",
+      "ja": "シャコ"
+     }
+    },
+    {
+     "topic_id": "champ-jax",
+     "id": "Jax",
+     "key": "24",
+     "name": {
+      "en": "Jax",
+      "ja": "ジャックス"
+     }
+    },
+    {
+     "topic_id": "champ-xin-zhao",
+     "id": "XinZhao",
+     "key": "5",
+     "name": {
+      "en": "Xin Zhao",
+      "ja": "シン・ジャオ"
+     }
+    },
+    {
+     "topic_id": "champ-skarner",
+     "id": "Skarner",
+     "key": "72",
+     "name": {
+      "en": "Skarner",
+      "ja": "スカーナー"
+     }
+    },
+    {
+     "topic_id": "champ-sejuani",
+     "id": "Sejuani",
+     "key": "113",
+     "name": {
+      "en": "Sejuani",
+      "ja": "セジュアニ"
+     }
+    },
+    {
+     "topic_id": "champ-zed",
+     "id": "Zed",
+     "key": "238",
+     "name": {
+      "en": "Zed",
+      "ja": "ゼド"
+     }
+    },
+    {
+     "topic_id": "champ-diana",
+     "id": "Diana",
+     "key": "131",
+     "name": {
+      "en": "Diana",
+      "ja": "ダイアナ"
+     }
+    },
+    {
+     "topic_id": "champ-taliyah",
+     "id": "Taliyah",
+     "key": "163",
+     "name": {
+      "en": "Taliyah",
+      "ja": "タリヤ"
+     }
+    },
+    {
+     "topic_id": "champ-talon",
+     "id": "Talon",
+     "key": "91",
+     "name": {
+      "en": "Talon",
+      "ja": "タロン"
+     }
+    },
+    {
+     "topic_id": "champ-teemo",
+     "id": "Teemo",
+     "key": "17",
+     "name": {
+      "en": "Teemo",
+      "ja": "ティーモ"
+     }
+    },
+    {
+     "topic_id": "champ-dr-mundo",
+     "id": "DrMundo",
+     "key": "36",
+     "name": {
+      "en": "Dr. Mundo",
+      "ja": "ドクター・ムンド"
+     }
+    },
+    {
+     "topic_id": "champ-trundle",
+     "id": "Trundle",
+     "key": "48",
+     "name": {
+      "en": "Trundle",
+      "ja": "トランドル"
+     }
+    },
+    {
+     "topic_id": "champ-nidalee",
+     "id": "Nidalee",
+     "key": "76",
+     "name": {
+      "en": "Nidalee",
+      "ja": "ニダリー"
+     }
+    },
+    {
+     "topic_id": "champ-nunu-willump",
+     "id": "Nunu",
+     "key": "20",
+     "name": {
+      "en": "Nunu & Willump",
+      "ja": "ヌヌ＆ウィルンプ"
+     }
+    },
+    {
+     "topic_id": "champ-nocturne",
+     "id": "Nocturne",
+     "key": "56",
+     "name": {
+      "en": "Nocturne",
+      "ja": "ノクターン"
+     }
+    },
+    {
+     "topic_id": "champ-pantheon",
+     "id": "Pantheon",
+     "key": "80",
+     "name": {
+      "en": "Pantheon",
+      "ja": "パンテオン"
+     }
+    },
+    {
+     "topic_id": "champ-fiddlesticks",
+     "id": "Fiddlesticks",
+     "key": "9",
+     "name": {
+      "en": "Fiddlesticks",
+      "ja": "フィドルスティックス"
+     }
+    },
+    {
+     "topic_id": "champ-briar",
+     "id": "Briar",
+     "key": "233",
+     "name": {
+      "en": "Briar",
+      "ja": "ブライアー"
+     }
+    },
+    {
+     "topic_id": "champ-brand",
+     "id": "Brand",
+     "key": "63",
+     "name": {
+      "en": "Brand",
+      "ja": "ブランド"
+     }
+    },
+    {
+     "topic_id": "champ-hecarim",
+     "id": "Hecarim",
+     "key": "120",
+     "name": {
+      "en": "Hecarim",
+      "ja": "ヘカリム"
+     }
+    },
+    {
+     "topic_id": "champ-belveth",
+     "id": "Belveth",
+     "key": "200",
+     "name": {
+      "en": "Bel'Veth",
+      "ja": "ベル＝ヴェス"
+     }
+    },
+    {
+     "topic_id": "champ-poppy",
+     "id": "Poppy",
+     "key": "78",
+     "name": {
+      "en": "Poppy",
+      "ja": "ポッピー"
+     }
+    },
+    {
+     "topic_id": "champ-volibear",
+     "id": "Volibear",
+     "key": "106",
+     "name": {
+      "en": "Volibear",
+      "ja": "ボリベア"
+     }
+    },
+    {
+     "topic_id": "champ-maokai",
+     "id": "Maokai",
+     "key": "57",
+     "name": {
+      "en": "Maokai",
+      "ja": "マオカイ"
+     }
+    },
+    {
+     "topic_id": "champ-master-yi",
+     "id": "MasterYi",
+     "key": "11",
+     "name": {
+      "en": "Master Yi",
+      "ja": "マスター・イー"
+     }
+    },
+    {
+     "topic_id": "champ-rammus",
+     "id": "Rammus",
+     "key": "33",
+     "name": {
+      "en": "Rammus",
+      "ja": "ラムス"
+     }
+    },
+    {
+     "topic_id": "champ-lee-sin",
+     "id": "LeeSin",
+     "key": "64",
+     "name": {
+      "en": "Lee Sin",
+      "ja": "リー・シン"
+     }
+    },
+    {
+     "topic_id": "champ-lillia",
+     "id": "Lillia",
+     "key": "876",
+     "name": {
+      "en": "Lillia",
+      "ja": "リリア"
+     }
+    },
+    {
+     "topic_id": "champ-reksai",
+     "id": "RekSai",
+     "key": "421",
+     "name": {
+      "en": "Rek'Sai",
+      "ja": "レク＝サイ"
+     }
+    },
+    {
+     "topic_id": "champ-rengar",
+     "id": "Rengar",
+     "key": "107",
+     "name": {
+      "en": "Rengar",
+      "ja": "レンガー"
+     }
+    },
+    {
+     "topic_id": "champ-warwick",
+     "id": "Warwick",
+     "key": "19",
+     "name": {
+      "en": "Warwick",
+      "ja": "ワーウィック"
+     }
+    }
+   ]
+  },
+  "role-mid": {
+   "client": [
+    {
+     "topic_id": "champ-ahri",
+     "id": "Ahri",
+     "key": "103",
+     "name": {
+      "en": "Ahri",
+      "ja": "アーリ"
+     }
+    },
+    {
+     "topic_id": "champ-akali",
+     "id": "Akali",
+     "key": "84",
+     "name": {
+      "en": "Akali",
+      "ja": "アカリ"
+     }
+    },
+    {
+     "topic_id": "champ-akshan",
+     "id": "Akshan",
+     "key": "166",
+     "name": {
+      "en": "Akshan",
+      "ja": "アクシャン"
+     }
+    },
+    {
+     "topic_id": "champ-azir",
+     "id": "Azir",
+     "key": "268",
+     "name": {
+      "en": "Azir",
+      "ja": "アジール"
+     }
+    },
+    {
+     "topic_id": "champ-annie",
+     "id": "Annie",
+     "key": "1",
+     "name": {
+      "en": "Annie",
+      "ja": "アニー"
+     }
+    },
+    {
+     "topic_id": "champ-anivia",
+     "id": "Anivia",
+     "key": "34",
+     "name": {
+      "en": "Anivia",
+      "ja": "アニビア"
+     }
+    },
+    {
+     "topic_id": "champ-irelia",
+     "id": "Irelia",
+     "key": "39",
+     "name": {
+      "en": "Irelia",
+      "ja": "イレリア"
+     }
+    },
+    {
+     "topic_id": "champ-vex",
+     "id": "Vex",
+     "key": "711",
+     "name": {
+      "en": "Vex",
+      "ja": "ヴェックス"
+     }
+    },
+    {
+     "topic_id": "champ-ekko",
+     "id": "Ekko",
+     "key": "245",
+     "name": {
+      "en": "Ekko",
+      "ja": "エコー"
+     }
+    },
+    {
+     "topic_id": "champ-aurora",
+     "id": "Aurora",
+     "key": "893",
+     "name": {
+      "en": "Aurora",
+      "ja": "オーロラ"
+     }
+    },
+    {
+     "topic_id": "champ-orianna",
+     "id": "Orianna",
+     "key": "61",
+     "name": {
+      "en": "Orianna",
+      "ja": "オリアナ"
+     }
+    },
+    {
+     "topic_id": "champ-aurelion-sol",
+     "id": "AurelionSol",
+     "key": "136",
+     "name": {
+      "en": "Aurelion Sol",
+      "ja": "オレリオン・ソル"
+     }
+    },
+    {
+     "topic_id": "champ-kassadin",
+     "id": "Kassadin",
+     "key": "38",
+     "name": {
+      "en": "Kassadin",
+      "ja": "カサディン"
+     }
+    },
+    {
+     "topic_id": "champ-cassiopeia",
+     "id": "Cassiopeia",
+     "key": "69",
+     "name": {
+      "en": "Cassiopeia",
+      "ja": "カシオペア"
+     }
+    },
+    {
+     "topic_id": "champ-katarina",
+     "id": "Katarina",
+     "key": "55",
+     "name": {
+      "en": "Katarina",
+      "ja": "カタリナ"
+     }
+    },
+    {
+     "topic_id": "champ-galio",
+     "id": "Galio",
+     "key": "3",
+     "name": {
+      "en": "Galio",
+      "ja": "ガリオ"
+     }
+    },
+    {
+     "topic_id": "champ-karma",
+     "id": "Karma",
+     "key": "43",
+     "name": {
+      "en": "Karma",
+      "ja": "カルマ"
+     }
+    },
+    {
+     "topic_id": "champ-qiyana",
+     "id": "Qiyana",
+     "key": "246",
+     "name": {
+      "en": "Qiyana",
+      "ja": "キヤナ"
+     }
+    },
+    {
+     "topic_id": "champ-sylas",
+     "id": "Sylas",
+     "key": "517",
+     "name": {
+      "en": "Sylas",
+      "ja": "サイラス"
+     }
+    },
+    {
+     "topic_id": "champ-syndra",
+     "id": "Syndra",
+     "key": "134",
+     "name": {
+      "en": "Syndra",
+      "ja": "シンドラ"
+     }
+    },
+    {
+     "topic_id": "champ-swain",
+     "id": "Swain",
+     "key": "50",
+     "name": {
+      "en": "Swain",
+      "ja": "スウェイン"
+     }
+    },
+    {
+     "topic_id": "champ-zed",
+     "id": "Zed",
+     "key": "238",
+     "name": {
+      "en": "Zed",
+      "ja": "ゼド"
+     }
+    },
+    {
+     "topic_id": "champ-xerath",
+     "id": "Xerath",
+     "key": "101",
+     "name": {
+      "en": "Xerath",
+      "ja": "ゼラス"
+     }
+    },
+    {
+     "topic_id": "champ-zoe",
+     "id": "Zoe",
+     "key": "142",
+     "name": {
+      "en": "Zoe",
+      "ja": "ゾーイ"
+     }
+    },
+    {
+     "topic_id": "champ-diana",
+     "id": "Diana",
+     "key": "131",
+     "name": {
+      "en": "Diana",
+      "ja": "ダイアナ"
+     }
+    },
+    {
+     "topic_id": "champ-taliyah",
+     "id": "Taliyah",
+     "key": "163",
+     "name": {
+      "en": "Taliyah",
+      "ja": "タリヤ"
+     }
+    },
+    {
+     "topic_id": "champ-talon",
+     "id": "Talon",
+     "key": "91",
+     "name": {
+      "en": "Talon",
+      "ja": "タロン"
+     }
+    },
+    {
+     "topic_id": "champ-twisted-fate",
+     "id": "TwistedFate",
+     "key": "4",
+     "name": {
+      "en": "Twisted Fate",
+      "ja": "ツイステッド・フェイト"
+     }
+    },
+    {
+     "topic_id": "champ-naafiri",
+     "id": "Naafiri",
+     "key": "950",
+     "name": {
+      "en": "Naafiri",
+      "ja": "ナフィーリ"
+     }
+    },
+    {
+     "topic_id": "champ-neeko",
+     "id": "Neeko",
+     "key": "518",
+     "name": {
+      "en": "Neeko",
+      "ja": "ニーコ"
+     }
+    },
+    {
+     "topic_id": "champ-viktor",
+     "id": "Viktor",
+     "key": "112",
+     "name": {
+      "en": "Viktor",
+      "ja": "ビクター"
+     }
+    },
+    {
+     "topic_id": "champ-fizz",
+     "id": "Fizz",
+     "key": "105",
+     "name": {
+      "en": "Fizz",
+      "ja": "フィズ"
+     }
+    },
+    {
+     "topic_id": "champ-hwei",
+     "id": "Hwei",
+     "key": "910",
+     "name": {
+      "en": "Hwei",
+      "ja": "フェイ"
+     }
+    },
+    {
+     "topic_id": "champ-vladimir",
+     "id": "Vladimir",
+     "key": "8",
+     "name": {
+      "en": "Vladimir",
+      "ja": "ブラッドミア"
+     }
+    },
+    {
+     "topic_id": "champ-veigar",
+     "id": "Veigar",
+     "key": "45",
+     "name": {
+      "en": "Veigar",
+      "ja": "ベイガー"
+     }
+    },
+    {
+     "topic_id": "champ-malzahar",
+     "id": "Malzahar",
+     "key": "90",
+     "name": {
+      "en": "Malzahar",
+      "ja": "マルザハール"
+     }
+    },
+    {
+     "topic_id": "champ-mel",
+     "id": "Mel",
+     "key": "800",
+     "name": {
+      "en": "Mel",
+      "ja": "メル"
+     }
+    },
+    {
+     "topic_id": "champ-morgana",
+     "id": "Morgana",
+     "key": "25",
+     "name": {
+      "en": "Morgana",
+      "ja": "モルガナ"
+     }
+    },
+    {
+     "topic_id": "champ-yasuo",
+     "id": "Yasuo",
+     "key": "157",
+     "name": {
+      "en": "Yasuo",
+      "ja": "ヤスオ"
+     }
+    },
+    {
+     "topic_id": "champ-yone",
+     "id": "Yone",
+     "key": "777",
+     "name": {
+      "en": "Yone",
+      "ja": "ヨネ"
+     }
+    },
+    {
+     "topic_id": "champ-ryze",
+     "id": "Ryze",
+     "key": "13",
+     "name": {
+      "en": "Ryze",
+      "ja": "ライズ"
+     }
+    },
+    {
+     "topic_id": "champ-lux",
+     "id": "Lux",
+     "key": "99",
+     "name": {
+      "en": "Lux",
+      "ja": "ラックス"
+     }
+    },
+    {
+     "topic_id": "champ-lissandra",
+     "id": "Lissandra",
+     "key": "127",
+     "name": {
+      "en": "Lissandra",
+      "ja": "リサンドラ"
+     }
+    },
+    {
+     "topic_id": "champ-leblanc",
+     "id": "Leblanc",
+     "key": "7",
+     "name": {
+      "en": "LeBlanc",
+      "ja": "ルブラン"
+     }
+    },
+    {
+     "topic_id": "champ-locke",
+     "id": "Locke",
+     "key": "805",
+     "name": {
+      "en": "Locke",
+      "ja": "ロック"
+     }
+    }
+   ],
+   "external": [
+    {
+     "topic_id": "champ-ahri",
+     "id": "Ahri",
+     "key": "103",
+     "name": {
+      "en": "Ahri",
+      "ja": "アーリ"
+     }
+    },
+    {
+     "topic_id": "champ-akali",
+     "id": "Akali",
+     "key": "84",
+     "name": {
+      "en": "Akali",
+      "ja": "アカリ"
+     }
+    },
+    {
+     "topic_id": "champ-akshan",
+     "id": "Akshan",
+     "key": "166",
+     "name": {
+      "en": "Akshan",
+      "ja": "アクシャン"
+     }
+    },
+    {
+     "topic_id": "champ-azir",
+     "id": "Azir",
+     "key": "268",
+     "name": {
+      "en": "Azir",
+      "ja": "アジール"
+     }
+    },
+    {
+     "topic_id": "champ-annie",
+     "id": "Annie",
+     "key": "1",
+     "name": {
+      "en": "Annie",
+      "ja": "アニー"
+     }
+    },
+    {
+     "topic_id": "champ-anivia",
+     "id": "Anivia",
+     "key": "34",
+     "name": {
+      "en": "Anivia",
+      "ja": "アニビア"
+     }
+    },
+    {
+     "topic_id": "champ-irelia",
+     "id": "Irelia",
+     "key": "39",
+     "name": {
+      "en": "Irelia",
+      "ja": "イレリア"
+     }
+    },
+    {
+     "topic_id": "champ-vex",
+     "id": "Vex",
+     "key": "711",
+     "name": {
+      "en": "Vex",
+      "ja": "ヴェックス"
+     }
+    },
+    {
+     "topic_id": "champ-velkoz",
+     "id": "Velkoz",
+     "key": "161",
+     "name": {
+      "en": "Vel'Koz",
+      "ja": "ヴェル＝コズ"
+     }
+    },
+    {
+     "topic_id": "champ-ekko",
+     "id": "Ekko",
+     "key": "245",
+     "name": {
+      "en": "Ekko",
+      "ja": "エコー"
+     }
+    },
+    {
+     "topic_id": "champ-aurora",
+     "id": "Aurora",
+     "key": "893",
+     "name": {
+      "en": "Aurora",
+      "ja": "オーロラ"
+     }
+    },
+    {
+     "topic_id": "champ-orianna",
+     "id": "Orianna",
+     "key": "61",
+     "name": {
+      "en": "Orianna",
+      "ja": "オリアナ"
+     }
+    },
+    {
+     "topic_id": "champ-aurelion-sol",
+     "id": "AurelionSol",
+     "key": "136",
+     "name": {
+      "en": "Aurelion Sol",
+      "ja": "オレリオン・ソル"
+     }
+    },
+    {
+     "topic_id": "champ-kassadin",
+     "id": "Kassadin",
+     "key": "38",
+     "name": {
+      "en": "Kassadin",
+      "ja": "カサディン"
+     }
+    },
+    {
+     "topic_id": "champ-cassiopeia",
+     "id": "Cassiopeia",
+     "key": "69",
+     "name": {
+      "en": "Cassiopeia",
+      "ja": "カシオペア"
+     }
+    },
+    {
+     "topic_id": "champ-katarina",
+     "id": "Katarina",
+     "key": "55",
+     "name": {
+      "en": "Katarina",
+      "ja": "カタリナ"
+     }
+    },
+    {
+     "topic_id": "champ-galio",
+     "id": "Galio",
+     "key": "3",
+     "name": {
+      "en": "Galio",
+      "ja": "ガリオ"
+     }
+    },
+    {
+     "topic_id": "champ-karma",
+     "id": "Karma",
+     "key": "43",
+     "name": {
+      "en": "Karma",
+      "ja": "カルマ"
+     }
+    },
+    {
+     "topic_id": "champ-qiyana",
+     "id": "Qiyana",
+     "key": "246",
+     "name": {
+      "en": "Qiyana",
+      "ja": "キヤナ"
+     }
+    },
+    {
+     "topic_id": "champ-gragas",
+     "id": "Gragas",
+     "key": "79",
+     "name": {
+      "en": "Gragas",
+      "ja": "グラガス"
+     }
+    },
+    {
+     "topic_id": "champ-corki",
+     "id": "Corki",
+     "key": "42",
+     "name": {
+      "en": "Corki",
+      "ja": "コーキ"
+     }
+    },
+    {
+     "topic_id": "champ-sylas",
+     "id": "Sylas",
+     "key": "517",
+     "name": {
+      "en": "Sylas",
+      "ja": "サイラス"
+     }
+    },
+    {
+     "topic_id": "champ-jayce",
+     "id": "Jayce",
+     "key": "126",
+     "name": {
+      "en": "Jayce",
+      "ja": "ジェイス"
+     }
+    },
+    {
+     "topic_id": "champ-ziggs",
+     "id": "Ziggs",
+     "key": "115",
+     "name": {
+      "en": "Ziggs",
+      "ja": "ジグス"
+     }
+    },
+    {
+     "topic_id": "champ-syndra",
+     "id": "Syndra",
+     "key": "134",
+     "name": {
+      "en": "Syndra",
+      "ja": "シンドラ"
+     }
+    },
+    {
+     "topic_id": "champ-swain",
+     "id": "Swain",
+     "key": "50",
+     "name": {
+      "en": "Swain",
+      "ja": "スウェイン"
+     }
+    },
+    {
+     "topic_id": "champ-smolder",
+     "id": "Smolder",
+     "key": "901",
+     "name": {
+      "en": "Smolder",
+      "ja": "スモルダー"
+     }
+    },
+    {
+     "topic_id": "champ-zed",
+     "id": "Zed",
+     "key": "238",
+     "name": {
+      "en": "Zed",
+      "ja": "ゼド"
+     }
+    },
+    {
+     "topic_id": "champ-xerath",
+     "id": "Xerath",
+     "key": "101",
+     "name": {
+      "en": "Xerath",
+      "ja": "ゼラス"
+     }
+    },
+    {
+     "topic_id": "champ-zoe",
+     "id": "Zoe",
+     "key": "142",
+     "name": {
+      "en": "Zoe",
+      "ja": "ゾーイ"
+     }
+    },
+    {
+     "topic_id": "champ-diana",
+     "id": "Diana",
+     "key": "131",
+     "name": {
+      "en": "Diana",
+      "ja": "ダイアナ"
+     }
+    },
+    {
+     "topic_id": "champ-taric",
+     "id": "Taric",
+     "key": "44",
+     "name": {
+      "en": "Taric",
+      "ja": "タリック"
+     }
+    },
+    {
+     "topic_id": "champ-taliyah",
+     "id": "Taliyah",
+     "key": "163",
+     "name": {
+      "en": "Taliyah",
+      "ja": "タリヤ"
+     }
+    },
+    {
+     "topic_id": "champ-twisted-fate",
+     "id": "TwistedFate",
+     "key": "4",
+     "name": {
+      "en": "Twisted Fate",
+      "ja": "ツイステッド・フェイト"
+     }
+    },
+    {
+     "topic_id": "champ-tristana",
+     "id": "Tristana",
+     "key": "18",
+     "name": {
+      "en": "Tristana",
+      "ja": "トリスターナ"
+     }
+    },
+    {
+     "topic_id": "champ-naafiri",
+     "id": "Naafiri",
+     "key": "950",
+     "name": {
+      "en": "Naafiri",
+      "ja": "ナフィーリ"
+     }
+    },
+    {
+     "topic_id": "champ-neeko",
+     "id": "Neeko",
+     "key": "518",
+     "name": {
+      "en": "Neeko",
+      "ja": "ニーコ"
+     }
+    },
+    {
+     "topic_id": "champ-heimerdinger",
+     "id": "Heimerdinger",
+     "key": "74",
+     "name": {
+      "en": "Heimerdinger",
+      "ja": "ハイマーディンガー"
+     }
+    },
+    {
+     "topic_id": "champ-pantheon",
+     "id": "Pantheon",
+     "key": "80",
+     "name": {
+      "en": "Pantheon",
+      "ja": "パンテオン"
+     }
+    },
+    {
+     "topic_id": "champ-viktor",
+     "id": "Viktor",
+     "key": "112",
+     "name": {
+      "en": "Viktor",
+      "ja": "ビクター"
+     }
+    },
+    {
+     "topic_id": "champ-fizz",
+     "id": "Fizz",
+     "key": "105",
+     "name": {
+      "en": "Fizz",
+      "ja": "フィズ"
+     }
+    },
+    {
+     "topic_id": "champ-hwei",
+     "id": "Hwei",
+     "key": "910",
+     "name": {
+      "en": "Hwei",
+      "ja": "フェイ"
+     }
+    },
+    {
+     "topic_id": "champ-vladimir",
+     "id": "Vladimir",
+     "key": "8",
+     "name": {
+      "en": "Vladimir",
+      "ja": "ブラッドミア"
+     }
+    },
+    {
+     "topic_id": "champ-brand",
+     "id": "Brand",
+     "key": "63",
+     "name": {
+      "en": "Brand",
+      "ja": "ブランド"
+     }
+    },
+    {
+     "topic_id": "champ-veigar",
+     "id": "Veigar",
+     "key": "45",
+     "name": {
+      "en": "Veigar",
+      "ja": "ベイガー"
+     }
+    },
+    {
+     "topic_id": "champ-malzahar",
+     "id": "Malzahar",
+     "key": "90",
+     "name": {
+      "en": "Malzahar",
+      "ja": "マルザハール"
+     }
+    },
+    {
+     "topic_id": "champ-malphite",
+     "id": "Malphite",
+     "key": "54",
+     "name": {
+      "en": "Malphite",
+      "ja": "マルファイト"
+     }
+    },
+    {
+     "topic_id": "champ-mel",
+     "id": "Mel",
+     "key": "800",
+     "name": {
+      "en": "Mel",
+      "ja": "メル"
+     }
+    },
+    {
+     "topic_id": "champ-morgana",
+     "id": "Morgana",
+     "key": "25",
+     "name": {
+      "en": "Morgana",
+      "ja": "モルガナ"
+     }
+    },
+    {
+     "topic_id": "champ-yasuo",
+     "id": "Yasuo",
+     "key": "157",
+     "name": {
+      "en": "Yasuo",
+      "ja": "ヤスオ"
+     }
+    },
+    {
+     "topic_id": "champ-yone",
+     "id": "Yone",
+     "key": "777",
+     "name": {
+      "en": "Yone",
+      "ja": "ヨネ"
+     }
+    },
+    {
+     "topic_id": "champ-ryze",
+     "id": "Ryze",
+     "key": "13",
+     "name": {
+      "en": "Ryze",
+      "ja": "ライズ"
+     }
+    },
+    {
+     "topic_id": "champ-lux",
+     "id": "Lux",
+     "key": "99",
+     "name": {
+      "en": "Lux",
+      "ja": "ラックス"
+     }
+    },
+    {
+     "topic_id": "champ-rumble",
+     "id": "Rumble",
+     "key": "68",
+     "name": {
+      "en": "Rumble",
+      "ja": "ランブル"
+     }
+    },
+    {
+     "topic_id": "champ-lissandra",
+     "id": "Lissandra",
+     "key": "127",
+     "name": {
+      "en": "Lissandra",
+      "ja": "リサンドラ"
+     }
+    },
+    {
+     "topic_id": "champ-leblanc",
+     "id": "Leblanc",
+     "key": "7",
+     "name": {
+      "en": "LeBlanc",
+      "ja": "ルブラン"
+     }
+    },
+    {
+     "topic_id": "champ-locke",
+     "id": "Locke",
+     "key": "805",
+     "name": {
+      "en": "Locke",
+      "ja": "ロック"
+     }
+    }
+   ]
+  },
+  "role-bot": {
+   "client": [
+    {
+     "topic_id": "champ-ashe",
+     "id": "Ashe",
+     "key": "22",
+     "name": {
+      "en": "Ashe",
+      "ja": "アッシュ"
+     }
+    },
+    {
+     "topic_id": "champ-aphelios",
+     "id": "Aphelios",
+     "key": "523",
+     "name": {
+      "en": "Aphelios",
+      "ja": "アフェリオス"
+     }
+    },
+    {
+     "topic_id": "champ-varus",
+     "id": "Varus",
+     "key": "110",
+     "name": {
+      "en": "Varus",
+      "ja": "ヴァルス"
+     }
+    },
+    {
+     "topic_id": "champ-vayne",
+     "id": "Vayne",
+     "key": "67",
+     "name": {
+      "en": "Vayne",
+      "ja": "ヴェイン"
+     }
+    },
+    {
+     "topic_id": "champ-ezreal",
+     "id": "Ezreal",
+     "key": "81",
+     "name": {
+      "en": "Ezreal",
+      "ja": "エズリアル"
+     }
+    },
+    {
+     "topic_id": "champ-kaisa",
+     "id": "Kaisa",
+     "key": "145",
+     "name": {
+      "en": "Kai'Sa",
+      "ja": "カイ＝サ"
+     }
+    },
+    {
+     "topic_id": "champ-kalista",
+     "id": "Kalista",
+     "key": "429",
+     "name": {
+      "en": "Kalista",
+      "ja": "カリスタ"
+     }
+    },
+    {
+     "topic_id": "champ-caitlyn",
+     "id": "Caitlyn",
+     "key": "51",
+     "name": {
+      "en": "Caitlyn",
+      "ja": "ケイトリン"
+     }
+    },
+    {
+     "topic_id": "champ-corki",
+     "id": "Corki",
+     "key": "42",
+     "name": {
+      "en": "Corki",
+      "ja": "コーキ"
+     }
+    },
+    {
+     "topic_id": "champ-kogmaw",
+     "id": "KogMaw",
+     "key": "96",
+     "name": {
+      "en": "Kog'Maw",
+      "ja": "コグ＝マウ"
+     }
+    },
+    {
+     "topic_id": "champ-samira",
+     "id": "Samira",
+     "key": "360",
+     "name": {
+      "en": "Samira",
+      "ja": "サミーラ"
+     }
+    },
+    {
+     "topic_id": "champ-xayah",
+     "id": "Xayah",
+     "key": "498",
+     "name": {
+      "en": "Xayah",
+      "ja": "ザヤ"
+     }
+    },
+    {
+     "topic_id": "champ-sivir",
+     "id": "Sivir",
+     "key": "15",
+     "name": {
+      "en": "Sivir",
+      "ja": "シヴィア"
+     }
+    },
+    {
+     "topic_id": "champ-ziggs",
+     "id": "Ziggs",
+     "key": "115",
+     "name": {
+      "en": "Ziggs",
+      "ja": "ジグス"
+     }
+    },
+    {
+     "topic_id": "champ-jhin",
+     "id": "Jhin",
+     "key": "202",
+     "name": {
+      "en": "Jhin",
+      "ja": "ジン"
+     }
+    },
+    {
+     "topic_id": "champ-jinx",
+     "id": "Jinx",
+     "key": "222",
+     "name": {
+      "en": "Jinx",
+      "ja": "ジンクス"
+     }
+    },
+    {
+     "topic_id": "champ-smolder",
+     "id": "Smolder",
+     "key": "901",
+     "name": {
+      "en": "Smolder",
+      "ja": "スモルダー"
+     }
+    },
+    {
+     "topic_id": "champ-senna",
+     "id": "Senna",
+     "key": "235",
+     "name": {
+      "en": "Senna",
+      "ja": "セナ"
+     }
+    },
+    {
+     "topic_id": "champ-seraphine",
+     "id": "Seraphine",
+     "key": "147",
+     "name": {
+      "en": "Seraphine",
+      "ja": "セラフィーン"
+     }
+    },
+    {
+     "topic_id": "champ-zeri",
+     "id": "Zeri",
+     "key": "221",
+     "name": {
+      "en": "Zeri",
+      "ja": "ゼリ"
+     }
+    },
+    {
+     "topic_id": "champ-twisted-fate",
+     "id": "TwistedFate",
+     "key": "4",
+     "name": {
+      "en": "Twisted Fate",
+      "ja": "ツイステッド・フェイト"
+     }
+    },
+    {
+     "topic_id": "champ-twitch",
+     "id": "Twitch",
+     "key": "29",
+     "name": {
+      "en": "Twitch",
+      "ja": "トゥイッチ"
+     }
+    },
+    {
+     "topic_id": "champ-tristana",
+     "id": "Tristana",
+     "key": "18",
+     "name": {
+      "en": "Tristana",
+      "ja": "トリスターナ"
+     }
+    },
+    {
+     "topic_id": "champ-draven",
+     "id": "Draven",
+     "key": "119",
+     "name": {
+      "en": "Draven",
+      "ja": "ドレイヴン"
+     }
+    },
+    {
+     "topic_id": "champ-nilah",
+     "id": "Nilah",
+     "key": "895",
+     "name": {
+      "en": "Nilah",
+      "ja": "ニーラ"
+     }
+    },
+    {
+     "topic_id": "champ-miss-fortune",
+     "id": "MissFortune",
+     "key": "21",
+     "name": {
+      "en": "Miss Fortune",
+      "ja": "ミス・フォーチュン"
+     }
+    },
+    {
+     "topic_id": "champ-yasuo",
+     "id": "Yasuo",
+     "key": "157",
+     "name": {
+      "en": "Yasuo",
+      "ja": "ヤスオ"
+     }
+    },
+    {
+     "topic_id": "champ-yunara",
+     "id": "Yunara",
+     "key": "804",
+     "name": {
+      "en": "Yunara",
+      "ja": "ユナラ"
+     }
+    },
+    {
+     "topic_id": "champ-lucian",
+     "id": "Lucian",
+     "key": "236",
+     "name": {
+      "en": "Lucian",
+      "ja": "ルシアン"
+     }
+    }
+   ],
+   "external": [
+    {
+     "topic_id": "champ-ashe",
+     "id": "Ashe",
+     "key": "22",
+     "name": {
+      "en": "Ashe",
+      "ja": "アッシュ"
+     }
+    },
+    {
+     "topic_id": "champ-aphelios",
+     "id": "Aphelios",
+     "key": "523",
+     "name": {
+      "en": "Aphelios",
+      "ja": "アフェリオス"
+     }
+    },
+    {
+     "topic_id": "champ-varus",
+     "id": "Varus",
+     "key": "110",
+     "name": {
+      "en": "Varus",
+      "ja": "ヴァルス"
+     }
+    },
+    {
+     "topic_id": "champ-vayne",
+     "id": "Vayne",
+     "key": "67",
+     "name": {
+      "en": "Vayne",
+      "ja": "ヴェイン"
+     }
+    },
+    {
+     "topic_id": "champ-ezreal",
+     "id": "Ezreal",
+     "key": "81",
+     "name": {
+      "en": "Ezreal",
+      "ja": "エズリアル"
+     }
+    },
+    {
+     "topic_id": "champ-kaisa",
+     "id": "Kaisa",
+     "key": "145",
+     "name": {
+      "en": "Kai'Sa",
+      "ja": "カイ＝サ"
+     }
+    },
+    {
+     "topic_id": "champ-kalista",
+     "id": "Kalista",
+     "key": "429",
+     "name": {
+      "en": "Kalista",
+      "ja": "カリスタ"
+     }
+    },
+    {
+     "topic_id": "champ-caitlyn",
+     "id": "Caitlyn",
+     "key": "51",
+     "name": {
+      "en": "Caitlyn",
+      "ja": "ケイトリン"
+     }
+    },
+    {
+     "topic_id": "champ-corki",
+     "id": "Corki",
+     "key": "42",
+     "name": {
+      "en": "Corki",
+      "ja": "コーキ"
+     }
+    },
+    {
+     "topic_id": "champ-kogmaw",
+     "id": "KogMaw",
+     "key": "96",
+     "name": {
+      "en": "Kog'Maw",
+      "ja": "コグ＝マウ"
+     }
+    },
+    {
+     "topic_id": "champ-samira",
+     "id": "Samira",
+     "key": "360",
+     "name": {
+      "en": "Samira",
+      "ja": "サミーラ"
+     }
+    },
+    {
+     "topic_id": "champ-xayah",
+     "id": "Xayah",
+     "key": "498",
+     "name": {
+      "en": "Xayah",
+      "ja": "ザヤ"
+     }
+    },
+    {
+     "topic_id": "champ-sivir",
+     "id": "Sivir",
+     "key": "15",
+     "name": {
+      "en": "Sivir",
+      "ja": "シヴィア"
+     }
+    },
+    {
+     "topic_id": "champ-ziggs",
+     "id": "Ziggs",
+     "key": "115",
+     "name": {
+      "en": "Ziggs",
+      "ja": "ジグス"
+     }
+    },
+    {
+     "topic_id": "champ-jhin",
+     "id": "Jhin",
+     "key": "202",
+     "name": {
+      "en": "Jhin",
+      "ja": "ジン"
+     }
+    },
+    {
+     "topic_id": "champ-jinx",
+     "id": "Jinx",
+     "key": "222",
+     "name": {
+      "en": "Jinx",
+      "ja": "ジンクス"
+     }
+    },
+    {
+     "topic_id": "champ-swain",
+     "id": "Swain",
+     "key": "50",
+     "name": {
+      "en": "Swain",
+      "ja": "スウェイン"
+     }
+    },
+    {
+     "topic_id": "champ-smolder",
+     "id": "Smolder",
+     "key": "901",
+     "name": {
+      "en": "Smolder",
+      "ja": "スモルダー"
+     }
+    },
+    {
+     "topic_id": "champ-senna",
+     "id": "Senna",
+     "key": "235",
+     "name": {
+      "en": "Senna",
+      "ja": "セナ"
+     }
+    },
+    {
+     "topic_id": "champ-seraphine",
+     "id": "Seraphine",
+     "key": "147",
+     "name": {
+      "en": "Seraphine",
+      "ja": "セラフィーン"
+     }
+    },
+    {
+     "topic_id": "champ-zeri",
+     "id": "Zeri",
+     "key": "221",
+     "name": {
+      "en": "Zeri",
+      "ja": "ゼリ"
+     }
+    },
+    {
+     "topic_id": "champ-twisted-fate",
+     "id": "TwistedFate",
+     "key": "4",
+     "name": {
+      "en": "Twisted Fate",
+      "ja": "ツイステッド・フェイト"
+     }
+    },
+    {
+     "topic_id": "champ-twitch",
+     "id": "Twitch",
+     "key": "29",
+     "name": {
+      "en": "Twitch",
+      "ja": "トゥイッチ"
+     }
+    },
+    {
+     "topic_id": "champ-tristana",
+     "id": "Tristana",
+     "key": "18",
+     "name": {
+      "en": "Tristana",
+      "ja": "トリスターナ"
+     }
+    },
+    {
+     "topic_id": "champ-draven",
+     "id": "Draven",
+     "key": "119",
+     "name": {
+      "en": "Draven",
+      "ja": "ドレイヴン"
+     }
+    },
+    {
+     "topic_id": "champ-nilah",
+     "id": "Nilah",
+     "key": "895",
+     "name": {
+      "en": "Nilah",
+      "ja": "ニーラ"
+     }
+    },
+    {
+     "topic_id": "champ-miss-fortune",
+     "id": "MissFortune",
+     "key": "21",
+     "name": {
+      "en": "Miss Fortune",
+      "ja": "ミス・フォーチュン"
+     }
+    },
+    {
+     "topic_id": "champ-yasuo",
+     "id": "Yasuo",
+     "key": "157",
+     "name": {
+      "en": "Yasuo",
+      "ja": "ヤスオ"
+     }
+    },
+    {
+     "topic_id": "champ-yunara",
+     "id": "Yunara",
+     "key": "804",
+     "name": {
+      "en": "Yunara",
+      "ja": "ユナラ"
+     }
+    },
+    {
+     "topic_id": "champ-lucian",
+     "id": "Lucian",
+     "key": "236",
+     "name": {
+      "en": "Lucian",
+      "ja": "ルシアン"
+     }
+    }
+   ]
+  },
+  "role-support": {
+   "client": [
+    {
+     "topic_id": "champ-ashe",
+     "id": "Ashe",
+     "key": "22",
+     "name": {
+      "en": "Ashe",
+      "ja": "アッシュ"
+     }
+    },
+    {
+     "topic_id": "champ-alistar",
+     "id": "Alistar",
+     "key": "12",
+     "name": {
+      "en": "Alistar",
+      "ja": "アリスター"
+     }
+    },
+    {
+     "topic_id": "champ-velkoz",
+     "id": "Velkoz",
+     "key": "161",
+     "name": {
+      "en": "Vel'Koz",
+      "ja": "ヴェル＝コズ"
+     }
+    },
+    {
+     "topic_id": "champ-karma",
+     "id": "Karma",
+     "key": "43",
+     "name": {
+      "en": "Karma",
+      "ja": "カルマ"
+     }
+    },
+    {
+     "topic_id": "champ-zyra",
+     "id": "Zyra",
+     "key": "143",
+     "name": {
+      "en": "Zyra",
+      "ja": "ザイラ"
+     }
+    },
+    {
+     "topic_id": "champ-janna",
+     "id": "Janna",
+     "key": "40",
+     "name": {
+      "en": "Janna",
+      "ja": "ジャンナ"
+     }
+    },
+    {
+     "topic_id": "champ-zilean",
+     "id": "Zilean",
+     "key": "26",
+     "name": {
+      "en": "Zilean",
+      "ja": "ジリアン"
+     }
+    },
+    {
+     "topic_id": "champ-swain",
+     "id": "Swain",
+     "key": "50",
+     "name": {
+      "en": "Swain",
+      "ja": "スウェイン"
+     }
+    },
+    {
+     "topic_id": "champ-thresh",
+     "id": "Thresh",
+     "key": "412",
+     "name": {
+      "en": "Thresh",
+      "ja": "スレッシュ"
+     }
+    },
+    {
+     "topic_id": "champ-senna",
+     "id": "Senna",
+     "key": "235",
+     "name": {
+      "en": "Senna",
+      "ja": "セナ"
+     }
+    },
+    {
+     "topic_id": "champ-xerath",
+     "id": "Xerath",
+     "key": "101",
+     "name": {
+      "en": "Xerath",
+      "ja": "ゼラス"
+     }
+    },
+    {
+     "topic_id": "champ-seraphine",
+     "id": "Seraphine",
+     "key": "147",
+     "name": {
+      "en": "Seraphine",
+      "ja": "セラフィーン"
+     }
+    },
+    {
+     "topic_id": "champ-sona",
+     "id": "Sona",
+     "key": "37",
+     "name": {
+      "en": "Sona",
+      "ja": "ソナ"
+     }
+    },
+    {
+     "topic_id": "champ-soraka",
+     "id": "Soraka",
+     "key": "16",
+     "name": {
+      "en": "Soraka",
+      "ja": "ソラカ"
+     }
+    },
+    {
+     "topic_id": "champ-taric",
+     "id": "Taric",
+     "key": "44",
+     "name": {
+      "en": "Taric",
+      "ja": "タリック"
+     }
+    },
+    {
+     "topic_id": "champ-nami",
+     "id": "Nami",
+     "key": "267",
+     "name": {
+      "en": "Nami",
+      "ja": "ナミ"
+     }
+    },
+    {
+     "topic_id": "champ-neeko",
+     "id": "Neeko",
+     "key": "518",
+     "name": {
+      "en": "Neeko",
+      "ja": "ニーコ"
+     }
+    },
+    {
+     "topic_id": "champ-nautilus",
+     "id": "Nautilus",
+     "key": "111",
+     "name": {
+      "en": "Nautilus",
+      "ja": "ノーチラス"
+     }
+    },
+    {
+     "topic_id": "champ-bard",
+     "id": "Bard",
+     "key": "432",
+     "name": {
+      "en": "Bard",
+      "ja": "バード"
+     }
+    },
+    {
+     "topic_id": "champ-pyke",
+     "id": "Pyke",
+     "key": "555",
+     "name": {
+      "en": "Pyke",
+      "ja": "パイク"
+     }
+    },
+    {
+     "topic_id": "champ-pantheon",
+     "id": "Pantheon",
+     "key": "80",
+     "name": {
+      "en": "Pantheon",
+      "ja": "パンテオン"
+     }
+    },
+    {
+     "topic_id": "champ-hwei",
+     "id": "Hwei",
+     "key": "910",
+     "name": {
+      "en": "Hwei",
+      "ja": "フェイ"
+     }
+    },
+    {
+     "topic_id": "champ-braum",
+     "id": "Braum",
+     "key": "201",
+     "name": {
+      "en": "Braum",
+      "ja": "ブラウム"
+     }
+    },
+    {
+     "topic_id": "champ-brand",
+     "id": "Brand",
+     "key": "63",
+     "name": {
+      "en": "Brand",
+      "ja": "ブランド"
+     }
+    },
+    {
+     "topic_id": "champ-blitzcrank",
+     "id": "Blitzcrank",
+     "key": "53",
+     "name": {
+      "en": "Blitzcrank",
+      "ja": "ブリッツクランク"
+     }
+    },
+    {
+     "topic_id": "champ-maokai",
+     "id": "Maokai",
+     "key": "57",
+     "name": {
+      "en": "Maokai",
+      "ja": "マオカイ"
+     }
+    },
+    {
+     "topic_id": "champ-milio",
+     "id": "Milio",
+     "key": "902",
+     "name": {
+      "en": "Milio",
+      "ja": "ミリオ"
+     }
+    },
+    {
+     "topic_id": "champ-mel",
+     "id": "Mel",
+     "key": "800",
+     "name": {
+      "en": "Mel",
+      "ja": "メル"
+     }
+    },
+    {
+     "topic_id": "champ-morgana",
+     "id": "Morgana",
+     "key": "25",
+     "name": {
+      "en": "Morgana",
+      "ja": "モルガナ"
+     }
+    },
+    {
+     "topic_id": "champ-yuumi",
+     "id": "Yuumi",
+     "key": "350",
+     "name": {
+      "en": "Yuumi",
+      "ja": "ユーミ"
+     }
+    },
+    {
+     "topic_id": "champ-rakan",
+     "id": "Rakan",
+     "key": "497",
+     "name": {
+      "en": "Rakan",
+      "ja": "ラカン"
+     }
+    },
+    {
+     "topic_id": "champ-lux",
+     "id": "Lux",
+     "key": "99",
+     "name": {
+      "en": "Lux",
+      "ja": "ラックス"
+     }
+    },
+    {
+     "topic_id": "champ-lulu",
+     "id": "Lulu",
+     "key": "117",
+     "name": {
+      "en": "Lulu",
+      "ja": "ルル"
+     }
+    },
+    {
+     "topic_id": "champ-leona",
+     "id": "Leona",
+     "key": "89",
+     "name": {
+      "en": "Leona",
+      "ja": "レオナ"
+     }
+    },
+    {
+     "topic_id": "champ-renata-glasc",
+     "id": "Renata",
+     "key": "888",
+     "name": {
+      "en": "Renata Glasc",
+      "ja": "レナータ・グラスク"
+     }
+    },
+    {
+     "topic_id": "champ-rell",
+     "id": "Rell",
+     "key": "526",
+     "name": {
+      "en": "Rell",
+      "ja": "レル"
+     }
+    }
+   ],
+   "external": [
+    {
+     "topic_id": "champ-ashe",
+     "id": "Ashe",
+     "key": "22",
+     "name": {
+      "en": "Ashe",
+      "ja": "アッシュ"
+     }
+    },
+    {
+     "topic_id": "champ-amumu",
+     "id": "Amumu",
+     "key": "32",
+     "name": {
+      "en": "Amumu",
+      "ja": "アムム"
+     }
+    },
+    {
+     "topic_id": "champ-alistar",
+     "id": "Alistar",
+     "key": "12",
+     "name": {
+      "en": "Alistar",
+      "ja": "アリスター"
+     }
+    },
+    {
+     "topic_id": "champ-velkoz",
+     "id": "Velkoz",
+     "key": "161",
+     "name": {
+      "en": "Vel'Koz",
+      "ja": "ヴェル＝コズ"
+     }
+    },
+    {
+     "topic_id": "champ-camille",
+     "id": "Camille",
+     "key": "164",
+     "name": {
+      "en": "Camille",
+      "ja": "カミール"
+     }
+    },
+    {
+     "topic_id": "champ-galio",
+     "id": "Galio",
+     "key": "3",
+     "name": {
+      "en": "Galio",
+      "ja": "ガリオ"
+     }
+    },
+    {
+     "topic_id": "champ-karma",
+     "id": "Karma",
+     "key": "43",
+     "name": {
+      "en": "Karma",
+      "ja": "カルマ"
+     }
+    },
+    {
+     "topic_id": "champ-zyra",
+     "id": "Zyra",
+     "key": "143",
+     "name": {
+      "en": "Zyra",
+      "ja": "ザイラ"
+     }
+    },
+    {
+     "topic_id": "champ-zac",
+     "id": "Zac",
+     "key": "154",
+     "name": {
+      "en": "Zac",
+      "ja": "ザック"
+     }
+    },
+    {
+     "topic_id": "champ-shen",
+     "id": "Shen",
+     "key": "98",
+     "name": {
+      "en": "Shen",
+      "ja": "シェン"
+     }
+    },
+    {
+     "topic_id": "champ-shaco",
+     "id": "Shaco",
+     "key": "35",
+     "name": {
+      "en": "Shaco",
+      "ja": "シャコ"
+     }
+    },
+    {
+     "topic_id": "champ-janna",
+     "id": "Janna",
+     "key": "40",
+     "name": {
+      "en": "Janna",
+      "ja": "ジャンナ"
+     }
+    },
+    {
+     "topic_id": "champ-zilean",
+     "id": "Zilean",
+     "key": "26",
+     "name": {
+      "en": "Zilean",
+      "ja": "ジリアン"
+     }
+    },
+    {
+     "topic_id": "champ-swain",
+     "id": "Swain",
+     "key": "50",
+     "name": {
+      "en": "Swain",
+      "ja": "スウェイン"
+     }
+    },
+    {
+     "topic_id": "champ-thresh",
+     "id": "Thresh",
+     "key": "412",
+     "name": {
+      "en": "Thresh",
+      "ja": "スレッシュ"
+     }
+    },
+    {
+     "topic_id": "champ-senna",
+     "id": "Senna",
+     "key": "235",
+     "name": {
+      "en": "Senna",
+      "ja": "セナ"
+     }
+    },
+    {
+     "topic_id": "champ-xerath",
+     "id": "Xerath",
+     "key": "101",
+     "name": {
+      "en": "Xerath",
+      "ja": "ゼラス"
+     }
+    },
+    {
+     "topic_id": "champ-seraphine",
+     "id": "Seraphine",
+     "key": "147",
+     "name": {
+      "en": "Seraphine",
+      "ja": "セラフィーン"
+     }
+    },
+    {
+     "topic_id": "champ-sona",
+     "id": "Sona",
+     "key": "37",
+     "name": {
+      "en": "Sona",
+      "ja": "ソナ"
+     }
+    },
+    {
+     "topic_id": "champ-soraka",
+     "id": "Soraka",
+     "key": "16",
+     "name": {
+      "en": "Soraka",
+      "ja": "ソラカ"
+     }
+    },
+    {
+     "topic_id": "champ-tahm-kench",
+     "id": "TahmKench",
+     "key": "223",
+     "name": {
+      "en": "Tahm Kench",
+      "ja": "タム・ケンチ"
+     }
+    },
+    {
+     "topic_id": "champ-taric",
+     "id": "Taric",
+     "key": "44",
+     "name": {
+      "en": "Taric",
+      "ja": "タリック"
+     }
+    },
+    {
+     "topic_id": "champ-teemo",
+     "id": "Teemo",
+     "key": "17",
+     "name": {
+      "en": "Teemo",
+      "ja": "ティーモ"
+     }
+    },
+    {
+     "topic_id": "champ-twitch",
+     "id": "Twitch",
+     "key": "29",
+     "name": {
+      "en": "Twitch",
+      "ja": "トゥイッチ"
+     }
+    },
+    {
+     "topic_id": "champ-nami",
+     "id": "Nami",
+     "key": "267",
+     "name": {
+      "en": "Nami",
+      "ja": "ナミ"
+     }
+    },
+    {
+     "topic_id": "champ-neeko",
+     "id": "Neeko",
+     "key": "518",
+     "name": {
+      "en": "Neeko",
+      "ja": "ニーコ"
+     }
+    },
+    {
+     "topic_id": "champ-nautilus",
+     "id": "Nautilus",
+     "key": "111",
+     "name": {
+      "en": "Nautilus",
+      "ja": "ノーチラス"
+     }
+    },
+    {
+     "topic_id": "champ-bard",
+     "id": "Bard",
+     "key": "432",
+     "name": {
+      "en": "Bard",
+      "ja": "バード"
+     }
+    },
+    {
+     "topic_id": "champ-pyke",
+     "id": "Pyke",
+     "key": "555",
+     "name": {
+      "en": "Pyke",
+      "ja": "パイク"
+     }
+    },
+    {
+     "topic_id": "champ-heimerdinger",
+     "id": "Heimerdinger",
+     "key": "74",
+     "name": {
+      "en": "Heimerdinger",
+      "ja": "ハイマーディンガー"
+     }
+    },
+    {
+     "topic_id": "champ-pantheon",
+     "id": "Pantheon",
+     "key": "80",
+     "name": {
+      "en": "Pantheon",
+      "ja": "パンテオン"
+     }
+    },
+    {
+     "topic_id": "champ-hwei",
+     "id": "Hwei",
+     "key": "910",
+     "name": {
+      "en": "Hwei",
+      "ja": "フェイ"
+     }
+    },
+    {
+     "topic_id": "champ-braum",
+     "id": "Braum",
+     "key": "201",
+     "name": {
+      "en": "Braum",
+      "ja": "ブラウム"
+     }
+    },
+    {
+     "topic_id": "champ-brand",
+     "id": "Brand",
+     "key": "63",
+     "name": {
+      "en": "Brand",
+      "ja": "ブランド"
+     }
+    },
+    {
+     "topic_id": "champ-blitzcrank",
+     "id": "Blitzcrank",
+     "key": "53",
+     "name": {
+      "en": "Blitzcrank",
+      "ja": "ブリッツクランク"
+     }
+    },
+    {
+     "topic_id": "champ-veigar",
+     "id": "Veigar",
+     "key": "45",
+     "name": {
+      "en": "Veigar",
+      "ja": "ベイガー"
+     }
+    },
+    {
+     "topic_id": "champ-maokai",
+     "id": "Maokai",
+     "key": "57",
+     "name": {
+      "en": "Maokai",
+      "ja": "マオカイ"
+     }
+    },
+    {
+     "topic_id": "champ-malphite",
+     "id": "Malphite",
+     "key": "54",
+     "name": {
+      "en": "Malphite",
+      "ja": "マルファイト"
+     }
+    },
+    {
+     "topic_id": "champ-milio",
+     "id": "Milio",
+     "key": "902",
+     "name": {
+      "en": "Milio",
+      "ja": "ミリオ"
+     }
+    },
+    {
+     "topic_id": "champ-mel",
+     "id": "Mel",
+     "key": "800",
+     "name": {
+      "en": "Mel",
+      "ja": "メル"
+     }
+    },
+    {
+     "topic_id": "champ-morgana",
+     "id": "Morgana",
+     "key": "25",
+     "name": {
+      "en": "Morgana",
+      "ja": "モルガナ"
+     }
+    },
+    {
+     "topic_id": "champ-yuumi",
+     "id": "Yuumi",
+     "key": "350",
+     "name": {
+      "en": "Yuumi",
+      "ja": "ユーミ"
+     }
+    },
+    {
+     "topic_id": "champ-rakan",
+     "id": "Rakan",
+     "key": "497",
+     "name": {
+      "en": "Rakan",
+      "ja": "ラカン"
+     }
+    },
+    {
+     "topic_id": "champ-lux",
+     "id": "Lux",
+     "key": "99",
+     "name": {
+      "en": "Lux",
+      "ja": "ラックス"
+     }
+    },
+    {
+     "topic_id": "champ-lulu",
+     "id": "Lulu",
+     "key": "117",
+     "name": {
+      "en": "Lulu",
+      "ja": "ルル"
+     }
+    },
+    {
+     "topic_id": "champ-leona",
+     "id": "Leona",
+     "key": "89",
+     "name": {
+      "en": "Leona",
+      "ja": "レオナ"
+     }
+    },
+    {
+     "topic_id": "champ-renata-glasc",
+     "id": "Renata",
+     "key": "888",
+     "name": {
+      "en": "Renata Glasc",
+      "ja": "レナータ・グラスク"
+     }
+    },
+    {
+     "topic_id": "champ-rell",
+     "id": "Rell",
+     "key": "526",
+     "name": {
+      "en": "Rell",
+      "ja": "レル"
+     }
+    }
+   ]
+  }
+ }
+}

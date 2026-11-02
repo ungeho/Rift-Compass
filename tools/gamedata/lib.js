@@ -16,7 +16,8 @@ function parseLuaTable(src) {
   const skip = () => {
     for (;;) {
       while (i < n && /\s/.test(src[i])) i++;
-      if (src.startsWith("--[[", i)) { const e = src.indexOf("]]", i + 4); i = e < 0 ? n : e + 2; continue; }
+      const lc = /^--\[(=*)\[/.exec(src.slice(i, i + 14)); // 長いコメント --[[ ]]・--[=[ ]=]
+      if (lc) { const close = "]" + lc[1] + "]"; const e = src.indexOf(close, i + lc[0].length); i = e < 0 ? n : e + close.length; continue; }
       if (src.startsWith("--", i)) { const e = src.indexOf("\n", i); i = e < 0 ? n : e + 1; continue; }
       return;
     }
@@ -42,6 +43,17 @@ function parseLuaTable(src) {
     skip();
     const c = src[i];
     if (c === "{") return table();
+    // 長い文字列 [[...]]・[=[...]=]（Wiki のモード別の調整などで使う）
+    const ls = /^\[(=*)\[/.exec(src.slice(i, i + 12));
+    if (ls) {
+      const close = "]" + ls[1] + "]";
+      const end = src.indexOf(close, i + ls[0].length);
+      if (end < 0) fail("長い文字列が閉じていない");
+      let s = src.slice(i + ls[0].length, end);
+      if (s.startsWith("\n")) s = s.slice(1);
+      i = end + close.length;
+      return s;
+    }
     if (c === '"' || c === "'") return str();
     const m = /^-?(?:0x[0-9a-fA-F]+|[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)/.exec(src.slice(i, i + 40));
     if (m) {
@@ -74,7 +86,7 @@ function parseLuaTable(src) {
       skip();
       if (src[i] === "}") { i++; break; }
       let key;
-      if (src[i] === "[") {
+      if (src[i] === "[" && !/^\[=*\[/.test(src.slice(i, i + 12))) {
         i++;
         key = value();
         skip();
