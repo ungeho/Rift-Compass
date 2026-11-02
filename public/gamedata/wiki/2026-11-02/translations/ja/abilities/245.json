@@ -1,0 +1,126 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ekko/Z-Drive Resonance#description2": {
+   "source_sha1": "d82e06384e3abe1930310d7c8feb22ca8ef858a4",
+   "ja": "「Resonance」は、同じ対象には数秒に一度しか効果を発揮しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "ac1a748c7d92f5cd077573cf229ab6669320e810"
+  },
+  "Template:Data Ekko/Z-Drive Resonance#description3": {
+   "source_sha1": "9b631b4009c1018805629d8be7fa56272a0c932d",
+   "ja": "固有 -「Stolen Time」：チャンピオンに対して「Resonance」を発動させると、エコーは2～3秒間（レベルに応じて）、移動速度が50%～80%（レベルに応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "28c3c321dbcf80e6d0a210c3dbceee2341774995"
+  },
+  "Template:Data Ekko/Timewinder#description": {
+   "source_sha1": "78ad94552d7ff36e800c9f4f7abf6b0c9718196d",
+   "ja": "発動効果：指定方向に時間のグレネードを投げ、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "47c28ed268fc9ce6ea6bce868fc6ad9e4a486158"
+  },
+  "Template:Data Ekko/Timewinder#description2": {
+   "source_sha1": "bee178c00c83cf88b8db421b00ac702497430417",
+   "ja": "グレネードは700ユニット進むか敵チャンピオンに命中すると、1.75秒かけて減速しながら徐々に広がって「Temporal Sickness」のフィールドになり、周囲の敵にスロウを与えつつ、さらに190ユニット進む。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "a25d3ba6a0f3a70c3db16d9b5e13f948aa45142e"
+  },
+  "Template:Data Ekko/Timewinder#description3": {
+   "source_sha1": "94eace42b026cd5c08fed97473d2ad7a4036458d",
+   "ja": "その後、グレネードは縮み、速度を上げながらエコーのもとへ戻り、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "35b113eecda84856d2abb850ca12caaf056e8fd8"
+  },
+  "Template:Data Ekko/Timewinder#description4": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "ja": "敵は、行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f"
+  },
+  "Template:Data Ekko/Parallel Convergence#description": {
+   "source_sha1": "978f0f4b3eb037aa6ab94385d5248611eab8b6c6",
+   "ja": "自動効果：最大体力の30%未満の敵に対して、エコーの通常攻撃は対象の減少体力の3%（+ AP 100ごとに3%）に等しい追加の魔法ダメージを与える。このダメージは最低15で、ミニオンとモンスターに対しては150が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "6520d7d6a99c8b49065d314fc71cbe667a6fbdc7"
+  },
+  "Template:Data Ekko/Parallel Convergence#description2": {
+   "source_sha1": "469b58a6ad55128e502a8b76f830cd576b73afcc",
+   "ja": "発動効果：エコーは自身の残像を作り出し、残像は2秒後に指定地点へ装置を打ち出して、その周囲の視界を2.5秒間得る。装置は1.25秒かけて移動した後に広がり、1.5秒間続く時空の球体になって、内部の敵に40%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "6648cac62fb8069ca702b735e85c03e057e4092f"
+  },
+  "Template:Data Ekko/Parallel Convergence#description3": {
+   "source_sha1": "270f1c1240b730f01285b1ce12175649b90cdbd8",
+   "ja": "球体が消える前にエコーが中に入ると球体が起爆し、エコーは2秒間シールドを得て、内部の敵は2.25秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "5fbc226f2a51e47d3f34655a7961cac3fb3bf81d"
+  },
+  "Template:Data Ekko/Parallel Convergence#description4": {
+   "source_sha1": "ed6a268a4d3021ac5f0b4a43b3852d3c110d65db",
+   "ja": "敵は、発動から2秒後に「パラレルトラップ」の表示を見ることができる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "4cd13b42c53cb6adec38a308c2f733ac7dd95b11"
+  },
+  "Template:Data Ekko/Phase Dive#description": {
+   "source_sha1": "f27425771fc7d623acfcd520eb2f1f459c9391db",
+   "ja": "発動効果：エコーは指定方向にダッシュし、その後3秒以内の次の通常攻撃を強化する。強化された通常攻撃は詠唱時間が0.25秒になり、射程が300増加し、エコーは対象から125の範囲内にブリンクして、追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "07fc11d19e6facc807425407abcecaa2ea1b608e"
+  },
+  "Template:Data Ekko/Phase Dive#description2": {
+   "source_sha1": "3e2e23e26f38aafc109d71042913e813dcf77227",
+   "ja": "「フェイズダイブ」はエコーの通常攻撃タイマーをリセットする。エコーはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "36c47958f2d9ce22bb8465bb7dbe981a02e900ee"
+  },
+  "Template:Data Ekko/Chronobreak#description": {
+   "source_sha1": "88e7cb25da4152901744adbda441d5145fbf29af",
+   "ja": "自動効果：「クロノブレイク」を習得したとき、またはその残りクールダウンが4秒未満のとき、エコーは4秒前の自身の位置を常に追う、時間の遅れた残像を可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "81f48085c853d61d5a7eea3d2b6afef03d6e58c5"
+  },
+  "Template:Data Ekko/Chronobreak#description2": {
+   "source_sha1": "5ffe53286fa53388e01495774df3ef7e97e2db88",
+   "ja": "発動効果：エコーは詠唱時間の開始時に固有時停止状態になり、その後自身の体力を回復する（回復量は直前4秒間に失った体力に応じて0%～300%増加する）。そして発動時点の残像の位置へ0.5秒かけてダッシュする。到着すると固有時停止が終わり、爆発を起こして周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "b7fb008394111b4bbaacf5613ad9f7194b805882"
+  },
+  "Template:Data Ekko/Chronobreak#description3": {
+   "source_sha1": "128945983ecffb184d5647eb8aa9a6f6177c9374",
+   "ja": "「クロノブレイク」の間、エコーはすべての移動系の効果を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "fa900e0d4cdd86226d7b6cc6057b190156b0fea0"
+  }
+ },
+ "withheld": {
+  "Template:Data Ekko/Z-Drive Resonance#description": {
+   "source_sha1": "ab02c8bbdf5ac534ffd005f4089ab09799f28d26",
+   "reason": "residual_markup"
+  }
+ }
+}

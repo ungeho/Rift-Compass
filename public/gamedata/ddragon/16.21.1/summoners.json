@@ -1,0 +1,922 @@
+{
+ "source": {
+  "name": "Riot Data Dragon",
+  "version": "16.21.1",
+  "fetched_at": "2026-11-02",
+  "files": [
+   "https://ddragon.leagueoflegends.com/cdn/16.21.1/data/en_US/summoner.json",
+   "https://ddragon.leagueoflegends.com/cdn/16.21.1/data/ja_JP/summoner.json"
+  ]
+ },
+ "count": 34,
+ "spells": [
+  {
+   "id": "SummonerBarrier",
+   "key": "21",
+   "name": {
+    "en": "Barrier",
+    "ja": "バリア"
+   },
+   "description": {
+    "en": "Gain a brief Shield.",
+    "ja": "一時的にシールドを獲得する。"
+   },
+   "cooldown": [
+    180
+   ],
+   "range": [
+    1200
+   ],
+   "summonerLevel": 4,
+   "modes": [
+    "ARAM",
+    "TUTORIAL",
+    "KIWI",
+    "ULTBOOK",
+    "FIRSTBLOOD",
+    "SWIFTPLAY",
+    "CLASSIC",
+    "PRACTICETOOL",
+    "RUBY",
+    "RUBY_TRIAL_1",
+    "BRAWL",
+    "URF",
+    "KIWI_JADE",
+    "RUBY_TRIAL_3",
+    "ONEFORALL",
+    "ASSASSINATE",
+    "ARSR",
+    "NEXUSBLITZ",
+    "DOOMBOTSTEEMO",
+    "RUBY_TRIAL_2"
+   ]
+  },
+  {
+   "id": "SummonerBarrier_Jade",
+   "key": "721",
+   "name": {
+    "en": "Barrier",
+    "ja": "バリア"
+   },
+   "description": {
+    "en": "Gain a short duration shield. Summoner's Resolve: Barrier's Shield is increased.",
+    "ja": "短時間シールドを獲得する。サモナーの決意: 「バリア」のシールド量が増加する。"
+   },
+   "cooldown": [
+    210
+   ],
+   "range": [
+    1200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerBattleCry_Jade",
+   "key": "716",
+   "name": {
+    "en": "Surge",
+    "ja": "サージ"
+   },
+   "description": {
+    "en": "Temporarily empowers your champion, granting Attack Speed  and Ability Power for the duration. Summoner's Wrath: Increases the Attack Speed bonus by 5% and the Ability Power bonus by 10%.",
+    "ja": "一時的に自身を強化して、攻撃速度と魔力を増加させる。サモナーの激憤: 攻撃速度ボーナスが5%、 魔力ボーナスが10%増加する。"
+   },
+   "cooldown": [
+    180
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerBoost",
+   "key": "1",
+   "name": {
+    "en": "Cleanse",
+    "ja": "クレンズ"
+   },
+   "description": {
+    "en": "Removes all disables (excluding suppression and airborne) and summoner spell debuffs affecting your champion and gives Tenacity.",
+    "ja": "行動妨害(サプレッションとノックアップを除く)やサモナースペルによるデバフをすべて解除し、行動妨害耐性が増加する。"
+   },
+   "cooldown": [
+    240
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 9,
+   "modes": [
+    "ARAM",
+    "TUTORIAL",
+    "KIWI",
+    "ULTBOOK",
+    "FIRSTBLOOD",
+    "SWIFTPLAY",
+    "CLASSIC",
+    "PRACTICETOOL",
+    "RUBY",
+    "RUBY_TRIAL_1",
+    "BRAWL",
+    "URF",
+    "KIWI_JADE",
+    "RUBY_TRIAL_3",
+    "ONEFORALL",
+    "ARSR",
+    "NEXUSBLITZ",
+    "DOOMBOTSTEEMO",
+    "RUBY_TRIAL_2"
+   ]
+  },
+  {
+   "id": "SummonerBoost_Jade",
+   "key": "71",
+   "name": {
+    "en": "Cleanse",
+    "ja": "クレンズ"
+   },
+   "description": {
+    "en": "Removes all disables and summoner spell debuffs affecting your champion and temporarily lowers the duration of incoming disables. Summoner's Resolve: Extends the Tenacity buff duration.",
+    "ja": "敵からの行動妨害やサモナースペルによる効果をすべて解除し、その後、一時的に敵から受ける行動妨害の効果時間を短縮する。サモナーの決意: 行動妨害耐性バフの効果時間を延長する。"
+   },
+   "cooldown": [
+    210
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerCherryFlash",
+   "key": "2202",
+   "name": {
+    "en": "Flash",
+    "ja": "フラッシュ"
+   },
+   "description": {
+    "en": "Teleports your champion a short distance toward your cursor's location.",
+    "ja": "自身のチャンピオンを短い距離、指定した方向に瞬間移動させる。"
+   },
+   "cooldown": [
+    0.25
+   ],
+   "range": [
+    425
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "CHERRY"
+   ]
+  },
+  {
+   "id": "SummonerCherryHold",
+   "key": "2201",
+   "name": {
+    "en": "Flee",
+    "ja": "逃亡"
+   },
+   "description": {
+    "en": "Gain a short burst of Move Speed, increased while running away from enemy champions.",
+    "ja": "短時間、移動速度が大幅に増加する。敵チャンピオンと逆方向に走っている間は、移動速度がさらに増加する。"
+   },
+   "cooldown": [
+    45
+   ],
+   "range": [
+    25000
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "CHERRY"
+   ]
+  },
+  {
+   "id": "SummonerClairvoyance_Jade",
+   "key": "75",
+   "name": {
+    "en": "Clairvoyance",
+    "ja": "クレアボヤンス"
+   },
+   "description": {
+    "en": "Reveals a small area of the map for your team for a short duration. Summoner's Insight: Retain sight on units revealed by Clairvoyance for 5 seconds.",
+    "ja": "少しの間、指定した範囲の視界を獲得する。サモナーの慧眼: 「クレアボヤンス」で可視化されたユニットの視界を5秒間維持する。"
+   },
+   "cooldown": [
+    60
+   ],
+   "range": [
+    25000
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerDot",
+   "key": "14",
+   "name": {
+    "en": "Ignite",
+    "ja": "イグナイト"
+   },
+   "description": {
+    "en": "Deals true damage over time to target enemy champion and reduces healing effects on them for the duration.",
+    "ja": "対象の敵チャンピオンに継続確定ダメージを与え、効果時間中は対象の回復効果を減少させる。"
+   },
+   "cooldown": [
+    180
+   ],
+   "range": [
+    600
+   ],
+   "summonerLevel": 9,
+   "modes": [
+    "ARAM",
+    "TUTORIAL",
+    "KIWI",
+    "ULTBOOK",
+    "FIRSTBLOOD",
+    "SWIFTPLAY",
+    "CLASSIC",
+    "PRACTICETOOL",
+    "RUBY",
+    "RUBY_TRIAL_1",
+    "BRAWL",
+    "URF",
+    "KIWI_JADE",
+    "RUBY_TRIAL_3",
+    "ONEFORALL",
+    "ASSASSINATE",
+    "ARSR",
+    "NEXUSBLITZ",
+    "DOOMBOTSTEEMO",
+    "RUBY_TRIAL_2"
+   ]
+  },
+  {
+   "id": "SummonerDot_Jade",
+   "key": "714",
+   "name": {
+    "en": "Ignite",
+    "ja": "イグナイト"
+   },
+   "description": {
+    "en": "Deals true damage over time to target enemy champion and reduces healing effects on them for the duration. Summoner's Wrath: While Ignite is on cooldown, gain 5 Ability Power and Attack Damage.",
+    "ja": "対象の敵チャンピオンに継続確定ダメージを与え、効果時間中は対象の回復効果を減少させる。サモナーの激憤: 「イグナイト」のクールダウン中、魔力と攻撃力が5増加する。"
+   },
+   "cooldown": [
+    210
+   ],
+   "range": [
+    600
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerExhaust",
+   "key": "3",
+   "name": {
+    "en": "Exhaust",
+    "ja": "イグゾースト"
+   },
+   "description": {
+    "en": "Slows target enemy champion and reduces their damage dealt.",
+    "ja": "敵チャンピオンにスロウ効果を付与し、与ダメージを低下させる。"
+   },
+   "cooldown": [
+    240
+   ],
+   "range": [
+    650
+   ],
+   "summonerLevel": 4,
+   "modes": [
+    "URF",
+    "PRACTICETOOL",
+    "CLASSIC",
+    "ULTBOOK",
+    "DOOMBOTSTEEMO",
+    "ARAM",
+    "RUBY_TRIAL_3",
+    "NEXUSBLITZ",
+    "SWIFTPLAY",
+    "ONEFORALL",
+    "TUTORIAL",
+    "RUBY",
+    "WIPMODEWIP",
+    "RUBY_TRIAL_2",
+    "WIPMODEWIP3",
+    "RUBY_TRIAL_1",
+    "ARSR"
+   ]
+  },
+  {
+   "id": "SummonerExhaust_Jade",
+   "key": "73",
+   "name": {
+    "en": "Exhaust",
+    "ja": "イグゾースト"
+   },
+   "description": {
+    "en": "Slows target enemy champion and reduces their Attack Speed and damage dealt. Summoner's Wrath: Exhaust also reduces the target's Armor and Magic Resist by 10.",
+    "ja": "敵チャンピオンにスロウ効果を付与し、攻撃速度と与ダメージを低下させる。サモナーの激憤: 「イグゾースト」が対象の物理防御と魔法防御も10低下させる。"
+   },
+   "cooldown": [
+    210
+   ],
+   "range": [
+    550
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerFlash",
+   "key": "4",
+   "name": {
+    "en": "Flash",
+    "ja": "フラッシュ"
+   },
+   "description": {
+    "en": "Teleports you a short distance toward your cursor.",
+    "ja": "自身のチャンピオンを短い距離、指定した方向に瞬間移動させる。"
+   },
+   "cooldown": [
+    300
+   ],
+   "range": [
+    425
+   ],
+   "summonerLevel": 7,
+   "modes": [
+    "ARAM",
+    "TUTORIAL",
+    "KIWI",
+    "ULTBOOK",
+    "FIRSTBLOOD",
+    "SWIFTPLAY",
+    "CLASSIC",
+    "PRACTICETOOL",
+    "RUBY",
+    "RUBY_TRIAL_1",
+    "BRAWL",
+    "WIPMODEWIP4",
+    "URF",
+    "SNOWURF",
+    "KIWI_JADE",
+    "RUBY_TRIAL_3",
+    "ONEFORALL",
+    "ARSR",
+    "NEXUSBLITZ",
+    "DOOMBOTSTEEMO",
+    "RUBY_TRIAL_2"
+   ]
+  },
+  {
+   "id": "SummonerFlash_Jade",
+   "key": "74",
+   "name": {
+    "en": "Flash",
+    "ja": "フラッシュ"
+   },
+   "description": {
+    "en": "Teleports you a short distance toward your cursor. Summoner's Insight: Reduces Flash's Cooldown by 15 seconds.",
+    "ja": "自身のチャンピオンを短い距離、指定した方向に瞬間移動させる。サモナーの慧眼: 「フラッシュ」のクールダウンが15秒短縮される。"
+   },
+   "cooldown": [
+    300
+   ],
+   "range": [
+    425
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerFortify_Jade",
+   "key": "705",
+   "name": {
+    "en": "Fortify",
+    "ja": "フォティファイ"
+   },
+   "description": {
+    "en": "Grants invulnerability to all Allied Turrets and causes them to attack 100% faster for 6 seconds. Summoner's Resolve: Turrets deal splash damage around their target.",
+    "ja": "6秒間、自陣のすべてのタワーが無敵状態になり、その攻撃速度が100%増加する。サモナーの決意: タワーが対象の周囲に範囲ダメージを与える。"
+   },
+   "cooldown": [
+    180
+   ],
+   "range": [
+    25000
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerHaste",
+   "key": "6",
+   "name": {
+    "en": "Ghost",
+    "ja": "ゴースト"
+   },
+   "description": {
+    "en": "Gain Move Speed and ignore unit collision for the duration.",
+    "ja": "移動速度が増加し、効果時間中はユニットの衝突判定が無視できるようになる。"
+   },
+   "cooldown": [
+    240
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "ARAM",
+    "TUTORIAL_MODULE_1",
+    "TUTORIAL",
+    "KIWI",
+    "ULTBOOK",
+    "FIRSTBLOOD",
+    "SWIFTPLAY",
+    "CLASSIC",
+    "PRACTICETOOL",
+    "RUBY",
+    "RUBY_TRIAL_1",
+    "BRAWL",
+    "URF",
+    "KIWI_JADE",
+    "RUBY_TRIAL_3",
+    "TUTORIAL_MODULE_2",
+    "ONEFORALL",
+    "ASSASSINATE",
+    "ARSR",
+    "NEXUSBLITZ",
+    "DOOMBOTSTEEMO",
+    "RUBY_TRIAL_2"
+   ]
+  },
+  {
+   "id": "SummonerHaste_Jade",
+   "key": "76",
+   "name": {
+    "en": "Ghost",
+    "ja": "ゴースト"
+   },
+   "description": {
+    "en": "Gain Move Speed and ignore unit collision for the duration. Summoner's Wrath: Bonus Move Speed granted by Ghost is increased.",
+    "ja": "移動速度が増加し、効果時間中はユニットの衝突判定が無視できるようになる。サモナーの激憤: 「ゴースト」によって付与される移動速度が増加する。"
+   },
+   "cooldown": [
+    240
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerHeal",
+   "key": "7",
+   "name": {
+    "en": "Heal",
+    "ja": "ヒール"
+   },
+   "description": {
+    "en": "Restores Health and grants Move Speed to you and target allied champion.",
+    "ja": "自身および対象の味方チャンピオンの体力を回復し、移動速度を増加させる。"
+   },
+   "cooldown": [
+    240
+   ],
+   "range": [
+    875
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "ARAM",
+    "TUTORIAL_MODULE_1",
+    "TUTORIAL",
+    "KIWI",
+    "ULTBOOK",
+    "SWIFTPLAY",
+    "CLASSIC",
+    "PRACTICETOOL",
+    "RUBY",
+    "RUBY_TRIAL_1",
+    "BRAWL",
+    "URF",
+    "KIWI_JADE",
+    "RUBY_TRIAL_3",
+    "TUTORIAL_MODULE_2",
+    "ONEFORALL",
+    "ASSASSINATE",
+    "ARSR",
+    "NEXUSBLITZ",
+    "DOOMBOTSTEEMO",
+    "RUBY_TRIAL_2"
+   ]
+  },
+  {
+   "id": "SummonerHeal_Jade",
+   "key": "77",
+   "name": {
+    "en": "Heal",
+    "ja": "ヒール"
+   },
+   "description": {
+    "en": "Restores Health to your champion and to nearby allies. Summoner's Resolve: Gain 5 Health per level.",
+    "ja": "自身と周囲の味方の体力が回復する。サモナーの決意: レベルアップごとに体力が5増加する。"
+   },
+   "cooldown": [
+    300
+   ],
+   "range": [
+    600
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerMana",
+   "key": "13",
+   "name": {
+    "en": "Clarity",
+    "ja": "クラリティ"
+   },
+   "description": {
+    "en": "Restores your and ally champion's Mana.",
+    "ja": "自身および味方チャンピオンのマナを回復する。"
+   },
+   "cooldown": [
+    240
+   ],
+   "range": [
+    600
+   ],
+   "summonerLevel": 6,
+   "modes": [
+    "KIWI",
+    "FIRSTBLOOD",
+    "ARAM",
+    "KIWI_JADE"
+   ]
+  },
+  {
+   "id": "SummonerMana_Jade",
+   "key": "713",
+   "name": {
+    "en": "Clarity",
+    "ja": "クラリティ"
+   },
+   "description": {
+    "en": "Restores your and ally champions' Mana. Summoner's Insight: Restores more mana.",
+    "ja": "自身および味方チャンピオンのマナを回復する。サモナーの慧眼: マナがより多く回復する。"
+   },
+   "cooldown": [
+    135
+   ],
+   "range": [
+    600
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerPoroRecall",
+   "key": "30",
+   "name": {
+    "en": "To the King!",
+    "ja": "王のために！"
+   },
+   "description": {
+    "en": "Quickly travel to the Poro King's side.",
+    "ja": "ポロキングの側へ素早く移動する。"
+   },
+   "cooldown": [
+    10
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "KINGPORO"
+   ]
+  },
+  {
+   "id": "SummonerPoroThrow",
+   "key": "31",
+   "name": {
+    "en": "Poro Toss",
+    "ja": "ポロトス"
+   },
+   "description": {
+    "en": "Toss a Poro at your enemies. If it hits, you can quickly travel to your target as a follow up.",
+    "ja": "敵にポロを投げつける。命中すると、その対象まで素早く移動することができる。"
+   },
+   "cooldown": [
+    20
+   ],
+   "range": [
+    2500
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "KINGPORO"
+   ]
+  },
+  {
+   "id": "SummonerRally_Jade",
+   "key": "709",
+   "name": {
+    "en": "Rally",
+    "ja": "ラリー"
+   },
+   "description": {
+    "en": "Summons a temporary beacon which increases allied Attack damage in an area. Summoner's Wrath: Rally additionally gives Ability Power.",
+    "ja": "一時的にかがり火を焚き、範囲内の味方の攻撃力を増加させる。サモナーの激憤: 「ラリー」によってさらに魔力も増加させる。"
+   },
+   "cooldown": [
+    270
+   ],
+   "range": [
+    25000
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerRevive_Jade",
+   "key": "777",
+   "name": {
+    "en": "Revive",
+    "ja": "リバイブ"
+   },
+   "description": {
+    "en": "Instantly revives your champion at your team's Summoner Platform and increases their Movement Speed for a short duration. Summoner's Insight: Revive temporarily grants the user 220-560 Health.",
+    "ja": "自身のチャンピオンを即座にスタート地点上に復活させ、移動速度を短時間増加させる。サモナーの慧眼: 「リバイブ」を使用すると、一時的に220 - 560の体力を獲得する。"
+   },
+   "cooldown": [
+    510
+   ],
+   "range": [
+    200
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerSmite",
+   "key": "11",
+   "name": {
+    "en": "Smite",
+    "ja": "スマイト"
+   },
+   "description": {
+    "en": "Deals true damage to a monster or minion.",
+    "ja": "モンスターまたはミニオンに確定ダメージを与える。"
+   },
+   "cooldown": [
+    15
+   ],
+   "range": [
+    500
+   ],
+   "summonerLevel": 3,
+   "modes": [
+    "DOOMBOTSTEEMO",
+    "PRACTICETOOL",
+    "CLASSIC",
+    "SWIFTPLAY",
+    "URF",
+    "NEXUSBLITZ",
+    "ONEFORALL",
+    "TUTORIAL",
+    "ARSR"
+   ]
+  },
+  {
+   "id": "SummonerSmite_Jade",
+   "key": "711",
+   "name": {
+    "en": "Smite",
+    "ja": "スマイト"
+   },
+   "description": {
+    "en": "Deals true damage to target enemy minion or pet. Summoner's Resolve: Smite grants 10 gold per cast.",
+    "ja": "対象の敵ミニオンまたはペットに確定ダメージを与える。サモナーの決意: 「スマイト」を1回使用するごとに10ゴールドを獲得する。"
+   },
+   "cooldown": [
+    70
+   ],
+   "range": [
+    760
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerSnowURFSnowball_Mark",
+   "key": "39",
+   "name": {
+    "en": "Mark",
+    "ja": "マーク"
+   },
+   "description": {
+    "en": "Throw a snowball in a straight line at your enemies. If it hits an enemy, they become marked, granting True Sight, and your champion can quickly travel to the marked target as a follow up.",
+    "ja": "直線上の敵に向かって雪玉を投げる。敵に当たるとマークを残し、真の視界を得て、マークをつけたチャンピオンはこの対象まで素早く飛ぶことができる。"
+   },
+   "cooldown": [
+    80
+   ],
+   "range": [
+    8000
+   ],
+   "summonerLevel": 6,
+   "modes": [
+    "SNOWURF"
+   ]
+  },
+  {
+   "id": "SummonerSnowball",
+   "key": "32",
+   "name": {
+    "en": "Mark",
+    "ja": "マーク"
+   },
+   "description": {
+    "en": "Throw a snowball in a straight line at your enemies. If it hits an enemy, they become marked, granting True Sight, and your champion can quickly travel to the marked target as a follow up.",
+    "ja": "直線上の敵に向かって雪玉を投げる。敵に当たるとマークを残し、真の視界を得て、マークをつけたチャンピオンはこの対象まで素早く飛ぶことができる。"
+   },
+   "cooldown": [
+    80
+   ],
+   "range": [
+    1600
+   ],
+   "summonerLevel": 6,
+   "modes": [
+    "KIWI",
+    "KIWI_JADE",
+    "ARAM",
+    "FIRSTBLOOD"
+   ]
+  },
+  {
+   "id": "SummonerSpell_Promote_Jade",
+   "key": "720",
+   "name": {
+    "en": "Promote",
+    "ja": "プロモート"
+   },
+   "description": {
+    "en": "Promotes a minion, granting it bonus stats, an empowering aura, and causing it to grant the caster gold for its kills. Summoner's Wrath: The Siege Rider's bonus Attack Damage aura also affects Champions.",
+    "ja": "ミニオン1体を昇格させて、そのパラメーターを増加させ、強化オーラを付与して、そのミニオンが敵を倒すと自身がゴールドを獲得する。サモナーの激憤: 砲撃ミニオンの増加攻撃力オーラが、チャンピオンにも影響を与えるようになる。"
+   },
+   "cooldown": [
+    270
+   ],
+   "range": [
+    4294967295
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "SummonerTeleport",
+   "key": "12",
+   "name": {
+    "en": "Teleport",
+    "ja": "テレポート"
+   },
+   "description": {
+    "en": "After a brief channel, become untargetable and travel to an allied unit. Upgrades into Unleashed Teleport, which significantly increases travel speed.",
+    "ja": "短い詠唱後、対象指定不可になって味方ユニットの位置まで移動する。「真テレポート」にアップグレードされると移動速度が大幅に増加する。"
+   },
+   "cooldown": [
+    300
+   ],
+   "range": [
+    25000
+   ],
+   "summonerLevel": 7,
+   "modes": [
+    "CLASSIC",
+    "SWIFTPLAY",
+    "ULTBOOK",
+    "WIPMODEWIP4",
+    "DOOMBOTSTEEMO",
+    "PRACTICETOOL",
+    "ONEFORALL",
+    "RUBY",
+    "ARSR",
+    "RUBY_TRIAL_2",
+    "TUTORIAL",
+    "ASSASSINATE",
+    "RUBY_TRIAL_3",
+    "RUBY_TRIAL_1"
+   ]
+  },
+  {
+   "id": "SummonerTeleport_Jade",
+   "key": "712",
+   "name": {
+    "en": "Teleport",
+    "ja": "テレポート"
+   },
+   "description": {
+    "en": "After a short channel, your champion teleports to a target allied minion, turret, or ward. Summoner's Insight: Teleport's channel time is reduced.",
+    "ja": "短い詠唱後、自身を味方のミニオン、タワー、またはワードの位置にテレポートさせる。サモナーの慧眼: 「テレポート」の詠唱時間が短縮される。"
+   },
+   "cooldown": [
+    300
+   ],
+   "range": [
+    25000
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "JADE"
+   ]
+  },
+  {
+   "id": "Summoner_UltBookPlaceholder",
+   "key": "54",
+   "name": {
+    "en": "Placeholder",
+    "ja": "プレースホルダー"
+   },
+   "description": {
+    "en": "This slot will be replaced by another champion's ultimate selected at the start of the game. There will be 30 seconds to select an ultimate. Be prepared!",
+    "ja": "このスロットは試合開始時に選択された別のチャンピオンのアルティメットスキルに置き換わる。30秒以内にアルティメットスキルを選択する必要がある。"
+   },
+   "cooldown": [
+    0
+   ],
+   "range": [
+    400
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "ULTBOOK"
+   ]
+  },
+  {
+   "id": "Summoner_UltBookSmitePlaceholder",
+   "key": "55",
+   "name": {
+    "en": "Placeholder and Attack-Smite",
+    "ja": "プレースホルダー＆アタックスマイト"
+   },
+   "description": {
+    "en": "This slot will be replaced by another champion's ultimate and you will gain Attack-Smite. There will be 30 seconds to select an ultimate. Be prepared!",
+    "ja": "このスロットは別のチャンピオンのアルティメットスキルに置き換わり、「アタックスマイト」を獲得する。30秒以内にアルティメットスキルを選択する必要がある。"
+   },
+   "cooldown": [
+    0
+   ],
+   "range": [
+    400
+   ],
+   "summonerLevel": 1,
+   "modes": [
+    "ULTBOOK"
+   ]
+  }
+ ]
+}

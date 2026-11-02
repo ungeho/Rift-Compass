@@ -13,7 +13,7 @@ import type { NoteStatus } from "../data/types";
 import { youtubeAt } from "../lib/links";
 import { normalize } from "../search/search";
 import { decisionHref, decisionsHref, homeHref, resourceHref } from "../router";
-import { ExternalLink, LevelBadge, TopicChips } from "./common";
+import { ExternalLink, LevelBadge, NoteStatusBadge, TopicChips } from "./common";
 
 export function DecisionNotice() {
   return (
@@ -30,7 +30,7 @@ function StatusBadges({ u }: { u: DecisionUnit }) {
     <div className="card-meta">
       <span className="badge">判断材料（試験）</span>
       <span className="badge">{KIND_LABELS[u.kind]}</span>
-      {status && <span className={`badge status status-${status.tone}`}>{status.label}・ゲーム内で未検証</span>}
+      {status && <span className={`badge status status-${status.tone}`} data-note-status={u.proposed_status}>{status.label}・ゲーム内で未検証</span>}
     </div>
   );
 }
@@ -141,7 +141,7 @@ function ComparisonView({ m }: { m: DecisionComparison }) {
       </ul>
       {note && (
         <p className="muted">
-          正式データの知識ノート（{STATUS_LABELS[note.status].label}）：{note.statement_ja}
+          正式データの知識ノート <NoteStatusBadge note={note} />：{note.statement_ja}
         </p>
       )}
       <h4>数値・基準の違い</h4>

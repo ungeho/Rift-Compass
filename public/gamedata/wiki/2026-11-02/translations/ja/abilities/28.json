@@ -1,0 +1,30 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Evelynn/Demon Shade#description": {
+   "source_sha1": "33311afa03304e51bd39ca6f2ba34997e98822ec",
+   "plain_sha1": "0e93fc91cca848ae67f706219fac093e19f503a7",
+   "ja": "固有：イブリンは、ステルスを解く行動を4秒しないと「妖魔の影」をまとう。通常攻撃かスキルの使用で「妖魔の影」は即座に終わり、4秒の固定クールダウンになる（「ラストカレス」の使用では1.25秒）。チャンピオンかタワーからダメージを受けると「妖魔の影」は中断され、1.5秒の固定クールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Demon Shade#description2": {
+   "source_sha1": "63fc3c2ddf60a14bb88327d8119be900cbfba919",
+   "plain_sha1": "709bd88decf55b62a713f37a837af3b525d11a8e",
+   "ja": "「妖魔の影」：体力が250～590（レベルに応じて）（+ APの250%）未満の間、イブリンは毎秒15～150（レベルに応じて）体力を回復する。レベル6以降は、「妖魔の影」がカモフラージュも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

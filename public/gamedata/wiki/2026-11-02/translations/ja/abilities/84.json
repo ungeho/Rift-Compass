@@ -1,0 +1,56 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Akali/Twilight Shroud#description": {
+   "source_sha1": "f28e42b9ae925cf42ef72890672b697f76bd18d6",
+   "plain_sha1": "31cbf5a0f3d7c7b0ab487cfe1e447bd92b69aa1a",
+   "ja": "発動効果：アカリは0.4秒かけてエネルギーを100回復し、2秒かけて減衰する移動速度の増加を得る。さらに、指定方向の決まった距離の地点で煙玉を爆発させ、円形の帳を作る。帳はその後5秒かけて輪の形に広がる。帳は地形を越えず、近くの敵チャンピオンの方へ広がる。帳がある間、アカリの最大エネルギーは100増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Twilight Shroud#description2": {
+   "source_sha1": "567647636d7a2507aaa7d4cf773a94b7643e3bd0",
+   "plain_sha1": "e252f3358d6bc58eca086b9025e15f0bdd76bc27",
+   "ja": "帳に入ると、アカリはインビジブルになる（ダッシュ中を除く）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Twilight Shroud#description3": {
+   "source_sha1": "5319ebc5aa042b9dc29016bf206d5465d429142b",
+   "plain_sha1": "cb4d1aa42e28de06d2116739602f2420781d519e",
+   "ja": "通常攻撃の宣言かスキルの使用でインビジブルが解け、1～0.625（レベルに応じて）秒間は再び帳でインビジブルになれない。この時間は、通常攻撃とスキルの使用のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Twilight Shroud#description4": {
+   "source_sha1": "d8b648dfd9084a4e5901c35d91f4f7f2c15427c4",
+   "plain_sha1": "f8be2d03b69c3dcfb20113d0c288125529093d5d",
+   "ja": "「黄昏の帳」のうち「翻身手裏剣」の部分は、帳が終わった後も、印の効果時間の間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Twilight Shroud#description5": {
+   "source_sha1": "39eec746a10389b04237f47f64e3c15f6d1c6571",
+   "plain_sha1": "dc3553298f43f052519dee2fa80af5cca6ec0085",
+   "ja": "アカリは「黄昏の帳」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Akali/Assassin's Mark#description3": {
+   "source_sha1": "a77369c3e15978a5d2de7a1e00c1c80727178d20",
+   "reason": "residual_markup"
+  }
+ }
+}

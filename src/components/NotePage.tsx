@@ -2,10 +2,10 @@
 // 内容は既存の NoteCard（状態・成立条件・時期・根拠と資料の確認箇所）をそのまま使う。
 import { index } from "../data/dataset";
 import { isPublicNote, relatedPublicNotes } from "../data/explorePool";
-import { KIND_LABELS, noteHeading } from "../data/labels";
+import { KIND_LABELS } from "../data/labels";
 import { plainText } from "../lib/plainText";
 import { exploreHref, noteHref } from "../router";
-import { TopicChips } from "./common";
+import { NoteStatusBadge, TopicChips } from "./common";
 import { NoteCard } from "./NoteCard";
 
 const RELATION_LABELS: Record<string, string> = {
@@ -57,8 +57,9 @@ export function NotePage({ id }: { id: string }) {
                 <span className="muted">{x.outgoing ? "（このノート → 相手）" : "（相手 → このノート）"}</span>{" "}
                 <a href={noteHref(x.note.id)}>{plainText(x.note.statement_ja)}</a>{" "}
                 <span className="muted">
-                  {KIND_LABELS[x.note.kind]}・{noteHeading(x.note)}
-                </span>
+                  {KIND_LABELS[x.note.kind]}
+                </span>{" "}
+                <NoteStatusBadge note={x.note} />
               </li>
             ))}
           </ul>

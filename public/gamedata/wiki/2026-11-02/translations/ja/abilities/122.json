@@ -1,0 +1,130 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Darius/Hemorrhage#description": {
+   "source_sha1": "ad1b8bae387fc91cd440d921dee86ddc9a677815",
+   "ja": "固有：ダメージを与えるダリウスの通常攻撃とスキルは、敵に「大出血」のスタックを5秒間付与する。付与するたびに効果時間が更新され、最大5回までスタックする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "a5e98197d067d6a2962cd1cc452508d3670474f1"
+  },
+  "Template:Data Darius/Hemorrhage#description2": {
+   "source_sha1": "7e97e8d7aea077ede472c41b1e284f5aeff94041",
+   "ja": "「大出血」：スタックごとに、対象は効果時間中に合計13～30（レベルに応じて）（+ 増加攻撃力の30%）の物理ダメージを受け、最大で合計65～150（レベルに応じて）（+ 増加攻撃力の150%）の物理ダメージになる。「大出血」はモンスターに250%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2a1682a4d6e6623aa1a0728f331b6afe09fac2d0"
+  },
+  "Template:Data Darius/Hemorrhage#description3": {
+   "source_sha1": "d487a8bfbb9cb146c3dfd83e8b9a0dc30d532528",
+   "ja": "「ノクサスギロチン」でチャンピオンを倒すか、敵チャンピオンに5スタックを付与すると、ダリウスは5秒間「Noxian Might」で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "abc6763ed855537102d23d21bbec49c2d73c38a2"
+  },
+  "Template:Data Darius/Decimate#description": {
+   "source_sha1": "3433c524b4cd37190a787c5e2fd23b8158179dbe",
+   "ja": "発動効果：ダリウスは1秒間ゴースト状態になり、0.75秒間斧を構えた後、自身の周囲に振り回して周囲の敵に物理ダメージを与える。内側の範囲にいる敵が受けるダメージは35%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "6cd9da98a4c7c3df26ad836eedb44b3dbe0f6d87"
+  },
+  "Template:Data Darius/Decimate#description2": {
+   "source_sha1": "bc874bb1f0ccec934dc3d900e2f55ee916e41e67",
+   "ja": "命中したチャンピオンと大型モンスターに応じて、ダリウスは減少体力の17%～51%（外側の範囲で命中した対象の数に応じて）を回復する。内側の範囲で命中した敵は、「大出血」の効果時間が更新されず、スタックも増えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "272fcee1b0e71b919beef2c62bbf0c2001537e64"
+  },
+  "Template:Data Darius/Decimate#description3": {
+   "source_sha1": "d4e247d14118cb1e8120659dc8c95e4a4d665906",
+   "ja": "「皆殺しの斧」の間、ダリウスは移動できるが、通常攻撃の指示と「捕縛」「ノクサスギロチン」の使用はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2793e9f6e72570e20c0d968d2e59392646e73aaa"
+  },
+  "Template:Data Darius/Crippling Strike#description": {
+   "source_sha1": "1ee7bbe959b1bbdeb6b45aba559525138034d7ce",
+   "ja": "発動効果：ダリウスは4秒以内の次の通常攻撃を強化する。強化された通常攻撃は攻撃モーションが中断されなくなり、射程が25増加し、追加の物理ダメージを与え、対象に1秒間90%のスロウを与える。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "a81080252fd69d5bc1135ca51592502ead2e14b2"
+  },
+  "Template:Data Darius/Crippling Strike#description2": {
+   "source_sha1": "f5217eb3e6d4e61b7f28f1534df570fc2d131c19",
+   "ja": "この攻撃で対象を倒すと、「脚削ぎ」のクールダウンが半分短縮され、マナコストが戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "f40a63c05adb62197359e268360ada3395707179"
+  },
+  "Template:Data Darius/Crippling Strike#description3": {
+   "source_sha1": "7fa3dcefe0ff12a29d8122dc44903ec549d2885b",
+   "ja": "「脚削ぎ」はダリウスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2415e84d8248ac8bbc29dff9751627a19d557ccc"
+  },
+  "Template:Data Darius/Apprehend#description": {
+   "source_sha1": "344d47ecc73808ef7ae3bd80c97ed6b8f2287c80",
+   "ja": "自動効果：ダリウスは物理防御貫通を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "b4b621f48172da6dccc89fe09da9d05110e84853"
+  },
+  "Template:Data Darius/Apprehend#description2": {
+   "source_sha1": "493e64b40a97189c25ebec611453ea72ff762539",
+   "ja": "発動効果：ダリウスは指定方向の扇形の範囲に斧を振り、その範囲の視界を1秒間得るとともに、命中した敵を自身のほうへ引き寄せる。引き寄せられた敵はダリウスから150ユニット跳ね返り、その間はノックアップ状態のままで、1秒間40%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "df1127f2e5845b1204e100455f1db9f0bd727389"
+  },
+  "Template:Data Darius/Apprehend#description3": {
+   "source_sha1": "02ea9d2fa2f892943ea165237b0af11a08fb6d8f",
+   "ja": "「捕縛」の詠唱時間の後0.4秒間、ダリウスは移動と「皆殺しの斧」「ノクサスギロチン」の使用ができない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "216991b74ce3354b24031eb3917ac6de99c2954a"
+  },
+  "Template:Data Darius/Noxian Guillotine#description2": {
+   "source_sha1": "a1707ed62100780dafef0f3a72576560aeb714f7",
+   "ja": "「ノクサスギロチン」の命中から0.15秒以内に対象が死ぬと、ダリウスは周囲のミニオンとモンスターに3秒間フィアーを与え、その間それらは最大99%まで徐々にスロウを受ける。また、20秒以内にコストなしでこのスキルを再発動でき、とどめに成功するたびにこの時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "67e20f3064f268ebc3b353b135a66db2a259883d"
+  },
+  "Template:Data Darius/Noxian Guillotine#description3": {
+   "source_sha1": "2affc54c4ffa3e50562bc68373ce3559a98ed32f",
+   "ja": "ランク3の「ノクサスギロチン」には、マナコストと再発動までの時間制限がない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2b675319340f04d482ee1946d20de6bc1368f2a8"
+  },
+  "Template:Data Darius/Noxian Guillotine#description4": {
+   "source_sha1": "91bced2cae2af3de36927f056dfede71970485f2",
+   "ja": "「ノクサスギロチン」の詠唱時間の後0.25秒間、ダリウスは「皆殺しの斧」と「捕縛」を使用できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "21059778668c6f93164ddcd2ead4b1ddb68604f0"
+  }
+ },
+ "withheld": {
+  "Template:Data Darius/Hemorrhage#description4": {
+   "source_sha1": "6fe1b36551b78404cfd362c7cf98fe9d3dae2438",
+   "reason": "residual_markup"
+  },
+  "Template:Data Darius/Noxian Guillotine#description": {
+   "source_sha1": "1ea9ea79ed78ceba626a406e0461465b4b2db7e1",
+   "reason": "residual_markup"
+  }
+ }
+}

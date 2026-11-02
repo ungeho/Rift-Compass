@@ -1,0 +1,105 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Mel/Searing Brilliance#description": {
+   "source_sha1": "b66104e09da12f7fbedab1ac6f36484e840f04c4",
+   "ja": "固有：メルの通常攻撃とスキルは、敵にダメージを与えるたびに「圧倒」のスタックを5秒間付与する。ダメージを与えるたびに効果時間が更新され、スタックは上限なく重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "a6bf5738d4be78d98cd82e402bfae6a1366b365c"
+  },
+  "Template:Data Mel/Searing Brilliance#description3": {
+   "source_sha1": "ef7f73d88c76ca9ecfe4641083c9a247b94da46b",
+   "ja": "固有 -「灼熱の輝き」：メルがスキルを使用するたびに「灼熱の輝き」のスタックを3つ得る（5秒間。使用するたびに効果時間が更新され、最大9スタック）。次の通常攻撃は「灼熱の輝き」のスタックをすべて消費し、同じ数の燃える飛翔物を追加で対象へ放つ。飛翔物はそれぞれ8～30（レベルに応じて）（+ APの4%）の魔法ダメージを与え、最大スタックでは合計で72～270（レベルに応じて）（+ APの36%）のダメージになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "debd1af46c1ee40a242f0e6d4c655a22f127170e"
+  },
+  "Template:Data Mel/Radiant Volley#description": {
+   "source_sha1": "427e89cbb55f512b2134fa21c9dad1a913633b72",
+   "ja": "発動効果：指定地点に向けて0.5秒かけて光の弾を連続で放ち、弾は範囲内に均等に散らばる。弾はそれぞれ着弾すると爆発して周囲の敵に魔法ダメージを与え、最初の爆発より後の爆発はすべて減少したダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "fd01b324f69149682ccebc5b1233d858330d72dd"
+  },
+  "Template:Data Mel/Radiant Volley#description2": {
+   "source_sha1": "8b77d64b6835c57a62de842ecd9656a4ff46d229",
+   "ja": "弾は飛んでいる間に一瞬視界を与え、爆発はその着弾範囲の視界を与える。どちらもブッシュや地形を越えて見通せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "5cbed1a34a0fdeadcf235c0a311d6440a27cd6cf"
+  },
+  "Template:Data Mel/Rebuttal#description": {
+   "source_sha1": "a5ff85b7790c624d6a10ac8660ac968d35c53ed8",
+   "ja": "発動効果：メルは自身の周囲に0.75秒間防御のバリアを張り、その間シールドを得て、0.75秒かけて減衰する40%の移動速度の増加を得る。さらに、バリアに触れた敵チャンピオンの飛翔物はすべて即座に破壊され、メルは同じ飛翔物を自分のものとして、元の発射元に向けて、または元の発射元の方向へ、あるいは自身に向けて放つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "acd41d2c54cbc28c3d287d2a425bff23612800f2"
+  },
+  "Template:Data Mel/Rebuttal#description2": {
+   "source_sha1": "a436e6cd543b9b922a853866330a8198a5328b83",
+   "ja": "複製された飛翔物は元の飛翔物と同じ性質を持つが、ダメージは元の飛翔物が与えるダメージの一定の割合になる。また、ダメージはすべて魔法ダメージに変換され、物理ダメージの部分は変換の前に70%に減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2b2b1ebc5466317e271da526006b315ec14ea9bf"
+  },
+  "Template:Data Mel/Solar Snare#description": {
+   "source_sha1": "883fff7ab9a43e533a575a5227067b27dd75577f",
+   "ja": "発動効果：指定方向にオーブを放ち、オーブは進みながら0.25秒ごとに周囲の視界を与える。オーブが命中した敵は魔法ダメージを受け、1.5秒間スネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "fb0e25ebd421690dc763320df659b95b9726f389"
+  },
+  "Template:Data Mel/Solar Snare#description2": {
+   "source_sha1": "477087904007b7828ddd2f5e5f896add7f7cd4e8",
+   "ja": "オーブは陽光のフィールドを発し、フィールドは0.5秒の遅れの後にさらに広がる。フィールド内の敵は0.125秒ごとに魔法ダメージを受けて30%のスロウを受け、フィールドから出た後も0.25秒間スロウが残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "ccb3b267ebf09bf3ff8d328b2af47b85d2b78e3a"
+  },
+  "Template:Data Mel/Solar Snare#description3": {
+   "source_sha1": "f5db887d6895644473bd68792619849b07a1e742",
+   "ja": "「陽光の枷」のオーブとフィールドは、どちらもミニオンに50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "02e4381ec4b781dbdb0c21bc41b3fa974ad61ea3"
+  },
+  "Template:Data Mel/Golden Eclipse#description": {
+   "source_sha1": "7d8b88bd52a7d56f831e6733ffdf20320477e935",
+   "ja": "自動効果：「灼熱の輝き」のスタックが蓄えるダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "426d1f0a6d81cdd06401f488a5ad6f01f5501750"
+  },
+  "Template:Data Mel/Golden Eclipse#description2": {
+   "source_sha1": "fa03dfd24887900addca81651301c11062ddc927",
+   "ja": "発動効果：「灼熱の輝き」の影響を受けているすべての敵に光の爆発を放ち、それぞれに魔法ダメージを与える。敵は詠唱時間の開始から1秒間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2adf8e762534ad9f77cf8f64f5687be52731daff"
+  },
+  "Template:Data Mel/Golden Eclipse#description3": {
+   "source_sha1": "d1db5452d7411fb0fa1a5fcfb4979f2cbaf3be75",
+   "ja": "このスキルを使用するには、「灼熱の輝き」の影響を受けている敵チャンピオンが必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "35549c451bed94b75a37c6924d7538778e8d3bdb"
+  }
+ },
+ "withheld": {
+  "Template:Data Mel/Searing Brilliance#description2": {
+   "source_sha1": "169be7e74a1888685d14c066a6a8382778df3e50",
+   "reason": "residual_markup"
+  }
+ }
+}

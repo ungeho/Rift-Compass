@@ -22,7 +22,26 @@ const MODE_FILES = ["ar", "aram", "nb", "ofa", "swift", "urf", "usb"];
 
 // 記事・ユニットの種（総数の基準ではない。Wiki の全記事数は siteinfo で 16,918）
 const UNIT_SEEDS = ["Gromp", "Murk Wolf", "Greater Murk Wolf", "Crimson Raptor", "Raptor", "Ancient Krug", "Krug", "Blue Sentinel", "Red Brambleback", "Rift Scuttler", "Voidgrub", "Rift Herald", "Baron Nashor", "Elder Dragon", "Infernal Drake", "Ocean Drake", "Mountain Drake", "Cloud Drake", "Hextech Drake", "Chemtech Drake", "Atakhan", "Minion (League of Legends)", "Turret", "Inhibitor", "Nexus"];
-const ARTICLE_SEEDS = ["Champion statistic", "Attack speed", "Basic attack", "Basic attack reset", "Damage", "Armor", "Magic resistance", "Armor penetration", "Magic penetration", "Lethality", "Health", "Health regeneration", "Mana", "Movement speed", "Ability haste", "Cooldown", "Critical strike", "Life steal", "Omnivamp", "Tenacity", "Crowd control", "Shield", "Spell shield", "Heal and shield power", "Sight", "Stealth", "True sight", "Brush", "Fog of war", "Ward", "Trinket", "Experience (champion)", "Gold", "Monster", "Summoner's Rift", "Projectile", "Collision radius", "Targeting", "Untargetable", "Invulnerability", "Grievous Wounds", "On-hit effect", "Channeling", "Dash", "Blink", "Airborne", "Stun", "Root", "Silence", "Slow", "Turret plating", "Death", "Respawn", "Champion", "Summoner spell", "Rune", "Item"];
+const ARTICLE_SEEDS = ["Champion statistic", "Attack speed", "Basic attack", "Basic attack reset", "Damage", "Armor", "Magic resistance", "Armor penetration", "Magic penetration", "Lethality", "Health", "Health regeneration", "Mana", "Movement speed", "Ability haste", "Cooldown", "Critical strike", "Life steal", "Omnivamp", "Tenacity", "Crowd control", "Shield", "Spell shield", "Heal and shield power", "Sight", "Stealth", "True sight", "Brush", "Fog of war", "Ward", "Trinket", "Experience (champion)", "Gold", "Monster", "Summoner's Rift", "Projectile", "Unit collision", "Unit size", "Targeting", "Untargetable", "Invulnerability", "Grievous Wounds", "On-hit effect", "Channel", "Dash", "Blink", "Airborne", "Stun", "Root", "Silence", "Slow", "Death", "Respawn", "Champion", "Summoner spell", "Rune", "Item",
+  // 2026-11-02 追加：CC・視界・ダメージ・システム
+  "Blind", "Nearsight", "Ground", "Fear", "Charm", "Taunt", "Suppression", "Sleep", "Polymorph", "Disarm", "Stasis", "Cripple", "Drowsy", "Kinematics", "Knockback", "Knockup", "Pull",
+  "Camouflage", "Invisibility", "Reveal", "Vision", "Fog of war", "Control Ward", "Stealth Ward", "Farsight Alteration", "Oracle Lens",
+  "True damage", "Physical damage", "Magic damage", "Damage over time", "Proc damage", "Spell effects", "Area of effect", "Damage reduction", "Heal", "Shield", "Healing reduction",
+  "Bounty", "Experience", "Death timer", "Respawn timer", "Minion aggro", "Turret aggro", "Jungle", "Epic monster", "Elemental Drake", "Smite", "Ward", "Recall", "Teleport", "Base"];
+
+/** 説明の項目（description・description2…・blurb）を読める英語にし、解けない記法が残ったかを記録する（翻訳の原文になる）*/
+function describeFields(params) {
+  const out = {};
+  for (const [k, v] of Object.entries(params || {})) {
+    if (!/^(description\d*|blurb\d*)$/.test(k) || !v) continue;
+    const plain = W.plainText(v);
+    // source_sha1：Wiki の原文（記法つき）、plain_sha1：訳の対象にした英文（記法を簡略化したもの）。
+    // 解析の修正で英文だけが変わることがあるので、訳は両方が一致するときだけ有効にする（tools/gamedata/translate.js）
+    const sha1 = (x) => require("crypto").createHash("sha1").update(x).digest("hex");
+    out[k] = { plain, residual: W.hasResidual(plain), source_sha1: sha1(v), plain_sha1: sha1(plain) };
+  }
+  return out;
+}
 
 async function harvest({ cache, only }) {
   const want = (d) => !only || only.includes(d);
@@ -114,10 +133,14 @@ async function harvest({ cache, only }) {
         }
         if (!Object.keys(params).length) { cov.unparsed_fields++; cov.unparsed_reasons.no_template_call = (cov.unparsed_reasons.no_template_call || 0) + 1; }
         // ランク別の値の数が Data Dragon の最大ランクと違うもの（Wiki の既定の数で補間した可能性）は印を付ける
-        const lens = [...Object.values(s.parsed), ...s.leveling.map((l) => l.base).filter(Boolean)].filter((x) => x.kind !== "number").map((x) => x.values.length);
+        const lens = [...Object.values(s.parsed), ...s.leveling.map((l) => l.base).filter(Boolean)].filter((x) => x.kind === "by_rank" || x.kind === "by_rank_linear").map((x) => x.values.length);
         const rankNote = ddMax && lens.some((n) => n !== ddMax) ? { ddragon_maxrank: ddMax, value_counts: [...new Set(lens)] } : null;
         if (rankNote) cov.rank_count_differs = (cov.rank_count_differs || 0) + 1;
-        templates.push({ ...t, source: src(r), params, ...(Object.keys(vars).length ? { vars } : {}), parsed: s.parsed, leveling: s.leveling, unparsed: s.unparsed, ...(compare ? { compare } : {}), ...(rankNote ? { rank_note: rankNote } : {}) });
+        // ダメージ計算に使えるかの段階を、leveling の行ごとに付ける
+        for (const l of s.leveling) { l.calc = W.calcInfo(l, params.damagetype); cov.calc = cov.calc || {}; cov.calc[l.calc.stage] = (cov.calc[l.calc.stage] || 0) + 1; }
+        const text = describeFields(params);
+        for (const v of Object.values(text)) { cov.text_fields = (cov.text_fields || 0) + 1; if (v.residual) cov.text_residual = (cov.text_residual || 0) + 1; }
+        templates.push({ ...t, source: src(r), params, ...(Object.keys(vars).length ? { vars } : {}), text, parsed: s.parsed, leveling: s.leveling, unparsed: s.unparsed, ...(compare ? { compare } : {}), ...(rankNote ? { rank_note: rankNote } : {}) });
       }
       writeJson(path.join(out, "abilities", `${key}.json`), { license: W.LICENSE, champion: base, forms: g.forms, ddragon_key: key, templates });
     }
@@ -143,7 +166,9 @@ async function harvest({ cache, only }) {
         cov.unparsed_fields += effects;
         if (effects) cov.unparsed_reasons.effect_text = (cov.unparsed_reasons.effect_text || 0) + effects;
         if (data.modes && data.modes["classic sr 5v5"]) cov.sr_items++; else cov.mode_only_items++;
-        items.push({ name, source: src(r), data });
+        // 効果の文は、読める英語にしたものも保存する（原文は data.effects に残る）
+        const effectText = Object.fromEntries(Object.entries(data.effects || {}).map(([k, e]) => { const plain = W.plainText(e && e.description ? e.description : ""); return [k, { name: e && e.name ? W.plainText(e.name) : null, plain, residual: W.hasResidual(plain) }]; }));
+        items.push({ name, source: src(r), data, effect_text: effectText });
       } catch (e) {
         cov.unparsed_fields++;
         cov.unparsed_reasons.lua_parse_error = (cov.unparsed_reasons.lua_parse_error || 0) + 1;
@@ -173,7 +198,7 @@ async function harvest({ cache, only }) {
       cov.structured_fields += Object.keys(s.parsed).length + ["path", "slot"].filter((k) => params[k]).length;
       cov.unparsed_fields += s.unparsed.length;
       for (const u of s.unparsed) cov.unparsed_reasons[u.reason] = (cov.unparsed_reasons[u.reason] || 0) + 1;
-      runes.push({ ...x, source: src(r), params, parsed: s.parsed, unparsed: s.unparsed });
+      runes.push({ ...x, source: src(r), params, text: describeFields(params), parsed: s.parsed, unparsed: s.unparsed });
     }
     log("runes done", cov.fetched);
     writeJson(path.join(out, "runes.json"), { license: W.LICENSE, runes });
@@ -261,6 +286,60 @@ async function harvest({ cache, only }) {
     log("articles done", cov.fetched);
     writeJson(path.join(out, "articles.json"), { license: W.LICENSE, note: "本文は保存していない。原典は url を参照", articles });
     coverage.articles = cov;
+  }
+
+  // --- 変更履歴（チャンピオン：<名前>/Patch history、アイテム・ルーン・サモナースペル：ページの Patch History の節）---
+  // 版ごとに「変わった項目（スキル・ステータスなど）」と行数だけを保存し、本文の行は保存しない（原典へのリンクで読む）
+  if (want("history")) {
+    const cov = { label_ja: "変更履歴（版ごとの変更された項目）", target_total: 0, target_basis: "全チャンピオン（Module:ChampionData の基本形態）＋サモナーズリフトのアイテム（modes の classic sr 5v5）＋ルーン（Data Dragon）＋サモナーズリフトのサモナースペル（SpellData maps.sr）", discovered: 0, fetched: 0, not_found: 0, failed: 0, structured_fields: 0, unparsed_fields: 0, unparsed_reasons: {}, without_history: [] };
+    // labels=false（アイテム・ルーン・サモナースペル）：最上位の行が変更の文なので、項目名も保存せず版と行数だけ
+    const parseHistory = (text, labels = true) => {
+      const start = text.search(/^==\s*(Patch [Hh]istory|Release version)\s*==|^;\s*\[\[V\d/m);
+      if (start < 0) return null;
+      const body = text.slice(start);
+      const versions = [];
+      let cur = null;
+      for (const line of body.split("\n")) {
+        const v = /^;\s*\[\[(V[\d.]+)\]\](.*)$/.exec(line.trim());
+        if (v) { cur = { version: v[1], note: W.plainText(v[2]).replace(/^[-–\s]+/, "") || undefined, subjects: [], lines: 0 }; versions.push(cur); continue; }
+        if (!cur) continue;
+        if (/^\*[^*]/.test(line)) {
+          // 項目名（スキル名・「General」など短い見出し）だけを残す。変更の文（「… increased to 3500 from 3450.」）は本文なので保存せず、行数だけ数える
+          const subj = W.plainText(line.replace(/^\*\s*/, "")).trim();
+          const isLabel = subj && subj.length <= 40 && !/[.。:;⟦]$/.test(subj) && !/\b(increased|reduced|decreased|changed|removed|added|now|no longer|from|to)\b/i.test(subj) && !/\d/.test(subj);
+          if (labels && isLabel) cur.subjects.push(subj);
+          cur.lines++;
+        }
+        else if (/^\*\*/.test(line)) cur.lines++;
+      }
+      return versions;
+    };
+    const targets = [];
+    for (const [form, c] of Object.entries(champions)) if (Number(c.id) === Math.trunc(Number(c.id))) targets.push({ kind: "champion", key: String(c.id), name: form, title: `${form}/Patch history` });
+    const itemsFile = path.join(out, "items.json");
+    if (fs.existsSync(itemsFile)) for (const it of readJson(itemsFile).items) if (it.data && it.data.modes && it.data.modes["classic sr 5v5"]) targets.push({ kind: "item", name: it.name, title: it.name });
+    const runesFile = path.join(out, "runes.json");
+    if (fs.existsSync(runesFile)) for (const ru of readJson(runesFile).runes) targets.push({ kind: "rune", name: ru.name, title: ru.source && ru.source.title ? ru.source.title.replace(/^Template:Rune data /, "") : ru.name });
+    const spellFile = path.join(out, "modules", "summoner_spells.json");
+    if (fs.existsSync(spellFile)) for (const [name, sp] of Object.entries(readJson(spellFile).data)) if (sp.maps && sp.maps.sr) targets.push({ kind: "summoner", name, title: sp.link || name });
+    cov.target_total = cov.discovered = targets.length;
+    const result = { champion: {}, item: {}, rune: {}, summoner: {} };
+    let n = 0;
+    for (const tg of targets) {
+      let r = await W.fetchRaw(tg.title, cache);
+      const red = r.status === 200 && /^\s*#REDIRECT\s*\[\[([^\]#]+)/i.exec(r.text);
+      if (red) r = await W.fetchRaw(red[1].replace(/_/g, " "), cache);
+      if (++n % 50 === 0) log(`history ${n}/${targets.length}`);
+      if (r.status !== 200) { r.status === 404 ? cov.not_found++ : cov.failed++; result[tg.kind][tg.key || tg.name] = { name: tg.name, source: src(r) }; continue; }
+      cov.fetched++;
+      const versions = parseHistory(r.text, tg.kind === "champion");
+      if (!versions || !versions.length) { cov.without_history.push(`${tg.kind}:${tg.name}`); cov.unparsed_fields++; cov.unparsed_reasons.no_history_section = (cov.unparsed_reasons.no_history_section || 0) + 1; result[tg.kind][tg.key || tg.name] = { name: tg.name, source: src(r), versions: [] }; continue; }
+      cov.structured_fields += versions.length;
+      result[tg.kind][tg.key || tg.name] = { name: tg.name, source: src(r), latest: versions[0].version, versions };
+    }
+    for (const kind of Object.keys(result)) writeJson(path.join(out, "history", `${kind}s.json`), { license: W.LICENSE, note: kind === "champion" ? "版ごとに変更された項目（スキル名・Stats など）と行数だけ。変更の本文は原典（source.url）で読む" : "版と行数だけ（変更の文は保存しない）。変更の本文は原典（source.url）で読む", entries: result[kind] });
+    log("history done", cov.fetched);
+    coverage.history = cov;
   }
 
   const prevFile = path.join(out, "coverage.json");

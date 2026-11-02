@@ -25,7 +25,8 @@ test("値：数・ランク別（/・ap の列挙・ap の a to b）・数式。
   // 式の中の複数の範囲は同じ段階で同時に補間する（Template:Ability progression/doc）
   assert.deepEqual(W.parseValue("{{ap|(12 to 22)*(25 to 55)/100}}", 5).values, [3, 4.7125, 6.8, 9.2625, 12.1]);
   assert.deepEqual(W.parseValue("{{ap|75/7|round=2}}").values, [10.714286]);
-  assert.equal(W.parseValue("Varies").reason, "text");
+  assert.equal(W.parseValue("Varies").keyword, "varies"); // 文の値はキーワードとして持つ（数にしない）
+  assert.equal(W.parseValue("some text").reason, "text");
 });
 
 test("テンプレートの引数：入れ子の {{ }}・[[ ]] の中の | では区切らない", () => {
@@ -104,4 +105,62 @@ test("leveling：1つの {{st}} の複数の組を分け、係数の値を基礎
   assert.equal(n[0].base, null);
   assert.equal(n[0].reason, "base_nested_template");
   assert.deepEqual(n[0].ratios[0].percent, [12, 14.5, 17, 19.5, 22]);
+});
+
+test("Passive progression：a to b はレベル1〜18に補間、then を含む式は推測せず pp_complex", () => {
+  const v = W.parseValue("{{pp|50 to 80}}", 5);
+  assert.equal(v.kind, "progression");
+  assert.equal(v.values.length, 18);
+  assert.equal(v.values[0], 50);
+  assert.equal(v.values[17], 80);
+  assert.equal(v.basis_label, "level");
+  assert.equal(W.parseValue("{{pp|30 to 70 by 10; 80 for 2}}", 5).reason, "pp_complex");
+});
+
+test("dv・tt・キーワード：形態ごとの値、説明つきの値、文の値を分けて持つ", () => {
+  const dv = W.parseValue("{{dv|10|20}}", 5);
+  assert.equal(dv.kind, "variants");
+  assert.deepEqual(dv.variants.map((x) => x.values[0]), [10, 20]);
+  const tt = W.parseValue("{{tt|5|Starts post-effect}}", 5);
+  assert.deepEqual(tt.values, [5]);
+  assert.equal(tt.note, "Starts post-effect");
+  assert.equal(W.parseValue("global", 5).keyword, "global");
+});
+
+test("説明の文：sti は2つ目の引数、記号は文字に、知らない記法は ⟦⟧ で残して翻訳の対象から外す", () => {
+  const p = W.plainText("{{sti|health|below 30% health}} and 625{{times}}180 {{unknownthing|x}}");
+  assert.equal(p, "below 30% health and 625×180 ⟦unknownthing⟧");
+  // 外側のテンプレートの中にあっても印が壊れない（{{as|{{pp|… then …}}|physical damage}}）
+  const nested = W.plainText("deal {{as|{{pp|30;then +5*x for 9|formula=x}}|physical damage}} bonus damage");
+  assert.equal(nested.replace(/⟦[^⟦⟧]*⟧/g, "X"), "deal X bonus damage");
+  assert.equal(W.hasResidual(p), true);
+  assert.equal(W.hasResidual("below 30% health"), false);
+});
+
+test("取り込んだ Ekko R の説明の文に記法（label1= など）が残っていない", () => {
+  const f = require("../../public/gamedata/wiki/2026-11-02/abilities/245.json");
+  const r = f.templates.find((t) => t.name === "Chronobreak");
+  for (const [k, v] of Object.entries(r.text)) {
+    assert.doesNotMatch(v.plain, /\{\{|\}\}|label\d*=|\[\[/, k);
+    assert.equal(v.residual, false, k);
+  }
+  assert.match(r.text.description2.plain, /stasis/);
+});
+
+test("計算の段階：Darius Q は computable（物理・ランク・合計攻撃力）", () => {
+  const f = require("../../public/gamedata/wiki/2026-11-02/abilities/122.json");
+  const q = f.templates.find((t) => t.name === "Decimate");
+  assert.deepEqual(q.leveling[0].calc, { stage: "computable", damage_type: "physical", base_basis: "rank", inputs: ["total_ad"] });
+});
+
+test("変更履歴：版と行数だけ。アイテムの変更の文は保存しない（チャンピオンはスキル名などの項目名だけ）", () => {
+  const items = require("../../public/gamedata/wiki/2026-11-02/history/items.json");
+  const ie = items.entries["Infinity Edge"];
+  assert.ok(ie.versions.length > 0);
+  assert.ok(ie.versions.every((v) => v.subjects.length === 0 && v.lines >= 0));
+  assert.doesNotMatch(JSON.stringify(items), /increased to \d+ from/);
+  const champs = require("../../public/gamedata/wiki/2026-11-02/history/champions.json");
+  const subj = Object.values(champs.entries).flatMap((e) => (e.versions || []).flatMap((v) => v.subjects));
+  assert.ok(subj.length > 0);
+  assert.ok(subj.every((s) => s.length <= 40 && !/\d/.test(s)));
 });

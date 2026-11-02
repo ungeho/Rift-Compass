@@ -1,0 +1,46 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nocturne/Paranoia#description": {
+   "source_sha1": "24233d1b9968c5b5848c9b09407003e548f093d5",
+   "plain_sha1": "bc397899dd798b18962ab2bdda435cb033049ab4",
+   "ja": "発動効果：ノクターンは敵チャンピオン全員を恐怖させ、6秒間ニアサイトにして、その間の視界の半径を300ユニット減らす。0.25秒後から、同じ時間の間「パラノイア」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Paranoia#description2": {
+   "source_sha1": "539e6815aa832f3ad6b4b2962a9af7408d216820",
+   "plain_sha1": "2d9e544337b670c144ad71532ce25f0bd7fe26ae",
+   "ja": "再発動：ノクターンは移動系の効果を受けない状態で対象の敵チャンピオンへダッシュし、到着時に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Paranoia#description3": {
+   "source_sha1": "d5053946548a3c190d7d31f139423c24b988ac9c",
+   "plain_sha1": "e2de67f49bff9c31111c134fe8564da3ae5bbc7e",
+   "ja": "ノクターンはダッシュ中に、どのスキルもアイテムの発動効果も使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nocturne/Umbra Blades#description": {
+   "source_sha1": "ac8df84481002e4302716b28a9a31208516c37aa",
+   "reason": "residual_markup"
+  },
+  "Template:Data Nocturne/Umbra Blades#description2": {
+   "source_sha1": "21aaf8fff36fc17047b6c9960e6a255541483673",
+   "reason": "residual_markup"
+  }
+ }
+}

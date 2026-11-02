@@ -1,0 +1,35 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Twisted Fate/Destiny#description": {
+   "source_sha1": "5caa922a3907f00d79a7d9eb82f34a540968a70c",
+   "plain_sha1": "bfbd7fc501c3c6d1473c972fc55acbcf3f7bb2f3",
+   "ja": "発動効果：ツイステッド・フェイトは対象にできる敵チャンピオン全員に印を付け、効果時間の間、可視化する。「デスティニー」は効果時間中、0.5秒後から再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Destiny#description2": {
+   "source_sha1": "705ff2e4c0f845288b75631dc8fc6ced029ca2bb",
+   "plain_sha1": "5abcb6de8d949b24c9dd47bf295372ab20d79d44",
+   "ja": "再発動 -「Gate」：ツイステッド・フェイトは1.5秒間詠唱した後に指定地点へブリンクし、その際、自分を狙う敵の飛翔物を破壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Twisted Fate/Loaded Dice#description": {
+   "source_sha1": "a9c05c71ae478c08a6fedce6a016e7d6b378fc13",
+   "reason": "residual_markup"
+  }
+ }
+}

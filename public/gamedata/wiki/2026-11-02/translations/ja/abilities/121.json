@@ -1,0 +1,51 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kha'Zix/Void Assault#description": {
+   "source_sha1": "09e0bfbbe5daeb19ea822f5b6b37c78ce59c77fa",
+   "plain_sha1": "a282240e0f3f4ae4c9e2187c1583bedbb2acd348",
+   "ja": "自動効果：「捕食の本能」のランクごとに、カ＝ジックスはスキルを一つ進化させ、追加の効果を与えられる。進化させると、カ＝ジックスは2秒の詠唱時間に入る。スキルの使用を妨げる行動妨害や、スキルを封じる行動不能を受けている間は進化できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Void Assault#description2": {
+   "source_sha1": "55901fc98a06136f0cafa8b560c3450a8a9c44c8",
+   "plain_sha1": "cbbc90de89a29cbbf3f0541ff1a733222452efc5",
+   "ja": "発動効果：カ＝ジックスは1.25秒間インビジブルになり、その間40%の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Void Assault#description3": {
+   "source_sha1": "a5bbcb8c2fb0698c144277fab5766f5412c72ff3",
+   "plain_sha1": "771f5b9364a29078ec00bc230e9135cfdb379e73",
+   "ja": "インビジブルが解けて2秒後から12秒間、「捕食の本能」を追加のコストなしで再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Void Assault#description4": {
+   "source_sha1": "404ed3dc7d71e21c4ead35f49c93a1555d47d004",
+   "plain_sha1": "d8e5da7d051a140b104ac434bd30f34d9644c67f",
+   "ja": "再発動：カ＝ジックスは最初の発動と同じ効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Evolved Adaptive Cloaking#description": {
+   "source_sha1": "2b377b4536a7ca05c4ba7371dfcf5b6a2f419f79",
+   "plain_sha1": "d72dd46515ff7627eba6aa3c45a5415b3a41be11",
+   "ja": "進化ボーナス：インビジブルが2秒間続くようになり、「捕食の本能」を二回再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

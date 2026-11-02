@@ -1,0 +1,49 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Twitch/Ambush#description": {
+   "source_sha1": "68ed9fb3b426b1da9a14215b6c102f8a7240de59",
+   "plain_sha1": "4702ccadd12791ae33436c5d6e43f553ef5d1777",
+   "ja": "発動効果：1秒後に、トゥイッチは効果時間の間カモフラージュになる。通常攻撃をするか、「コイツを食らエ！」か「ボーン！」を使用すると、「オイラだヨ！」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Ambush#description2": {
+   "source_sha1": "be09cd3e59599fdc1fc1e03ec37cac49df73de6e",
+   "plain_sha1": "a0fc58cc5ffa21eecb54cbaa4fbc4fedb6923397",
+   "ja": "この間、トゥイッチの移動速度は10%増加し、自分が見えていない1000ユニット以内の敵チャンピオンの方を向いている間は30%に増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Ambush#description3": {
+   "source_sha1": "c8ead5c57ac4093a829713cddd238ca936651143",
+   "plain_sha1": "4fc88702fc2cc51b1126c2eb72bb622439acaaf0",
+   "ja": "ステルスが解けると、トゥイッチは6秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Ambush#description4": {
+   "source_sha1": "e6acadb0013fe0c6f541ed92b68815aa308b4001",
+   "plain_sha1": "b06d919536c0d17769104cc4d3a17527bbb343a2",
+   "ja": "「スゴイ毒ダ！」を受けている敵チャンピオンが死ぬと、「オイラだヨ！」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Twitch/Spray and Pray#description2": {
+   "source_sha1": "f15dfc3c8cbe1f1b4413fde36155c6ce9cbe8017",
+   "reason": "residual_markup"
+  }
+ }
+}

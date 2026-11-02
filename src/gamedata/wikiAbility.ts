@@ -1,10 +1,23 @@
 // 英語 Wiki のスキルのデータ（public/gamedata/wiki/<取得日>/abilities/<キー>.json）の型と、表示用の変換。
 // 原情報（params の文字列）はファイルに残し、ここでは表示のために簡略化するだけ（推測で値を補わない）。
 
+import type { CalcInfo } from "./damage";
+
 export interface ParsedValue {
   ok: true;
-  kind: "number" | "by_rank" | "by_rank_linear";
+  kind: "number" | "by_rank" | "by_rank_linear" | "progression" | "variants" | "min_max" | "keyword";
   values: number[];
+  /** progression（Template:Passive progression）：基準（レベル・スタックなど）と、その名前・単位・式の説明 */
+  basis?: (number | string)[];
+  basis_label?: string;
+  basis_unit?: string;
+  formula?: string;
+  /** variants（{{dv}}）：形態・条件ごとの値 */
+  variants?: (ParsedValue & { label: string | null })[];
+  keyword?: string;
+  /** tt の説明（例：Starts post-effect）*/
+  note?: string;
+  simplified?: boolean;
   from?: number;
   to?: number;
   ranks?: number;
@@ -27,6 +40,8 @@ export interface Leveling {
   base: ParsedValue | null;
   ratios: Ratio[];
   reason?: string;
+  /** ダメージ計算に使えるかの段階（取り込み時に判定）*/
+  calc?: CalcInfo;
 }
 
 export interface WikiAbilityTemplate {
@@ -38,6 +53,8 @@ export interface WikiAbilityTemplate {
   params?: Record<string, string>;
   vars?: Record<string, string>;
   parsed?: Record<string, ParsedValue>;
+  /** 説明の項目を読める英語にしたもの（取り込み時）。residual＝解けない記法が残っている（翻訳しない）*/
+  text?: Record<string, { plain: string; residual: boolean; source_sha1: string; plain_sha1?: string }>;
   leveling?: Leveling[];
   unparsed?: { field: string; reason: string }[];
   /** ランク別の値の数が Data Dragon の最大ランクと違うとき（例：R のランクで変わる基本スキル）*/
@@ -56,8 +73,23 @@ export interface WikiAbilityFile {
 }
 
 /** 値の表示：ランク別は「/」でつなぐ */
-export const showValues = (v: { values: number[]; unit?: string; of?: string } | null | undefined) =>
-  v ? `${v.values.map((x) => String(Number(x.toFixed(4)))).join("/")}${v.unit ?? ""}${v.of ? ` ${v.of}` : ""}` : "—";
+const n4 = (x: number) => String(Number(x.toFixed(4)));
+const KEYWORDS: Record<string, string> = { none: "なし", global: "全体", self: "自身", instant: "即時", unlimited: "無制限", varies: "場合による", varied: "場合による" };
+const BASIS: Record<string, string> = { level: "レベル" };
+export function showValues(v: (Partial<ParsedValue> & { values: number[]; unit?: string; of?: string }) | null | undefined): string {
+  if (!v) return "—";
+  const unit = v.unit ?? "";
+  let s: string;
+  if (v.kind === "keyword") s = KEYWORDS[v.keyword ?? ""] ?? v.keyword ?? "";
+  else if (v.kind === "variants") s = (v.variants ?? []).map((x) => `${showValues(x)}${x.label ? `（${x.label}）` : ""}`).join("／");
+  else if (v.kind === "min_max") s = `${n4(v.values[0])}〜${n4(v.values[1])}`;
+  else if (v.kind === "progression") {
+    const first = v.values[0], last = v.values[v.values.length - 1];
+    s = v.values.length > 1 ? `${n4(first)}${unit}〜${n4(last)}${unit}（${BASIS[v.basis_label ?? ""] ?? v.basis_label}に応じて）` : `${n4(first)}${unit}`;
+    return `${s}${v.of ? ` ${v.of}` : ""}`;
+  } else s = v.values.map(n4).join("/");
+  return `${s}${unit}${v.of ? ` ${v.of}` : ""}${v.note ? `（${v.note}）` : ""}`;
+}
 
 export function showRatio(r: Ratio): string {
   // 解析できなかった係数は、記法を簡略化した原文に「未解析」を付けて示す（{{ }} をそのまま出さない）
@@ -105,6 +137,10 @@ const REASONS: Record<string, string> = {
   st_unpaired: "ラベルだけの項目",
   "template:degree": "角度の表記",
   "template:degrees": "角度の表記",
+  pp_complex: "段階ごとに増え方が変わる式（then などを推測で展開しない）",
+  pp_basis_mismatch: "基準の数と値の数が合わない式",
+  dv_part_unparsed: "2つの値の一部が読み取れない",
+  "template:fd": "書式つきの値",
 };
 export const reasonLabel = (code: string | undefined) => (code ? (REASONS[code] ?? (code.startsWith("template:") ? `記法 ${code.slice(9)}` : code)) : "未解析");
 
@@ -121,11 +157,15 @@ export function wikiPlain(text: string | undefined | null): string {
       const parts = inner.split("|").map((x) => x.trim());
       const name = (parts[0] || "").toLowerCase();
       const args = parts.slice(1).filter((x) => !/^[a-z]+\s*=/.test(x));
-      if (name === "sbc" || name === "as" || name === "fd" || name === "g" || name === "sti") return args[0] ?? "";
+      if (name === "sti") return args[1] ?? args[0] ?? ""; // {{sti|種類|表示する文}}
+      if (name === "sbc" || name === "as" || name === "fd" || name === "g") return args[0] ?? "";
       if (name === "ap" || name === "pp" || name === "rd") return args.join(" / ").replace(/\s+to\s+/g, "〜");
       if (name === "st") return `${args[0] ?? ""}: ${args[1] ?? ""}`;
       if (name === "tt") return args[0] ?? "";
       if (/^(ci|cai|ai|si|ii|ri|bi|ui|csl|nie)$/.test(name)) return args[args.length > 1 && name !== "ci" ? 0 : 0] ?? "";
+      // アイコンだけのツールチップ（icononly=true）は文字を出さない。角度の記号
+      if (name === "tip" && parts.some((x) => /^icononly\s*=\s*true$/i.test(x))) return "";
+      if (name === "degree" || name === "degrees") return "°";
       if (name === "tip") return args[args.length - 1] ?? args[0] ?? "";
       return args.length ? args[args.length - 1] : "";
     });

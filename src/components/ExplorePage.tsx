@@ -6,7 +6,8 @@ import { useMemo, useState } from "react";
 import { index } from "../data/dataset";
 import { decisionById } from "../data/decisions";
 import { explorePool, exploreTopics, isPublicNote } from "../data/explorePool";
-import { APPLICABILITY_LABELS, KIND_LABELS, noteHeading, periodLabel } from "../data/labels";
+import { APPLICABILITY_LABELS, KIND_LABELS, periodLabel } from "../data/labels";
+import { NoteStatusBadge } from "./common";
 import type { Evidence, KnowledgeNote } from "../data/types";
 import { plainText } from "../lib/plainText";
 import { classify, exploreKey, GROUPS, groupWeights, pickAll, pickMany, pickNext, type AllResult, type ExploreGroup, type ExploreItem, type ManyPick, type ManyResult, type PickResult } from "../lib/explore";
@@ -289,7 +290,7 @@ export function NoteSummary({ note, evidence = index.evidenceByNote.get(note.id)
   return (
     <div className="note-summary">
       <p className="card-meta">
-        <span className="badge">{KIND_LABELS[note.kind]}</span> <span className="badge">{noteHeading(note)}</span>
+        <span className="badge">{KIND_LABELS[note.kind]}</span> <NoteStatusBadge note={note} />
       </p>
       <p className="note-statement">{plainText(note.statement_ja)}</p>
       <p className="muted">

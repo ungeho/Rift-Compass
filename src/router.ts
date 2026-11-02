@@ -18,7 +18,8 @@ export type Route =
   | { name: "decisions"; topic: string; compare?: string }
   | { name: "decision"; id: string; example?: string }
   | { name: "note"; id: string }
-  | { name: "explore"; topic: string; distance: number; count: ExploreCount };
+  | { name: "explore"; topic: string; distance: number; count: ExploreCount }
+  | { name: "data"; section: string };
 
 /** 散策の距離の既定値（近い寄り）*/
 export const DEFAULT_EXPLORE_DISTANCE = 30;
@@ -45,6 +46,7 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "topic" && seg[1]) return { name: "topic", id: seg[1] };
   if (seg[0] === "topics") return { name: "topics" };
   if (seg[0] === "note" && seg[1]) return { name: "note", id: seg[1] };
+  if (seg[0] === "data") return { name: "data", section: seg[1] ?? "" };
   const params = new URLSearchParams(queryString);
   if (seg[0] === "decision" && seg[1]) {
     const example = params.get("example");

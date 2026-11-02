@@ -1,0 +1,61 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Viego/Harrowed Path#description": {
+   "source_sha1": "020f55f3266d2b16da1a55b4c619333f11d7d247",
+   "plain_sha1": "aee797b20de9acead5490cf609265faf200173fb",
+   "ja": "発動効果：ヴィエゴは指定方向に亡霊を送り、その通り道に8秒間残る霧を作る。亡霊が地形に当たると、霧は地形の両側にさらに広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Harrowed Path#description2": {
+   "source_sha1": "19cff8f7eb0694847f3242740259bdb23242adab",
+   "plain_sha1": "bbe97abafbd6007e880cbb7d0c5cd2de72f1932c",
+   "ja": "霧の中では、ヴィエゴの攻撃速度が増加する。通常攻撃もスキルの使用もしていなければ、移動速度の増加とカモフラージュも得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Harrowed Path#description3": {
+   "source_sha1": "db36e4bdaf7dc16951e251e7c7cbf1e1359a506d",
+   "plain_sha1": "4447288938d86a2ef885ffb072f8bdf96549f86d",
+   "ja": "通常攻撃の宣言かスキルの使用でカモフラージュが解け、移動速度の増加もなくなり、1秒間（大型モンスターに通常攻撃した場合は2秒間）は再びそれらを得られない。この時間は、通常攻撃とスキルの使用のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Harrowed Path#description4": {
+   "source_sha1": "5d46a3b3e4977c3a75a88a2100d3b0964127e5f0",
+   "plain_sha1": "a1e25b6b8f1f1f79b0382a6104bf74d0ceb275d3",
+   "ja": "「彷徨える苦悶」は、ヴィエゴのどのスキルの使用中にも使える。「亡霊の嘆き」の詠唱中に使った場合や、霧がある間に詠唱を始めた場合は、1秒間「彷徨える苦悶」のカモフラージュと移動速度の増加を得られない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Viego/Blade of the Ruined King#description": {
+   "source_sha1": "94ec8d30f5d219182d099e76927b0392aadd8d30",
+   "reason": "residual_markup"
+  },
+  "Template:Data Viego/Blade of the Ruined King#description3": {
+   "source_sha1": "9b75b7517d52a57828f03244c8976ef6864e0d38",
+   "reason": "residual_markup"
+  },
+  "Template:Data Viego/Blade of the Ruined King#description4": {
+   "source_sha1": "f91b5e59ed96125bc0d611c16fd16824cda05b2c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Viego/Heartbreaker#description2": {
+   "source_sha1": "b17558c6fc36356bdbc1f20181c0ea3d2c1e2ae6",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Rengar/Thrill of the Hunt#description": {
+   "source_sha1": "b800f3c317ad5335ed96c3665c15cdc91955ad03",
+   "plain_sha1": "3823633b5546997a17ff8b3a0a86ac5b094e8c98",
+   "ja": "自動効果：レンガーは、どの効果によるカモフラージュの間も「見えざる襲撃者」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Thrill of the Hunt#description3": {
+   "source_sha1": "bd5586a883f2db6da601d2272e56b9cd8fd0919e",
+   "plain_sha1": "cbc61f73bd241a6a87be16954d111d4565065dd7",
+   "ja": "この間、レンガーは範囲内で最も近い敵チャンピオンを検知し、その敵を可視化して、その周囲100ユニットの視界を得る。検知された敵は、残りの効果時間のすべての間、可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Thrill of the Hunt#description4": {
+   "source_sha1": "3dba17ae5f96e0c8290c0f2710f214230f247628",
+   "plain_sha1": "cd70a3287d917e4f02d5ffe9bf625af1038c3b51",
+   "ja": "1600の範囲内で検知された最も近い敵には印も付き、その敵の1200の範囲内にいる味方全員に、レンガーの存在が知らされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Thrill of the Hunt#description6": {
+   "source_sha1": "f15540986a5fb74b8b20cae7a1d81fdab422c786",
+   "plain_sha1": "36273bea5a60c26dd47c970014edbaa8efe6129e",
+   "ja": "通常攻撃をするか、「逆上」以外のスキルを使用すると、「狩猟本能」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Rengar/Unseen Predator#description": {
+   "source_sha1": "9607f966fd4a5a02139bf2c932e1b546006dfc8e",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Unseen Predator#description4": {
+   "source_sha1": "a753b5c23852e2c41f82d06610fd7fbb6169e508",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Savagery#description3": {
+   "source_sha1": "1aee2ad6f706814f2b34d8145baa3b909526a036",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Battle Roar#description2": {
+   "source_sha1": "6f03798a93dc788556b474c168a5f6ed76de6fd3",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Battle Roar#description3": {
+   "source_sha1": "eddaef6a728055726a2fbe716100a99e5d031bf8",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Bola Strike#description2": {
+   "source_sha1": "7e8d01661de6459ce0db3382abf1aad263b58077",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Thrill of the Hunt#description2": {
+   "source_sha1": "bfa3b1ea55b4c40a12970dfeb026e0af727df824",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rengar/Thrill of the Hunt#description5": {
+   "source_sha1": "3936089e5b00cfcddc9214681dc37bdb6f2ed6dc",
+   "reason": "residual_markup"
+  }
+ }
+}

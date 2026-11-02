@@ -17,6 +17,15 @@ import {
   type WikiByKey,
 } from "../gamedata/champion";
 import { derivedProperties, fieldLabel, reasonLabel, showRatio, showValues, wikiPlain, type WikiAbilityFile, type WikiAbilityTemplate } from "../gamedata/wikiAbility";
+import { INPUT_LABELS, STAGE_LABELS } from "../gamedata/damage";
+
+/** 説明文の日本語訳（public/gamedata/wiki/<取得日>/translations/ja/abilities/<キー>.json）*/
+export interface TranslationFile {
+  translator: string;
+  review: string;
+  entries: Record<string, { source_sha1: string; plain_sha1?: string; ja: string; status: string }>;
+  withheld: Record<string, { source_sha1: string; reason: string }>;
+}
 
 interface Manifest {
   ddragon: { version: string }[];
@@ -35,6 +44,7 @@ interface Loaded {
   patch: { game_patch: string; status: string } | null;
   /** 英語 Wiki のスキルのデータ（取得日ごと）。未取得なら null */
   abilities?: { snapshot: string; file: WikiAbilityFile } | null;
+  translations?: TranslationFile | null;
 }
 
 const BASE = `${import.meta.env.BASE_URL}gamedata/`;
@@ -58,7 +68,8 @@ async function load(topicId: string): Promise<Loaded | null> {
   const patch = versions?.ddragon.find((x) => x.ddragon === version) ?? null;
   const snapshot = m.current.wiki_snapshot;
   const abilityFile = snapshot ? await getJson<WikiAbilityFile>(`wiki/${snapshot}/abilities/${entry.key}.json`).catch(() => null) : null;
-  return { version, dd, wiki, prev, knownIssues: idx.known_issues ?? [], patch, abilities: abilityFile && snapshot ? { snapshot, file: abilityFile } : null };
+  const translations = snapshot ? await getJson<TranslationFile>(`wiki/${snapshot}/translations/ja/abilities/${entry.key}.json`).catch(() => null) : null;
+  return { version, dd, wiki, prev, knownIssues: idx.known_issues ?? [], patch, abilities: abilityFile && snapshot ? { snapshot, file: abilityFile } : null, translations };
 }
 
 /** Data Dragon の説明文のタグ（<br> <magicDamage> など）を表示用に除く（元の文はファイルにそのまま残す）*/
@@ -138,7 +149,7 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
       <h3>チャンピオンクラス</h3>
       <p>
         {dd.tags.map((t) => (
-          <span key={t} className="badge">
+          <span key={t} className={`badge champ-class class-${t.toLowerCase()}`} data-champion-class={t}>
             {CLASS_LABELS[t] ?? t}（{t}）
           </span>
         ))}{" "}
@@ -257,14 +268,15 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
         英語の LoL Wiki のスキルのデータを優先して示します（{abilities ? `取得日 ${abilities.snapshot}、各テンプレートの更新日時と原典へのリンクつき` : "このチャンピオンの Wiki のスキルのデータは未取得"}）。
         数値と英語の説明文は <a href="https://wiki.leagueoflegends.com/en-us/">League of Legends Wiki</a> の寄稿者によるもの（<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>）で、日本語の見出し・注記は Rift Compass が書いたものです。
         Data Dragon の説明文の穴埋め（{"{{ }}"}）は表示しません。Wiki から読み取れなかった値は「未解析」として原文の項目名と理由を示し、推測で埋めません。
+        「数値で計算できる」は、その行の式（軽減前の値）を入力から計算できるという意味で、スキル全体のダメージ・コンボ・キルラインの予測ではありません（スタック・形態・対象ごとの上限・防御貫通などは含みません）。
       </p>
       <ul className="spell-list">
-        <SkillItem slot="I" title={`パッシブ：${dd.passive.name.ja ?? dd.passive.name.en}`} nameEn={dd.passive.name.en} ddLine={null} ddText={plain(dd.passive.description.ja ?? dd.passive.description.en)} templates={wikiFor("I")} loaded={!!abilities} />
+        <SkillItem slot="I" title={`パッシブ：${dd.passive.name.ja ?? dd.passive.name.en}`} nameEn={dd.passive.name.en} ddLine={null} ddText={plain(dd.passive.description.ja ?? dd.passive.description.en)} templates={wikiFor("I")} loaded={!!abilities} translations={data.translations ?? null} />
         {dd.spells.map((s) => {
           const marker = s.range.some((x) => x >= RANGE_MARKER);
           const costType = (s.costType.ja ?? "").trim();
           const ddLine = `Data Dragon ${version}：CD ${s.cooldownBurn}秒・コスト ${s.costBurn}${costType && !/\{\{/.test(costType) ? `（${costType}）` : ""}・射程 ${marker ? `${s.rangeBurn}（大きな値。実際の射程とは限らない）` : s.rangeBurn}・最大ランク ${s.maxrank}`;
-          return <SkillItem key={s.id} slot={s.slot} title={`${s.slot}：${s.name.ja ?? s.name.en}`} nameEn={s.name.en} ddLine={ddLine} ddText={null} templates={wikiFor(s.slot)} loaded={!!abilities} />;
+          return <SkillItem key={s.id} slot={s.slot} title={`${s.slot}：${s.name.ja ?? s.name.en}`} nameEn={s.name.en} ddLine={ddLine} ddText={null} templates={wikiFor(s.slot)} loaded={!!abilities} translations={data.translations ?? null} />;
         })}
       </ul>
 
@@ -289,7 +301,7 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
 }
 
 /** スキル1つ：英語 Wiki の値（優先）と Data Dragon の値。Wiki のテンプレートが複数（段階・形態）なら全部を出す */
-function SkillItem({ title, nameEn, ddLine, ddText, templates, loaded }: { slot: string; title: string; nameEn: string | null; ddLine: string | null; ddText: string | null; templates: WikiAbilityTemplate[]; loaded: boolean }) {
+function SkillItem({ title, nameEn, ddLine, ddText, templates, loaded, translations }: { slot: string; title: string; nameEn: string | null; ddLine: string | null; ddText: string | null; templates: WikiAbilityTemplate[]; loaded: boolean; translations: TranslationFile | null }) {
   return (
     <li>
       <strong>{title}</strong> <span className="muted">{nameEn}</span>
@@ -299,14 +311,14 @@ function SkillItem({ title, nameEn, ddLine, ddText, templates, loaded }: { slot:
       ) : templates.length === 0 ? (
         <div className="muted">英語 Wiki のこのスキルのデータは見つかっていません（未取得）。</div>
       ) : (
-        templates.map((t) => <WikiTemplate key={t.title} t={t} />)
+        templates.map((t) => <WikiTemplate key={t.title} t={t} translations={translations} />)
       )}
       {ddLine && <div className="muted">{ddLine}</div>}
     </li>
   );
 }
 
-function WikiTemplate({ t }: { t: WikiAbilityTemplate }) {
+function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translations: TranslationFile | null }) {
   if (t.source.status !== 200) {
     return (
       <div className="wiki-skill">
@@ -327,7 +339,20 @@ function WikiTemplate({ t }: { t: WikiAbilityTemplate }) {
   }
   const parsed = Object.entries(t.parsed ?? {});
   const derived = derivedProperties(t);
-  const desc = ["description", "description2", "description3", "description4"].map((k) => wikiPlain(t.params?.[k])).filter(Boolean);
+  // 説明の項目：取り込み時に読める英語にした text（なければ原文を簡略化）。訳は原文の sha1 が一致するものだけ使う
+  const descKeys = Object.keys(t.text ?? {}).filter((k) => /^description/.test(k)).sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
+  const desc = descKeys.length
+    ? descKeys.map((k) => {
+        const src = t.text![k];
+        const id = `${t.title}#${k}`;
+        const tr = translations?.entries[id];
+        // 訳は Wiki の原文（source_sha1）と訳の対象の英文（plain_sha1）の両方が一致するときだけ表示する（解析の修正で英文が変わった訳は古い）
+        const ja = tr && tr.source_sha1 === src.source_sha1 && tr.plain_sha1 === src.plain_sha1 ? tr.ja : null;
+        const state = ja ? "translated" : src.residual || translations?.withheld[id] ? "withheld" : tr ? "stale" : "none";
+        return { key: k, en: src.plain.replace(/⟦[^⟧]*⟧/g, "［解析できない記法］"), residual: src.residual, ja, state };
+      })
+    : ["description", "description2", "description3", "description4"].map((k) => ({ key: k, en: wikiPlain(t.params?.[k]), residual: false, ja: null as string | null, state: "none" })).filter((x) => x.en);
+  const anyJa = desc.some((d) => d.ja);
   const updated = t.source.last_modified ? new Date(t.source.last_modified).toISOString().slice(0, 10) : "不明";
   return (
     <div className="wiki-skill">
@@ -358,6 +383,13 @@ function WikiTemplate({ t }: { t: WikiAbilityTemplate }) {
           {(t.leveling ?? []).map((l, i) => (
             <li key={i}>
               {wikiPlain(l.label)}：{l.base ? showValues(l.base) : <span className="muted">未解析（{reasonLabel(l.reason)}）</span>} {l.ratios.map((r) => showRatio(r)).join(" ")}
+              {l.calc && l.calc.stage !== "formula_parsed" && (
+                <span className={`calc-stage calc-${l.calc.stage}`}>
+                  {STAGE_LABELS[l.calc.stage]}
+                  {l.calc.stage === "computable" && l.calc.inputs?.length ? `（入力：${l.calc.inputs.map((x) => INPUT_LABELS[x]).join("・")}）` : ""}
+                  {l.calc.stage === "not_computable" && l.calc.missing?.length ? `（${l.calc.missing.join("・")}）` : ""}
+                </span>
+              )}
             </li>
           ))}
         </ul>
@@ -380,10 +412,35 @@ function WikiTemplate({ t }: { t: WikiAbilityTemplate }) {
         </details>
       )}
       {desc.length > 0 && (
+        <div className="wiki-desc-ja">
+          <div className="muted">Wiki の説明（日本語訳）</div>
+          {anyJa ? (
+            desc.map((d) => (
+              <p key={d.key} className={d.ja ? undefined : "muted"}>
+                {d.ja ??
+                  (d.state === "withheld"
+                    ? "（この段落は翻訳を保留しています。Wiki の記法に解けない部分があるため、英語の原文を参照してください）"
+                    : d.state === "stale"
+                      ? "（原文が更新されたため、古い訳は表示しません。英語の原文を参照してください）"
+                      : "（この段落はまだ訳していません。英語の原文を参照してください）")}
+              </p>
+            ))
+          ) : (
+            <p className="muted">このスキルの説明の日本語訳はまだありません。英語の原文を参照してください。</p>
+          )}
+          {anyJa && (
+            <p className="muted">
+              {translations?.translator ?? "AI"} による翻訳（{translations?.review ?? "未レビュー"}）。原文：<a href={t.source.url}>{t.title}</a>（League of Legends Wiki の寄稿者）。翻訳による改変を含み、この訳文も{" "}
+              <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> で提供します。訳には原文にない説明を加えていません。
+            </p>
+          )}
+        </div>
+      )}
+      {desc.length > 0 && (
         <details>
-          <summary className="muted">Wiki の説明（英語・記法を簡略化して表示）</summary>
-          {desc.map((d, i) => (
-            <p key={i}>{d}</p>
+          <summary className="muted">Wiki の説明（英語の原文・記法を簡略化して表示）</summary>
+          {desc.map((d) => (
+            <p key={d.key}>{d.en}</p>
           ))}
           <p className="muted">
             出典：<a href={t.source.url}>{t.title}</a>（League of Legends Wiki の寄稿者）。ライセンス：<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>。

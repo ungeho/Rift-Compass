@@ -1,0 +1,113 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Shaco/Deceive#description": {
+   "source_sha1": "c76b4ca93c0c988b46723e15b6193924b2bb3678",
+   "plain_sha1": "2bfb1ab3bf295e2dd6cf4991e7d3e3ec877e150d",
+   "ja": "発動効果：シャコは効果時間の間インビジブルになり、0.125秒後に指定地点へブリンクする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Deceive#description2": {
+   "source_sha1": "f6f05b936dbd2d65da1af0d81e6f4aaefb4bade0",
+   "plain_sha1": "8fd984dd2873fddcb718d65a867adc15e7196140",
+   "ja": "「幻惑」のインビジブルは、シャコが通常攻撃をするか「ポイズンダガー」を使用すると解けるが、「びっくり箱」や「ハルシネイト」の使用では解けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Deceive#description3": {
+   "source_sha1": "337f67ad1169043b8ca5b6189ecbf228000c48bb",
+   "plain_sha1": "89c0f077a5626a8a7113f09cddce24a1a9760a12",
+   "ja": "インビジブルが解けた後、シャコは0.25秒以内の次の通常攻撃を強化し、追加の物理ダメージを与える。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Jack in the Box#description": {
+   "source_sha1": "2afdd62f5c9d942dc4e9caa7ea81b63b1a678df2",
+   "plain_sha1": "11b9c0f537ee6428e787d660b9bf08dc40af6e79",
+   "ja": "発動効果：シャコは指定地点に箱を出す。箱は2秒かけて準備を終えるとステルスになり、最大40（+ APの10%）秒残る。ステルス中の箱は、敵に対して無敵かつ対象指定不可。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Jack in the Box#description2": {
+   "source_sha1": "5f9b78f68d70dc3b4583eb687c67597adc3af039",
+   "plain_sha1": "51247dfaf25d8160a44f6979801f06bad88ad5a7",
+   "ja": "箱は敵が触れると飛び出し、周囲の敵に一定時間フィアー（チャンピオン以外には2.2秒）とスネア（チャンピオン以外には1秒）を与える。箱の発動から0.15秒後に、命中した敵の移動速度も下がる。敵チャンピオンの移動速度は固定の100に、チャンピオン以外は固定の60になる。移動速度の低下は、フィアーと同じ時間に0.3秒を足した時間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Jack in the Box#description3": {
+   "source_sha1": "7e2eceba8f3ad05da0cc17348491f25dd8da9725",
+   "plain_sha1": "e2210164f41cc4172cf5cb79946ce29342e40d29",
+   "ja": "飛び出した箱は5秒間残り、その間0.5秒ごとに近くの見えている敵を自動で攻撃し、攻撃のたびに魔法ダメージを与える。攻撃する対象が一体だけの場合はダメージが増える。箱はモンスターに追加の魔法ダメージを与え、建物へのダメージは50%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Jack in the Box#description4": {
+   "source_sha1": "3ac41695df850d606b9c781c7a19e09827ab18df",
+   "plain_sha1": "809aa3cc1be64b62988594df8e2a30fecfb1bd6c",
+   "ja": "箱の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Hallucinate#description": {
+   "source_sha1": "9fb1735dc89c0a401143abd9fdafc26fc4259e9c",
+   "plain_sha1": "b4f762ed9f45eaf13ab8f16d49e2d90e0470a298",
+   "ja": "発動効果：シャコは0.5秒間姿を消して（vanish）指定方向へブリンクし、反対方向に自身の分身を出す。分身は操作範囲内にいる限り、操作できる分身として最大18秒間残る。「ハルシネイト」は分身がいる間いつでも再発動でき、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Hallucinate#description2": {
+   "source_sha1": "a45d64a6bfd8917fc3fb41a36b22bef4d2486172",
+   "plain_sha1": "cc5136d2ee5389ba75ebc660ba8a6faa199bf241",
+   "ja": "再発動：シャコは分身に指定地点への移動を命じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Hallucinate#description3": {
+   "source_sha1": "67987d8e099a7e7f47840fd8ffcbb273bf5c0281",
+   "plain_sha1": "c1a6a358912f3d2c9bfc423dd18204ccf2d17a5b",
+   "ja": "分身は倒されるか時間切れになると爆発し、周囲の敵に魔法ダメージを与えて、即座に作動する「びっくり箱」を三つ出す。箱は周囲の敵に1秒間（チャンピオン以外には2.2秒間）のフィアーと、0.5秒間（モンスターには0.6秒間、ミニオンには1秒間）のスネアを与える。箱の作動から0.15秒後に、命中した敵の移動速度も下がる。敵チャンピオンの移動速度は固定の100に、チャンピオン以外は固定の60になる。移動速度の低下は、フィアーと同じ時間に0.3秒を足した時間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Hallucinate#description4": {
+   "source_sha1": "4ae14b948e2ede4396b6c3213667db3496142c22",
+   "plain_sha1": "fd386c8ccf7ddb32043c9ac7d2d410e335f37eb8",
+   "ja": "この箱は「びっくり箱」の効果を持つが、体力は二倍で全部の箱で共有し、攻撃のたびに修正された魔法ダメージを与え、一体だけを攻撃する場合はダメージが増える。また、出てから0.5秒間は無敵。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Hallucinate#description5": {
+   "source_sha1": "a2e28fb57df0e61581b0f064b4dfc82b22ac61fa",
+   "plain_sha1": "80c7f16812befba969704cd86e03f00c232180b5",
+   "ja": "シャコの分身の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Shaco/Backstab#description": {
+   "source_sha1": "043917a4f150d43bb25eb38b269daa5835dbe4f4",
+   "reason": "residual_markup"
+  },
+  "Template:Data Shaco/Deceive#description4": {
+   "source_sha1": "dede59420fbcb4ae8f1ded1e35498fb3236501de",
+   "reason": "residual_markup"
+  },
+  "Template:Data Shaco/Two-Shiv Poison#description3": {
+   "source_sha1": "4d642daa037999735ab6e25ffb75ad51cece00d8",
+   "reason": "residual_markup"
+  }
+ }
+}

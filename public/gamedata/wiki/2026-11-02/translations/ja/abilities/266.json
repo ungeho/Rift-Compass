@@ -1,0 +1,145 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Aatrox/Deathbringer Stance#description": {
+   "source_sha1": "a24495ae422d52044e2c43a08490bf487ba45723",
+   "ja": "固有：一定時間ごとに、エイトロックスは次の通常攻撃を強化する。強化された通常攻撃は射程が50増加し、対象の最大体力の4%～10%（レベルに応じて）の追加の魔法ダメージを与える（モンスターに対しては100～320〔レベルに応じて〕が上限）。「死兆の構え」のダメージにはライフスティールが適用される。エイトロックスは与えた軽減後の追加ダメージの分だけ回復し、ミニオンに対しては25%に減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "581d30163c4d93b6412d7eda5ecbfc52045e72aa"
+  },
+  "Template:Data Aatrox/Deathbringer Stance#description2": {
+   "source_sha1": "304424e7a6a826c2d04d3a184aab23a4923adf75",
+   "ja": "エイトロックスが通常攻撃（攻撃時効果）かスキルで敵チャンピオンまたは大型モンスターに少なくとも一体命中させるたびに、「死兆の構え」の残りクールダウンが2秒短縮される。「ダーキンブレード」のスイートスポットで命中させた場合は2倍の4秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "949483aa9c8bb2076c3cf376b78e04a09a8dc91f"
+  },
+  "Template:Data Aatrox/The Darkin Blade#description": {
+   "source_sha1": "026c3a88d48aa8c3dae18d583741b5991d969848",
+   "ja": "エイトロックスは、クールダウンに入る前に「ダーキンブレード」を三回発動でき、発動と発動の間には1秒の固定のクールダウンがある。前の発動から4秒以内に再発動しないと、クールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "9f148b463025bbdec4447ad8f83cf7ae4a70f7c7"
+  },
+  "Template:Data Aatrox/The Darkin Blade#description2": {
+   "source_sha1": "64e9d283e41cd8d76beec882e873f8d7c984bd39",
+   "ja": "発動効果：三回の発動それぞれで、エイトロックスは大剣を振り下ろし、範囲内で命中した敵に物理ダメージを与える。範囲のスイートスポットで命中した敵は75%の追加ダメージを受け、0.25秒間ノックアップする。発動のたびにダメージが25%ずつ増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "a4e1e713fce57059f7c4a06bdae417007e9781d9"
+  },
+  "Template:Data Aatrox/The Darkin Blade#description3": {
+   "source_sha1": "5321653fed657f862647560bf82b2d9554742617",
+   "ja": "一回目：一回目の攻撃は、指定方向の625×180ユニットの長方形の範囲に当たる。エイトロックスは後ろの辺の中央にいて、スイートスポットは最も遠い端にある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "1217e6b1fc88b23593211c8be234181595931472"
+  },
+  "Template:Data Aatrox/The Darkin Blade#description4": {
+   "source_sha1": "4c39e1307b71e3f0666a36a902d657b83bbe5108",
+   "ja": "二回目：二回目の攻撃は、指定方向の台形の範囲に当たり、スイートスポットは最も遠い端にある。当たり判定はエイトロックスの100ユニット後ろから始まり、前方475ユニットまで伸び、幅は後ろ側の300ユニットから前側の500ユニットまで広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "eb4cd2153078b51b14a6d3bf03e71a7942886ecc"
+  },
+  "Template:Data Aatrox/The Darkin Blade#description5": {
+   "source_sha1": "d2f967d54f95c37d8849b6924c58fc2f84321492",
+   "ja": "三回目：三回目の攻撃は、エイトロックスの200ユニット前方の地点を中心とする半径300の円形の範囲に当たり、その内側に半径180のスイートスポットがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "96869845bcfa88064932ee0cab72f453a1feeff7"
+  },
+  "Template:Data Aatrox/The Darkin Blade#description6": {
+   "source_sha1": "2c3a64a023c8603881a7d90a4f746d2594f0317e",
+   "ja": "「ダーキンブレード」はミニオンに55%～70%（レベルに応じて）のダメージを与える。モンスターに対しては、一回目の発動が25の追加の物理ダメージを与え、このダメージは後の発動とスイートスポットのダメージの倍率の影響を受ける。また、モンスターにスイートスポットで命中した場合のノックアップの効果時間は倍の0.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "5a0a9ffe333adfc2adbd1fbb29aef10d48535bf0"
+  },
+  "Template:Data Aatrox/Infernal Chains#description": {
+   "source_sha1": "5eb84ead7644ffb6b48d46e3466ee7544bd3acda",
+   "ja": "発動効果：指定方向に鎖を放ち、最初に命中した敵に物理ダメージ（ミニオンには倍）を与えて、1.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "8e69cdfdee4dcc482d023e486b67bd52ea6058d1"
+  },
+  "Template:Data Aatrox/Infernal Chains#description2": {
+   "source_sha1": "10cb0c8f54afb2b20868fb2b1142fdca7c2cbc8a",
+   "ja": "敵チャンピオンか大型モンスターに命中すると、対象とその足元の地面の間に1.5秒間つながりができ、その間対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "5c091ce38c8913eed7073388e43e63bfd2001400"
+  },
+  "Template:Data Aatrox/Infernal Chains#description3": {
+   "source_sha1": "f32d3a836549f6ebd6db2c653b7714572c52fd4b",
+   "ja": "効果時間の終わりまでにつながりが切れなければ、対象は同じ物理ダメージを再び受け、範囲の中心へ引き寄せられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "1b8cc2737fd1635a51382407dc5df409676ecccf"
+  },
+  "Template:Data Aatrox/Umbral Dash#description": {
+   "source_sha1": "baa79b24ae17a379aeb3acfca5ce77642cc8dfcd",
+   "ja": "自動効果：エイトロックスは、敵チャンピオンに与えた持続しない軽減後のダメージの16%（+ 増加体力100ごとに1.3%）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "10f29a22c0accdc6cfd03969da9140fbac35d86d"
+  },
+  "Template:Data Aatrox/Umbral Dash#description2": {
+   "source_sha1": "26fb5f1c42483511b6855e3c97ff91acc7b37e46",
+   "ja": "発動効果：指定方向にダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "4dc4fb1f037f5aafe6b8597499f00d6125a61ad0"
+  },
+  "Template:Data Aatrox/Umbral Dash#description3": {
+   "source_sha1": "f88e5e57eed181340b9fdbe53e088885e289cd81",
+   "ja": "「影進撃」はエイトロックスの通常攻撃タイマーをリセットし、ほかのスキルの使用中にもそれを中断せずに使用できる（逆も同様）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「ダッシュ」がない（原文：Dash）"
+   ],
+   "plain_sha1": "e5f97de5ed02e9cdc565ad88112141bd6d853e86"
+  },
+  "Template:Data Aatrox/World Ender#description": {
+   "source_sha1": "9ea184ccfcc8ce8503894a8fee7f05b9a986bd0e",
+   "ja": "発動効果：エイトロックスは10秒間真の姿を解放し、周囲の敵のミニオンとモンスターに3秒間フィアーを与え、その間それらは最大99%まで徐々にスロウを受ける。また、移動速度が増加し、増加分は0.25秒ごとに現在の増加分の10%ずつ減り、「ワールドエンダー」が終わるまで続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "49eb6cc421011529b7303f7cca1cb0942dbda93c"
+  },
+  "Template:Data Aatrox/World Ender#description2": {
+   "source_sha1": "5a3caa8363fe5aba51cb0d79fae1b0864415c703",
+   "ja": "エイトロックスがチャンピオンのキルに関与するたびに、効果時間が5秒延長され（元の長さが上限）、再び解放状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "e3f82d2295b80e9bbcb7eecb35b2356eb56282ba"
+  },
+  "Template:Data Aatrox/World Ender#description3": {
+   "source_sha1": "ed0b1ae48b0dcc3639187e3512ce2e9992abd78c",
+   "ja": "「ワールドエンダー」の間、エイトロックスは増加攻撃力を得て、サイズが5%大きくなり、ゴースト状態になり、すべての回復の効果が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "8ad2e3b54d3bd2302df08d2fcbc7e6c6f5775f3b"
+  },
+  "Template:Data Aatrox/World Ender#description4": {
+   "source_sha1": "0ed8b8063f852b9b5a391ab8b1e52b0af5cea878",
+   "ja": "エイトロックスは「ワールドエンダー」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "9188dcb3d55ee9ff641e3b09151a7cce53265530"
+  }
+ },
+ "withheld": {}
+}

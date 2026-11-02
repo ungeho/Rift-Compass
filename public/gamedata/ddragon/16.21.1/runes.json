@@ -1,0 +1,1316 @@
+{
+ "source": {
+  "name": "Riot Data Dragon",
+  "version": "16.21.1",
+  "fetched_at": "2026-11-02",
+  "files": [
+   "https://ddragon.leagueoflegends.com/cdn/16.21.1/data/en_US/runesReforged.json",
+   "https://ddragon.leagueoflegends.com/cdn/16.21.1/data/ja_JP/runesReforged.json"
+  ]
+ },
+ "count": 62,
+ "runes": [
+  {
+   "id": 8112,
+   "key": "Electrocute",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Electrocute",
+    "ja": "電撃"
+   },
+   "short": {
+    "en": "Hitting a champion with 3 separate attacks or abilities in 3s deals bonus adaptive damage.",
+    "ja": "3秒以内にチャンピオンを個別のスキルか通常攻撃で3回攻撃すると、追加アダプティブダメージを与える。"
+   },
+   "long": {
+    "en": "Hitting a champion with 3 separate attacks or abilities within 3s deals bonus adaptive damage.\nDamage: 70 - 240 (+0.1 bonus AD, +0.05 AP) damage.\nCooldown: 20s\n'We called them the Thunderlords, for to speak of their lightning was to invite disaster.'",
+    "ja": "3秒以内に敵チャンピオンを個別のスキルか通常攻撃で3回攻撃すると、追加アダプティブダメージを与える。\nダメージ: 70 - 240(+増加攻撃力x0.1、+魔力x0.05)\nクールダウン: 20秒\n「彼らは、雷で大惨事をもたらしたことから“雷帝”と呼ばれた」"
+   }
+  },
+  {
+   "id": 8128,
+   "key": "DarkHarvest",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Dark Harvest",
+    "ja": "魂の収穫"
+   },
+   "short": {
+    "en": "Damaging a low health champion inflicts adaptive damage and harvests a soul from the victim.",
+    "ja": "体力の低下したチャンピオンにダメージを与えるとアダプティブダメージを与えて、犠牲者から魂を1つ収穫する。"
+   },
+   "long": {
+    "en": "Damaging a Champion below 50% health deals adaptive damage and harvests their soul, permanently increasing Dark Harvest's damage by 11.\nDark Harvest damage: 30 (+11 damage per soul) (+0.1 bonus AD) (+0.05 AP)\nCooldown: 35s (resets to 1.0s on takedown)",
+    "ja": "体力が50%以下のチャンピオンにダメージを与えるとアダプティブダメージを与えて、その魂を収穫し、「魂の収穫」のダメージが恒久的に11増加する。\n「魂の収穫」のダメージ: 30(+魂の数x11)(+増加攻撃力x0.1)(+魔力x0.05)\nクールダウン: 35秒(キルまたはアシストで1.0秒にリセット)"
+   }
+  },
+  {
+   "id": 9923,
+   "key": "HailOfBlades",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Hail of Blades",
+    "ja": "ヘイルブレード"
+   },
+   "short": {
+    "en": "Gain a large amount of Attack Speed and bonus true damage for the first 3 attacks made against enemy champions.",
+    "ja": "敵チャンピオンに対する最初の3回の通常攻撃の攻撃速度が大きく増加し、追加確定ダメージを獲得する。"
+   },
+   "long": {
+    "en": "Gain 90% (60% for ranged champions) Attack Speed and bonus true damage when you attack an enemy champion for up to 3 attacks.\nNo more than 3s can elapse between attacks or this effect will end.\nCooldown: 10s.\nOn-Hit Damage: 2 - 20 (+0.12 bonus AD, +0.1 AP) damage.\nAttack resets increase the attack limit by 1.\nAllows you to temporarily exceed the Attack Speed limit.",
+    "ja": "敵チャンピオンに通常攻撃する際、最大3回の通常攻撃の攻撃速度が90%(遠距離チャンピオンは60%)増加し、追加確定ダメージを獲得する。\n通常攻撃の間隔が3秒以上開くとこの効果は終了する。\nクールダウン: 10秒\n通常攻撃時のダメージ: 2 - 20 (+増加攻撃力0.12、+魔力0.1)のダメージ\n攻撃のモーションをキャンセルした場合、回数制限が1増加する。\nこの効果は一時的に攻撃速度の上限を超えられる。"
+   }
+  },
+  {
+   "id": 8126,
+   "key": "CheapShot",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Cheap Shot",
+    "ja": "追い打ち"
+   },
+   "short": {
+    "en": "Deal bonus true damage to enemy champions with impaired movement or actions.",
+    "ja": "移動妨害か行動不能効果を受けているチャンピオンに追加確定ダメージを与える。"
+   },
+   "long": {
+    "en": "Damaging champions with impaired movement or actions deals 10 - 45 bonus true damage (based on level).\nCooldown: 4s\nActivates on damage occurring after the impairment.",
+    "ja": "移動妨害か行動不能効果を受けている敵チャンピオンに対し、レベルに応じて10 - 45の追加確定ダメージを与える。\nクールダウン: 4秒\n移動妨害か行動不能効果のあとに発生したダメージで発動する。"
+   }
+  },
+  {
+   "id": 8139,
+   "key": "TasteOfBlood",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Taste of Blood",
+    "ja": "血の味わい"
+   },
+   "short": {
+    "en": "Heal when you damage an enemy champion.",
+    "ja": "敵チャンピオンにダメージを与えると体力を回復する。"
+   },
+   "long": {
+    "en": "Heal when you damage an enemy champion.\nHealing: 16-40 (+0.1 bonus AD, +0.05 AP) health (based on level)\nCooldown: 20s",
+    "ja": "敵チャンピオンにダメージを与えると自身の体力を回復する。\n回復量: レベルに応じて16 - 40(+増加攻撃力x0.1、+魔力x0.05)\nクールダウン: 20秒"
+   }
+  },
+  {
+   "id": 8143,
+   "key": "SuddenImpact",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Sudden Impact",
+    "ja": "サドンインパクト"
+   },
+   "short": {
+    "en": "Damaging basic attacks and abilities deal bonus true damage to enemy champions after using a dash, leap, blink, teleport, or when leaving stealth.",
+    "ja": "ステルス状態が解除されるか、ダッシュ、リープ、ブリンク、テレポートを使用してから敵チャンピオンに通常攻撃かスキルでダメージを与えると、追加確定ダメージを与える。"
+   },
+   "long": {
+    "en": "Damaging basic attacks and abilities deal a bonus 20 - 80 True Damage based on level to enemy champions after using a dash, leap, blink, teleport, or when leaving stealth for 4s.\nCooldown: 10s",
+    "ja": "ステルス状態が解除されるか、ダッシュ、リープ、ブリンク、テレポートを使用してから敵チャンピオンに通常攻撃かスキルでダメージを与えると、4秒間、チャンピオンレベルに応じて追加で20 - 80の確定ダメージを与える。\nクールダウン: 10秒"
+   }
+  },
+  {
+   "id": 8137,
+   "key": "SixthSense",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Sixth Sense",
+    "ja": "第六感"
+   },
+   "short": {
+    "en": "On a long Cooldown, automatically sense a nearby untracked and unseen ward, tracking it for the team. \nLevel 11: Also reveal the ward for 10s.",
+    "ja": "長いクールダウンで、自動的に周囲の未追跡で未発見のワードを感知し、味方チームのために追跡する。\nレベル11: さらにそのワードを10秒間可視化する。"
+   },
+   "long": {
+    "en": "Automatically sense a nearby untracked and unseen ward, tracking it for the team. \nLevel 11: Also reveal the ward for 10s.\nThis effect has a 250 second Cooldown.",
+    "ja": "自動的に周囲の未追跡かつ未発見のワードを感知し、味方チームのために追跡する。 \nレベル11: さらにそのワードを10秒間可視化する。\nこの効果には250秒間のクールダウンがある。"
+   }
+  },
+  {
+   "id": 8140,
+   "key": "GrislyMementos",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Grisly Mementos",
+    "ja": "グリスリー メメント"
+   },
+   "short": {
+    "en": "Collect 1 memento on champion takedowns, up to 18 total.\nGain 6 Trinket Haste for each collected.",
+    "ja": "チャンピオンからキルまたはアシストを奪うとメメントを1個獲得する(合計最大18個)。\nメメントを獲得するごとに、トリンケットヘイストが6増加する。"
+   },
+   "long": {
+    "en": "Collect 1 memento on champion takedowns, up to 18 total.\nGain 6 Trinket Haste for each collected. In game modes where vision Trinkets do not exist, instead gain 3 Summoner Spell Haste.",
+    "ja": "チャンピオンからキルまたはアシストを奪うとメメントを1個獲得する(合計最大18個)。\nメメントを獲得するごとに、トリンケットヘイストが6増加する。視界トリンケットが存在しないゲームモードでは、代わりにサモナースペルヘイストが3増加する。"
+   }
+  },
+  {
+   "id": 8141,
+   "key": "DeepWard",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Deep Ward",
+    "ja": "ディープワード"
+   },
+   "short": {
+    "en": "Your wards in the enemy jungle are Deep, gaining Health and Duration.\nLevel 9: Wards in the river are also Deep.",
+    "ja": "敵ジャングル内の自身のワードがディープ状態になり、体力と効果時間が増加する。\nレベル9: 川の中のワードもディープ状態になる。"
+   },
+   "long": {
+    "en": "Your wards in the enemy jungle are Deep. Deep wards gain +1 extra Health and +[30 - 45]s increased duration (+[45 - 150]s for Trinket stealth wards).\nLevel 9: Wards in the river are also Deep.",
+    "ja": "敵ジャングル内の自身のワードがディープ状態になる。ディープ状態のワードは体力が+1増加し、効果時間が+[30 - 45]秒(トリンケットステルスワードは+[45 - 150]秒)増加する。\nレベル9: 川の中のワードもディープ状態になる。"
+   }
+  },
+  {
+   "id": 8135,
+   "key": "TreasureHunter",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Treasure Hunter",
+    "ja": "貪欲な賞金首狩り"
+   },
+   "short": {
+    "en": "Unique takedowns grant additional gold the first time they are collected.",
+    "ja": "異なる対象から初めてキルまたはアシストを獲得した際に追加のゴールドを獲得する。"
+   },
+   "long": {
+    "en": "Gain an additional 50 gold the next time you collect a Bounty Hunter stack. Increase the gold gained by 20 gold for each Bounty Hunter stack, up to 130 gold.\nBounty Hunter stacks are earned the first time you get a takedown on each enemy champion.",
+    "ja": "次に「賞金首狩り」のスタックを獲得した際、追加で50ゴールドを獲得する。「賞金首狩り」のスタックごとに獲得するゴールドが20ゴールド増加する(最大130ゴールド)。\nそれぞれのチャンピオンから初めてキルまたはアシストを獲得するごとに「賞金首狩り」のスタックを1つ獲得する。"
+   }
+  },
+  {
+   "id": 8105,
+   "key": "RelentlessHunter",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Relentless Hunter",
+    "ja": "執拗な賞金首狩り"
+   },
+   "short": {
+    "en": "Unique takedowns grant permanent out of combat MS.",
+    "ja": "それぞれ異なる敵チャンピオンからキルまたはアシストを獲得すると非戦闘時の移動速度が恒久的に増加する。"
+   },
+   "long": {
+    "en": "Gain 8 Move Speed out of combat per Bounty Hunter stack. Bounty Hunter stacks are earned the first time you get a takedown on each enemy champion.",
+    "ja": "「賞金首狩り」のスタックごとに非戦闘時の移動速度が8増加する。「賞金首狩り」のスタックは、各敵チャンピオンを対象に初めてキルまたはアシストを達成する度に1つ獲得する。"
+   }
+  },
+  {
+   "id": 8106,
+   "key": "UltimateHunter",
+   "path": {
+    "en": "Domination",
+    "ja": "覇道"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Ultimate Hunter",
+    "ja": "至極の賞金首狩り"
+   },
+   "short": {
+    "en": "Unique takedowns grant permanent cooldown reduction on your Ultimate.",
+    "ja": "それぞれ異なる敵チャンピオンからキルまたはアシストを獲得するたびに、アルティメットスキルのクールダウンを恒久的に短縮する。"
+   },
+   "long": {
+    "en": "Your ultimate gains 6 Ability Haste, plus an additional 5 Ability Haste per Bounty Hunter stack. Bounty Hunter stacks are earned the first time you get a takedown on each enemy champion.",
+    "ja": "アルティメットスキルのスキルヘイストを6獲得し、さらに「賞金首狩り」のスタックごとにスキルヘイストが5増加する。「賞金首狩り」のスタックは、各敵チャンピオンを対象に初めてキルまたはアシストを達成する度に1つ獲得する。"
+   }
+  },
+  {
+   "id": 8351,
+   "key": "GlacialAugment",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Glacial Augment",
+    "ja": "グレイシャルオーグメント"
+   },
+   "short": {
+    "en": "Immobilizing an enemy champion will cause 3 glacial rays that slow nearby enemies and reduce their damage to your allies.",
+    "ja": "敵チャンピオンに移動不能効果を与えると、3本の冷気の光線が発射されて周囲の敵にスロウ効果を与え、その敵が味方に与えるダメージを低下させる。"
+   },
+   "long": {
+    "en": "Immobilizing an enemy champion will cause 3 glacial rays to emanate from them towards you and other nearby champions, creating frozen zones for 3 (+ the immobilizing effect's duration) seconds that slow enemies for 20% (+90% per 100% Heal and Shield Power) (+6% per 100 Ability Power) (+7% per 100 bonus Attack Damage) and reduce their damage by 15% against your allies (not including yourself). \nCooldown: 25s",
+    "ja": "敵チャンピオンに移動不能効果を与えると、対象から3本の冷気の光線が自身および周囲のチャンピオンに向けて発射されて、3(+その移動不能効果の効果時間)秒間、凍てつくゾーンを発生させる。ゾーンは敵に20%(+体力回復量とシールド量100%ごとに90%)(+魔力100ごとに6%)(+増加攻撃力100ごとに7%)のスロウ効果を与え、その敵が味方(自身は含まない)に与えるダメージを15%軽減させる。\nクールダウン: 25秒"
+   }
+  },
+  {
+   "id": 8360,
+   "key": "UnsealedSpellbook",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Unsealed Spellbook",
+    "ja": "解放の魔導書"
+   },
+   "short": {
+    "en": "Swap Summoner Spells while out of combat. Swapping to unique Summoner Spells will increase the rate at which you can make future swaps.",
+    "ja": "非戦闘時にサモナースペルを交換できる。新たな種類のサモナースペルに交換するたびに、次に交換可能になるまでの時間が短縮される。"
+   },
+   "long": {
+    "en": "Swap one of your equipped Summoner Spells to a new, single use Summoner Spell. Each unique Summoner Spell you swap to permanently decreases your swap cooldown by 25s (initial swap cooldown is @f3@ seconds). \nYour first swap becomes available at 6 mins. \nSummoner Spells can only be swapped while out of combat. \nAfter using a swapped Summoner Spell you must swap 3 more times before the first can be selected again.\nSmite damage increases after two Summoner Spell swaps.",
+    "ja": "装備中のサモナースペル1つを1回限り使用可能な別のサモナースペルに交換する。新たな種類のサモナースペルに交換するたびに次に交換可能になるまでのクールダウンが恒久的に25秒短縮される(最初のクールダウンは@f3@秒)。\n試合開始から6分経過するまでは交換できない。\nサモナースペルを交換できるのは非戦闘時のみ。\n交換したサモナースペルを使用したら、3回交換するまで最初のサモナースペルは選択できない。\nサモナースペルを2回交換すると、「スマイト」のダメージが増加する。"
+   }
+  },
+  {
+   "id": 8369,
+   "key": "FirstStrike",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 0,
+   "name": {
+    "en": "First Strike",
+    "ja": "ファーストストライク"
+   },
+   "short": {
+    "en": "When you initiate champion combat, deal 7% extra damage for 3 seconds and gain gold based on damage dealt.",
+    "ja": "チャンピオンとの戦闘を開始すると3秒間、7%の追加ダメージを与え、与ダメージに応じたゴールドを獲得する。"
+   },
+   "long": {
+    "en": "Attacks or abilities against an enemy champion within 0.25s of entering champion combat grant 10 gold and First Strike for 3 seconds, causing you to deal 7% extra  damage against champions, and granting 50% (35% for ranged champions) of bonus damage dealt as gold.\nCooldown: 25 - 15s",
+    "ja": "チャンピオンと戦闘状態になってから、0.25秒以内に敵チャンピオンに通常攻撃またはスキルを命中させると10ゴールドを獲得する。さらに3秒間、「ファーストストライク」を獲得して、チャンピオンに7%の追加ダメージを与えるようになり、与えた追加ダメージの50%(遠隔攻撃チャンピオンは35%)にあたるゴールドを獲得する。\nクールダウン: 25 - 15秒"
+   }
+  },
+  {
+   "id": 8306,
+   "key": "HextechFlashtraption",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Hextech Flashtraption",
+    "ja": "ヘクステックフラッシュネイター"
+   },
+   "short": {
+    "en": "While Flash is on cooldown it is replaced by Hexflash.\nHexflash: Channel, then blink to a new location.",
+    "ja": "フラッシュがクールダウンに入ると「へクスフラッシュ」に置き換わる。\nへクスフラッシュ: 詠唱後に指定位置に瞬間移動する。"
+   },
+   "long": {
+    "en": "While Flash is on cooldown it is replaced by Hexflash.\nHexflash: Channel for 2s to blink to a new location.\nCooldown: 20s. Goes on a 10s cooldown when you enter champion combat.",
+    "ja": "フラッシュはクールダウン中「へクスフラッシュ」に置き換わる。\nへクスフラッシュ: 2秒間詠唱してから指定した位置に瞬間移動する。\nクールダウン: 20秒。敵チャンピオンと交戦状態になると10秒のクールダウンに入る。"
+   }
+  },
+  {
+   "id": 8304,
+   "key": "MagicalFootwear",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Magical Footwear",
+    "ja": "魔法の靴"
+   },
+   "short": {
+    "en": "You get free boots at 12 min but you cannot buy boots before then. Each takedown you get makes your boots come 45s sooner.",
+    "ja": "試合開始から12分時点で無料のブーツを獲得するが、それまではブーツを購入できない。キルまたはアシストを獲得するたびに、ブーツ獲得までの時間が45秒短縮される。"
+   },
+   "long": {
+    "en": "You get free Slightly Magical Footwear at 12 min, but you cannot buy boots before then. For each takedown you acquire the boots 45s sooner.\nSlightly Magical Footwear grants you an additional 10 Move Speed.",
+    "ja": "試合開始から12分経過するとコスト無しで「ちょっとだけ魔法がかった靴」を獲得する。それまではブーツを購入できない。キルまたはアシストするごとにブーツ獲得までの時間が45秒短縮される。\n「ちょっとだけ魔法がかった靴」は追加で移動速度10を付与する。"
+   }
+  },
+  {
+   "id": 8321,
+   "key": "CashBack",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Cash Back",
+    "ja": "キャッシュバック"
+   },
+   "short": {
+    "en": "Get some gold back when you purchase Legendary Items.",
+    "ja": "レジェンダリーアイテムを購入する際に、一部のゴールドが戻ってくる。"
+   },
+   "long": {
+    "en": "Get 7.5% Gold back when you purchase Legendary Items.",
+    "ja": "レジェンダリーアイテムを購入する際に、ゴールドが7.5%戻ってくる。"
+   }
+  },
+  {
+   "id": 8313,
+   "key": "PerfectTiming",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Triple Tonic",
+    "ja": "トリプル トニック"
+   },
+   "short": {
+    "en": "Upon reaching level 3, gain an Elixir of Avarice.\nUpon reaching level 6, gain an Elixir of Force.\nUpon reaching level 9, gain an Elixir of Skill.",
+    "ja": "レベル3になると「強欲のエリクサー」を獲得する。\nレベル6になると「力のエリクサー」を獲得する。\nレベル9になると「スキル エリクサー」を獲得する。"
+   },
+   "long": {
+    "en": "Upon reaching level 3, gain an Elixir of Avarice.\nUpon reaching level 6, gain an Elixir of Force.\nUpon reaching level 9, gain an Elixir of Skill.",
+    "ja": "レベル3になると「強欲のエリクサー」を獲得する。\nレベル6になると「力のエリクサー」を獲得する。\nレベル9になると「スキル エリクサー」を獲得する。"
+   }
+  },
+  {
+   "id": 8352,
+   "key": "TimeWarpTonic",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Time Warp Tonic",
+    "ja": "タイムワープトニック"
+   },
+   "short": {
+    "en": "Potions grant some restoration immediately.",
+    "ja": "ポーション使用時に一定割合を即座に回復する。"
+   },
+   "long": {
+    "en": "Consuming a potion grants 40% of its health restoration immediately.",
+    "ja": "ポーションを使用すると、回復する体力の40%を即座に得られる。"
+   }
+  },
+  {
+   "id": 8345,
+   "key": "BiscuitDelivery",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Biscuit Delivery",
+    "ja": "ビスケットデリバリー"
+   },
+   "short": {
+    "en": "Gain a free Biscuit every 2 min, until 6 min. Consuming or selling a Biscuit permanently increases your max health and restores health.",
+    "ja": "6分経過するまで2分毎にビスケットを獲得する。消費するか売却すると最大体力が増加し、体力が回復する。"
+   },
+   "long": {
+    "en": "Biscuit Delivery: Gain a Total Biscuit of Everlasting Will every 2 mins, until 6 min.\nBiscuits restore 20 + 2% of your maximum health, increased by up to 100% based on missing Health. Consuming or selling a Biscuit permanently increases your max health by 30.",
+    "ja": "ビスケットデリバリー: 6分間、2分ごとに英気満点ビスケットを獲得する。\nビスケットは最大体力の20 + 2%を回復する。効果は自身の減少体力に応じて最大100%まで増加する。ビスケットを消費するか売却すると、恒久的に最大体力が30増加する。"
+   }
+  },
+  {
+   "id": 8347,
+   "key": "CosmicInsight",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Cosmic Insight",
+    "ja": "宇宙の英知"
+   },
+   "short": {
+    "en": "+18 Summoner Spell Haste\n+10 Item Haste",
+    "ja": "サモナースペルヘイスト +18\nアイテムヘイスト +10"
+   },
+   "long": {
+    "en": "+18 Summoner Spell Haste\n+10 Item Haste",
+    "ja": "サモナースペルヘイスト +18\nアイテムヘイスト +10"
+   }
+  },
+  {
+   "id": 8410,
+   "key": "ApproachVelocity",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Approach Velocity",
+    "ja": "疾駆"
+   },
+   "short": {
+    "en": "Bonus MS towards nearby enemy champions that are movement impaired, increased for enemy champions that you impair.",
+    "ja": "近くにいる移動妨害効果を受けた敵チャンピオンに向かって移動する時に移動速度が増加する。自身が敵チャンピオンに移動妨害効果を与えた場合は効果が上昇する。"
+   },
+   "long": {
+    "en": "Gain 7.5% Move Speed towards nearby enemy champions that are movement impaired. This bonus is increased to 15% Move Speed for any enemy champion that you impair. \nActivation Range for CC from allies: 1000",
+    "ja": "近くにいる移動妨害効果を受けた敵チャンピオンに向かって移動する時に7.5%の移動速度を獲得する。自身が敵チャンピオンに移動妨害効果を与えた場合は、効果が15%に上昇する。\n味方の移動妨害効果による発動範囲: 1000"
+   }
+  },
+  {
+   "id": 8316,
+   "key": "JackOfAllTrades",
+   "path": {
+    "en": "Inspiration",
+    "ja": "天啓"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Jack Of All Trades",
+    "ja": "なんでも屋"
+   },
+   "short": {
+    "en": "For each different stat gained from items, gain one Jack stack. Each stack grants you 1 Ability Haste.\nGain bonus Adaptive Force at 5 and 10 stacks.",
+    "ja": "アイテムで増加したステータスの種類1つごとに「なんでも屋」のスタックを1つ獲得する。スタックごとにスキルヘイストが1増加する。\n5スタックおよび10スタック時に追加でアダプティブフォースが増加する。"
+   },
+   "long": {
+    "en": "For each different stat gained from items, gain one Jack stack. Each stack grants you 1 Ability Haste.\nGain 8 or 20 bonus Adaptive Force at 5 and 10 stacks, respectively.",
+    "ja": "アイテムで増加したステータスの種類1つごとに「なんでも屋」のスタックを1つ獲得する。スタックごとに スキルヘイストが1増加する。\nアダプティブフォースは、5スタック時に追加で8、10スタック時に追加で20増加する。"
+   }
+  },
+  {
+   "id": 8005,
+   "key": "PressTheAttack",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Press the Attack",
+    "ja": "プレスアタック"
+   },
+   "short": {
+    "en": "Hitting an enemy champion 3 consecutive times deals bonus damage and amplifies your damage until you leave combat with champions.",
+    "ja": "敵チャンピオンを3回連続で攻撃すると追加ダメージを与え、チャンピオンとの戦闘から離脱するまで自身のダメージが増幅する。"
+   },
+   "long": {
+    "en": "Hitting an enemy champion with 3 consecutive basic attacks deals 40 - 160 bonus adaptive damage (based on level) and amplifies your damage dealt by 8% until you leave combat with champions.",
+    "ja": "敵チャンピオンを通常攻撃で3回連続攻撃すると40 - 160の追加アダプティブダメージ(レベルに比例)を与え、チャンピオンとの戦闘から離脱するまで与えるダメージが8%増加する。"
+   }
+  },
+  {
+   "id": 8008,
+   "key": "LethalTempo",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Lethal Tempo",
+    "ja": "リーサルテンポ"
+   },
+   "short": {
+    "en": "Attacking an enemy champion grants you Attack Speed, up to 6 stacks. At max stacks, deal bonus adaptive damage On-Attack.",
+    "ja": "敵チャンピオンに通常攻撃を行うと攻撃速度が増加する。この効果は最大6回までスタックする。最大スタックになると、通常攻撃時効果で追加アダプティブダメージを与えるようになる。"
+   },
+   "long": {
+    "en": "Attacking an enemy champion grants you [6% Melee || 4% Ranged] Attack Speed for 6 seconds, up to 6. At max stacks, deal [9 - 30 Melee || 6 - 24 Ranged] bonus adaptive damage On-Attack, increased by 1% per 1% Bonus Attack Speed.",
+    "ja": "敵チャンピオンに通常攻撃を行うと、6秒間、攻撃速度が[近接 6% || 遠隔 4%]増加する。この効果は最大6回までスタックする。最大スタックになると、通常攻撃時効果で[近接 9 - 30 || 遠隔 6 - 24]の追加アダプティブダメージを与えるようになる。このダメージは増加攻撃速度1%ごとに1%増加する。"
+   }
+  },
+  {
+   "id": 8021,
+   "key": "FleetFootwork",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Fleet Footwork",
+    "ja": "フリートフットワーク"
+   },
+   "short": {
+    "en": "Attacking and moving builds Energy stacks. At 100 stacks, your next attack heals you and grants increased MS.",
+    "ja": "攻撃と移動でスタックが溜まる。100スタックで次の通常攻撃は自身を回復し、移動速度が増加する。"
+   },
+   "long": {
+    "en": "Attacking and moving builds Energy stacks. At 100 stacks, your next attack is Energized\nEnergized attacks heal you for 15 - 160 (+0.1 Bonus AD, +0.05 AP) and grant 20% Move Speed for 1s.\nFor Ranged Champions, Healing is 60% effective and Move Speed is 75% effective. All healing is 15% effective against Minions.",
+    "ja": "攻撃と移動でスタックが溜まる。100スタックで次の通常攻撃がエネルギー充填状態になる。\nエネルギー充填状態で攻撃を行うと自身の体力が15 - 160(+増加攻撃力x0.1、+魔力x0.05)回復して、1秒間、移動速度が20%増加する。\n遠隔攻撃チャンピオンの場合は回復の効果が60%、移動速度の効果が75%になる。ミニオンの場合は回復の効果が15%になる。"
+   }
+  },
+  {
+   "id": 8010,
+   "key": "Conqueror",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Conqueror",
+    "ja": "征服者"
+   },
+   "short": {
+    "en": "Gain stacks of adaptive force when attacking enemy champions. After reaching 12 stacks, heal for a portion of damage you deal to champions.",
+    "ja": "敵チャンピオンへの攻撃でアダプティブフォースのスタックを獲得する。スタック数が12になると、チャンピオンに与えたダメージの一定割合の体力を回復する。"
+   },
+   "long": {
+    "en": "Basic attacks or spells that deal damage to an enemy champion grant 2 stacks of Conqueror for 5s, gaining 1.8-4 Adaptive Force per stack. Stacks up to 12 times. Ranged champions gain only 1 stack per basic attack.\nWhen fully stacked, heal for 8% of the damage you deal to champions (5% for ranged champions).",
+    "ja": "敵チャンピオンにダメージを与える通常攻撃またはスキルで5秒間、「征服者」のスタックを2つ獲得する。スタック1つごとに1.8 - 4のアダプティブフォースを獲得する。最大12スタック。遠隔攻撃チャンピオンは通常攻撃1回につき1スタックのみ獲得する。\n最大スタック時にチャンピオンに与えたダメージの8%(遠隔攻撃チャンピオンは5%)の体力を回復する。"
+   }
+  },
+  {
+   "id": 9101,
+   "key": "AbsorbLife",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Absorb Life",
+    "ja": "体力吸収"
+   },
+   "short": {
+    "en": "Killing a target heals you.",
+    "ja": "対象をキルすると自身の体力が回復する。"
+   },
+   "long": {
+    "en": "Killing a target heals you for @HealAmount@.",
+    "ja": "対象をキルすると自身の体力が@HealAmount@回復する。"
+   }
+  },
+  {
+   "id": 9111,
+   "key": "Triumph",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Triumph",
+    "ja": "凱旋"
+   },
+   "short": {
+    "en": "Takedowns restore 5% of your missing health and grant an additional 20 gold.",
+    "ja": "キルまたはアシスト獲得時に減少体力の5%を回復し、20ゴールドを追加で獲得する。"
+   },
+   "long": {
+    "en": "Takedowns restore 5% of your missing health, 2.5% of your max health, and grant an additional 20 gold. \n'The most dangerous game brings the greatest glory.' \n—Noxian Reckoner",
+    "ja": "キルまたはアシストを獲得すると減少体力の5%、最大体力の2.5%を回復して、20の追加ゴールドを獲得する。\n「危険を冒してこそ、真の勝利に到達できる。」\n──ノクサスの清算人"
+   }
+  },
+  {
+   "id": 8009,
+   "key": "PresenceOfMind",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Presence of Mind",
+    "ja": "冷静沈着"
+   },
+   "short": {
+    "en": "Restore a small amount of mana or energy when damaging an enemy champion. Takedowns restore mana or energy.",
+    "ja": "敵チャンピオンにダメージを与えると、マナまたは気が少し回復する。キルまたはアシストを獲得するとマナまたは気を回復する。"
+   },
+   "long": {
+    "en": "Damaging an enemy champion restores 6-50 (80% for ranged) mana or 6 energy.\nTakedowns restore 15% of your maximum mana or energy. \nCooldown for damage restoration: 8s",
+    "ja": "敵チャンピオンにダメージを与えると、マナが6-50(遠隔攻撃チャンピオンは80%)または気が6回復する。\nキルまたはアシストを獲得すると、マナまたは気の最大値の15%を回復する。\nダメージによる回復のクールダウン: 8秒"
+   }
+  },
+  {
+   "id": 9104,
+   "key": "LegendAlacrity",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Legend: Alacrity",
+    "ja": "レジェンド: 迅速"
+   },
+   "short": {
+    "en": "Takedowns on enemies grant permanent Attack Speed.",
+    "ja": "敵をキルまたはアシストすると恒久的に攻撃速度が増加する。"
+   },
+   "long": {
+    "en": "Gain 3% attack speed plus an additional 1.5% for every Legend stack (max 10 stacks).\nEarn progress toward Legend stacks for every champion takedown, epic monster takedown, large monster kill, and minion kill.",
+    "ja": "攻撃速度が3%増加し、さらに「レジェンド」のスタック1つにつき1.5%増加する(最大10スタック)。\n敵チャンピオンからキルまたはアシストを獲得するか、エピックモンスター討伐に寄与または大型モンスターやミニオンをキルすることで「レジェンド」のスタック獲得に近づく。"
+   }
+  },
+  {
+   "id": 9105,
+   "key": "LegendHaste",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Legend: Haste",
+    "ja": "レジェンド: ヘイスト"
+   },
+   "short": {
+    "en": "Takedowns on enemies grant permanent Basic Ability Haste.",
+    "ja": "敵をキルまたはアシストすると恒久的に通常スキルヘイストが増加する。"
+   },
+   "long": {
+    "en": "Gain 1.5 basic ability haste for every Legend stack (max 10 stacks).\nEarn progress toward Legend stacks for every champion takedown, epic monster takedown, large monster kill, and minion kill.",
+    "ja": "「レジェンド」のスタックごとに通常スキルヘイストが1.5増加する(最大10スタック)。\n敵チャンピオンからキルまたはアシストを獲得する、エピックモンスター討伐に貢献する、または大型モンスターやミニオンをキルすることで「レジェンド」のスタック獲得に近づく。"
+   }
+  },
+  {
+   "id": 9103,
+   "key": "LegendBloodline",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Legend: Bloodline",
+    "ja": "レジェンド: 血脈"
+   },
+   "short": {
+    "en": "Takedowns on enemies grant permanent Life Steal, up to a cap. Once the cap is reached, increase your max health. Weaker earlier but stronger later game than other Legend Runes.",
+    "ja": "敵からキルまたはアシストを獲得すると恒久的にライフスティールが増加する(上限あり)。上限に達すると最大体力が増加する。序盤は他のレジェンドルーンに比べて効果が薄いが、終盤になるにつれて強力になっていく。"
+   },
+   "long": {
+    "en": "Gain 0.45% Life Steal for every Legend stack (max 15 stacks). At maximum Legend stacks, gain 85 max health.\nEarn progress toward Legend stacks for every champion takedown, epic monster takedown, large monster kill, and minion kill.",
+    "ja": "「レジェンド」のスタック1つにつきライフスティールが0.45%増加する(最大15スタック)。最大スタックになると最大体力が85増加する。\n敵チャンピオンからキルまたはアシストを獲得するか、エピックモンスター討伐に寄与または大型モンスターやミニオンをキルすることで「レジェンド」のスタック獲得に近づく。"
+   }
+  },
+  {
+   "id": 8014,
+   "key": "CoupDeGrace",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Coup de Grace",
+    "ja": "最期の慈悲"
+   },
+   "short": {
+    "en": "Deal more damage to low health enemy champions.",
+    "ja": "体力の低下した敵チャンピオンに対して与えるダメージが増加する。"
+   },
+   "long": {
+    "en": "Deal 8% more damage to champions who have less than 40% health.",
+    "ja": "体力が40%未満の敵チャンピオンに8%の追加ダメージを与える。"
+   }
+  },
+  {
+   "id": 8017,
+   "key": "CutDown",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Cut Down",
+    "ja": "切り崩し"
+   },
+   "short": {
+    "en": "Deal more damage to high health enemy champions.",
+    "ja": "体力の多い敵チャンピオンに対して与えるダメージが増加する。"
+   },
+   "long": {
+    "en": "Deal 8% more damage to champions who have more than 60% health.",
+    "ja": "体力が60%以上の敵チャンピオンに8%の追加ダメージを与える。"
+   }
+  },
+  {
+   "id": 8299,
+   "key": "LastStand",
+   "path": {
+    "en": "Precision",
+    "ja": "栄華"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Last Stand",
+    "ja": "背水の陣"
+   },
+   "short": {
+    "en": "Deal more damage to champions while you are low on health.",
+    "ja": "自身の体力が低下していると敵チャンピオンに与えるダメージが増加する。"
+   },
+   "long": {
+    "en": "Deal 5% - 11% increased damage to champions while you are below 60% health. Max damage gained at 30% health.",
+    "ja": "自身の体力が60%以下の場合、敵チャンピオンに与えるダメージが5% - 11%増加する。体力が30%以下で最大ダメージ増加率を獲得する。"
+   }
+  },
+  {
+   "id": 8437,
+   "key": "GraspOfTheUndying",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Grasp of the Undying",
+    "ja": "不死者の握撃"
+   },
+   "short": {
+    "en": "Every 4s your next attack on a champion deals bonus magic damage, heals you, and permanently increases your health.",
+    "ja": "4秒毎に、敵チャンピオンに対する通常攻撃が追加魔法ダメージを与え、体力を回復。さらに最大体力を恒久的に増加させる。"
+   },
+   "long": {
+    "en": "Every 4s in combat, your next basic attack on a champion will:Deal bonus magic damage equal to 3.5% of your max healthHeal you for 1.3% of your max healthPermanently increase your health by 5\nRanged Champions: Damage, healing, and permanent health gained are 40% effective.",
+    "ja": "戦闘中4秒毎に、敵チャンピオンに対する通常攻撃が以下の追加効果を獲得:自身の最大体力の3.5%に相当する追加魔法ダメージを与える最大体力の1.3%分、体力を回復する最大体力を恒久的に5増加させる\n遠隔攻撃チャンピオン: ダメージ、体力回復量、恒久的に増加する最大体力量の効率が40%になる。"
+   }
+  },
+  {
+   "id": 8439,
+   "key": "Aftershock",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Aftershock",
+    "ja": "アフターショック"
+   },
+   "short": {
+    "en": "After immobilizing an enemy champion gain defenses and later deal a burst of magic damage around you.",
+    "ja": "敵チャンピオンに移動不能効果を与えると防御力を獲得し、その後爆発して自身の周囲の敵に大きな魔法ダメージを与える。"
+   },
+   "long": {
+    "en": "After immobilizing an enemy champion, increase your Armor and Magic Resist by 45 + 75% of your Bonus Resists for 2.5s. Then explode, dealing magic damage to nearby enemies.\nDamage: 25 - 120 (+8% of your bonus health)\nCooldown: 20s\nResistance bonus from Aftershock capped at: 80-150 (based on level)",
+    "ja": "敵チャンピオンに移動不能効果を与えると2.5秒間、物理防御と魔法防御が45(+増加防御力の75%)上昇し、その後爆発して周囲の敵ユニットに魔法ダメージを与える。\nダメージ: 25 - 120(+自身の増加体力の8%)\nクールダウン: 20秒\n「アフターショック」による増加防御力上限: 80 - 150(レベルに応じて)"
+   }
+  },
+  {
+   "id": 8465,
+   "key": "Guardian",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Guardian",
+    "ja": "ガーディアン"
+   },
+   "short": {
+    "en": "Guard allies you cast spells on and those that are very nearby. If you or a guarded ally would take damage based on level, you're both granted a shield.",
+    "ja": "自身がスキルを使用した味方と自身の近くにいる味方をガードする。ガードしている味方か自身のどちらかがレベルに応じた一定以上のダメージを受けると、両者がシールドを獲得する。"
+   },
+   "long": {
+    "en": "Guard allies within 350 units of you, and allies you target with spells for 2.5s. While Guarding, if you or the ally take more than a small amount of damage over the duration of the Guard, both of you gain a shield for 1.5s.\nCooldown: 75 - 40 seconds\nShield: 40 - 150 + 20% of your ability power + 6% of your bonus health\nProc Threshold: 50 - 165 postmitigation damage",
+    "ja": "350ユニット以内にいる味方ユニットと自身のスキルの対象となった味方ユニットを2.5秒間ガードする。ガード中に自身とその味方のどちらかが一定量以上のダメージを受けた場合、両方が1.5秒間シールドを獲得する。\nクールダウン: 75 - 40秒\nシールド: 40 - 150 + 自身の魔力の20% + 自身の増加体力の6%\n発動しきい値: 50 - 165軽減後ダメージ"
+   }
+  },
+  {
+   "id": 8446,
+   "key": "Demolish",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Demolish",
+    "ja": "打ちこわし"
+   },
+   "short": {
+    "en": "Your third attack against turrets deals bonus damage.",
+    "ja": "タワーへの3回目の通常攻撃が追加ダメージを与える。"
+   },
+   "long": {
+    "en": "Your third attack against towers deals [85 (+28% max Health) Melee || 50 (+20% max Health) Ranged] bonus physical damage.\nCooldown: 30s",
+    "ja": "タワーへの3回目の通常攻撃が[近接85 (+最大体力の28%) || 遠隔50 (+最大体力の20%)]の追加物理ダメージを与える。\nクールダウン: 30秒"
+   }
+  },
+  {
+   "id": 8463,
+   "key": "FontOfLife",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Font of Life",
+    "ja": "生命の泉"
+   },
+   "short": {
+    "en": "Impairing the movement of an enemy champion heals nearby allied champions.",
+    "ja": "敵チャンピオンに行動妨害効果を付与すると、近くにいる味方チャンピオンの体力が回復する。"
+   },
+   "long": {
+    "en": "Impairing the movement of an enemy champion restores @BaseHeal@ Health to you and the lowest health nearby allied champion.\n70% effect for Ranged Users.\nCooldown: 20s",
+    "ja": "敵チャンピオンに行動妨害効果を付与すると、自身と近くにいる体力が最も低い味方チャンピオンの体力を@BaseHeal@回復する。\n遠隔攻撃チャンピオンは効果が70%になる。\nクールダウン: 20秒"
+   }
+  },
+  {
+   "id": 8401,
+   "key": "ShieldBash",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Shield Bash",
+    "ja": "シールドバッシュ"
+   },
+   "short": {
+    "en": "Whenever you gain a shield, your next basic attack against a champion deals bonus adaptive damage.",
+    "ja": "シールドを獲得するたびに、チャンピオンに対する次の通常攻撃が追加アダプティブダメージを与える。"
+   },
+   "long": {
+    "en": "Whenever you gain a new shield,  your next basic attack against a champion deals 5 - 30 (+2.5% Bonus Health) (+15.0% New Shield Amount) bonus adaptive damage.\nYou have up to 2s after the shield expires to use this effect.",
+    "ja": "新たにシールドを獲得するたびに、チャンピオンに対する次の通常攻撃が5 - 30(+増加体力の2.5%) (+新たなシールド量の15.0%)の追加アダプティブダメージを与える。\nこの効果はそのシールドが消滅してから最大2秒間持続する。"
+   }
+  },
+  {
+   "id": 8429,
+   "key": "Conditioning",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Conditioning",
+    "ja": "心身調整"
+   },
+   "short": {
+    "en": "After 12 min gain +8 Armor and +8 Magic Resist and increase your Armor and Magic Resist by 3%.",
+    "ja": "試合開始12分後に物理防御 +8と魔法防御 +8を獲得。物理防御と魔法防御が3%増加する。"
+   },
+   "long": {
+    "en": "After 12 min gain +8 Armor and +8 Magic Resist and increase your Armor and Magic Resist by 3%.",
+    "ja": "試合開始12分後に物理防御 +8と魔法防御 +8を獲得。物理防御と魔法防御が3%増加する。"
+   }
+  },
+  {
+   "id": 8444,
+   "key": "SecondWind",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Second Wind",
+    "ja": "息継ぎ"
+   },
+   "short": {
+    "en": "After taking damage from an enemy champion heal back some missing health over time.",
+    "ja": "敵チャンピオンからダメージを受けると、減少体力の一部を時間をかけて回復する。"
+   },
+   "long": {
+    "en": "After taking damage from an enemy champion, heal for 4% of your missing health over 10s.",
+    "ja": "敵チャンピオンからダメージを受けると、減少体力の4%を10秒かけて回復する。"
+   }
+  },
+  {
+   "id": 8473,
+   "key": "BonePlating",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Bone Plating",
+    "ja": "ボーンアーマー"
+   },
+   "short": {
+    "en": "After taking damage from an enemy champion, the next 3 spells or attacks you receive from them deal 30-60 (based on level) less damage.\nDuration: 1.5s\nCooldown: 55s",
+    "ja": "敵チャンピオンからダメージを受けると、そのチャンピオンから次に受ける3回のスキルまたは通常攻撃のダメージが30-60(チャンピオンレベルに応じて)軽減される。\n効果時間: 1.5秒\nクールダウン: 55秒"
+   },
+   "long": {
+    "en": "After taking damage from an enemy champion, the next 3 spells or attacks you receive from them deal 30-60 (based on level) less damage.\nDuration: 1.5s\nCooldown: 55s",
+    "ja": "敵チャンピオンからダメージを受けると、そのチャンピオンから次に受ける3回のスキルまたは通常攻撃のダメージが30-60(チャンピオンレベルに応じて)軽減される。\n効果時間: 1.5秒\nクールダウン: 55秒"
+   }
+  },
+  {
+   "id": 8451,
+   "key": "Overgrowth",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Overgrowth",
+    "ja": "超成長"
+   },
+   "short": {
+    "en": "Gain permanent max health when minions or monsters die near you.",
+    "ja": "自身の周囲で敵ミニオンまたはモンスターが倒されると恒久的に最大体力が増加する。"
+   },
+   "long": {
+    "en": "Absorb life essence from monsters or enemy minions that die near you, permanently gaining 3 maximum health for every 8.\nWhen you've absorbed 120 monsters or enemy minions, gain an additional 3.5% maximum health.",
+    "ja": "自身の周囲でモンスターまたは敵ミニオンが8体倒されるごとに生命のエッセンスを吸収し、最大体力が3恒久的に増加する。\nモンスターまたは敵ミニオンを120体吸収すると、最大体力が追加で3.5%増加する。"
+   }
+  },
+  {
+   "id": 8453,
+   "key": "Revitalize",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Revitalize",
+    "ja": "生気付与"
+   },
+   "short": {
+    "en": "Gain 5% Heal and Shield Power.\nHeals and shields you cast or receive are 10% stronger on targets below 40% health.",
+    "ja": "体力回復効果とシールド効果が5%上昇する。\n自身が使用する、または付与される体力回復効果とシールド効果は、対象の体力が40%未満の場合、10%上昇する。"
+   },
+   "long": {
+    "en": "Gain 5% Heal and Shield Power.\nHeals and shields you cast or receive are 10% stronger on targets below 40% health.",
+    "ja": "体力回復効果とシールド効果が5%上昇する。\n自身が使用する、または付与される体力回復効果とシールド効果は、対象の体力が40%未満の場合、10%上昇する。"
+   }
+  },
+  {
+   "id": 8242,
+   "key": "Unflinching",
+   "path": {
+    "en": "Resolve",
+    "ja": "不滅"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Unflinching",
+    "ja": "気迫"
+   },
+   "short": {
+    "en": "Gain Armor and Magic Resist when receiving crowd control.",
+    "ja": "行動妨害効果を受けると物理防御と魔法防御が増加する。"
+   },
+   "long": {
+    "en": "Gain 10 Armor and Magic Resist when crowd controlled and for 2 seconds after.",
+    "ja": "行動妨害効果を受けている間とその後の2秒間、物理防御と魔法防御が10増加する。"
+   }
+  },
+  {
+   "id": 8214,
+   "key": "SummonAery",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Summon Aery",
+    "ja": "エアリー召喚"
+   },
+   "short": {
+    "en": "Your attacks and abilities send Aery to a target, damaging enemies or shielding allies.",
+    "ja": "通常攻撃かスキルでエアリーを送り出し、味方にはシールド、敵にはダメージを与える。"
+   },
+   "long": {
+    "en": "Damaging enemy champions with basic attacks or abilities sends Aery to them, dealing 10 - 50 based on level (+0.05 AP) (+0.1 bonus AD).\nEmpowering or protecting allies with abilities sends Aery to them, shielding them for 20 - 100 based on level (+0.05 AP) (+0.1 bonus AD).\nAery cannot be sent out again until she returns to you.",
+    "ja": "通常攻撃かスキルで敵チャンピオンを攻撃すると対象に向けて「エアリー」を送り出し、レベルに応じて10 - 50(+魔力x0.05)(+増加攻撃力x0.1)のダメージを与える。\n味方をスキルで強化するかスキルで守ると対象に向けて「エアリー」を送り出し、レベルに応じて20 - 100(+魔力x0.05)(+増加攻撃力x0.1)のシールドを付与する。\n「エアリー」は一旦自身のもとに呼び戻さなければ、再び送り出すことはできない。"
+   }
+  },
+  {
+   "id": 8229,
+   "key": "ArcaneComet",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Arcane Comet",
+    "ja": "秘儀の彗星"
+   },
+   "short": {
+    "en": "Damaging a champion with an ability hurls a damaging comet at their location.",
+    "ja": "スキルでダメージを与えた敵チャンピオンの位置に彗星を飛ばす。"
+   },
+   "long": {
+    "en": "Damaging a champion with an ability hurls a comet at their location, dealing increased damage based on distance.\nAdaptive Damage: 15 - 100 based on level (+0.05 AP and +0.1 bonus AD)\nCooldown: 20 - 8s\nDamage amplification scales up to 100% at 750 range.",
+    "ja": "スキルでチャンピオンにダメージを与えると、その位置に向かって彗星を飛ばし、距離に応じて増加するダメージを与える。\nアダプティブダメージ: 15 - 100(レベルに応じて)(+魔力0.05および+増加攻撃力0.1)\nクールダウン: 20 - 8秒\nダメージ増幅率は距離750で最大100%まで増加する。"
+   }
+  },
+  {
+   "id": 8230,
+   "key": "PhaseRush",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Stormraider's Surge",
+    "ja": "嵐乗りの勇躍"
+   },
+   "short": {
+    "en": "Dealing 25% of a champion's maximum health grants a burst of MS and Slow Resist.",
+    "ja": "対象チャンピオンの最大体力の25%にあたるダメージを与えると、瞬間的に移動速度が増加し、スロウ耐性を獲得する。"
+   },
+   "long": {
+    "en": "Dealing 25% of a champion's maximum health within 3s grants 48% Move Speed and 50% Slow Resistance for 4s. Move Speed is 75% effective for ranged champions.\nCooldown: 20s - 10s",
+    "ja": "3秒以内に対象チャンピオンの最大体力の25%にあたるダメージを与えると、4秒間移動速度が48%、スロウ耐性が50%増加する。遠隔チャンピオンの場合、移動速度の増加量は75%になる。\nクールダウン: 20秒 - 10秒"
+   }
+  },
+  {
+   "id": 8992,
+   "key": "DeathfireTouch",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 0,
+   "name": {
+    "en": "Deathfire Touch",
+    "ja": "死神の残り火"
+   },
+   "short": {
+    "en": "Damaging a champion with an ability burns them over time.",
+    "ja": "スキルでチャンピオンにダメージを与えると、継続燃焼ダメージを与える。"
+   },
+   "long": {
+    "en": "Damaging a champion with an ability burns them for 3 - 12 based on level (+2.5% AP) (+7% bonus AD)  magic damage per second. After burning for 3 seconds, the damage of the burn increases by 75% while they remain on fire.\nDuration:\nSingle Target: 4s\nArea of Effect: 2s\nDamage over Time: 1s",
+    "ja": "スキルでチャンピオンにダメージを与えると、対象を燃焼させて毎秒3 - 12(チャンピオンレベルに応じて) (+2.5魔力の%) (+7増加攻撃力の%)の魔法ダメージを与える。燃焼効果が3秒後も続いている場合、ダメージが75%増加する。\n効果時間:\n単体対象: 4秒\n効果範囲: 2秒\n継続ダメージ: 1秒"
+   }
+  },
+  {
+   "id": 8224,
+   "key": "NullifyingOrb",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Axiom Arcanist",
+    "ja": "アクシオム アルカニスト"
+   },
+   "short": {
+    "en": "Your Ultimate has increased damage, healing, and shielding. Scoring a takedown on an enemy champion reduces your Ultimate's current cooldown.",
+    "ja": "アルティメットスキルのダメージ、体力回復効果、シールド量が増加する。敵チャンピオンからキルまたはアシストを獲得すると、アルティメットスキルの現在のクールダウンが短縮される。"
+   },
+   "long": {
+    "en": "Your Ultimate has 12% increased damage, healing, and shielding. \n(AoE damage is reduced to a 8% increase)\nScoring a takedown on an enemy champion reduces your Ultimate's current cooldown by 7%.",
+    "ja": "アルティメットスキルが与えるダメージ、体力回復効果、シールドが12%増加中。 \n(範囲ダメージは増加率が8%に低下する)\n敵チャンピオンからキルまたはアシストを奪うと、アルティメットスキルの現在のクールダウンが7%短縮される。"
+   }
+  },
+  {
+   "id": 8226,
+   "key": "ManaflowBand",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Manaflow Band",
+    "ja": "マナフローバンド"
+   },
+   "short": {
+    "en": "Hitting an enemy champion with an ability permanently increases your maximum mana by 25, up to 250 mana.\nAfter reaching 250 bonus mana, restore 1% of your missing mana every 5 seconds.",
+    "ja": "敵チャンピオンにスキルを当てるたびに最大マナが25ずつ恒久的に増加する(増加マナ上限は250)。\n増加マナが250になると5秒ごとに減少マナの1%を回復する。"
+   },
+   "long": {
+    "en": "Hitting an enemy champion with an ability permanently increases your maximum mana by 25, up to 250 mana.\nAfter reaching 250 bonus mana, restore 1% of your missing mana every 5 seconds.\nCooldown: 15 seconds",
+    "ja": "敵チャンピオンにスキルを当てるたびに最大マナが25ずつ恒久的に増加する(増加マナ上限は250)。\n増加マナが250になると5秒ごとに減少マナの1%を回復する。\nクールダウン: 15秒"
+   }
+  },
+  {
+   "id": 8275,
+   "key": "NimbusCloak",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 1,
+   "name": {
+    "en": "Nimbus Cloak",
+    "ja": "ニンバスクローク"
+   },
+   "short": {
+    "en": "After casting a Summoner Spell, gain a short Move Speed increase that allows you to pass through units.",
+    "ja": "サモナースペル使用後、少しの間だけ移動速度が増加し、ユニットをすり抜けられるようになる。"
+   },
+   "long": {
+    "en": "After casting a Summoner Spell, gain a Move Speed increase that lasts for 2s and allows you to pass through units.\nIncrease: 15% - 45% Move Speed based on the Summoner Spell's cooldown. (Higher cooldown Summoner Spells grant more Move Speed).",
+    "ja": "サモナースペル使用後に2秒間、移動速度が増加する。この間はユニットをすり抜けられる。\n増加: サモナースペルのクールダウンに応じて移動速度15% - 45%(クールダウンの長いサモナースペルほど移動速度が大きく増加)。"
+   }
+  },
+  {
+   "id": 8210,
+   "key": "Transcendence",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Transcendence",
+    "ja": "至高"
+   },
+   "short": {
+    "en": "Gain bonuses upon reaching the following levels:\nLevel 5: +5 Ability Haste \nLevel 8: +5 Ability Haste \nLevel 11: On Champion takedown, reduce the remaining cooldown of basic abilities by 20%.",
+    "ja": "以下のレベルになるとボーナスを獲得:\nレベル5: スキルヘイスト +5\nレベル8: スキルヘイスト +5\nレベル11: チャンピオンからキルまたはアシストを獲得すると、通常スキルの残りクールダウンが20%短縮される。"
+   },
+   "long": {
+    "en": "Gain bonuses upon reaching the following levels:\nLevel 5: +5 Ability Haste \nLevel 8: +5 Ability Haste \nLevel 11: On Champion takedown, reduce the remaining cooldown of basic abilities by 20%.",
+    "ja": "以下のレベルになるとボーナスを獲得:\nレベル5: スキルヘイスト +5\nレベル8: スキルヘイスト +5\nレベル11: チャンピオンからキルまたはアシストを獲得すると、通常スキルの残りクールダウンが20%短縮される。"
+   }
+  },
+  {
+   "id": 8234,
+   "key": "Celerity",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Celerity",
+    "ja": "追い風"
+   },
+   "short": {
+    "en": "All Move Speed bonuses are 7% more effective on you and gain 1% Move Speed.",
+    "ja": "自身のあらゆる移動速度ボーナスの効果が7%上昇し、移動速度が1%増加する。"
+   },
+   "long": {
+    "en": "All movement bonuses are 7% more effective on you and gain 1% Move Speed.",
+    "ja": "自身のあらゆる移動ボーナスの効果が7%上昇し、移動速度が1%増加する。"
+   }
+  },
+  {
+   "id": 8233,
+   "key": "AbsoluteFocus",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 2,
+   "name": {
+    "en": "Absolute Focus",
+    "ja": "英気集中"
+   },
+   "short": {
+    "en": "While above 70% health, gain extra adaptive damage.",
+    "ja": "体力が70%以上あると追加アダプティブダメージを獲得する。"
+   },
+   "long": {
+    "en": "While above 70% health, gain an adaptive bonus of up to 18 Attack Damage or 30 Ability Power (based on level). \nGrants 1.8 Attack Damage or 3 Ability Power at level 1.",
+    "ja": "体力が70%以上ある場合、最大で攻撃力18、または魔力30のアダプティブボーナス(レベルに応じて)を獲得する。\nレベル1で攻撃力1.8または魔力3を獲得する。"
+   }
+  },
+  {
+   "id": 8237,
+   "key": "Scorch",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Scorch",
+    "ja": "追火"
+   },
+   "short": {
+    "en": "Your first damaging ability hit every 10s burns champions.",
+    "ja": "10秒毎に攻撃スキルが命中した対象を燃やす。"
+   },
+   "long": {
+    "en": "Your next damaging ability hit sets champions on fire dealing 20 - 40 bonus magic damage based on level after 1s.\nCooldown: 10s",
+    "ja": "攻撃スキルが命中した敵チャンピオンを1秒間燃やし、レベルに応じて20 - 40の追加魔法ダメージを与える。\nクールダウン: 10秒"
+   }
+  },
+  {
+   "id": 8232,
+   "key": "Waterwalking",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Waterwalking",
+    "ja": "水走り"
+   },
+   "short": {
+    "en": "Gain MS and AP or AD, adaptive in the river.",
+    "ja": "川の中にいると移動速度が増加し、魔力または攻撃力(アダプティブ)を獲得する。"
+   },
+   "long": {
+    "en": "Gain 10 Move Speed and 13 - 30 Adaptive Force (based on level) when in the river.\nMay you be as swift as the rushing river and agile as a startled Rift Scuttler.",
+    "ja": "川の中にいる間、移動速度が10増加し、さらにレベルに応じて13 - 30のアダプティブフォースを獲得する。\n速きこと流れる川の如く、敏捷なること驚いたリフトスカトルの如く。"
+   }
+  },
+  {
+   "id": 8236,
+   "key": "GatheringStorm",
+   "path": {
+    "en": "Sorcery",
+    "ja": "魔道"
+   },
+   "slot": 3,
+   "name": {
+    "en": "Gathering Storm",
+    "ja": "強まる嵐"
+   },
+   "short": {
+    "en": "Gain increasing amounts of AD or AP, adaptive over the course of the game.",
+    "ja": "試合時間の経過とともに攻撃力または魔力(アダプティブ)が増加する。"
+   },
+   "long": {
+    "en": "Every 10 min gain AP or AD, adaptive.\n10 min: + 8 AP or 5 AD \n20 min: + 24 AP or 14 AD\n30 min: + 48 AP or 29 AD\n40 min: + 80 AP or 48 AD\n50 min: + 120 AP or 72 AD\n60 min: + 168 AP or 101 AD\netc...",
+    "ja": "10分ごとに、魔力か攻撃力が増加する(アダプティブ)。\n10分: 魔力 +8、または攻撃力 +5 \n20分: 魔力 +24、または攻撃力 +14\n30分: 魔力 +48、または攻撃力 +29\n40分: 魔力 +80、または攻撃力 +48\n50分: 魔力 +120、または攻撃力 +72\n60分: 魔力 +168、または攻撃力 +101\n、続く…"
+   }
+  }
+ ]
+}

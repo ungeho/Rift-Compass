@@ -5,6 +5,7 @@
 //   node tools/gamedata/ingest.js wiki [--cache <file>]         LoL Wiki の Module:ChampionData/data（MediaWiki API）を JSON にする
 //   node tools/gamedata/ingest.js report <版> [<比べる版>]       スキルの取得範囲・Wiki との照合・版の違いを report.json に書く
 //   node tools/gamedata/ingest.js topics <版>                   全チャンピオンと5ロールの Topic を追加する（既存の Topic は変えない）
+//   node tools/gamedata/ingest.js ddragon-extra <版>             Data Dragon のアイテム・ルーン・サモナースペル（日英）
 //   node tools/gamedata/ingest.js positions                    ポジション → チャンピオンの一覧（Wiki の client_positions・external_positions）
 //   node tools/gamedata/ingest.js ambiguity <版>                ほかのカタカナ語の一部になるチャンピオン名を src/search/ambiguousNames.json に書く
 //
@@ -223,6 +224,39 @@ function ambiguity(version) {
 }
 
 // ---------------------------------------------------------------------------
+// Data Dragon のアイテム・ルーン・サモナースペル（en_US・ja_JP）。公式の日本語の名前と説明を、画面の日本語の表示に使う
+async function ddragonExtra(version) {
+  const base = `https://ddragon.leagueoflegends.com/cdn/${version}/data`;
+  const get = async (lang, file) => getJson(`${base}/${lang}/${file}`);
+  const source = { name: "Riot Data Dragon", version, fetched_at: today() };
+  const dir = path.join(OUT, "ddragon", version);
+  const strip = (h) => (h || "").replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "").replace(/\n{2,}/g, "\n").trim();
+  // アイテム
+  const [ien, ija] = [await get("en_US", "item.json"), await get("ja_JP", "item.json")];
+  const items = Object.entries(ien.data).map(([id, e]) => {
+    const j = ija.data[id] || {};
+    return { id: Number(id), name: { en: e.name, ja: j.name ?? null }, plaintext: { en: e.plaintext || null, ja: j.plaintext || null }, description: { en: strip(e.description), ja: strip(j.description) }, gold: e.gold, tags: e.tags, maps: e.maps, from: e.from || [], into: e.into || [] };
+  });
+  writeJson(path.join(dir, "items.json"), { source: { ...source, files: [`${base}/en_US/item.json`, `${base}/ja_JP/item.json`] }, count: items.length, items }, true);
+  // ルーン
+  const [ren, rja] = [await get("en_US", "runesReforged.json"), await get("ja_JP", "runesReforged.json")];
+  const runes = [];
+  ren.forEach((p, pi) => p.slots.forEach((sl, si) => sl.runes.forEach((r, ri) => {
+    const j = rja[pi]?.slots[si]?.runes[ri] || {};
+    runes.push({ id: r.id, key: r.key, path: { en: p.name, ja: rja[pi]?.name ?? null }, slot: si, name: { en: r.name, ja: j.name ?? null }, short: { en: strip(r.shortDesc), ja: strip(j.shortDesc) }, long: { en: strip(r.longDesc), ja: strip(j.longDesc) } });
+  })));
+  writeJson(path.join(dir, "runes.json"), { source: { ...source, files: [`${base}/en_US/runesReforged.json`, `${base}/ja_JP/runesReforged.json`] }, count: runes.length, runes }, true);
+  // サモナースペル
+  const [sen, sja] = [await get("en_US", "summoner.json"), await get("ja_JP", "summoner.json")];
+  const spells = Object.entries(sen.data).map(([id, s]) => {
+    const j = sja.data[id] || {};
+    return { id, key: s.key, name: { en: s.name, ja: j.name ?? null }, description: { en: strip(s.description), ja: strip(j.description) }, cooldown: s.cooldown, range: s.range, summonerLevel: s.summonerLevel, modes: s.modes };
+  });
+  writeJson(path.join(dir, "summoners.json"), { source: { ...source, files: [`${base}/en_US/summoner.json`, `${base}/ja_JP/summoner.json`] }, count: spells.length, spells }, true);
+  console.log(`Data Dragon ${version}：アイテム ${items.length}、ルーン ${runes.length}、サモナースペル ${spells.length}`);
+}
+
+// ---------------------------------------------------------------------------
 // ポジション（担当レーン）→ チャンピオンの一覧。Topic の親子は変えず、ロールのページが読む。
 // 出典は Wiki の Module:ChampionData の client_positions（Riot クライアントの推奨）と external_positions（統計サイトでの使用）。
 // 同じチャンピオンは複数のポジションに入る（フレックス）。根拠のない所属は加えない
@@ -271,6 +305,7 @@ async function main() {
   if (cmd === "topics") return topics(args[0]);
   if (cmd === "ambiguity") return ambiguity(args[0]);
   if (cmd === "positions") return positions();
+  if (cmd === "ddragon-extra") return ddragonExtra(args[0]);
   console.log(fs.readFileSync(__filename, "utf8").split("\n").slice(1, 9).join("\n"));
   process.exitCode = 1;
 }

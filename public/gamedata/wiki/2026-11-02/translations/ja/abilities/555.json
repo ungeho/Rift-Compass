@@ -1,0 +1,30 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Pyke/Ghostwater Dive#description": {
+   "source_sha1": "135443e8f459212c45a57da6b4e411d4b06ae8dd",
+   "plain_sha1": "50ce0ebe676eed151e4fa6371323661aca145038",
+   "ja": "発動効果：パイクは5秒間水中に潜ってカモフラージュになり、移動速度が45%（+ 脅威1につき2%）増加する（効果時間の間に減衰する）。通常攻撃をするかスキルを使用すると、「ゴーストウォーター」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Ghostwater Dive#description2": {
+   "source_sha1": "42d583a835b73c62f47a21450afdb4f6d775454c",
+   "plain_sha1": "8f725ebe78c1b12a2ed3909b6bb31887a899f8f9",
+   "ja": "パイクの1500ユニット以内にいる敵チャンピオンには、パイクの存在と、自分が「水底の急襲」で倒されうるかどうかが知らされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

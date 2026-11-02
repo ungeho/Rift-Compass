@@ -1,0 +1,230 @@
+{
+ "version": "2026-11-02",
+ "note": "英語 Wiki の説明文を日本語にするときの訳語（LoL の一般的な日本語の用語を優先）。仕様の違う語は同じ訳語にしない（Root と Ground、Blind と Nearsight など）。check は、原文にこの英語があるとき、訳文に対応する日本語があるかを確かめる。訳語は Data Dragon 16.21.1 の公式の日本語（チャンピオン・アイテム・ルーンの説明）での使用数を基準にした（例：スネア 78・スタン 149・固有時停止 11・真の視界 14）。公式に例のない語（グラウンド・ニアサイト）は一般的な呼び方",
+ "terms": [
+  {
+   "en": "\\broot(s|ed|ing)?\\b",
+   "ja": "スネア",
+   "note": "移動不可。Ground（グラウンド）とは別"
+  },
+  {
+   "en": "\bground(s|ed)\b|\bgrounding\b",
+   "ja": "グラウンド",
+   "note": "移動スキル不可（grounded）。Root とは別。「the ground」（地面）は対象外"
+  },
+  {
+   "en": "\\bstun(s|ned|ning)?\\b",
+   "ja": "スタン"
+  },
+  {
+   "en": "\\bblind(s|ed|ing)?\\b",
+   "ja": "ブラインド",
+   "note": "通常攻撃が外れる。Nearsight とは別"
+  },
+  {
+   "en": "\\bnearsight(ed|s)?\\b",
+   "ja": "ニアサイト",
+   "note": "視界の範囲が狭まる。Blind とは別"
+  },
+  {
+   "en": "\\bknock(s|ed)? ?up\\b|\\bairborne\\b",
+   "ja": "ノックアップ"
+  },
+  {
+   "en": "\\bknock(s|ed)? ?back\\b",
+   "ja": "ノックバック"
+  },
+  {
+   "en": "\\bslow(s|ed|ing)?\\b",
+   "ja": "スロウ"
+  },
+  {
+   "en": "\\bsilence(s|d)?\\b",
+   "ja": "サイレンス"
+  },
+  {
+   "en": "\\bfear(s|ed)?\\b|\\bflee(s|ing)?\\b",
+   "ja": "フィアー"
+  },
+  {
+   "en": "\\bcharm(s|ed)?\\b",
+   "ja": "チャーム"
+  },
+  {
+   "en": "\\btaunt(s|ed)?\\b",
+   "ja": "タウント"
+  },
+  {
+   "en": "\\bsuppress(es|ed|ion)?\\b",
+   "ja": "サプレッション"
+  },
+  {
+   "en": "\\bstasis\\b",
+   "ja": "固有時停止",
+   "note": "Data Dragon の公式の日本語（ゾーニャの砂時計など）に合わせる"
+  },
+  {
+   "en": "\\buntargetable\\b",
+   "ja": "対象指定不可"
+  },
+  {
+   "en": "\\binvulnerable\\b",
+   "ja": "無敵"
+  },
+  {
+   "en": "\binvisib(le|ility)\b",
+   "ja": "インビジブル",
+   "note": "Stealth の一種（真の視界でだけ見える）。Camouflage（カモフラージュ）とは別"
+  },
+  {
+   "en": "\\bstealth(ed)?\\b",
+   "ja": "ステルス"
+  },
+  {
+   "en": "\\bcamouflage(d)?\\b",
+   "ja": "カモフラージュ"
+  },
+  {
+   "en": "\\btrue sight\\b",
+   "ja": "真の視界",
+   "note": "Data Dragon の公式の日本語に合わせる。通常の視界・可視化とは別"
+  },
+  {
+   "en": "\\breveal(s|ed|ing)?\\b",
+   "ja": "可視化"
+  },
+  {
+   "en": "\\bsight\\b",
+   "ja": "視界"
+  },
+  {
+   "en": "\\bspell ?shield(s|ed)?\\b",
+   "ja": "スペルシールド"
+  },
+  {
+   "en": "\\bshield(s|ed|ing)?\\b",
+   "ja": "シールド"
+  },
+  {
+   "en": "\\bdash(es|ed|ing)?\\b",
+   "ja": "ダッシュ"
+  },
+  {
+   "en": "\\bblink(s|ed|ing)?\\b",
+   "ja": "ブリンク"
+  },
+  {
+   "en": "\\bbasic attack(s)?\\b",
+   "ja": "通常攻撃"
+  },
+  {
+   "en": "\\battack speed\\b",
+   "ja": "攻撃速度"
+  },
+  {
+   "en": "\\bbonus attack damage\\b|\\bbonus AD\\b",
+   "ja": "増加攻撃力"
+  },
+  {
+   "en": "\\barmor\\b",
+   "ja": "物理防御"
+  },
+  {
+   "en": "\\bmagic resist(ance)?\\b",
+   "ja": "魔法防御"
+  },
+  {
+   "en": "\\bmagic damage\\b",
+   "ja": "魔法ダメージ"
+  },
+  {
+   "en": "\\bphysical damage\\b",
+   "ja": "物理ダメージ"
+  },
+  {
+   "en": "\\btrue damage\\b",
+   "ja": "確定ダメージ"
+  },
+  {
+   "en": "\\bmovement speed\\b",
+   "ja": "移動速度"
+  },
+  {
+   "en": "\\bmaximum health\\b",
+   "ja": "最大体力"
+  },
+  {
+   "en": "\\bmissing health\\b",
+   "ja": "減少体力"
+  },
+  {
+   "en": "\\bcurrent health\\b",
+   "ja": "現在体力"
+  },
+  {
+   "en": "\\bbonus health\\b",
+   "ja": "増加体力"
+  },
+  {
+   "en": "\\bon-hit\\b",
+   "ja": "攻撃時効果"
+  },
+  {
+   "en": "\\bcritical strike\\b",
+   "ja": "クリティカル"
+  },
+  {
+   "en": "\\blife ?steal\\b",
+   "ja": "ライフスティール"
+  },
+  {
+   "en": "\\bomnivamp\\b",
+   "ja": "オムニヴァンプ"
+  },
+  {
+   "en": "\\btenacity\\b",
+   "ja": "行動妨害耐性"
+  },
+  {
+   "en": "\\bability haste\\b",
+   "ja": "スキルヘイスト"
+  },
+  {
+   "en": "\\brecast\\b",
+   "ja": "再発動"
+  },
+  {
+   "en": "\\bcooldown(s)?\\b",
+   "ja": "クールダウン"
+  },
+  {
+   "en": "\\bcast time\\b",
+   "ja": "詠唱時間"
+  },
+  {
+   "en": "\\bchannel(s|ed|ing)?\\b",
+   "ja": "詠唱",
+   "note": "Data Dragon の公式の日本語（詠唱）に合わせる。詠唱時間（cast time）とは文脈で区別する"
+  },
+  {
+   "en": "\\bminion(s)?\\b",
+   "ja": "ミニオン"
+  },
+  {
+   "en": "\\bmonster(s)?\\b",
+   "ja": "モンスター"
+  },
+  {
+   "en": "\\bchampion(s)?\\b",
+   "ja": "チャンピオン"
+  },
+  {
+   "en": "\\bheal(s|ed|ing)?\\b",
+   "ja": "回復"
+  },
+  {
+   "en": "\\bdisplacement(s)?\\b",
+   "ja": "移動系の効果"
+  }
+ ]
+}

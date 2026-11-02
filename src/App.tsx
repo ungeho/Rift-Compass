@@ -7,6 +7,7 @@ import { TopicIndex, TopicPage } from "./components/TopicPages";
 import { DecisionDetail, DecisionIndex } from "./components/DecisionPages";
 import { ExplorePage } from "./components/ExplorePage";
 import { NotePage } from "./components/NotePage";
+import { DataPage, SECTIONS } from "./components/DataPages";
 import { decisionById } from "./data/decisions";
 
 function pageTitle(route: Route): string {
@@ -17,12 +18,13 @@ function pageTitle(route: Route): string {
   if (route.name === "decision") return decisionById(route.id)?.statement_ja ?? "判断材料（試験）";
   if (route.name === "explore") return "知識を散策する（試験）";
   if (route.name === "note") return "知識ノート";
+  if (route.name === "data") return SECTIONS.find((s) => s.id === route.section)?.label ?? "ゲームデータ";
   return route.q ? `「${route.q}」の検索結果` : "";
 }
 
 export function App() {
   const route = useRoute();
-  const pageKey = route.name === "home" ? "home" : `${route.name}:${"id" in route ? route.id : ""}:${route.name === "decision" ? (route.example ?? "") : ""}`;
+  const pageKey = route.name === "home" ? "home" : `${route.name}:${"id" in route ? route.id : ""}:${route.name === "decision" ? (route.example ?? "") : ""}:${route.name === "data" ? route.section : ""}`;
 
   useEffect(() => {
     const title = pageTitle(route);
@@ -48,6 +50,7 @@ export function App() {
           <a href="#/topics">Topic 一覧</a>
           <a href="#/decisions">判断材料（試験）</a>
           <a href="#/explore">散策（試験）</a>
+          <a href="#/data">ゲームデータ</a>
         </nav>
       </header>
       <main id="main" tabIndex={-1}>
@@ -59,6 +62,7 @@ export function App() {
         {route.name === "decision" && <DecisionDetail id={route.id} example={route.example} />}
         {route.name === "note" && <NotePage id={route.id} />}
         {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} count={route.count} />}
+        {route.name === "data" && <DataPage section={route.section} />}
       </main>
       <footer className="site-footer">
         <p>

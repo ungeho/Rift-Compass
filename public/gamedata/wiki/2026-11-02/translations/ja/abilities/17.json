@@ -1,0 +1,72 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Teemo/Guerrilla Warfare#description": {
+   "source_sha1": "cb87a3fa2542f9a39e67542b4b1d1ba28391d9e9",
+   "plain_sha1": "dc03cdc2bb98a2195e2a6f17137debf51f637b50",
+   "ja": "固有：ティーモは、移動・継続ダメージ以外のダメージの被弾・ステルスを解く行動・詠唱・固有時停止のどれもない状態が1.5秒続くと、インビジブルになる。ティーモは、何もせず移動系の効果も受けない限り、ステルスを保つ。ブッシュの中では、移動中でもステルスになり、移動してもステルスは解けないが、この場合にノックアップされるとステルスが解ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Guerrilla Warfare#description2": {
+   "source_sha1": "3416a8d3adf184975b677e486b8d137248102489",
+   "plain_sha1": "920f048866f83ff1e7d5e820210d5fdd3478dd60",
+   "ja": "固有 -「Element of Surprise」：ティーモがステルスを解くと、5秒間、攻撃速度が20%～80%（レベルに応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Noxious Trap#description": {
+   "source_sha1": "e85992ed95e4dba377b08911cd73cfd563acdf57",
+   "plain_sha1": "14ccb96bd5024141b998e5e46c6d318553e387c1",
+   "ja": "発動効果：ティーモは指定地点に毒キノコを投げる。キノコは1秒かけて準備を終えるとステルスになり、最大5分間残って、周囲の視界を与える。既に置いたキノコの上に落ちた場合は、そのキノコから投げた距離の分だけ前方へ跳ね、上限まで繰り返し跳ねることがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Noxious Trap#description2": {
+   "source_sha1": "3820e71ebd8a77cf46e054d535da55d1c0cf7263",
+   "plain_sha1": "eeba041728c3a358c9a34b7fd139d19911ef4858",
+   "ja": "ティーモは一定時間ごとに「毒キノコ」のチャージを一つ得て、上限まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Noxious Trap#description3": {
+   "source_sha1": "a69fe190e9e3786eb86ae05007c1daf51312a150",
+   "plain_sha1": "4f56bbbf64e6fb563b35d37b464bf01c0b7caef2",
+   "ja": "キノコは敵が触れると爆発し、周囲の敵に毒を与えて4秒間スロウを与え、さらにその敵を可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Noxious Trap#description4": {
+   "source_sha1": "a28e2703c1f5a6d0913ad3bb7b601c9bdd5bcfd8",
+   "plain_sha1": "46e7adb5cb7059f9d8ddcd5563e068e17bf665a9",
+   "ja": "毒：対象は4秒間、毎秒魔法ダメージを受ける。再び毒を受けると効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Noxious Trap#description5": {
+   "source_sha1": "a894ca360d5cc04858aa1d733440ab6ce02c3e91",
+   "plain_sha1": "1c7df81baaaf1cf36dbe103428ef83f76793d812",
+   "ja": "キノコの最大体力は6で、チャンピオンの通常攻撃でだけダメージを受ける（遠隔攻撃で2、近接攻撃で3）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Teemo/Noxious Trap#description6": {
+   "source_sha1": "cce5b1505e9ee480f8c6e16db9c1034aaf01261b",
+   "plain_sha1": "f353ad3962eb4ba15155a8a992b1828a20693639",
+   "ja": "キノコの罠の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

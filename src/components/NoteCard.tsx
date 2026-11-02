@@ -1,10 +1,10 @@
 import { index } from "../data/dataset";
-import { APPLICABILITY_LABELS, EVIDENCE_TYPE_LABELS, formatSeconds, KIND_LABELS, noteHeading, periodLabel, STATUS_LABELS } from "../data/labels";
+import { APPLICABILITY_LABELS, EVIDENCE_TYPE_LABELS, formatSeconds, KIND_LABELS, periodLabel, STATUS_LABELS } from "../data/labels";
 import type { KnowledgeNote } from "../data/types";
 import { youtubeAt } from "../lib/links";
 import { plainText } from "../lib/plainText";
 import { resourceHref } from "../router";
-import { ExternalLink, LevelBadge } from "./common";
+import { ExternalLink, LevelBadge, NoteStatusBadge } from "./common";
 
 function List({ title, items }: { title: string; items?: string[] }) {
   if (!items?.length) return null;
@@ -29,7 +29,7 @@ export function NoteCard({ note, currentResourceId }: { note: KnowledgeNote; cur
   return (
     <article className={`note tone-${status.tone}`} aria-labelledby={`note-${note.id}`}>
       <header className="note-header">
-        <span className={`badge status status-${status.tone}`}>{noteHeading(note)}</span>
+        <NoteStatusBadge note={note} />
         <span className="badge">{KIND_LABELS[note.kind]}</span>
       </header>
       <p className="note-statement" id={`note-${note.id}`}>

@@ -29,3 +29,11 @@ describe("判断材料の具体例への直接リンク", () => {
     expect(parseHash(decisionHref("du-a", "ex b&c"))).toEqual({ name: "decision", id: "du-a", example: "ex b&c" });
   });
 });
+
+describe("ゲームデータのページ", () => {
+  it("#/data は一覧、#/data/<区分> は各区分", () => {
+    expect(parseHash("#/data")).toEqual({ name: "data", section: "" });
+    expect(parseHash("#/data/items")).toEqual({ name: "data", section: "items" });
+    expect(parseHash("#/data/summoners")).toEqual({ name: "data", section: "summoners" });
+  });
+});

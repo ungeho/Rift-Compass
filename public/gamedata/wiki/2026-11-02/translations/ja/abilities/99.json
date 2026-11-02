@@ -1,0 +1,79 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Lux/Illumination#description": {
+   "source_sha1": "2d46256534bc4f12e4d54f406d72796293376b36",
+   "ja": "固有：ラックスのスキルは、命中した敵に6秒間マークを付与する（再び命中すると効果時間が更新される）。ラックスの通常攻撃（攻撃時効果）と「ファイナルスパーク」はマークを消費して、30～200（レベルに応じて）（+ APの35%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "c64799ea0eb470f142b7d5574dfb8de1692d7c74"
+  },
+  "Template:Data Lux/Light Binding#description": {
+   "source_sha1": "ec77c0fcf0c17b1a54d16081aea1066546f94bf3",
+   "ja": "発動効果：指定方向に光の玉を放ち、最初に命中した二体までの敵に魔法ダメージを与えて、2秒間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "9424d0e8237a8f237f5adead45671c9b4fe00087"
+  },
+  "Template:Data Lux/Prismatic Barrier#description": {
+   "source_sha1": "dac05b1e747f99e2bd1f50a108c70f4b17e073df",
+   "ja": "発動効果：指定方向に杖を投げ、杖は最大射程に達するとラックスのもとへ戻る。杖が触れた味方チャンピオンは2.5秒間シールドを得る。シールドは最大2回まで重なり、前のシールドに加算されて効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "b379fb329a32e08bc7d27950532478b8015de681"
+  },
+  "Template:Data Lux/Prismatic Barrier#description2": {
+   "source_sha1": "5d2fd64c11b94bc1378bacacfe16d27cc35ab643",
+   "ja": "ラックスは、杖を投げたときと、戻った杖を受け取ったときにシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "8e7aecd501151b947096fcb2ca534ce9e71f8228"
+  },
+  "Template:Data Lux/Lucent Singularity#description": {
+   "source_sha1": "e5deb1427432d3a585af1ba1cae13e2917e374b2",
+   "ja": "発動効果：指定地点に光の特異点を放つ。特異点はその場に5秒間とどまり、その範囲の視界を与え、周囲の敵にスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "4cae0c7f2331c4b4cfb4cbb216c617e9c82af2d0"
+  },
+  "Template:Data Lux/Lucent Singularity#description2": {
+   "source_sha1": "424fbf318f290d5a824f7ae7873240fcf79f09ed",
+   "ja": "「シンギュラリティ」は、飛んでいる間か効果時間中ならいつでも再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "eebd81fb8b4288c371ee6119928231f5bdef01ee"
+  },
+  "Template:Data Lux/Lucent Singularity#description3": {
+   "source_sha1": "227083fb814545bfee20036a1111ec8a3e714c3b",
+   "ja": "再発動：特異点を爆発させ、範囲内の敵に魔法ダメージを与える。飛んでいる間に再発動した場合は、到着した時点で爆発する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "a52be546eb0b8219a50417ee1981a585d468b512"
+  },
+  "Template:Data Lux/Lucent Singularity#description4": {
+   "source_sha1": "5c5d1da48c751d29a387bf922498a7e84b414ed1",
+   "ja": "スロウは範囲から出た後も1秒間残る。「シンギュラリティ」の爆発が命中した敵も、同じ量のスロウを1秒間受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "2115001af625eef7a5360de52d59ab7f1f734d11"
+  },
+  "Template:Data Lux/Final Spark#description": {
+   "source_sha1": "ce32ce6d1c96fd4f28ca309b751ff7ada951ff16",
+   "ja": "発動効果：指定方向に直線状の巨大な光線を放ち、命中した敵に魔法ダメージを与えて1.5秒間可視化し、周囲の範囲の視界も与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "plain_sha1": "1690df8ca1f267517f582b1f0dc77a5b0db9d633"
+  }
+ },
+ "withheld": {}
+}

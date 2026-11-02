@@ -1,0 +1,51 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Senna/Curse of the Black Mist#description": {
+   "source_sha1": "51e10ff4289d71dd45a9929b3d4b0abeae84096b",
+   "plain_sha1": "9fbb606c4d78ee66822d547e9cceeef6052537e7",
+   "ja": "発動効果：セナは黒い霧のオーラをまとい、効果時間の間カモフラージュになる。カモフラージュが解けても、ステルスを解く行動を1.75秒しなければ再びカモフラージュになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Curse of the Black Mist#description2": {
+   "source_sha1": "9aca0780733c151c280a7da0175a347104346ebb",
+   "plain_sha1": "fbff3d0328169cc7dc413ab5e381813e8e847cde",
+   "ja": "霧に入った味方チャンピオンは、オーラの残りの効果時間と同じ時間、「Wraith Form」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Curse of the Black Mist#description3": {
+   "source_sha1": "be5af9a3152a4252d107d0393f28984d630f193c",
+   "plain_sha1": "e135138e08272a120215b7577ddbd4261d3652e1",
+   "ja": "「Wraith Form」：カモフラージュになる。霧の外を移動するカモフラージュ中の Wraith は、視界（視線）が通る敵に、位置だけが分かる形（obscured vision）で示される。カモフラージュを解いて「Wraith Form」を失っても、ステルスを解く行動を1.75秒しなければ再び得られる。「Wraith Form」はセナが死ぬと即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Curse of the Black Mist#description4": {
+   "source_sha1": "b0fb3865c7a00efcfa88079e28487d535a780b6c",
+   "plain_sha1": "53c52adf79103e40f98d6d139da37b6f9c85f0da",
+   "ja": "セナと、「黒き霧の呪い」でカモフラージュになった味方は、移動速度が20%（+ AP 100ごとに5%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Curse of the Black Mist#description5": {
+   "source_sha1": "e12b91b9a85820de01f77c89fef91abc3882a2b4",
+   "plain_sha1": "50c9c4d59d9c523ee456c06efda74c0894dfb25b",
+   "ja": "セナは「黒き霧の呪い」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

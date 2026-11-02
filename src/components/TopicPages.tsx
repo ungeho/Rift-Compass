@@ -12,6 +12,9 @@ import { RoleSection } from "./RoleSection";
 /** 知識ノートの段階表示の1回分（件数の上限ではない。「さらに表示」で全件に届く）*/
 export const TOPIC_NOTE_PAGE_SIZE = 20;
 
+/** Topic → ゲームデータの一覧（src/components/DataPages.tsx）*/
+const DATA_LINKS: Record<string, string> = { itemization: "items", runes: "runes", "summoner-spells": "summoners", "jungle-invade": "units", "cat-basics": "articles" };
+
 /** 旧仕様（現行では適用できない）のノートを後ろにする（同じ順位ではデータの順）*/
 const supersededLast = (a: KnowledgeNote, b: KnowledgeNote) =>
   Number(a.historical?.current_applicability === "superseded") - Number(b.historical?.current_applicability === "superseded");
@@ -170,6 +173,12 @@ export function TopicPage({ id }: { id: string }) {
       {t.parent_ids.includes("cat-champions") && <ChampionData topicId={t.id} />}
       {/* ポジションの Topic は、チャンピオン・判断材料・資料への導線を出す（チャンピオンは子にしない）*/}
       {ROLE_TOPICS[t.id] && <RoleSection topicId={t.id} />}
+      {/* ゲームデータの一覧への導線（アイテム・ルーン・サモナースペル）*/}
+      {DATA_LINKS[t.id] && (
+        <p>
+          <a href={`#/data/${DATA_LINKS[t.id]}`}>ゲームデータ：{t.label_ja}の一覧（数値・効果・変更履歴）</a>
+        </p>
+      )}
 
       {(notes.direct.length > 0 || notes.via.length > 0) && (
         <section aria-labelledby="topic-notes-heading">
