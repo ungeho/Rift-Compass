@@ -181,3 +181,38 @@
 
 - Wiki の Stealth・Sight・Control Ward・Oracle Lens・Spell shield と各チャンピオンのスキルのデータを正式資料にし、VD1〜VD11 と VS の一部（VS3・VS9・VS21・VS24〜VS37）を正式なノートにした。記録と、57件との対応は `stealth-detection-research.md` の §5。
 - 未登録のまま：VD12、各チャンピオンの個別の命中の確認（VS6〜VS8・VS10〜VS20・VS22・VS23）、VT1・VT2・VT4・VT5。
+
+## 11. 視界・命中の確認の正式登録（2026-11-03）
+
+- 原典（Wiki のスキルのデータとアイテム、キャッシュ済み。今回の再取得なし）を資料にした：エズリアル・アッシュ・カイ＝サ・ニーコ・ソラカ・オーロラ・ドクター・ムンド・レク＝サイ・ワーウィック・スウェイン・カタリナ・ヘカリム・フィドルスティックス・ホライゾンフォーカス（14件）。ノクターンの資料（res-wiki-nocturne）に Q（闇の手）を追記。
+- 資料の Topic は、チャンピオンの Topic（とステルスの検知に関わるものは stealth）だけにした。最初に「視界・ワード」（vision）も付けたところ、14件が「昔の視界管理の知識は今も利用できる？」（Q06）の上位を占め、期待資料が 14〜20位に下がったため。ノートには vision・stealth を付けている。
+- ノート 23件（資料に記載あり 18・導出 3・戦術的推論 2）、根拠 35、関係 35。
+
+| 研究の ID | ノート |
+|---|---|
+| VD12 | kn-sight-radius-center |
+| ブッシュの規則（§2） | kn-brush-sight-rule |
+| VS6 | kn-ezreal-q-hit-cdr |
+| VS7 | kn-tactic-ezreal-q-unseen（戦術的推論） |
+| VS8・VS9 | kn-ezreal-e-homing-reveal |
+| VS10・VS11 | kn-ashe-e-hawkshot |
+| VS12・VS13 | kn-kaisa-w-reveal |
+| VS14〜VS16 | kn-horizon-focus-hypershot（V26.01 の変更と、Module のデータの食い違いを含む） |
+| VS17 | kn-neeko-q-bloom |
+| VS18 | kn-soraka-q-rejuvenation |
+| VS19 | kn-aurora-q-recast-unseen |
+| VS20 | kn-mundo-q-refund |
+| VS23 | kn-swain-w-vision |
+| VS24 | kn-katarina-r-self-reveal（4.5秒の露出は Wiki が {{bug}} を付けているので例外に分けた） |
+| VS25 | kn-fiddlesticks-w-tether |
+| VS26 | kn-reksai-tremor-sense |
+| VS27 | kn-warwick-blood-hunt |
+| VS28 | kn-nocturne-q-dusk-trail |
+| VS29 | kn-hecarim-w-drain |
+| VS2 | kn-tactic-lux-e-brush（戦術的推論。Sight を資料にしたので登録） |
+| VT1 | kn-checking-brush-methods（導出） |
+| VT2 | kn-hit-confirmation-target-kind（導出） |
+| VT4 | kn-own-position-leaks（導出） |
+
+- **訂正**：§4 の VS21 と既存のノート kn-skillshot-hits-stealth で「ザイラ Q」としていたいばらのエフェクトは、Wiki の Stealth のページの Grasping Roots で、ザイラの **E（捕縛の根）**。ノートを直した（この研究記録の §4 の表は当時の記録として残す）。
+- 未登録のまま：VS22（ティーモ R は kn-teemo-r-trap で登録済み）、VS30〜VS33（カミール E・ケネン E・ヴィクター R・ヴラディミール R のエフェクト：Stealth のページの一覧にあるが、各スキルの仕様を資料にしていない）、VT3（kn-invisible-counters で登録済み）、VT5（kn-standard-reveal-not-stealth と kn-horizon-focus-hypershot で表した）。
