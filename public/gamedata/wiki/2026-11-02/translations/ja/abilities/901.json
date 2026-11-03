@@ -34,10 +34,10 @@
   },
   "Template:Data Smolder/Super Scorcher Breath#description5": {
    "source_sha1": "fa06cd97d1b2c34d39d8716d66696163fcbd804c",
-   "plain_sha1": "c336549a2edb6cecd325415c65e51a408319193b",
+   "plain_sha1": "4a3671bb6fbe242705a8d993d0c05c8d391436e3",
    "ja": "段階3 - 225スタック：命中した敵は3秒間燃え、効果時間の間に最大体力の、増加攻撃力100ごとに2.5%（+「駆けだしドラゴン」のスタック100ごとに0.5%）に等しい追加の確定ダメージを受ける。モンスターに対しては300が上限。燃焼は重ねて付与されると重なるが、前の燃焼の効果時間は更新されない。燃焼を受けている敵チャンピオンは、スモルダーのダメージで最大体力の6.5%未満になると処刑される。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Smolder/Achooo!#description": {
    "source_sha1": "1bcdda770f10f20dbd5fcf5dd5dffbdf83199abe",
@@ -73,16 +73,21 @@
    "ja": "「ママーッ！！」はミニオンとモンスターに50%のダメージを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Smolder/Dragon Practice#description": {
    "source_sha1": "4bf6c9338b1e82a068b31eb8837d87e755f8cec3",
-   "reason": "residual_markup"
+   "plain_sha1": "c69e534f07f3956171cc89cef3dd09d22d692578",
+   "ja": "固有：スモルダーはスキルを敵チャンピオンに当てるたび、または「スーパーこげこげブレス」でミニオンかモンスターを倒すたびに、「駆けだしドラゴン」のスタックを得る。基本スキルはスタックに応じた追加の魔法ダメージを与える。* Q：「駆けだしドラゴン」のスタックの25%～60%（+ 「インフィニティ・エッジ」 0%～14%）（クリティカル率に応じて）に等しい追加の魔法ダメージを与える。* W：爆発は「駆けだしドラゴン」のスタックの55%に等しい追加の魔法ダメージを与える。* E：攻撃はそれぞれ「駆けだしドラゴン」のスタックの8%～14%（+ 「インフィニティ・エッジ」 0%～2.4%）（クリティカル率に応じて）に等しい追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Smolder/Super Scorcher Breath#description": {
    "source_sha1": "addefd77fade5bfc7e379cd1dfc85c16e0046a9e",
-   "reason": "residual_markup"
+   "plain_sha1": "c6dd01f7b018640b150968f20a01b83c04786393",
+   "ja": "発動効果：スモルダーは対象の敵に火の玉を吐き、物理ダメージを与える。このダメージはクリティカル率に応じて0%～75%（+ 「インフィニティ・エッジ」 0%～30%）増加する。攻撃時効果を与え、ライフスティールが50%の効果で適用され、攻撃開始時の効果を発動する。「スーパーこげこげブレス」が少なくとも一体の対象を倒すと、スモルダーはマナを15回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -101,12 +101,14 @@
    "ja": "再発動：ヴェル＝コズは「生体破壊光線」を終える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Vel'Koz/Tectonic Disruption#description": {
    "source_sha1": "2954c28868fcdb98c19683b690af592015cdc3a6",
-   "reason": "residual_markup"
+   "plain_sha1": "93b894ab64f9ba0c5601a424786ecc512dbf66ed",
+   "ja": "発動効果：ヴェル＝コズは乱れた異常を投げ、それは0.25～0.55秒（発動した距離に応じて）後に指定地点に落ち、命中した敵に魔法ダメージを与えて、0.75秒間ノックアップさせてスタンさせ、その範囲の視界も一瞬与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

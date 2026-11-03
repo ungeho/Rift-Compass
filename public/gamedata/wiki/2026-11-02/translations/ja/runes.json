@@ -1,0 +1,860 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Electrocute#description": {
+   "source_sha1": "9425586afaaa5e4fd40aea5e104fa39d157d5f7b",
+   "plain_sha1": "4e473c9163fcc4aad5ae31e684d76c267a54ebf5",
+   "ja": "自動効果：ダメージを与える通常攻撃・スキル・アイテムの効果・サモナースペル、および行動妨害と持続ダメージの効果の付与は、敵チャンピオンにスタックを与え、チャンピオンごとに一回の使用につき一つまで。3秒以内に対象に3スタックを与えると、0.25秒の遅れの後に雷が落ち、70～260（レベルに応じて）（+ 増加攻撃力の10%）（+ APの5%）の物理ダメージか魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Electrocute#description2": {
+   "source_sha1": "4da00bd6a85d7169d129db70fd556fd80ff1fd77",
+   "plain_sha1": "b506ac358417f2d24254559d672be56ea697caf6",
+   "ja": "「Variable Damage」：この効果は、効果のダメージの式に対する攻撃力と魔力の寄与に応じて、物理ダメージか魔法ダメージを与える。* 攻撃力の係数による追加ダメージの方が大きい → 物理ダメージ * 魔力の係数による追加ダメージの方が大きい → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類は魔法ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dark Harvest#description": {
+   "source_sha1": "5650572645e1600b29aea9caab8c6fb8ba4acfe1",
+   "plain_sha1": "18ca5779b0eb02aa3e9440d0a665e249ec8ddd6c",
+   "ja": "自動効果：最大体力の50%未満の敵チャンピオンに、ペットのダメージか発動効果以外のダメージを与えると、30（+「Soul」ごとに11）（+ 増加攻撃力の10%）（+ APの5%）の追加のアダプティブダメージを与え、1.75秒の遅れの後に「Soul」を1つ収穫する。これは35秒間再び起こらず、敵チャンピオンのキルに関与すると1秒にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dark Harvest#description2": {
+   "source_sha1": "d9e2637ccb44ddc404e5d1d4719a8793f118c95a",
+   "plain_sha1": "f1c3aad897908bb6095bd2544049016125b323db",
+   "ja": "クールダウン中でなければ、ミニオン・モンスター・タワーが倒したチャンピオンのキルの功績を得たときにも「Soul」を1つ収穫する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dark Harvest#description3": {
+   "source_sha1": "2d24d69467b256178a8dc070cb8ad5acb5e1a793",
+   "plain_sha1": "9360a603d7f62daa10ac7d1356191fd1a96f3531",
+   "ja": "「Adaptive Damage」：この効果は、増加攻撃力と魔力のどちらが多いかに応じて、物理ダメージか魔法ダメージを与える。* 増加攻撃力の方が多い → 物理ダメージ * 魔力の方が多い → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類はチャンピオンのアダプティブの種類で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hail of Blades#description": {
+   "source_sha1": "646a1ec92b9e22f8a6588c23eb674eb2149d13a2",
+   "plain_sha1": "7bba524644c4e7c1568a662f9c62877b658319ec",
+   "ja": "自動効果：敵チャンピオンへの攻撃モーションを始めると「ヘイルブレード」が発動し、攻撃モーションを終えると3秒間効果のスタックを2得る。すべてのスタックを消費するまで、敵チャンピオンへの攻撃開始時の通常攻撃のたびに効果時間が更新される。スタックは攻撃開始時の通常攻撃ごとに消費され、通常攻撃タイマーをリセットする効果を発動するたびに効果のスタックをもう一つ得る（最大2回）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hail of Blades#description2": {
+   "source_sha1": "1f80d86930d84abbc2f693e39b4e54e6f8427b2e",
+   "plain_sha1": "f7f6bb5b35e1976ed45519e45d08f2a266cf6300",
+   "ja": "「ヘイルブレード」が有効な間、攻撃速度が90%（近接）/ 60%（遠隔）増加し、攻撃速度の上限を超えられ、通常攻撃は2～22.12（レベルに応じて）（+ 増加攻撃力の12%）（+ APの10%）の追加の確定ダメージを与える。発動させた攻撃も「ヘイルブレード」の恩恵を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cheap Shot#description": {
+   "source_sha1": "ce55ad2317a487f3f82e621e7253633cd72e593f",
+   "plain_sha1": "d7f66e7168793788742250d0aaced14e3c651381",
+   "ja": "自動効果：発動効果以外のダメージは、特定の行動妨害を受けている敵チャンピオンに10～49.12（レベルに応じて）の追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cheap Shot#description2": {
+   "source_sha1": "7c17b779bc5f3e5a169755f23b219552975e23cc",
+   "plain_sha1": "fcc315fd97a896a23291e42e9b4e0b734301aaa9",
+   "ja": "対象となる行動妨害：* 移動不能 * ブラインド * 通常攻撃の封印 * グラウンド * ニアサイト * ポリモーフ * サイレンス * スロウ",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cheap Shot#description3": {
+   "source_sha1": "694b9a0256a0021665825df8b7b07ce05317a9d8",
+   "plain_sha1": "6ca612f8203b1e922aaebfd8d0549600b5bb2bcd",
+   "ja": "追加ダメージを発動させるには、ダメージを与える攻撃かスペルより前に、対象がすでに妨害を受けている必要がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taste of Blood#description": {
+   "source_sha1": "59d43ea7c4421a82a69437f41d61b50a40d04d9d",
+   "plain_sha1": "65c41f9a0402afaed8cbdeae706ac230b1234312",
+   "ja": "自動効果：敵チャンピオンにダメージを与えると、16～42.82（レベルに応じて）（+ 増加攻撃力の10%）（+ APの5%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taste of Blood#description2": {
+   "source_sha1": "971cf285b7f38fcf413ae3e467136641ae5d6d1e",
+   "plain_sha1": "971cf285b7f38fcf413ae3e467136641ae5d6d1e",
+   "ja": "体力が満タンのときは発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sudden Impact#description": {
+   "source_sha1": "2ecf2b7a0140205231974ec7a31aec869e3521cd",
+   "plain_sha1": "4bc0463bd39190e7833dade1880f684d383c397e",
+   "ja": "自動効果：ダッシュかブリンクを使うか、ステルスから出てから4秒以内に敵チャンピオンにダメージを与えると、その敵に20～80（レベルに応じて）の追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sixth Sense#description": {
+   "source_sha1": "b69245704f7619ce59faf7d92ee924e095379185",
+   "plain_sha1": "17fdd0fd8cb0c561118e642bd4a50724178816f4",
+   "ja": "自動効果：まだ追跡されていない敵のワードの近くに移動すると、そのワードは自動でワードのタイマー付きで追跡される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sixth Sense#description2": {
+   "source_sha1": "a0c8920956ee6bcfcb71d2224ea7dd4d5d359a50",
+   "plain_sha1": "d3c00216b19b687b1b295d97eadf00849bd35bb5",
+   "ja": "レベル11で、発動したときにそのワードを10秒間可視化もする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Grisly Mementos#description": {
+   "source_sha1": "177634275969cbbb60a783dc820558aa6b3a9000",
+   "plain_sha1": "0e01b11666443729b6ac317e0ec969308e619c6c",
+   "ja": "自動効果：「Memento」のスタックごとにトリンケットヘイストを6得て、最大スタックで最大108。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Grisly Mementos#description2": {
+   "source_sha1": "d5bdb04364cbf6d13ece0fc510259fe0d10182cd",
+   "plain_sha1": "f08215e3e91f4e507a7a1816f0c0939b42b32e10",
+   "ja": "チャンピオンのキルに関与するたびに「Memento」のスタックを得て、最大18スタック。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Deep Ward#description": {
+   "source_sha1": "9d269c522753d3f4170edf791b95ac103947fcfb",
+   "plain_sha1": "d4f85c7a6b89b6b167c51b84a9cdde91e89a5d5a",
+   "ja": "自動効果：敵のジャングルに置いた「ステルス ワード」と「Totem Ward」は「Deep」とみなされる。すべての「Deep」のワードは増加体力を1得て、「Deep」の「ステルス ワード」は30～45（チャンピオンの平均レベルに応じて）秒、「Deep」の「Totem Ward」は45～150（チャンピオンの平均レベルに応じて）秒長く残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Deep Ward#description2": {
+   "source_sha1": "40af0e57fcbe5d8dc40cf2b2a4d360c931ab0a94",
+   "plain_sha1": "a8b0ed7f1c215452bc0db81baa6c0844bd833222",
+   "ja": "レベル9で、川に置いたワードも「Deep」とみなされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Treasure Hunter#description": {
+   "source_sha1": "13c022a764f6d487dd4cb8ddbbba0ae3a95ad48f",
+   "plain_sha1": "c2371c7a66c5a121cf1fb257bf595188f5c39eda",
+   "ja": "キルに関与した敵チャンピオン（異なるチャンピオン）一体ごとに50ゴールド（gold）（+「賞金首狩り」のスタックごとに20ゴールド）を得て、異なる5体で最大450ゴールド。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Treasure Hunter#description2": {
+   "source_sha1": "c729d197379afd6aee4df07dd2c32f63ecb87669",
+   "plain_sha1": "668a60e1494449ed9f556e2d93afaecbf000a1f1",
+   "ja": "異なるチャンピオンの1体目のキル関与：50ゴールド（gold）、2体目：70ゴールド、3体目：90ゴールド、4体目：110ゴールド、5体目：130ゴールド。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Treasure Hunter#description3": {
+   "source_sha1": "90a4ae76cf3bec51b1ff7e1bf20a728e9a5040c3",
+   "plain_sha1": "6e5b02647b9c1f6ef7dc48fa9eeb491572eb602e",
+   "ja": "敵チャンピオンのキルに関与するたびに「賞金首狩り」のスタックを得て、チャンピオンごとに一つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Relentless Hunter#description": {
+   "source_sha1": "600eb41db84b5cb123b88a9cd9eb58619ea8f87a",
+   "plain_sha1": "2af6a74963c65b621642d0af4548f85071cb3b8f",
+   "ja": "自動効果：「賞金首狩り」のスタックごとに戦闘外の移動速度が8増加し、5スタックで最大40。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Relentless Hunter#description2": {
+   "source_sha1": "90a4ae76cf3bec51b1ff7e1bf20a728e9a5040c3",
+   "plain_sha1": "6e5b02647b9c1f6ef7dc48fa9eeb491572eb602e",
+   "ja": "敵チャンピオンのキルに関与するたびに「賞金首狩り」のスタックを得て、チャンピオンごとに一つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ultimate Hunter#description": {
+   "source_sha1": "463158a85e52dd33aa02b87ad79d971b0d4aa7a1",
+   "plain_sha1": "9010f50d057d975a4c3e9e91ddfca0b9bf40ca6a",
+   "ja": "アルティメットヘイストを6（+「賞金首狩り」のスタックごとに5）得て、5スタックで最大31。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ultimate Hunter#description2": {
+   "source_sha1": "5c4603f92a147c60b14d0df2a24c174ba407013b",
+   "plain_sha1": "6e5b02647b9c1f6ef7dc48fa9eeb491572eb602e",
+   "ja": "敵チャンピオンのキルに関与するたびに「賞金首狩り」のスタックを得て、チャンピオンごとに一つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Glacial Augment#description": {
+   "source_sha1": "70fd31b68d335a300fbc60c5c27fae7457335500",
+   "plain_sha1": "4cfea400e70176fad0ce9ce05151addf713250c4",
+   "ja": "自動効果：敵チャンピオンに移動不能を与えると、その敵から自身とほかの近くの敵チャンピオンに向かって冷気の光線が3本出て、半径700ユニットの凍てつく範囲を作り、3（+ その移動不能の効果時間の100%）秒間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Glacial Augment#description2": {
+   "source_sha1": "970d2a2ff7f5a13438e083836b85ede25dee0cb4",
+   "plain_sha1": "026be0df3a6dbd18462c43c3d433a00ee6387504",
+   "ja": "幅80ユニットの凍てつく範囲の中の敵は、20%（+ 増加攻撃力100ごとに7%）（+ AP 100ごとに6%）（+ 回復とシールドの効果10%ごとに9%）のスロウを受け、自身以外の味方に与えるダメージが15%低下する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Unsealed Spellbook#description": {
+   "source_sha1": "e679f1a7fcfba101f93e279ce0280ed5c47fd8f2",
+   "plain_sha1": "27d5a99074a8db430729c9f3ca035e6cee249463",
+   "ja": "自動効果：「テレポート」の詠唱中でなく、戦闘から5秒離れている間、装備しているサモナースペルの一つを、一度だけ使える新しいサモナースペルに交換できる。すでに装備しているサモナースペルは選べない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Unsealed Spellbook#description2": {
+   "source_sha1": "06a43eaebc020829ccb754c72e92a2d27adb532b",
+   "plain_sha1": "cd7fd2fd181b7bd72daead85ae83d62cef9e030c",
+   "ja": "最初の交換は6:00から使える。交換の最初のクールダウンは270秒で、異なるサモナースペルを選ぶと交換のクールダウンが25秒短縮される。一度使ったものに戻すには、異なる3つのサモナースペルに交換する必要がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Unsealed Spellbook#description3": {
+   "source_sha1": "b018cfb4df636cfa716b02e44720c20ce09ff54d",
+   "plain_sha1": "b018cfb4df636cfa716b02e44720c20ce09ff54d",
+   "ja": "サモナースペルを選ぶと、そのスペルは5秒のクールダウンになる。選んだサモナースペルを使うと、同じスロットのサモナースペルは10秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "First Strike#description": {
+   "source_sha1": "3c043856b16c90ea9edc979394506a89a5ecad76",
+   "plain_sha1": "119b229281dd584058a059996fb5c8a98ccf5f96",
+   "ja": "自動効果：チャンピオンとの戦闘が始まってから最初の0.25秒以内に敵チャンピオンとの戦闘を仕掛けると、10ゴールド（gold）と3秒間の「ファーストストライク」を得て、チャンピオンに与える軽減後のダメージすべてが7%の追加の確定ダメージを与える。その後、効果時間中に与えた追加ダメージ全体の50%（近接）/ 35%（遠隔）に等しいゴールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "First Strike#description2": {
+   "source_sha1": "7af3e5fd5665c2188f683f21b23955cde2238281",
+   "plain_sha1": "10ce63499b60891ef8e45c5740fb407a0bd00eeb",
+   "ja": "自身が攻撃する前に敵チャンピオンから攻撃を受けると、「ファーストストライク」は効果を発動せずにクールダウン全体に入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Flashtraption#description": {
+   "source_sha1": "77ea8176636691b304a419fe0bcc42458542ac2b",
+   "plain_sha1": "1059acd484c10ac828e0eddd1180b0598347768a",
+   "ja": "自動効果：「フラッシュ」の残りクールダウンが2秒より長い間、「へクスフラッシュ」に置き換わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Flashtraption#description2": {
+   "source_sha1": "72ff2a6571ad5a90cefb426d2c7ae734af440041",
+   "plain_sha1": "7f205dc58b664fbd13c2ce9f8353ebcf4e0cb4cb",
+   "ja": "発動効果：最大2秒間溜め始め、その間移動速度が固定の0になり、「へクスフラッシュ」の射程が増える。1秒以上溜めると再発動でき、再発動せずに溜め終わると自動で再発動する。1秒より早く放すか敵チャンピオンとの戦闘に入ると、「へクスフラッシュ」は10秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Flashtraption#description3": {
+   "source_sha1": "2fb1a9dc1cca963136e3cb259ff0f2190ce1a941",
+   "plain_sha1": "b9b30d39edbdd24343e50d3104fbb9caf764ca41",
+   "ja": "再発動：射程内の指定地点へブリンクし、最大0.25秒間移動速度が50%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Flashtraption#description4": {
+   "source_sha1": "eacb1f80c48202af8b5b73a09675c3532495ae9f",
+   "plain_sha1": "a0038779a0d2eba396eeeedf8578583da44657f3",
+   "ja": "既定ではクイックキャストを使い、発動効果を押し続けて、離したときに再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Magical Footwear#description": {
+   "source_sha1": "a309f6c4998b1b0c5d7cf4562f51bae76d393f72",
+   "plain_sha1": "79df4ce8c24fb51a4deb8c3f6ca83ad31b783ebc",
+   "ja": "自動効果：12分後（敵チャンピオンのキルに関与するたびに45秒短縮される）、「ちょっとだけ魔法がかった靴」を無料（ゴールドなし）で得る。「ちょっとだけ魔法がかった靴」は「ブーツ」と同じで、そのアイテムとしてアップグレードできる。受け取るときにインベントリが満杯なら、インベントリのスロットが空き次第現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Magical Footwear#description2": {
+   "source_sha1": "27796adc9d2e803b18d8bf8c1bed62d8bb1cdc09",
+   "plain_sha1": "f70faf00b772635cbb372939b139a3d5180f2c6f",
+   "ja": "さらに、ブーツの移動速度の増加が10増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Magical Footwear#description3": {
+   "source_sha1": "ea1993e90006dd56fc13d85f1904a5cced8debc7",
+   "plain_sha1": "5b3cfd9a02e738b0bad4ceed10a604e1581f0335",
+   "ja": "「ちょっとだけ魔法がかった靴」を得るまで、「ブーツ」も段階2のブーツも購入できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cash Back#description": {
+   "source_sha1": "7fbb82c3e346644683f4d3f732a571b6eaf6f643",
+   "plain_sha1": "df8e8bafdc9cbe8abc9a88cc00b6d4bb18f2b186",
+   "ja": "自動効果：レジェンドアイテムを購入すると、そのゴールド（gold）の合計コストの7.5%が自動で戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cash Back#description2": {
+   "source_sha1": "53d4164b44c25d92bb0c3dacc3625ce7f81484fa",
+   "plain_sha1": "166ceb66c41bd46bb2bfd5157b6ee97db1eee959",
+   "ja": "アイテムを売るか購入を取り消すと払い戻しも取り消され、今のゴールド（gold）が払い戻された量だけ減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Triple Tonic#description": {
+   "source_sha1": "7865fe0e4549afdd61b834535092ab337ef67de2",
+   "plain_sha1": "df11d606a691212ff0cd90156da2b53e3d7d75d4",
+   "ja": "自動効果：次の各レベルに達するとエリクサーを得る：* レベル3：「強欲のエリクサー」 * レベル6：「力のエリクサー」 * レベル9：「スキル エリクサー」",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Triple Tonic#description2": {
+   "source_sha1": "d14d1f1f5ad199573371a955f62a160014423f1a",
+   "plain_sha1": "a3f08341a2032a51d5851516ffd37dcc46b09786",
+   "ja": "「強欲のエリクサー」か「力のエリクサー」を受け取れるようになったときにインベントリが満杯なら、空きのスロットができ次第それぞれ与えられる。「スキル エリクサー」を受け取れるようになったときにインベントリが満杯なら、そのアイテムは自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Time Warp Tonic#description": {
+   "source_sha1": "98c16093cd4e4882971c0ccf1bc64842abb79a64",
+   "plain_sha1": "d69a918b37bd1adaabc20a7176f24e0f8d640e15",
+   "ja": "自動効果：ポーション（「体力ポーション」「詰め替えポーション」）を消費すると、その合計の体力回復量の40%に等しい量を追加で回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Time Warp Tonic#description2": {
+   "source_sha1": "7b3a9736e7aeb947283a13ac7769b2a9813cc629",
+   "plain_sha1": "7b3a9736e7aeb947283a13ac7769b2a9813cc629",
+   "ja": "体力ポーションの効果中に別のポーションを使った場合、この効果は今の回復が終わった時点で次のポーションの発動に対して発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Biscuit Delivery#description": {
+   "source_sha1": "97b94b6c52a5244a0524f6eddabcdf96da8d9a9a",
+   "plain_sha1": "4b9da6b781a04e2a49fa31250345f2e98a89a064",
+   "ja": "自動効果：2:00、4:00、6:00に「英気満点ビスケット」を受け取る。受け取るときにインベントリが満杯なら、スロットが空き次第ビスケットが現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Biscuit Delivery#description2": {
+   "source_sha1": "18a4968161fd4e93ebc6ba4042807ad1d6ba2c30",
+   "plain_sha1": "13003f574cf624db44f4a4e8f878910e4ecfccee",
+   "ja": "ビスケットを消費すると、その効果に加えて最大体力が永続的に30増加する。ビスケットを5ゴールド（gold）で売っても、この体力の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cosmic Insight#description": {
+   "source_sha1": "af65746dff65109ec1facfa39c71b8430e96a9aa",
+   "plain_sha1": "a7980d716856e7b781c6424410ef76141ab51fd8",
+   "ja": "自動効果：サモナースペルヘイストを18、アイテムヘイストを10得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Approach Velocity#description": {
+   "source_sha1": "6d0b0df86dda72f4ffc74c04baaf206cfff3c5ea",
+   "plain_sha1": "0b42da4a798107a0b0c44b58f62b044d678f9ac0",
+   "ja": "自動効果：1000の範囲内の、移動不能・グラウンド・スロウを受けている見えている敵チャンピオンの方を向いている間、合計移動速度が7.5%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Approach Velocity#description2": {
+   "source_sha1": "a3c4ef67d6050f616622788bd9f1253e1a9f2aa0",
+   "plain_sha1": "a057b27a742bb45b9ea026a4b8789b3ba8f8445c",
+   "ja": "自身が見えている間に動きを妨げた敵チャンピオンに対しては、この増加は二倍の15%になり、範囲の上限も視界も必要ない（unexpected：Wiki が「期待と違う動作」と注記）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Jack Of All Trades#description": {
+   "source_sha1": "7d87f142a6dbff6045d1aca6895f8819af967d2d",
+   "plain_sha1": "e02e37f1f5fa463de77ab31f4b07313efc862a88",
+   "ja": "自動効果：今アイテムから得ているステータスの種類一つごとに、「Jack」のスタックを1得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Jack Of All Trades#description2": {
+   "source_sha1": "81c0f1c08b28b289a81ecef3a5015de49ce118a5",
+   "plain_sha1": "2c3d9d4c6b6a691a0a517bd324b3e795a8e80171",
+   "ja": "「Jack」：「Jack」のスタックごとにスキルヘイストを1得る。「Jack」が5スタックで、増加攻撃力4.8か魔力8（アダプティブ）を得る。10スタックで、さらに増加攻撃力7.2か魔力12（アダプティブ）を得て、10スタックで合計増加攻撃力12か魔力20（アダプティブ）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Press the Attack#description": {
+   "source_sha1": "852d9bbf6cb947d9a3cb513e5226b9d9dd3a7fa9",
+   "plain_sha1": "e68f8990f0489570120a038234260ff27a952762",
+   "ja": "自動効果：敵チャンピオンへの通常攻撃（攻撃時効果）は4秒間スタックを与え、付与のたびに更新され、新しいチャンピオンを攻撃すると切れて、最大3回まで重なる。三つ目のスタックですべてを消費し、40～174.12（レベルに応じて）の追加のアダプティブダメージを与え、その敵との戦闘から離れて5秒後まで、チャンピオンに与えるダメージが8%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Press the Attack#description2": {
+   "source_sha1": "2d24d69467b256178a8dc070cb8ad5acb5e1a793",
+   "plain_sha1": "9360a603d7f62daa10ac7d1356191fd1a96f3531",
+   "ja": "「Adaptive Damage」：この効果は、増加攻撃力と魔力のどちらが多いかに応じて、物理ダメージか魔法ダメージを与える。* 増加攻撃力の方が多い → 物理ダメージ * 魔力の方が多い → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類はチャンピオンのアダプティブの種類で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lethal Tempo#description": {
+   "source_sha1": "127b89b366fbdf9425d4dfc92007b52ec3566a56",
+   "plain_sha1": "503801b27c6a127e16c9cc6aa5de91a0bd602cc4",
+   "ja": "自動効果：敵チャンピオンへの通常攻撃は攻撃開始時に6秒間スタックを与え、攻撃のたびに更新され、最大6回まで重なる。スタックごとに攻撃速度が6%（近接）/ 4.8%（遠隔）増加し、最大スタックで最大36%（近接）/ 28.8%（遠隔）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lethal Tempo#description2": {
+   "source_sha1": "55855916c9b76a18e0c8d8c9e8ed645ee6393b4b",
+   "plain_sha1": "0fb88367765138f57466cac63b552cea1c379bf1",
+   "ja": "最大スタックのとき、通常攻撃は強化され、攻撃開始時に対象へ矢を撃ち、到達時に9～32.47（近接）/ 6～21.66（遠隔）（レベルに応じて）の追加のアダプティブダメージを与える。このダメージは攻撃速度の増加1%ごとに1%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lethal Tempo#description3": {
+   "source_sha1": "9712acc3ac240479cb090886f7a3d5611733c982",
+   "plain_sha1": "3451932b52a6d0203d7381c59ca9badaeb32d017",
+   "ja": "効果時間が終わると、スタックが一つ即座に切れ、残りは0.3秒ごとに一つずつ切れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lethal Tempo#description4": {
+   "source_sha1": "2d24d69467b256178a8dc070cb8ad5acb5e1a793",
+   "plain_sha1": "9360a603d7f62daa10ac7d1356191fd1a96f3531",
+   "ja": "「Adaptive Damage」：この効果は、増加攻撃力と魔力のどちらが多いかに応じて、物理ダメージか魔法ダメージを与える。* 増加攻撃力の方が多い → 物理ダメージ * 魔力の方が多い → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類はチャンピオンのアダプティブの種類で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fleet Footwork#description": {
+   "source_sha1": "6b066dca649785ad2f766a019b883131c843ff11",
+   "plain_sha1": "54b2cb2d9d9ecd320d681bcbbdc47fbc33d8136f",
+   "ja": "Unique –「Energized」：移動と通常攻撃で「Charge」を得て、最大100。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fleet Footwork#description2": {
+   "source_sha1": "2f73b37c2f708009b37590405fff53f1fd9fa769",
+   "plain_sha1": "047e663120036dcb6b6f30a478bc39948987f788",
+   "ja": "「Charge」が100になると「Energized」になり、次の通常攻撃を強化して、15～182.73（近接）/ 9～109.64（遠隔）（レベルに応じて）（+ 増加攻撃力の10%〔近接〕/ 6%〔遠隔〕）（+ APの5%〔近接〕/ 3%〔遠隔〕）回復し、1秒間移動速度が20%（近接）/ 15%（遠隔）増加する。ミニオンに対しては、回復は15%の効果になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Conqueror#description": {
+   "source_sha1": "bbdfd3e49d2f34a672f705dda02e323c341a8488",
+   "plain_sha1": "953fe7c4e82297396658d970e395feb918ecd30a",
+   "ja": "自動効果：敵チャンピオンにダメージを与えると「征服者」のスタックを得て、5秒間続き、チャンピオンへのダメージのたびに更新され、最大12回まで重なる。通常攻撃の攻撃時効果のダメージでは2（近接）/ 1（遠隔）スタックを得る。それ以外では、通常攻撃のダメージでもペット以外の発動効果のダメージでもないダメージで2スタックを得て、一回の使用につき4秒に一度まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Conqueror#description2": {
+   "source_sha1": "28bdb3526362e13568ea984e2837f301c5910658",
+   "plain_sha1": "5cc0ba4a9b513890d307fc0d616f7503a11c3e88",
+   "ja": "「征服者」のスタックごとに、増加攻撃力1.08～2.56（レベルに応じて）か魔力1.8～4.26（レベルに応じて）（アダプティブ）を得て、最大スタックで最大増加攻撃力12.96～30.66（レベルに応じて）か魔力21.6～51.11（レベルに応じて）（アダプティブ）。最大スタックのときは、敵チャンピオンに与えた軽減後のダメージの8%（近接）/ 5%（遠隔）も回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Absorb Life#description": {
+   "source_sha1": "953dd2eac74bcf9a224e6d0a9766e76b78f5fa7d",
+   "plain_sha1": "ef6336fb2665fc2f3892639c802305b2340fd378",
+   "ja": "自動効果：敵を倒すと、1～27（レベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Triumph#description": {
+   "source_sha1": "9c28860b39c9b190c388a47c954a915c7399d766",
+   "plain_sha1": "c8c02491636fb909a9ea673c15c65243a8090f20",
+   "ja": "自動効果：敵チャンピオンのキルに関与すると、1秒の遅れの後、最大体力の2.5%（+ 減少体力の5%）を回復し、追加で20ゴールド（gold）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Presence of Mind#description": {
+   "source_sha1": "48f380fd0bd7d8492151e77a0bfc07f0c8cdbd29",
+   "plain_sha1": "67bb37a506af3aa1e0fadcd6f7618316401ab1d7",
+   "ja": "自動効果：敵チャンピオンのキルに関与すると、1秒の遅れの後、最大マナの15%か最大気の15%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Presence of Mind#description2": {
+   "source_sha1": "2a3b33566105fb6ac67dd57da25013396f84506a",
+   "plain_sha1": "87be705bbe64412789640446f330f13b9a61eacc",
+   "ja": "敵チャンピオンにダメージを与えると、マナを6～56（近接）/ 4.8～44.8（遠隔）（レベルに応じて）か気を6回復する（クールダウン8秒）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legend: Alacrity#description": {
+   "source_sha1": "7d3a73d71ada7b2c03a16a4770467987c778a830",
+   "plain_sha1": "53554dc0c9c60bb0ec6d0851fd18f4036585c69e",
+   "ja": "自動効果：攻撃速度が3%（+「Legend」のスタックごとに1.5%）増加し、最大スタックで最大18%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legend: Alacrity#description2": {
+   "source_sha1": "cbc2cfc93f56365ab509d58b81d84e34d1fcdd5f",
+   "plain_sha1": "c8546ad48e61b424e4196bfd760e9aafe6c02215",
+   "ja": "「Legend」：100ポイント稼ぐごとに「Legend」のスタックを得て、最大10：* チャンピオンのキル関与で100ポイント * エピックモンスターのキル関与で100ポイント * 大型モンスターを倒すと25ポイント * ミニオンを倒すと4ポイント",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legend: Haste#description": {
+   "source_sha1": "6f137f4c862edf54a79663e2ab72f4e8bd93eb9a",
+   "plain_sha1": "5442f484d5ad02fc2244506a1a6674ef145699f4",
+   "ja": "自動効果：「Legend」のスタックごとに基本スキルのスキルヘイストを1.5得て、最大スタックで最大15。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legend: Haste#description2": {
+   "source_sha1": "cbc2cfc93f56365ab509d58b81d84e34d1fcdd5f",
+   "plain_sha1": "c8546ad48e61b424e4196bfd760e9aafe6c02215",
+   "ja": "「Legend」：100ポイント稼ぐごとに「Legend」のスタックを得て、最大10：* チャンピオンのキル関与で100ポイント * エピックモンスターのキル関与で100ポイント * 大型モンスターを倒すと25ポイント * ミニオンを倒すと4ポイント",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legend: Bloodline#description": {
+   "source_sha1": "e7f51ace98e3f8d79c00f536b3d68481203cdad8",
+   "plain_sha1": "205be79ac634abce6a12a39767a775e9e4a5d15c",
+   "ja": "自動効果：「Legend」のスタックごとにライフスティールが0.45%増加し、最大スタックで最大6.75%。最大スタックのときは増加体力も85得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legend: Bloodline#description2": {
+   "source_sha1": "b5c5241b5ea45d77c6258b36b7d8aec5341b9ff8",
+   "plain_sha1": "84fb1a7c4d8a6f5bdf835bf5c2696fca4dc65a06",
+   "ja": "「Legend」：100ポイント稼ぐごとに「Legend」のスタックを得て、最大15：* チャンピオンのキル関与で100ポイント * エピックモンスターのキル関与で100ポイント * 大型モンスターを倒すと25ポイント * ミニオンを倒すと4ポイント",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Coup de Grace#description": {
+   "source_sha1": "ea71bfaaf40b5532cddcf5858cdc51be4bf3ba96",
+   "plain_sha1": "b8a94fa92ede8a315a8c62cbe5e21bf178c86191",
+   "ja": "自動効果：最大体力の40%未満のチャンピオンに8%増加したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cut Down#description": {
+   "source_sha1": "8169b8414bd6b161e8a0387d91e3b78ebcb62035",
+   "plain_sha1": "c8c2a9519fcc9223da9b68415aa8f8f8b2487420",
+   "ja": "自動効果：最大体力の60%を超えるチャンピオンに8%増加したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Last Stand#description": {
+   "source_sha1": "492c3f4f68077af3c6d388f55f13156526632d9a",
+   "plain_sha1": "1b02965515f6d0b9b1cab6c1baa25dcbb383cfe7",
+   "ja": "自動効果：自身の体力が最大体力の60%未満の間、チャンピオンに与えるダメージが5%増加する。減少体力に応じてさらに増え、最大体力の30%未満で最大11%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Grasp of the Undying#description": {
+   "source_sha1": "9e3dffb4999d70846ebb6c85e1b9eecf38b0f91b",
+   "plain_sha1": "ec9e70cdb5f9aca2bced68caf50892a8c9fd3bbf",
+   "ja": "自動効果：戦闘に入ると、その後3秒間毎秒スタックを1得て、戦闘のたびに効果時間が更新され、最大4回まで重なる。最大スタックのとき、5秒以内の敵チャンピオンへの次の通常攻撃（攻撃時効果）はすべてのスタックを消費し、自身の最大体力の3.5%（近接）/ 1.4%（遠隔）に等しい追加の魔法ダメージを与え、最大体力の1.3%（近接）/ 0.52%（遠隔）回復して、永続的に増加体力を5（近接）/ 2（遠隔）得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Aftershock#description": {
+   "source_sha1": "89482d0c7ef1724612764a4060c05914664c9930",
+   "plain_sha1": "106f5abdbf0ad561d8d0a44c2e8a6aec101b694b",
+   "ja": "自動効果：敵チャンピオンに移動不能を与えると、2.5秒間、固定の45（+ 増加物理防御の75%）の物理防御の増加と、45（+ 増加魔法防御の75%）の魔法防御の増加を得る。防御の増加はそれぞれ80～150（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Aftershock#description2": {
+   "source_sha1": "0bda8a196f2bc866c5902024501bbd4869015024",
+   "plain_sha1": "0e2cf5829f394587017f0838c0a603efaf2c0aa7",
+   "ja": "効果時間の後、衝撃波を放ち、半径350の範囲の敵チャンピオンとモンスターに25～120（レベルに応じて）（+ 自身の増加体力の8%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian#description": {
+   "source_sha1": "04d30d643239d85262935fa200cb13cbd156ea83",
+   "plain_sha1": "e24412d85858bdb86f5b0612f5bd35459674e687",
+   "ja": "自動効果：味方チャンピオンから350ユニット以内にいる間、「Guard」の状態になる。対象指定のスキルで効果を与えた味方チャンピオンも、距離に関係なく3秒間「Guarded」になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian#description2": {
+   "source_sha1": "11f4ff23e68ed443b9c1eb50cc80c445b140fee8",
+   "plain_sha1": "6137dc90abf12bbdb3832e1550754f8aa01c4213",
+   "ja": "自身か「Guarded」の味方が、2.5秒以内に50～178.53（レベルに応じて）のダメージ、または敵チャンピオン・モンスター・タワーからの致命的なダメージを受けそうになると、二人とも2秒間40～162.94（レベルに応じて）（+ 自身のAPの20%）（+ 自身の増加体力の6%）のシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian#description3": {
+   "source_sha1": "9556eec7d2741109602b46a60887bc83700425ba",
+   "plain_sha1": "8fb2fa0915b361423331911c265814880eefaaeb",
+   "ja": "「ガーディアン」は、シールドが発動したときだけクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Demolish#description": {
+   "source_sha1": "9dbcbe831d7e394ce9fdf5bd60217d1808cd51a4",
+   "plain_sha1": "47eee37ad710d2ad4bc756ca11e633435f41600f",
+   "ja": "自動効果：タワーへの通常攻撃（攻撃時効果）は「打ちこわし」のスタックを与え、最大3回まで重なる。タワーへの三つ目のスタックですべてを消費し、85（近接）/ 50（遠隔）（+ 自身の最大体力の28%〔近接〕/ 20%〔遠隔〕）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Demolish#description2": {
+   "source_sha1": "9b8e65daf5d58c1883cdc37d511e962f024bfe1e",
+   "plain_sha1": "160af62879cfcaa5876e8092ac14178b2295adb8",
+   "ja": "「打ちこわし」は、同じタワーに対しては、どの使用者からも3秒に一度しか発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Font of Life#description": {
+   "source_sha1": "25eb9f7d8666cf483b1a8da171e0a180b2b20d17",
+   "plain_sha1": "c5865b997498b05e96e4609ad060b96c1d7724e3",
+   "ja": "自動効果：敵チャンピオンにスロウか移動不能を与えると、自身と、1000ユニット以内で最も近く最も傷ついた味方チャンピオンを10～54.71（近接）/ 7～38.29（遠隔）（自身のレベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shield Bash#description": {
+   "source_sha1": "f985ced0d010310975ffc9ef28e749a04843fa59",
+   "plain_sha1": "1e7c487a6e1219ab5db3885ac5e43d9f54819a0e",
+   "ja": "自動効果：シールドを得るたびに、敵チャンピオンへの次の攻撃が強化され、攻撃時効果として5～32.94（レベルに応じて）（+ 増加体力の2.5%）（+ シールドの量の15%）の追加のアダプティブダメージを与える。強化された攻撃は、シールドが切れた後も最大2秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shield Bash#description2": {
+   "source_sha1": "2d24d69467b256178a8dc070cb8ad5acb5e1a793",
+   "plain_sha1": "9360a603d7f62daa10ac7d1356191fd1a96f3531",
+   "ja": "「Adaptive Damage」：この効果は、増加攻撃力と魔力のどちらが多いかに応じて、物理ダメージか魔法ダメージを与える。* 増加攻撃力の方が多い → 物理ダメージ * 魔力の方が多い → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類はチャンピオンのアダプティブの種類で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Conditioning#description": {
+   "source_sha1": "4df480d202528abb0b06eed33323b0f3cb9b599c",
+   "plain_sha1": "54bea510857c3fef5e4976dc0237677e87de137c",
+   "ja": "自動効果：12分後、物理防御の増加8と魔法防御の増加8を得て、合計物理防御と合計魔法防御が3%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Second Wind#description": {
+   "source_sha1": "8d4fde75ce30a9edbf14f4479338a81eb8efb58d",
+   "plain_sha1": "066d8e873243d8336ac018b0c090745f3c562016",
+   "ja": "自動効果：敵チャンピオンからダメージを受けた後、10秒かけて減少体力の4%を回復し、ダメージを受けるたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bone Plating#description": {
+   "source_sha1": "bd2bbfdd3b791199135807306bf38b69eb8cff37",
+   "plain_sha1": "6b7af243a37c8462a54f412950f4383eb1988ad2",
+   "ja": "自動効果：敵チャンピオンからダメージを受けた後、1.5秒間「ボーンアーマー」が作動する。作動中、この効果を発動させた敵チャンピオンから次に受ける3回のスペルか攻撃のダメージは30～63.53（レベルに応じて）少なくなる（確定ダメージを含む）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Overgrowth#description": {
+   "source_sha1": "3c11630f41e63441ec7bdce4d9f2e541998dce74",
+   "plain_sha1": "3dd5a1f566630a4215a5412ea9dad925bf737517",
+   "ja": "自動効果：自身の近くでモンスターか敵のミニオンが8体死ぬごとに、永続的なスタックを得る。スタックごとに増加体力を3得る。この効果は無限に重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Overgrowth#description2": {
+   "source_sha1": "b0e221857f37e9f990d49c3b3a6cd17132e224e2",
+   "plain_sha1": "853c6133e23fc12c3b59fef4c1c47d93d9a7e7f6",
+   "ja": "15スタック（モンスターかミニオン120体）に達すると、基本体力と増加体力が永続的に3.5%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Revitalize#description": {
+   "source_sha1": "e8f047eb84d56b5b75813f0ff3327833f2866ad0",
+   "plain_sha1": "75215ead6677f17e3043453ca577cb438830ada5",
+   "ja": "自動効果：回復とシールドの効果が5%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Revitalize#description2": {
+   "source_sha1": "495b275bc1066996f2c9bf7e13986fa1a02800dc",
+   "plain_sha1": "947c33957e99cdbd581332c2031e43c8a5adb2e9",
+   "ja": "最大体力の40%未満の対象への回復とシールドが10%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Revitalize#description3": {
+   "source_sha1": "0dc635d21deef926fe4477dd0c39cac118945aa6",
+   "plain_sha1": "45bcb11988dc6ab9112d422974c15aed72d3a761",
+   "ja": "自身が最大体力の40%未満の間、受ける回復とシールド、および自身への回復とシールドが10%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Unflinching#description": {
+   "source_sha1": "cdf7e02b00255c1f0ad34025de0a408e670eb9da",
+   "plain_sha1": "48ad40e02ad6e1b697023dd74b4c89436a6cf48e",
+   "ja": "自動効果：敵チャンピオンからの行動妨害を受けている間、物理防御の増加10と魔法防御の増加10を得て、妨害が終わった後も2秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Summon Aery#description": {
+   "source_sha1": "bb867ca785310ff7913834a6616888a9cea96daa",
+   "plain_sha1": "dc6bd781f52e7042ed86ddf5ada659403fb51317",
+   "ja": "自動効果：敵チャンピオンへのダメージを与える通常攻撃・スキル・アイテムの効果で、「エアリー」が0.45秒かけてその敵に飛びかかり、10～54.71（レベルに応じて）（+ 増加攻撃力の10%）（+ APの5%）のアダプティブダメージを与える。味方チャンピオンを回復・シールド・強化すると、「エアリー」が0.35秒かけてその味方のそばへ跳び、2.5秒間20～109.41（レベルに応じて）（+ 増加攻撃力の10%）（+ APの5%）のシールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Summon Aery#description2": {
+   "source_sha1": "1aaef7451f187aebe4feb3d8f268bd70ac25a807",
+   "plain_sha1": "22af066e578a787dfdb0742da253c52eee717846",
+   "ja": "「エアリー」は到着時に、効果を与えるチャンピオンに効果を与える。その後2秒間対象のところにとどまってから使用者のもとへ戻り、戻るまで再び送り出せない。戻る途中は最初とても遅いが徐々に加速し、近くに移動すると拾える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03",
+   "check_notes": [
+    "用語「スロウ」がない（原文：slow）"
+   ],
+   "allow_reason": "原文の slow は「エアリー」の戻る速さが遅いという意味で、スロウ（CC）ではない"
+  },
+  "Summon Aery#description3": {
+   "source_sha1": "baf55cb31d3d37db45c196f518119a1d0dc5f39a",
+   "plain_sha1": "a89be91b35ed1f6627c911deb6f2db27d731eeb8",
+   "ja": "持続する発動効果のダメージでは発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Summon Aery#description4": {
+   "source_sha1": "2d24d69467b256178a8dc070cb8ad5acb5e1a793",
+   "plain_sha1": "9360a603d7f62daa10ac7d1356191fd1a96f3531",
+   "ja": "「Adaptive Damage」：この効果は、増加攻撃力と魔力のどちらが多いかに応じて、物理ダメージか魔法ダメージを与える。* 増加攻撃力の方が多い → 物理ダメージ * 魔力の方が多い → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類はチャンピオンのアダプティブの種類で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Arcane Comet#description": {
+   "source_sha1": "85bed07ef392bded41c59b9ac9162753ed016daa",
+   "plain_sha1": "f3e86cd71f9dc31f7ac6c1f6e59058600683b734",
+   "ja": "自動効果：敵チャンピオンにスキルのダメージかペットのダメージを与えると、その敵のその時点の位置に「Arcane Comet」を放ち、彗星は0.825秒（0.8秒を次のゲームのティックに切り上げた値）後に落ちて、着弾時に半径140の範囲の敵に15～110（レベルに応じて）（+ 増加攻撃力の10%）（+ APの5%）の物理ダメージか魔法ダメージを与える。このダメージは0%～100%（彗星が飛んだ距離に応じて）増加し、最大射程で最大30～220（レベルに応じて）（+ 増加攻撃力の20%）（+ APの10%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Arcane Comet#description2": {
+   "source_sha1": "4da00bd6a85d7169d129db70fd556fd80ff1fd77",
+   "plain_sha1": "b506ac358417f2d24254559d672be56ea697caf6",
+   "ja": "「Variable Damage」：この効果は、効果のダメージの式に対する攻撃力と魔力の寄与に応じて、物理ダメージか魔法ダメージを与える。* 攻撃力の係数による追加ダメージの方が大きい → 物理ダメージ * 魔力の係数による追加ダメージの方が大きい → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類は魔法ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stormraider's Surge#description": {
+   "source_sha1": "eeb0bc2d429e6438b5a0d161970c077034fbb43b",
+   "plain_sha1": "4d798f692cc73270451b9d2e23bf30d47c02d359",
+   "ja": "自動効果：3秒以内に敵チャンピオンにその最大体力の25%に等しいダメージを与えると、4秒間移動速度が48%（近接）/ 36%（遠隔）増加し、スロウ耐性を50%得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Deathfire Touch#description": {
+   "source_sha1": "b064eb33325dfe62e534a67628eba02daa37aa10",
+   "plain_sha1": "662a7ebe2e513241dec851813d88b6bc57ece979",
+   "ja": "敵チャンピオンにスキルのダメージかペットのダメージを与えると燃焼を与え、効果時間の間0.5秒ごとに1.5～6.53（レベルに応じて）（+ 増加攻撃力の3.5%）（+ APの1.25%）の魔法ダメージを与える。燃焼が対象に3秒残った後は、続く間その対象へのダメージが75%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Deathfire Touch#description2": {
+   "source_sha1": "06c47472e19b76dcdcc1b3dc36091d992c71371e",
+   "plain_sha1": "f20854a7b43a7a7683182037aa5fb321d756ccb7",
+   "ja": "燃焼の効果時間は対象に与えたスキルのダメージの形式で決まり、付与のたびに更新される：* スペルのダメージ：4秒 * 範囲ダメージ：2秒 * 持続ダメージ：1秒 * 持続する範囲ダメージ：1秒 * ペットのダメージ：1秒",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Axiom Arcanist#description": {
+   "source_sha1": "7cd93b16c165044cb687dc63b4343f6bcb0c4af5",
+   "plain_sha1": "626972ec68f148fb2ee0ed5c8345a348d4958260",
+   "ja": "自動効果：アルティメットスキルのダメージ（範囲効果のスキルは8%に低下）、回復、シールドが12%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Axiom Arcanist#description2": {
+   "source_sha1": "7c01eb32aedcb31d68a53c2d7f168e36b9a8dd57",
+   "plain_sha1": "517c34969c504cad15487df205b826fc6bc2d022",
+   "ja": "敵チャンピオンのキルに関与すると、アルティメットスキルの残りクールダウンが7%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Manaflow Band#description": {
+   "source_sha1": "b6e18fcb389fc34fadba723608194d70fc953791",
+   "plain_sha1": "2402e456aa8b21afb0433b344ecbfbe560b8aa1b",
+   "ja": "自動効果：固有スキル以外のスキルの使用で敵チャンピオンにスキルのダメージを与えるか、ペットのダメージを与えるか、特定の弱体効果を与えると、最大マナが永続的に25増加し、最大250。この効果で得たマナは今のマナを保つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Manaflow Band#description2": {
+   "source_sha1": "eb9270b24bb09d99bcacf3a7bca8c4d5c9e3a7f3",
+   "plain_sha1": "d8662874eac8abdede24c5115ea7125181c022f5",
+   "ja": "増加マナが250に達した後、5秒ごとに減少マナの1%を永続的に回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nimbus Cloak#description": {
+   "source_sha1": "d666a9147e7ff7a2be2ed0e98137383b82a9775f",
+   "plain_sha1": "bc158c8803b23e5ee5984d3d3407940300c49b24",
+   "ja": "自動効果：サモナースペルを使うとゴースト状態になり、2秒かけて減衰する15%～45%（サモナースペルのクールダウンに応じて）の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Transcendence#description": {
+   "source_sha1": "418b215e223455e31cd186104d6206b69d11c526",
+   "plain_sha1": "64eefabf68f2ddcd1f35e9c8aba8209ea175c970",
+   "ja": "自動効果：次の各レベルに達するとボーナスを得る：* レベル5：スキルヘイスト + 5 * レベル8：スキルヘイスト + 5 * レベル11：敵チャンピオンのキルに関与すると、基本スキルの残りクールダウンが20%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Celerity#description": {
+   "source_sha1": "5ff62e382788c091e002e548ad265c3a9880486a",
+   "plain_sha1": "1213757a0fa5daeaf704df04fd76b461de629835",
+   "ja": "自動効果：すべての移動速度の増加の効果が7%高くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Celerity#description2": {
+   "source_sha1": "58248eea9eaf86f6d36b0314c44c205af83a2a87",
+   "plain_sha1": "0440b333a3e5e274c5a16dd32861f017d03e2b87",
+   "ja": "さらに、移動速度が1%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Absolute Focus#description": {
+   "source_sha1": "9c71f3ee12f896ae6f33ad0e020ea016e9db51c6",
+   "plain_sha1": "156a4c33075d891df292ba699970cf37c20846f6",
+   "ja": "自動効果：最大体力の70%を超えている間、増加攻撃力1.8～19.91（レベルに応じて）か魔力3～33.18（レベルに応じて）（アダプティブ）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Absolute Focus#description2": {
+   "source_sha1": "bfb47315d3ee272a3c77069680db430f01121105",
+   "plain_sha1": "d5e7421ee688308d96f5ed711ead6665a7bc45f7",
+   "ja": "「Adaptive」：すでに最も多くの増加を得ているステータスに応じたボーナスを与える。既定は先に書かれた方。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scorch#description": {
+   "source_sha1": "08437f388f083d6b1affe7439c6a579537a247ef",
+   "plain_sha1": "519301e5c26be334819e7b1e46b7402eec1008f6",
+   "ja": "自動効果：敵チャンピオンにスキルのダメージを与えるとその敵に火をつけ、1秒後に20～42.35（レベルに応じて）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Waterwalking#description": {
+   "source_sha1": "d0d3135ad5f09ffd9cdc70c9224b7ff8775c6847",
+   "plain_sha1": "b66a8a20460fa9d984fa733d81c6145587e18a41",
+   "ja": "自動効果：川の中にいる間、移動速度が10増加し、増加攻撃力7.8～19.2（レベルに応じて）か魔力13～32（レベルに応じて）（アダプティブ）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Waterwalking#description2": {
+   "source_sha1": "bfb47315d3ee272a3c77069680db430f01121105",
+   "plain_sha1": "d5e7421ee688308d96f5ed711ead6665a7bc45f7",
+   "ja": "「Adaptive」：すでに最も多くの増加を得ているステータスに応じたボーナスを与える。既定は先に書かれた方。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gathering Storm#description": {
+   "source_sha1": "105b1fd6159e9e30972927e6d2bdbb3295ea4a30",
+   "plain_sha1": "2b031c4b7e06ea647fbb75b2f68d3300a4293558",
+   "ja": "自動効果：10分ごとに増えていくアダプティブフォースを得て、合計で増加攻撃力0 / 4.8 / 14.4 / 28.8 / 48 / 72 / 100.8 / 134.4 / ∞（分に応じて）か魔力0 / 8 / 24 / 48 / 80 / 120 / 168 / 224 / ∞（分に応じて）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gathering Storm#description2": {
+   "source_sha1": "bfb47315d3ee272a3c77069680db430f01121105",
+   "plain_sha1": "d5e7421ee688308d96f5ed711ead6665a7bc45f7",
+   "ja": "「Adaptive」：すでに最も多くの増加を得ているステータスに応じたボーナスを与える。既定は先に書かれた方。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  }
+ },
+ "withheld": {}
+}

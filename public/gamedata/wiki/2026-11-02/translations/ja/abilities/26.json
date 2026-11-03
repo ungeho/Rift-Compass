@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Zilean/Time in a Bottle#description": {
    "source_sha1": "bdf6760f30b30707848640c75187b6e5f1b0051e",
-   "plain_sha1": "99e797c12c4f97365363c3cf4ce65f7a9ce3f77f",
-   "ja": "固有：ジリアンは5秒ごとに2～12（レベルに応じて）の経験値を溜める（自身のレベルアップには数えない）。「タイムインボトル」は試合開始時にクールダウン中で、ジリアンと味方チャンピオンが最大レベルに達すると使えなくなる。",
+   "plain_sha1": "d84ef331011a6fb08ad456e7ac33052dbaa81b4d",
+   "ja": "固有：ジリアンは5秒ごとに2 / 3.5 / 5 / 6 / 12（レベルに応じて）の経験値を溜める（自身のレベルアップには数えない）。「タイムインボトル」は試合開始時にクールダウン中で、ジリアンと味方チャンピオンが最大レベルに達すると使えなくなる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zilean/Time in a Bottle#description2": {
    "source_sha1": "27045a7188c670183f4b0b2243815cab74ef93bc",

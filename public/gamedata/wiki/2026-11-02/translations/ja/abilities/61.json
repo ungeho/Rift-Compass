@@ -66,12 +66,14 @@
    "ja": "発動効果：オリアナは「The Ball」に衝撃波を放つよう命じ、周囲の敵に魔法ダメージを与えて0.75秒間スタンさせ、325ユニット引き寄せる（地形は越えない）。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Orianna/Clockwork Windup#description2": {
    "source_sha1": "e282aa896cb995fb7b6bbe26cf02ee1255fd7f76",
-   "reason": "residual_markup"
+   "plain_sha1": "ba0952a569b63dbd9351c3b0a031559a3d81c90b",
+   "ja": "固有：オリアナの通常攻撃は4秒間「Clockwork Winding」のスタックを得て、攻撃のたびに更新され、最大2回まで重なる。新しい敵を攻撃するとすべてのスタックを失う。「Clockwork Winding」：オリアナの通常攻撃は強化され、攻撃時効果として10～54.71（レベルに応じて）（+ APの15%）の追加の魔法ダメージを与え、スタックごとに15%増えて、合計最大13～71.12（レベルに応じて）（+ APの19.5%）の追加の魔法ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

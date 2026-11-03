@@ -115,12 +115,14 @@
    "ja": "「相棒」の間に通常攻撃の指示をするか、「暗闇の強襲」か「飛翔撃」を使用すると、自動で「Skystrike」が発動する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Quinn/Harrier#description2": {
    "source_sha1": "57a5159105274cca4bb1a0d459503dd9e9a4d5ed",
-   "reason": "residual_markup"
+   "plain_sha1": "b5f691b7ca83ffccffe8ab7a4371e8aa8866a060",
+   "ja": "「鷲匠」の対象へのクインの通常攻撃（攻撃時効果）は強化され、印を消費して15～132.35（レベルに応じて）（+ 増加攻撃力の40%）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

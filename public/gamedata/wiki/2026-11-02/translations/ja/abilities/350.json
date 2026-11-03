@@ -136,12 +136,14 @@
    "ja": "付いていない間、ユーミは「ファイナルチャプター」の詠唱中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Yuumi/Feline Friendship#description": {
    "source_sha1": "0166d790f10eab3c3bfe3f2ed893128efda5db6a",
-   "reason": "residual_markup"
+   "plain_sha1": "ca7d8118a34aac8c3be18ee87539a4e4ccb30d22",
+   "ja": "固有：一定時間ごとに、ユーミの敵チャンピオンへの次の通常攻撃は強化され、攻撃モーションが中断されなくなり、射程が50増加して飛翔物ではなくなる。通常攻撃か「きまぐれミサイル」をその敵に当てると、または付いている間に「ファイナルチャプター」が味方チャンピオンに当たると、効果を消費して20～120.59（レベルに応じて）（+ APの30%）回復する。味方に付いているか4秒以内に付いた場合、その味方も同じ量回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -108,12 +108,14 @@
    "ja": "「Maiden of the Mist」の詳細は「Pets」を参照。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Yorick/Shepherd of Souls#description": {
    "source_sha1": "005a8000ee96f9000596ffdca24ecb6c97a2194d",
-   "reason": "residual_markup"
+   "plain_sha1": "8973a27b7e9fa6227da22f346ad407e4d383ab25",
+   "ja": "固有 -「Final Service」：ヨリックが「葬送」でいずれかの敵にとどめを刺すか、敵チャンピオンか大型モンスターにダメージを与えるたびに、その位置に墓を作る。さらに、それ以外の方法で近くで死んだ敵の、8体目～2体目（レベルに応じて）ごとに一つ自動で墓ができる。墓は同時に4つまで存在でき、ヨリックがその周辺を離れるか死ぬまで残り、上限を超えて作ると最も遠い墓が常に最も新しい墓に置き換わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

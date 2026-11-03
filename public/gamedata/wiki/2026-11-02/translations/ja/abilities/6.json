@@ -122,12 +122,14 @@
    "ja": "「デスグラインダー」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。アーゴットは「デスグラインダー」の再発動の詠唱中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Urgot/Echoing Flames#description2": {
    "source_sha1": "19c3c2a70a8e46eb0a10e850593616fba2eca09a",
-   "reason": "residual_markup"
+   "plain_sha1": "d64a5dfc98a01fbae091d985cf0b3842abf48951",
+   "ja": "アーゴットの次の通常攻撃（攻撃時効果）がショットガンの扇形の範囲内にあると、そのショットガンが扇形に発射され、命中した敵に攻撃力の40%～100%（レベルに応じて）（+ 対象の最大体力の2%～6%〔レベルに応じて〕）の物理ダメージを与える。モンスターに対しては100～390.59（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

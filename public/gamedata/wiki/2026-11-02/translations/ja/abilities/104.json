@@ -101,20 +101,28 @@
    "ja": "敵チャンピオンに当たるか射程の終わりに達すると、弾は扇形に爆発し、追加の敵に減ったダメージを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Graves/New Destiny#description2": {
    "source_sha1": "5ff33caba73267409d403f21bb2232afcf6d08d1",
-   "reason": "residual_markup"
+   "plain_sha1": "50452c851a153fe1b2e08bbeb33deadfa2aac9ee",
+   "ja": "固有 -「12-Gauge」：グレイブスの通常攻撃は扇形に4発の散弾を撃ち、それぞれ通り道で最初の敵ユニットに当たって、攻撃力の70%～100.01%（レベルに応じて）の物理ダメージを与え、同じ対象に当たった二発目以降の散弾一発ごとに攻撃力の23.31%～33.3%（レベルに応じて）の物理ダメージを加え、一体の対象には合計最大で攻撃力の139.93%～199.92%（レベルに応じて）の物理ダメージになる。散弾は建物に25%減少したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Graves/New Destiny#description3": {
    "source_sha1": "76278896bd6da09cd28667fcb3f607512fa754bd",
-   "reason": "residual_markup"
+   "plain_sha1": "075b071340b2db7811559b8ab16d6074a58578cc",
+   "ja": "クリティカルのときは25%広い扇形に6発の散弾を撃ち、各散弾は（50% + 「インフィニティ・エッジ」 20%）増加したダメージを与え、すべての散弾が一体の対象に当たると合計199.976%（+ 「インフィニティ・エッジ」 26.664%）のダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Graves/End of the Line#description2": {
    "source_sha1": "f598c389cb61e1989fc667df4ba71f371a6168be",
-   "reason": "residual_markup"
+   "plain_sha1": "2f9ed340b1d18457bb5dea43a8d3201a95ba6eb1",
+   "ja": "2秒後、または地形にぶつかってから0.231秒（0.2秒を次のゲームのティックに切り上げた値）後に弾が起爆し、垂直方向の広い範囲と、火薬の跡に沿って逆向きに進む波の中の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

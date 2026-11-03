@@ -66,12 +66,14 @@
    "ja": "対象の防御の低下は、吸収が終わった後も4秒間残る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Trundle/King's Tribute#description": {
    "source_sha1": "f17e27f5bd60f70f0a8ac79158aa99ce8a3e7e09",
-   "reason": "residual_markup"
+   "plain_sha1": "f6136605f4e07efb4cd9ae575c76414df0e27589",
+   "ja": "固有：近くの敵が死ぬたびに、トランドルはその敵の最大体力の1.8%～5.94%（レベルに応じて）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

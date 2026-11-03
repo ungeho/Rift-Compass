@@ -94,16 +94,21 @@
    "ja": "着弾に当たった敵か地帯の中の敵は1秒間「Burning」の印が付き、0.25秒ごとに魔法ダメージを受けて35%のスロウを受け、範囲内にいる間は更新される。敵が「Burning」でいられるのは最大5秒で、効果は合計20回まで。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Rumble/Junkyard Titan#description3": {
    "source_sha1": "7a17ebcd8e51b2c0dfb6788c57c84ad024312057",
-   "reason": "residual_markup"
+   "plain_sha1": "08b3a0472eecf945000fcf8fca829ea1887fc455",
+   "ja": "「Overheated」：ランブルの機体が「Overheated」になり、「Heat」が4秒かけて0まで下がる間、スキルが使えなくなる。この間、攻撃速度が30%～110.97%（レベルに応じて）増加し、通常攻撃は強化されて、攻撃時効果として5～44.12（レベルに応じて）（+ APの25%）（+ 対象の最大体力の4%）の追加の魔法ダメージを与える。対象の体力の割合に応じたダメージは、モンスターに対しては90～188.33（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rumble/Flamespitter#description2": {
    "source_sha1": "ea1624d4757112fe6bc23a48c67c653d753f0ddb",
-   "reason": "residual_markup"
+   "plain_sha1": "418e7e4992f0ee73f94758cb8ee4ec03b5e05196",
+   "ja": "「Danger Zone」のボーナス：「スピットファイア」のダメージが50%増加する。対象の体力に応じた「スピットファイア」の合計ダメージは、モンスターに対しては65～336.84（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

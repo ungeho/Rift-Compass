@@ -101,12 +101,14 @@
    "ja": "発動効果：フィドルスティックスは1.5秒間詠唱し、完了すると指定地点へブリンクして、5秒間カラスの群れを周囲に激しく飛び回らせ、0.25秒ごとに周囲の敵に魔法ダメージを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Fiddlesticks/A Harmless Scarecrow#description2": {
    "source_sha1": "d00a5aa1e8a492f69843d74c95471f6d62b09cba",
-   "reason": "residual_markup"
+   "plain_sha1": "9be25afe02142bd4271e7730ced9eb97ae95c352",
+   "ja": "固有 -「無害なカカシ」：レベル6以降、「Effigy」を置くと、その位置に6秒間「Sweeper Drone」も呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

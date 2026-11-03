@@ -80,32 +80,49 @@
    "ja": "ゼリは「ライトニングクラッシュ」の詠唱時間中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Zeri/Living Battery#description2": {
    "source_sha1": "00255f45e2e802931fbd0b00f431082f219f2d0d",
-   "reason": "residual_markup"
+   "plain_sha1": "4398277e97025c865beea8789402425fa00293da",
+   "ja": "通常攻撃：ゼリは対象に電撃を当て、10～27.35（レベルに応じて）（+ APの3%）の魔法ダメージを与え、スキルの効果をスキルのダメージとして適用し、スキル使用時の効果を発動して、体力が70～170.59（レベルに応じて）（+ APの20%）未満なら対象を処刑する。これはクリティカルにならず、攻撃時効果と攻撃開始時の効果を適用も発動もしない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zeri/Living Battery#description3": {
    "source_sha1": "acdb3ee1af95d742b191eaf56e0f057e76ea9ca5",
-   "reason": "residual_markup"
+   "plain_sha1": "9cabc501721af1d3776fa3be5c773c4ddda5f5f4",
+   "ja": "チャージが満タンのとき、ゼリの次の攻撃は強化され、すべてのチャージを消費して75～170（レベルに応じて）（+ APの110%）（+ 対象の最大体力の1%～12.18%〔レベルに応じて〕）の魔法ダメージを与える。対象の体力の割合に応じたダメージは、モンスターに対しては300が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zeri/Burst Fire#description2": {
    "source_sha1": "89a45fe2d23bfe9c7eda7ffb898af7ac6e447894",
-   "reason": "residual_markup"
+   "plain_sha1": "506f897d65392a076a5aae475947d203ea17e860",
+   "ja": "「バーストファイア」の弾は通常攻撃として扱われる：通常の通常攻撃が当たる敵ユニットにはどれにも当たり、通常攻撃のダメージを与え、（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになりえ、最初に命中した敵に攻撃時効果と攻撃開始時の効果を与える。「バーストファイア」のクールダウンと詠唱時間は攻撃速度で短くなり、最大で毎秒1.5回の攻撃。上限を超えた攻撃速度の60%は増加攻撃力に変換される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zeri/Ultrashock Laser#description": {
    "source_sha1": "398572cc065ac51c5662a18dcd62e4b10f220a00",
-   "reason": "residual_markup"
+   "plain_sha1": "3ba14d43e5ce5bc891df3e351d3e78f5af3be2cf",
+   "ja": "発動効果：ゼリは指定方向に電気の衝撃を放ち、最初に命中した敵に物理ダメージを与えて2秒間スロウを与える。衝撃が地形に当たると直線状のレーザーに変わり、その範囲の視界を1.75秒間与えて0.85秒後に発射され、命中した敵に同じ効果を与えて、チャンピオンとモンスターには（150% + 「インフィニティ・エッジ」 20%）のダメージでクリティカルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zeri/Spark Surge#description2": {
    "source_sha1": "cc2ed1aed7c0ea001fb307967fdc764001f6689b",
-   "reason": "residual_markup"
+   "plain_sha1": "1a3735e0dc87fb19a20439868392f43d098b632a",
+   "ja": "その後、ゼリは5秒間「Lightning Rounds」を得て、「バーストファイア」を強化し、最初に命中した敵に追加の魔法ダメージ（クリティカル率に応じて0%～100%〔+ 「インフィニティ・エッジ」 0%～40%〕増加）を与えて、敵を貫通させる。最初の対象より後の対象は修正されたダメージを受け、そのダメージは攻撃時効果とライフスティールを適用せず、攻撃開始時の効果も発動しないが、クリティカルの倍率の影響は受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zeri/Lightning Crash#description2": {
    "source_sha1": "8946159174170954306b4852b8da8782b3ac30be",
-   "reason": "residual_markup"
+   "plain_sha1": "bbdfb981ec719c6dee84b9609e4024a9c28a2f82",
+   "ja": "「Overcharged」：ゼリは移動速度が15%、攻撃速度が30%増加し、攻撃速度の上限が1.6875に上がる。「バーストファイア」は強化され、詠唱時間が20%短くなって拡散の角度が小さくなり、代わりに速い弾を3発撃つ。一回の発動で最初に敵に当たった弾は、対象から650ユニット以内で最も近くの見えている敵へ電気を連鎖させ（後続の対象は最大4体）、攻撃力の40%の物理ダメージを与える。このダメージはクリティカルになりえ、攻撃力の（40% + 「インフィニティ・エッジ」 16%）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

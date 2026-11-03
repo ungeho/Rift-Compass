@@ -73,24 +73,35 @@
    "ja": "近くに敵チャンピオンがいないとき、弾が敵ユニットから一定の距離内に着弾すると、ゼラスは数秒間可視化される。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Xerath/Mana Surge#description": {
    "source_sha1": "3db761808946fd9ade13edaab3127ad7ab5bb59e",
-   "reason": "residual_markup"
+   "plain_sha1": "8e63c2a9005d992ce946f4c749676c21a97825ac",
+   "ja": "固有：一定時間ごとに、ゼラスは次の通常攻撃（攻撃時効果）を強化し、マナを30～225（レベルに応じて）回復し、敵チャンピオンに対しては二倍の60～450（レベルに応じて）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Xerath/Arcanopulse#description3": {
    "source_sha1": "4234b817c6cbb7ec763deb29a4f4feafd54b4e37",
-   "reason": "residual_markup"
+   "plain_sha1": "6067a6df324fe25702bd2653c23b85ff2438deb0",
+   "ja": "再発動：ゼラスは0.528秒（0.5秒を次のゲームのティックに切り上げた値）の間行動できなくなり、その後指定方向の直線上にエネルギーの光線を撃って、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Xerath/Eye of Destruction#description": {
    "source_sha1": "1e501e391272f0f6af68ff7384b372055a4d3003",
-   "reason": "residual_markup"
+   "plain_sha1": "8b3624d78ec341c41787bf79a84afdf544470df5",
+   "ja": "発動効果：ゼラスは秘術のエネルギーの爆発を落とし、0.528秒（0.5秒を次のゲームのティックに切り上げた値）後に指定地点に命中させて、その範囲の視界を一瞬与え、命中した敵に魔法ダメージを与えて、2.5秒間25%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Xerath/Rite of the Arcane#description2": {
    "source_sha1": "24c2c499914733cec0ea1c8732545431b4f10eb4",
-   "reason": "residual_markup"
+   "plain_sha1": "14290660a40ae417a02f814d747c3c77071f3148",
+   "ja": "再発動 -「Arcane Barrage」：ゼラスは秘術の弾を撃ち出し、弾は0.627秒（0.6秒を次のゲームのティックに切り上げた値）の遅れの後に指定地点に落ちて、その範囲の視界を一瞬与え、命中した敵に魔法ダメージを与える。各発動には0.627秒（0.6秒を次のゲームのティックに切り上げた値）の固定クールダウンがある。最初の弾を撃った後、「アーケーンライト」の範囲内に敵チャンピオンがいる間、ゼラスは自身が可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

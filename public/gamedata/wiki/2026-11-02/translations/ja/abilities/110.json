@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Varus/Living Vengeance#description": {
    "source_sha1": "133b42480fe0fdcbf7758a598b87a9eb5ce70c9a",
-   "plain_sha1": "7fba215ca8bd315a2fd33508c1338df8f1493ab9",
-   "ja": "固有：ヴァルスが敵を倒すと、5～11秒間（レベルに応じて）、攻撃速度が10%～20%（レベルに応じて）増加し、合計の攻撃速度の増加の14%に等しい増加攻撃力と魔力を得る。ユニットを倒すたびに更新される。",
+   "plain_sha1": "1abfdfab2f69c59d425fcde69337ef3280b8e189",
+   "ja": "固有：ヴァルスが敵を倒すと、5 / 7 / 9 / 11秒間（レベルに応じて）、攻撃速度が10% / 15% / 20%（レベルに応じて）増加し、合計の攻撃速度の増加の14%に等しい増加攻撃力と魔力を得る。ユニットを倒すたびに更新される。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Varus/Living Vengeance#description2": {
    "source_sha1": "8547e82c2e5d2cc824f6b5757198de855d722034",
@@ -105,20 +105,28 @@
    "ja": "触手に捕まる対象は見えている必要はない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Varus/Piercing Arrow#description3": {
    "source_sha1": "dde1f6164fcced9a6835b19632c7d3063f259d6f",
-   "reason": "residual_markup"
+   "plain_sha1": "e699a0cb518de1c9a86847642b53933bde4d6571",
+   "ja": "再発動：ヴァルスは指定方向に貫通する矢を放ち、命中した敵に物理ダメージを与える。矢のダメージと起爆した「Blight」のスタックのダメージはどちらも0%～70%（詠唱時間に応じて）増加し、矢のダメージは0%～67%（命中した敵の数に応じて）減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Varus/Blighted Quiver#description2": {
    "source_sha1": "86a4ee11d8b6d82b55c7d9a7dbe4eb4130829484",
-   "reason": "residual_markup"
+   "plain_sha1": "06512335f34dc623c6bd47a6b6d0fb218b34537c",
+   "ja": "「Blight」：消費したスタックごとに、対象は追加の魔法ダメージを受ける。「乾坤一擲」でスタックを消費した場合、このダメージは0%～70%（「乾坤一擲」の溜めた時間に応じて）増加する。このダメージはモンスターに対してはスタック一つにつき120、最大スタックで合計360が上限。さらに、チャンピオンかエピックモンスターに対して消費したスタックごとに、ヴァルスの基本スキルの残りクールダウンをそれぞれの合計クールダウンの11%短縮し、対象一体につき最大33%短縮する。「乾坤一擲」でスタックを消費した場合、短縮量は0%～70%（「乾坤一擲」の溜めた時間に応じて）増え、最大スタックを消費すると対象一体につき最大33%～56.1%短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Varus/Blighted Quiver#description3": {
    "source_sha1": "e5ecfcbdfb15e9df9e2b5259a1f030e8e62c66fb",
-   "reason": "residual_markup"
+   "plain_sha1": "7d2e304575b739a1d73178525d3e93007931d724",
+   "ja": "発動効果：5.5秒以内のヴァルスの次の「乾坤一擲」は強化され、さらに追加の魔法ダメージを与え、このダメージは0%～70%（「乾坤一擲」の溜めた時間に応じて）増加する。このダメージはモンスターに対しては360が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

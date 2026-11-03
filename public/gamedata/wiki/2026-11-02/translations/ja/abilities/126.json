@@ -115,24 +115,35 @@
    "ja": "ジェイスは「Transform」を持って試合を始めるが、そのランクは上げられない。代わりに、基本スキルはそれぞれ6ランクある。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Jayce/Hextech Capacitor 2#description": {
    "source_sha1": "9864cb86e17e05d24074350c3bfd20df9364cfc8",
-   "reason": "residual_markup"
+   "plain_sha1": "42a4ec6518ec093ee6d482cbc27bb6cc59c4b6dc",
+   "ja": "固有：ジェイスが「Hammer Stance」と「Cannon Stance」を切り替えるたびに、0.75秒間ゴースト状態になり、移動速度が30増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Jayce/Transform Mercury Cannon#description": {
    "source_sha1": "865893f0b2a6e3952ba71abc2ae5f317abd00af1",
-   "reason": "residual_markup"
+   "plain_sha1": "42dfe756f635450402958df5be836299563fbbe3",
+   "ja": "発動効果：ジェイスは「Cannon Stance」に変形し、その形態のスキルを使えるようになり、通常攻撃の射程500の遠隔になって、次の通常攻撃を強化し、5秒間対象の物理防御と魔法防御を20% / 25% / 30% / 35%（レベルに応じて）低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Jayce/Transform Mercury Cannon#description2": {
    "source_sha1": "3470c5ccdfaeb781a3c2860c429dcca2457679da",
-   "reason": "residual_markup"
+   "plain_sha1": "cd4acc53c2b703c30580401412bb48c5173a101a",
+   "ja": "ジェイスは「Transform」を持ってゲームを始めるが、そのランクは上げられない。代わりに基本スキルがそれぞれ6ランクある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Jayce/Transform Mercury Hammer#description": {
    "source_sha1": "a2c12529a9f9cc3e7ea62da791ad27e7c03ddf77",
-   "reason": "residual_markup"
+   "plain_sha1": "de8a160207e030080ac6ec38f2c8e77862af8c66",
+   "ja": "発動効果：ジェイスは「Hammer Stance」に変形し、その形態のスキルを使えるようになり、通常攻撃の射程125の近接になって、5 / 12 / 19 / 26（レベルに応じて）（+ 増加攻撃力の7.5%）の物理防御と魔法防御の増加を得て、次の通常攻撃を強化し、25 / 60 / 95 / 130（レベルに応じて）（+ 増加攻撃力の30%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -101,12 +101,14 @@
    "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Draven/Whirling Death#description4": {
    "source_sha1": "d2328b378e1957621e18c028e4e760e772d1a4dc",
-   "reason": "residual_markup"
+   "plain_sha1": "6f6f6b02ace089de9163662d1ed12430469608f8",
+   "ja": "「死の車輪」は100%～50%（命中した敵の数に応じて）のダメージを与え、向きを反転すると元に戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

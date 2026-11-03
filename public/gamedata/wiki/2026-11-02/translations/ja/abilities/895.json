@@ -101,12 +101,14 @@
    "ja": "「アポテオシス」の間、ニーラは通常攻撃もほかのスキルの使用もできないが、移動はできる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Nilah/Formless Blade#description2": {
    "source_sha1": "40bbd4ce98cd7e38a1c44d87464191670838d60e",
-   "reason": "residual_markup"
+   "plain_sha1": "143861af61f18f827115f819db2711770cbec07d",
+   "ja": "発動効果：ニーラは指定方向の直線上に鞭剣を打ち鳴らし、命中した敵に物理ダメージを与える。このダメージはクリティカル率に応じて0%～70%（+ 「インフィニティ・エッジ」 0%～28%）増加する。「形なき刃」は建物にも当たり、一体の対象にライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

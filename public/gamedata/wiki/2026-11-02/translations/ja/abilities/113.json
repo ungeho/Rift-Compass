@@ -108,12 +108,18 @@
    "ja": "投げ縄が命中した敵は、吹雪の効果を受けない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Sejuani/Fury of the North#description2": {
    "source_sha1": "0724ecfb46cd80ed16879d6030c702ebdff96de9",
-   "reason": "residual_markup"
+   "plain_sha1": "074cff58c55ce3ef89dd84a3b74f459185442758",
+   "ja": "固有 -「Frost Armor」：セジュアニは「Frost Armor」を得て、敵チャンピオン・タワー・大型モンスターからダメージを受けた後3秒間残る。それらからダメージを受けない状態が12～5.29秒（レベルに応じて）続くと回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03",
+   "check_notes": [
+    "用語「物理防御」がない（原文：Armor）"
+   ],
+   "allow_reason": "原文の Armor は効果名「Frost Armor」の一部で、物理防御（ステータス）ではない"
   }
- }
+ },
+ "withheld": {}
 }

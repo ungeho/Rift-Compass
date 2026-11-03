@@ -108,12 +108,14 @@
    "ja": "魔力で伸びない、奪ったアルティメットスキルとスキルは、攻撃力の係数が魔力の係数に変換され、それぞれ合計攻撃力1%ごとにAP 0.6%、増加攻撃力1%ごとにAP 0.4%で伸びる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Sylas/Petricite Burst#description4": {
    "source_sha1": "374a3feb1e59ea1bdc31cecdd455ff530b07960a",
-   "reason": "residual_markup"
+   "plain_sha1": "a120a7ecaa1da25788d43425ba98e540d9993362",
+   "ja": "「ペトリサイトバースト」は主対象に対してだけクリティカルになりえ、（175% + 「インフィニティ・エッジ」 40%）のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

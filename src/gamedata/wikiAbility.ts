@@ -3,6 +3,8 @@
 
 import type { CalcInfo } from "./damage";
 
+/** チャンピオンのレベルに応じた値の、レベル18を超える部分（取り込み時に記録。tools/gamedata/pp.js の levelNote） */
+export interface LevelNote { kind: "shown_beyond_18" | "hidden_beyond_18"; first: string; at_level_18: string; max_level: number; at_max_level: string; shown_last_level: number }
 export interface ParsedValue {
   ok: true;
   kind: "number" | "by_rank" | "by_rank_linear" | "progression" | "variants" | "min_max" | "keyword";
@@ -54,7 +56,7 @@ export interface WikiAbilityTemplate {
   vars?: Record<string, string>;
   parsed?: Record<string, ParsedValue>;
   /** 説明の項目を読める英語にしたもの（取り込み時）。residual＝解けない記法が残っている（翻訳しない）*/
-  text?: Record<string, { plain: string; residual: boolean; source_sha1: string; plain_sha1?: string }>;
+  text?: Record<string, { plain: string; residual: boolean; source_sha1: string; plain_sha1?: string; level_notes?: LevelNote[] }>;
   leveling?: Leveling[];
   unparsed?: { field: string; reason: string }[];
   /** ランク別の値の数が Data Dragon の最大ランクと違うとき（例：R のランクで変わる基本スキル）*/

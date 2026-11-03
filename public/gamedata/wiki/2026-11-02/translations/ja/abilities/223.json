@@ -129,12 +129,14 @@
    "ja": "「Regurgitate」の使用後0.4秒間、タム・ケンチは行動できない。「Regurgitate」が自動で使用された場合、タム・ケンチは向いている方向に対象を吐き出す。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Tahm Kench/Thick Skin#description2": {
    "source_sha1": "5b229bb80097a01a29779ffc318e70b4cf844f4d",
-   "reason": "residual_markup"
+   "plain_sha1": "2d17780fb3d945e3a0475368d288b04818e42d6c",
+   "ja": "「ゆるゆる皮膜」がクールダウン中でなく、ダメージを受けない状態が4秒続いた後、タム・ケンチは灰色の体力をすばやく消費してその量の60%～100%（レベルに応じて）を回復し、0.264秒（0.25秒を次のゲームのティックに切り上げた値）ごとに最大体力の10%ずつ回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

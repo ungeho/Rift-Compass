@@ -129,20 +129,28 @@
    "ja": "このスキルを使用するには、近くに「Void Coral」が必要。自動効果の追加の確定ダメージは、「ロイヤルストーム」の攻撃時効果の倍率の影響を受ける。「Void Remora」と「Void Coral」の詳細は「Pets」を参照。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Bel'Veth/Death in Lavender#description3": {
    "source_sha1": "be808e909e7aec4802f9398fef3d94ce9cdc4526",
-   "reason": "residual_markup"
+   "plain_sha1": "8afd0701ecd3fc2e43f159c3c9f52dfd8ca1e57e",
+   "ja": "固有 -「Inescapable」：チャンピオン・大型モンスター・大型ミニオンにダメージを与えてから3秒以内にキルに関与するたびに、ベル＝ヴェスは永続的な「Lavender」のスタックを得る。大型ミニオンとモンスターは1スタック、チャンピオンとエピックモンスターは2スタック。「Lavender」：スタックごとに、ベル＝ヴェスは攻撃速度が0.1%～2%（レベルに応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Bel'Veth/Void Surge#description": {
    "source_sha1": "9a3434cb77f7065b57b433edc334c9025d426f3a",
-   "reason": "residual_markup"
+   "plain_sha1": "b2fefee21665b697fe6102aea56b0c1639c50985",
+   "ja": "発動効果：ベル＝ヴェスは指定方向にダッシュし（地形は越えない）、通過した敵に物理ダメージを与える。最初の対象に対しては、「ヴォイドサージ」は（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになりえ、攻撃時効果とライフスティールを適用する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Bel'Veth/Endless Banquet#description3": {
    "source_sha1": "b8868d1c35ef506fd429d80eca92261975fd524c",
-   "reason": "residual_markup"
+   "plain_sha1": "3a6ac7143f092e5b61949bb62263638b5f5bcf42",
+   "ja": "発動効果：ベル＝ヴェスは対象の「Void Coral」へダッシュして詠唱時間の間にそれを取り込み、その間周囲の敵に25%～96%（経過秒数に応じて）のスロウを与える。その後その位置で爆発を起こし、範囲内の敵に確定ダメージ（モンスターには1500が上限）を与えて、45 / 90 / 無限（「Lavender」のスタックに応じて）秒間「True Form」になる。ベル＝ヴェスは存在するすべての「Void Coral」を一度に取り込み、取り込んだ一つごとに「Lavender」のスタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

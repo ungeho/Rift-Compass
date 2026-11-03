@@ -94,16 +94,21 @@
    "ja": "「みんなオレに夢中」の間、ラカンはぶつかっていない敵チャンピオンには通常攻撃できない。ただし、スキルを発動する前に攻撃の指示を出していた場合は除く。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Rakan/Fey Feathers#description": {
    "source_sha1": "e1474b74855aabbda8c64cb140c1d026e1537ebc",
-   "reason": "residual_markup"
+   "plain_sha1": "4d5c1aa064ca47f54dec538e3d40c96af7aeacf9",
+   "ja": "固有：一定時間ごとに、ラカンは壊されるまで続く30～247.94（レベルに応じて）（+ APの95%）のシールドを自身に付与する。戦闘から5秒離れると、残っているシールドは最大値まで戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rakan/Gleaming Quill#description2": {
    "source_sha1": "3d955c88a78d84d3fcd9b75eed15ae305d84d5be",
-   "reason": "residual_markup"
+   "plain_sha1": "0da5b2f7178681419d4c527615c0b20088b749f6",
+   "ja": "対象が敵チャンピオンかエピックモンスターだった場合、ラカンの周りに範囲の印が付く。3秒後、または味方チャンピオンがその範囲に入ると、ラカンは自身と近くの味方チャンピオンを40～230（レベルに応じて）（+ APの55%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

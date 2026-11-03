@@ -122,12 +122,14 @@
    "ja": "突撃を終えると、兵士は5秒間壁として立ち、敵にとって通れない地形になって周囲の視界を与える。アジールと味方はこの兵士を通り抜けられる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Azir/Arise!#description2": {
    "source_sha1": "c1eb9cbb8d975221289e50eff4065c9eaf50e9df",
-   "reason": "residual_markup"
+   "plain_sha1": "0edf17c13259326a8a9e04ef0366837de31f0892",
+   "ja": "アジールが兵士の攻撃範囲内の敵に通常攻撃を指示すると、「Sand Soldier」が代わりに攻撃し、対象の方向に槍を突き出して、直線上の敵に魔法ダメージを与える。主対象に対しては、「Sand Soldier」の攻撃は攻撃時効果と攻撃開始時の効果を両方与え、そのダメージは50%の効果になる。最も近い対象より後の対象は20%～100%（レベルに応じて）のダメージを受ける。同じ対象への二体目以降の「Sand Soldier」の攻撃は25%のダメージを与え、攻撃時効果と攻撃開始時の効果は与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

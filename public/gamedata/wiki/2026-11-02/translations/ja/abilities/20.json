@@ -108,24 +108,35 @@
    "ja": "再発動：ヌヌ＆ウィルンプは吹雪を爆発させ、周囲の敵に魔法ダメージを与える（詠唱時間に応じて0%～100%に修正）。影響を受けた敵は0～3秒間（詠唱時間に応じて）スロウを受けたままになり、二人の残りのシールドは3秒かけて減衰する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Nunu/Biggest Snowball Ever!#description": {
    "source_sha1": "d15bef360b82459caa62e2ce1f8721c2221ef7e7",
-   "reason": "residual_markup"
+   "plain_sha1": "29f8fbe8ec6c5fe150968d24e50a83dfc671b3bb",
+   "ja": "発動効果：ウィルンプは自身のすべてのスロウを解除し、最大10秒間詠唱して、ゴースト状態とスロウ無効になり、転がる雪玉を作る。ウィルンプはカーソルの方向へ自動で移動し、時間とともに速くなる速度で雪玉を操れるが、向きを変えると速度はリセットされる。二人は最初の1秒間移動速度が50%低下するが、遅れの後、0.25秒ごとに移動速度が14ずつ増えていく（上限あり）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nunu/Biggest Snowball Ever!#description3": {
    "source_sha1": "530f8ed5ed50f1e133567f6872f1d7b1fd666cde",
-   "reason": "residual_markup"
+   "plain_sha1": "4c537dbd0f121f17123781326d17345916ae0c56",
+   "ja": "雪玉は敵チャンピオン・大型のペット・中型か大型のモンスター・地形に当たると爆発し、周囲の敵に魔法ダメージ（溜めた時間に応じて0%～400%増加）を与えて、0.5～0.75秒間（溜めた時間に応じて）ノックアップさせ、続けて0～0.75秒間（溜めた時間に応じて）スタンさせる。操っている間に雪玉が爆発した場合、ウィルンプは0.132秒（0.1秒を次のゲームのティックに切り上げた値）スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nunu/Snowball Barrage#description4": {
    "source_sha1": "e6d9bd326e53d30fbb180bf6411bd9d5247f0333",
-   "reason": "residual_markup"
+   "plain_sha1": "7543a8c69e0aafbec23510aa726d912dfbcd550e",
+   "ja": "最初の発動から3秒後、ウィルンプの近くの「Snowbound」の敵は魔法ダメージを受け、0.5～1.62秒間（レベルに応じて）スネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nunu/Absolute Zero#description": {
    "source_sha1": "ce58a58665ac9084cdb1609b6e23544e46f08132",
-   "reason": "residual_markup"
+   "plain_sha1": "ab8f1dbe8165664cd509c7664b3473e0c743fd39",
+   "ja": "発動効果：ヌヌとウィルンプは最大3秒間吹雪を詠唱し、自身にシールドを付与して、周囲の敵に0%～95%（詠唱時間に応じて）のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

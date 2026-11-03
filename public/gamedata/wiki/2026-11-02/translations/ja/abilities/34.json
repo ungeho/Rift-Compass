@@ -94,12 +94,14 @@
    "ja": "「ブリザード」をオフにすると、最後にもう一回ダメージを与えて、クールダウン全体に入る。アニビアが嵐から離れすぎるか、マナコストを払えなくなるか、スキルの使用を妨げる行動妨害を受けると、「ブリザード」は自動でオフになる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Anivia/Flash Frost#description": {
    "source_sha1": "6409bfb78d2d0708abc9c3c6e98bc4a49ebdc0ba",
-   "reason": "residual_markup"
+   "plain_sha1": "ca51d8adb312e2a52c0389772fbe17532ef691ad",
+   "ja": "発動効果：アニビアは指定方向に氷の塊を放ち、命中した敵に魔法ダメージを与えて、3秒間20%～40%（「ブリザード」のランクに応じて）のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

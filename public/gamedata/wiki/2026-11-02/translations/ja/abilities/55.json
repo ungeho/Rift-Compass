@@ -20,10 +20,10 @@
   },
   "Template:Data Katarina/Voracity#description2": {
    "source_sha1": "467d21fc2d1a6949956962ceff61db3eb232277d",
-   "plain_sha1": "847528ab49f993fde08fdb760be29f9ec16a6746",
-   "ja": "固有 -「Sinister Steel」：カタリナが短剣を拾うたびに周囲を切り裂き、周囲の敵に68～275（レベルに応じて）（+ 増加攻撃力の60%）（+ APの70%～100%〔レベルに応じて〕）の魔法ダメージを与え、命中した敵チャンピオンに攻撃時効果を与え、「瞬歩」の残りクールダウンを合計クールダウンの78%～96%（レベルに応じて）短縮する。",
+   "plain_sha1": "70a41a7b46fa3bb3dcdac480972073cba590d393",
+   "ja": "固有 -「Sinister Steel」：カタリナが短剣を拾うたびに周囲を切り裂き、周囲の敵に68～240（レベルに応じて）（+ 増加攻撃力の60%）（+ APの70% / 80% / 90% / 100%〔レベルに応じて〕）の魔法ダメージを与え、命中した敵チャンピオンに攻撃時効果を与え、「瞬歩」の残りクールダウンを合計クールダウンの78% / 84% / 90% / 96%（レベルに応じて）短縮する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Katarina/Voracity#description4": {
    "source_sha1": "8c3104dcf74aaea904c80ee8df372e2203eb9da5",
@@ -80,12 +80,14 @@
    "ja": "このスキルを使用するには、500ユニット以内に敵チャンピオンが必要。このスキルが命中する対象は見えている必要はない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Katarina/Bouncing Blade#description2": {
    "source_sha1": "c33ca239a2291ca9aeb7d3e62be34371239d03ad",
-   "reason": "residual_markup"
+   "plain_sha1": "3d70f8b9982ab2f3468b7e99237f139eb210aa64",
+   "ja": "短剣は最初の対象に当たってから1.023秒（1秒を次のゲームのティックに切り上げた値）後に、当たったときの対象の位置から反対側へ約350ユニットの位置に落ちる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

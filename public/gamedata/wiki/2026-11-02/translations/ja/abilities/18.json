@@ -66,16 +66,21 @@
    "ja": "発動効果：トリスターナは対象の敵に巨大な砲弾を撃ち、魔法ダメージを与える。対象と周囲の敵はノックバックされて一定時間スタンし、その間すべての対象が可視化される。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Tristana/Draw a Bead#description": {
    "source_sha1": "c928d979867df6de93a260e12a88c336206ae83b",
-   "reason": "residual_markup"
+   "plain_sha1": "914451897ccd6a76313fdda885e3dfc908efae45",
+   "ja": "固有：トリスターナの通常攻撃、「ヨードルグレネード」「バスターショット」は射程が0～167.65（レベルに応じて）増加し、合計550～717.65（レベルに応じて）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Tristana/Explosive Charge#description3": {
    "source_sha1": "e05c1ee254fcde6eed5fdf74e20311c59cd2612c",
-   "reason": "residual_markup"
+   "plain_sha1": "917f9b8d446b494880023e1595e29f9131a94a56",
+   "ja": "対象へのトリスターナの通常攻撃（攻撃時効果）とスキルは「ヨードルグレネード」のダメージを25%ずつ増やし、最大4回まで重なって最大100%増加し、そのとき爆弾は即座に起爆する。爆弾の合計ダメージは、さらにクリティカル率に応じて0%～40%（+ 「インフィニティ・エッジ」 0%～16%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

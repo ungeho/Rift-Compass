@@ -90,10 +90,10 @@
   },
   "Template:Data Udyr/Wingborne Storm#description2": {
    "source_sha1": "3c56b13901efa6ef6efa72bf1aba099a9f0a27f1",
-   "plain_sha1": "c096c37e2a9edd1d0b57833744e2ec78412e8acf",
-   "ja": "さらに、ウディアは自身の周囲に4秒間吹雪を呼び、0.5秒ごとに周囲の敵に魔法ダメージを与え、範囲内にいる間スロウを与える。ミニオンは50%～80%（レベルに応じて）のダメージを受ける。",
+   "plain_sha1": "c6c5c8b75014456df45fe568b50f6efc5ce1255e",
+   "ja": "さらに、ウディアは自身の周囲に4秒間吹雪を呼び、0.5秒ごとに周囲の敵に魔法ダメージを与え、範囲内にいる間スロウを与える。ミニオンは50% / 60% / 70% / 80%（レベルに応じて）のダメージを受ける。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Udyr/Wingborne Storm#description4": {
    "source_sha1": "43d242e15e060acd3741704703e4ddf3d0b817cf",
@@ -101,24 +101,35 @@
    "ja": "嵐は周囲の視界を与え、効果中にウディアが最後に攻撃した敵、敵チャンピオン、チャンピオン以外、ウディアの順に優先して追いかける。嵐が追いかけられるのは見えている敵だけ。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Udyr/Wilding Claw#description3": {
    "source_sha1": "f96060d708ec37a66eb9354e076681234336e470",
-   "reason": "residual_markup"
+   "plain_sha1": "0a3c0edc7ea70ac9d1f06ee6372c7e01785d1bcd",
+   "ja": "再発動 -「Awaken」：ウディアはさらに攻撃速度が20%～75.88%（レベルに応じて）増加する。4秒以内に使うと、強化された攻撃はさらに対象の最大体力の2%～4.24%（レベルに応じて）（+ 増加攻撃力100ごとに1.5%）（+ 増加体力100ごとに0.1%）の追加の物理ダメージを与える。4秒以内のどの「Stance」の次の二回の通常攻撃（攻撃時効果）も強化され、それぞれ1秒かけて雷を6回落とし、一回ごとに対象の最大体力の1.5%～3.18%（レベルに応じて）（+ AP 100ごとに0.6%）に等しい追加の魔法ダメージを与える。雷は近くの見えている敵最大3体へ連鎖し、同じ対象に何度も当たりえ、合計で対象の最大体力の9%～19.06%（レベルに応じて）（+ AP 100ごとに3.6%）になる。雷の一回ごとのダメージは、ミニオンには最低40～174.12（レベルに応じて）で、モンスターには15（+ 増加攻撃力の100%）（+ APの50%）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Udyr/Blazing Stampede#description3": {
    "source_sha1": "96c408e86f235f69103840ccad6740090a3b9904",
-   "reason": "residual_markup"
+   "plain_sha1": "953f9f3136bf7231f7044aab2ca660cc2d1cce4c",
+   "ja": "再発動 -「Awaken」：ウディアは通常攻撃の射程が75増加し、さらに移動速度が30%～41.18%（レベルに応じて）（+ 増加攻撃力100ごとに10%）増加する。さらに1.5秒間、行動妨害を無効にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Udyr/Wingborne Storm#description": {
    "source_sha1": "d8f7e37f10224fc7e3c8925c977b96bae07386c7",
-   "reason": "residual_markup"
+   "plain_sha1": "0c65dbbfc047a06e5048fd1a2805346a854e81b7",
+   "ja": "発動効果 -「Stance」：ウディアは「Storm Stance」になり、次の二回の通常攻撃（攻撃時効果）を強化して、周囲の敵に10～43.53（レベルに応じて）（+ APの35%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Udyr/Wingborne Storm#description3": {
    "source_sha1": "d4ed18ddcd85cc3abbfa4c60a974a57dcc135ede",
-   "reason": "residual_markup"
+   "plain_sha1": "1007d1024542f811b216f3aadb3c4c17389ba160",
+   "ja": "再発動 -「Awaken」：ウディアは吹雪があれば終わらせ、4秒間、自ら動ける氷の嵐を放ち、強化された攻撃は代わりにその嵐の中の敵にダメージを与えるようになる。嵐は吹雪と同じ効果を与えるが、一回ごとに対象の最大体力の1%～1.84%（レベルに応じて）（+ AP 100ごとに0.4375%）に等しい追加の魔法ダメージを与え、スロウが5%強くなる。モンスターに対しては、嵐の一回ごとのダメージは最低5～38.53（レベルに応じて）、上限10～54.71（レベルに応じて）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

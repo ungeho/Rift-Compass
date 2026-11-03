@@ -73,12 +73,14 @@
    "ja": "「捕食」のスタックごとにスキルの射程が2.5伸び（10スタックで最大25）、チョ＝ガスは増加体力・通常攻撃の射程の増加・サイズの増加を得る。上限は通常攻撃の射程75とサイズの100%増加。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Cho'Gath/Rupture#description": {
    "source_sha1": "b6efecd2ba2268576cd96086e09d4670b461aafb",
-   "reason": "residual_markup"
+   "plain_sha1": "e0b60870d9e455c4864010391d2edfa66dc5e10b",
+   "ja": "発動効果：チョ＝ガスは0.627秒（0.625秒を次のゲームのティックに切り上げた値）の遅れの後に指定地点を隆起させ、その範囲の視界を与えてから、範囲内の敵に魔法ダメージを与えて1秒間ノックアップさせ、その後1.5秒間60%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

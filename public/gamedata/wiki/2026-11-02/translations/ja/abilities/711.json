@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Vex/Doom 'n Gloom#description": {
    "source_sha1": "820b951f312e57e0338ec416a34120d6d3c733f4",
-   "plain_sha1": "5c555f3aaefa705ddde29cbb6e477cea6803d32c",
-   "ja": "自動効果 -「Doom」：一定時間ごとに、ヴェックスの次の基本スキルが強化され、命中した敵を0.75～1.5秒間（レベルに応じて）ひるませてフィアーを与え、その間60%～99%（ヴェックスからの距離に応じて）のスロウを与える。「ヤミとばし」で「Doom」が発動した場合、命中した敵は代わりに中心から逃げる。復活すると「Doom」のクールダウンはリセットされる。",
+   "plain_sha1": "452c76fef9c8fec36557ec01f081b86722e4b56c",
+   "ja": "自動効果 -「Doom」：一定時間ごとに、ヴェックスの次の基本スキルが強化され、命中した敵を0.75 / 1 / 1.25 / 1.5秒間（レベルに応じて）ひるませてフィアーを与え、その間60%～99%（ヴェックスからの距離に応じて）のスロウを与える。「ヤミとばし」で「Doom」が発動した場合、命中した敵は代わりに中心から逃げる。復活すると「Doom」のクールダウンはリセットされる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Vex/Doom 'n Gloom#description2": {
    "source_sha1": "b3d2f6415ccedf34518cf20a1a6bde900ad9ca54",
@@ -87,12 +87,14 @@
    "ja": "「影法師」の印を付けてから8秒以内にその対象のキルに関与すると、ヴェックスは0.5秒後から12秒以内にコストなしで再び「影法師」を使え、同じ効果を繰り返す。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Vex/Doom 'n Gloom#description3": {
    "source_sha1": "10112c142a0d43166a8289a24a9c6528361e34c0",
-   "reason": "residual_markup"
+   "plain_sha1": "a227841aaefc4bdd302a877b8aea3588ba77cde3",
+   "ja": "「Gloom」の起爆は40～162.94（レベルに応じて）（+ APの25%）の追加の魔法ダメージを与え、「Doom」のクールダウンの25%が戻る。チャンピオン以外に対しては、代わりに40% / 45% / 50% / 55% / 60%（レベルに応じて）のダメージを与え、「Doom」のクールダウンの10%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

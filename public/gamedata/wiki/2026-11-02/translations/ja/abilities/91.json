@@ -87,20 +87,28 @@
    "ja": "再発動：タロンはステルスを解いて刃を自身のもとへ集め、命中した敵に同じ物理ダメージを与える。通常攻撃か「ノクサスの刃」でステルスを解いた場合は、代わりに刃は対象のもとへ集まる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Talon/Blade's End#description2": {
    "source_sha1": "272d364928fad64651aec7a78b23626f8881b007",
-   "reason": "residual_markup"
+   "plain_sha1": "0ef72a14bf18f222b5f666d53dc6b341aaa41e86",
+   "ja": "「Wound」のスタックが3つ付いた敵へのタロンの次の通常攻撃（攻撃時効果）は強化され、すべてを消費して対象を出血させ、2秒かけて80～303.53（レベルに応じて）（+ 増加攻撃力の210%）の合計の物理ダメージを与える。この間、対象は「Wound」のスタックを得ない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Talon/Noxian Diplomacy#description": {
    "source_sha1": "d25406ec103e318c8a9049b76dd04bb30960c92b",
-   "reason": "residual_markup"
+   "plain_sha1": "f7907502ef53e5a8b51966386f6f9b13c079a41b",
+   "ja": "発動効果：タロンは対象の敵へダッシュし、到着時に刺して物理ダメージを与える。近距離で使うと、代わりに詠唱時間の間に対象へダッシュし、「ノクサスの刃」は（150% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになり、1秒以内の次の通常攻撃の射程が75増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Talon/Noxian Diplomacy#description2": {
    "source_sha1": "ac785297395267d87cb15c75ce79d89844a5c31b",
-   "reason": "residual_markup"
+   "plain_sha1": "c643289e5c47ceb799184e97498a27cfbba02658",
+   "ja": "「ノクサスの刃」で対象を倒すと、タロンは9～60.41（レベルに応じて）回復し、スキルのクールダウンが50%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

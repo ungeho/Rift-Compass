@@ -94,20 +94,28 @@
    "ja": "このスキルを使用するには、射程内に「Plasma」の影響を受けた敵チャンピオンが必要。「キラーヴォイド」はカイ＝サの通常攻撃タイマーをリセットする。カイ＝サはダッシュ中にどのスキルも使用できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Kai'Sa/Icathian Rain#description3": {
    "source_sha1": "bb48607ca4b691bfd11314ceddcda53d52da9916",
-   "reason": "residual_markup"
+   "plain_sha1": "ecca48ea5d7585a3456bfed98081398539f39a76",
+   "ja": "「Evolution」：強化にはアイテムからの攻撃力100～56（レベルに応じて）が必要。「イカシアの雨」は代わりに12発のミサイルを撃つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kai'Sa/Supercharge#description2": {
    "source_sha1": "f2cc3058365e7fd166efcd47091d74f6aab2bd42",
-   "reason": "residual_markup"
+   "plain_sha1": "ff1f8e564ed4fc3bb431b28a20af3bb679561594",
+   "ja": "溜め終わると、カイ＝サは4秒間攻撃速度が増加し、その間通常攻撃の攻撃モーションが6.44%短くなり、弾速が上がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kai'Sa/Supercharge#description4": {
    "source_sha1": "cdaaf07e9b9839f7798c8aa80c5c7346179429fa",
-   "reason": "residual_markup"
+   "plain_sha1": "5e60a3d807d95c234fbfc577d6e63e6a88293a04",
+   "ja": "「Evolution」：強化にはアイテムからの攻撃速度100%～70%（レベルに応じて）が必要。「スーパーチャージ」は詠唱時間の開始時に0.5秒間インビジブルを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

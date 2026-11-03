@@ -101,12 +101,14 @@
    "ja": "敵チャンピオンへの通常攻撃（攻撃時効果）か「捨て身切り」のたびに、「ラグナロク」の効果時間が2.5秒延び、延長は2.5秒が上限。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Olaf/Berserker Rage#description": {
    "source_sha1": "eba497c20539b3acde609ee3a1b5e4711b5c0481",
-   "reason": "residual_markup"
+   "plain_sha1": "a561f99dcdb34f3d7828764aa33cb8fac724eb5b",
+   "ja": "固有：オラフは、50%～107.84%（レベルに応じて）の攻撃速度の増加と8%～27.67%（レベルに応じて）のライフスティールのうち、0%～100%（減少体力に応じて）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

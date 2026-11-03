@@ -87,12 +87,14 @@
    "ja": "三発目ごとのミサイルは「Big One」になり、100%増加したダメージを与え、射程と爆発の範囲も広がる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Corki/Hextech Munitions#description2": {
    "source_sha1": "6cd228269d2f93fd1b3eb82bd4dbf014d36e79ed",
-   "reason": "residual_markup"
+   "plain_sha1": "997b7551a3d020c7abb33eaa014689c213986cea",
+   "ja": "「Runaan's Hurricane」の「Wind's Fury」の弾とすべての「Spellblade」の効果は、特別に「ヘクステック榴散弾」の恩恵を受け、軽減前のダメージの20%に等しい追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

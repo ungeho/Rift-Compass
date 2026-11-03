@@ -59,20 +59,28 @@
    "ja": "発動効果：ミス・フォーチュンは最大3秒間詠唱し、指定方向に何回かの弾の波を撃つ。各波は6発の弾が広がり、命中した敵に物理ダメージを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Miss Fortune/Love Tap#description": {
    "source_sha1": "f9f983248feda2d1f034c34e8d85c8199dd337e5",
-   "reason": "residual_markup"
+   "plain_sha1": "d6636716b0c11badcfad230917c5c0ad95571d2f",
+   "ja": "固有：ミス・フォーチュンの通常攻撃は強化されて印を付け、印は新しい敵を攻撃すると切れる。印の付いていなかった敵には、攻撃力の50%～100%（レベルに応じて）の追加の物理ダメージも与え、ミニオンには半分の攻撃力の25%～50%（レベルに応じて）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Miss Fortune/Double Up#description2": {
    "source_sha1": "ac1fd89370cb58595b01a62ae79d342519a6871c",
-   "reason": "residual_markup"
+   "plain_sha1": "280d85e0d02c1ae40592394221b5407ca2764cab",
+   "ja": "「ダブルアップ」の跳ね返りはクリティカルになりえ、（150% + 「インフィニティ・エッジ」 20%）のダメージを与える。「ダブルアップ」で主対象を倒すと、跳ね返りは必ずクリティカルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Miss Fortune/Bullet Time#description2": {
    "source_sha1": "d03519ef86a239ea400749140291bcdce64c38e7",
-   "reason": "residual_markup"
+   "plain_sha1": "6e2f386d006c09736ab6861ad55cbb7d939e26d6",
+   "ja": "各波はクリティカルになりえ、（145% + 「インフィニティ・エッジ」 18%）のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

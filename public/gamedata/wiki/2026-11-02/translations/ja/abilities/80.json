@@ -133,24 +133,39 @@
    "ja": "最初の詠唱をキャンセルすると、「偉大なる星路」は30秒のクールダウンに入る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Pantheon/Comet Spear#description6": {
    "source_sha1": "ad9c250936d08d0e4932cde9a0fda58d4f58f42e",
-   "reason": "residual_markup"
+   "plain_sha1": "f34be8dd598c35fe5b3edbfd6ff519533cd71562",
+   "ja": "「Mortal Will」：「彗星の槍」は20～265.88（レベルに応じて）（+ 増加攻撃力の115%）の追加の物理ダメージを与え、前述のダメージ低下の影響を受ける。再発動するとスタックを消費する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Pantheon/Shield Vault#description2": {
    "source_sha1": "692f5f147c03968939f945be0f74ee53c2f0977e",
-   "reason": "residual_markup"
+   "plain_sha1": "b71dd96f7bc4afd25a1517e913b970d4091e92d6",
+   "ja": "「Mortal Will」：パンテオンは4秒以内の次の通常攻撃を強化し、詠唱時間が0.375秒になって、短い間に対象を3回打ち、一回ごとに攻撃力の40%～55%（レベルに応じて）、合計最大で攻撃力の120%～170.29%（レベルに応じて）の物理ダメージを与える。各打撃はクリティカルの倍率の影響を受け、攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Pantheon/Aegis Assault#description": {
    "source_sha1": "ab05a9f54e0d480b46a887d75d86ff5ac9fca240",
-   "reason": "residual_markup"
+   "plain_sha1": "128ab8738d2e7b27cca049c55e1ca51669cc61db",
+   "ja": "発動効果：パンテオンは指定方向に盾を構えて1.5秒間詠唱し、その間、指定方向からの敵のタワー以外のダメージに対して無敵になる。さらに前方の扇形に連続で攻撃を繰り出し、0.125秒ごとに命中した敵に攻撃力の8.33…%の物理ダメージを与え、ミニオンには50%減り、合計は最大で攻撃力の100%の物理ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield はパンテオンが構える物の盾で、シールド（耐久値）ではない"
   },
   "Template:Data Pantheon/Aegis Assault#description4": {
    "source_sha1": "4eba08adc7721c56f136c301cf7df0d7c7cf68f2",
-   "reason": "residual_markup"
+   "plain_sha1": "0ea8e041832a45896a29165e881358f9e9fe56a5",
+   "ja": "「Mortal Will」：再発動の後、パンテオンは4秒間、5～32.94（レベルに応じて）（+ 増加体力の2.5%）の物理防御と魔法防御の増加を得て、1.5秒間移動速度が60%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -101,12 +101,14 @@
    "ja": "ヴァイがダッシュで突き抜けた敵は同じダメージを受け、0.25秒かけて350ユニット脇へ押しのけられ、0.75秒間スタンする。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Vi/Relentless Force#description": {
    "source_sha1": "1b327b2ae264cddbba1a6855768bcc89649147c3",
-   "reason": "residual_markup"
+   "plain_sha1": "c59fe085bd11d56237e520d5bcfdd017cb73668a",
+   "ja": "発動効果：ヴァイは6秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加して、対象の方向に衝撃を起こし、扇形の範囲の敵に修正された物理ダメージを与える。「無慈悲な連撃」は主対象に対してはクリティカルになりえ、攻撃力の（100% + 「インフィニティ・エッジ」 40%）の追加の物理ダメージを与える。副対象は同じダメージを受けるが、クリティカルを受けたものとは扱われない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

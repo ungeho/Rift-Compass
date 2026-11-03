@@ -13,17 +13,17 @@
  "entries": {
   "Template:Data Elise/Spider Queen#description": {
    "source_sha1": "8f85167facfa86c01b1a1dfcc5b926274742ba29",
-   "plain_sha1": "e355fe1da71329185dbd28d2b1906ece649f8b43",
-   "ja": "固有 -「Human Form」：エリスはスキルを敵に命中させるたびに、眠っている子蜘蛛を一匹得る。一回の発動につき一匹で、一度に2～5匹（「Human Form」のランクに応じて）まで蓄える。試合開始時と復活時に最大数の子蜘蛛を蓄えている。",
+   "plain_sha1": "e14d302e85e47398e2358d157ab41a7434117fe6",
+   "ja": "固有 -「Human Form」：エリスはスキルを敵に命中させるたびに、眠っている子蜘蛛を一匹得る。一回の発動につき一匹で、一度に2 / 3 / 4 / 5匹（「Human Form」のランクに応じて）まで蓄える。試合開始時と復活時に最大数の子蜘蛛を蓄えている。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Elise/Spider Queen#description2": {
    "source_sha1": "8c1ea25a84eb0004ed363bd0dbc6e32495d0e0c5",
-   "plain_sha1": "6738900e44321dff73892d66f6d94802e1b19e7d",
-   "ja": "固有 -「Spider Form」：エリスの通常攻撃は、攻撃時効果として14～44（「Spider Form」のランクに応じて）（+ APの15%）の追加の魔法ダメージを与え、6～12（「Spider Form」のランクに応じて）（+ APの8%）回復する。",
+   "plain_sha1": "b1486a4c1d94ef5fc5e1ca03f6bb390c7c3506d0",
+   "ja": "固有 -「Spider Form」：エリスの通常攻撃は、攻撃時効果として14 / 24 / 34 / 44（「Spider Form」のランクに応じて）（+ APの15%）の追加の魔法ダメージを与え、6 / 8 / 10 / 12（「Spider Form」のランクに応じて）（+ APの8%）回復する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Elise/Spider Queen#description3": {
    "source_sha1": "bdd8fd22164af24dd3cd7c9a9a2c9b8d3d1af0fb",
@@ -164,12 +164,14 @@
    "ja": "エリスは「蜘蛛形態」のランクを一つ持って始まり、レベル6・11・16で上げられる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Elise/Venomous Bite#description": {
    "source_sha1": "f215fcae14d258dfcce6fd7818c8f29543f46561",
-   "reason": "residual_markup"
+   "plain_sha1": "1558532bbe4c9663a5ac11a312e9206e708efcdc",
+   "ja": "発動効果：エリスは対象の敵に牙で飛びかかって噛みつき、魔法ダメージを与えて攻撃時効果を与え、詠唱時間の開始から0.528秒（0.5秒を次のゲームのティックに切り上げた値）その敵を可視化する。対象の体力の割合に応じたダメージは、モンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

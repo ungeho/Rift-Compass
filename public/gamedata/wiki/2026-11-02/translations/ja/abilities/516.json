@@ -129,12 +129,14 @@
    "ja": "通過のたびに対象に3秒間「Brittle」を与え、同じ敵には一度しか効かない。精霊は進みながら、軌道の周りの視界を一瞬与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Ornn/Living Forge#description3": {
    "source_sha1": "df56a35cb28f5861d5fed9f292e4d61b8da260f9",
-   "reason": "residual_markup"
+   "plain_sha1": "1251c39738fbc2c1c45b44270227df9558d69260",
+   "ja": "固有 -「Temper」：オーンは「ふいごの息」と「鍛冶神の呼び声」が当たった敵に「Brittle」を与える。「Brittle」を受けている敵へのオーンの通常攻撃（攻撃時効果）は強化され、0.4秒かけて敵を少しノックバックさせる。オーンと味方の移動不能の効果かサイレンスを「Brittle」の敵に与えると、効果を消費して対象の最大体力の9%～17.94%（オーンのレベルに応じて）に等しい追加の魔法ダメージ（モンスターには200～500〔「ふいごの息」のランクに応じて〕が上限）を与え、その行動妨害が（該当すれば）30%長く続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

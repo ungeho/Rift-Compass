@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Naafiri/We Are More#description": {
    "source_sha1": "f1c76b3c4bea978c46e7f24f8522d63f7d391a4f",
-   "plain_sha1": "fd7d89ba85975dc2f8ab2976e7f459da05324184",
-   "ja": "固有：一定時間ごとに、ナフィーリは一緒に戦う「Packmate」を呼び出す。「Packmate」は同時に2～5体（レベルに応じて）まで持てる。ゲーム開始時と復活時には、上限の数の「Packmate」を呼び出す。",
+   "plain_sha1": "e52f2ae1257bbe55da0ffc418bda001bdc87825f",
+   "ja": "固有：一定時間ごとに、ナフィーリは一緒に戦う「Packmate」を呼び出す。「Packmate」は同時に2 / 3 / 4 / 5体（レベルに応じて）まで持てる。ゲーム開始時と復活時には、上限の数の「Packmate」を呼び出す。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Naafiri/We Are More#description2": {
    "source_sha1": "fd9442bd1c14206c2c27c4d59b4ec4daeb60bcfa",

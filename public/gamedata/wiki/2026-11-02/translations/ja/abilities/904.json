@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Zaahen/Cultivation of War#description": {
    "source_sha1": "4ae2ffeb52a70d6c8a1c70d02b33a3a530fc016d",
-   "plain_sha1": "9ba3ad540c27a878cff867155db75c327fe307a9",
-   "ja": "固有：ザーヘンの通常攻撃とスキルでダメージを与えた敵チャンピオン一体ごとに、「Determination」のスタックを一つ得る。スタックは5秒間続き、発動のたびに更新され、最大12回まで重なる。効果時間の後、スタックは0.5秒ごとに1～5（経過秒数に応じて）ずつ切れる。",
+   "plain_sha1": "e64db53879b71bab2ac2e44182727c73b4ba7736",
+   "ja": "固有：ザーヘンの通常攻撃とスキルでダメージを与えた敵チャンピオン一体ごとに、「Determination」のスタックを一つ得る。スタックは5秒間続き、発動のたびに更新され、最大12回まで重なる。効果時間の後、スタックは0.5秒ごとに1 / 2 / 3 / 4 / 5（経過秒数に応じて）ずつ切れる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zaahen/The Darkin Glaive#description2": {
    "source_sha1": "4c0448d23cc65ddc5c603cfc361c37157db1dfd2",
@@ -94,16 +94,21 @@
    "ja": "詠唱時間の開始から、ザーヘンは行動できず、50%のダメージ軽減を得る。叩きつける前の遅れの間と、その後最大0.25秒間、これらの効果と移動系の効果を受けない状態を保つ。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Zaahen/Cultivation of War#description2": {
    "source_sha1": "411150dc78fea37ddf772d9c07613cc230820e26",
-   "reason": "residual_markup"
+   "plain_sha1": "34cc38c2cdfed1e0a21ab2d77027b04a7d300662",
+   "ja": "「Determination」：スタックごとに、ザーヘンは攻撃力の1.5%～2.95%（レベルに応じて）に等しい増加攻撃力を得る。最大スタックのとき、ザーヘンは「Determination」に満たされ、増加量が二倍の攻撃力の36%～70.87%（レベルに応じて）になる。一定時間ごとに、「Determination」が最大スタックの状態で致命的なダメージを受けると、効果時間が更新されて4秒間蘇生状態になり、無敵・対象指定不可・行動不能になる。さらに、効果時間の間に最大体力の30% / 45% / 60% / 75%（レベルに応じて）を回復する。その後復活し、「Determination」の効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zaahen/The Darkin Glaive#description": {
    "source_sha1": "a18b4cd9f645275f27547e07dc75d3c58a15a936",
-   "reason": "residual_markup"
+   "plain_sha1": "181c9446cf2bcf8e1c411f82db28151b502e988d",
+   "ja": "発動効果：ザーヘンは4秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が25増加する。攻撃開始時に対象を二回打つ。対象がチャンピオン・ミニオン・モンスターなら、自身も回復する。打撃は修正された物理ダメージを与え、ミニオンとモンスターに対しては回復が50%になる。各打撃は攻撃時効果を与え、攻撃力の（50% + 「インフィニティ・エッジ」 20%）の追加の物理ダメージでクリティカルになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

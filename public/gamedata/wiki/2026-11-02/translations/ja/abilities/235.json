@@ -69,10 +69,10 @@
   },
   "Template:Data Senna/Absolution#description4": {
    "source_sha1": "a5003c8440bb6bb4bba44df1d682055b0b8fbc4b",
-   "plain_sha1": "1922bd6ed2d20def1d14facf32c36c09eb278ccb",
-   "ja": "固有 -「Relic Cannon」：セナの通常攻撃は攻撃時効果として攻撃力の20%の追加の物理ダメージを与え、0.5秒間、対象の移動速度の10%～20%（レベルに応じて）に等しい移動速度の増加を得る。このダメージにはライフスティールが100%の効果で適用される。",
+   "plain_sha1": "d2f3bf2b4721d54a2d0e747cbfcad75f86e0c608",
+   "ja": "固有 -「Relic Cannon」：セナの通常攻撃は攻撃時効果として攻撃力の20%の追加の物理ダメージを与え、0.5秒間、対象の移動速度の10% / 15% / 20%（レベルに応じて）に等しい移動速度の増加を得る。このダメージにはライフスティールが100%の効果で適用される。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Senna/Piercing Darkness#description": {
    "source_sha1": "1c0a9bd7176e8c29d8f96caa2a19c60c30176197",

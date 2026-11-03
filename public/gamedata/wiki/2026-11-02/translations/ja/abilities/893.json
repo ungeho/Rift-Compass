@@ -94,16 +94,21 @@
    "ja": "オーロラが死ぬ、蘇生に入る、範囲から出る、または作ったときに範囲内にいなかった場合、裂け目は即座に閉じる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Aurora/Spirit Abjuration#description": {
    "source_sha1": "ee8aa44719578a2900da8a44220c5a3e5d565b29",
-   "reason": "residual_markup"
+   "plain_sha1": "1ed907f187a3b7d4c3356173b19b327bd36e1681",
+   "ja": "固有：オーロラのダメージを与える通常攻撃とスキルは、敵に4秒間「精霊の解放」のスタックを与え、付与のたびに更新され、最大3回まで重なる。対象への三つ目のスタックですべて消費し、対象の最大体力の1%（+ AP 100ごとに2.7%）に等しい追加の魔法ダメージを与える。モンスターに対しては100～270（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aurora/Spirit Abjuration#description2": {
    "source_sha1": "aee45df5d87eeec95cbbe53c7770fc7cda2d4c04",
-   "reason": "residual_markup"
+   "plain_sha1": "71289ed224f66a4745892904ff16c4d2deede447",
+   "ja": "チャンピオンからスタックを消費すると、オーロラはさらにその敵を祓い、対象から「Spirit」を解放し、「Spirit」は同じ時間オーロラについてくる。「Spirit」一体ごとに、オーロラは毎秒3～20（レベルに応じて）（+ APの2%）回復する。続けて祓うとさらに「Spirit」が解放され、すべての「Spirit」の時間が更新される。「Spirit」は同時に4体まで持て、一回の回復は最大12～80（レベルに応じて）（+ APの8%）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

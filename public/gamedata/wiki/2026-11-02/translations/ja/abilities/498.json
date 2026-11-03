@@ -87,20 +87,28 @@
    "ja": "「フェザーストーム」の間、ザヤは通常攻撃もスキルの使用もできないが、移動はできる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Xayah/Clean Cuts#description2": {
    "source_sha1": "063662a16ec1163092112dc933a94c4c50790d67",
-   "reason": "residual_markup"
+   "plain_sha1": "c2f976a4de08d58da939f043048e08409be52dbd",
+   "ja": "固有：ザヤのスキルの使用は「クリーンカット」のスタックを3得て、8秒間続き、使うたびに更新され、最大5回まで重なる。ザヤの通常攻撃は強化され、それぞれ攻撃開始時にスタックを一つ消費して代わりに羽を撃ち、主対象には元の攻撃のダメージを、命中したほかの敵には攻撃力の35% / 45% / 55%（レベルに応じて）の物理ダメージを与える。元の攻撃がクリティカルなら、副対象へのダメージも（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Xayah/Bladecaller#description": {
    "source_sha1": "8d786fc500f8076d80d8d5f6178b2e1b91698287",
-   "reason": "residual_markup"
+   "plain_sha1": "4148622be863c6f2fd0cb46ee5b1f22224ec5704",
+   "ja": "発動効果：ザヤは刺さっているすべての羽を呼び戻して自身の方へ飛ばし、それぞれ命中した敵に物理ダメージを与える。このダメージはクリティカル率に応じて0%～50%（+ 「インフィニティ・エッジ」 0%～20%）増加する。「ブレードコーラー」はミニオンに50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Xayah/Bladecaller#description2": {
    "source_sha1": "637706465778e73f5672ac804177657699bcd701",
-   "reason": "residual_markup"
+   "plain_sha1": "b55a01a63d81c472e22e012762716226866088cf",
+   "ja": "敵は羽一本から100%～10%（それまでに当たった羽の数に応じて）のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

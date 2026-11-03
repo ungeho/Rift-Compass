@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Yone/Way of the Hunter#description": {
    "source_sha1": "4ac0141aa18c9d7c078e416d0a97ecf46cf0e6b3",
-   "plain_sha1": "49588d2564929fe58bb870b95125f7b0adc56b31",
+   "plain_sha1": "ba4a45259924f0cb605c2e76001f803a03a5aeca",
    "ja": "固有 -「Intent」：ヨネの合計クリティカル率は、ほかのすべての要因からの分が二倍になる。さらに、100%を超えるクリティカル率1%ごとに、増加攻撃力0.5に変換される。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yone/Way of the Hunter#description3": {
    "source_sha1": "b74bf319dd484ea09293d6905d52558c5a5247f2",
@@ -108,20 +108,28 @@
    "ja": "引き寄せた時点で、スタンは早く終わる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Yone/Way of the Hunter#description2": {
    "source_sha1": "ddb5ab1d1131af00c93ec8a346b77a4d6537d6f9",
-   "reason": "residual_markup"
+   "plain_sha1": "7b538caebeb8983e2dffbe34829b90bb94074fef",
+   "ja": "ヨネのクリティカルは、攻撃力の（190% + 「インフィニティ・エッジ」 38%）の物理ダメージしか与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yone/Spirit Cleave#description": {
    "source_sha1": "587e8966406d5e1f67c3280d2803158cd143dcf9",
-   "reason": "residual_markup"
+   "plain_sha1": "e6b0e519d4cbbe5f9fee455a2927a988a07b6ef3",
+   "ja": "発動効果：ヨネは「Azakana Sword」で指定方向の扇形を切り払い、命中した敵に物理ダメージと魔法ダメージを等分に与える。合計の混合ダメージは、ミニオンには最低40～490（レベルに応じて）、モンスターには最大150～340（レベルに応じて）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yone/Spirit Cleave#description2": {
    "source_sha1": "d80e386e1f2ad22f761f93b3af1ddacd7175931c",
-   "reason": "residual_markup"
+   "plain_sha1": "331db521a07e5173e558ca21b1b77d8118f7e142",
+   "ja": "これが敵に当たると、ヨネは1.5秒間40～95.88（レベルに応じて）（+ 増加攻撃力の65%）のシールドを自身に付与し、チャンピオンに当たると100%、さらにチャンピオン一体ごとに50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -41,10 +41,10 @@
   },
   "Template:Data Ryze/Overload#description4": {
    "source_sha1": "a6a6b22fea7c42b18e9c3d127af3fbafcbdbcfbf",
-   "plain_sha1": "1941054d0d7a37775f78756d3fb450dacf4e5aad",
-   "ja": "「Flux」のボーナス：「オーバーロード」のダメージが10%～100%（「ポータルワープ」のランクに応じて）増加し、周囲の「Flux」状態の敵に広がる。",
+   "plain_sha1": "923016a8ee1889c16ec7309c35c5eff2b59578ae",
+   "ja": "「Flux」のボーナス：「オーバーロード」のダメージが10% / 40% / 70% / 100%（「ポータルワープ」のランクに応じて）増加し、周囲の「Flux」状態の敵に広がる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ryze/Rune Prison#description": {
    "source_sha1": "6218e7d49a8ffa046ecbd95156b12900438e1321",

@@ -129,16 +129,21 @@
    "ja": "この間、0.5秒ごとに周囲の敵に魔法ダメージを与え、毎秒「Fury」を5生む（最大75まで）。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Renekton/Ruthless Predator#description2": {
    "source_sha1": "97e5c9880936eeed48345d6cc117119c8f107b0c",
-   "reason": "residual_markup"
+   "plain_sha1": "d443f50f7acf6e5dcd0dadfdcacb3350c080cc99",
+   "ja": "「メッタ斬り」の一撃目はクリティカルになりえ、攻撃力の（100% + 「インフィニティ・エッジ」 40%）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Renekton/Ruthless Predator#description4": {
    "source_sha1": "3adbb1a0e7d9b419476e64c5f262a6a4f17e1e2e",
-   "reason": "residual_markup"
+   "plain_sha1": "baa5f5affdf6e65d010d91455fc33ca2ee24fbf5",
+   "ja": "「メッタ斬り」はレネクトンの通常攻撃タイマーをリセットする。「メッタ斬り」の通常と強化された攻撃の詠唱時間の後、レネクトンは0.528秒（0.525秒を次のゲームのティックに切り上げた値）の間、移動も「ミートカット」「スライス・アンド・ダイス」の使用もできない。「セベクの怒り」を使うと、この行動不能は早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -62,10 +62,10 @@
   },
   "Template:Data Ashe/Hawkshot#description": {
    "source_sha1": "58ecb30cb43fdb5779da9d6663d8eddd5d1e7e6b",
-   "plain_sha1": "94dd5c00a21ae413c985c80cd6bf36559cd8f426",
+   "plain_sha1": "b8d3a428bdfde643d2ff1ca5f3da514e55e69b4e",
    "ja": "発動効果：アッシュは指定地点に鷹の霊を送り、その進路で100ユニット進むごとに0.5秒間の視界を、目的地では5秒間の視界を与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ashe/Hawkshot#description2": {
    "source_sha1": "475a136f8d2e949a4947eb2c626301ced4460a3c",
@@ -80,16 +80,21 @@
    "ja": "主対象の周囲の敵は同じダメージを受け、「フロストショット」を受ける。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Ashe/Frost Shot#description": {
    "source_sha1": "94908e711c825aacc5d27cee412679e9fe77c349",
-   "reason": "residual_markup"
+   "plain_sha1": "b8046697a8a8fd2ac7191ee022ea0d2b517273fa",
+   "ja": "固有：アッシュの通常攻撃は、攻撃のダメージの0%～100%（+ 「インフィニティ・エッジ」 0%～40%）（クリティカル率に応じて）に等しい追加の物理ダメージを与える。クリティカルは追加のダメージを与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ashe/Enchanted Crystal Arrow#description": {
    "source_sha1": "12ca67668dd56d0be215d6e0ad50932b56e733a1",
-   "reason": "residual_markup"
+   "plain_sha1": "a3ef74992c164f6a9bd7e7e505a7e7fcc709525e",
+   "ja": "発動効果：アッシュは指定方向に巨大な氷の矢を放ち、矢が飛ぶ範囲の視界を一瞬与える。矢は敵チャンピオンに当たると砕け、その敵に魔法ダメージを与えて、1～3.5秒間（飛んだ距離に応じて）スタンさせ、周囲の範囲の視界を1秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

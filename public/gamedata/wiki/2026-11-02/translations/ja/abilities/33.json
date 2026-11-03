@@ -87,12 +87,14 @@
    "ja": "「どーんどーん」のダメージは建物にも及び、タワーには二倍になる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Rammus/Powerball#description": {
    "source_sha1": "de1abc0a88a8cff4e521b08c1bb8df6326ebac2b",
-   "reason": "residual_markup"
+   "plain_sha1": "1c43473d0ad83fdbbc4c51e6c73e2b56b283963c",
+   "ja": "発動効果：ラムスは加速する球になり、最大6秒間詠唱して、効果時間の間毎秒25%～40.83%（レベルに応じて）の移動速度（合計に対する割合）の増加を得て、最大150%～245%（レベルに応じて）。「ころころ」は効果時間中1秒後から再発動でき、その後や「かたくなる」を使ったときは自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

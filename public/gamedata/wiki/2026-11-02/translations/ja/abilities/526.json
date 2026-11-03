@@ -122,16 +122,21 @@
    "ja": "発動効果：レルは磁力の怒りを爆発させ、周囲の敵を内側に引き寄せて、その後2秒間自身の周りに重力場を作る。重力場は0.25秒ごとに周囲の敵に魔法ダメージを与えて、自身の方へ引きずる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Rell/Break the Mold#description4": {
    "source_sha1": "df99e5e698ca557c6a8035a828591a6786b29d77",
-   "reason": "residual_markup"
+   "plain_sha1": "02888a697d713fc4c89112a7ce1e928d92dd60ec",
+   "ja": "「革新の鬨」は、対象の物理防御と魔法防御を最低1.5～3.18（レベルに応じて）低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rell/Full Tilt#description2": {
    "source_sha1": "6a5196bf7705491337fdfc9933b458973f9b3421",
-   "reason": "residual_markup"
+   "plain_sha1": "d124065d53d68d4d9fa871c9b0b0fa1e04b881cd",
+   "ja": "さらに、5秒以内のレルの次の通常攻撃か「破鋼撃」は対象の周囲に爆発を起こし、追加の魔法ダメージを与える。モンスターと建物に対しては150～317.65（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -90,10 +90,10 @@
   },
   "Template:Data Illaoi/Test of Spirit#description3": {
    "source_sha1": "f4919c79bed5ee45a6620ed2d7129e96323d7f11",
-   "plain_sha1": "2e4cd4068e349ad84d044c9177b37c60e9a4fd3a",
-   "ja": "「Spirit」が倒されるか対象がつながりの範囲から出ると、つながりは切れ、対象は4秒間「Vessel」の印が付き、つながりが戻ってきた時点で1.5秒間80%のスロウを受ける。各触手は4.5～3.5秒（レベルに応じて）に一度、最も近い「Vessel」か「Spirit」（後者を優先）を自動で攻撃する。",
+   "plain_sha1": "b90520a865aa929a28418ece6e10ff46f6482604",
+   "ja": "「Spirit」が倒されるか対象がつながりの範囲から出ると、つながりは切れ、対象は4秒間「Vessel」の印が付き、つながりが戻ってきた時点で1.5秒間80%のスロウを受ける。各触手は4.5 / 4 / 3.5秒（レベルに応じて）に一度、最も近い「Vessel」か「Spirit」（後者を優先）を自動で攻撃する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Illaoi/Test of Spirit#description4": {
    "source_sha1": "6b6f8cfc1661d98785494708ec07421042606f6a",
@@ -129,12 +129,14 @@
    "ja": "これは「触手の鉄槌」による触手の攻撃には影響しない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Illaoi/Prophet of an Elder God#description2": {
    "source_sha1": "22c26e15d305ef22e8b263d384bfe6a2148f7bdf",
-   "reason": "residual_markup"
+   "plain_sha1": "28e2cdca032911516e80ed1f7af29e54ab678be3",
+   "ja": "触手はイラオイのスキルで攻撃を指示され、当たったすべての敵に9～180（レベルに応じて）（+ 攻撃力の110%）（+ APの40%）の物理ダメージを与え、このダメージは0%～30%（「触手の鉄槌」のランクに応じて）増加する。各敵は、直近0.66秒に受けた叩きつけ一回ごとに叩きつけのダメージが個別に50%減り、最大で75%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

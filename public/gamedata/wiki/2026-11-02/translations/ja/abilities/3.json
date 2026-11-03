@@ -34,17 +34,17 @@
   },
   "Template:Data Galio/Winds of War#description2": {
    "source_sha1": "459e47a5c1571a2864e8dd9482ae4856004ede20",
-   "plain_sha1": "ee189650514c2cadd7e109f732cabfe3893bd594",
+   "plain_sha1": "0bfd3523efeb41da30513534000a421832fee53d",
    "ja": "弾が合わさると竜巻になって2秒間残り、ゆっくり前進しながら、範囲内の敵に0.5秒ごとに対象の最大体力の2%（+ AP 100ごとに1%）に等しい魔法ダメージを与える。モンスターへは1回150が上限。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Galio/Shield of Durand#description": {
    "source_sha1": "60fa5dcce7b9c866322a42abb5120f0bc70b6d4c",
-   "plain_sha1": "1c909fd56534bf4ff3269b68f9517da457ea578b",
-   "ja": "自動効果：ガリオは「Anti-Magic Bulwark」を得て、ダメージを受けない状態が12～8秒（レベルに応じて）続くと回復する。「Anti-Magic Bulwark」：魔法ダメージを吸収するシールドを得る。",
+   "plain_sha1": "27d1ce4e910c6fc1105974142ef2cbb83b5ceb41",
+   "ja": "自動効果：ガリオは「Anti-Magic Bulwark」を得て、ダメージを受けない状態が12 / 10 / 8秒（レベルに応じて）続くと回復する。「Anti-Magic Bulwark」：魔法ダメージを吸収するシールドを得る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Galio/Shield of Durand#description3": {
    "source_sha1": "0ae3eeca6f573011d3a5338108ab907af1cfe03f",
@@ -101,12 +101,14 @@
    "ja": "1.25秒詠唱した後、残りの時間は行動妨害を無効にして対象指定不可になり、0.8秒間空中に跳び上がってから、0.2秒かけて目的地へダッシュする。その後着地して再び対象指定可能になり、着地時に周囲のすべての敵に魔法ダメージを与えて、0.75秒かけて100ユニットノックバックさせ、0.5秒間その場にとどまる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Galio/Colossal Smash#description3": {
    "source_sha1": "0cfeae3d391f8d88b237709fadf8237e6bc29c05",
-   "reason": "residual_markup"
+   "plain_sha1": "d7742f2e8bce8c254c16b72d5e35bf1d907a3c2e",
+   "ja": "「巨像の一撃」の攻撃力の係数に応じたダメージはクリティカルになりえ、命中したすべての対象に（200% + 「インフィニティ・エッジ」 40%）のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

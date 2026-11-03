@@ -20,17 +20,17 @@
   },
   "Template:Data Jhin/Whisper#description2": {
    "source_sha1": "b153c4fc745a9abb5e66ede295619c3c1dcb4605",
-   "plain_sha1": "975aa71f1b60c67923e1d6bbeee54971950fe05a",
-   "ja": "ジンの最後の弾の攻撃は攻撃モーションが中断されず、建物に対しても常にクリティカルになり、対象の減少体力の15%～25%（レベルに応じて）に等しい追加の物理ダメージを与える。対象の体力に応じたダメージは、モンスターに対しては800が上限。",
+   "plain_sha1": "f7f83b954479c7cc1a03e1a19e9b6d2b8b140de1",
+   "ja": "ジンの最後の弾の攻撃は攻撃モーションが中断されず、建物に対しても常にクリティカルになり、対象の減少体力の15% / 20% / 25%（レベルに応じて）に等しい追加の物理ダメージを与える。対象の体力に応じたダメージは、モンスターに対しては800が上限。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Jhin/Whisper#description3": {
    "source_sha1": "6912465d5eb3a01017dd76ed407db7bc6ed7c39a",
-   "plain_sha1": "9c9f2938f39f23e9519039402e8864838db8e862",
+   "plain_sha1": "98f38c4bb0af80de3e94faa7e5fe345d41dc65c1",
    "ja": "固有 -「Every Moment Matters」：ジンは攻撃力の4%～44%（レベルに応じて）（+ クリティカル率1%ごとに0.35%）（+ 攻撃速度の増加1%ごとに0.3%）に等しい増加攻撃力を得る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Jhin/Whisper#description4": {
    "source_sha1": "2371860d00f373cbc23be105db99149062cf0de7",
@@ -122,12 +122,14 @@
    "ja": "再発動：詠唱時間の0.2秒後、ジンは指定方向に弾を撃ち、弾は0.5秒間弾道の周囲の視界を与えながら、命中した敵に物理ダメージ（対象の減少体力に応じて0%～300%増加）を与える。弾は敵チャンピオンに当たると止まり、0.5秒間80%のスロウを与えて、2秒間可視化する。各発動には1秒の固定のクールダウンがある。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Jhin/Curtain Call#description3": {
    "source_sha1": "3a182369a97ad4b91612c97d8a9aeb71aae9a0cb",
-   "reason": "residual_markup"
+   "plain_sha1": "b3f734e369295715e44fbbc1a14db0e81d90a266",
+   "ja": "四発目の弾は（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

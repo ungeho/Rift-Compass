@@ -20,10 +20,10 @@
   },
   "Template:Data Samira/Daredevil Impulse#description2": {
    "source_sha1": "b56c5e307ff5be54ce9c565ac68f0730b2f3905d",
-   "plain_sha1": "9539e380b0e19fcd475239b09291f6ea7d07c5a7",
-   "ja": "「Style」：スタックごとに移動速度が2.75%～3.5%（レベルに応じて）増加し、最大16.5%～21%（レベルに応じて）。最大スタックで「インフェルノトリガー」を使えるようになる。",
+   "plain_sha1": "99b740e5f43620e86009fc9ec082c6a23d9bfebe",
+   "ja": "「Style」：スタックごとに移動速度が2.75% / 3% / 3.25% / 3.5%（レベルに応じて）増加し、最大16.5% / 18% / 19.5% / 21%（レベルに応じて）。最大スタックで「インフェルノトリガー」を使えるようになる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Samira/Daredevil Impulse#description4": {
    "source_sha1": "6282f66fd5581a17175ff821ee8a487bb227d439",
@@ -122,20 +122,28 @@
    "ja": "「インフェルノトリガー」の間、サミーラは通常攻撃も「フレア」「ブレードワール」の使用もできないが、移動はできる。サミーラがスキルの使用を妨げる行動妨害か通常攻撃の封印を受けると、「インフェルノトリガー」は早く終わる。サミーラが通常攻撃を封じられている間は「インフェルノトリガー」を使えない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Samira/Daredevil Impulse#description3": {
    "source_sha1": "8802fc1d1d5d929a63a6a52a6c5bd0a226a30de0",
-   "reason": "residual_markup"
+   "plain_sha1": "5025653e4b08546d057ea6a76fa7f92ac8b41ee6",
+   "ja": "固有：200ユニット以内の対象へのサミーラの通常攻撃は剣で行い、飛翔物ではなくなる。剣の攻撃、「ブレードワール」「ワイルドラッシュ」、「フレア」の斬撃と爆薬は、2～21（レベルに応じて）（+ 攻撃力の3.5%～11.32%〔レベルに応じて〕）の追加の魔法ダメージを与え、対象の減少体力に応じて0%～100%増加し、最大4～42（レベルに応じて）（+ 攻撃力の7%～22.65%〔レベルに応じて〕）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Samira/Flair#description4": {
    "source_sha1": "26d0383875106ee13b7746c9604f46de06de1a3a",
-   "reason": "residual_markup"
+   "plain_sha1": "7f119ebc1373a8a092aef98a25e09b9632d74966",
+   "ja": "「フレア」は（150% + 「インフィニティ・エッジ」 20%）のダメージでクリティカルになりえ、ライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Samira/Inferno Trigger#description": {
    "source_sha1": "95ae8e3e8e7480a75146df3746cccf533b3f22d9",
-   "reason": "residual_markup"
+   "plain_sha1": "670deef148d0883cf70bdc81db6edf5051e345b7",
+   "ja": "発動効果：サミーラは2.277秒（2.25秒を次のゲームのティックに切り上げた値）の間、弾を乱射し、移動速度が30%低下して、2.013秒（2秒を次のゲームのティックに切り上げた値）かけて、0.2秒間隔の不規則なタイミングで周囲の敵をすばやく撃ち（敵一体につき最大10回）、一発ごとに物理ダメージを与える。ミニオンには75%減る。このダメージはクリティカルの倍率の影響を受け、ライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

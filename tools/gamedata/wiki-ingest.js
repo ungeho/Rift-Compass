@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // 英語 LoL Wiki の網羅的な取り込み CLI（取得の条件は wiki.js の冒頭を参照）
 //
-//   node tools/gamedata/wiki-ingest.js harvest [--cache <dir>] [--only <分野,...>]
+//   node tools/gamedata/wiki-ingest.js harvest [--cache <dir>] [--only <分野,...>] [--snapshot <取得日>]
 //
 // 出力：public/gamedata/wiki/<取得日>/（分野ごとのファイルと coverage.json）。古い取得日のものは消さない。
 // 対象のページは Wiki 自身のデータ（Module:ChampionData の技名、Module:ItemData/data/index など）と、
@@ -30,22 +30,68 @@ const ARTICLE_SEEDS = ["Champion statistic", "Attack speed", "Basic attack", "Ba
   "Bounty", "Experience", "Death timer", "Respawn timer", "Minion aggro", "Turret aggro", "Jungle", "Epic monster", "Elemental Drake", "Smite", "Ward", "Recall", "Teleport", "Base"];
 
 /** 説明の項目（description・description2…・blurb）を読める英語にし、解けない記法が残ったかを記録する（翻訳の原文になる）*/
-function describeFields(params) {
+function describeFields(params, ctx) {
   const out = {};
   for (const [k, v] of Object.entries(params || {})) {
     if (!/^(description\d*|blurb\d*)$/.test(k) || !v) continue;
-    const plain = W.plainText(v);
+    // レベル18を超える pp の値の記録（表示の英文とは別。level_notes）
+    const levelNotes = [];
+    const plain = W.plainText(v, { ...(ctx || {}), levelNotes });
     // source_sha1：Wiki の原文（記法つき）、plain_sha1：訳の対象にした英文（記法を簡略化したもの）。
     // 解析の修正で英文だけが変わることがあるので、訳は両方が一致するときだけ有効にする（tools/gamedata/translate.js）
     const sha1 = (x) => require("crypto").createHash("sha1").update(x).digest("hex");
-    out[k] = { plain, residual: W.hasResidual(plain), source_sha1: sha1(v), plain_sha1: sha1(plain) };
+    out[k] = { plain, residual: W.hasResidual(plain), source_sha1: sha1(v), plain_sha1: sha1(plain), ...(levelNotes.length ? { level_notes: levelNotes } : {}) };
   }
   return out;
 }
 
-async function harvest({ cache, only }) {
+/**
+ * 説明の文の記法を Wiki と同じ値で解くための材料（W.plainText の ctx）。
+ * 取得済みのキャッシュだけを読み、ここで新しく取得はしない（キャッシュにないものは解けない記法のまま残す）
+ */
+function textContext(cache, champions) {
+  const crypto = require("crypto");
+  const cached = (title) => {
+    const f = cache && path.join(cache, crypto.createHash("sha1").update(title).digest("hex") + ".json");
+    if (!f || !fs.existsSync(f)) return null;
+    const j = readJson(f);
+    return j.status === 200 ? j : null;
+  };
+  // Module:ChampionData/getter の既定値（データにないときに表示される値）
+  const CCD_DEFAULTS = { crit_base: 200, acquisition_radius: 750, gameplay_radius: 65 };
+  const ccd = (champ, key) => {
+    const c = champions && champions[champ];
+    if (!c || !key) return undefined;
+    const v = c.stats && key in c.stats ? c.stats[key] : c[key];
+    return v ?? CCD_DEFAULTS[key];
+  };
+  const itemCache = new Map();
+  const cid = (item, key) => {
+    if (!item || !key) return undefined;
+    if (!itemCache.has(item)) {
+      const r = cached(`Module:ItemData/data/${item}`);
+      let data = null;
+      try { data = r ? W.parseLuaChunk(r.text).value : null; } catch { data = null; }
+      itemCache.set(item, data);
+    }
+    const d = itemCache.get(item);
+    if (!d) return undefined;
+    return key in d ? d[key] : d.stats ? d.stats[key] : undefined;
+  };
+  const dataField = (title, field) => {
+    // ページ名の _ は空白と同じ（Tip data/Forced_action）
+    const r = cached(title.replace(/_/g, " "));
+    const v = r ? W.dataTemplateParams(r.text).params[field] : null;
+    // 呼び出した側の本文と同じく、注釈と画像のリンクを先に取り除く
+    return v == null ? null : v.replace(/<!--[\s\S]*?-->/g, "").replace(/\[\[(File|Image):[^\[\]]*\]\]/gi, "");
+  };
+  return (pageText) => ({ vars: pageText ? W.pageVars(pageText) : {}, ccd, cid, dataField });
+}
+
+async function harvest({ cache, only, snapshot }) {
   const want = (d) => !only || only.includes(d);
-  const snap = today();
+  // 取得日（--snapshot で既存の取得日に書き直せる。キャッシュから解析だけをやり直すとき、日付が変わって別の取得日を作らないように）
+  const snap = snapshot || today();
   const out = path.join(OUT_BASE, snap);
   const coverage = {};
   const src = (r) => ({ title: r.title, url: r.url, status: r.status, last_modified: r.last_modified, fetched_at: r.fetched_at });
@@ -54,6 +100,8 @@ async function harvest({ cache, only }) {
   // --- 全チャンピオンのスキル（Template:Data <チャンピオン>/<技>）---
   const champMod = await W.fetchRaw("Module:ChampionData/data", cache);
   const champions = L.parseLuaTable(champMod.text);
+  // 説明の文の記法を解く材料（キャッシュだけを読む）
+  const ctxOf = textContext(cache, champions);
   const manifest = readJson(path.join(ROOT, "public/gamedata/manifest.json"));
   const ddv = manifest.current.ddragon;
   const ddIndex = readJson(path.join(ROOT, `public/gamedata/ddragon/${ddv}/index.json`)).champions;
@@ -138,7 +186,7 @@ async function harvest({ cache, only }) {
         if (rankNote) cov.rank_count_differs = (cov.rank_count_differs || 0) + 1;
         // ダメージ計算に使えるかの段階を、leveling の行ごとに付ける
         for (const l of s.leveling) { l.calc = W.calcInfo(l, params.damagetype); cov.calc = cov.calc || {}; cov.calc[l.calc.stage] = (cov.calc[l.calc.stage] || 0) + 1; }
-        const text = describeFields(params);
+        const text = describeFields(params, ctxOf(r.text));
         for (const v of Object.values(text)) { cov.text_fields = (cov.text_fields || 0) + 1; if (v.residual) cov.text_residual = (cov.text_residual || 0) + 1; }
         templates.push({ ...t, source: src(r), params, ...(Object.keys(vars).length ? { vars } : {}), text, parsed: s.parsed, leveling: s.leveling, unparsed: s.unparsed, ...(compare ? { compare } : {}), ...(rankNote ? { rank_note: rankNote } : {}) });
       }
@@ -167,8 +215,34 @@ async function harvest({ cache, only }) {
         if (effects) cov.unparsed_reasons.effect_text = (cov.unparsed_reasons.effect_text || 0) + effects;
         if (data.modes && data.modes["classic sr 5v5"]) cov.sr_items++; else cov.mode_only_items++;
         // 効果の文は、読める英語にしたものも保存する（原文は data.effects に残る）
-        const effectText = Object.fromEntries(Object.entries(data.effects || {}).map(([k, e]) => { const plain = W.plainText(e && e.description ? e.description : ""); return [k, { name: e && e.name ? W.plainText(e.name) : null, plain, residual: W.hasResidual(plain) }]; }));
-        items.push({ name, source: src(r), data, effect_text: effectText });
+        // source_sha1・plain_sha1 は訳の更新の検知に使う（スキルの説明と同じ。tools/gamedata/translate.js）
+        const sha1 = (x) => require("crypto").createHash("sha1").update(x).digest("hex");
+        // 1つの効果で決めた変数（#vardefineecho）を別の効果が使うことがある（Hollow Radiance）。アイテムの全効果の変数を渡す
+        const itemCtx = ctxOf(Object.values(data.effects || {}).map((e) => (e && e.description) || "").join("\n"));
+        const textOf = (raw, extra) => {
+          const levelNotes = [];
+          const plain = W.plainText(raw, { ...itemCtx, levelNotes });
+          return { ...extra, plain, residual: W.hasResidual(plain), source_sha1: sha1(raw), plain_sha1: sha1(plain), ...(levelNotes.length ? { level_notes: levelNotes } : {}) };
+        };
+        const effectText = {};
+        for (const [k, e] of Object.entries(data.effects || {})) {
+          if (typeof e === "string") {
+            // "=>アイテム名" は別のアイテムの同じ効果を参照する（getter の get と同じ）。文字列だけの効果（消費アイテムの効果など）は、その文字列が効果の文
+            if (e.startsWith("=>")) effectText[k] = { name: null, plain: "", residual: false, source_sha1: sha1(""), plain_sha1: sha1(""), ref: e.slice(2) };
+            else effectText[k] = textOf(e, { name: null });
+            continue;
+          }
+          // 効果の構造（Module:ItemData の effects の項目）：固有（unique）・クールダウン（cd）・再チャージの時間（recharge）・チャージ数（charges）・射程（range）・範囲（radius）。値は読める文にしたもの
+          const meta = {};
+          if (e && e.unique === true) meta.unique = true;
+          for (const f of ["cd", "recharge", "charges", "range", "radius"]) if (e && e[f] !== undefined && e[f] !== "") meta[f] = W.plainText(String(e[f]), itemCtx);
+          effectText[k] = textOf((e && e.description) || "", { name: e && e.name ? W.plainText(e.name) : null, ...(Object.keys(meta).length ? { meta } : {}) });
+          // 効果の2つ目以降の段落（description2〜5。Module:ItemData/getter の compile_effect は改行でつなげて表示する）
+          for (const d of ["description2", "description3", "description4", "description5"]) if (e && typeof e[d] === "string" && e[d]) effectText[`${k}.${d}`] = textOf(e[d], { name: null, part_of: k });
+        }
+        // 制限の文（getter の p.limit）。同時に持てる数のグループ（getter の p.itemlimit）はすべてのアイテムを読んでから決める
+        const limitRaw = W.itemLimitText(data);
+        items.push({ name, source: src(r), data, effect_text: effectText, ...(limitRaw ? { limit_text: textOf(limitRaw, {}) } : {}) });
       } catch (e) {
         cov.unparsed_fields++;
         cov.unparsed_reasons.lua_parse_error = (cov.unparsed_reasons.lua_parse_error || 0) + 1;
@@ -176,7 +250,22 @@ async function harvest({ cache, only }) {
       }
     }
     log("items done", cov.fetched);
+    // 同時に持てる数の制限（Module:ItemData/getter の p.itemlimit・Template:Item limit を写したもの）
+    const byName = new Map(items.filter((x) => x.data).map((x) => [x.name, x.data]));
+    for (const x of items) if (x.data) x.limit_groups = W.itemLimitGroups(x.name, x.data, byName);
     writeJson(path.join(out, "items.json"), { license: W.LICENSE, index: src(idx), items });
+    // 固有効果の重複のルール（Named item effect の表の、効果の名前とアイテムの名前だけ。説明の文は保存しない）と、その出典
+    const ruleSources = {};
+    for (const t of ["Named item effect", "Item", "Template:Item limit", "Module:ItemData/getter"]) ruleSources[t] = await W.fetchRaw(t, cache);
+    const nie = ruleSources["Named item effect"];
+    const outdated = nie.status === 200 ? (/\{\{Outdated if new patch\|([^}|]+)/.exec(nie.text) || [])[1] || null : null;
+    writeJson(path.join(out, "item_rules.json"), {
+      license: W.LICENSE,
+      note: "効果の名前と、その効果を持つアイテムの名前だけを保存（Named item effect の表）。重複のルールの説明は Rift Compass が原典を要約したもの",
+      sources: Object.fromEntries(Object.entries(ruleSources).map(([t, r]) => [t, src(r)])),
+      named_effects_outdated_if_new_patch: outdated,
+      named_effects: nie.status === 200 ? W.parseNamedItemEffects(nie.text) : [],
+    });
     coverage.items = cov;
   }
 
@@ -198,11 +287,52 @@ async function harvest({ cache, only }) {
       cov.structured_fields += Object.keys(s.parsed).length + ["path", "slot"].filter((k) => params[k]).length;
       cov.unparsed_fields += s.unparsed.length;
       for (const u of s.unparsed) cov.unparsed_reasons[u.reason] = (cov.unparsed_reasons[u.reason] || 0) + 1;
-      runes.push({ ...x, source: src(r), params, text: describeFields(params), parsed: s.parsed, unparsed: s.unparsed });
+      runes.push({ ...x, source: src(r), params, text: describeFields(params, ctxOf(r.text)), parsed: s.parsed, unparsed: s.unparsed });
     }
     log("runes done", cov.fetched);
     writeJson(path.join(out, "runes.json"), { license: W.LICENSE, runes });
     coverage.runes = cov;
+  }
+
+  // --- ゲームシステムの用語の定義（Template:Tip data/<用語>）---
+  // Wiki の本文の {{tip|…}} が表示する定義。行動妨害は「説明・中断・効果時間の短縮・無効・解除」に分かれている。
+  // 対象：Module:GlossaryData の用語（行動妨害・キーワード・仕組み・ワード）と、説明の文でよく使われる用語。記事の本文は保存しない
+  if (want("tips")) {
+    const gl = await W.fetchRaw("Module:GlossaryData/data", cache);
+    let glossary = {};
+    try { glossary = W.parseLuaChunk(gl.text).value || {}; } catch { glossary = {}; }
+    const fromGlossary = Object.entries(glossary).filter(([, v]) => v && ["disable", "keyword", "mechanic", "ward"].includes(v.type)).map(([k]) => k);
+    const EXTRA = ["Cc-immune", "Slow resist", "Slow-immune", "Unit-targeted", "Projectile", "Homing projectile destruction", "Stealth", "Reveal", "Channel", "Lockout", "Cast-inhibiting crowd control", "Execute", "Life steal", "Omnivamp", "Armor penetration", "Lethality", "Magic penetration", "Ability haste", "Heal and shield power", "Attack speed", "Movement speed", "Basic attack", "Cooldown", "Proc damage"];
+    const titleOf = (k) => { const n = k.replace(/\s*\(.*\)\s*$/, ""); return `Template:Tip data/${n.charAt(0).toUpperCase()}${n.slice(1)}`; };
+    const names = [...new Set([...fromGlossary.map(titleOf), ...EXTRA.map(titleOf)])];
+    const cov = { label_ja: "ゲームシステムの用語の定義", target_total: names.length, target_basis: "Module:GlossaryData の行動妨害・キーワード・仕組み・ワードの用語と、説明の文で使われる用語（Template:Tip data/<用語>）", discovered: names.length, fetched: 0, not_found: 0, failed: 0, structured_fields: 0, unparsed_fields: 0, unparsed_reasons: {}, text_fields: 0, text_residual: 0 };
+    const tips = [];
+    const sha1 = (x) => require("crypto").createHash("sha1").update(x).digest("hex");
+    // 先にすべて取得してから解く（定義が別の用語の定義を参照する：{{Tip data/Stun|pst2|reduction}}）
+    const fetched = [];
+    for (const title of names) fetched.push([title, await W.fetchRaw(title, cache)]);
+    for (const [title, r] of fetched) {
+      if (r.status !== 200) { r.status === 404 ? cov.not_found++ : cov.failed++; continue; }
+      const red = /^\s*#REDIRECT\s*\[\[([^\]]+)\]\]/i.exec(r.text);
+      if (red) { cov.not_found++; cov.unparsed_reasons.redirect = (cov.unparsed_reasons.redirect || 0) + 1; continue; }
+      cov.fetched++;
+      const params = W.dataTemplateParams(r.text).params || {};
+      const ctx = ctxOf(r.text);
+      const text = {};
+      for (const f of ["description", "description2", "description3", "description4", "interrupts", "reduction", "resist", "removal"]) {
+        if (!params[f]) continue;
+        const plain = W.plainText(params[f], ctx);
+        if (!plain) continue;
+        text[f] = { plain, residual: W.hasResidual(plain), source_sha1: sha1(params[f]), plain_sha1: sha1(plain) };
+        cov.text_fields++;
+        if (text[f].residual) cov.text_residual++;
+      }
+      const name = title.replace("Template:Tip data/", "");
+      tips.push({ name, type: params.type ? W.plainText(params.type) : null, source: src(r), text });
+    }
+    log("tips done", cov.fetched);
+    writeJson(path.join(out, "tips.json"), { license: W.LICENSE, tips });
+    coverage.tips = cov;
   }
 
   // --- Lua のデータモジュール（サモナースペル・モード・用語・飛翔体・ダメージ）---
@@ -365,7 +495,7 @@ async function harvest({ cache, only }) {
 async function main() {
   const [cmd, ...args] = process.argv.slice(2);
   const opt = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : null; };
-  if (cmd === "harvest") return harvest({ cache: opt("--cache") || W.defaultCache(), only: opt("--only") ? opt("--only").split(",") : null });
+  if (cmd === "harvest") return harvest({ cache: opt("--cache") || W.defaultCache(), only: opt("--only") ? opt("--only").split(",") : null, snapshot: opt("--snapshot") });
   console.log(fs.readFileSync(__filename, "utf8").split("\n").slice(1, 8).join("\n"));
   process.exitCode = 1;
 }

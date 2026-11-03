@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Gangplank/Trial by Fire#description": {
    "source_sha1": "85e59f9ee8f3a589031c6ac6fb54576f0c91e522",
-   "plain_sha1": "9cb6756e913d73a6e2c8c70bae97da8f72057580",
+   "plain_sha1": "bb520456b970e679e41b87a6da46b72a684433e1",
    "ja": "固有：一定時間ごとに、ガングプランクは次の通常攻撃を強化して対象に火をつけ、2.5秒かけて50～250（レベルに応じて）（+ 増加攻撃力の100%）の追加の確定ダメージを与える。タワーには50%のダメージを与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Gangplank/Trial by Fire#description2": {
    "source_sha1": "a14647f1247cc3743677c7c9f7a80b62de0cf65b",
@@ -62,10 +62,10 @@
   },
   "Template:Data Gangplank/Powder Keg#description": {
    "source_sha1": "89f01be9ecea4f54e5b25ae8bb95d8e0a2978821",
-   "plain_sha1": "e079246779c0633ae2f3683aa9f342d32e2ddc52",
-   "ja": "発動効果：ガングプランクはチャージを一つ消費して、指定地点に25秒間残る火薬樽を置く。樽は接続の範囲が重なるほかの樽と黒い火薬の筋でつながる。樽の体力は3で始まり、体力が1になるまで2～0.5秒（レベルに応じて）ごとに1ずつ減る。",
+   "plain_sha1": "d73b3b01da6d5f3d499d75945c06cc23d8e0e709",
+   "ja": "発動効果：ガングプランクはチャージを一つ消費して、指定地点に25秒間残る火薬樽を置く。樽は接続の範囲が重なるほかの樽と黒い火薬の筋でつながる。樽の体力は3で始まり、体力が1になるまで2 / 1 / 0.5秒（レベルに応じて）ごとに1ずつ減る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Gangplank/Powder Keg#description2": {
    "source_sha1": "be4a27d0b77867c3594505dfe0080d4623831581",
@@ -115,16 +115,21 @@
    "ja": "「Raise Morale」：「一斉砲撃」はガングプランクと範囲内のすべての味方に40%の移動速度の増加を与え、2秒間残る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Gangplank/Powder Keg#description3": {
    "source_sha1": "2269a345954771abc984b434d7f858c08ce57766",
-   "reason": "residual_markup"
+   "plain_sha1": "ceb930c5a1de12bcf015ccf259ed45b036e85231",
+   "ja": "樽は敵かガングプランク（「偽りの発砲」を含む）が攻撃でき、攻撃ごとに1ダメージを受ける。敵が壊すと、樽は安全に処理される。ガングプランクが壊すと爆発し、つながったほかの近くの樽も連鎖して爆発させ、爆発どうしの間には0.33秒（0.3秒を次のゲームのティックに切り上げた値）の遅れがある。爆発はその半径の視界も2秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Gangplank/Cannon Barrage#description4": {
    "source_sha1": "0ad61d533575b1b89f928839f77c66e8ab98e352",
-   "reason": "residual_markup"
+   "plain_sha1": "5f063bf2746e8b971be44358e3a52ee6e44ef621",
+   "ja": "「Fire at Will」：「一斉砲撃」は効果時間の間にさらに6回の波を撃つ。砲弾の波18回が、1.333…秒ごとに3回ずつまとめて降り注ぐ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

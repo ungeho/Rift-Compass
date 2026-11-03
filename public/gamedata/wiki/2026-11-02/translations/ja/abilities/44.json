@@ -66,12 +66,14 @@
    "ja": "発動効果：タリックは天から星を呼び、星は2.5秒かけて降りてくる。その後、タリックと周囲の味方チャンピオンは2.5秒間無敵になる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Taric/Bravado#description": {
    "source_sha1": "2ed5b61d7b2c846b2f8e07c755277737b3aa49ed",
-   "reason": "residual_markup"
+   "plain_sha1": "a93dfd2cdc571be509ce0a3a196fcf8f5b13986f",
+   "ja": "固有：スキルを使った後、タリックは5秒以内の次の二回の通常攻撃を強化し、それぞれ攻撃速度（合計）が100%増加して、攻撃開始時に25～101（レベルに応じて）（+ 増加物理防御の15%）の追加の魔法ダメージを与え、基本スキルの残りクールダウンを1～2秒（スキルヘイストに応じて）短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

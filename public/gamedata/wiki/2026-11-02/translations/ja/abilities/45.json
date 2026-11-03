@@ -59,16 +59,21 @@
    "ja": "「イベントホライズン」は、一回の発動につき各敵に一度だけ効く。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Veigar/Dark Matter#description": {
    "source_sha1": "2f048bc86bb8af875a22d4a2f37eb6aa07b1e31c",
-   "reason": "residual_markup"
+   "plain_sha1": "741b4ccbba3fb90024d5ad99c9752c403cd5c7db",
+   "ja": "発動効果：ベイガーは暗黒物質の塊を落とし、塊は1.221秒（1.2秒を次のゲームのティックに切り上げた値）の遅れの後に指定地点に落ちる。遅れの間はその範囲の視界を与え、その後命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Veigar/Primordial Burst#description": {
    "source_sha1": "2c20217379781d67552a67e614848fc14ed6e784",
-   "reason": "residual_markup"
+   "plain_sha1": "2c93edd7395b35fb7d8af9a8776118d0e026420a",
+   "ja": "発動効果：ベイガーは対象の敵チャンピオンに原初の爆発を放ち、魔法ダメージを与える。このダメージは対象の減少体力に応じて0%～100%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

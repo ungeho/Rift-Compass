@@ -20,10 +20,10 @@
   },
   "Template:Data Teemo/Guerrilla Warfare#description2": {
    "source_sha1": "3416a8d3adf184975b677e486b8d137248102489",
-   "plain_sha1": "920f048866f83ff1e7d5e820210d5fdd3478dd60",
-   "ja": "固有 -「Element of Surprise」：ティーモがステルスを解くと、5秒間、攻撃速度が20%～80%（レベルに応じて）増加する。",
+   "plain_sha1": "1939bbc0a93521c8f6da1eb9c94d297153f44773",
+   "ja": "固有 -「Element of Surprise」：ティーモがステルスを解くと、5秒間、攻撃速度が20% / 40% / 60% / 80%（レベルに応じて）増加する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Teemo/Noxious Trap#description": {
    "source_sha1": "e85992ed95e4dba377b08911cd73cfd563acdf57",

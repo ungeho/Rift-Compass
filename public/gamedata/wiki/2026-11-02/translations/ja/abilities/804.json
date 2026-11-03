@@ -48,17 +48,17 @@
   },
   "Template:Data Yunara/Arc of Judgment#description2": {
    "source_sha1": "ea6e75a053fc33abdf668858c3b6a5b7a10a14e9",
-   "plain_sha1": "9501b7765b44a810be7206e161fade057cd94b71",
-   "ja": "「裁きの弧」はミニオンに50%～100%（レベルに応じて）のダメージを与え、とどまる効果のダメージがあと6回で倒せる場合は処刑する。",
+   "plain_sha1": "384dd1adde5fd4e166ac625d24c7cd4b017e2706",
+   "ja": "「裁きの弧」はミニオンに50% / 75% / 100%（レベルに応じて）のダメージを与え、とどまる効果のダメージがあと6回で倒せる場合は処刑する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yunara/Arc of Ruin#description": {
    "source_sha1": "c3baae4181ee0fb95083f572538f7ef93079e95e",
-   "plain_sha1": "5cd7d59a17bc34191b17aee92747ee090988bcf0",
-   "ja": "発動効果：ユナラは指定方向に霊の魔法の光線を放ち、命中した敵に160～480（「自己超越」のランクに応じて）（+ 増加攻撃力の120%）（+ APの75%）の魔法ダメージを与えて、1秒かけて減衰する99%のスロウを与え、周囲の範囲の視界も与える。",
+   "plain_sha1": "9df9095ead03768bc46d0c18739cda9a45b66347",
+   "ja": "発動効果：ユナラは指定方向に霊の魔法の光線を放ち、命中した敵に160 / 320 / 480（「自己超越」のランクに応じて）（+ 増加攻撃力の120%）（+ APの75%）の魔法ダメージを与えて、1秒かけて減衰する99%のスロウを与え、周囲の範囲の視界も与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yunara/Arc of Ruin#description2": {
    "source_sha1": "243d9d19db77831c9a523e97d5084cf81d93bc3e",

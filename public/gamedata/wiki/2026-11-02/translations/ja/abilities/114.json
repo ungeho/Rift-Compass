@@ -20,10 +20,10 @@
   },
   "Template:Data Fiora/Duelist's Dance#description2": {
    "source_sha1": "cf56c4d082bcf814ac9dbbbfeff6f05c8dc9004f",
-   "plain_sha1": "187e2f49c86809073da13b13dd295cecd8ae8345",
-   "ja": "「Vitals」の方向からダメージを与えると発動し、対象の最大体力の3%（+ 増加攻撃力100ごとに4%）に等しい追加の確定ダメージを与え、フィオラは35～100（レベルに応じて）回復して、1.85秒かけて減衰する20%～50%（「グランドチャレンジ」のランクに応じて）の移動速度の増加を得る。",
+   "plain_sha1": "7c12f47cda36f70c1e847a37d65705bac7a59812",
+   "ja": "「Vitals」の方向からダメージを与えると発動し、対象の最大体力の3%（+ 増加攻撃力100ごとに4%）に等しい追加の確定ダメージを与え、フィオラは35～100（レベルに応じて）回復して、1.85秒かけて減衰する20% / 30% / 40% / 50%（「グランドチャレンジ」のランクに応じて）の移動速度の増加を得る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Fiora/Lunge#description": {
    "source_sha1": "06abafc914ac5fb6df0ff905afddb23448af13ad",

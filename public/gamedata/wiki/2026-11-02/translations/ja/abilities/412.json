@@ -108,12 +108,14 @@
    "ja": "壁を壊した敵は、1秒間再び壁を壊せない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Thresh/Damnation#description2": {
    "source_sha1": "847b64c2c0af4c27545a13335577a24f84ab19de",
-   "reason": "residual_markup"
+   "plain_sha1": "f7b63012fb06932bb109a763c2b6ebfc1bdf13d6",
+   "ja": "固有：スレッシュの近くで死んだ敵チャンピオン・大型ミニオン・大型モンスターは、8秒間「Soul」を落とす。エピックモンスターは「Soul」を2つ落とし、小型ミニオンと小型モンスターは33.33…%の確率で「Soul」を落とす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -27,10 +27,10 @@
   },
   "Template:Data Kindred/Mark of the Kindred#description3": {
    "source_sha1": "89ce6514199dbbbc181468c2dfbc0ebc54b0b9be",
-   "plain_sha1": "fffdb1be580ad2754a27e9f5852a91db1ab31095",
+   "plain_sha1": "c38d614e1ebcbc591359105c6919894df1fd2723",
    "ja": "固有 -「Wolf」：2:53から、ウルフは一定時間ごとに、敵チームのジャングルのランダムな大型モンスター一体に180秒間印を付ける。狩られるキャンプは両チームのミニマップに表示される。狩る対象が倒されるか印が切れると、ウルフは45秒待ってから新しい対象を選ぶ。ウルフが印を付けられるモンスターの種類は、キンドレッドの現在の「キンドレッドの刻印」のスタックに応じて変わる：* 0：スカトル * 1～3：スカトル・クリムゾンラプター・グロンプ * 4～7：エンシェントクルーグ・ブルーセンチネル・グレーターマークウルフ・レッドブランブルバック * 8 +：リフトヘラルドかバロンナッシャー、ドラゴンかエルダードラゴン",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kindred/Dance of Arrows#description": {
    "source_sha1": "0f2d39c06577ec6c9d2f522a86410582f0abfabb",
@@ -101,16 +101,21 @@
    "ja": "祝福が終わると、聖域の中の対象指定可能なすべてのユニットが回復する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Kindred/Wolf's Frenzy#description": {
    "source_sha1": "a993bbcc90685f48e052c0785f4f2a605992e5bd",
-   "reason": "residual_markup"
+   "plain_sha1": "fd93b4f9d6bf78d625ddfe3a45b3119b6e4fe7d2",
+   "ja": "自動効果：ラムは何らかの方法で27ユニット移動するごとに「Hunter's Vigor」のスタックを1、攻撃開始時に5得て、最大100スタック。最大スタックのとき、次の通常攻撃は47～81（レベルに応じて）の0%～100%（キンドレッドの減少体力に応じて）を回復する。キンドレッドの体力が満タンなら回復は発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kindred/Mounting Dread#description2": {
    "source_sha1": "c723aa0b8b5a388e6fb7a7eddbaea5a6740e2fb6",
-   "reason": "residual_markup"
+   "plain_sha1": "d6be1ac4430b76e47f88bf60109f9eb904baf4ff",
+   "ja": "三つ目のスタックでウルフが対象に飛びかかり、すべてのスタックを消費してさらに物理ダメージを与え、このダメージはクリティカル率に応じて0%～50%（+ 「インフィニティ・エッジ」 0%～20%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

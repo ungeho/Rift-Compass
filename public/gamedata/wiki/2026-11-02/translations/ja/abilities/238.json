@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Zed/Contempt for the Weak#description": {
    "source_sha1": "944fe1b778de0b50482dc5ee26b31ff38b43777f",
-   "plain_sha1": "06fb12a8e5d9077eb59634e10c1fad73a7c2dacc",
-   "ja": "固有：ゼドの最大体力の50%未満の対象への通常攻撃（攻撃時効果）は強化され、対象の最大体力の5%～10%（レベルに応じて）を追加の魔法ダメージとして与える。",
+   "plain_sha1": "fdb6b4d6ec2d2c030f7686fd1a34a1497e0aed0f",
+   "ja": "固有：ゼドの最大体力の50%未満の対象への通常攻撃（攻撃時効果）は強化され、対象の最大体力の5% / 7.5% / 10%（レベルに応じて）を追加の魔法ダメージとして与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zed/Contempt for the Weak#description2": {
    "source_sha1": "b0def9911d17f6ad845f98ff03db40f79d06ad53",

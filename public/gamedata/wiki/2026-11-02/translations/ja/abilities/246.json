@@ -122,20 +122,28 @@
    "ja": "突風は通過した「River」と「Brush」、および到達した「Terrain」の縁に沿って連鎖する衝撃波を起こし、命中した敵に物理ダメージを与えて、0.5～1秒間（近さに応じて）スタンさせ、通り道の範囲の視界を一瞬与える。対象の体力の割合に応じたダメージは、モンスターに対しては上限がある。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Qiyana/Royal Privilege#description": {
    "source_sha1": "98bf5cde12adcf60a72223267f27d7618ce1f91c",
-   "reason": "residual_markup"
+   "plain_sha1": "ee4daa09c85aca3e9a45ac77724f861d191f1da4",
+   "ja": "固有：キヤナの通常攻撃（攻撃時効果）と基本スキルは、15～91（レベルに応じて）（+ 増加攻撃力の25%）（+ APの30%）の物理ダメージをさらに与える。この効果は同じ対象には数秒に一度しか起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Qiyana/Terrashape#description2": {
    "source_sha1": "56c7060e2e565e843f72a028a637d281ad7777bd",
-   "reason": "residual_markup"
+   "plain_sha1": "2634d6a60b07dccacb33192a9b6d14098c158888",
+   "ja": "発動効果：キヤナは指定地点に向かって最大300ユニットダッシュし、狙った最も近くの「Brush」「River」「Terrain」のエレメントを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Qiyana/Terrashape#description4": {
    "source_sha1": "751b6c7df47c0485e4c285f878b2deddff3ac803",
-   "reason": "residual_markup"
+   "plain_sha1": "9101ca0509c0917523599b0f58d25cf75236f9bd",
+   "ja": "「大地の力」を習得していれば、キヤナは復活すると自動で「Terrain」のエレメントを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

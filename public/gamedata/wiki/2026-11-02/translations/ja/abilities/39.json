@@ -20,10 +20,10 @@
   },
   "Template:Data Irelia/Ionian Fervor#description2": {
    "source_sha1": "6b47385c10625f8d141ccbc08d1aa261a575daff",
-   "plain_sha1": "0f149422274dd11c058d4530fabc8537b9daabfa",
+   "plain_sha1": "c66f7ed257b3bef068c0fa0213f136c08e0018a0",
    "ja": "「アイオニアの熱情」：スタックごとに攻撃速度が10%～25%（レベルに応じて）増加し、最大40%～100%（レベルに応じて）。最大スタックでは、イレリアの通常攻撃が強化され、攻撃時効果として10～61（レベルに応じて）（+ 増加攻撃力の20%）の追加の魔法ダメージ（建物には50%）を与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Irelia/Ionian Fervor#description3": {
    "source_sha1": "97fd2b61a13b208b6ea41517e1bf301fc718b5e8",
@@ -115,16 +115,21 @@
    "ja": "囲いは、イレリアが使用した向きと同じ角度を向くが、対象の中心を基準にする。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Irelia/Bladesurge#description2": {
    "source_sha1": "26cc61e695c134bd80f708d2543718a269f45a4e",
-   "reason": "residual_markup"
+   "plain_sha1": "fe3567adfcfdc98ffdd70e570b3cf517f3d52194",
+   "ja": "「Unsteady」の印が付いた対象にぶつかると「瞬刃」の残りクールダウンは0.2秒になり、「瞬刃」のダッシュで、またはダッシュ中に対象が死ぬとリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Irelia/Flawless Duet#description4": {
    "source_sha1": "f1ed05482ac3bf4ed94f47cde86c1abd3244785a",
-   "reason": "residual_markup"
+   "plain_sha1": "91a8f04ae031094157f49cdf54ae506ea5993471",
+   "ja": "「無欠の連舞」の再発動は「瞬刃」の間と「先陣の刃」の詠唱時間中に使えるが、スキルの使用を妨げる行動妨害や、スキルを封じる行動不能を受けている間は自動では使われない。それぞれの刃が飛ぶ時間は0.264秒（0.25秒を次のゲームのティックに切り上げた値）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

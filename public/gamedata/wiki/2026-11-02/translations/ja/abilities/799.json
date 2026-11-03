@@ -27,10 +27,10 @@
   },
   "Template:Data Ambessa/Drakehound's Step#description3": {
    "source_sha1": "02df976b263c0dc85affee07d6ef599b2d265729",
-   "plain_sha1": "342217f2fdce613dd0db155f6cebbdd91b49b02a",
-   "ja": "「Medarda Maxim」：アンベッサの次の通常攻撃は攻撃開始時に強化され、攻撃モーションが中断されなくなり、射程が75、攻撃速度が50%増加して、5～25（レベルに応じて）（+ 増加攻撃力の20%）の追加の物理ダメージ（ライフスティールが適用される）を与え、気を40～70（レベルに応じて）回復する。",
+   "plain_sha1": "0801caf582a9038fe7b941c642e6155008298ded",
+   "ja": "「Medarda Maxim」：アンベッサの次の通常攻撃は攻撃開始時に強化され、攻撃モーションが中断されなくなり、射程が75、攻撃速度が50%増加して、5～25（レベルに応じて）（+ 増加攻撃力の20%）の追加の物理ダメージ（ライフスティールが適用される）を与え、気を40 / 55 / 70（レベルに応じて）回復する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ambessa/Cunning Sweep#description": {
    "source_sha1": "cf6e598af226040339f49c0f265e959e248f692d",

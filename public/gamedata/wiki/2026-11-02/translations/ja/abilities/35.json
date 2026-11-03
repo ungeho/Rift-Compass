@@ -115,20 +115,28 @@
    "ja": "発動効果：シャコは対象の敵に短剣を投げ、魔法ダメージ（最大体力の30%未満の対象には50%増加）を与えて、3秒間スロウを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Shaco/Backstab#description": {
    "source_sha1": "043917a4f150d43bb25eb38b269daa5835dbe4f4",
-   "reason": "residual_markup"
+   "plain_sha1": "92c90659abecaf196830628fdee31b6e2c8a6201",
+   "ja": "固有：シャコの通常攻撃は強化され、敵の背後から当てると20～31.18（レベルに応じて）（+ 増加攻撃力の20%）の追加の物理ダメージを与える。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Shaco/Deceive#description4": {
    "source_sha1": "dede59420fbcb4ae8f1ded1e35498fb3236501de",
-   "reason": "residual_markup"
+   "plain_sha1": "fc8a6c5ad332ce605c6effa49fe980c5448c4827",
+   "ja": "「バックスタブ」のボーナス：攻撃は（160% + 「インフィニティ・エッジ」 24%）のダメージでクリティカルになり、クリティカルの判定が出た場合は（200% + 「インフィニティ・エッジ」 40%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Shaco/Two-Shiv Poison#description3": {
    "source_sha1": "4d642daa037999735ab6e25ffb75ad51cece00d8",
-   "reason": "residual_markup"
+   "plain_sha1": "ca0f1d63d1d0c8e3890fa5ff933b1e229d3eaa50",
+   "ja": "「バックスタブ」のボーナス：短剣はさらに15～54.12（レベルに応じて）（+ APの10%）の追加の魔法ダメージを与え、対象の体力が最大体力の30%未満なら22.5～81.18（レベルに応じて）（+ APの15%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

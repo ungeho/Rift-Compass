@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Lillia/Dream-Laden Bough#description": {
    "source_sha1": "9a2676bd54551e643c9a0619dd12d70086b4bb77",
-   "plain_sha1": "877447b1513017d91205ade32dd3d735ae80bf08",
+   "plain_sha1": "494920a28f98bebd505840d919d89cafadb4fdf7",
    "ja": "固有：リリアのスキルは命中した敵に「Dream Dust」を与え、3秒かけて対象の最大体力の5%（+ AP 100ごとに1.25%）の合計魔法ダメージを与える。モンスターに対しては70～180（レベルに応じて）が上限。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Lillia/Blooming Blows#description": {
    "source_sha1": "e681b163da213bc1a428cdddd3f61aa7626c2fd6",
@@ -80,16 +80,21 @@
    "ja": "このスキルを使用するには、「Dream Dust」を受けている敵チャンピオンが必要。リリアは「夢見の子守唄」の詠唱時間中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Lillia/Dream-Laden Bough#description2": {
    "source_sha1": "6937701927df227a9483f585da79e3a8e3e57621",
-   "reason": "residual_markup"
+   "plain_sha1": "9c7068d1de577db1029afe64c9d68e4544cbe2f2",
+   "ja": "「Dream Dust」の効果時間の間に、リリアは大型モンスターからは39（+ APの15%）、チャンピオンからは6～90（レベルに応じて）（+ APの30%）を回復し、最初の対象より後の対象ごとに15%の効果になる。回復の元にできるモンスターは一度に1体だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Lillia/Watch Out! Eep!#description": {
    "source_sha1": "d68f5aa923e5f599699dd433cb2fad497b725199",
-   "reason": "residual_markup"
+   "plain_sha1": "d75855beb8c4c6945f52332a24352dc84cf78060",
+   "ja": "発動効果：リリアは0.759秒（0.75秒を次のゲームのティックに切り上げた値）かけて指定地点の150ユニット手前までダッシュし（地形は越えない）、対象の地点の周囲の範囲に魔法ダメージを与える。中心で当たった敵は200%増加したダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

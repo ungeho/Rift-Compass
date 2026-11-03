@@ -13,17 +13,17 @@
  "entries": {
   "Template:Data Brand/Blaze#description2": {
    "source_sha1": "258207ee3e21f564cf44235d4464943d564afcef",
-   "plain_sha1": "7f81960cf6b5cc89e72e4885caea8c0b7843db46",
-   "ja": "「Ablaze」：「Ablaze」を受けている間、対象は4秒かけて最大体力の2%に等しい魔法ダメージを受ける。「Ablaze」のスタックはそれぞれ個別に対象にダメージを与え、すべてのスタックの効果時間が更新されても、各スタックが付いた時点に応じてダメージを与える。「Ablaze」はモンスターに一回ごとに270%のダメージを与え、このダメージはエピックではないモンスターには一回12.5～37.5（「Ablaze」のスタックに応じて）、エピックモンスターには一回20～60（「Ablaze」のスタックに応じて）が上限。",
+   "plain_sha1": "f1d521f6d7bbf5873f643a958badead0a8236a8c",
+   "ja": "「Ablaze」：「Ablaze」を受けている間、対象は4秒かけて最大体力の2%に等しい魔法ダメージを受ける。「Ablaze」のスタックはそれぞれ個別に対象にダメージを与え、すべてのスタックの効果時間が更新されても、各スタックが付いた時点に応じてダメージを与える。「Ablaze」はモンスターに一回ごとに270%のダメージを与え、このダメージはエピックではないモンスターには一回12.5 / 25 / 37.5（「Ablaze」のスタックに応じて）、エピックモンスターには一回20 / 40 / 60（「Ablaze」のスタックに応じて）が上限。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Brand/Blaze#description3": {
    "source_sha1": "eabfe451f2910ad1ef7f32e447c91a7942540cbb",
-   "plain_sha1": "f6b066c174cffd5c7fa1cacc901ec518ff47af4e",
-   "ja": "大型モンスターか敵チャンピオンに「Ablaze」を3スタック付けると、炎が不安定になって対象の周囲に炎の輪ができ、輪はその範囲の視界を与え、2秒後にスタックを消費して爆発する。爆発の範囲内のすべての敵は「Ablaze」のスタックを一つ受け、最大体力の6%～12%（レベルに応じて）（+ AP 100ごとに2%）に等しい魔法ダメージを受ける（モンスターには270～525〔レベルに応じて〕が上限）。",
+   "plain_sha1": "0ff208e1908f570dc4fe229ee88b517ae49313d9",
+   "ja": "大型モンスターか敵チャンピオンに「Ablaze」を3スタック付けると、炎が不安定になって対象の周囲に炎の輪ができ、輪はその範囲の視界を与え、2秒後にスタックを消費して爆発する。爆発の範囲内のすべての敵は「Ablaze」のスタックを一つ受け、最大体力の6%～12%（レベルに応じて）（+ AP 100ごとに2%）に等しい魔法ダメージを受ける（モンスターには270 / 355 / 440 / 525〔レベルに応じて〕が上限）。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Brand/Blaze#description4": {
    "source_sha1": "bec906bc26f5bbf3526e3a7fefce7d08cddbf38b",
@@ -101,16 +101,21 @@
    "ja": "火の玉が跳ねる先の対象は、見えている必要はない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Brand/Blaze#description": {
    "source_sha1": "4d27deac97d8bd72bf9f2a948a30b09edaa5834f",
-   "reason": "residual_markup"
+   "plain_sha1": "0bae68333e65f05d28bed834d2573eaa7b5bd59a",
+   "ja": "固有：ブランドのスキルは命中した敵に4秒間「Ablaze」のスタックを与え、最大3回まで重なり、付与のたびにすべてのスタックの効果時間が更新される。「Ablaze」を受けている対象に使った以降のスキルは強化される。「Ablaze」を受けている敵を倒すか、スキルでいずれかの敵を倒すと、マナを20～40（レベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Brand/Pillar of Flame#description": {
    "source_sha1": "e7b092492bb4032a5f582e60b18b95960f660036",
-   "reason": "residual_markup"
+   "plain_sha1": "6efcac91189dc236804ed3c1fff22f024749e267",
+   "ja": "発動効果：0.627秒（0.625秒を次のゲームのティックに切り上げた値）の遅れの後、ブランドは指定地点に炎の柱を噴き上げ、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

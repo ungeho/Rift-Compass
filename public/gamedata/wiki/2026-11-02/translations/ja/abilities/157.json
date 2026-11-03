@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Yasuo/Way of the Wanderer#description": {
    "source_sha1": "42059c62acda5cebf8a0fa3b491330456a8c93c8",
-   "plain_sha1": "d08071047871f661a984c2ce1efaed53555192da",
+   "plain_sha1": "07c0f3ff84087f3c9c4ca308a683eff72d98c2b5",
    "ja": "固有 -「Intent」：ヤスオのほかのすべての発生源からの合計のクリティカル率は二倍になる。さらに、100%を超えるクリティカル率1%ごとに、増加攻撃力0.5に変換される。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yasuo/Steel Tempest#description": {
    "source_sha1": "33b997eb722b3a8dd16cc1cc834380ab8add8559",
@@ -129,16 +129,21 @@
    "ja": "このスキルを使用するには、近くにノックアップ状態の敵チャンピオンが必要。ブリンク先が敵のタワー（ネクサスオベリスクを含む）の攻撃範囲内になる場合、「鬼哭啾々」は代わりにその外側に位置させようとする。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Yasuo/Way of the Wanderer#description2": {
    "source_sha1": "98409262d8eaf83f0d22f2460825a4c2013b22b2",
-   "reason": "residual_markup"
+   "plain_sha1": "918217fb71e7f127a70e9fe5bb1f39468c71699e",
+   "ja": "ヤスオのクリティカルは、攻撃力の（190% + 「インフィニティ・エッジ」 38%）の物理ダメージしか与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Yasuo/Way of the Wanderer#description3": {
    "source_sha1": "2128532b58d2010ab1191bfdd4ebbc82b932e11e",
-   "reason": "residual_markup"
+   "plain_sha1": "20e39a8ce920700128ec89ec840035202eee7eee",
+   "ja": "固有 -「Resolve」：ヤスオは何らかの方法で59 / 52.5 / 46（レベルに応じて）ユニット移動するごとに「Flow」のスタックを得る。100スタックで敵チャンピオンかモンスターからダメージを受けると、すべての「Flow」を消費して、1秒間続く125～674.46（レベルに応じて）のシールドを自身に付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

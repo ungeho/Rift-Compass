@@ -62,10 +62,10 @@
   },
   "Template:Data Nidalee/Bushwhack#description2": {
    "source_sha1": "13f32b2743f4dee5b992563b1ae058002d6bd753",
-   "plain_sha1": "1b830c2cd1d191290d0780ad919d7fd650f9fbc7",
-   "ja": "罠の最大体力は6で、チャンピオンの通常攻撃でだけダメージを受ける（遠隔攻撃で2、近接攻撃で3）。一度に有効な罠は最大4～10個（レベルに応じて）。",
+   "plain_sha1": "b7075bf756bd463e43ea1cb8f42a02cab9f8ad1c",
+   "ja": "罠の最大体力は6で、チャンピオンの通常攻撃でだけダメージを受ける（遠隔攻撃で2、近接攻撃で3）。一度に有効な罠は最大4 / 6 / 8 / 10個（レベルに応じて）。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nidalee/Bushwhack#description3": {
    "source_sha1": "39d005213e977ef0ef8c8f666d54760bb8210944",
@@ -143,12 +143,14 @@
    "ja": "ニダリーは「クーガーの心」のランクを一つ持って始まり、レベル6・11・16で上げられる。「Cougar Form」のスキルは「クーガーの心」のランクに応じて強くなる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Nidalee/Takedown#description": {
    "source_sha1": "b803b468dec3c67b5cadfc43ec3515fbe03b1b2c",
-   "reason": "residual_markup"
+   "plain_sha1": "c8b57d9da71cbb3aaa26c632538e5901615ba81d",
+   "ja": "発動効果：ニダリーは10秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が75増加して、対象の減少体力1%ごとに一定量増加する修正された魔法ダメージを与える。「テイクダウン」はクリティカルになりえ、攻撃力の（100% + 「インフィニティ・エッジ」 40%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

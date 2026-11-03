@@ -150,24 +150,35 @@
    "ja": "アクシャンは「当然の報い」の詠唱中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Akshan/Dirty Fighting#description3": {
    "source_sha1": "1484caff946abcc3909d5576373cb5566cf95d51",
-   "reason": "residual_markup"
+   "plain_sha1": "76cf33dd3a11a6432d067f54770edaa0f67c8a2a",
+   "ja": "固有：アクシャンの通常攻撃（攻撃時効果）とスキルの命中は、敵に5秒間「Dirty Fighting」のスタックを与え、付与のたびに更新され、最大3回まで重なる。対象への三つ目のスタックですべて消費し、15 / 40 / 80 / 150（レベルに応じて）（+ APの60%）の追加の魔法ダメージを与える。対象がチャンピオンなら、アクシャンは2秒間40～280（レベルに応じて）（+ 増加攻撃力の35%）のシールドも得る。シールドは数秒に一度しか得られない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Akshan/Heroic Swing#description3": {
    "source_sha1": "eb43393b49b897ce5b452d3dbd1a02c552f8a6c3",
-   "reason": "residual_markup"
+   "plain_sha1": "9743a114c802da6ff28d0100b43d171b6aa9c734",
+   "ja": "二回目の発動：アクシャンは、自身の向きに対するカーソルの位置に応じて時計回りか反時計回りに地形の周りを振り回り、敵チャンピオンか地形にぶつかると止まる。振り回っている間、0.231秒（0.2秒を次のゲームのティックに切り上げた値）ごとに最も近くの見えている敵を撃ち、一発ごとに物理ダメージを与えて攻撃時効果を与え、攻撃時効果のダメージは25%の効果になる。ダッシュ中に移動不能かポリモーフの行動妨害を受けると、アクシャンは叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Akshan/Heroic Swing#description5": {
    "source_sha1": "608c10db80dcc8d4a520b32d52493de93b39d423",
-   "reason": "residual_markup"
+   "plain_sha1": "f2a5cb3f7651478cfa0f7a8e2cc794e635ebe5a6",
+   "ja": "敵チャンピオンのキルに関与すると、「ヒーロースイング」の残りクールダウンが0.5秒になる。弾は（150% + 「インフィニティ・エッジ」 20%）のダメージでクリティカルになりえ、ライフスティールが適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Akshan/Comeuppance#description3": {
    "source_sha1": "78fae571db75004445bfb067104da9d49b9c7e76",
-   "reason": "residual_markup"
+   "plain_sha1": "bb4a0ec41f34610c6d2fcda8ceb51addb6dfb8ce",
+   "ja": "再発動：アクシャンは蓄えたすべての弾を対象に撃ち、各弾は軌道の周りの視界を一瞬与え、最初に命中した敵に物理ダメージを与える。このダメージはクリティカル率に応じて0%～30%（+ 「インフィニティ・エッジ」 0%～12%）増加し、さらに対象の減少体力に応じて0%～200%増加する。弾は建物にも当たる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -80,16 +80,21 @@
    "ja": "シヴィアは、ダメージを与えてから3秒以内に敵チャンピオンのキルに関与するたびに、「On the Hunt」の効果時間を更新できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Sivir/Boomerang Blade#description": {
    "source_sha1": "f29b35e5e918e0f73849c7614514619eb5a2ad4c",
-   "reason": "residual_markup"
+   "plain_sha1": "3195f914822652c5f28dff5966aa027a7355b5d7",
+   "ja": "発動効果：シヴィアは指定方向に刃を投げ、通り道の敵に物理ダメージを与える。このダメージはクリティカル率に応じて0%～40%（+ 「インフィニティ・エッジ」 0%～16%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Sivir/Ricochet#description": {
    "source_sha1": "968e30417495dc255fba6a3eb63cf08623e85c02",
-   "reason": "residual_markup"
+   "plain_sha1": "8b549132a41cf4eeb7681180a8e8901e4a3ecd5a",
+   "ja": "発動効果：シヴィアは次の4秒間刃を強化し、攻撃速度が増加して、通常攻撃が周囲のほかの敵へ跳ね、物理ダメージを与える。元の攻撃がクリティカルなら、跳ねた攻撃も（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになる。「跳刃」はミニオンに65%のダメージを与え、体力が15未満になるミニオンは処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

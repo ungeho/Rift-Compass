@@ -87,16 +87,21 @@
    "ja": "主対象に届くと、「爆雷発射」は最後にもう一度その位置で噴き上がる。主対象はより大きなダメージを受け、同じ時間スタンし、修正された時間ノックアップする。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Nautilus/Staggering Blow#description": {
    "source_sha1": "80d871a686b7e86716503a242787a503404d6306",
-   "reason": "residual_markup"
+   "plain_sha1": "6d8cd1f451de06096d4891b44ecabb5094ce2afd",
+   "ja": "固有：ノーチラスの通常攻撃は強化され、14～128（レベルに応じて）の追加の物理ダメージを与えて、対象に0.75～1.5秒間（レベルに応じて）スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nautilus/Depth Charge#description": {
    "source_sha1": "01483a54d971b0a90f91d2710942c77b057d0d3d",
-   "reason": "residual_markup"
+   "plain_sha1": "310c8cbaba77778d4a20f3daeb5081c23579e49b",
+   "ja": "発動効果：ノーチラスは対象の敵チャンピオンを追う「Depth Charge」を放ち、それは時間とともに加速して、通り道に0.264秒（0.25秒を次のゲームのティックに切り上げた値）ごとに噴出を起こし、その範囲の視界も一瞬与える。噴出に当たった敵は魔法ダメージを受け、1秒間ノックアップされ、一定時間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

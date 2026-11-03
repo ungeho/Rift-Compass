@@ -147,12 +147,14 @@
    "ja": "再発動：サイオンは前方へ跳び、突進をやめて、「猪突猛進」の効果時間が終わったときと同じように足元の地面を叩きつける。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Sion/Glory in Death#description": {
    "source_sha1": "ccb775b1ec902bf909f040cd3b79708b930969c6",
-   "reason": "residual_markup"
+   "plain_sha1": "a2682c684edf0d5ecac8be78a580fdfe6065817e",
+   "ja": "固有：致命的なダメージを受けると、サイオンは1.5秒間固有時停止になってから狂乱状態で復活し、最大体力の100%を回復するが、0.264秒（0.25秒を次のゲームのティックに切り上げた値）ごとに2～21（レベルに応じて）の体力を失い、その量は回ごとに基本値の70%ずつ増える。この間、サイオンの体力自動回復と受ける回復（ライフスティールとオムニヴァンプを除く）は0%の効果になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -87,12 +87,14 @@
    "ja": "各茨は命中した敵に魔法ダメージを与え、0.75～2.25秒間（進んだ距離に応じて）スネアを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Maokai/Sap Magic#description": {
    "source_sha1": "74b233f8f2f6b198186c7f213ae7b1e46b4440a5",
-   "reason": "residual_markup"
+   "plain_sha1": "3fd902f22265275f440b37b7720a5db99e520df2",
+   "ja": "固有：一定時間ごとに、マオカイは次の通常攻撃を強化し、攻撃モーションが中断されなくなり、0.25秒の遅れの後に最大体力の4%～12.8%（レベルに応じて）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

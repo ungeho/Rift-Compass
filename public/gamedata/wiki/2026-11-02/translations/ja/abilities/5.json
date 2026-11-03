@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Xin Zhao/Determination#description": {
    "source_sha1": "2d10e7b10d23a59c93d20c575e22067615909d6c",
-   "plain_sha1": "435e07c69a01cb3b4e5cc9c45277136b7e14daa7",
-   "ja": "固有：シン・ジャオの通常攻撃（攻撃時効果）と、「風成雷鳴」の最初の斬撃と突きが少なくとも一体の敵に命中するたびに、それぞれ「不退転」のスタックを得て、最大3回まで重なる。3スタック目ですべて消費し、攻撃力の15%～60%（レベルに応じて）（+ APの5%～20%〔レベルに応じて〕）の追加の物理ダメージを与え、シン・ジャオは最大体力の2%～5%（レベルに応じて）（+ APの40%～70%〔レベルに応じて〕）を回復する。",
+   "plain_sha1": "3fb333decf8192fff26833b6c886144fc0a33b1f",
+   "ja": "固有：シン・ジャオの通常攻撃（攻撃時効果）と、「風成雷鳴」の最初の斬撃と突きが少なくとも一体の敵に命中するたびに、それぞれ「不退転」のスタックを得て、最大3回まで重なる。3スタック目ですべて消費し、攻撃力の15% / 30% / 45% / 60%（レベルに応じて）（+ APの5% / 10% / 15% / 20%〔レベルに応じて〕）の追加の物理ダメージを与え、シン・ジャオは最大体力の2% / 3.5% / 5%（レベルに応じて）（+ APの40% / 50% / 70%〔レベルに応じて〕）を回復する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Xin Zhao/Determination#description2": {
    "source_sha1": "e50b7086dec3bdc8d10c31db8b1743d212db6baf",
@@ -108,12 +108,14 @@
    "ja": "その後4秒間、シン・ジャオは自身から遠く離れた敵チャンピオンからの攻撃に対して無敵になる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Xin Zhao/Wind Becomes Lightning#description2": {
    "source_sha1": "ecb4ed328a3162f1c960b13235689447425a6e78",
-   "reason": "residual_markup"
+   "plain_sha1": "a03e45aa02f90625d7db8bf50d6e468d4dc85c6d",
+   "ja": "「風成雷鳴」のダメージは、シン・ジャオのライフスティールの33.33…%分、シン・ジャオを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

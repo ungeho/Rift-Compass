@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Taliyah/Rock Surfing#description": {
    "source_sha1": "3593bec5560a7355d651f2e2c6f2c74f71928100",
-   "plain_sha1": "90240bcf2084a1598c20b3b68f40098979ec59fb",
-   "ja": "固有：地形の近くにいる間、タリヤは移動速度が10%～40%（レベルに応じて）増加する。範囲内に0.4秒以上いると1秒かけて増え、範囲外に3秒以上いると同じ速さで減る。",
+   "plain_sha1": "17a9a70ef74257207bc6e74e77ab81929d644020",
+   "ja": "固有：地形の近くにいる間、タリヤは移動速度が10% / 15% / 25% / 40%（レベルに応じて）増加する。範囲内に0.4秒以上いると1秒かけて増え、範囲外に3秒以上いると同じ速さで減る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Taliyah/Rock Surfing#description2": {
    "source_sha1": "1bdb7884ba927aa72409ff6ba048062a34bb60ca",

@@ -13,17 +13,17 @@
  "entries": {
   "Template:Data Wukong/Stone Skin#description": {
    "source_sha1": "24da9e8db40d6c736fc7a69a4d420ee4e0151c7b",
-   "plain_sha1": "f3f9ecd96185c4f57bbdb5f4f2057184d69848a7",
+   "plain_sha1": "22f3cef6cf1937cd1600b44ff82249e1ac82072b",
    "ja": "固有：ウーコンは物理防御が4.5～10（レベルに応じて）増加し、5秒ごとに最大体力の0.35%を追加で回復する。ウーコンか分身が通常攻撃かスキルで敵チャンピオンかモンスターにダメージを与えるたびに、5秒間「Strength of Stone」のスタックを得る。命中のたびに効果時間が更新され、最大5回まで重なる。効果時間が終わると、スタックは毎秒一つずつ消える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Wukong/Stone Skin#description2": {
    "source_sha1": "b68a88627d62745f3d05448e8dc6c5cab3172e4e",
-   "plain_sha1": "3221241f50adcd3715b63d015d1b437adb747074",
+   "plain_sha1": "6864116c2a29470b8e746be766d169a700175712",
    "ja": "「Strength of Stone」：スタックごとに「岩の皮膚」の効果が100%増え、最大で物理防御27～60（レベルに応じて）の増加と、5秒ごとに最大体力の2.1%の追加の回復になる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Wukong/Crushing Blow#description": {
    "source_sha1": "3cc9421309264dcd046fae9ae9fa00019bc36972",
@@ -125,10 +125,10 @@
   },
   "Template:Data Wukong/Cyclone#description5": {
    "source_sha1": "60423a1fa7f0ca2d4361cfe3d6488a5c7060a415",
-   "plain_sha1": "ddd107900d06b41ca1462f836a5ed7b4f4b1d854",
-   "ja": "「旋風猿舞」のモンスターへのダメージは、毎秒200～600（レベルに応じて）が上限。",
+   "plain_sha1": "870c7d545feb4eaa13e2377ce0b85704c54cc1e2",
+   "ja": "「旋風猿舞」のモンスターへのダメージは、毎秒200 / 400 / 600（レベルに応じて）が上限。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   }
  },
  "withheld": {}

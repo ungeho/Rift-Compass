@@ -115,16 +115,21 @@
    "ja": "ダッシュ中に「怒りの咆哮」を使用できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Warwick/Eternal Hunger#description": {
    "source_sha1": "78233b5d2398089002cd2d4bcaa30a5d8caba8ac",
-   "reason": "residual_markup"
+   "plain_sha1": "24159f4471d0bec48dc0bee8f2f54d6784cbb666",
+   "ja": "固有：ワーウィックは攻撃時効果として6～60.76（レベルに応じて）（+ 増加攻撃力の15%）（+ APの10%）の追加の魔法ダメージを与える。最大体力の50%未満の間は、「永遠の渇き」で与えた軽減後のダメージの100%も回復し、最大体力の25%未満の間は250%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Warwick/Jaws of the Beast#description": {
    "source_sha1": "db18c713fa5bc450c312ee2b4b41d32c777c5323",
-   "reason": "residual_markup"
+   "plain_sha1": "50fff5ef83957b9eef6a1b2aa4a91830af546dc8",
+   "ja": "発動効果：ワーウィックは0.264秒（0.2475秒を次のゲームのティックに切り上げた値）かけて対象の敵に飛びかかって噛みつき、魔法ダメージを与えて、与えた軽減後のダメージの一定割合を回復し、攻撃時効果とライフスティールを適用し、攻撃開始時の効果を発動する。対象の体力の割合に応じたダメージは、モンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

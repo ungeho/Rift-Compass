@@ -73,12 +73,14 @@
    "ja": "「フローズングレイブ」は対象から1.5秒かけて広がる氷の地帯を作り、地帯は3秒間周囲を覆って、敵に魔法ダメージを与え、0.5秒間スロウを与える。地帯にいる間は0.25秒ごとに更新される。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Lissandra/Iceborn Subjugation#description": {
    "source_sha1": "3bddd923281f0dfb94f69994402ab1abe1205f00",
-   "reason": "residual_markup"
+   "plain_sha1": "88bb3ea5a9c0a9aa48ce53a65de7d3d97cd30e07",
+   "ja": "固有：近くの敵チャンピオンが死ぬたびに、リサンドラはその亡骸から「Frozen Thrall」を出す。「Frozen Thrall」は氷の霊で、移動速度は33.48～325（出現してからの秒数に応じて）で、周囲の敵に25%のスロウを与える。4秒間、近くの見えている敵（チャンピオンを優先）を追い、その後砕けて周囲の敵に120～520（レベルに応じて）（+ APの50%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

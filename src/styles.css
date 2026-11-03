@@ -291,3 +291,11 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .data-list summary { cursor: pointer; }
 .data-filter { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
 .data-filter input[type="search"] { min-width: 0; flex: 1 1 160px; }
+/* アイテムの詳細：値段・ステータスの分類（見出しと値の2列。狭い画面では縦に並べる）、効果ごとの区切り */
+.data-price, .data-stats { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 6px 0; }
+.data-price > div, .data-stats > div { display: contents; }
+.data-price dt, .data-stats dt { font-weight: 600; }
+.data-price dd, .data-stats dd { margin: 0; min-width: 0; }
+@media (max-width: 480px) { .data-price, .data-stats { grid-template-columns: 1fr; } .data-price dd, .data-stats dd { margin-bottom: 4px; } }
+.data-effect { border-left: 3px solid var(--border); padding: 2px 0 2px 8px; margin: 8px 0; }
+.data-list mark { background: var(--warning-bg); outline: 1px solid var(--warning-border); color: inherit; padding: 0 2px; border-radius: 2px; }

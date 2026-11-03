@@ -27,10 +27,10 @@
   },
   "Template:Data Pyke/Gift of the Drowned Ones#description": {
    "source_sha1": "0cb3eb9ebce167ba0001e7105e12ea6d7c4cc5ea",
-   "plain_sha1": "25099ae6e49e5a71ca95898a007b61d021c2a871",
+   "plain_sha1": "9dd87ed6968d7cbd637e28c020e4b6e002563746",
    "ja": "固有：パイクの最大体力は（レベルごとの）成長以外では増えず、代わりに増加体力14ごとに増加攻撃力を1得る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Pyke/Gift of the Drowned Ones#description2": {
    "source_sha1": "efd1c9b384bec43aedd5b3450e74f1ac03ba7e8a",
@@ -97,10 +97,10 @@
   },
   "Template:Data Pyke/Death from Below#description": {
    "source_sha1": "5c4cd0f852b998643b869317fe8af3b68884956c",
-   "plain_sha1": "e982f0de268755901f3e6f5db84b9a64c5836847",
+   "plain_sha1": "a433d6fa5a2338257742adaef14119576fe0b173",
    "ja": "発動効果：パイクは指定地点にXの形の印を付けてから打ち、範囲内で体力が250～550（レベルに応じて）（+ 増加攻撃力の80%）（+ 脅威1ごとに1.5）未満の敵チャンピオンを処刑する。命中したほかの敵と、しきい値を超える敵チャンピオンは、代わりにその50%の物理ダメージを受ける。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Pyke/Death from Below#description2": {
    "source_sha1": "0fc9e2e27ba9bcce9de5e527850d2d75b3321cfd",

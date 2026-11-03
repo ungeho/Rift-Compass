@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Ziggs/Short Fuse#description2": {
    "source_sha1": "269f406fd82279cddc728998cc32ea8646fb48a4",
-   "plain_sha1": "27bcb414199a2527c6d6608fb5556af66f2cd02e",
-   "ja": "ジグスがスキルを使用するたびに、「ショートヒューズ」のクールダウンが4～6秒（レベルに応じて）短縮される。",
+   "plain_sha1": "9c94693b9abd0fd8d8f97072b1114f17cb80d908",
+   "ja": "ジグスがスキルを使用するたびに、「ショートヒューズ」のクールダウンが4 / 5 / 6秒（レベルに応じて）短縮される。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ziggs/Bouncing Bomb#description": {
    "source_sha1": "a93eba37bcb47eafe6afccf1935d7aa47df06c8d",
@@ -80,16 +80,21 @@
    "ja": "爆弾は到着すると爆発して命中した敵に魔法ダメージを与え、中心の外にいる敵には65%になる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Ziggs/Short Fuse#description": {
    "source_sha1": "d980e9b61f004be4b2efd1ad14a0f4656ec42350",
-   "reason": "residual_markup"
+   "plain_sha1": "4eea190d3b2172e3d2f47d178a31f43bd4421842",
+   "ja": "固有：一定時間ごとに、ジグスは次の通常攻撃を強化し、20～184（レベルに応じて）（+ APの50%）の追加の魔法ダメージを与え、建物には75%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ziggs/Satchel Charge#description3": {
    "source_sha1": "44d39172473c91c4ae4c40b8062a7b5c69ce9f34",
-   "reason": "residual_markup"
+   "plain_sha1": "af38956894887988738cc1856546648159b45340",
+   "ja": "「Turret Explosion」：爆発は、範囲内で最大体力の一定のしきい値を下回る敵のタワーも処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

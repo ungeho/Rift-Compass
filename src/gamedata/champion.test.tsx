@@ -185,8 +185,20 @@ describe("説明の日本語訳と計算の段階（2026-11-02 の拡張）", ()
     expect(html).toContain("Wiki の説明（英語の原文・記法を簡略化して表示）");
     expect(html).toContain("AI（Claude Opus 5.5） による翻訳（未レビュー");
   });
-  it("解けない記法がある段落（Ekko パッシブ）は訳さず、保留と示す。英語は［解析できない記法］で示す", () => {
+  it("Ekko パッシブ：以前は解けない記法（pp の式）で保留だった段落が、Module:Ability progression と同じ計算で解けて訳される（2026-11-03）", () => {
     const html = render("Ekko");
+    expect(html).not.toContain("この段落は翻訳を保留しています");
+    expect(html).not.toContain("［解析できない記法］");
+    expect(html).not.toContain("⟦");
+  });
+  it("解けない記法が残る段落は訳さず、保留と示す。英語は［解析できない記法］で示す（解析の仕組みの確認：段落を解けない状態にして描画）", () => {
+    const dd = champ("Ekko");
+    const tr = read<import("../components/ChampionData").TranslationFile>(`public/gamedata/wiki/${snapshot}/translations/ja/abilities/${dd.key}.json`);
+    const file = read<{ templates: { title: string; text?: Record<string, { plain: string; residual: boolean }> }[] }>(`public/gamedata/wiki/${snapshot}/abilities/${dd.key}.json`);
+    const broken = { ...file, templates: file.templates.map((t) => (t.title === "Template:Data Ekko/Z-Drive Resonance" && t.text?.description ? { ...t, text: { ...t.text, description: { ...t.text.description, plain: `${t.text.description.plain} ⟦pp⟧`, residual: true } } } : t)) };
+    const html = renderToStaticMarkup(
+      <ChampionDataBody data={{ version: v, dd, wiki: wiki(dd.key), prev: null, knownIssues, patch: null, abilities: { snapshot, file: broken as never }, translations: tr }} />,
+    );
     expect(html).toContain("この段落は翻訳を保留しています");
     expect(html).toContain("［解析できない記法］");
     expect(html).not.toContain("⟦");

@@ -14,6 +14,7 @@ const os = require("os");
 const path = require("path");
 const crypto = require("crypto");
 const L = require("./lib");
+const PP = require("./pp");
 
 const SITE = "https://wiki.leagueoflegends.com/en-us/";
 const UA = "RiftCompass/0.1 (static knowledge browser; https://github.com/ungeho/Rift-Compass)";
@@ -129,6 +130,25 @@ function templateParams(text, templatePattern) {
  * 数だけの定義・参照・四則演算は先に置き換える（置き換えた変数は vars に残す）。
  * 引数は {{{{{1<noinclude>|Ability data</noinclude>}}}|…（呼び出しの本体）から読む。
  */
+/**
+ * ページの {{#vardefine:名前|値}} をすべて読む（値の中の入れ子の記法も、括弧の対応を数えてそのまま取り出す）。
+ * dataTemplateParams は記法を含まない値だけを置き換えるので、説明の文に残った {{#var:…}} はこれで解く
+ */
+function pageVars(text) {
+  const vars = {};
+  const re = /\{\{#vardefine(?:echo)?:([^|{}]+)\|/g;
+  let m;
+  while ((m = re.exec(text))) {
+    let d = 1, i = re.lastIndex;
+    for (; i < text.length; i++) {
+      if (text.startsWith("{{", i)) { d++; i++; continue; }
+      if (text.startsWith("}}", i)) { d--; if (d === 0) break; i++; }
+    }
+    if (d === 0) vars[m[1].trim()] = text.slice(re.lastIndex, i).trim();
+  }
+  return vars;
+}
+
 function dataTemplateParams(text) {
   const vars = {};
   for (const m of text.matchAll(/\{\{#vardefine:([^|{}]+)\|([^{}]*)\}\}/g)) vars[m[1].trim()] = m[2].trim();
@@ -257,6 +277,8 @@ function apValues(content, defaultCount) {
     const body = explicit && !/\bto\s*$/.test(explicit[1]) ? explicit[1] : p;
     const count = explicit && body !== p ? Number(explicit[2]) : parts.length === 1 ? defaultCount : 0;
     if (!count || count < 2) return { ok: false, reason: parts.length === 1 ? "ap_range_without_ranks" : "ap_part_without_count" };
+    // 段階が多すぎる指定は展開しない（過剰なメモリの使用を防ぐ）
+    if (count > PP_MAX_STEPS) return { ok: false, reason: "ap_complex" };
     const vals = expandRange(body, count);
     if (!vals) return { ok: false, reason: "ap_complex" };
     values.push(...vals);
@@ -291,6 +313,8 @@ function outerTemplate(v) {
  * 1つ目の引数＝値（; 区切り、または「a to b」「a to b for N」）、2つ目＝基準（; 区切り、「a to b」「a to b by s」、空ならレベル1〜）。
  * type＝基準の名前（既定はレベル）、key・key1＝単位、formula＝式の説明。「then」などの複雑な書き方は解析しない
  */
+// pp の段階の上限（Module:Ability progression の上限は 41。異常な指定で無限ループや過剰なメモリの使用にならないように）
+const PP_MAX_STEPS = 100;
 function parsePp(args, levelDefault) {
   const named = {};
   const pos = [];
@@ -308,7 +332,13 @@ function parsePp(args, levelDefault) {
     const r = /^(-?[\d.]+)\s+to\s+(-?[\d.]+)(?:\s+(for|by)\s+([\d.]+))?$/.exec(basisRaw);
     if (r) {
       const a = Number(r[1]), b = Number(r[2]);
-      if (r[3] === "by") { basis = []; for (let x = a; x <= b + 1e-9; x += Number(r[4])) basis.push(round(x)); }
+      if (r[3] === "by") {
+        // 刻み幅が0以下・数でない・段階が多すぎる指定は展開しない（無限ループと過剰なメモリの使用を防ぐ）
+        const step = Number(r[4]);
+        if (!(step > 0) || !Number.isFinite(a) || !Number.isFinite(b) || (b - a) / step > PP_MAX_STEPS) return { ok: false, reason: "pp_complex" };
+        basis = [];
+        for (let x = a; x <= b + 1e-9; x += step) basis.push(round(x));
+      }
       else basis = { from: a, to: b, count: r[3] === "for" ? Number(r[4]) : null };
     } else basis = basisRaw.split(";").map((x) => x.trim());
   }
@@ -319,6 +349,7 @@ function parsePp(args, levelDefault) {
     const a = arith(vr[1]), b = arith(vr[2]);
     if (a === null || b === null) return { ok: false, reason: "pp_complex" };
     const count = vr[3] ? Number(vr[3]) : Array.isArray(basis) ? basis.length : basis && basis.count ? basis.count : 18;
+    if (!Number.isInteger(count) || count < 1 || count > PP_MAX_STEPS) return { ok: false, reason: "pp_complex" };
     values = Array.from({ length: count }, (_, k) => round(a + ((b - a) * k) / Math.max(1, count - 1)));
   } else if (valuesRaw.includes(";")) {
     values = valuesRaw.split(";").map((x) => arith(x));
@@ -353,26 +384,127 @@ function parsePp(args, levelDefault) {
  */
 // 解けない記法の印：名前だけを残し、| や入れ子の印を含めない（外側のテンプレートが | で区切って印を壊さないように）
 const mark = (name) => `⟦${String(name).replace(/[|⟦⟧]/g, "").trim().slice(0, 40)}⟧`;
-function plainText(raw) {
+/**
+ * ctx（任意）：説明の文を取り込むときに、Wiki と同じ値で記法を解くための材料
+ *   vars：そのページの {{#vardefine}}（入れ子の値を含む）、ccd(チャンピオン, 項目)：Module:ChampionData、
+ *   cid(アイテム, 項目)：Module:ItemData、dataField(ページ名, 項目)：別の Data テンプレートの項目（キャッシュだけを読む）
+ */
+function plainText(raw, ctx = {}) {
   if (!raw) return "";
   // 画像のリンク（[[File:…|20px|link=…]]）は文字ではないので、テンプレートを解く前に取り除く
   let t = String(raw).replace(/<!--[\s\S]*?-->/g, "").replace(/\[\[(File|Image):[^\[\]]*\]\]/gi, "");
+  // ページの変数（文の中の #vardefine で増える。呼び出しごとに写して、元の ctx は変えない）
+  const vars = { ...(ctx.vars || {}) };
   for (let k = 0; k < 40; k++) {
     const before = t;
     t = t.replace(/\{\{([^{}]*)\}\}/g, (all, inner) => {
       const parts = inner.split("|").map((x) => x.trim());
       const name = (parts[0] || "").toLowerCase();
-      const pos = parts.slice(1).filter((x) => !/^[a-z0-9_]+\s*=/i.test(x));
-      if (name === "pp" || name === "pplevel") {
-        const p = parsePp(parts.slice(1), name === "pplevel");
-        if (!p.ok) return mark(name);
-        const u = p.unit || "";
-        const range = p.values.length > 1 ? `${fmtNum(p.values[0])}${u} – ${fmtNum(p.values[p.values.length - 1])}${u}` : `${fmtNum(p.values[0])}${u}`;
-        return `${range} (based on ${p.basis_label})`;
+      // 名前のない引数（1=・2= と書かれたものを含む）と、名前のある引数
+      const named = {};
+      const posArr = [];
+      for (const a of parts.slice(1)) {
+        const m = /^([a-z0-9_]+)\s*=\s*([\s\S]*)$/i.exec(a);
+        if (m && /^\d+$/.test(m[1])) posArr[Number(m[1]) - 1] = m[2];
+        else if (m) named[m[1].toLowerCase() === "critscaling" ? "critScaling" : m[1].toLowerCase()] = m[2].trim();
+        else { let i = 0; while (posArr[i] !== undefined) i++; posArr[i] = a; }
       }
+      const pos = Array.from(posArr, (x) => x ?? "");
+      // パーサー関数：{{#var:名前}}（ページの変数）、{{#vardefine:名前|値}}・{{#vardefineecho:名前|値}}（文の中で変数を決める。echo は値も表示）、{{#expr:式}}（四則演算）
+      // マジックワード：{{lcfirst:文}}・{{ucfirst:文}}（最初の1文字を小文字・大文字にする）
+      const cf = /^(lcfirst|ucfirst):\s*([\s\S]*)$/i.exec(inner);
+      if (cf) return cf[2] ? (cf[1].toLowerCase() === "lcfirst" ? cf[2][0].toLowerCase() : cf[2][0].toUpperCase()) + cf[2].slice(1) : "";
+      const fn = /^#(var|expr|vardefine|vardefineecho):\s*([\s\S]*)$/i.exec(parts[0] || "");
+      if (fn) {
+        const kind = fn[1].toLowerCase(), vname = fn[2].trim();
+        if (kind === "vardefine" || kind === "vardefineecho") {
+          vars[vname] = parts.slice(1).join("|");
+          return kind === "vardefineecho" ? vars[vname] : "";
+        }
+        // 変数の値にも画像のリンク・注釈があるので、本文と同じく先に取り除く（| で引数が壊れないように）。
+        // まだ決まっていない変数は、後の段で決まることがあるのでそのまま残す（最後まで残ったら解けない記法にする）
+        if (kind === "var") return vname in vars ? String(vars[vname]).replace(/<!--[\s\S]*?-->/g, "").replace(/\[\[(File|Image):[^\[\]]*\]\]/gi, "") : all;
+        const v = PP.mwExpr(fn[2]);
+        return v === null ? mark(parts[0]) : fmtNum(v);
+      }
+      // Template:Adaptive：適応型の増加（増加攻撃力は値の 0.6 倍（wr=true は 0.5 倍）、または同じ値の魔力）
+      if (name === "adaptive") {
+        const af = named.wr === "true" ? 0.5 : 0.6;
+        const v = pos[0] || "0";
+        const forN = pos[1] ? ` for ${pos[1]}` : named.wr === "true" ? " for 15" : "";
+        let ad, ap;
+        if (/to/.test(v)) { ad = `{{pp|${af}*${v}*${af}${forN}}}`; ap = `{{pp|${v}${forN}}}`; }
+        else if (/x/.test(v)) { ad = `{{pp|(${v})*${af}${forN}}}`; ap = `{{pp|${v}${forN}}}`; }
+        else {
+          const a = PP.mwExpr(`${v}*${af} round 2`), b = PP.mwExpr(v);
+          if (a === null || b === null) return mark(name);
+          ad = fmtNum(a); ap = fmtNum(b);
+        }
+        return `${ad} bonus Attack Damage or ${ap} Ability Power (Adaptive)`;
+      }
+      // Template:Unique：「Unique – 名前: 効果」（効果がなければ「Unique: 文」）
+      if (name === "unique") return pos[1] ? `Unique – ${pos[0]}: ${pos[1]}` : `Unique: ${pos[0] ?? ""}`;
+      // Template:MinuteDisplay：秒の合計を「分:秒」で表示
+      if (name === "minutedisplay") {
+        const s = PP.mwExpr(pos.slice(0, 5).map((x) => `(${x || 0})`).join("+"));
+        if (s === null) return mark(name);
+        const sec = Math.round(s % 60);
+        return `${Math.floor(s / 60)}:${sec < 10 ? "0" : ""}${sec}`;
+      }
+      if (name === "pp" || name === "pplevel") {
+        // Module:Ability progression と同じ計算・表示（tools/gamedata/pp.js）
+        const s = PP.ppText(pos, named, name === "pplevel");
+        // チャンピオンのレベルに応じた値がレベル18を超える場合は、表示とは別に記録する（ctx.levelNotes。英文は Wiki の表示のまま）
+        if (s !== null && Array.isArray(ctx.levelNotes)) {
+          const n = PP.levelNote(pos, named, name === "pplevel");
+          if (n) ctx.levelNotes.push(n);
+        }
+        return s === null ? mark(name) : s;
+      }
+      // 次のゲームの tick に切り上げた秒（Template:Rounded up to next game tick）
+      if (name === "rutngt" || name === "rounded up to next game tick") {
+        const s = PP.rutngtText(pos[0]);
+        return s === null ? mark(name) : s;
+      }
+      // チャンピオン・アイテムのデータ（Template:Current champion data・Current item data）
+      if (name === "ccd" || name === "current champion data" || name === "cid" || name === "current item data") {
+        const champ = /^(ccd|current champion data)$/.test(name);
+        const get = champ ? ctx.ccd : ctx.cid;
+        const v = get ? get(named.champname || named.item || pos[0], named.datatype || pos[1]) : undefined;
+        return v === undefined || v === null || typeof v === "object" ? mark(name) : String(v);
+      }
+      if (name === "critical damage") {
+        const ie = ctx.cid ? Number(ctx.cid("Infinity Edge", "critdamage")) : NaN;
+        const s = PP.criticalDamageText(pos, named, ie);
+        return s === null ? mark(name) : s;
+      }
+      // 別の Data テンプレートの項目を表示する呼び出し（{{Data Jayce/Hextech Capacitor|pst2|description}}）
+      if (/^(data |tip data\/)/.test(name) && pos[1] && ctx.dataField) {
+        // ページ名の最初の文字は大文字と同じ（{{tip data/Root|…}} は Template:Tip data/Root）
+        const v = ctx.dataField(`Template:${parts[0].charAt(0).toUpperCase()}${parts[0].slice(1)}`, pos[1]);
+        return v == null ? mark(name) : v;
+      }
+      // 循環小数（Template:Recurring：数字の上に線）。1.3{{recurring|3}} は 1.333…
+      if (name === "recurring") return pos[0] ? `${pos[0]}${pos[0]}…` : mark(name);
+      // 画像つきの名前（Template:Custom content icon・ccib）：表示の文（3つ目か text）、なければリンク先（2つ目）
+      if (name === "cci" || name === "ccib" || name === "custom content icon") {
+        if (named.icononly === "true") return "";
+        return pos[2] || named.text || pos[1] || "";
+      }
+      // Template:Bug：Wiki が「意図しない動作」「期待と違う動作」と注記している印
+      if (name === "bug") return pos[0] === "2" ? "(unexpected)" : "(bug)";
+      // Template:Column：段組みの中身（2つ目）
+      if (name === "column") return pos[1] ?? "";
+      // Template:Color：色を付けた文（2つ目）
+      if (name === "color") return pos[1] ?? "";
+      if (name === "stil") return pos[1] || pos[0] || "";
+      if (name === "iis") return pos[1] || pos[0] || "";
       if (name === "ap") {
         const v = apValues(parts.slice(1).join("|"), 5);
-        return v.ok ? v.values.map(fmtNum).join(" / ") : pos.join(" / ").replace(/\s+to\s+/g, " – ");
+        // round=N は Module:Ability progression の p.ap と同じく、指定があるときだけ N 桁で四捨五入する（既定は丸めない）
+        const d = named.round != null && /^\d+$/.test(named.round) ? Number(named.round) : null;
+        const r = (x) => (d === null || Number.isInteger(x) ? x : Math.floor(x * 10 ** d + 0.5) / 10 ** d);
+        return v.ok ? v.values.map((x) => fmtNum(r(x))).join(" / ") : pos.join(" / ").replace(/\s+to\s+/g, " – ");
       }
       // 記号のテンプレート
       const SYMBOLS = { times: "×", x: "×", plus: "+", minus: "−", "divided by": "÷", equals: "=", "-": "–" };
@@ -385,7 +517,9 @@ function plainText(raw) {
       // 名前のリンクの表示の文：{{ai|スキル|チャンピオン|表示}} は3つ目、{{ii|アイテム|表示}}・{{si}}・{{ri}}・{{ci}} などは2つ目（あれば）を表示する
       if (/^(ai|cai|ais)$/.test(name)) return pos[2] || pos[0] || "";
       if (/^(ii|si|ri|ci|cis|bi|ui|csl|pi|sis|ri2|ci2)$/.test(name)) return pos[1] || pos[0] || "";
-      if (/^(sbc|as|ccs|cs|fd|tt|ft|nie|ci|cai|ai|si|sis|ii|ri|bi|ui|csl|cis|pi|tt2|sm2|mi|ci2|rp|ms|hp|mana|ad|ap2|ri2|sbi)$/.test(name)) return pos[0] ?? "";
+      // {{ft|既定の文|切り替えた文}}（Template:FlipText）は既定の文を前後に空白を付けて表示する（「deals{{ft|…}}」が「deals5%」と続かないように）
+      if (name === "ft") return ` ${pos[0] ?? ""} `;
+      if (/^(sbc|as|ccs|cs|fd|tt|nie|ci|cai|ai|si|sis|ii|ri|bi|ui|csl|cis|pi|tt2|sm2|mi|ci2|rp|ms|hp|mana|ad|ap2|ri2|sbi)$/.test(name)) return pos[0] ?? "";
       // アイコンつきの名前（{{ais|名前|チャンピオン}}・{{uis|名前}}）・小文字のリンク（{{lc|語}}）は名前・語を表示。anchor は表示しない
       if (/^(ais|uis|lc)$/.test(name)) return pos[0] ?? "";
       if (name === "anchor") return "";
@@ -394,6 +528,12 @@ function plainText(raw) {
       if (name === "tip") return pos[pos.length - 1] ?? pos[0] ?? "";
       if (name === "st") return `${pos[0] ?? ""}: ${pos[1] ?? ""}`;
       // 近接・遠隔で違う値（{{rd|近接|遠隔}}）と、2つ以上の値（{{dv}}）は全部を示す
+      // pp=true（Template:Range difference）：近接・遠隔それぞれを {{pp}} で示し、最後に「(based on 基準)」
+      if (name === "rd" && named.pp === "true") {
+        const pp = (v, lv) => `{{pp|${v}|2=${lv}|type=${named.type || "level"}|key=${named.key || ""}|showtype=false}}`;
+        const showType = named.showtype === "false" ? "" : ` (based on ${named.type || "level"})`;
+        return `${pp(named.melee || pos[0] || "", named.levels1 || named.levels || "")} (melee) / ${pp(named.ranged || pos[1] || "", named.levels2 || named.levels || "")} (ranged)${showType}`;
+      }
       if (name === "rd") return pos.length >= 2 ? `${pos[0]} (melee) / ${pos[1]} (ranged)` : pos[0] ?? "";
       if (name === "dv") return pos.join(" / ");
       // それ以外（表示の仕方を確かめていないテンプレート・パーサー関数）は推測で読まず、解けない記法として残す
@@ -401,18 +541,26 @@ function plainText(raw) {
     });
     if (t === before) break;
   }
+  // 最後まで決まらなかった変数は、解けない記法として残す
+  t = t.replace(/\{\{#var:([^{}|]*)\}\}/gi, (a, n) => mark(`#var:${n}`));
   t = t
     .replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, "$1")
     .replace(/'''?/g, "")
     .replace(/<br\s*\/?>/gi, " ")
+    // 箇条書き（<ul><li>）は Wiki の「* 」と同じ形の行にする（項目どうしが続けて読まれないように）
+    .replace(/<li[^>]*>/gi, "\n* ")
+    .replace(/<\/ul>/gi, "\n")
     .replace(/<[^>]+>/g, "")
     .replace(/[ \t]+/g, " ")
+    // ft の前後に付けた空白が句読点・閉じ括弧の前に残らないように
+    .replace(/ +([,.;:)])/g, "$1")
     .trim();
   return t;
 }
 const fmtNum = (x) => String(Number(Number(x).toFixed(4)));
 /** 解けない記法が残っているか */
-const hasResidual = (s) => /⟦|\{\{|\}\}|\b[a-z_]+\d*\s*=\s*\S/i.test(s);
+// 解けない記法の印・波括弧・「名前=値」のほか、式のまま残った変数 x（(x-1)・*x・x* など）も解けていないものとする
+const hasResidual = (s) => /⟦|\{\{|\}\}|\b[a-z_]+\d*\s*=\s*\S|\(x-1\)|[*/^]\s*x\b|\bx\s*[*/^]/i.test(s);
 
 /** 範囲（a to b、(a to b) の入れ子なし、x）を count 段階に展開する。解析できなければ null */
 function expandRange(body, count) {
@@ -620,4 +768,98 @@ function articleMeta(text) {
   return { bytes: Buffer.byteLength(text), headings, templates_used: templates.length, links: (text.match(/\[\[/g) || []).length };
 }
 
-module.exports = { calcInfo, inputOf, plainText, hasResidual, parsePp, outerTemplate, SITE, UA, LICENSE, pageUrl, fetchRaw, parseLuaChunk, templateParams, dataTemplateParams, parseValue, parseLeveling, structureTemplate, articleMeta, NUMERIC_FIELDS, defaultCache: () => path.join(os.tmpdir(), "rift-compass-wiki-cache") };
+// --- アイテムの固有効果・同時に持てる数（重複のルール）---
+
+/**
+ * Named item effect の記事の表（共有の固有効果・単独の固有効果、それぞれの「互いに関係する」表）から、
+ * 効果の名前と、その効果を持つアイテム・ルーンの名前だけを取り出す（効果の説明の文は保存しない）。
+ * kind：shared（異なるアイテムでも一度だけ得られる）・isolated（同じアイテムを複数持っても一度だけ）。group：互いに関係する効果のまとまり
+ */
+function parseNamedItemEffects(raw) {
+  const out = [];
+  const parts = raw.split(/^(==+)\s*([^=\n]+?)\s*\1\s*$/m);
+  let heading = "";
+  for (let i = 0; i < parts.length; i++) {
+    if (i % 3 === 1) continue;
+    if (i % 3 === 2) { heading = parts[i]; continue; }
+    const kind = /^(grouped )?shared effects$/i.test(heading) ? "shared" : /^(grouped )?isolated effects$/i.test(heading) ? "isolated" : null;
+    if (!kind) continue;
+    const grouped = /^grouped/i.test(heading);
+    for (const table of parts[i].split(/^\{\|/m).slice(1)) {
+      const body = table.split(/^\|\}/m)[0];
+      let group = null, items = [], runes = [];
+      for (const row of body.split(/^\|-\s*$/m).slice(1)) {
+        const cells = row.split("\n").filter((l) => /^\|(?![-}])/.test(l)).map((l) => l.slice(1).replace(/^\s*rowspan="\d+"\|/, "").trim());
+        if (!cells.length) continue;
+        let nameCell;
+        if (grouped && cells.length >= 4) {
+          group = (cells[0].match(/'''(.+?)'''/g) || []).map((x) => x.replace(/'''/g, "")).join(" / ");
+          nameCell = cells[1];
+        } else nameCell = cells[0];
+        const itemCell = grouped ? (cells.length >= 4 ? cells[3] : null) : cells[2];
+        if (itemCell) {
+          items = [...itemCell.matchAll(/\{\{iis?\|([^|}]+)/g)].map((m) => m[1].trim());
+          runes = [...itemCell.matchAll(/\{\{ri\|([^|}]+)/g)].map((m) => m[1].trim());
+        }
+        const names = ((nameCell.match(/'''(.+?)'''/) || [])[1] || "").split(/\s*\/\s*/).filter(Boolean);
+        for (const name of names) out.push({ name, kind, ...(grouped ? { group } : {}), items, ...(runes.length ? { runes } : {}) });
+      }
+    }
+  }
+  return out;
+}
+
+/** Template:Item limit の文（英語）。#switch の分岐を写したもの */
+function itemLimitRule(group, itemName) {
+  const m = {
+    Potion: "Limited to 1 type of Potion.",
+    Elixir: "Limited to 1 Elixir effect at a time. Drinking a different Elixir will replace the existing one's effects.",
+    Jungle: "Limited to 1 Jungle / Support item.",
+    Support: "Limited to 1 Support / Jungle item.",
+    "Crit Modifier": "Limited to 1 Crit Modifier / Marksman Capstone item.",
+    "Marksman Capstone": "Limited to 1 Marksman Capstone / Crit Modifier item.",
+  };
+  if (group === "legendary") return `Limited to 1 ${itemName}.`;
+  return m[group] || `Limited to 1 ${group} item.`;
+}
+
+/**
+ * アイテムの同時に持てる数の制限（Module:ItemData/getter の p.itemlimit を写したもの）。
+ * itemlimit・itemlimit2… のグループ。なければ、種類が Legendary だけのとき「同じアイテムは1つまで」。
+ * 種類が Mythic・Boots・Potion・Elixir・Trinket ならそのグループ（getter と同じく elseif の順）。
+ * 値が "=>アイテム名" のときはそのアイテムの値を使う（getter の get と同じ）
+ */
+function itemLimitGroups(name, data, byName) {
+  const deref = (key) => {
+    let v = data[key];
+    for (let n = 0; typeof v === "string" && v.startsWith("=>") && n < 5; n++) v = (byName.get(v.slice(2)) || {})[key];
+    return v;
+  };
+  const groups = [];
+  let v = deref("itemlimit");
+  for (let i = 2; v && i < 10; i++) { groups.push(v); v = deref(`itemlimit${i}`); }
+  const type = (Array.isArray(data.type) ? data.type : []).join("");
+  if (!groups.length && type === "Legendary") groups.push("legendary");
+  else if (type === "Mythic") groups.push("Mythic");
+  else if (/Boots/.test(type)) groups.push("Boots");
+  else if (/Potion/.test(type)) groups.push("Potion");
+  else if (/Elixir/.test(type)) groups.push("Elixir");
+  else if (/Trinket/.test(type)) groups.push("Trinket");
+  return groups.map((g) => ({ group: g, rule: itemLimitRule(g, name) }));
+}
+
+/** アイテムの制限の文（Module:ItemData/getter の p.limit の、削除されていないアイテムの分岐を写したもの）。記法は残す（plainText で読める文にする） */
+function itemLimitText(data) {
+  let s = "";
+  if (data.ornn === true) s = "Can only be forged by {{ci|Ornn}}.";
+  const limit = typeof data.limit === "string" ? data.limit : "";
+  let off = false;
+  if (limit.includes("warding")) { off = true; s = "A player may only have 3 {{tip|Stealth Ward|Stealth Wards}} or {{tip|Totem Ward|Totem Wards}} on the map at one time. " + s; }
+  if (limit.includes("trinket")) { off = true; s = "Switching to another trinket keeps the current cooldown, if there is any. " + s; }
+  const ch = Array.isArray(data.champion) ? data.champion : data.champion ? [data.champion] : null;
+  if (ch) s = `Only available to ${ch[1] ? `{{ci|${ch[0]}}} and {{ci|${ch[1]}}}` : `{{ci|${ch[0]}}}`}. ` + s;
+  if (limit && !off) s = limit + " " + s;
+  return s.trim();
+}
+
+module.exports = { parseNamedItemEffects, itemLimitRule, itemLimitGroups, itemLimitText, pageVars, calcInfo, inputOf, plainText, hasResidual, parsePp, outerTemplate, SITE, UA, LICENSE, pageUrl, fetchRaw, parseLuaChunk, templateParams, dataTemplateParams, parseValue, parseLeveling, structureTemplate, articleMeta, NUMERIC_FIELDS, defaultCache: () => path.join(os.tmpdir(), "rift-compass-wiki-cache") };

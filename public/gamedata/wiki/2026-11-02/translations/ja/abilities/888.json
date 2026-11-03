@@ -80,16 +80,21 @@
    "ja": "狂乱状態のユニットは攻撃速度が100%増加し、大きさが25%増える。対象選択の範囲内で、次の区分の順に最も近いユニットを優先して攻撃する：# 自分の味方のチャンピオン # 味方のチャンピオン以外 # 味方のワード # 敵のユニット（モンスターを含む）",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Renata Glasc/Bailout#description2": {
    "source_sha1": "08877f43d55955e71af5a45b7df88b635b573d07",
-   "reason": "residual_markup"
+   "plain_sha1": "b5515efaa7394a12f091881ca37c040b32d58383",
+   "ja": "「緊急支援」が有効な間に対象が致命的なダメージを受けると、最大体力の100%まで回復するが、体力が0になるまで0.264秒（0.25秒を次のゲームのティックに切り上げた値）ごとに最大体力の10%に等しい確定ダメージの燃焼を受け、その間「緊急支援」の効果時間は0.25秒ごとにリセットされる。この効果は、対象がすでにこの効果を持っていて燃焼していない間、「緊急支援」の付与一回につき一度だけ起こる。対象がダメージを与えてから6秒以内に敵チャンピオンのキルに関与すると燃焼は止まり、直後に現在体力が最大体力の20%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Renata Glasc/Loyalty Program#description": {
    "source_sha1": "6cd4069a2f7898c5f02dc6f6d3ad9a8578bb38b9",
-   "reason": "residual_markup"
+   "plain_sha1": "170d39c083b49aef23da9fd6861e73bf6d354124",
+   "ja": "発動効果：レナータは自身の両側からケミテックのロケットを撃ち、ロケットは即座に周囲の対象に当たる。0.429秒（0.4秒を次のゲームのティックに切り上げた値）後、ロケットは一つの弾に合わさって指定地点へ飛び、通り道の対象に当たって、指定地点に着くと爆発する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

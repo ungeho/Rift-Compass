@@ -87,12 +87,14 @@
    "ja": "自動効果：ツイステッド・フェイトは攻撃速度が増加する。通常攻撃（攻撃時効果）のたびに「スタックデッキ」のスタックを得て、最大3回まで重なる。3スタックで次の通常攻撃が強化され、すべて消費して追加の魔法ダメージを与える（建物には50%）。復活時に「スタックデッキ」の最大スタックを得る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Twisted Fate/Loaded Dice#description": {
    "source_sha1": "a9c05c71ae478c08a6fedce6a016e7d6b378fc13",
-   "reason": "residual_markup"
+   "plain_sha1": "a5764de65b0902b60fd6abcf73fde2f3939998e0",
+   "ja": "固有：ツイステッド・フェイトは敵を倒すたびに、1～6ゴールド（gold）（確率に応じて）を得る。さらに、クリティカル率に等しい確率で、追加で1～6（確率に応じて）ゴールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

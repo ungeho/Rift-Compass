@@ -108,12 +108,14 @@
    "ja": "ケネンは「雷撃の大嵐」の詠唱時間中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Kennen/Electrical Surge#description": {
    "source_sha1": "54b42a9ec14dbab7d8c5f1ee9aef8a96047f9259",
-   "reason": "residual_markup"
+   "plain_sha1": "3683c308e11f58635f9cf18073377fb0f3c8d941",
+   "ja": "自動効果：ケネンの通常攻撃は攻撃開始時に「稲妻の奔流」のスタックを得て、最大4回まで重なる。4スタックのとき、次の通常攻撃は攻撃開始時にすべてのスタックを消費し、追加の魔法ダメージを与えて、攻撃時効果として「嵐の刻印」のスタックを与える。このダメージはクリティカルになりえ、（140% + 「インフィニティ・エッジ」 16%）のダメージを与える。復活すると、ケネンは「稲妻の奔流」のスタックが最大になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

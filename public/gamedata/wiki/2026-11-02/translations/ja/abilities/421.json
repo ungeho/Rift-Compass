@@ -150,12 +150,14 @@
    "ja": "「Burrowed」の状態で使うと、レク＝サイは「ヴォイドラッシュ」の詠唱時間の終わりに自動で地上に出て（「襲撃」の効果は発動しない）、「潜伏」を1秒のクールダウンにする。「潜伏」がすでにクールダウン中なら、残りクールダウンが1秒になる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Rek'Sai/Fury of the Xer'Sai#description2": {
    "source_sha1": "506001b161b33c88c1cba0916572b976585fb35b",
-   "reason": "residual_markup"
+   "plain_sha1": "f8d10a87d8408b1f6f190ac928eecad8d9f4cffc",
+   "ja": "レク＝サイが「Burrowed」になると、今の「Fury」を3秒かけて消費して、最大体力の9%～21.29%（レベルに応じて）の0%～100%（「Fury」に応じて）を回復し、消費しきるか体力が満タンになると止まる。「Burrowed」の間に「Fury」を生み始めた場合、消費は5秒後に起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

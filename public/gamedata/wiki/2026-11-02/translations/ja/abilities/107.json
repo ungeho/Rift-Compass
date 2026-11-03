@@ -87,40 +87,63 @@
    "ja": "発動効果：レンガーは指定方向に投げ縄を投げ、最初に命中した敵に物理ダメージを与えて、1.75秒間スロウを与え、2秒間可視化して、同じ時間その周囲150ユニットの視界を与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Rengar/Unseen Predator#description": {
    "source_sha1": "9607f966fd4a5a02139bf2c932e1b546006dfc8e",
-   "reason": "residual_markup"
+   "plain_sha1": "4f0d5a0524cd8301e2a6ae1f404eb7c02933cb58",
+   "ja": "固有：基本スキルを使うか「逆上」の一回目の攻撃を使うと、レンガーは1秒間「Ferocity」のスタックを得て、最大4回まで重なるが、発動のたびに更新はされない（unexpected：Wiki が「期待と違う動作」と注記）。最大スタックで、次の基本スキルはすべてを消費して追加の効果で強化され、もう一回使えるようになり、1.5秒間移動速度が30% / 40% / 50%（レベルに応じて）増加する。得た「Ferocity」は、ダメージを与えるか受けてから10秒間は切れない（持続ダメージや発動効果のダメージは除く）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Unseen Predator#description4": {
    "source_sha1": "a753b5c23852e2c41f82d06610fd7fbb6169e508",
-   "reason": "residual_markup"
+   "plain_sha1": "dbef30ebc0894f090d19ef48523781bc62860b64",
+   "ja": "固有 -「Bonetooth Necklace」：ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、レンガーは「Trophy」を得る（チャンピオンごとに一度、最大5）。イベント「The Hunt is On!」で「Head of Kha'Zix」を得ると、もう一つ「Trophy」を得られる。「Trophy」は、増加攻撃力の1%～36%（「Trophy」の数に応じて）に等しい攻撃力の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Savagery#description3": {
    "source_sha1": "1aee2ad6f706814f2b34d8145baa3b909526a036",
-   "reason": "residual_markup"
+   "plain_sha1": "258aa3e9ce31c6414e2928842b3aae28d68d5286",
+   "ja": "「Ferocity」のボーナス：「逆上」のダメージは35～260（レベルに応じて）（+ 攻撃力の20%）の追加の物理ダメージに変わる。発動時に基本の攻撃速度の増加をもう一回得るのに加え、攻撃を使うと5秒間攻撃速度が50%～107%（レベルに応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Battle Roar#description2": {
    "source_sha1": "6f03798a93dc788556b474c168a5f6ed76de6fd3",
-   "reason": "residual_markup"
+   "plain_sha1": "5566f08a3d369dc33af34aba1b8e781262e20906",
+   "ja": "発動効果：レンガーは雄叫びを上げ、周囲の敵に魔法ダメージを与え、モンスターには65～137.65（レベルに応じて）の追加の魔法ダメージを与えて、灰色の体力を消費して同じ量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Battle Roar#description3": {
    "source_sha1": "eddaef6a728055726a2fbe716100a99e5d031bf8",
-   "reason": "residual_markup"
+   "plain_sha1": "be6a5a5c7ac336445acb73c5bc4d8f8297d40a55",
+   "ja": "「Ferocity」のボーナス：「狩りの雄叫び」のダメージは50～240（レベルに応じて）（+ APの80%）の魔法ダメージに変わる。レンガーは自身のすべての行動妨害を解除する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Bola Strike#description2": {
    "source_sha1": "7e8d01661de6459ce0db3382abf1aad263b58077",
-   "reason": "residual_markup"
+   "plain_sha1": "812fc1c4df7e4bf369d1a6392d574d1f9e77e4ce",
+   "ja": "「Ferocity」のボーナス：「鉄球の投げ縄」のダメージは50～335（レベルに応じて）（+ 増加攻撃力の80%）の物理ダメージに変わる。対象はスロウの代わりにスネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Thrill of the Hunt#description2": {
    "source_sha1": "bfa3b1ea55b4c40a12970dfeb026e0af727df824",
-   "reason": "residual_markup"
+   "plain_sha1": "2bc3a2e4ee2482104e0b26a695685f24ab141c59",
+   "ja": "発動効果：レンガーは一定時間獲物を狙って移動速度が増加する。2秒の遅れの後、カモフラージュ状態になり、「見えざる襲撃者」を得る。カモフラージュは最大14秒しか続かない（unexpected：Wiki が「期待と違う動作」と注記）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Rengar/Thrill of the Hunt#description5": {
    "source_sha1": "3936089e5b00cfcddc9214681dc37bdb6f2ed6dc",
-   "reason": "residual_markup"
+   "plain_sha1": "339f455b4b044e8bab84b7efe715c9062374818e",
+   "ja": "射程125以内のいずれかの敵へのレンガーの次の通常攻撃、または「見えざる襲撃者」による印の付いた敵への攻撃は、攻撃力の100%の物理ダメージをさらに与え、その後4秒間物理防御低下を与える。跳躍が終わるまで対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

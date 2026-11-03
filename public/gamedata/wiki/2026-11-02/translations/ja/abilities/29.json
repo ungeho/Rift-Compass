@@ -48,10 +48,10 @@
   },
   "Template:Data Twitch/Deadly Venom#description2": {
    "source_sha1": "7ad74474c915787bb82fb16ec96a7f5616be52e7",
-   "plain_sha1": "763956def11eb7d9ce4e3979f8fa927944c19d76",
-   "ja": "「スゴイ毒ダ！」：スタックごとに、対象は効果時間の間、毎秒1～5（レベルに応じて）（+ APの3%）の確定ダメージを受け、各回の最大は6～30（レベルに応じて）（+ APの18%）の確定ダメージになる。この効果は毒として扱われる。",
+   "plain_sha1": "c196685c55555a352982fd18cf450478cc9ffabf",
+   "ja": "「スゴイ毒ダ！」：スタックごとに、対象は効果時間の間、毎秒1 / 2 / 3 / 4 / 5（レベルに応じて）（+ APの3%）の確定ダメージを受け、各回の最大は6 / 12 / 18 / 24 / 30（レベルに応じて）（+ APの18%）の確定ダメージになる。この効果は毒として扱われる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Twitch/Venom Cask#description": {
    "source_sha1": "012b4d581b4e98ac1124ae49e84ac4d12a683fd3",
@@ -94,12 +94,14 @@
    "ja": "発動効果：トゥイッチは6秒間、増加攻撃力と通常攻撃の射程300の増加を得て、その間の通常攻撃は、射程より少し遠くまで直線状に飛ぶ弾になり、命中したすべての敵ユニットにダメージを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Twitch/Spray and Pray#description2": {
    "source_sha1": "f15dfc3c8cbe1f1b4413fde36155c6ce9cbe8017",
-   "reason": "residual_markup"
+   "plain_sha1": "8c1c4e263137096b013ca88c45deb3926227559b",
+   "ja": "弾は元の攻撃のダメージの100%～60%（命中した敵の数に応じて）を与え、攻撃時効果を与えて、（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

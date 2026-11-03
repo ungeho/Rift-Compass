@@ -55,10 +55,10 @@
   },
   "Template:Data Shen/Shadow Dash#description": {
    "source_sha1": "1eb751a957c152889dd3ddd6a1001bb765d1a695",
-   "plain_sha1": "a79efd2462cfe88247100f6270cff9b2ab79ab57",
-   "ja": "自動効果：「護刃招来」か「殺気駆け」でダメージを与えると、気を30～50（レベルに応じて）回復する。",
+   "plain_sha1": "c39645dc2da2643ed7242073409e010fe74aad5a",
+   "ja": "自動効果：「護刃招来」か「殺気駆け」でダメージを与えると、気を30 / 40 / 50（レベルに応じて）回復する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Shen/Shadow Dash#description2": {
    "source_sha1": "ce58c76e60df95fa1a3fba125c28ddd1a627e165",
@@ -80,16 +80,21 @@
    "ja": "詠唱を終えると、シェンと「Spirit Blade」は対象の味方の位置へブリンクし、その味方と最も近い敵チャンピオンの間に置かれる。さらに、完了の時点で自身を狙う飛翔物をすべて破壊する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Shen/Ki Barrier#description": {
    "source_sha1": "33fb19019c2ffae725f2b91cd7d1c74152d314b4",
-   "reason": "residual_markup"
+   "plain_sha1": "63fd854b9084bd462184fea9257d56d46d2088c0",
+   "ja": "固有：スキルの効果を終えた後、シェンは2.5秒間、47～128.59（レベルに応じて）（+ 増加体力の13%）のシールドを自身に付与する。シェンがスキルで少なくとも一体のほかのチャンピオンに効果を与えると、「内気功」のクールダウンが4～8.25秒（レベルに応じて）短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Shen/Stand United#description": {
    "source_sha1": "f559ede4915c74f2fbeff10390c277a4117eadcd",
-   "reason": "residual_markup"
+   "plain_sha1": "973517b3920e89d8adadb16e4838b6b244c02e87",
+   "ja": "発動効果：シェンは意志を集中して3秒間詠唱し、発動時に対象の味方チャンピオンに5秒間シールドを付与する。シールドは対象の減少体力に応じて0%～60%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

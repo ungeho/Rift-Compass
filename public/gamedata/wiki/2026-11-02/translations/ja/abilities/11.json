@@ -108,20 +108,28 @@
    "ja": "効果中、チャンピオンのキルに関与すると「ハイランダー」の効果時間が7秒延長される。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Master Yi/Alpha Strike#description": {
    "source_sha1": "0d74256d3c07675497c3fde7ae898a2bf4565c3f",
-   "reason": "residual_markup"
+   "plain_sha1": "524598d7241cf808d89eabb41a746a70a2198460",
+   "ja": "発動効果：マスター・イーは姿を消して行動できなくなる。0.231秒（0.2秒を次のゲームのティックに切り上げた値）後、対象の敵に印を付け、その後0.231秒（0.2秒を次のゲームのティックに切り上げた値）ごとに最大3回、600ユニット以内で最も近くの見えている、印の付いていない敵に印を付けていく。それまでに印の付いていない対象がほかにいなければ、同じ敵に再び印を付けられる。「アルファストライク」の間、マスター・イーは主対象からの方向を選べる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Master Yi/Alpha Strike#description2": {
    "source_sha1": "2f1981924b09ad2ee31621d862e901a1bdc3d5c7",
-   "reason": "residual_markup"
+   "plain_sha1": "e50f676686b2418dd7c3cb5e19990ef896b921ce",
+   "ja": "印を付け終わると、マスター・イーは指定した方向に75ユニット、なければ対象の前に再び現れ、0.165秒（0.15秒を次のゲームのティックに切り上げた値）後に再び行動できるようになる。遅れの間に主対象が死ぬか離れすぎると、マスター・イーは代わりに最初に発動した位置に再び現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Master Yi/Alpha Strike#description4": {
    "source_sha1": "f7fed55bfbfbc49742ee91f4874713eef82eac4b",
-   "reason": "residual_markup"
+   "plain_sha1": "8d3498c5a90b1ee37554494f7c02464e8b10400d",
+   "ja": "「アルファストライク」の主対象へのダメージと副対象へのダメージは、クリティカルになりえ、（200% + 「インフィニティ・エッジ」 40%）のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

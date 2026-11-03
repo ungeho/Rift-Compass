@@ -87,12 +87,14 @@
    "ja": "発動効果：リヴェンは指定方向の扇形の範囲にエネルギーの波を放ち、命中した敵に物理ダメージ（対象の減少体力に応じて0%～200%増加）を与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Riven/Runic Blade#description": {
    "source_sha1": "68968f4cea113264ee7757d61a03843ff856f613",
-   "reason": "residual_markup"
+   "plain_sha1": "a1dd5446b20d876a169395fd958447e08003fc15",
+   "ja": "固有：リヴェンのスキルの使用は6秒間「Charge」のスタックを得て、使うたびに更新され、最大3回まで重なる。リヴェンの通常攻撃は攻撃開始時に強化され、それぞれ攻撃時効果としてスタックを一つ消費し、攻撃力の30%～46.76%（レベルに応じて）に等しい追加の物理ダメージを与え、建物には50%になる。モンスターに対しては、さらに50の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

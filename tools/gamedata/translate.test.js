@@ -32,8 +32,12 @@ test("取り込んだ訳：原文のハッシュ・訳者・未レビュー・�
   assert.ok(r && /^[0-9a-f]{40}$/.test(r.source_sha1));
   assert.match(r.ja, /固有時停止/);
   assert.doesNotMatch(r.ja, /\{\{|\}\}|label\d*=|⟦/);
-  // 解けない記法が残る原文（Z-Drive Resonance の説明）は訳さず保留
-  assert.equal(f.entries["Template:Data Ekko/Z-Drive Resonance#description"], undefined);
+  // 以前は解けない記法（pp の式）で保留だった Z-Drive Resonance の説明は、2026-11-03 の解析の改善で解けて訳された。
+  // 訳は現在の英文に対応し、保留の一覧（withheld）からは外れている
+  const zr = f.entries["Template:Data Ekko/Z-Drive Resonance#description"];
+  assert.ok(zr && zr.status === "ai_translated_unreviewed");
+  assert.match(zr.ja, /30～150（レベルに応じて）/);
+  assert.equal((f.withheld || {})["Template:Data Ekko/Z-Drive Resonance#description"], undefined);
 });
 
 test("訳の有効：Wiki の原文の sha1 と、訳の対象にした英文の sha1 の両方が一致するときだけ", () => {
@@ -89,4 +93,35 @@ test("用語集：各用語の正規表現に制御文字がなく（\b が文�
 test("否定の検査：原文に否定があり訳にないときは不合格（「なければ」「なかった」は否定として扱う）", () => {
   assert.ok(checkOne("Enemies cannot be hit twice.", "敵には二回命中する。").some((p) => /否定/.test(p)));
   assert.equal(checkOne("If the tether is not broken, it roots.", "つながりが切れなければスネアを与える。").length, 0);
+});
+
+test("取り込み：訳した原文の source_sha1 と英文の plain_sha1 の両方が必須で、どちらも現在と一致するときだけ取り込む", () => {
+  const { importRejection } = require("./translate");
+  const cur = { sha1: "s1", plainSha1: "p1", residual: false };
+  assert.equal(importRejection(cur, { sha1: "s1", plain_sha1: "p1" }), null);
+  // plain_sha1 がない訳は、現在の英文の sha1 を付けて保存しない（取り込まない）
+  assert.match(importRejection(cur, { sha1: "s1" }), /plain_sha1/);
+  assert.match(importRejection(cur, { plain_sha1: "p1" }), /source_sha1/);
+  assert.match(importRejection(cur, { sha1: "s0", plain_sha1: "p1" }), /原文が変わった/);
+  assert.match(importRejection(cur, { sha1: "s1", plain_sha1: "p0" }), /英文/);
+  assert.match(importRejection({ ...cur, residual: true }, { sha1: "s1", plain_sha1: "p1" }), /保留/);
+  assert.match(importRejection(null, { sha1: "s1", plain_sha1: "p1" }), /見つからない/);
+});
+
+test("訳の対象：アイテムの効果の文・ルーンの説明も、スキルと同じく原文と英文の sha1 を持つ", () => {
+  const { fieldsOf, keysOf } = require("./translate");
+  assert.deepEqual(keysOf("items"), ["items"]);
+  assert.deepEqual(keysOf("runes"), ["runes"]);
+  const items = fieldsOf("items");
+  const runes = fieldsOf("runes");
+  assert.ok(items.length >= 300 && runes.length >= 100);
+  for (const x of [...items, ...runes]) {
+    assert.match(x.sha1, /^[0-9a-f]{40}$/, x.id);
+    assert.match(x.plainSha1, /^[0-9a-f]{40}$/, x.id);
+    assert.ok(x.plain.length > 0, x.id);
+  }
+  // 同じ効果の名前（Hollow Radiance の Desolate）が別の効果で決めた変数を使って解けている
+  const hr = items.find((x) => x.title === "Hollow Radiance" && x.field === "pass2");
+  assert.equal(hr.residual, false);
+  assert.match(hr.plain, /30 \(\+ 2% bonus health\) magic damage/);
 });

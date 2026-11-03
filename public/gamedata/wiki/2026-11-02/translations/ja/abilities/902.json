@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Milio/Fired Up!#description": {
    "source_sha1": "aca07ae679db24acaead742d75734da8a3ea655c",
-   "plain_sha1": "8b005bab0a12389ae0372921c45313e6012f14bd",
-   "ja": "固有：ミリオのスキルが自身か味方チャンピオンに命中すると、4秒間の付与効果を与える。付与効果を受けた者の次の敵への通常攻撃かスキルの命中は、その者の攻撃力の7%～15%（レベルに応じて）の追加の魔法ダメージを与え、1.5秒かけて10～50（レベルに応じて）（+ ミリオのAPの20%）の魔法ダメージを与える燃焼を与える。",
+   "plain_sha1": "40eb6aa7fdd0ddeaec2a9d9d17655471dc045082",
+   "ja": "固有：ミリオのスキルが自身か味方チャンピオンに命中すると、4秒間の付与効果を与える。付与効果を受けた者の次の敵への通常攻撃かスキルの命中は、その者の攻撃力の7% / 11% / 15%（レベルに応じて）の追加の魔法ダメージを与え、1.5秒かけて10～50（レベルに応じて）（+ ミリオのAPの20%）の魔法ダメージを与える燃焼を与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Milio/Ultra Mega Fire Kick#description": {
    "source_sha1": "7fe03b1e08b7be73f197b3673fb6676ca38824e9",
@@ -101,12 +101,14 @@
    "ja": "「生命の息吹」の発動から0.75秒間、ミリオはほかのスキルを使えない。スキルの使用を妨げる行動妨害を受けている間は「生命の息吹」を使えない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Milio/Cozy Campfire#description": {
    "source_sha1": "0aae6578c4f3bec2ba61129f721d555f54a19350",
-   "reason": "residual_markup"
+   "plain_sha1": "860a3015e62291ae86e7fe93c96036d66190b026",
+   "ja": "発動効果：ミリオは指定地点か対象の味方チャンピオンの上に6秒間フエミーゴを呼び出し、フエミーゴは最も近くの味方チャンピオンについていき、周囲の視界を与える。フエミーゴの近くの味方チャンピオンは、基本の通常攻撃の射程の一定割合に等しい射程の増加を得て、効果時間の間0.264秒（0.25秒を次のゲームのティックに切り上げた値）ごとに回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

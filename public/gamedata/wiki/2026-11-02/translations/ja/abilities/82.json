@@ -27,10 +27,10 @@
   },
   "Template:Data Mordekaiser/Darkness Rise#description3": {
    "source_sha1": "c1e8824d88ba45aabb237f73fda5660a5593d23d",
-   "plain_sha1": "b0a0388247f5b29f9ea229631354053578ddb48b",
-   "ja": "「無窮の闇」：モルデカイザーは移動速度が3%～18%（レベルに応じて）増加し、周囲の敵に毎秒5（+ APの30%）（+ 対象の最大体力の1%～5%〔レベルに応じて〕）の魔法ダメージを与える。モンスターに対しては、ダメージは毎秒40～200（レベルに応じて）が上限。",
+   "plain_sha1": "04e63c2dfa8eac735028128bd4d3a6a24f1e55e5",
+   "ja": "「無窮の闇」：モルデカイザーは移動速度が3% / 6% / 9%（レベルに応じて）増加し、周囲の敵に毎秒5（+ APの30%）（+ 対象の最大体力の1%～5%〔レベルに応じて〕）の魔法ダメージを与える。モンスターに対しては、ダメージは毎秒40～200（レベルに応じて）が上限。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Mordekaiser/Obliterate#description": {
    "source_sha1": "554cc7db1d5dc41c3c69ad77be4f6fcec6357505",
@@ -41,10 +41,10 @@
   },
   "Template:Data Mordekaiser/Indestructible#description": {
    "source_sha1": "07433a32d622ec43210e1fd83e3333f302a27043",
-   "plain_sha1": "dc35cf06c9c56ca497ce9782087164ff6be369ed",
+   "plain_sha1": "5c89f639a8027840a31537495f240ea5898aba29",
    "ja": "自動効果：モルデカイザーは、与えた軽減後のダメージの45%と、受けた軽減前のダメージの7.5%（チャンピオン以外の発生源からは75%減少）を、二つ目のリソースのバーに「Potential Shield」として最大体力の30%まで蓄える。ダメージを与えも受けもしない状態が1秒続くと、「Potential Shield」は毎秒8～25（レベルに応じて）減る。「不滅の鎧」がクールダウン中でない間は、「Potential Shield」は最大体力の5%より下には減らず、クールダウンが明けたときにそれより少なければその量になる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
+   "translated_at": "2026-11-03",
    "check_notes": [
     "用語「シールド」がない（原文：Shield）"
    ],

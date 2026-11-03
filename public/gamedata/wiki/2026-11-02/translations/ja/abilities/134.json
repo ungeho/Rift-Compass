@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Syndra/Transcendent#description": {
    "source_sha1": "93fb5b4745562ec1dbbf10ad13c90edc58ddef15",
-   "plain_sha1": "45c7eecafa64fb19b00e6fab9ffbb6adf0ec08e6",
-   "ja": "固有：シンドラは「Splinters of Wrath」を集め、集めた数に応じて各スキルが強化される。最大120回まで重なる。「Splinters of Wrath」は次の方法で得る：* 4秒以内に敵チャンピオンにスキルのダメージを二回与えると、1～3（レベルに応じて）得る。これは同じ対象からは数秒に一度しか起こらない。* レベル1より後にスキルポイントでスキルのランクを上げると5得る（85まで）。* 大型ミニオンを倒すと1得る。",
+   "plain_sha1": "cbf34163f4776d3d38b2670dc86ef93ea0ea6c12",
+   "ja": "固有：シンドラは「Splinters of Wrath」を集め、集めた数に応じて各スキルが強化される。最大120回まで重なる。「Splinters of Wrath」は次の方法で得る：* 4秒以内に敵チャンピオンにスキルのダメージを二回与えると、1 / 2 / 3（レベルに応じて）得る。これは同じ対象からは数秒に一度しか起こらない。* レベル1より後にスキルポイントでスキルのランクを上げると5得る（85まで）。* 大型ミニオンを倒すと1得る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Syndra/Transcendent#description3": {
    "source_sha1": "e5f155e02178c22decf10a2e73f8e88cf215c32c",
@@ -122,12 +122,14 @@
    "ja": "「絶大なる魔力」のボーナス：「Splinters of Wrath」を100集めると「魔力の奔流」が強化され、ダメージで対象の体力が最大体力の15%未満になる場合は対象を処刑する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Syndra/Transcendent#description2": {
    "source_sha1": "ad9bc3a9c41c55ca117c1eb8f6be21516c62df20",
-   "reason": "residual_markup"
+   "plain_sha1": "e0a48b527e164a0577ddd3de765005dc6baa757d",
+   "ja": "敵から「Splinter of Wrath」を集めると、マナを20～239（レベルに応じて）回復する。「Splinters of Wrath」は0.6秒かけて敵からシンドラのもとへ運ばれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

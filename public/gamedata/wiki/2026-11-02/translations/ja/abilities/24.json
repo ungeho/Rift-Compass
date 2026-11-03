@@ -20,10 +20,10 @@
   },
   "Template:Data Jax/Relentless Assault#description2": {
    "source_sha1": "f36773ee7e177a99f658c9b6c8d2077a64970e29",
-   "plain_sha1": "e70d982ebe67391a3b9cc2488ab2e38ee94f324a",
-   "ja": "「アサルトアタック」：スタックごとに攻撃速度が5%～14%（レベルに応じて）増加し、最大40%～112%（レベルに応じて）。",
+   "plain_sha1": "b2298c2f8d6a943077c1d94835dca18c3d2f1308",
+   "ja": "「アサルトアタック」：スタックごとに攻撃速度が5%～12.5%（レベルに応じて）増加し、最大40%～100%（レベルに応じて）。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Jax/Leap Strike#description": {
    "source_sha1": "85aeb4eb956cebb72e8af0ed95225bd6fbd8a2d4",

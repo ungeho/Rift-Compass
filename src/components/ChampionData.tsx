@@ -347,7 +347,8 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
         const id = `${t.title}#${k}`;
         const tr = translations?.entries[id];
         // 訳は Wiki の原文（source_sha1）と訳の対象の英文（plain_sha1）の両方が一致するときだけ表示する（解析の修正で英文が変わった訳は古い）
-        const ja = tr && tr.source_sha1 === src.source_sha1 && tr.plain_sha1 === src.plain_sha1 ? tr.ja : null;
+        // 解けない記法が残る段落には、訳があっても表示しない（取り込みでも受け付けないが、画面でも重ねて防ぐ）
+        const ja = tr && !src.residual && tr.source_sha1 === src.source_sha1 && tr.plain_sha1 === src.plain_sha1 ? tr.ja : null;
         // 保留の理由：未解決の記法（毎回の取り込みで判定）か、それ以外（英文の欠けなど。英文が同じ間だけ有効）
         const w = translations?.withheld[id];
         const manual = !src.residual && w && w.reason !== "residual_markup" && w.source_sha1 === src.source_sha1 && w.plain_sha1 === src.plain_sha1;
@@ -446,6 +447,13 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
           <summary className="muted">Wiki の説明（英語の原文・記法を簡略化して表示）</summary>
           {desc.map((d) => (
             <p key={d.key}>{d.en}</p>
+          ))}
+          {descKeys.flatMap((k) => t.text![k].level_notes ?? []).map((n, i) => (
+            <p key={i} className="muted">
+              {n.kind === "shown_beyond_18"
+                ? `レベルに応じた値（${n.first}～）：レベル18では ${n.at_level_18}。表示の範囲の最後（${n.at_max_level}）はレベル${n.max_level}の値（通常の最大レベルは18。トップレーンのロールクエストで20、モードによって異なる）。`
+                : `レベルに応じた値：原典の値はレベル${n.max_level}まであり、レベル${n.max_level}では ${n.at_max_level}（表示はレベル18の ${n.at_level_18} まで）。`}
+            </p>
           ))}
           <p className="muted">
             出典：<a href={t.source.url}>{t.title}</a>（League of Legends Wiki の寄稿者）。ライセンス：<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>。

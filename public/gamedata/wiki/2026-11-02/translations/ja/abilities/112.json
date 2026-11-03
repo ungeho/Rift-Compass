@@ -41,10 +41,10 @@
   },
   "Template:Data Viktor/Siphon Power#description3": {
    "source_sha1": "7c09504bcc0cf6b6451cf96aa6aa706a3d7b7b15",
-   "plain_sha1": "d617f35b04bcf4861c1423b0aaad4ddaf89d53a8",
+   "plain_sha1": "a627f6a89fe8bde914bd01ce96853b9d7f248d7b",
    "ja": "強化：「Turbocharge」— 装置が命中した後、ヴィクターは2.5秒間移動速度が30%増加し、シールドの量が60%増える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Viktor/Gravity Field#description": {
    "source_sha1": "a3a78a6c3809e71d099ea78a7855c3a61fc1ee6a",

@@ -115,16 +115,21 @@
    "ja": "詠唱時間が終わると着地して力を爆発させ、周囲の敵に魔法ダメージを与えて、0.75秒間スタンさせる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Neeko/Inherent Glamour#description2": {
    "source_sha1": "54aabe8dc84c13a770bb4e5e831e83859b64f55c",
-   "reason": "residual_markup"
+   "plain_sha1": "3cf3c4aa73a047acee4701ae5625bcc7cdf16ee5",
+   "ja": "変装していない間に、最も近くの見えている味方か中立の、チャンピオン以外で建物以外のユニットのそばに立つと、2秒かけてその「Sho'Ma」を集め、その変装をコレクションに加える。この変装を使うと「駆け巡る色彩」は1秒のクールダウンになる。ニーコが集められる「Sho'Ma」は一つだけだが、「Disguise Menu」で捨てるか使える。対象指定可能である限り、次のユニットから「Sho'Ma」を蓄えられる：* エピック以外のモンスター * ミニオン * 罠 * ワード * ペット * ジャングルの植物",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Neeko/Inherent Glamour#description3": {
    "source_sha1": "94ab54d8d25c71e62b24e9ca98a4791503d06c8e",
-   "reason": "residual_markup"
+   "plain_sha1": "138a4ab547d4f625130df28b537db12ef9a5bfaa",
+   "ja": "変装している間、ニーコは姿を保ったまま通常攻撃を使える。次の場合に変装が解ける：* ダメージを与えるスキル・サモナースペル・アイテムの発動効果を使う * 移動不能を受ける * 変装した姿に致命的なダメージを受ける * 敵チームの出撃地点に入る * リコール／強化されたリコール以外の詠唱を始める * チャンピオン以外の変装の姿で建物にダメージを与える * タワーからダメージを受ける * 死ぬ",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

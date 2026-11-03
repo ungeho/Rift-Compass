@@ -94,16 +94,21 @@
    "ja": "効果時間の後、感染が破裂して影響を受けたすべての対象に魔法ダメージを与え、0.4秒の遅れの後、感染したチャンピオンごとにブラッドミアを回復する（二体目以降のチャンピオンでは40%）。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Vladimir/Transfusion#description2": {
    "source_sha1": "506548dc3ee6ad342da459a2c6b1ec9f9cba455f",
-   "reason": "residual_markup"
+   "plain_sha1": "c260a22b0db6f67a8aca74fa84b62bfec490b313",
+   "ja": "「Crimson Rush」が2ポイントになると、ブラッドミアは力がみなぎり、0.5秒かけて減衰する10% / 20% / 30% / 40%（レベルに応じて）の移動速度の増加を得て、「Crimson Rush」は2.5秒かけて減っていく。「紅血の沼」「血液奔流」や固有時停止の間は、「Crimson Rush」の減りが75%遅くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Vladimir/Transfusion#description3": {
    "source_sha1": "34811c5f84fe82aca4b102040beaef895c91e69e",
-   "reason": "residual_markup"
+   "plain_sha1": "49b7bcf597524afc873ee36a2cd9124ee08b26d7",
+   "ja": "力がみなぎっている間に「吸血」を使うと、すべての「Crimson Rush」を消費して85%増加したダメージを与え、ブラッドミアはさらに30～220（レベルに応じて）（+ 減少体力の5%〔+ AP 100ごとに4%〕）を回復する。ミニオンに対しては、この追加の回復は35%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

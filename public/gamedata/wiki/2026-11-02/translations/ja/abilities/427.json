@@ -136,12 +136,14 @@
    "ja": "「デイジー！」の再発動は、スキルの使用を妨げる行動妨害を受けている間も使える。デイジーの詳細は「Pets」を参照。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Ivern/Friend of the Forest#description": {
    "source_sha1": "494357f8427aab933e35bb74210f53a13a14f253",
-   "reason": "residual_markup"
+   "plain_sha1": "c5d51df31ef82573f88e7cb6edaf83caf72aa771",
+   "ja": "固有：アイバーンはエピック以外のモンスターを攻撃もダメージもできない。代わりに、ジャングルのキャンプを対象にすると2.5秒の詠唱を始め、キャンプに森を植える。森を植えるには、体力94.5～0.14（レベルに応じて）とマナ90～0.37（レベルに応じて）がかかる。詠唱は最初の0.15秒と最後の0.5秒の間はキャンセルできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

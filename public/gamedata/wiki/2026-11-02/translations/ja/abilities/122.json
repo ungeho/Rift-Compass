@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -20,10 +20,10 @@
   },
   "Template:Data Darius/Hemorrhage#description2": {
    "source_sha1": "7e97e8d7aea077ede472c41b1e284f5aeff94041",
+   "plain_sha1": "a8bdabab73fdf626d3638a9075e1f2ed3a96d1fb",
    "ja": "「大出血」：スタックごとに、対象は効果時間中に合計13～30（レベルに応じて）（+ 増加攻撃力の30%）の物理ダメージを受け、最大で合計65～150（レベルに応じて）（+ 増加攻撃力の150%）の物理ダメージになる。「大出血」はモンスターに250%のダメージを与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
-   "plain_sha1": "2a1682a4d6e6623aa1a0728f331b6afe09fac2d0"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Darius/Hemorrhage#description3": {
    "source_sha1": "d487a8bfbb9cb146c3dfd83e8b9a0dc30d532528",
@@ -115,16 +115,21 @@
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02",
    "plain_sha1": "21059778668c6f93164ddcd2ead4b1ddb68604f0"
-  }
- },
- "withheld": {
+  },
   "Template:Data Darius/Hemorrhage#description4": {
    "source_sha1": "6fe1b36551b78404cfd362c7cf98fe9d3dae2438",
-   "reason": "residual_markup"
+   "plain_sha1": "42a480e39467813e16050af227fef606d786ba5e",
+   "ja": "「Noxian Might」：ダリウスは30～230（レベルに応じて）の増加攻撃力を得て、通常の方法で即座に「大出血」のスタックを5与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Darius/Noxian Guillotine#description": {
    "source_sha1": "1ea9ea79ed78ceba626a406e0461465b4b2db7e1",
-   "reason": "residual_markup"
+   "plain_sha1": "1f25925baf7e06682d5ef4622fe2096b5688dd0d",
+   "ja": "発動効果：ダリウスは対象の敵チャンピオンの処刑を狙ってその敵に向かって跳び、確定ダメージ（対象の「大出血」のスタックに応じて0%～100%増加）を与え、詠唱時間の開始から2.5秒間その周囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

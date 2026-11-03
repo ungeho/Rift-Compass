@@ -115,12 +115,14 @@
    "ja": "ランク3では、発動時に1200ユニット以内にいる敵チャンピオン一体ごとに、「マキシマム投与」の基本体力の増加と体力回復の増加がそれぞれ5%増える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Dr. Mundo/Goes Where He Pleases#description": {
    "source_sha1": "3c8724e774fdac014a18f7408beabf9acd53a7ab",
-   "reason": "residual_markup"
+   "plain_sha1": "8c2a87fd5123b24181467d6331a3c533eae617fa",
+   "ja": "固有：ドクター・ムンドは5秒ごとに、最大体力の0.4%～2.3%（レベルに応じて）を追加で回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

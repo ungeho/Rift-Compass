@@ -87,16 +87,21 @@
    "ja": "「ブルズアイ」をキャンセルすると、5秒のクールダウンになる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Caitlyn/Headshot#description2": {
    "source_sha1": "8119a7841f92c84c99572594b24f884222dad643",
-   "reason": "residual_markup"
+   "plain_sha1": "c5abc4c16c96d7499e8814d081e163f92669859f",
+   "ja": "「ヘッドショット」：ケイトリンの通常攻撃は強化され、攻撃モーションが中断されなくなり、攻撃力の60% / 70% / 80%（レベルに応じて）（+ 0%～80%〔+ 「インフィニティ・エッジ」 0%～32%〕〔クリティカル率に応じて〕）の追加の物理ダメージを与える。チャンピオン以外には攻撃力の110%（+ 0%～80%〔+ 「インフィニティ・エッジ」 0%～32%〕〔クリティカル率に応じて〕）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Caitlyn/Ace in the Hole#description3": {
    "source_sha1": "633f7a45bc6f0a39c436a0d159169713179dde4d",
-   "reason": "residual_markup"
+   "plain_sha1": "3c70c18ee66597de9914bbddf531db9143b1cda8",
+   "ja": "ケイトリンが詠唱を終えると、対象に向けて追尾する弾を撃ち、最初に当たった敵チャンピオンに物理ダメージを与える。このダメージはクリティカル率に応じて0%～30%（+ 「インフィニティ・エッジ」 0%～12%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

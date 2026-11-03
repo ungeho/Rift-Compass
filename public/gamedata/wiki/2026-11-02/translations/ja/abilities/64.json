@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Lee Sin/Flurry#description": {
    "source_sha1": "34d30bcca2f2f3904e2b36684e4859dd9e331572",
-   "plain_sha1": "39655c91938d1f17d5b44e919a65fb8562639581",
-   "ja": "固有：スキルを使用した後、3秒以内のリー・シンの次の2回の通常攻撃（攻撃時効果）は、攻撃速度が40%増加し、気を回復する。一回目の攻撃は気を20～40（レベルに応じて）、二回目は10～20（レベルに応じて）回復する。",
+   "plain_sha1": "2c9b7b0ba183453fa52d2367dca2e704a5dc6343",
+   "ja": "固有：スキルを使用した後、3秒以内のリー・シンの次の2回の通常攻撃（攻撃時効果）は、攻撃速度が40%増加し、気を回復する。一回目の攻撃は気を20 / 30 / 40（レベルに応じて）、二回目は10 / 15 / 20（レベルに応じて）回復する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Lee Sin/Sonic Wave#description": {
    "source_sha1": "8ed3feb65b98efe3cf2b28dafb04bbca2b911170",

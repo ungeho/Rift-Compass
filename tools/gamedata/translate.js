@@ -2,9 +2,10 @@
 // 英語 Wiki の説明文の日本語訳の管理（依存パッケージなし）。訳は取り込み時に作って保存し、閲覧のたびには作らない。
 //
 //   node tools/gamedata/translate.js worklist <キー,...> [--out <file>]  訳す原文の一覧（未解決の記法が残るものは「保留」）
-//   node tools/gamedata/translate.js import <file>                      訳を取り込む（原文の sha1 が一致するものだけ）
+//   node tools/gamedata/translate.js import <file>                      訳を取り込む（訳した原文の sha1 と英文の plain_sha1 の両方があり、現在と一致するものだけ）
 //   node tools/gamedata/translate.js check                              全部の訳を検査（数・用語・記法）
-//   node tools/gamedata/translate.js status                             訳の件数（訳済み・保留・未訳・古い）
+//   node tools/gamedata/translate.js status [--domain abilities|items|runes|tips|all]  訳の件数（訳済み・保留・未訳・古い）
+//   node tools/gamedata/translate.js next <件数> [--chars <英文の上限>] [--out <file>] [--domain …]  次に訳す原文（訳が有効なもの・保留を除く）
 //   node tools/gamedata/translate.js bind-plain <worklist>              訳の元にした英文（worklist の plain）が現在の英文と同じ訳にだけ plain_sha1 を記録する
 //
 // 訳の有効：Wiki の原文の sha1（source_sha1）と、訳の対象にした英文の sha1（plain_sha1）の両方が現在と一致するときだけ。
@@ -23,12 +24,59 @@ const writeJson = (p, v) => { fs.mkdirSync(path.dirname(p), { recursive: true })
 const manifest = () => readJson(path.join(ROOT, "public/gamedata/manifest.json"));
 const snapDir = () => path.join(ROOT, "public/gamedata/wiki", manifest().current.wiki_snapshot);
 const glossary = () => readJson(path.join(ROOT, "src/gamedata/glossary.json"));
-const trFile = (key) => path.join(snapDir(), "translations", "ja", "abilities", `${key}.json`);
+// キー：チャンピオンのキー（スキルの説明）、"items"（アイテムの効果の文）、"runes"（ルーンの説明）、"tips"（ゲームシステムの用語の定義）
+const DOMAIN_KEYS = ["items", "runes", "tips"];
+const trFile = (key) => (DOMAIN_KEYS.includes(key) ? path.join(snapDir(), "translations", "ja", `${key}.json`) : path.join(snapDir(), "translations", "ja", "abilities", `${key}.json`));
 const today = () => new Date().toISOString().slice(0, 10);
 const sha1 = (x) => crypto.createHash("sha1").update(x).digest("hex");
+const abilityKeys = () => fs.readdirSync(path.join(snapDir(), "abilities")).map((f) => f.replace(/\.json$/, "")).sort((a, b) => Number(a) - Number(b));
+/** 訳の対象のキー（domain：abilities・items・runes・all）*/
+const keysOf = (domain = "all") => [...(domain === "all" || domain === "abilities" ? abilityKeys() : []), ...DOMAIN_KEYS.filter((k) => domain === "all" || domain === k)];
+const domainOf = (key) => (DOMAIN_KEYS.includes(key) ? key : "abilities");
 
-/** 訳の対象：説明の項目（description・blurb）。id は「キー|テンプレートの題名|項目」 */
+/**
+ * 訳の対象。id は「キー|題名|項目」
+ * - スキル：Template:Data <チャンピオン>/<技> の description*（blurb は description の要約なので対象外）
+ * - アイテム："items|<アイテム名>|<効果のキー>"（Module:ItemData の effects の description。description2 以降は "<効果のキー>.description2"、文字列だけの効果はその文字列）と "items|<アイテム名>|limit"（制限の文）
+ * - ルーン："runes|<ルーン名>|<項目>"（Template:Rune data の description*）
+ * - 用語："tips|<用語>|<項目>"（Template:Tip data/<用語> の description*・interrupts・reduction・resist・removal）
+ */
 function fieldsOf(key) {
+  if (key === "items") {
+    const out = [];
+    for (const it of readJson(path.join(snapDir(), "items.json")).items) {
+      for (const [field, v] of Object.entries(it.effect_text || {})) {
+        if (!v || !v.plain || !v.source_sha1) continue;
+        out.push({ id: `items|${it.name}|${field}`, key, title: it.name, field, sha1: v.source_sha1, plainSha1: v.plain_sha1 || sha1(v.plain), plain: v.plain, residual: v.residual, name: v.name || null });
+      }
+      // 制限の文（Module:ItemData/getter の p.limit）。フィールド名は limit
+      const v = it.limit_text;
+      if (v && v.plain && v.source_sha1) out.push({ id: `items|${it.name}|limit`, key, title: it.name, field: "limit", sha1: v.source_sha1, plainSha1: v.plain_sha1 || sha1(v.plain), plain: v.plain, residual: v.residual, name: null });
+    }
+    return out;
+  }
+  if (key === "tips") {
+    // Template:Tip data/<用語> の説明・中断・効果時間の短縮・無効・解除
+    const f = path.join(snapDir(), "tips.json");
+    const out = [];
+    for (const t of fs.existsSync(f) ? readJson(f).tips : []) {
+      for (const [field, v] of Object.entries(t.text || {})) {
+        if (!v || !v.plain) continue;
+        out.push({ id: `tips|${t.name}|${field}`, key, title: t.name, field, sha1: v.source_sha1, plainSha1: v.plain_sha1 || sha1(v.plain), plain: v.plain, residual: v.residual });
+      }
+    }
+    return out;
+  }
+  if (key === "runes") {
+    const out = [];
+    for (const r of readJson(path.join(snapDir(), "runes.json")).runes) {
+      for (const [field, v] of Object.entries(r.text || {})) {
+        if (!/^description/.test(field) || !v || !v.plain) continue;
+        out.push({ id: `runes|${r.name}|${field}`, key, title: r.name, field, sha1: v.source_sha1, plainSha1: v.plain_sha1 || sha1(v.plain), plain: v.plain, residual: v.residual });
+      }
+    }
+    return out;
+  }
   const f = readJson(path.join(snapDir(), "abilities", `${key}.json`));
   const out = [];
   for (const t of f.templates) {
@@ -94,6 +142,20 @@ function worklist(keys, out) {
   return res;
 }
 
+/**
+ * 取り込めない理由（取り込めるなら null）。訳した原文の source_sha1 と、訳した英文の plain_sha1 の両方を必須にし、
+ * どちらかがない・現在と違うときは取り込まない（英文が変わった後に古い訳へ新しい sha1 が付くのを防ぐ）
+ */
+function importRejection(cur, tr) {
+  if (!cur) return "見つからない";
+  if (!tr.sha1) return "訳した原文の sha1（source_sha1）がない";
+  if (!tr.plain_sha1) return "訳した英文の sha1（plain_sha1）がない";
+  if (cur.sha1 !== tr.sha1) return "原文が変わった";
+  if (cur.plainSha1 !== tr.plain_sha1) return "英文（解析の結果）が変わった";
+  if (cur.residual) return "保留の原文は訳さない";
+  return null;
+}
+
 function importFile(file) {
   const input = readJson(file);
   const meta = input.meta || {};
@@ -102,11 +164,8 @@ function importFile(file) {
   for (const tr of input.translations) {
     const [key, title, field] = tr.id.split("|");
     const cur = fieldsOf(key).find((x) => x.title === title && x.field === field);
-    if (!cur) { console.log(`見つからない：${tr.id}`); rejected++; continue; }
-    if (cur.sha1 !== tr.sha1) { console.log(`原文が変わった：${tr.id}`); rejected++; continue; }
-    // 訳した英文の sha1（worklist の plain_sha1）があれば、現在の英文と同じかも確かめる
-    if (tr.plain_sha1 && cur.plainSha1 !== tr.plain_sha1) { console.log(`英文（解析の結果）が変わった：${tr.id}`); rejected++; continue; }
-    if (cur.residual) { console.log(`保留の原文は訳さない：${tr.id}`); rejected++; continue; }
+    const why = importRejection(cur, tr);
+    if (why) { console.log(`${why}：${tr.id}`); rejected++; continue; }
     // 訳さずに保留する（例：英文の抽出に欠けがあり、推測でしか訳せない）。理由を記録し、next の対象から外す
     if (tr.withhold) {
       if (!byKey.has(key)) byKey.set(key, []);
@@ -193,8 +252,8 @@ function bindPlain(file) {
  * 次に訳す原文（全チャンピオン、キーの数の順）。訳が有効なものと保留（未解決の記法）は除く。
  * 取り込んだ分は次の next で除かれるので、中断しても未処理の分から再開できる。
  */
-function next(limit, out, maxChars) {
-  const keys = fs.readdirSync(path.join(snapDir(), "abilities")).map((f) => f.replace(/\.json$/, "")).sort((a, b) => Number(a) - Number(b));
+function next(limit, out, maxChars, domain = "all") {
+  const keys = keysOf(domain);
   const todo = [];
   let chars = 0;
   outer: for (const k of keys) {
@@ -217,11 +276,10 @@ function next(limit, out, maxChars) {
 }
 
 function check() {
-  const dir = path.join(snapDir(), "translations", "ja", "abilities");
   let n = 0, bad = 0, stale = 0;
-  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) {
-    const key = f.replace(/\.json$/, "");
-    const tr = readJson(path.join(dir, f));
+  for (const key of keysOf("all")) {
+    if (!fs.existsSync(trFile(key))) continue;
+    const tr = readJson(trFile(key));
     const cur = new Map(fieldsOf(key).map((x) => [`${x.title}#${x.field}`, x]));
     for (const [id, e] of Object.entries(tr.entries)) {
       n++;
@@ -235,8 +293,9 @@ function check() {
   return { n, bad, stale };
 }
 
-function status() {
-  const keys = fs.readdirSync(path.join(snapDir(), "abilities")).map((f) => f.replace(/\.json$/, ""));
+function status(domain = "abilities") {
+  // 既定はスキルの説明（description_fields はこれまでの数え方と同じ）。--domain items・runes・all で切り替える
+  const keys = keysOf(domain);
   let total = 0, residual = 0, translated = 0, stale = 0, reviewed = 0, manual = 0;
   for (const k of keys) {
     const fields = fieldsOf(k);
@@ -269,9 +328,9 @@ if (require.main === module) {
   if (cmd === "worklist") worklist(args[0].split(","), opt("--out"));
   else if (cmd === "import") importFile(args[0]);
   else if (cmd === "check") process.exitCode = check().bad ? 1 : 0;
-  else if (cmd === "status") status();
+  else if (cmd === "status") status(opt("--domain") || "abilities");
   else if (cmd === "bind-plain") bindPlain(args[0]);
-  else if (cmd === "next") next(Number(args[0] || 60), opt("--out"), Number(opt("--chars") || 0));
+  else if (cmd === "next") next(Number(args[0] || 60), opt("--out"), Number(opt("--chars") || 0), opt("--domain") || "all");
   else { console.log(fs.readFileSync(__filename, "utf8").split("\n").slice(1, 9).join("\n")); process.exitCode = 1; }
 }
-module.exports = { checkOne, fieldsOf, numbers, valid };
+module.exports = { checkOne, fieldsOf, numbers, valid, importRejection, keysOf, domainOf };

@@ -24,10 +24,10 @@
   },
   "Template:Data Kled/Skaarl the Cowardly Lizard#description3": {
    "source_sha1": "907d13de303e94ec943916c1f3c12483ae57a1ba",
-   "plain_sha1": "4519bd02c4042a3db8c0c083892f0c3654cfebf9",
-   "ja": "クレッドが「Dismounted」の間、基本体力と移動速度が下がるが、敵チャンピオンの方へ動いている間は移動速度が増加する。さらに、通常攻撃の射程が増加し、攻撃はチャンピオンに85%～100%（レベルに応じて）のダメージを与える。「トラバサミロープ」は「Pocket Pistol」に置き換わり、「ジャウスト」と「チャァァァァァァァジ！！！」は使えなくなる。",
+   "plain_sha1": "4a43630c0301bb74bf927b4d11657c6ce78c4fda",
+   "ja": "クレッドが「Dismounted」の間、基本体力と移動速度が下がるが、敵チャンピオンの方へ動いている間は移動速度が増加する。さらに、通常攻撃の射程が増加し、攻撃はチャンピオンに85% / 90% / 95% / 100%（レベルに応じて）のダメージを与える。「トラバサミロープ」は「Pocket Pistol」に置き換わり、「ジャウスト」と「チャァァァァァァァジ！！！」は使えなくなる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kled/Skaarl the Cowardly Lizard#description4": {
    "source_sha1": "4c1a1368625884799e9dde1bb27c12d4058a3c5e",
@@ -45,17 +45,17 @@
   },
   "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description2": {
    "source_sha1": "c4328c0c145729706f317c29e46ad8ff09781f42",
-   "plain_sha1": "db73ca4533ea611b47e01f2879ac15cb3adb7c91",
-   "ja": "クレッドは近くの見えている敵チャンピオンの方を向いている間と攻撃した後に、移動速度が70～155（レベルに応じて）増加するが、その敵への通常攻撃は攻撃力の85%～100%（レベルに応じて）の物理ダメージに減る。さらに、4（+ 増加体力の1%）に等しい物理防御と魔法防御の増加を得て、近くの見えている敵チャンピオン一体ごとに30%増え、最大10（+ 増加体力の2.5%）。さらに、スカールの「Courage」を回復して再び乗れるようになる。",
+   "plain_sha1": "53f1fa016f5ced9ffc18c876aa05dbb23cc49504",
+   "ja": "クレッドは近くの見えている敵チャンピオンの方を向いている間と攻撃した後に、移動速度が70～155（レベルに応じて）増加するが、その敵への通常攻撃は攻撃力の85% / 90% / 95% / 100%（レベルに応じて）の物理ダメージに減る。さらに、4（+ 増加体力の1%）に等しい物理防御と魔法防御の増加を得て、近くの見えている敵チャンピオン一体ごとに30%増え、最大10（+ 増加体力の2.5%）。さらに、スカールの「Courage」を回復して再び乗れるようになる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description3": {
    "source_sha1": "c2897d84ac5884a41b818c21a5bf1d83a07e53ea",
-   "plain_sha1": "41360694ddc3a15018d22a4a88267ff1b713f8e3",
-   "ja": "固有 -「Courage」：クレッドはチャンピオンへの通常攻撃を終えると「Courage」を15、レーンのミニオンを倒すか建物かエピックモンスターに通常攻撃すると5得る。「Pocket Pistol」を敵に当てても回復できる。「Courage」が100になると、スカールは即座に最大体力の40%～70%（レベルに応じて）を回復して0.25秒かけてクレッドと合流し、その後クレッドはすべての「Courage」を消費して「Mounted」になり、二人は0.25秒間通常攻撃の指示とスキルの使用ができない。乗ると「トラバサミロープ」と「ジャウスト」のクールダウンがリセットされる。",
+   "plain_sha1": "f82b7c51c94002ba433b8d1c91e0844fb772a2ad",
+   "ja": "固有 -「Courage」：クレッドはチャンピオンへの通常攻撃を終えると「Courage」を15、レーンのミニオンを倒すか建物かエピックモンスターに通常攻撃すると5得る。「Pocket Pistol」を敵に当てても回復できる。「Courage」が100になると、スカールは即座に最大体力の40% / 50% / 60% / 70%（レベルに応じて）を回復して0.25秒かけてクレッドと合流し、その後クレッドはすべての「Courage」を消費して「Mounted」になり、二人は0.25秒間通常攻撃の指示とスキルの使用ができない。乗ると「トラバサミロープ」と「ジャウスト」のクールダウンがリセットされる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description4": {
    "source_sha1": "f6d3fb9002a20664f05659cea765ec9ed7d19bd1",
@@ -210,16 +210,21 @@
    "ja": "このスキルは「Dismounted」の間は使えない。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Kled/Skaarl the Cowardly Lizard#description": {
    "source_sha1": "004a8289015069f77f5de415b9d8257d438befec",
-   "reason": "residual_markup"
+   "plain_sha1": "34f133c43cfd617302a5517abef327caabc251db",
+   "ja": "固有：クレッドは、それなりに頼れる相棒スカールに乗っている。「Mounted」の間、二人へのダメージはすべてスカールが受け、スカールの基本体力は400～1400（レベルに応じて）。追加の体力はスカールの最大体力に加わる。体力の割合に応じた効果は、クレッドとスカールを合わせた最大体力で計算する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description": {
    "source_sha1": "4b922b3a023631077a4d12addae567b13d2e6338",
-   "reason": "residual_markup"
+   "plain_sha1": "0d8a5ef30505b67b6e93c71135d4a5fd2a8d40ec",
+   "ja": "固有：クレッドは「Dismounted」の間だけ死にうる。クレッドの基本体力は410～1838（レベルに応じて）で、増加体力では増えず、移動速度が40低下し、通常攻撃の射程が合計125になる。体力の割合に応じた効果はクレッドとスカールを合わせた最大体力で計算するので、「Dismounted」のクレッドが体力満タンとみなされることはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

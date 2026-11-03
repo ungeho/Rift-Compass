@@ -122,24 +122,35 @@
    "ja": "「Possession」が解けたとき、「ハートブレイカー」がクールダウン中でなければ、1.5秒のクールダウンになる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Viego/Blade of the Ruined King#description": {
    "source_sha1": "94ec8d30f5d219182d099e76927b0392aadd8d30",
-   "reason": "residual_markup"
+   "plain_sha1": "5f8cbe986754787b5c98306f1daa3c0566e8efe4",
+   "ja": "自動効果：ヴィエゴの通常攻撃は攻撃時効果として追加の物理ダメージを与える。このダメージは（170% + 「インフィニティ・エッジ」 28%）のダメージでクリティカルになりえ、最低値があり、モンスターに対しては80が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Viego/Blade of the Ruined King#description3": {
    "source_sha1": "9b75b7517d52a57828f03244c8976ef6864e0d38",
-   "reason": "residual_markup"
+   "plain_sha1": "6e97faf42bf907dd8d46aed57914e129e25812cb",
+   "ja": "二回目の攻撃は攻撃時効果を与え、（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Viego/Blade of the Ruined King#description4": {
    "source_sha1": "f91b5e59ed96125bc0d611c16fd16824cda05b2c",
-   "reason": "residual_markup"
+   "plain_sha1": "68f985a8820ed25d6d895416c964fd85afdbc48f",
+   "ja": "発動効果：ヴィエゴは指定方向の直線上を突き、命中した敵に物理ダメージを与える。このダメージはクリティカル率に応じて0%～60%（+ 「インフィニティ・エッジ」 0%～24%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Viego/Heartbreaker#description2": {
    "source_sha1": "b17558c6fc36356bdbc1f20181c0ea3d2c1e2ae6",
-   "reason": "residual_markup"
+   "plain_sha1": "59a7d41327e5c15da781a62b79099262568e9719",
+   "ja": "命中したすべての対象は攻撃力の120%の物理ダメージを受け、このダメージはクリティカル率に応じて0%～70%（+ 「インフィニティ・エッジ」 0%～28%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

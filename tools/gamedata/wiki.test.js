@@ -130,8 +130,9 @@ test("dv・tt・キーワード：形態ごとの値、説明つきの値、文�
 test("説明の文：sti は2つ目の引数、記号は文字に、知らない記法は ⟦⟧ で残して翻訳の対象から外す", () => {
   const p = W.plainText("{{sti|health|below 30% health}} and 625{{times}}180 {{unknownthing|x}}");
   assert.equal(p, "below 30% health and 625×180 ⟦unknownthing⟧");
-  // 外側のテンプレートの中にあっても印が壊れない（{{as|{{pp|… then …}}|physical damage}}）
-  const nested = W.plainText("deal {{as|{{pp|30;then +5*x for 9|formula=x}}|physical damage}} bonus damage");
+  // 外側のテンプレートの中にあっても印が壊れない（{{as|{{pp|解けない式}}|physical damage}}）。
+  // 「then」「x の式」は Module:Ability progression と同じに解けるようになったので、記号の残る式で確かめる
+  const nested = W.plainText("deal {{as|{{pp|foo*bar for 9|formula=x}}|physical damage}} bonus damage");
   assert.equal(nested.replace(/⟦[^⟦⟧]*⟧/g, "X"), "deal X bonus damage");
   assert.equal(W.hasResidual(p), true);
   assert.equal(W.hasResidual("below 30% health"), false);
@@ -172,4 +173,132 @@ test("説明の文：{{g|N}} はゴールドの数として残す（数だけに
 test("説明の文：アイコンだけのツールチップ（icononly）は文字を残さない", () => {
   assert.equal(W.plainText("revealed to enemy champions in a {{tip|er|icononly = true}} 1250 radius"), "revealed to enemy champions in a 1250 radius");
   assert.equal(W.plainText("{{tip|stasis|Stasis}} for 2.5 seconds"), "Stasis for 2.5 seconds");
+});
+
+test("pp・pplevel：Module:Ability progression と同じ展開と表示（then・x の式・by・基準の行・レベル 18 まで）", () => {
+  const P = require("./pp");
+  assert.equal(P.ppText(["27 + 3*x for 3; then +6*x for 3; then +9*x for 4; then +12*x for 5; then +15*x for 5"], {}, false), "30 – 225 (based on level)");
+  assert.equal(P.ppText(["0 to 100 by 20", "0 to 5"], { key: "%", type: "stacks" }, false), "0% – 100% (based on stacks)");
+  assert.equal(P.ppText(["12 to 24 for 7", "1;3 to 18"], { key: "%" }, false), "12% – 24% (based on level)");
+  // 5段階以下は「/」で並べる。changedisplay=true は逆
+  assert.equal(P.ppText(["1;2;3"], {}, false), "1 / 2 / 3 (based on level)");
+  assert.equal(P.ppText(["25;42;69;96", "0 to 0.75"], { key: "%", type: "seconds elapsed", changedisplay: "true" }, false), "25% – 96% (based on seconds elapsed)");
+  // pplevel はレベル 18 までの値を表示する（Jax W：レベル 19 の 14% ではなく 12.5%）
+  assert.equal(P.ppText(["5 to 14 for 7", "1 to 19"], { key: "%" }, true), "5% – 12.5% (based on level)");
+  assert.equal(P.ppText(["3 to 18", "1;6;11;19;24;30"], { key: "%" }, true), "3% / 6% / 9% (based on level)");
+  // 式の記号が残る段階は推測で読まない
+  assert.equal(P.ppText(["foo*bar for 3"], {}, false), null);
+  assert.equal(P.ppText(["45;90;infinite", "0;40;80"], { type: "stacks" }, false), "45 / 90 / infinite (based on stacks)");
+});
+
+test("説明の文：rutngt・critical damage・ccd・#expr・#vardefineecho・adaptive・recurring・rd の pp=true", () => {
+  const ctx = {
+    vars: { q: "{{pp|0 to 70 for 11|0 to 1.25|key=%|type=charge time}}" },
+    ccd: (c, k) => ({ "Master Yi": { crit_base: 200 }, Kled: { ms: 305 }, "Kled & Skaarl": { ms: 345 } }[c] || {})[k],
+    cid: (i, k) => (i === "Infinity Edge" && k === "critdamage" ? 40 : undefined),
+  };
+  assert.equal(W.plainText("after {{rutngt|0.5}}", ctx), "after 0.528 seconds (0.5 seconds rounded up to the next game tick)");
+  assert.equal(W.plainText("after {{rutngt|0.33}}", ctx), "after 0.33 seconds");
+  assert.equal(W.plainText("for {{critical damage|({{ccd|Master Yi|crit_base}}-100)*1+100|1*100}} damage", ctx), "for (200% + Infinity Edge 40%) damage");
+  assert.equal(W.plainText("by {{#expr:{{ccd|Kled & Skaarl|ms}}-{{ccd|Kled|ms}}}}", ctx), "by 40");
+  assert.equal(W.plainText("increased by {{#var:q}}", ctx), "increased by 0% – 70% (based on charge time)");
+  assert.equal(W.plainText("Gain {{#vardefineecho:b|3}}% up to {{#expr:{{#var:b}}*6}}%", ctx), "Gain 3% up to 18%");
+  assert.equal(W.plainText("gain {{adaptive|8}}", ctx), "gain 4.8 bonus Attack Damage or 8 Ability Power (Adaptive)");
+  assert.equal(W.plainText("every {{fd|1.3{{recurring|3}}}} seconds", ctx), "every 1.333… seconds");
+  assert.equal(W.plainText("heal for {{rd|10 to 20 for 3|5 to 10 for 3|pp=true}}", ctx), "heal for 10 / 15 / 20 (melee) / 5 / 7.5 / 10 (ranged) (based on level)");
+  // 決まらない変数・データのない ccd は推測せず解けない記法として残す
+  assert.equal(W.hasResidual(W.plainText("{{#var:nothing}}", ctx)), true);
+  assert.equal(W.hasResidual(W.plainText("{{ccd|Nobody|ms}}", ctx)), true);
+  // 式のまま残った x は解けていない
+  assert.equal(W.hasResidual("heals for 15+(145/17)*(x-1) for 20"), true);
+});
+
+test("pp の安全：刻み幅0・負・数でない刻み、逆向き・巨大な範囲、巨大な段階の数は展開せず、すぐに失敗を返す", () => {
+  const P = require("./pp");
+  const W = require("./wiki");
+  const t0 = Date.now();
+  // pp.js（説明の文）：段階は Module と同じく41まで。超える・数でないときは null（解けない記法として保留）
+  for (const args of [["0 to 100 by 0"], ["0 to 100 by -5"], ["0 to 100 by abc"], ["0 to 1e12 by 1"], ["1 to 2 for 1e9"], ["1 to 2 for 0"], ["x*2 for 1e9"], ["x*2 for -1"]]) {
+    assert.equal(P.ppText(args, {}, false), null, args[0]);
+  }
+  // 基準の行の巨大な範囲も同じ
+  assert.equal(P.ppText(["1 to 2", "0 to 1e12 by 1"], {}, false), null);
+  // wiki.js の parsePp（構造化）：刻み幅0・負・巨大な範囲・巨大な段階の数は pp_complex
+  for (const a of [["10 to 20", "1 to 100 by 0"], ["10 to 20", "1 to 1000000000 by 1"], ["10 to 20", "1 to 100 by 0.0000001"], ["10 to 20 for 100000000"], ["10 to 20 for 0"]]) {
+    const r = W.parsePp(a, 18);
+    assert.equal(r.ok, false, a.join("|"));
+  }
+  // 負の刻み幅は範囲の書き方に一致しないので、展開せず文字のまま扱う（ループしない）
+  const neg = W.parsePp(["10 to 20", "1 to 100 by -1"], 18);
+  assert.ok(!neg.ok || !(neg.basis && neg.basis.length > 41));
+  assert.ok(Date.now() - t0 < 2000, "すぐに終わる");
+  // 通常の指定はこれまでどおり
+  assert.equal(P.ppText(["0 to 100 by 20", "0 to 5"], { key: "%", type: "stacks" }, false), "0% – 100% (based on stacks)");
+});
+
+test("レベル18を超える値の記録：Electrocute は表示 70 – 260（レベル20まで）、レベル18は 240（Data Dragon の 70-240 と一致）", () => {
+  const P = require("./pp");
+  assert.deepEqual(P.levelNote(["60 + 10 * x", "1 to 20 by 1"], {}, false), { kind: "shown_beyond_18", first: "70", at_level_18: "240", max_level: 20, at_max_level: "260", shown_last_level: 20 });
+  // pplevel は表示がレベル18まで（Jax W：12.5%）。原典にはレベル19の値 14% もある
+  assert.deepEqual(P.levelNote(["5 to 14 for 7", "1 to 19"], { key: "%" }, true), { kind: "hidden_beyond_18", first: "5%", at_level_18: "12.5%", max_level: 19, at_max_level: "14%", shown_last_level: 16 });
+  // レベル18までの値・基準がレベルでないもの（スタック・時間）は記録しない
+  assert.equal(P.levelNote(["15 to 100"], {}, false), null);
+  assert.equal(P.levelNote(["0 to 70 for 11", "0 to 1.25"], { key: "%", type: "charge time" }, false), null);
+  // 取り込んだルーンの文：表示は変えずに記録が付く
+  const fs = require("node:fs"), path = require("node:path");
+  const ru = JSON.parse(fs.readFileSync(path.join(__dirname, "../../public/gamedata/wiki/2026-11-02/runes.json"), "utf8")).runes.find((r) => r.name === "Electrocute");
+  assert.match(ru.text.description.plain, /70 – 260 \(based on level\)/);
+  assert.equal(ru.text.description.level_notes[0].at_level_18, "240");
+});
+
+test("lcfirst・ucfirst（マジックワード）", () => {
+  const W = require("./wiki");
+  assert.equal(W.plainText("which {{lcfirst:Grants sight}}."), "which grants sight.");
+  assert.equal(W.plainText("{{ucfirst:abc}}"), "Abc");
+});
+
+test("Named item effect の表：共有・単独・互いに関係する効果の名前とアイテム（説明の文は持たない）", () => {
+  const W = require("./wiki");
+  const raw = [
+    "== Shared effects ==", "{| class=\"article-table\"", "!Name", "!Effect", "!Items", "|-", "|{{anchor|Annul}}'''Annul'''", "|Grants a spell shield.", "|{{ii|Verdant Barrier}}<br />{{ii|Banshee's Veil}}", "|}",
+    "=== Grouped shared effects ===", "{| class=\"article-table\"", "!Group", "!Name", "!Effect", "!Items", "|-",
+    "|rowspan=\"2\"|{{anchor|X}}'''Jungle Companions''' / '''Evolution Buff'''", "|'''Jungle Companions'''", "|Summon a pet.", "|rowspan=\"2\"|{{ii|Gustwalker Hatchling}}<br>{{ii|Scorchclaw Pup}}",
+    "|-", "|'''Gustwalker's Gait / Scorchclaw's Slash'''", "|Consumes the item.", "|}",
+    "== Isolated effects ==", "{| class=\"article-table\"", "!Name", "!Effect", "!Item", "|-", "|{{anchor|Anguish}}'''Anguish'''", "|Deal damage.", "|{{ii|Unending Despair}}", "|}",
+    "== Archive ==", "* x",
+  ].join("\n");
+  const r = W.parseNamedItemEffects(raw);
+  assert.deepEqual(r.map((x) => [x.name, x.kind, x.group ?? null, x.items.join(",")]), [
+    ["Annul", "shared", null, "Verdant Barrier,Banshee's Veil"],
+    ["Jungle Companions", "shared", "Jungle Companions / Evolution Buff", "Gustwalker Hatchling,Scorchclaw Pup"],
+    ["Gustwalker's Gait", "shared", "Jungle Companions / Evolution Buff", "Gustwalker Hatchling,Scorchclaw Pup"],
+    ["Scorchclaw's Slash", "shared", "Jungle Companions / Evolution Buff", "Gustwalker Hatchling,Scorchclaw Pup"],
+    ["Anguish", "isolated", null, "Unending Despair"],
+  ]);
+  assert.ok(r.every((x) => !("description" in x)));
+});
+
+test("同時に持てる数の制限（Module:ItemData/getter の p.itemlimit・p.limit を写したもの）", () => {
+  const W = require("./wiki");
+  const by = new Map([["Manamune", { itemlimit: "Manaflow" }]]);
+  assert.deepEqual(W.itemLimitGroups("Sterak's Gage", { itemlimit: "Lifeline", type: ["Legendary"] }, by), [{ group: "Lifeline", rule: "Limited to 1 Lifeline item." }]);
+  // グループがない Legendary は同じアイテム1つまで
+  assert.deepEqual(W.itemLimitGroups("Thornmail", { type: ["Legendary"] }, by), [{ group: "legendary", rule: "Limited to 1 Thornmail." }]);
+  // "=>アイテム名" は参照先の値（Muramana → Manamune の Manaflow）
+  assert.deepEqual(W.itemLimitGroups("Muramana", { itemlimit: "=>Manamune", type: ["Legendary"] }, by).map((x) => x.group), ["Manaflow"]);
+  assert.deepEqual(W.itemLimitGroups("Berserker's Greaves", { type: ["Boots"] }, by).map((x) => x.group), ["Boots"]);
+  assert.match(W.itemLimitGroups("Elixir of Iron", { itemlimit: "Elixir", type: ["Elixir"] }, by)[0].rule, /replace the existing one's effects/);
+  // 制限の文：trinket・warding の語は定型の文に、champion は「Only available to」
+  assert.equal(W.itemLimitText({ limit: "trinket,warding" }), "Switching to another trinket keeps the current cooldown, if there is any. A player may only have 3 {{tip|Stealth Ward|Stealth Wards}} or {{tip|Totem Ward|Totem Wards}} on the map at one time.");
+  assert.equal(W.itemLimitText({ limit: "Limited to 1 '''Black Spear'''.", champion: ["Kalista", "Sylas"] }), "Limited to 1 '''Black Spear'''. Only available to {{ci|Kalista}} and {{ci|Sylas}}.");
+  assert.equal(W.itemLimitText({}), "");
+});
+
+test("回帰：Katarina のパッシブ（pplevel）はレベル18の 240 まで表示し、レベル20の 275 は記録だけ", () => {
+  const fs = require("node:fs"), path = require("node:path");
+  const j = JSON.parse(fs.readFileSync(path.join(__dirname, "../../public/gamedata/wiki/2026-11-02/abilities/55.json"), "utf8"));
+  const t = j.templates.find((x) => x.title === "Template:Data Katarina/Voracity").text.description2;
+  assert.match(t.plain, /68 – 240 \(based on level\)/);
+  assert.doesNotMatch(t.plain, /275/);
+  assert.deepEqual(t.level_notes, [{ kind: "hidden_beyond_18", first: "68", at_level_18: "240", max_level: 20, at_max_level: "275", shown_last_level: 18 }]);
 });

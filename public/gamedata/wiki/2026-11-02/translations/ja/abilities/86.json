@@ -94,16 +94,21 @@
    "ja": "発動効果：ガレンは対象の敵チャンピオンにデマーシアの力を呼び下ろし、確定ダメージを与え、詠唱時間の開始時から1秒間可視化する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Garen/Perseverance#description": {
    "source_sha1": "15d5f8fc08aecae2d31848d7bdf9c494e8f2f854",
-   "reason": "residual_markup"
+   "plain_sha1": "f91af59c93cba27a74959d3147da3401273b57f0",
+   "ja": "固有：ガレンは5秒ごとに、最大体力の1.5%～10.1%（レベルに応じて）を追加で回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Garen/Judgment#description5": {
    "source_sha1": "3ee9f55c34c120fabd0110bf49f3a59bea687ab9",
-   "reason": "residual_markup"
+   "plain_sha1": "ffd1e1a719f382200362f97a5d631501fb59d11d",
+   "ja": "「ジャッジメント」はクリティカルになりえ、（130% + 「インフィニティ・エッジ」 12%）のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

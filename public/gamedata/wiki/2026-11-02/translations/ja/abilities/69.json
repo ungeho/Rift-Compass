@@ -20,10 +20,10 @@
   },
   "Template:Data Cassiopeia/Noxious Blast#description": {
    "source_sha1": "47da69605642e31bdd84746458a84e4b17208100",
-   "plain_sha1": "e398ca3feb067c826e13546c5586105406c680f9",
-   "ja": "発動効果：カシオペアは指定地点に0.4秒の遅れの後に爆発する爆風を起こす。爆風の範囲内の敵は3秒間毒を受け、効果時間の間0.4286秒ごとに魔法ダメージを受ける。",
+   "plain_sha1": "721cef4c8f97b138e0e4f6943ef45fca7717a72d",
+   "ja": "発動効果：カシオペアは指定地点に0.4秒の遅れの後に爆発する爆風を起こす。爆風の範囲内の敵は3秒間毒を受け、効果時間の間0.429秒ごとに魔法ダメージを受ける。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Cassiopeia/Noxious Blast#description2": {
    "source_sha1": "39634c0afd67b95f6c670f1b93c284edff7ba998",
@@ -41,10 +41,10 @@
   },
   "Template:Data Cassiopeia/Miasma#description2": {
    "source_sha1": "3fc10efc809901c4ec20677b318058af8f4dd285",
-   "plain_sha1": "fc41599dc2835611351499534f229609ccc293c5",
-   "ja": "雲の中の敵は毒を受けて0.2632秒ごとに魔法ダメージを受け、グラウンドと、範囲の効果時間の間に減衰するスロウを受ける。",
+   "plain_sha1": "0f696e4faf9e4148c48bf64bf0fee76b1ee65a66",
+   "ja": "雲の中の敵は毒を受けて0.263秒ごとに魔法ダメージを受け、グラウンドと、範囲の効果時間の間に減衰するスロウを受ける。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Cassiopeia/Twin Fang#description": {
    "source_sha1": "b838be3d66ebd410944c88d53ec2df7e54a477a3",

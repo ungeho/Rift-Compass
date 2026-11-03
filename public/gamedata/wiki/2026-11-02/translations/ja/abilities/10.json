@@ -115,16 +115,21 @@
    "ja": "ケイルは「聖なる審判」の詠唱時間中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Kayle/Divine Ascent#description": {
    "source_sha1": "f19a1c6d582b19f50928853f02331678c2d43073",
-   "reason": "residual_markup"
+   "plain_sha1": "938a398beaf51dacf6d0ba5a8d53edb225d8b7e6",
+   "ja": "固有：ケイルは四つの形態を順に上昇し、それぞれ追加のボーナスを得る。レベル1・6・11・16でスキルポイントを使うと上昇する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Kayle/Divine Ascent#description4": {
    "source_sha1": "e76c78c89324d4a39e9a222d748422cd1a1a932f",
-   "reason": "residual_markup"
+   "plain_sha1": "26d9826bcb5e16190e49678b0df433d9b0b6929c",
+   "ja": "レベル11 -「Aflame」：ケイルは大きさが10%増加する。ケイルが「Exalted」の間、通常攻撃は攻撃開始時に前方へ炎の波も放ち、波は通過したすべての敵に20～41（レベルに応じて）（+ 増加攻撃力の10%）（+ APの25%）の魔法ダメージを与える。波はクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -122,12 +122,14 @@
    "ja": "跳躍の間、「稲妻の猛攻」の効果時間は止まる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Volibear/The Relentless Storm#description3": {
    "source_sha1": "1980aea4e98ddbc7dc99305d2a55894e852273ca",
-   "reason": "residual_markup"
+   "plain_sha1": "a02505b81c66d12f7ea4c8b6162792e3949b2fac",
+   "ja": "「Lightning Claws」：ボリベアの爪が雷をまとい、通常攻撃を強化して、攻撃時効果として対象と、対象から450ユニット以内で最も近くの見えている敵に11～68（レベルに応じて）（+ 増加攻撃力の20%）（+ APの45%）の追加の魔法ダメージを与え、後続の対象に最大4回連鎖する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

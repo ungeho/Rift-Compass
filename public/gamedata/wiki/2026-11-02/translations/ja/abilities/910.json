@@ -206,12 +206,14 @@
    "ja": "「Wash Brush」は、フェイが気分に入っているときだけ使え、スキルの使用を妨げる行動妨害を受けている間も使える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Hwei/Pool of Reflection#description": {
    "source_sha1": "c3873f347d500cfa64de208166763261db79ce23",
-   "reason": "residual_markup"
+   "plain_sha1": "7da36326ded0506e6c0a1b3533c76ef0f73b2247",
+   "ja": "発動効果 - WW：フェイは指定地点に水たまりを呼び出し、3秒間守りの範囲を作って、詠唱時間の開始時と、範囲内にいる間の0.5秒間、自身と味方チャンピオンにシールドを付与する。範囲内にいる間、シールドは効果時間の間0.264秒（0.25秒を次のゲームのティックに切り上げた値）ごとに更新され、一定量ずつ強くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

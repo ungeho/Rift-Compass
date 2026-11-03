@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Nasus/Soul Eater#description": {
    "source_sha1": "1aecbb941747bb9dce93b52e4c1cdf91e3d3e670",
-   "plain_sha1": "b5678809fdc3172f35a3ae356a6272f42dad5e05",
-   "ja": "固有：ナサスは10%～20%（レベルに応じて）のライフスティールを得る。",
+   "plain_sha1": "4e9e8025429bf257f3a58fcc5e49906c57b302e9",
+   "ja": "固有：ナサスは10% / 15% / 20%（レベルに応じて）のライフスティールを得る。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nasus/Siphoning Strike#description": {
    "source_sha1": "314a713c3820a086c14633dd96d855263dd03c3f",
@@ -41,10 +41,10 @@
   },
   "Template:Data Nasus/Wither#description": {
    "source_sha1": "1419089846c096b0249d3cb814b0f5fedec56120",
-   "plain_sha1": "c4bc037bfd78ac199c0152170784ddbe246ca883",
+   "plain_sha1": "5f525f1ce6e45bd6447a4c68147d593f79c933ce",
    "ja": "発動効果：ナサスは対象の敵チャンピオンを5秒間老化させ、35%のスロウと、その量の75%の攻撃速度低下（cripple）を与える。どちらも効果時間の間、毎秒強くなる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nasus/Spirit Fire#description2": {
    "source_sha1": "7e4e253bb1e51df5b98e00ae3ab510c3b1ea9534",
@@ -66,12 +66,14 @@
    "ja": "強化されている間、ナサスは0.5秒ごとに周囲の敵に魔法ダメージ（毎秒240が上限）を与え、「サイフォンストライク」のクールダウンが半分になる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Nasus/Spirit Fire#description": {
    "source_sha1": "398e762a46aa98d88ac9e27e0e9a5310a6efff3a",
-   "reason": "residual_markup"
+   "plain_sha1": "d38f36c5aa5afe568f8b6ca3c04e653d1db0cf4d",
+   "ja": "発動効果：ナサスは指定地点に霊の炎を放ち、その範囲の視界を2.5秒間与え、0.264秒（0.25秒を次のゲームのティックに切り上げた値）の遅れの後、範囲内の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

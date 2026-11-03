@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -20,10 +20,10 @@
   },
   "Template:Data Ekko/Z-Drive Resonance#description3": {
    "source_sha1": "9b631b4009c1018805629d8be7fa56272a0c932d",
-   "ja": "固有 -「Stolen Time」：チャンピオンに対して「Resonance」を発動させると、エコーは2～3秒間（レベルに応じて）、移動速度が50%～80%（レベルに応じて）増加する。",
+   "plain_sha1": "d2482a92aecc93ba95f6dc9b0eedadaf7c5a80e8",
+   "ja": "固有 -「Stolen Time」：チャンピオンに対して「Resonance」を発動させると、エコーは2 / 2.5 / 3秒間（レベルに応じて）、移動速度が50% / 60% / 70% / 80%（レベルに応じて）増加する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
-   "plain_sha1": "28c3c321dbcf80e6d0a210c3dbceee2341774995"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Ekko/Timewinder#description": {
    "source_sha1": "78ad94552d7ff36e800c9f4f7abf6b0c9718196d",
@@ -115,12 +115,14 @@
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02",
    "plain_sha1": "fa900e0d4cdd86226d7b6cc6057b190156b0fea0"
-  }
- },
- "withheld": {
+  },
   "Template:Data Ekko/Z-Drive Resonance#description": {
    "source_sha1": "ab02c8bbdf5ac534ffd005f4089ab09799f28d26",
-   "reason": "residual_markup"
+   "plain_sha1": "89abd69140b6f2c571e1b761a541014d756fe674",
+   "ja": "固有 -「Resonance」：エコーの通常攻撃（攻撃時効果）とダメージを与えるスキルは、命中した敵に4秒間「Resonance」のスタックを与え、命中のたびに更新され、最大3回まで重なる。三つ目のスタックですべて消費し、30～150（レベルに応じて）（+ APの80%）の追加の魔法ダメージを与える。「ゼロ・ドライブ」はモンスターに270%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

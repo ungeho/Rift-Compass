@@ -87,16 +87,21 @@
    "ja": "効果時間の終わりまでにテザーが切れなければ、対象は一定時間フィアーを受け、その間90%のスロウを受ける。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Nocturne/Umbra Blades#description": {
    "source_sha1": "ac8df84481002e4302716b28a9a31208516c37aa",
-   "reason": "residual_markup"
+   "plain_sha1": "5361af1ec0d739252d7b627b750bb16244932d79",
+   "ja": "固有：一定時間ごとに、ノクターンは次の通常攻撃を強化して円形に切り払い、対象と周囲の敵に攻撃力の120%の物理ダメージを与え、命中した敵一体ごとに13～32（レベルに応じて）（+ APの30%）回復する。ミニオンに対しては、「夢幻斬」の副対象へのダメージと回復は50%減るが、すべての対象に100%の効果で攻撃時効果を与える（unexpected：Wiki が「期待と違う動作」と注記）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Nocturne/Umbra Blades#description2": {
    "source_sha1": "21aaf8fff36fc17047b6c9960e6a255541483673",
-   "reason": "residual_markup"
+   "plain_sha1": "639d0538175fef0ad35660b1bd44c97dbd8326d3",
+   "ja": "「夢幻斬」は主対象に対してはクリティカルになりえ、与える物理ダメージは攻撃力の（220% + 「インフィニティ・エッジ」 44%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

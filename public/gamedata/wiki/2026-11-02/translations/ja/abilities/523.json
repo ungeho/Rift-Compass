@@ -62,10 +62,10 @@
   },
   "Template:Data Aphelios/Infernum#description": {
    "source_sha1": "26cd224d9473a5c35cdd3f5e47cc8cc832df0f9c",
-   "plain_sha1": "ff8a86bc66512f13e119df81694e14371a874372",
-   "ja": "「Infernum」での通常攻撃は炎の弾を撃ち、弾は到達すると対象の後ろへ扇形に4つの小さな弾に分かれ、通過した敵にダメージを与える。炎の弾は主対象に攻撃力の110%の物理ダメージを与える。いずれかの弾に当たった副対象は、元の攻撃のダメージの75%～100%（レベルに応じて）を受け、ミニオンには23%～30%（レベルに応じて）になる。",
+   "plain_sha1": "00e119d637bfad71acbded1d5625184fd9bb46da",
+   "ja": "「Infernum」での通常攻撃は炎の弾を撃ち、弾は到達すると対象の後ろへ扇形に4つの小さな弾に分かれ、通過した敵にダメージを与える。炎の弾は主対象に攻撃力の110%の物理ダメージを与える。いずれかの弾に当たった副対象は、元の攻撃のダメージの75% / 100%（レベルに応じて）を受け、ミニオンには23% / 30%（レベルに応じて）になる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aphelios/Infernum#description2": {
    "source_sha1": "7c7cd42ba5add71e5778172467149d137e887739",
@@ -188,32 +188,46 @@
   },
   "Template:Data Aphelios/Moonlight Vigil#description": {
    "source_sha1": "069e3fd5d2143aebf608aacda1e55378f8033ec2",
-   "plain_sha1": "3d6244a8bc32c88fec35fb5306f2a4cda1859ec4",
-   "ja": "発動効果：アフェリオスは指定方向に月の光を放ち、光は通り道の範囲の視界を一瞬与えて、敵チャンピオンを照らすと止まる。アルーンは照らされた対象を中心とした範囲を打ち、当たった敵チャンピオンに125～225（レベルに応じて）（+ 増加攻撃力の20%）（+ APの100%）の物理ダメージを与えて、命中した各対象を捕捉し、その範囲の視界を2秒間与える。",
+   "plain_sha1": "8bcf5197d12775274a4a3f3ee2b327be6077d6ea",
+   "ja": "発動効果：アフェリオスは指定方向に月の光を放ち、光は通り道の範囲の視界を一瞬与えて、敵チャンピオンを照らすと止まる。アルーンは照らされた対象を中心とした範囲を打ち、当たった敵チャンピオンに125 / 175 / 225（レベルに応じて）（+ 増加攻撃力の20%）（+ APの100%）の物理ダメージを与えて、命中した各対象を捕捉し、その範囲の視界を2秒間与える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+   "translated_at": "2026-11-03"
+  },
   "Template:Data Aphelios/The Hitman and the Seer#description3": {
    "source_sha1": "70d1bf07fc691a1b521cf0616ed355d8483dadc9",
-   "reason": "residual_markup"
+   "plain_sha1": "0b80f1f93953c2ddfae58b8f02dc5465c6a598fa",
+   "ja": "固有 -「Moonlight」：アフェリオスに与えられる武器は弾薬として「Moonlight」を50持ち、攻撃開始時の通常攻撃と主要なスキルの使用で消費される。効果の間に自動で攻撃させるスキルは、追加の「Moonlight」を消費しない。メイン武器の「Moonlight」が尽きると、その武器は控えの列の最後に回り、アルーンが控えから次に使える武器を1秒かけて組み立て、組み立ての開始からその主要なスキルは1.5秒のクールダウンになる。組み立ての間、アフェリオスは「フェーズ」を使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aphelios/Severum#description2": {
    "source_sha1": "9788c659633bb3bebad82754b9cf54197d9d1624",
-   "reason": "residual_markup"
+   "plain_sha1": "b2b6b6b2e5fffb7ec2027f6691022bf193164741",
+   "ja": "「Severum」からの回復のうちアフェリオスの最大体力を超えた分は、最大10～160（レベルに応じて）（+ 最大体力の6%）のシールドに変わり、最大30秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aphelios/Crescendum#description3": {
    "source_sha1": "458644a458850ef0b52ccb30e7c883414c237709",
-   "reason": "residual_markup"
+   "plain_sha1": "66c65a2f51b1180353a70173018ca2b176452d96",
+   "ja": "「Crescendum」での攻撃は強化され、攻撃力の0%～146%（「Chakram」の数に応じて）の物理ダメージをさらに与え、攻撃モーションが10.67%短くなり、クリティカルのときはさらに短い6.67%になる。「Chakram」による追加ダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aphelios/Sentry#description2": {
    "source_sha1": "665f8d5c4b25fbde9d221b04639a805cf911c01c",
-   "reason": "residual_markup"
+   "plain_sha1": "5226e93a3e4a15ec1c3620b829a8d30b7c95d5ae",
+   "ja": "歩哨は周囲の視界を与え、範囲内で最も近くの見えている敵を、アフェリオスの今のサブ武器の複製で自動で攻撃し、命中ごとに35～125（レベルに応じて）（+ 増加攻撃力の34%～52%〔レベルに応じて〕）（+ APの50%）の物理ダメージを与える。歩哨は（200% + 「インフィニティ・エッジ」 40%）のダメージでクリティカルになりえ、アフェリオスの攻撃速度とクリティカル率の両方の恩恵を100%の効果で受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aphelios/Moonlight Vigil#description2": {
    "source_sha1": "9c227bdfc6b5326b9008efa23518e6febb23bcc1",
-   "reason": "residual_markup"
+   "plain_sha1": "ce07b88f9b22307876bc61ee24648626f8fd0322",
+   "ja": "照らしてから0.3秒後、アフェリオスの今のメイン武器に応じた攻撃が、捕捉した各対象へ空から放たれ、攻撃力の100%の物理ダメージを与えて攻撃時効果を与える。これらの攻撃は100%～130%（+ 「インフィニティ・エッジ」 0%～12%）（クリティカル率に応じて）のダメージでクリティカルになりうる。捕捉した対象には射程の制限がない。「Calibrum」：強化された印を付け、消費した印一つごとに50 / 80 / 110（レベルに応じて）の追加の物理ダメージを与える。「Severum」：少なくとも一体の敵チャンピオンに当たると、アフェリオスを250 / 350 / 450（レベルに応じて）回復する。「Gravitum」：最初のスロウが99%になり、「Binding Eclipse」を強化して、強化されたスロウを受けている対象に1.35秒間スネアを与える。「Infernum」：最初の爆発が50 / 100 / 150（レベルに応じて）（+ 増加攻撃力の25%）の追加の物理ダメージを与える。攻撃は代わりに捕捉した対象に攻撃力の110%の物理ダメージを与え、半径400の円に弾の爆発を起こして、命中した対象に攻撃力の74.25% / 99%（レベルに応じて）の物理ダメージを与える。範囲が重なると、敵チャンピオンはそれぞれからダメージを受ける。「Crescendum」：最初に当たった敵チャンピオンから、アフェリオスのもとへ戻る霊体の「Chakram」をさらに5つ生み（合計6）、ほかに当たった対象からの分に上乗せされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

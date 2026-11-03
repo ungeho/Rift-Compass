@@ -1,0 +1,3152 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Abyssal Mask#pass": {
+   "source_sha1": "2b6a44b210ab6a15a600c3fb8ca929065d51a0eb",
+   "plain_sha1": "3d467a45949db3473e38d53c7b50aa7d0fc3431e",
+   "ja": "自身から700ユニット以内の敵チャンピオンは呪われ、すべての発生源から受ける魔法ダメージが12%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Anathema's Chains#act": {
+   "source_sha1": "06c3f6dcd04298c9c484059e87e0b64a8c2d1631",
+   "plain_sha1": "e8280fc713e84bd8ccf4f76b19f806e0debb4c3f",
+   "ja": "対象の敵チャンピオンを呪い、「宿敵」に指定する。新しい「宿敵」を選ぶと、前の「宿敵」の呪いは外れる。敵チャンピオンと戦闘中の間は15秒間使用できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Anathema's Chains#pass": {
+   "source_sha1": "1ab2e5aab470f617643f3f200d4b5acd59d50024",
+   "plain_sha1": "4553aa3ce3e550fee30f5a019998772e9134a3fa",
+   "ja": "「宿敵」から受けるダメージが30%軽減され、「宿敵」が自身から700ユニット以内にいる間、その行動妨害耐性を20%低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Anti-Tower Socks#pass": {
+   "source_sha1": "f593b4f5a20c8ba700f83e8386ac4a70c9153e61",
+   "plain_sha1": "d47849fd9dd66ab5dd3b6073ac3a22ca214727ee",
+   "ja": "タワーの通常攻撃は、このミニオンの最大体力の14% / 11% / 8%（タワーの種類に応じて）を軽減前のダメージとして与えるよう修正される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Arcane Sweeper (Trinket)#act": {
+   "source_sha1": "84e683c1ec56e6b72216b499ec179324cef19535",
+   "plain_sha1": "10e3f0db5941b8de259e3689f549237899c3b991",
+   "ja": "指定地点に5秒間霧を呼び出し、半径375の範囲の視界を与え、範囲内の敵の罠を3秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Archangel's Staff#pass": {
+   "source_sha1": "f33dd89f4116347817758410bb1356fd86d1d6d6",
+   "plain_sha1": "df1ee430f510a78cddaff287f01263c0ef444bb2",
+   "ja": "増加マナの1%に等しい魔力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Archangel's Staff#pass2": {
+   "source_sha1": "5bef8a7675ddd92dbf701dcf83d44495f987294f",
+   "plain_sha1": "25bd9870588f3ccedd0d13a332161851a45f1139",
+   "ja": "8秒ごとにチャージを得て、最大5チャージ。敵か味方にスキルで効果を与えるとチャージを一つ消費して最大マナが5増加し、対象がチャンピオンなら10になる。増加マナは最大360。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Archangel's Staff#pass3": {
+   "source_sha1": "b0c9d4620fc88af5c40b70bbca7234ccbcfc39c6",
+   "plain_sha1": "bad5aaca538ac6e1f214b5045a7941b107a33761",
+   "ja": "増加マナが360になると「セラフ エンブレイス」に変化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ardent Censer#pass": {
+   "source_sha1": "4626b547eec71b0f99637f2e5843c39aea7e0791",
+   "plain_sha1": "5f0c580eac9d2cbe985428835c000e7ba2be53ad",
+   "ja": "味方チャンピオン（自身を除く）を回復するかシールドを付与すると、6秒間、自身とその味方を強化し、攻撃速度が25%増加して、通常攻撃が攻撃時効果として20の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Armored Advance#pass2": {
+   "source_sha1": "9ee16c3049da450b1f9e932d8a2ed548870d5a5d",
+   "plain_sha1": "750bd2c0fb0f31f56325520b5c512a2ef80e5525",
+   "ja": "チャンピオンから物理ダメージを受けると、4秒間、10～120（レベルに応じて）（+ 最大体力の4%）の物理ダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Atma's Reckoning#pass": {
+   "source_sha1": "6ecdb1ecdeb1dcb7915af05e83db6f2ece28c7d1",
+   "plain_sha1": "266ba5e0406b6db5ac2dd315427cbee5db2552d2",
+   "ja": "増加体力100ごとにクリティカル率が1%増加し、増加体力3000で最大30%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Axiom Arc#pass": {
+   "source_sha1": "3433c1910f17e6d062d41de5393eb867e5d3069f",
+   "plain_sha1": "09a4c643bf5c771d7392021951257d5d90a71be4",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、アルティメットスキルの合計クールダウンの15%（+ 脅威1ごとに0.15%）が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bami's Cinder#pass": {
+   "source_sha1": "fa5b13a0fd81f535fced10a189c0a03933e91583",
+   "plain_sha1": "69afa0dd3207500fccc4e9800af04e9083a52aae",
+   "ja": "ダメージを受けるか与えると、この自動効果が3秒間作動する。325（+ 増加サイズの100%）ユニット以内の敵に毎秒15の魔法ダメージを与え、ミニオンとモンスターには50%増加する。あと一回のダメージで倒れるミニオンは処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Banshee's Veil#pass": {
+   "source_sha1": "45e3ff26b249632d7b14c01e18c61a38ac40f7c6",
+   "plain_sha1": "4517cde9ccb83e243cb2561238b3a6ade227e1a6",
+   "ja": "次に受ける敵のスキルを防ぐスペルシールドを得る（クールダウン40秒。チャンピオンからダメージを受けるとタイマーがやり直しになる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Base Turret Reinforced Armor (Turret Item)#pass": {
+   "source_sha1": "20aee7a8b3530a9e2af930eac3046d31e07f1d00",
+   "plain_sha1": "6a888365e427cbf4efdbaf2d7fc68fad6759e526",
+   "ja": "範囲内に敵のミニオンも「Rift Herald Mercenary」もいない間、確定ダメージを含め80%のダメージ軽減を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Base Turret Reinforced Armor (Turret Item)#pass2": {
+   "source_sha1": "3775ca76afcc7162e276ed046a444fe541f259d0",
+   "plain_sha1": "e589c12609e44afb52a8b15605408315ecb08b48",
+   "ja": "基地のタワーは体力が自動回復するが、現在の段階を超えては回復しない。段階は体力33%・66%・100%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Cleaver#pass": {
+   "source_sha1": "08aadbe0b0929135a2fee4b7fdef9b36869c8b05",
+   "plain_sha1": "2b9575a5377a6d0ef67edace308dd46e608f299e",
+   "ja": "敵チャンピオンに物理ダメージを与えると、6秒間「カーブ」のスタックを与え、最大5回まで重なる。スタックごとに6%の物理防御低下を与え、5スタックで最大30%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Cleaver#pass2": {
+   "source_sha1": "523aba0919b3175e18ee8ead3a66186440d63396",
+   "plain_sha1": "72cab8e92f15ee4277155b96e5e4a3377ea46620",
+   "ja": "物理ダメージを与えると、2秒間移動速度が20増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Hole Gauntlet#act": {
+   "source_sha1": "5825c2b213e9a0fa97913440761d043b1eadd082",
+   "plain_sha1": "bb88b2faae1b9352a3d2c979fa93b2082534c13a",
+   "ja": "0.5秒の遅れの後、指定地点にブラックホールを呼び出す。ブラックホールは2（+ 増加体力100ごとに0.1）秒間続き、半径は［225 / 75ユニット］×チャンピオンの大きさの補正（+「Accretion」のスタックごとに0.1%）。範囲内の敵は毎秒30～100（レベルに応じて）（+ 使用者の最大体力の6.5%）の魔法ダメージを受け、35%のスロウを受けて、中心の境界に達するまで内側へ引き寄せられる。さらに、ブラックホールの中にいる敵チャンピオン一体ごとに、毎秒「Accretion」のスタックを1得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Hole Gauntlet#pass": {
+   "source_sha1": "2454e390a6fe94d0ec7a4d6bbc2a49994fe872df",
+   "plain_sha1": "5a3a9774dc03f2c0a05863ef3eebe3fd156e9bad",
+   "ja": "敵チャンピオンへの通常攻撃（攻撃時効果）と移動不能の効果は、それぞれ「Accretion」のスタックを1と5得て、最大50。「Accretion」のスタックごとに基本体力自動回復が10%増え、最大スタックで最大500%。さらに、「Accretion」10スタックごとに大きさが20%増え、最大スタックで最大100%。スタックはラウンドごと、およびラウンド内の各フェーズの間でリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Spear#act": {
+   "source_sha1": "1afb4d80b913d486f58e84df19d2051abbae54fc",
+   "plain_sha1": "ff611ea69713fbe4c1b3d76a38935862a45a2cae",
+   "ja": "このアイテムを消費して、使用者と対象の味方チャンピオンが3.5秒の詠唱時間とその後3秒の詠唱を始め、二人とも結ばれた味方になる。詠唱の後、対象は6秒間行動できない。その後、対象は「Oathsworn」になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blackfire Torch#pass": {
+   "source_sha1": "8c73726c247b66f0054a655774b59224ce9d05b5",
+   "plain_sha1": "1abef778affc4aa8c51f17ea1802f6014c64d85c",
+   "ja": "スキルのダメージを与えると敵が燃え、3秒間0.5秒ごとに10（+ APの1%）の魔法ダメージ、合計60（+ APの6%）を受ける。モンスターに対しては、燃焼は一回ごとに10の追加の魔法ダメージを与え、一回ごとに合計20（+ APの1%）、最大120（+ APの6%）の魔法ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blackfire Torch#pass2": {
+   "source_sha1": "86df7bb70eecd9a5e965781768c4d385f58e5b9f",
+   "plain_sha1": "c000cc042ffec7a22a584551613b4fbf9487b377",
+   "ja": "「悪意の炎」の燃焼を受けているチャンピオン・エピックモンスター・大型モンスター一体ごとに、魔力が4%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blade of the Ruined King#pass": {
+   "source_sha1": "1e392c4baf681e4fcb1660ab3954e63c615c9945",
+   "plain_sha1": "8984393fc030fb96c0c6239e273ca352a6b5fd7c",
+   "ja": "通常攻撃は攻撃時効果として、対象の現在体力の8%（近接）/ 5%（遠隔）に等しい追加の物理ダメージを与える。ミニオンとモンスターに対しては100が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blade of the Ruined King#pass2": {
+   "source_sha1": "a40b75713269b43ff7fcb9d66c23dc08c8abc488",
+   "plain_sha1": "3bbb96af13eb7559ae3a19ccb70bf34d3aa278f8",
+   "ja": "敵チャンピオンへの通常攻撃（攻撃時効果）は6秒間スタックを与え、最大3回まで重なる。三つ目のスタックですべて消費し、対象に1秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bloodletter's Curse#pass": {
+   "source_sha1": "39c18e0bf4adc3589a3f8e9256b6fbff3fc19e74",
+   "plain_sha1": "4f90e2fd550ffaea2ee0a5538d3bf7b9b4ff11b7",
+   "ja": "チャンピオンのスキルで敵チャンピオンに魔法ダメージを与えると、6秒間「邪悪な腐敗」のスタックを与え、最大4回まで重なる（一回の使用につき、通常攻撃かスキル一回あたり0.3秒に一度まで）。スタックごとに7.5%の魔法防御低下を与え、4スタックで最大30%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bloodsong#act": {
+   "source_sha1": "8228bd2cae03b0b372a61b5dc8ff4e4c7fe6fcdf",
+   "plain_sha1": "651eea226bd839e6d846df52fd7ca25716e5f12a",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。チャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bloodsong#pass": {
+   "source_sha1": "5be7efb6a1ed1df6891c6cc0af9496f0f05e27ab",
+   "plain_sha1": "550ec72c8f16bf16f1d1c861ce83d9d3c60e0aa4",
+   "ja": "スキルを使った後、10秒以内の次の通常攻撃は攻撃時効果として基本攻撃力の100%の追加の物理ダメージを与える。対象がチャンピオンなら4秒間「Expose Weakness」を与え、すべての発生源から受けるダメージが8%（近接）/ 5%（遠隔）増加する（クールダウン1.5秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bloodsong#pass2": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bloodthirster#pass": {
+   "source_sha1": "48489df41d89645a414c06a11b74ed3e47d28d20",
+   "plain_sha1": "52e8551999d91b96574235a095ed8c1de37f2207",
+   "ja": "ライフスティールによる回復のうち最大体力を超えた分を、最大165～315（レベルに応じて）のシールドに変え、シールドは壊されるまで続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Boots of Swiftness#pass": {
+   "source_sha1": "6172467d78758070d5d41d1e50fe76b0da4db3c7",
+   "plain_sha1": "e80ab1159431ecb50c4409565733dc3e50b3d383",
+   "ja": "スロウ耐性を25%得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bounty of Worlds#act": {
+   "source_sha1": "8228bd2cae03b0b372a61b5dc8ff4e4c7fe6fcdf",
+   "plain_sha1": "651eea226bd839e6d846df52fd7ca25716e5f12a",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。チャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bounty of Worlds#pass": {
+   "source_sha1": "68cf21038ec37c0801a2eef36a20c187d4057227",
+   "plain_sha1": "24ee31819d38b1cc11e2177d34d9b3c67ecc45f4",
+   "ja": "サポートのクエストを達成したので、このアイテム「世界の恵み」を、HUD かショップの専用メニューから選んで、「ブラッドソング」「セレスティアル オポジション」「ドリーム メーカー」「至点のソリ」「ザズ＝ザクのレルムスパイク」のいずれかに無料でアップグレードできる。アップグレードはメニューを使えばショップの外でも行える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bounty of Worlds#pass2": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bramble Vest#pass": {
+   "source_sha1": "dcfb8df05925c06c466296a2ea3b1dd40b975cea",
+   "plain_sha1": "8b82e2be4b9e87323047d33165bced0c8ff145e9",
+   "ja": "通常攻撃（攻撃時効果）を受けると、攻撃者に10の魔法ダメージを与え、攻撃者がチャンピオンなら3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Catalyst of Aeons#pass": {
+   "source_sha1": "c6843cf3268500777727de1e059aabff67209bba",
+   "plain_sha1": "c0593d28848eae7dfe6b4d1aafe9006b995ecf17",
+   "ja": "チャンピオンから受けた軽減前のダメージの10%に等しいマナを回復し、使ったマナの25%に等しい体力を回復する（一回の使用につき20まで）。切り替え式のスキルでは、回復は毎秒20まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Celestial Opposition#act": {
+   "source_sha1": "8228bd2cae03b0b372a61b5dc8ff4e4c7fe6fcdf",
+   "plain_sha1": "651eea226bd839e6d846df52fd7ca25716e5f12a",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。チャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Celestial Opposition#pass": {
+   "source_sha1": "4da833c6ffc82fcf1e734cf9b5051ebfc7648999",
+   "plain_sha1": "ce2551b0be226078fb5687d09231a51341a29af2",
+   "ja": "「Blessed」になり、受けるチャンピオンのダメージが35%（近接）/ 25%（遠隔）軽減される。この効果はチャンピオンからダメージを受けた後2秒間残る。残る時間が終わると「Blessed」を失い、周囲に衝撃波を放って500ユニット以内の敵に1.5秒間50%のスロウを与える（クールダウン18秒。チャンピオンからダメージを受けるとタイマーがやり直しになる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Celestial Opposition#pass2": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Chainlaced Crushers#pass": {
+   "source_sha1": "90c2bc5e72403f62d1f5395e1187406902cfcffe",
+   "plain_sha1": "16a245d6c2b10300fb42dcbaf0b91ca6dc467591",
+   "ja": "チャンピオンから魔法ダメージを受けると、4秒間、10～120（レベルに応じて）（+ 最大体力の4%）の魔法ダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Chempunk Chainsword#pass": {
+   "source_sha1": "52b17481f1c385540813ef7d0fb8b4d2ffda9aee",
+   "plain_sha1": "f0baad092967d54fd896a86ca0afaa54f0c54ba1",
+   "ja": "敵チャンピオンに物理ダメージを与えると、3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cloak of Starry Night#pass": {
+   "source_sha1": "507eef866b5c106b3291208f3addd98f773f0934",
+   "plain_sha1": "2bca9979f2920b8e93e6cf2bc4a8e4ac19e104b5",
+   "ja": "合計魔法防御が20%増加する。さらに、通常攻撃以外の発生源から受けるすべてのダメージを、合計魔法防御200ごとに5%軽減し、最大50%のダメージ軽減。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cosmic Drive#pass": {
+   "source_sha1": "93e30deb6eda5530efd598481b21fb64e166cdbf",
+   "plain_sha1": "660d306099d93aede06711bd1200c925977e6c6a",
+   "ja": "敵チャンピオンに魔法ダメージか確定ダメージを与えると、4秒間移動速度が20増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Crimson Lucidity#pass2": {
+   "source_sha1": "1cdab04fb7e89c9ea73b1cbeb3abd8ecb613f353",
+   "plain_sha1": "1add22edf06408b1023e5af067ada79196aea5b7",
+   "ja": "味方の回復・シールド・強化、チャンピオンへのダメージを与えるスキル、サモナースペルの使用で、4秒間移動速度が10%（近接）/ 8%（遠隔）増加する。同じ使用からは4秒に一度しか発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Crown of the Shattered Queen#pass": {
+   "source_sha1": "a21fade6dd33ba73b3ca11bce753b6bb69ef308f",
+   "plain_sha1": "76a42331a078982ea7689b238341a95b05377f36",
+   "ja": "「Safeguarded」になり、受けるチャンピオンのダメージが40%軽減される。この効果はチャンピオンからダメージを受けた後3秒間残る（クールダウン30秒。チャンピオンからダメージを受けるとタイマーがやり直しになる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cruelty#pass": {
+   "source_sha1": "a2e74da89f34e548a8fc92fe6ea0f839eb3262a6",
+   "plain_sha1": "0a1f48976bcab0087d4c997535e318a6bc61d625",
+   "ja": "敵チャンピオンに移動不能かグラウンドを与えると、その敵の上に彗星を呼び出し、彗星は1秒後にその時点の位置に落ちて、範囲内の敵に50～150（レベルに応じて）（+ APの40%）（+ 自身の最大体力の4%）の魔法ダメージを与える（対象ごと・使用ごとにクールダウン6秒）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cryptbloom#pass": {
+   "source_sha1": "e9f038463bf5122e5d54054372675d84f45f9adc",
+   "plain_sha1": "01c55aaceb744279dd35f62b691755dabf1fd5c8",
+   "ja": "生きている状態で、ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、その敵が死んだ位置から1.75秒かけて広がる新星を呼び出し、当たった自身と味方チャンピオンを100（+ APの20%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cull#pass": {
+   "source_sha1": "3b25281d5439e7429b499c9d39cda138d61e3ffc",
+   "plain_sha1": "d3cdefccb0e0970146f1e3e0e163e4f44e40bcfc",
+   "ja": "ミニオンを倒すと追加で1ゴールド（gold）を得て、最大100ゴールド。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dark Seal#pass": {
+   "source_sha1": "c1f80fa286b666a83b88f00457bd1eb1687d1a13",
+   "plain_sha1": "b92a929c6fdc26488c05f0ed1b0367ae06680d0a",
+   "ja": "チャンピオンのキル一回でスタックを2、アシスト一回で1得て、最大10スタック。スタックごとに魔力が4増加し、最大スタックで40。死亡するとスタックを5失う。「メジャイ ソウルスティーラー」にアップグレードしてもスタックは保たれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Darksteel Talons#pass": {
+   "source_sha1": "35e975df71dcf3dc763a9a36b47a0744c9c69244",
+   "plain_sha1": "86e8aa4dd50a54d2d01433a77cadace57b284c6c",
+   "ja": "通常攻撃は攻撃時効果として、20～40（近接）/ 10～20（遠隔）（レベルに応じて）（+ 増加物理防御の25%〔近接〕/ 20%〔遠隔〕）の追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dawncore#pass": {
+   "source_sha1": "940e12ea9c1c6638c48ccce91621e08dd683966b",
+   "plain_sha1": "70a92bf78b85334157b7ff8952c13d505449265a",
+   "ja": "基本マナ自動回復が100%増えるごとに、回復とシールドの効果が2%、魔力が10増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dead Man's Plate#pass": {
+   "source_sha1": "c8e1cbbc48e601fcede0354fceadfb36e7759118",
+   "plain_sha1": "3dd66cd72cfca1a5e82f5a2edc604cbc83178f15",
+   "ja": "移動中、0.25秒ごとに「Momentum」のスタックを7得て、3.75秒移動した後の100スタックで最大20の移動速度の増加を得る。通常攻撃はすべてのスタックを消費し、攻撃時効果として0～40（「Momentum」に応じて）（+ 基本攻撃力の0%～100%〔「Momentum」に応じて〕）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dead Man's Plate#pass2": {
+   "source_sha1": "ebf4e8e734cf941227177bedb7fe3906b8e01c0f",
+   "plain_sha1": "0a9a292b70dc4b4c0da5d23d742534b336b497fd",
+   "ja": "スロウ耐性を15%得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Death's Dance#pass": {
+   "source_sha1": "b072c7a2a427bdae2cbdc596ea338e0609c9f8a8",
+   "plain_sha1": "62a98b5987bafd5dcf11711a752456644e2747e6",
+   "ja": "受けた軽減後の物理ダメージと魔法ダメージの30%（近接）/ 10%（遠隔）を軽減し、代わりにそのダメージを蓄えて、3秒かけて確定ダメージとして順に受け、毎秒蓄えたダメージの三分の一を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Death's Dance#pass2": {
+   "source_sha1": "2a1a2aa48414f2d9d5bd322cefbb6676eb6b4a9a",
+   "plain_sha1": "f095259b84df36bd4f26c4908f403cdb9a6f5811",
+   "ja": "自身がダメージを与えてから3秒以内に敵チャンピオンが死ぬと、「強行突破」の残りの蓄えたダメージを取り除き、2秒かけて増加攻撃力の75%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Death's Daughter#pass": {
+   "source_sha1": "1f6f3050aae6c85976d3259112ba2658e4477fba",
+   "plain_sha1": "38c381934f2adba3bd801a26ac6b478a8f0a561c",
+   "ja": "「一斉砲撃」の最初の波のまとまりの後に巨大な砲弾が落ち、当たった敵に120 / 210 / 300（+ APの30%）の確定ダメージを与えて、1.5秒間75%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Decapitator#pass": {
+   "source_sha1": "1534152c3894969f3c835a6c767809bd00ef95f3",
+   "plain_sha1": "4fff5c8d47ed888b9f382b5b8da6ead2e8a5479b",
+   "ja": "通常攻撃と基本スキルの使用で、ラウンドの残りの間「Anticipation」のスタックをそれぞれ1と2得て、最大40回まで重なる。スタックごとにアルティメットスキルのダメージが3%増え、アルティメットヘイストを2得て、最大でアルティメットのダメージが120%増加し、アルティメットヘイスト80。スタックはラウンドごと、およびラウンド内の各フェーズの間でリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Demon King's Crown#pass": {
+   "source_sha1": "bf73095a96181add5c8ddd1e22c9c06d574aa03d",
+   "plain_sha1": "d4c1beda897846908808db8391e3386848072038",
+   "ja": "合計攻撃力・魔力・攻撃速度・最大体力・物理防御・魔法防御・スキルヘイストが26%増加し、勝ったラウンド一つごとにさらに1%増え、負けたラウンド一つごとに3%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Demonic Embrace#pass": {
+   "source_sha1": "c1df1cd5aa850d3c911916f3d0b79596105d821a",
+   "plain_sha1": "8de25fc6373df7c4f303a95ec1e29c5c0b49d74d",
+   "ja": "減少した現在体力100ごとに魔力が1.5%、移動速度が1.5%増加し、現在体力が3000減っているとき最大で魔力45%・移動速度45%の増加。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Detonation Orb#pass": {
+   "source_sha1": "ed0f4375df83bc6e8b0611e11f507ae921d079b0",
+   "plain_sha1": "57e1aa827f5ec9ad7331e2067f1a45def57db93a",
+   "ja": "敵チャンピオンにスキルのダメージを与えると3秒間印を付け、その敵に与えた軽減後のダメージの20%を蓄え、移動不能を受けている対象なら25%になる。印の付いた対象にスキルのダメージを与えるたびに印が更新される。印が切れると起爆し、その対象に蓄えた量に等しい確定ダメージを与える。印で対象が倒れる量に達した場合は、即座に起爆する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Diamond-Tipped Spear#pass": {
+   "source_sha1": "4d81148c759eaa842e71469b25d495d5aa333323",
+   "plain_sha1": "fed97dfb9ca9555e174a011af51818f3c5553858",
+   "ja": "通常攻撃の射程が75増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Diamond-Tipped Spear#pass2": {
+   "source_sha1": "b8df844d2956c5f7f1fef159275ca1f044e55a3d",
+   "plain_sha1": "cfac1453021aaacef2b563238ff20913233ef06e",
+   "ja": "通常攻撃は0%～30%（距離に応じて）増加したダメージを、スキルは0%～40%（距離に応じて）増加したダメージを与える。距離は、元の攻撃かスキルが対象に当たった時点の、自身の現在位置から対象の位置までで計算する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Divine Sunderer#pass": {
+   "source_sha1": "0fe862a7e0c42eb3a0a8ecd5c2cd7828b41207d6",
+   "plain_sha1": "1479468d676253901bbf997ce8b6dca4e45cd2d6",
+   "ja": "スキルを使った後、10秒以内の次の通常攻撃は攻撃時効果として、基本攻撃力の180%（+ 対象の最大体力の4%〔近接〕/ 2%〔遠隔〕）の追加の物理ダメージ（最低で基本攻撃力の180%）を与える。対象がチャンピオンなら、基本攻撃力の99%（+ 対象の最大体力の2.2%〔近接〕/ 1.1%〔遠隔〕）回復する（クールダウン1.5秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Doran's Ring#pass": {
+   "source_sha1": "e1a4ca6b32b37c0ac5faef11cfe6b7e23cfee9bf",
+   "plain_sha1": "a0ab425a37bc51b1e3dbe0c91f7168e2527a5f40",
+   "ja": "毎秒1.25マナを回復する。マナを得られない場合は、代わりに体力を0.55回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Doran's Ring#pass2": {
+   "source_sha1": "23e9594724d7f733e85c989af1706e9cbd4efc36",
+   "plain_sha1": "44266ed41bdd0969932545af5ae8599c31a818e1",
+   "ja": "ミニオンへの通常攻撃は、攻撃時効果として5の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Doran's Shield#pass": {
+   "source_sha1": "2c30fd7edbf4249ebdb145c2402cc63b0d811675",
+   "plain_sha1": "f661b4daf42434b9b4abdcfa62031479f1fc6250",
+   "ja": "チャンピオンからダメージを受けた後、8秒間、毎秒0～5.625（減少体力に応じて）の体力自動回復の増加を得る。遠隔チャンピオンが持つ場合、または範囲効果・持続ダメージ・発動効果で発動した場合は66%の効果になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Doran's Shield#pass2": {
+   "source_sha1": "23e9594724d7f733e85c989af1706e9cbd4efc36",
+   "plain_sha1": "44266ed41bdd0969932545af5ae8599c31a818e1",
+   "ja": "ミニオンへの通常攻撃は、攻撃時効果として5の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dragonheart#pass": {
+   "source_sha1": "5951501512bad771b70165d88236afa771425312",
+   "plain_sha1": "6d7cafbfd111791c7c7aca8a0347c61ab46d0939",
+   "ja": "2ラウンドごとにランダムなドラゴンソウルを得る。さらに、持っているドラゴンソウル一つごとに合計攻撃力・魔力・攻撃速度・最大体力・物理防御・魔法防御・スキルヘイストが4%増加し、最大ソウルで30%。6つのドラゴンソウルをすべて得ると、次のラウンドの区切りで「Aspect of the Dragon」の効果も永続的に得る。この効果もこの効果のソウルとして数え、ステータスの増加は合計35%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dream Maker#act": {
+   "source_sha1": "8228bd2cae03b0b372a61b5dc8ff4e4c7fe6fcdf",
+   "plain_sha1": "651eea226bd839e6d846df52fd7ca25716e5f12a",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。チャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dream Maker#pass": {
+   "source_sha1": "59c52d86d5674987372214ebc34f683248b9bf91",
+   "plain_sha1": "5cec13246c0858b72bc5648d3cdce4148b5a9dbc",
+   "ja": "8秒ごとに「Blue Dream Bubble」と「Purple Dream Bubble」を得る。味方チャンピオン（自身を除く）を回復するかシールドを付与すると、二つの「Dream Bubble」をその味方に吹き付け、3秒間強化する。「Blue Bubble」はミニオン以外から受ける次のダメージを75～255（自身のレベルに応じて）軽減し、「Purple Bubble」は次の通常攻撃に攻撃時効果として50～170（自身のレベルに応じて）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dream Maker#pass2": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Duskblade of Draktharr#pass": {
+   "source_sha1": "2b269917dddf15a860d7f8294b764e441694bd23",
+   "plain_sha1": "525b12c1d0b2d32acee0f2c73bdc19b0770c5c7a",
+   "ja": "スキルが敵チャンピオンに与えるダメージが0%～22.5%（近接）/ 0%～12.5%（遠隔）（対象の減少体力に応じて）増加する。ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、1.5秒間、建物以外から対象指定不可かつ無敵になり、ステルスを解く行動をとると早めに終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Echoes of Helia#pass": {
+   "source_sha1": "8793691dced3269f4eb6d7613417a80df8d95a4c",
+   "plain_sha1": "367ff33e27d01d1f9a17c6654ee4fb7c469c43f6",
+   "ja": "通常攻撃かスキルのダメージで敵チャンピオンにダメージを与えると「Soul Shard」を得て、最大2。味方チャンピオン（自身を除く）を回復するかシールドを付与すると、すべての「Soul Shard」を消費して、その味方を一つにつき65回復し、その味方から1100ユニット以内で最も近い敵チャンピオンに一つにつき50の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Eclipse#pass": {
+   "source_sha1": "6655c1202c88eba818ae50648099e66ff1abab3b",
+   "plain_sha1": "caf05ac57a1086d0bd9629ca0a5390aae3126f22",
+   "ja": "ダメージを与える通常攻撃・スキル・アイテムの効果・サモナースペル、および行動妨害と持続ダメージの効果の付与は、敵チャンピオンにスタックを与え、チャンピオンごとに一回の攻撃か使用につき一つまで。2秒以内にチャンピオンに2スタックを与えると、対象の最大体力の6%（近接）/ 4%（遠隔）に等しい追加の物理ダメージを与え、2秒間160（近接）/ 80（遠隔）（+ 増加攻撃力の40%〔近接〕/ 20%〔遠隔〕）のシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Edge of Night#pass": {
+   "source_sha1": "45e3ff26b249632d7b14c01e18c61a38ac40f7c6",
+   "plain_sha1": "4517cde9ccb83e243cb2561238b3a6ade227e1a6",
+   "ja": "次に受ける敵のスキルを防ぐスペルシールドを得る（クールダウン40秒。チャンピオンからダメージを受けるとタイマーがやり直しになる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Eleisa's Miracle#pass": {
+   "source_sha1": "31a808cf050b9d552c1dde0c21d77e28f67489fa",
+   "plain_sha1": "725ef1b95cf687a844715d9b8875a8bba25294aa",
+   "ja": "減少した現在体力100ごとに、回復とシールドの効果が2.5%増加し、現在体力が2400減っているとき最大60%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Empyrean Promise#act": {
+   "source_sha1": "e9bab3d9ec6b68b35fdc4a30297ba1c1a21eb507",
+   "plain_sha1": "00e2079c162c155cda60bcaed67e5a8b0bf1adbe",
+   "ja": "味方の今いる位置へダッシュし、到着すると自身とその味方に、5秒間100～250（レベルに応じて）（+ 自身のAPの100%）（+ 自身の増加体力の10%）のダメージを吸収するシールドを付与する。味方が死んでいる間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Enhanced Lucky Dice#consume": {
+   "source_sha1": "616da2efd2a73f547611c587c52d3a7c02705b58",
+   "plain_sha1": "f1af3c78e1ca4ce5085873c35d0e606050b67b7e",
+   "ja": "消費してリロールを5回得る。手に入れたときにインベントリが満杯なら、このアイテムは自動で消費される。選択の画面が出ている間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Essence Reaver#pass": {
+   "source_sha1": "f09196a65b47ba8499e390ef0654be6c5e17137d",
+   "plain_sha1": "3a2639a757c2ac6a98ff7e3ec5be33bec6698d56",
+   "ja": "通常攻撃は攻撃時効果として、マナを15（+ 増加攻撃力の10%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Everfrost#act": {
+   "source_sha1": "63d3ee947c92f05bc746ab36097ec0f73f3eaede",
+   "plain_sha1": "6215d36f96988bf494849df3425eeb9b671bf83c",
+   "ja": "指定方向の扇形に氷の破片を放ち、範囲内で当たった敵に250（+ APの85%）の魔法ダメージを与えて、1.5秒間70%のスロウを与える。扇形の中心で当たった敵は、代わりに同じ時間スネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Executioner's Calling#pass": {
+   "source_sha1": "52b17481f1c385540813ef7d0fb8b4d2ffda9aee",
+   "plain_sha1": "f0baad092967d54fd896a86ca0afaa54f0c54ba1",
+   "ja": "敵チャンピオンに物理ダメージを与えると、3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Experimental Hexplate#pass": {
+   "source_sha1": "138f1bf4e9276d39eea025459b98fafe770fd150",
+   "plain_sha1": "2abe4e35356be435d4cf996dfe98929c1ad28dda",
+   "ja": "アルティメットヘイストを30得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Experimental Hexplate#pass2": {
+   "source_sha1": "cf4129d8ee018d3c37809a83100b937119cec298",
+   "plain_sha1": "d1c19c052c4dc858988f28f09bd5b616fae24a43",
+   "ja": "アルティメットスキルを使うと「Overdrive」になり、8秒間、攻撃速度が30%、移動速度が15%増加する（クールダウン30秒。アルティメットの使用時から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Farsight Alteration#act": {
+   "source_sha1": "8f1074143fcdb2eb1f69d07697102aee4d3dc52e",
+   "plain_sha1": "8506f7e290e9821e6f62edf2e0590fd581ba9e7b",
+   "ja": "指定地点に見える「Farsight Ward」を置き、ワードは地形の上や茂みの中を含む周囲の範囲の視界を与えて、いつまでも残る。さらに半径800の範囲の視界を2秒間与える。敵チャンピオンを見つけると、ワードの視界の半径は800ユニットに広がり、3秒後に自壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fated Ashes#pass": {
+   "source_sha1": "1f257f7a3bc439a2184c8659a5debc8e736c4924",
+   "plain_sha1": "a82a8402bff133554dd0c0473d93b6ba9f1deefa",
+   "ja": "スキルのダメージを与えると敵が燃え、3秒間0.5秒ごとに2.5の魔法ダメージ、合計15を受ける。モンスターに対しては、燃焼は一回ごとに7.5の追加の魔法ダメージを与え、一回ごとに合計10、最大60の魔法ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fimbulwinter#pass2": {
+   "source_sha1": "77c1e0581a35f45b0bd08becf17843339d8b24b5",
+   "plain_sha1": "a79b316e571f352e904b6dd0f87701b281f5cc7b",
+   "ja": "敵チャンピオンに移動不能を与えるか、近接なら敵チャンピオンにスロウを与えると、3秒間100（+ 現在マナの4.5%）のシールドを得る（クールダウン8秒）。1200ユニット以内に敵チャンピオンが二体以上いると、シールドの量が80%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fire at Will#pass": {
+   "source_sha1": "124b729df1bdcd36fb383907ff3c24bc9b61add8",
+   "plain_sha1": "7605857c69311c2ca941ec529fc442efbf3bebb8",
+   "ja": "「一斉砲撃」は効果時間の間に3回の波のまとまりを2回多く、速い間隔（1.33秒に1回のまとまり）で撃ち、8秒間で合計18回の波になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flesheater#pass": {
+   "source_sha1": "be65f5d2548c66bd4ba544cada3978a4df524f66",
+   "plain_sha1": "6b3e7e25077f66c8ced2b95e03336aead085f47a",
+   "ja": "ダメージを与えると、5秒間対象の物理防御と魔法防御を3低下させ、最大10回まで重なって防御が合計30低下する。スタックは各敵に毎秒一度しか与えられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flesheater#pass2": {
+   "source_sha1": "a9e0851bf4688d68acf197fa26477d92ebefba39",
+   "plain_sha1": "48475c2925a06030f97dd1a6f616a5d6b0f95838",
+   "ja": "自身か自チームの味方チャンピオンが敵チャンピオンのキルに関与すると、二人とも倒された対象の最大体力の18%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Force of Entropy#pass": {
+   "source_sha1": "572212befe6bf266de3edfd74b8dcbd1416ea8d7",
+   "plain_sha1": "7ccc9b9d51acc359db15b19050ba5a7f55eb5292",
+   "ja": "チャンピオンへの移動不能の効果は、0%～100%（クリティカル率に応じて）の確率で、効果時間が0.25秒（+ 移動不能の効果時間の33%）延びる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Force of Nature#pass": {
+   "source_sha1": "5e6141ef846a9abc491bf33b5a5c318ed57063e6",
+   "plain_sha1": "fc59041310ab992498aa3a40dd52910a216f2d94",
+   "ja": "チャンピオンから魔法ダメージを受けると7秒間「Steadfast」のスタックを得て、最大8回まで重なり、その敵からの魔法ダメージを受けるたびとその敵にダメージを与えるたびに効果時間が更新される。敵チャンピオンに移動不能にされると2スタック得て、効果時間も更新される。受ける通常攻撃一回、一回の使用のスキル、アイテムの効果はそれぞれ、ダメージから1秒に「Steadfast」を1スタックしか与えない。最大スタックで、魔法防御が70、移動速度が6%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forever Forward#pass2": {
+   "source_sha1": "b284d3190c8366611ff34e09ae7eff460033175d",
+   "plain_sha1": "049a42b9ebb1924e99faac376d53482b50d38f78",
+   "ja": "戦闘外の間、移動速度が45（+ 合計移動速度の8%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Frozen Heart#pass": {
+   "source_sha1": "ccf201d0ffda83e09c0116f11677c9609c37ca7b",
+   "plain_sha1": "4a4c8a04836255211b5fbd0dbea03adcbc9a9139",
+   "ja": "700ユニット以内の敵チャンピオンの攻撃速度を20%低下させる（攻撃速度低下（cripple））。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fulmination#pass": {
+   "source_sha1": "a5604122891cbda3c7fffbe332fba2a26ca0110f",
+   "plain_sha1": "35c4caf839ba152081099c2524f667a8d5e4e8ca",
+   "ja": "移動と通常攻撃で「Energize」のスタックを得て、最大100。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fulmination#pass2": {
+   "source_sha1": "8264bdd5f275acf7899fb7cea2021d9dc94db876",
+   "plain_sha1": "3eb49353ad2ef0665d8760967319239f729f1830",
+   "ja": "直前の「Energized」の攻撃が当たっていない対象への「Energized」の攻撃は、攻撃時効果として「Energize」のスタックを消費しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fulmination#pass3": {
+   "source_sha1": "df1ada1aaf574d9ac445124df4e25bbe60ade79b",
+   "plain_sha1": "fc3cd30fd1ab074ac727f68421d06c1459a16282",
+   "ja": "「Energize」が満タンのとき、次の通常攻撃は攻撃時効果として、対象の現在体力の10%に等しい追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Galeforce#act": {
+   "source_sha1": "8cf49f15adb6b2f0d58f2dc020aa7ec8f2a93542",
+   "plain_sha1": "38afd83eb3f2f9c3f839e3c52b5747112e75dc34",
+   "ja": "指定地点へダッシュし、ダッシュの終わりに自身から750ユニット以内で最も傷ついた敵（敵チャンピオンを優先）へ追尾する弾を三発撃つ。一発ごとに50～116.67（レベルに応じて）（+ 増加攻撃力の26.666…%）の物理ダメージ、合計150～350（レベルに応じて）（+ 増加攻撃力の80%）を与え、対象の減少体力に応じて0%～50%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gambler's Blade#pass": {
+   "source_sha1": "1147c4da47d5ef5394a8adf72731355cef2a0f68",
+   "plain_sha1": "a41f5f0c117af7e0b9d1938d031726edb8f14061",
+   "ja": "通常攻撃（攻撃時効果）とスキルの命中は、12%の確率で30～240ゴールド（gold）を蓄える（攻撃・スキルごとにクールダウン2.5秒）。ラウンドに勝つと蓄えた量のゴールドを得て、負けるとその25%を失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gargoyle Stoneplate#act": {
+   "source_sha1": "4929ac9d806bfe766a52329527d87685b0ebaa92",
+   "plain_sha1": "f61a01beba04d5dbc766dd3394db77dbc48a200d",
+   "ja": "5秒かけて減衰する300（+ 増加体力の100%）のシールドを得て、同じ時間大きさが25%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ghostcrawlers#act": {
+   "source_sha1": "c77302e2f3d930cc92aba2b9f248efe679e34cd6",
+   "plain_sha1": "8a95154086ed9da798f027ac0eb87f46cbb2e8b6",
+   "ja": "6秒間幽体になり、通常攻撃かスキルを使うまで地形の当たり判定を無視する。地形の中にいる間、移動速度が300増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Goredrinker#act": {
+   "source_sha1": "93be2abb85c004921506af97d0625fb28bb7aebe",
+   "plain_sha1": "606ab0b275412441c3dce0aecdcd106d83c1cab9",
+   "ja": "自身を中心とした半径450の範囲の敵に基本攻撃力の175%の物理ダメージを与える。命中した敵チャンピオン一体ごとに、攻撃力の20%（+ 自身の減少体力の8%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian Angel#pass": {
+   "source_sha1": "dbe4d91251d78f5bdbcdb3b55afc0eab304f76d3",
+   "plain_sha1": "35d2f048d88cf2ed93cf51d570215cbf4d468ad6",
+   "ja": "致命的なダメージを受けると4秒間蘇生状態になり、その間無敵・対象指定不可・行動不能になって、その後基本体力の50%を回復し、最大マナの100%を回復する（クールダウン300秒。蘇生が終わった後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian's Amulet#pass": {
+   "source_sha1": "cfff7582bb66c69cdb21d4518b4344d66c187c6d",
+   "plain_sha1": "6ccf6cabf4bd9f72025ec64e96f60f14afe99689",
+   "ja": "5秒ごとにマナを10回復する。マナのないチャンピオンは、代わりに体力を3回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian's Dirk#pass": {
+   "source_sha1": "c913c73bb4c2745a64ab75093089ccb8f1b84b57",
+   "plain_sha1": "c7432e6774f1da7ace98e079691abc238029a52d",
+   "ja": "「Power Flower」の効果が20%増加する。さらに、「Power Flower」にダメージを与えると3秒間移動速度が100増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian's Horn#pass": {
+   "source_sha1": "61d93df211c0e92a1e5209d6aa60aea1a793e84c",
+   "plain_sha1": "2d31940c3faa8972629a1b5726b4de8ec54f280b",
+   "ja": "受けるチャンピオンのダメージをすべて15軽減する（持続ダメージのスキルには3.75）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guardian's Orb#pass": {
+   "source_sha1": "94b8b9d6f416f36f02a47969471f023abf06df42",
+   "plain_sha1": "e82827e0551d99b509c2760641da4dc57f8b5776",
+   "ja": "マナ自動回復が10増加する。マナのないチャンピオンは、代わりに体力自動回復が15増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guinsoo's Rageblade#pass": {
+   "source_sha1": "f790bd962909a0124c4cf7c78f640cffaa55e14d",
+   "plain_sha1": "335f7463fbf2cf8694cb7c8b2a47d1a8327cfef6",
+   "ja": "通常攻撃は攻撃時効果として、30の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Guinsoo's Rageblade#pass2": {
+   "source_sha1": "cbccfd52e8120d078095bc0a972c99eb819b04a6",
+   "plain_sha1": "ed3156d61a1308c00613ed2af02280d314e33228",
+   "ja": "通常攻撃で3秒間攻撃速度が8%増加し、最大4回まで重なって合計32%。最大スタックのとき、通常攻撃は攻撃開始時に6秒間「Phantom」のスタックも得て、最大2スタック。「Phantom」が2スタックのとき、次の通常攻撃は攻撃開始時にそのスタックをすべて消費して「Phantom Hit」を発動し、0.15秒の遅れの後に対象へ攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gunmetal Greaves#pass": {
+   "source_sha1": "eb5dd4f2c7316589fe49418a2d48674c46fe4d37",
+   "plain_sha1": "187dd15047f6fc12f1607ef5f41e82fd5bf5be68",
+   "ja": "チャンピオンへの通常攻撃（攻撃時効果）で、2秒かけて減衰する15%（近接）/ 10%（遠隔）の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gusto#pass": {
+   "source_sha1": "2af66bef971ef09ff0de47adc65fcf1d03ed6ac7",
+   "plain_sha1": "d30bd0c4e0da1cd361ac6703d4449ca40c96e48e",
+   "ja": "タワーの通常攻撃は、このミニオンの最大体力の45%を軽減前のダメージとして与えるよう修正される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gustwalker Hatchling#pass": {
+   "source_sha1": "d508e71f4ee06e35fd92a126030e1b29d420fea2",
+   "plain_sha1": "0be9b10c57128d4a4249cbc68b3fd501bb9aa14b",
+   "ja": "モンスターとの戦闘を手伝う「Gustwalker Hatchling」のコンパニオンを呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gustwalker Hatchling#pass2": {
+   "source_sha1": "a92b2ed688449f233c1486a05debc3836cbc9cb5",
+   "plain_sha1": "84c92f88eaf85979eee6976c1a37ffef96cc3c6b",
+   "ja": "コンパニオンに十分なおやつを与えて進化させ、スマイトを強化する。コンパニオンが最終の進化に達すると、このアイテムは消費され、「Gustwalker's Gait」の効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hamstringer#pass": {
+   "source_sha1": "6e983d50a2afdd8033b5923b4538a7b3b395b031",
+   "plain_sha1": "0b53b0753bb2cc93b1e0c3baa2ddcfb6ba283f86",
+   "ja": "クリティカルは対象に2秒間出血を与え、0.5秒ごとに5～20（レベルに応じて）と軽減前のクリティカルのダメージの6.25%を足した追加の物理ダメージを与え、同じ時間7%のスロウも与える。出血のダメージはクリティカルの倍率の影響を受けて無限に重なり、スロウは35%まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Haunting Guise#pass": {
+   "source_sha1": "96002f99fd6e81c198795b54f63b55cca1c4c582",
+   "plain_sha1": "96002f99fd6e81c198795b54f63b55cca1c4c582",
+   "ja": "敵チャンピオンとの戦闘中の一秒ごとに与えるダメージが2%増加し、最大3回まで重なって合計6%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Heartsteel#pass": {
+   "source_sha1": "ee1ebe81e40bb336345d4fe60e00067ccea560b8",
+   "plain_sha1": "1a49a67132bef28400f44f9d986df117cf0a897b",
+   "ja": "敵チャンピオンから700ユニット以内にいる間、毎秒その敵にスタックを与え、最大3回まで重なる。3スタックの対象への次の通常攻撃は強化され、すべてを消費して攻撃時効果として70（+ 最大体力の6%）の追加の物理ダメージを与え、その量の8%に等しい永続的な増加体力を得る（対象ごとにクールダウン30秒）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Heartsteel#pass2": {
+   "source_sha1": "adbccd6fabf0ea7b8725382397fb87e37a9e7d51",
+   "plain_sha1": "41c76b5181f0b22d557eb514fc6890fa042354ee",
+   "ja": "大きさが0%～30%（最大体力に応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hellfire Hatchet#pass": {
+   "source_sha1": "927eb15599f14467532d0462d674b6ca5d9d246f",
+   "plain_sha1": "a1c83718932603037705609b38407307878d55c9",
+   "ja": "次のスキルの命中は燃焼を与え、4秒かけて対象の現在体力の5%～10%（+ 脅威1ごとに0.2%～0.4%）（最大体力の差に応じて）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hemomancer's Helm#pass": {
+   "source_sha1": "3e0c76c75e699ae767dacb555e3e771922f81805",
+   "plain_sha1": "9c6b3b3942218a3184b57e94a5873ad93041758d",
+   "ja": "ライフスティールとオムニヴァンプの合計が30%以上なら、増加体力を500得て、自身の周囲525ユニットの範囲の敵チャンピオンがすべての発生源から受けるダメージの10%に等しい量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hexbolt Companion#pass": {
+   "source_sha1": "b14b2ae8bfb2c4986c50294d635d6bb4957d03c2",
+   "plain_sha1": "403a8e0712a73aaee04a510e979d934afa7fd746",
+   "ja": "味方が1200ユニット以内にいる間、通常攻撃（攻撃時効果）で「Covering Fire」のスタックを得る。1スタックのとき、次の通常攻撃はすべてを消費して味方に対象へ矢を撃たせ、20～60（レベルに応じて）の物理ダメージを与えて、味方の攻撃時効果を100%の効果で与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hexdrinker#pass": {
+   "source_sha1": "89a4793b49f9f760291e6db1ee685954b87bd0cd",
+   "plain_sha1": "69b9c5650c7725402343480248e73b4326d059f1",
+   "ja": "受ける魔法ダメージで体力が最大体力の30%未満になる場合、先に2.5秒間、110～280（近接）/ 82.5～210（遠隔）（レベルに応じて）の魔法ダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Alternator#pass": {
+   "source_sha1": "01303588ae650bd57eb53915ab6a5713a42ba6ea",
+   "plain_sha1": "6d4a052a1d3111d3ce254d4f35cc2dd3e272618d",
+   "ja": "敵チャンピオンにダメージを与えると、65の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Gunblade#act": {
+   "source_sha1": "bebbb5660644d204f4455e000a67b109faeac1b2",
+   "plain_sha1": "b830bf49421bd7159ae670bb7e3811e2f90478f4",
+   "ja": "対象の敵チャンピオンに電撃を浴びせ、175～253（レベルに応じて）（+ 増加攻撃力の30%）（+ APの30%）の魔法ダメージを与えて、2秒間40%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Rocketbelt#act": {
+   "source_sha1": "91da8abf3e48cf68bfd3fd48c92404dd69572906",
+   "plain_sha1": "0437b6ced6c8374b3da72c10f8c814d814f7a606",
+   "ja": "指定方向に125～275ユニットダッシュし（地形は越えない）、同じ方向に7発のロケットを弧状に放って、命中した敵に100（+ APの10%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hollow Radiance#pass": {
+   "source_sha1": "d5b149fe1fd28e94d1e46e3f19ba6978de04598e",
+   "plain_sha1": "232e2f3bec15d400caa22f03bb774bcdc085650c",
+   "ja": "ダメージを受けるか与えると、この自動効果が3秒間作動する。325（+ 増加サイズの100%）ユニット以内の敵に毎秒15（+ 増加体力の1%）の魔法ダメージを与え、ミニオンとモンスターには25%増加する。あと一回のダメージで倒れるミニオンは処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hollow Radiance#pass2": {
+   "source_sha1": "c9bb7e976616448382d53e8b7be1ace9f3d136af",
+   "plain_sha1": "e2365bdbc36a3160b3841760c90bdc9322b8fe19",
+   "ja": "チャンピオン以外のユニットを倒すと、その死んだ位置の周囲で噴出が起き、350ユニット以内の敵に30（+ 増加体力の2%）の魔法ダメージを与える。ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、より大きな噴出が起き、500ユニット以内の敵に60（+ 増加体力の4%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Horizon Focus#pass": {
+   "source_sha1": "313d6b09aa61a33cca2d6c2715b8edab632333b2",
+   "plain_sha1": "a74606e186b128bcb4d5a70145876c4a6a89f97b",
+   "ja": "発動した位置から600ユニット以上離れたチャンピオンにスキルのダメージを与えると、その敵を6秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Horizon Focus#pass2": {
+   "source_sha1": "5d8f2e1da27142eeb06cc6bb8f7d59a60e879d98",
+   "plain_sha1": "a9e35a51469cc284da15e7e2d9c87a5fc571ef72",
+   "ja": "「ハイパーショット」が発動すると、対象の周囲1400ユニットの範囲の視界を2秒間与え、その範囲内の敵チャンピオンに3秒間「ハイパーショット」の効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hubris#pass": {
+   "source_sha1": "53c4cb1c1d4f9824b5ccc73bc573a65963deec28",
+   "plain_sha1": "581f6f2c58df940e57100afa78de70e77134c968",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、永続的なスタックを得て、90秒間15（+ スタックごとに2）の増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hullbreaker#pass": {
+   "source_sha1": "42e6066be1fc1d67d08274c47f940c9381a74f25",
+   "plain_sha1": "91204c3f33c9259ae11b61c438a35374dff2bf07",
+   "ja": "いずれかの敵への通常攻撃（攻撃時効果）は10秒間スタックを与え、最大5回まで重なる。最大スタックか4スタックのとき、チャンピオン・エピックモンスター・建物への次の通常攻撃はすべてのスタックを消費し、基本攻撃力の120%（近接）/ 84%（遠隔）（+ 最大体力の5%〔近接〕/ 3.5%〔遠隔〕）の追加の物理ダメージを与え、建物には基本攻撃力の300%（近接）/ 210%（遠隔）（+ 最大体力の10%〔近接〕/ 7%〔遠隔〕）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hullbreaker#pass2": {
+   "source_sha1": "6117bbbe77c9ccc9c6d88cbcb6286a644b088d60",
+   "plain_sha1": "99e577a5fc568d6681bc857f505cd178c1823765",
+   "ja": "1050ユニット以内の味方の砲撃ミニオンとスーパーミニオンは、70～130（近接）/ 35～65（遠隔）（レベルに応じて）の物理防御と魔法防御の増加を得て、大きさが10%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Iceborn Gauntlet#pass": {
+   "source_sha1": "55ab1089b0fc0a86b74e1d4d9c74184986307e4a",
+   "plain_sha1": "f7bc2c55439854008d2191ed207e65f0101f51e0",
+   "ja": "スキルを使った後、10秒以内の次の通常攻撃は攻撃時効果として基本攻撃力の150%の追加の物理ダメージを与え、2秒間半径300の凍てつく範囲を作る。範囲内の敵は25%（近接）/ 12.5%（遠隔）のスロウを受ける（クールダウン1.5秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Immortal Shieldbow#pass": {
+   "source_sha1": "eee4cd48389e2ca8daed3b45336004c98033c70a",
+   "plain_sha1": "2dfecfbbb25b4885fdf5d31f89817b750a487e11",
+   "ja": "受けるダメージで体力が最大体力の30%未満になる場合、先に3秒間、400～700（近接）/ 320～560（遠隔）（レベルに応じて）のダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Imperial Mandate#pass": {
+   "source_sha1": "14ee98faede3a8427e637aff06bc2eb12176fdc0",
+   "plain_sha1": "66d60fedec8ee5a053c8635da13de96290c390e3",
+   "ja": "敵チャンピオンにスロウか移動不能を与えるスキルは、その敵に5秒間印を付ける。印の付いた敵にダメージを与えた味方チャンピオンは印を消費し、対象の現在体力の10%の追加の魔法ダメージを与える（対象ごとにクールダウン9秒。印の付与から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Innervating Locket#pass": {
+   "source_sha1": "979f790b2af304c668ca505887410e2820cbfabb",
+   "plain_sha1": "cd7d1ba424c09c5bd8cd38c93d2d34e713869126",
+   "ja": "自身か800ユニット以内のチャンピオンがスキルを使うたびにチャージを得て、最大30。最大チャージのとき、ラウンドの残りの間、魔力が100～250（レベルに応じて）、移動速度が15%～25%（レベルに応じて）増加し、壊されるまで続く400～750（レベルに応じて）のシールドを得る。チャージはラウンドごと、およびラウンド内の各フェーズの間でリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ionian Boots of Lucidity#pass": {
+   "source_sha1": "63c005a4a0ff8c20104f6579e8777cecc51561d1",
+   "plain_sha1": "7986735fa28b7f11ff7840ed2226e9b0e09072b3",
+   "ja": "サモナースペルヘイストを10得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Jak'Sho, The Protean#pass": {
+   "source_sha1": "6ea112255dbe2fa256ee79e11f6a91cdefeb1ffd",
+   "plain_sha1": "c7b8e431f76a5c1d3a5656286de0cde69040288a",
+   "ja": "敵チャンピオンとの戦闘中の一秒ごとにスタックを得て、最大5回まで重なる。最大スタックで、戦闘が終わるまで物理防御の増加と魔法防御の増加が30%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Kaenic Rookern#pass": {
+   "source_sha1": "f5d431eb2feac2f3a44adf4064fcae0daa657661",
+   "plain_sha1": "95eb36fb4268f672bd57624f9bf665a1869ec1c1",
+   "ja": "魔法ダメージを15秒受けないと、最大体力の15%に等しい魔法ダメージを吸収するシールドを得て、壊されるまで続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Kinkou Jitte#pass": {
+   "source_sha1": "07604f7bc3eb5f6887d0c122d4095d8cb0f3c1a2",
+   "plain_sha1": "61387bb2b9ebf73f608874fb4393a9c4458888a6",
+   "ja": "近くの敵チャンピオンの「Weakpoint」が分かるようになり、敵の周りの弧として特定の方向を指して示される。対象の「Weakpoint」は露出するまで4秒かかり、その後11.25秒残る。露出した「Weakpoint」の方向からダメージを与えると、それを消費して対象の最大体力の3%（+ 攻撃力100ごとに3%）（+ AP 100ごとに2%）に等しい追加の確定ダメージを与え、1.5秒間移動速度が30%～75%（レベルに応じて）増加する。対象の「Weakpoint」を消費するか切れると、その対象の新しい「Weakpoint」が分かる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knight's Vow#act": {
+   "source_sha1": "57074c08e9eee911b8fbc1cc22f8bcf7dd9b3b24",
+   "plain_sha1": "769e9e82d7956544b2be6e2df7935455f0d34894",
+   "ja": "対象の味方チャンピオンを「Worthy」に指定し、自身との間にテザーを作る。一体のチャンピオンを同時に「Worthy」に指定できる「騎士の誓い」は一つだけ。味方の「騎士の誓い」で自身が「Worthy」に指定されることはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knight's Vow#pass": {
+   "source_sha1": "5692dfcd01bae99f1e05fe5c50ffed4b38276068",
+   "plain_sha1": "3b67c01ac652da830cec4a45bc57bf30c0b6cdc2",
+   "ja": "「Worthy」の味方がテザーでつながっていて、自身の体力が最大体力の30%を超えている間、その味方が受ける軽減前の物理ダメージと魔法ダメージの12%を、それぞれ同じ種類のダメージとして自身が代わりに受ける。さらに、「Worthy」の味方がチャンピオンに与えた軽減後のダメージの10%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Kraken Slayer#pass": {
+   "source_sha1": "49dd0d565de891968dd4303938c7bd8a72aa8706",
+   "plain_sha1": "957727bd183a4f8ed1a169cd3ad6a547e7956355",
+   "ja": "通常攻撃（攻撃時効果）で3秒間スタックを得て、最大2スタック。2スタックのとき、次の通常攻撃はすべてのスタックを消費し、攻撃時効果として150～200（近接）/ 120～160（遠隔）（レベルに応じて）の追加の物理ダメージを与え、対象の減少体力に応じて0%～50%増加し、最大225～300（近接）/ 180～240（遠隔）（レベルに応じて）の追加の物理ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lane Swap Detector#pass": {
+   "source_sha1": "45be8a7b603d963ba6429ce8054928911fe33f85",
+   "plain_sha1": "b134dd367a2c91cfb71f81161bd56cbb8afab94e",
+   "ja": "ジャングラー以外の敵二体がこのレーンに現れると、このレーンで特別なルールが作動する：タワーは受けるダメージが減り、与えるダメージが大きく増え、キルのゴールド（gold）を最も近い味方チャンピオンに回す。味方のミニオンもキルのゴールドを最も近い味方チャンピオンに回す。敵チャンピオンがミニオンから得る資源は減る。このアイテムはゲーム開始の少し後に消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Liandry's Torment#pass": {
+   "source_sha1": "3db525c9bcd82174832ffe3a67b3034ac7c18bf0",
+   "plain_sha1": "7056bee540c868c4f2fe9c28651ffd314126dfe5",
+   "ja": "スキルのダメージを与えると敵が燃え、3秒間0.5秒ごとに対象の最大体力の1%の魔法ダメージを受ける。モンスターに対しては一回20が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Liandry's Torment#pass2": {
+   "source_sha1": "96002f99fd6e81c198795b54f63b55cca1c4c582",
+   "plain_sha1": "96002f99fd6e81c198795b54f63b55cca1c4c582",
+   "ja": "敵チャンピオンとの戦闘中の一秒ごとに与えるダメージが2%増加し、最大3回まで重なって合計6%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lich Bane#pass": {
+   "source_sha1": "825910c3ff32ebd01462b5da989b0d1a039883ad",
+   "plain_sha1": "f3dccd6879012532b7f3e7db6e6f393dcddb8d8f",
+   "ja": "スキルを使った後、10秒以内の次の通常攻撃は攻撃速度が50%増加し、攻撃時効果として基本攻撃力の75%（+ APの40%）の追加の魔法ダメージを与える（クールダウン1.5秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lightning Rod#pass": {
+   "source_sha1": "67fedb6a65d2805cb14500f059757270dd6365d8",
+   "plain_sha1": "e599a9830b03ac789795327035ad014cae417906",
+   "ja": "自動で自身の上に嵐の雲を呼び出し、雲は1.5秒後に自身のその時点の位置に雷を落として、範囲内の敵に135～230（レベルに応じて）（+ 増加攻撃力の30%）（+ APの50%）（+ 対象の最大体力の10%）の魔法ダメージを与え、2秒間30%のスロウを与える。自身が落雷の範囲内にいれば、2秒間、最大体力の14%（+ APの75%）に等しいシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lightning Rod#pass2": {
+   "source_sha1": "a8db83926542e242e4fef03c0d274394739bd6e1",
+   "plain_sha1": "dde271f7cda21521c140ebca92ab2c68806d0da8",
+   "ja": "自動で発動する効果のクールダウンが1秒短縮され、スキルヘイストの恩恵を受けるようになる。この効果によっても「コール・ライトニング」のクールダウンは5秒より短くならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Locket of the Iron Solari#act": {
+   "source_sha1": "01ad937b5ea6e8f8d173ea61472346c8e6307649",
+   "plain_sha1": "42df34b7d54a437eac515ebcc9ffb10f4ccbd110",
+   "ja": "自身と850ユニット以内の味方チャンピオンに、2.5秒かけて減衰する200～360（対象のレベルに応じて）のシールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lost Chapter#pass": {
+   "source_sha1": "eca7d095ea51af98217acb0553db466c71429cba",
+   "plain_sha1": "84ebf1986e937b9d39caaf1819387703da775288",
+   "ja": "レベルアップすると、3秒かけて最大マナの20%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lucky Dice#consume": {
+   "source_sha1": "89558cbc8404665d715470f62262e8add375d8e3",
+   "plain_sha1": "786b29c1c33df58adc3ff820b68048767e7f2d71",
+   "ja": "消費してリロールを1回得る。手に入れたときにインベントリが満杯なら、このアイテムは自動で消費される。選択の画面が出ている間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Luden's Companion#pass": {
+   "source_sha1": "85f01d230941a58c2caf34cf4b4c25ed1bbcc39c",
+   "plain_sha1": "653fb8aa152f9f5a5b8eda02c06d1907b6f2ba6d",
+   "ja": "撃つための「Shot Charge」のスタックを6得る。敵にスキルのダメージを与えるとすべての「Shot Charge」を消費して、その敵に75（+ APの5%）の追加の魔法ダメージを与え、最初の一つより後に消費したチャージ一つごとに、その敵から600ユニット以内の別の敵一体にも与える。各副対象にはオーブを撃ち、オーブは0.528秒（0.5秒を次のゲームのティックに切り上げた値）後に着弾してダメージを与える。撃った追加の対象の数が消費したチャージの数より少ない場合、主対象にさらに15～75（残りの「Shot Charge」に応じて）（+ APの1%～5%）の魔法ダメージを与え、合計90～150（+ APの6%～10%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Malignance#pass": {
+   "source_sha1": "bd9dc9783b7aad691eb4e3ce522803fe760db932",
+   "plain_sha1": "6bee05b86e63d745f12f1d00c2d551f41ff03648",
+   "ja": "アルティメットヘイストを20得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Malignance#pass2": {
+   "source_sha1": "35824f709be16e7795c6445ca7fe785224cdfc61",
+   "plain_sha1": "d34a3f1802c09522a142da06e88ce2d40a0d97dd",
+   "ja": "アルティメットスキルで敵チャンピオンにスキルのダメージを与えると、その足元に3秒間、半径251～550（アルティメットのダメージの回に応じて）の焦げた範囲を作り、範囲内の敵に「Curse」を与えて、0.25秒ごとに15（+ APの1.25%）の魔法ダメージを与え、魔法防御を10低下させる（対象ごとにクールダウン3秒。範囲の作成時から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Manamune#pass": {
+   "source_sha1": "457f9e043bcfe4c1728cd98d044fb2cf16f4c94b",
+   "plain_sha1": "ab4c41ec7a381ec53b6f78198daec108a9e6a5a8",
+   "ja": "最大マナの2%に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Manamune#pass2": {
+   "source_sha1": "6d0f8b915c4d6c0756cc20280d015edd3ea5813e",
+   "plain_sha1": "72f84e59b55191aeb6530119465c22cebca763ac",
+   "ja": "8秒ごとにチャージを得て、最大4チャージ。攻撃時効果と、スキルで敵か味方に効果を与えたときにチャージを一つ消費して最大マナが3増加し、対象がチャンピオンなら6になる。増加マナは最大360。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Manamune#pass3": {
+   "source_sha1": "93a06901ad6449ee994f9fe5343eb919bca2c35c",
+   "plain_sha1": "57b3616655199158ce33b2b584f83a4af06588c2",
+   "ja": "増加マナが360になると「ムラマナ」に変化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Maw of Malmortius#pass": {
+   "source_sha1": "de34696ea3549cf1c16ae621bba4dbbbd0c680af",
+   "plain_sha1": "1181deab786fb09002de9a28b2d582c83350afbb",
+   "ja": "受ける魔法ダメージで体力が最大体力の30%未満になる場合、先に3秒間、200（近接）/ 150（遠隔）（+ 増加攻撃力の150%〔近接〕/ 112.5%〔遠隔〕）の魔法ダメージを吸収するシールドを得る。さらに、この効果が発動すると戦闘が終わるまで10%のオムニヴァンプを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mejai's Soulstealer#pass": {
+   "source_sha1": "edc110ab8ec15a5bf71e17eb5575184f7daa2daf",
+   "plain_sha1": "7a8b97c2725fa8faf4dc9160b1a02661598ce0fd",
+   "ja": "チャンピオンのキル一回でスタックを4、アシスト一回で2得て、最大25スタック。スタックごとに魔力が5増加し、最大スタックで125。スタックが10以上なら、移動速度も10%増加する。死亡するとスタックを10失う。「ダーク シール」のスタックは引き継がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mercurial Scimitar#act": {
+   "source_sha1": "4386421f62bd81997a7672f32d2e95740119462b",
+   "plain_sha1": "dbd384c6331af5b4865eeccc3c78505be6a36cdb",
+   "ja": "自身のチャンピオンからすべての行動妨害の弱体効果（ノックアップを除く）を取り除き、1.5秒間、合計移動速度が50%増加してゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mikael's Blessing#act": {
+   "source_sha1": "1d1686f4171bf51f71a59c3e2311bc6580e59122",
+   "plain_sha1": "48755476a0e3ee383490253d45c1512ebf792393",
+   "ja": "自身か対象の味方チャンピオンからすべての行動妨害の弱体効果（ノックアップ・ブラインド・通常攻撃の封印・ニアサイト・サプレッションを除く）を取り除き、対象を100～250（対象のレベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mirage Blade#pass": {
+   "source_sha1": "a3a7c2f061c169fcabd2fc84afe613dc5bb92f19",
+   "plain_sha1": "37de98f3c745e8e6ed5aaf17498f8e4bae8e6828",
+   "ja": "通常攻撃（攻撃時効果）は、ダッシュやブリンクを含むスキルとスペルの残りクールダウンを12%短縮し、アルティメットスキルは4%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Moonflair Spellblade#pass": {
+   "source_sha1": "a0cba0a487f7bb754a55c93d5e8e35cb6258f445",
+   "plain_sha1": "4bc37e884722f0100fb91ebfa45501b1aa597eb9",
+   "ja": "スキルを使うと通常攻撃タイマーがリセットされ、次の二回の通常攻撃の攻撃速度が90%増加する。さらに、通常攻撃は攻撃開始時にそれぞれすべてのスキルのクールダウンを0.5秒短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Moonstone Renewer#pass": {
+   "source_sha1": "d2763a7207d7060d300a70bb1f7f016ba1d79d8b",
+   "plain_sha1": "1f417b58a5a63c9f574fbb592aefc980726fa15f",
+   "ja": "味方チャンピオンを回復するかシールドを付与すると、その効果がその味方から800ユニット以内で最も近いほかの味方チャンピオン（自身を除く）に連鎖し、回復の30%かシールドの最初の量の35%を与える。範囲内にほかの味方チャンピオンがいなければ、同じ対象に回復の30%かシールドの35%を追加で与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Morellonomicon#pass": {
+   "source_sha1": "57e7ad5c81355f6e9478644dfa35b3185879339f",
+   "plain_sha1": "ff2c81a3dea4d68d9fa64741cd924f42fab03fd4",
+   "ja": "敵チャンピオンに魔法ダメージを与えると、3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mortal Reminder#pass": {
+   "source_sha1": "52b17481f1c385540813ef7d0fb8b4d2ffda9aee",
+   "plain_sha1": "f0baad092967d54fd896a86ca0afaa54f0c54ba1",
+   "ja": "敵チャンピオンに物理ダメージを与えると、3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mosstomper Seedling#pass": {
+   "source_sha1": "fb66cb8ca7e01a89728e6c2cc1ab7b104c11610b",
+   "plain_sha1": "58e135e4658f8cf7606140d0e539326261d64a28",
+   "ja": "モンスターとの戦闘を手伝う「Mosstomper Seedling」のコンパニオンを呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mosstomper Seedling#pass2": {
+   "source_sha1": "d87be0ae266ae34909c59a8d076234c2d72ebd66",
+   "plain_sha1": "c91e49155f799d88549cd5d3707e391f8717dc31",
+   "ja": "コンパニオンに十分なおやつを与えて進化させ、スマイトを強化する。コンパニオンが最終の進化に達すると、このアイテムは消費され、「Mosstomper's Courage」の効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Muramana#pass2": {
+   "source_sha1": "1616b58831f94abe61e226a6eb5a760b0e067595",
+   "plain_sha1": "e6ee4799cb0ad9cd18e25ea5f313b923507b4475",
+   "ja": "チャンピオンへの通常攻撃（攻撃時効果）は、最大マナの1.2%の追加の物理ダメージを与える。チャンピオンにスキルのダメージを与えると、最大マナの4%（近接）/ 3%（遠隔）の追加の物理ダメージを与える。同じ攻撃か使用からは、同じ対象に6.5秒に一度しか発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nashor's Tooth#pass": {
+   "source_sha1": "e367028b15b5cf169a02596a77fe34eb2ba7f43a",
+   "plain_sha1": "cc7eded8d90c50e2b8481b8b4bd4fe6d0cadc46e",
+   "ja": "通常攻撃は攻撃時効果として、15（+ APの15%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Navori Flickerblade#pass": {
+   "source_sha1": "a680c9fb36faf2cc3daf8d0812c13508e4a1cb74",
+   "plain_sha1": "bcef23a034e5a4429a69f5cb0b4e222859d42d77",
+   "ja": "通常攻撃は攻撃開始時に、基本スキルの残りクールダウンを15%短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Night Harvester#pass": {
+   "source_sha1": "51ea6a2cd41ae8987b3e71d451c8e2feb6344774",
+   "plain_sha1": "36f730159b0dcae138c24e866638e2c68b750d77",
+   "ja": "通常攻撃かスキルのダメージで敵チャンピオンにダメージを与えると、125（+ APの15%）の追加の魔法ダメージを与え、1.5秒間移動速度が40%増加し、発動のたびに効果時間が延びる（チャンピオンごとにクールダウン10秒）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Oblivion Orb#pass": {
+   "source_sha1": "57e7ad5c81355f6e9478644dfa35b3185879339f",
+   "plain_sha1": "ff2c81a3dea4d68d9fa64741cd924f42fab03fd4",
+   "ja": "敵チャンピオンに魔法ダメージを与えると、3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ohmwrecker (Turret Item)#pass": {
+   "source_sha1": "9bc40c9bdf2f6fa72210b2ad0a0727fe29b9f8aa",
+   "plain_sha1": "9bc40c9bdf2f6fa72210b2ad0a0727fe29b9f8aa",
+   "ja": "タワーの攻撃は回避されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ohmwrecker (Turret Item)#pass2": {
+   "source_sha1": "57a4f3306a9f40eeb95624e8bb4777c85eb7c160",
+   "plain_sha1": "57a4f3306a9f40eeb95624e8bb4777c85eb7c160",
+   "ja": "タワーはチャンピオンを攻撃するたびに5秒間スタックを得る。スタックごとに与えるダメージが50%増加し、最大150%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Opportunity#pass": {
+   "source_sha1": "da5afa33bc74c780d366088bb0aaa25478283afd",
+   "plain_sha1": "5a1303bfb40af83e0192c32e707522bbe868d938",
+   "ja": "敵チャンピオンとの戦闘から8秒離れると、11（近接）/ 5（遠隔）の脅威を得る。この増加は、敵チャンピオンにダメージを与えた後も3秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Opportunity#pass2": {
+   "source_sha1": "2938b36f20dc8d1ccf838cff482d03ec38d8deed",
+   "plain_sha1": "d4753b3c6046b3de0fab30c3eea1288a4d52e181",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、1.5秒かけて減衰する200の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Oracle Lens#act": {
+   "source_sha1": "a94f1c04a20b0ad3be88af33f05ca8f1994fb822",
+   "plain_sha1": "4c6ec8c524f090f289dc58ea72955bd976fd6dba",
+   "ja": "チャージを一つ消費して「Sweeper Drone」を呼び出し、ドローンは次の6秒間自身に付き添って、近くの見えていない敵を探知する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Overcharged#pass": {
+   "source_sha1": "0d4f82f6c78df60762980313b248a187aa2e714b",
+   "plain_sha1": "8316e20d225dd70c2b01155815ca8a5d40340a29",
+   "ja": "55分になると、このタワーは故障し始め、物理防御と魔法防御を失う。5分後には壊れ始め、30秒ごとに最大体力の一定の割合を失い、その割合は増えていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Overlord's Bloodmail#pass": {
+   "source_sha1": "541e1087559939ee26d7c7bfe40e4b6056016feb",
+   "plain_sha1": "ccf1321c6552eaf698ce3a0f972eec0aebcce2bd",
+   "ja": "増加体力の2.5%に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Overlord's Bloodmail#pass2": {
+   "source_sha1": "599fc8f5464a583252175575448323f12d7bdcab",
+   "plain_sha1": "a4f48677e3a454a6f45ea1df59d7ba8211834508",
+   "ja": "ほかの発生源からの合計攻撃力の0%～12%（減少体力に応じて）に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Perplexity#pass": {
+   "source_sha1": "3fb3e51bca18cb0b472a97988d55dfb6890e82c0",
+   "plain_sha1": "a7c96910fa39897ea8b4e3e010c236204db14413",
+   "ja": "自身より最大体力が多い敵チャンピオンに、0%～15%（最大体力の差に応じて）増加したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Phage#pass": {
+   "source_sha1": "f42259b1bc9b25bafe3247a65802f45a9a8e4bba",
+   "plain_sha1": "b54939aceb06dd0b58726b032680b5daba212480",
+   "ja": "通常攻撃（攻撃時効果）で、2秒間移動速度が20（近接）/ 10（遠隔）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Phantom Dancer#pass": {
+   "source_sha1": "b118305dc0f374324a8fc809e415d26da195c09a",
+   "plain_sha1": "041f66dcb5ace998cdf999978cdf4e7082bfa903",
+   "ja": "永続的にゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Phreakish Gusto#pass": {
+   "source_sha1": "84e93796babbc10d4d7448c876a137d928c39927",
+   "plain_sha1": "33ae3a0a28a19872ea2f272fa65852dc38298423",
+   "ja": "タワーの通常攻撃は、このミニオンの最大体力の70%を軽減前のダメージとして与えるよう修正される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Plated Steelcaps#pass": {
+   "source_sha1": "87b6211de0ce2f48417264c0a8a20d88fefaa5da",
+   "plain_sha1": "da3b8b103a2369391e985a2e8103ee779df82d59",
+   "ja": "すべての通常攻撃から受けるダメージを10%軽減する（タワーの攻撃を除く）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Profane Hydra#pass": {
+   "source_sha1": "8e4c5dfaf6bcbe57a70b26b5477c62b3503f31f0",
+   "plain_sha1": "45b4856ea0d1cf18ecc0bd6483b8381b4d6cf101",
+   "ja": "ダメージを与える通常攻撃は、対象を中心とした半径350の範囲のほかの敵に攻撃力の40%（近接）/ 20%（遠隔）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Profane Hydra#act": {
+   "source_sha1": "c6471cf2370f82261236bf946729adfc7b192fab",
+   "plain_sha1": "b3b3ee852f3a80a7919ccc522d4fb7ab37a27b0c",
+   "ja": "半径450の範囲の敵に攻撃力の80%の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Prowler's Claw#pass": {
+   "source_sha1": "245198d5445e8ecda45974447aaeb132f612fdec",
+   "plain_sha1": "aa3a901cd03798094fe3f09847663b1cf9d38f4b",
+   "ja": "対象の敵チャンピオンの位置から150ユニット先までダッシュし、ダッシュを終えると、対象の最大体力の12%（+ 増加攻撃力100ごとに5%）の追加の物理ダメージを与える。その後3秒間、その対象に与えるダメージが20%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Puppeteer#pass": {
+   "source_sha1": "3241a4bd844ed860af8cd358f331c95e9e86c534",
+   "plain_sha1": "ae750ebb49634d4449e7f7539fb1f92812e61767",
+   "ja": "敵チャンピオンへの通常攻撃（攻撃時効果）は15秒間「Puppeteer」のスタックを与え、最大4回まで重なる。対象への四つ目のスタックですべて消費し、対象を2秒間狂乱状態にして、攻撃速度が50%（+ 自身の回復とシールドの効果の150%）、移動速度が40%増加する（クールダウン25秒）。敵チームで生きているチャンピオンが一体だけなら、代わりに同じ時間対象にフィアーを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Puppeteer#pass2": {
+   "source_sha1": "92c2debab15af2c277aea872bcb755c6522c4598",
+   "plain_sha1": "a29cccf5fab03be443978f897a26ae7593352dec",
+   "ja": "自身か味方に回復・シールド・スキルによる強化を与えると、「影から操る」のクールダウンが5秒短縮される（一回の使用につき一度）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pyromancer's Cloak#pass": {
+   "source_sha1": "9161a382a2d6906b2d6ebca41432056cb6c591b6",
+   "plain_sha1": "6bbac5352989112e28517eaf8efb17a387af6f7d",
+   "ja": "敵への通常攻撃とスキルの命中は燃焼を与え、3秒かけて200～450（レベルに応じて）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pyromancer's Cloak#pass2": {
+   "source_sha1": "3e3fb13df5fd8c347e43f9867b71f7a7d7980886",
+   "plain_sha1": "8e47411fbc960040abd2f0febdaaa2b6b2fd4156",
+   "ja": "敵チャンピオンに燃焼の効果を与えると、対象から火の玉が出て、0.5秒後に自身の近くの位置に落ちる。着地すると、着弾の範囲に半径175ユニットの炎が5秒間できる（対象ごとにクールダウン3秒）。炎の中にいる間、合計移動速度が20%増加し、出た後も0.75秒間残り、入ったときとその後炎がある間毎秒60～150（レベルに応じて）回復する。炎の中の敵は毎秒100の魔法ダメージを受ける。持っている燃焼の効果の発生源の種類一つごとに（最大10）、炎の大きさが40ユニット増え、強さは自身への効果で合計移動速度の増加が4%・毎秒の回復が30、敵への効果で一回60の魔法ダメージずつ増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Quicksilver Sash#act": {
+   "source_sha1": "217cfecf6d65bec3b3a10de361ddb470df43fc3c",
+   "plain_sha1": "ab2718dbf28f32bb05a12cef77ee1d74bdfd0a53",
+   "ja": "自身のチャンピオンからすべての行動妨害の弱体効果（ノックアップを除く）を取り除く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rabadon's Deathcap#pass": {
+   "source_sha1": "2de06a310de17ed5eea272b7729068a74fa3b95c",
+   "plain_sha1": "f69fbbc61bdc6746cdbcf6d35cc505d218215864",
+   "ja": "魔力が30%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Radiant Virtue#pass": {
+   "source_sha1": "07f87f4723118185a9aa51e6f6bbf62feb488135",
+   "plain_sha1": "0c0d1ec98fc882878764e2308c3c46e7f7a178a5",
+   "ja": "アルティメットスキルを使うと9秒間「Transcend」状態になる。「Transcend」の間、最大体力が12.5%増加し、「Transcend」になったときとその後3秒ごとに、自身と1200ユニット以内のすべての味方が自身の最大体力の2.5%回復し、合計で自身の最大体力の10%の回復になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Raise Morale#pass": {
+   "source_sha1": "2889e11e5f51a8c2fec4c5901358123a5fc9ad31",
+   "plain_sha1": "b371f85678f2022d784479481fe8324fcacc73e2",
+   "ja": "「一斉砲撃」の範囲内にいるガングプランクと味方は、移動速度が40%増加し、範囲を出た後も2秒間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Randuin's Omen#act": {
+   "source_sha1": "3f34409277017a5ead6cb8e9d5b80b3f9244a922",
+   "plain_sha1": "c4d6bd1d47b8c88f11d28784f517104ed73240d0",
+   "ja": "自身の周囲に衝撃波を放ち、周囲の敵に2秒間70%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Randuin's Omen#pass": {
+   "source_sha1": "6ec9a082c659a0e8f038316f1ec01e0f1a6fe8a6",
+   "plain_sha1": "bd1d43ab8bf9df1852ec6697f9b5d094827db502",
+   "ja": "クリティカルから受けるダメージを30%軽減する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rapid Firecannon#pass": {
+   "source_sha1": "a5604122891cbda3c7fffbe332fba2a26ca0110f",
+   "plain_sha1": "35c4caf839ba152081099c2524f667a8d5e4e8ca",
+   "ja": "移動と通常攻撃で「Energize」のスタックを得て、最大100。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rapid Firecannon#pass2": {
+   "source_sha1": "39f5f00860114ac985a217d2e6afa17c7c4893fa",
+   "plain_sha1": "fd256a7d9e47c92d37828b9771598e0f8f52bbdb",
+   "ja": "「Energize」が満タンのとき、次の通常攻撃は攻撃時効果として40の追加の魔法ダメージを与える。「Energized」の攻撃は射程が35%増加し、150が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ravenous Hydra#act": {
+   "source_sha1": "e85b941442a4e608cba8892f707881e2b4d05f39",
+   "plain_sha1": "e83f9ec38e0b4917d3df6e1c890c37202337ecb8",
+   "ja": "自身の前方の半径450の範囲の敵に攻撃力の80%の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ravenous Hydra#pass": {
+   "source_sha1": "943b432fa0b3ca8a248573a876d7080e7e82404a",
+   "plain_sha1": "efcc488f7a0f7fe3c0350acb2532901e71586459",
+   "ja": "通常攻撃は攻撃時効果として、対象を中心とした半径350の範囲のほかの敵に攻撃力の40%（近接）/ 20%（遠隔）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reality Fracture#pass": {
+   "source_sha1": "d2409482b074b2cb85ab6babe27dc6f0dfdfe9cb",
+   "plain_sha1": "b270df6c264bd2a878331fa2f24ab603c3d3a92b",
+   "ja": "敵への通常攻撃（攻撃開始時）とダメージを与えるスキルで、対象指定不可の味方の「Voidmite」を8体呼び出して対象を攻撃させる（クールダウン15秒）。「Voidmite」は通常攻撃ごとに6（+ 自身の攻撃力の4%）（+ 自身のAPの8%）の魔法ダメージを与え、最大3秒間残る。さらに、自身が死ぬと「Voidmite」を6体呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reaper's Toll#pass": {
+   "source_sha1": "f18db851cf7cc0fb4d2ca050b47cafb6e248b13b",
+   "plain_sha1": "741cb863f6f1edbc2f6dbd497db5057310d5dc9c",
+   "ja": "通常攻撃（攻撃時効果）は対象に「Reap」のスタックを与え、無限に重なって戦闘フェーズの残りの間続き、対象の最大体力の0.7%（近接）/ 0.5%（遠隔）（+ 対象の「Reap」のスタックごとに0.1%）に等しい追加の確定ダメージを与える。さらに、対象には最大体力の100%から与えた追加ダメージの合計を引いた体力のしきい値が課され、ラウンドの終わりまで続き、しきい値は最大体力の50%が下限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reaper's Toll#pass2": {
+   "source_sha1": "7bfe60bbb4ff0fdd6e1a5ebc718054d0e678b266",
+   "plain_sha1": "bd8a1218da385a255be3b947d9c3aea1d7d81e1e",
+   "ja": "すべての発生源から得る攻撃速度が25%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Recurve Bow#pass": {
+   "source_sha1": "5fa9a60313f13098fd7481951af190654d2b8091",
+   "plain_sha1": "bf9ddd1c225d919ba70b9b5047ce8ac045f817c8",
+   "ja": "通常攻撃は攻撃時効果として、15の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Redemption#act": {
+   "source_sha1": "a329fd337c8e527b879665eb1d5adf2beac8d214",
+   "plain_sha1": "855c5c59a23c4f2d300d230a279e7b76dba222e8",
+   "ja": "2.5秒後に指定地点へ半径550の光の柱を落とし、その間その範囲の視界を与える。範囲内の味方は200～400（対象のレベルに応じて）回復し、範囲内の敵チャンピオンは対象の最大体力の10%の確定ダメージを受ける。死んでいる間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Refillable Potion#pass": {
+   "source_sha1": "f3596642a2f41000d25e091865495f44e18f138c",
+   "plain_sha1": "d995af4adfe0cddb6c1d2da553b546bad3f6e45a",
+   "ja": "ショップに戻ると補充されるチャージを持つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Regicide#pass": {
+   "source_sha1": "fbc248737f7666c8985394e6e079b570cddd7ef4",
+   "plain_sha1": "988bc2c8bfe565b4f001bb59478f91941398c838",
+   "ja": "各ラウンドの戦闘フェーズの開始時に、合計の最大体力が最も低い敵チャンピオンを「Regent」に指定する。戦闘フェーズで初めて「Regent」のキルに関与すると、永続的に増加攻撃力を10得て、アルティメットスキルの残りクールダウンが0.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reinforced Armor (Turret Item)#pass": {
+   "source_sha1": "20aee7a8b3530a9e2af930eac3046d31e07f1d00",
+   "plain_sha1": "6a888365e427cbf4efdbaf2d7fc68fad6759e526",
+   "ja": "範囲内に敵のミニオンも「Rift Herald Mercenary」もいない間、確定ダメージを含め80%のダメージ軽減を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reverberation#pass": {
+   "source_sha1": "cf4103fee5c496d040e0772f357d2a6e3358dd40",
+   "plain_sha1": "9b5c003357c5535a30b564d8e221bc94c073d12a",
+   "ja": "各ラウンドの戦闘フェーズの開始から2秒後、攻撃速度の増加1%ごとに増加体力を5得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reverberation#pass2": {
+   "source_sha1": "d471f5ca5044bdb6f8528e1a2f35100f4535186c",
+   "plain_sha1": "06275e6dd8e52b0bd69dc82e52e413b42b092111",
+   "ja": "通常攻撃は攻撃時効果として、10（+ 自身の増加体力の2%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reverberation#pass3": {
+   "source_sha1": "76dfa5ea04eafb030ef4905dacf79b8dd15dee10",
+   "plain_sha1": "d2a6711048f2f54875ebda57cd247b8551d57e99",
+   "ja": "敵チャンピオンに移動不能を与えると10秒間「Reverberation」のスタックを25得て、最大100回まで重なり、攻撃時効果とその後の移動不能のたびに更新される。最大スタックで敵に移動不能を与えると、攻撃時効果がその敵に3回与えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Riftmaker#pass": {
+   "source_sha1": "1df9f775cd00e97418229e97faf8ca48d955e41a",
+   "plain_sha1": "476c57454acf57a880968a9222c5a28680b75b5a",
+   "ja": "チャンピオンとの戦闘中の一秒ごとに与えるダメージが2%増加し、最大4回まで重なって合計8%増加する。最大スタックで、10%（近接）/ 6%（遠隔）のオムニヴァンプを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Riftmaker#pass2": {
+   "source_sha1": "95ab9bb2f8c82454e902e4240c5dc12817333710",
+   "plain_sha1": "67430bae7faa16dbdd25bc10b1aeed1c82e20755",
+   "ja": "増加体力の2%に等しい魔力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rite of Ruin#pass": {
+   "source_sha1": "16b0005908872b59e78b165b926d915d804bd41b",
+   "plain_sha1": "e3fa2dc881ba87a4f16358e7424527ad601a2d62",
+   "ja": "スキルを使うと6秒間クリティカル率が2.5%増加し、最大8回まで重なって最大20%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rite of Ruin#pass2": {
+   "source_sha1": "aaaae8d001dc9c8ee51820112132ce9abdedfd5c",
+   "plain_sha1": "73d5eb5fa6bbeeb94ba8b120b84d84dc6e6a6d6f",
+   "ja": "スキルを使うと、0%～100%（クリティカル率に応じて）の確率で、自身か味方に3秒間、70～210（レベルに応じて）（+ 増加攻撃力の25%）（+ APの15%）のダメージを吸収するシールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rod of Ages#pass": {
+   "source_sha1": "39bcec86a02925f48aaca6e3b52c9d1aa079ddbd",
+   "plain_sha1": "24707d0c15776571997aad5c917779364bb1b2a4",
+   "ja": "このアイテムは毎分増加体力10、増加マナ20、魔力3を得て、最大10回、最大で増加体力100、増加マナ200、魔力30になる。最大スタックになると、今の経験値を保ったままレベルが一つ上がる（上限はレベル18のまま）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rod of Ages#pass2": {
+   "source_sha1": "c6843cf3268500777727de1e059aabff67209bba",
+   "plain_sha1": "c0593d28848eae7dfe6b4d1aafe9006b995ecf17",
+   "ja": "チャンピオンから受けた軽減前のダメージの10%に等しいマナを回復し、使ったマナの25%に等しい体力を回復する（一回の使用につき20まで）。切り替え式のスキルでは、回復は毎秒20まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runaan's Hurricane#pass": {
+   "source_sha1": "d4e4dbc0f1dbf6844241040a9fecb2439aa58809",
+   "plain_sha1": "ffaec34fd8a0e62f3255944888fdd7fb9a3e6e17",
+   "ja": "通常攻撃は攻撃開始時に、前方の最大2体の敵に追加の矢を放ち、それぞれ攻撃力の55%の物理ダメージを与える。矢は攻撃時効果を与え、クリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runecarver#pass": {
+   "source_sha1": "a5604122891cbda3c7fffbe332fba2a26ca0110f",
+   "plain_sha1": "35c4caf839ba152081099c2524f667a8d5e4e8ca",
+   "ja": "移動と通常攻撃で「Energize」のスタックを得て、最大100。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runecarver#pass2": {
+   "source_sha1": "4d5c034be5f2bde66c3e6656ce8456d3a3211447",
+   "plain_sha1": "6129d51fd4b187846fba1ad53d1dfbd12af14b4a",
+   "ja": "スキルでダメージを与えると「Energize」のスタックを30得て、「Energized」の攻撃の準備ができていればその効果を発動する（一回の使用につきクールダウン2.5秒）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runecarver#pass3": {
+   "source_sha1": "99944b074f45efd126f445f3f284201a4cd42a0b",
+   "plain_sha1": "b7239e21ec7a8e69541cd53d0f8b18d59f6f2655",
+   "ja": "「Energize」が満タンのとき、次の通常攻撃は「Rune」のスタックを一つ得て、持っている「Rune」のスタック一つごとに対象へ弾を撃ち、一発ごとに20～45（レベルに応じて）（+ 増加攻撃力の11%）（+ APの8%）（+ 増加体力100ごとに0.3）の魔法ダメージを与える。スタックはラウンドごと、およびラウンド内の各フェーズの間でリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runic Compass#act": {
+   "source_sha1": "554f677c4410725e25f4176c451e6e638a3e90b7",
+   "plain_sha1": "fc5632f720307b63e995ebe58f2367863b1a9313",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。ワードのチャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runic Compass#pass": {
+   "source_sha1": "a054fb19d656106bc306ae5a68f038fa3648ffa7",
+   "plain_sha1": "7b390a2cf7ba5e48c5dbbb6d07dda88eb56c6150",
+   "ja": "「Shared Riches」で800ゴールド（gold）を稼ぐと自動で「世界の恵み」にアップグレードし、ワードの発動効果の蓄えが4個になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runic Compass#pass2": {
+   "source_sha1": "6370fc42a7723b9dd25f5ed54e51e800daa6ee28",
+   "plain_sha1": "f3c8cfecd15517c745aea15a07bcebbc4cd67b30",
+   "ja": "20秒ごとに「Shared Riches」のチャージを得て、最大3チャージ。味方チャンピオンが自身から1050ユニット以内にいるとき、次の方法でチャージを消費する：• 何らかの方法でミニオンを倒すと、自身は20ゴールド（gold）、最も近い味方チャンピオンはキルのゴールドを得る。ミニオンの体力を最大体力の50%（近接）/ 30%（遠隔）未満にするダメージを与えると処刑する。• 通常攻撃かスキルで敵チャンピオンか建物にダメージを与えると、24（近接）/ 22（遠隔）ゴールドを得る。この方法でチャージを消費するのは、攻撃かスキル一回につき一度だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runic Compass#pass3": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Rylai's Crystal Scepter#pass": {
+   "source_sha1": "a24b5b3ee82eb7086b606312be2f6823da6cba70",
+   "plain_sha1": "05ef095f6724e67a31e6d11083e8bb50f246f729",
+   "ja": "スキルのダメージを与えると、効果を受けたユニットに1秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sanguine Gift#pass": {
+   "source_sha1": "3bb8637d1f9ba413fbcd8d1bbd4736c4f424d30a",
+   "plain_sha1": "b3689be9000e97972cd0aa0eb2fb234379048ab9",
+   "ja": "与えた軽減後のダメージの15%を蓄える。蓄えた量が333を超えるたびに、それを消費して、自身と最も近い味方チャンピオンを同じ量回復する。蓄えたダメージはラウンドごと、およびラウンド内の各フェーズの間でリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scarecrow Effigy#act": {
+   "source_sha1": "b0a59a9f40af24ee2e1790152e1e9cbd83ea0ea5",
+   "plain_sha1": "55786452c056c23c7dddb15b0129e891b5ea9ebd",
+   "ja": "チャージを一つ消費して指定地点に見える「Effigy」を置き、130～280秒間（レベルに応じて）周囲の範囲の視界を与える。敵からはフィドルスティックスと（ミニマップを含めて）見た目が同じで、作動するまで体力バーは見えない。近づいた敵チャンピオンが作動させると、自動で味方に危険のピンを鳴らし、最大2秒間ランダムな行動のふりをする。その時点までに壊されなければ、自身に1ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scorchclaw Pup#pass": {
+   "source_sha1": "1229f8c92003f4314104fc66029503f281a5f470",
+   "plain_sha1": "3e8aebbf3d94e0a235cb1df97cbd82c1d64079f1",
+   "ja": "モンスターとの戦闘を手伝う「Scorchclaw Pup」のコンパニオンを呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scorchclaw Pup#pass2": {
+   "source_sha1": "4fd4f7b31912b58606aac190b43c0495a753e649",
+   "plain_sha1": "02700f7683147d4188d041e52ffc35cc48ed1738",
+   "ja": "コンパニオンに十分なおやつを与えて進化させ、スマイトを強化する。コンパニオンが最終の進化に達すると、このアイテムは消費され、「Scorchclaw's Slash」の効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scout's Slingshot#pass": {
+   "source_sha1": "699ccd241f90098797074b40c2f0c89cbf0bc4a1",
+   "plain_sha1": "336ef805e7f42b242fdd3977251d751e4db185e5",
+   "ja": "敵チャンピオンにダメージを与えると、40の追加の魔法ダメージを与える（クールダウン40秒。攻撃開始時に1秒短縮される）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scouting Ahead#act": {
+   "source_sha1": "84e683c1ec56e6b72216b499ec179324cef19535",
+   "plain_sha1": "10e3f0db5941b8de259e3689f549237899c3b991",
+   "ja": "指定地点に5秒間霧を呼び出し、半径375の範囲の視界を与え、範囲内の敵の罠を3秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Seeker's Armguard#act": {
+   "source_sha1": "db217fa96dab08c11c5ebdbcc2aeca50f6a57476",
+   "plain_sha1": "d61bd8e00b08e25a5af115e088293614e51eb54d",
+   "ja": "自身を2.5秒間固有時停止にし、その間対象指定不可かつ無敵になるが、移動・通常攻撃の指示・スキルの使用・サモナースペルの使用・アイテムの発動はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Seraph's Embrace#pass": {
+   "source_sha1": "5714709da6382b0432d79ce4ba7ef6f65e58c27c",
+   "plain_sha1": "7a4eb16af27d33b0d896df30a7c65845010c1f91",
+   "ja": "増加マナの2%に等しい魔力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Seraph's Embrace#pass2": {
+   "source_sha1": "043a0b621416010613ce33924a936c01c52df39a",
+   "plain_sha1": "64c02cbca807c5bc45ca86e2bf90455936d0fca3",
+   "ja": "受けるダメージで体力が最大体力の30%未満になる場合、先に3秒間、最大マナの18%に等しいダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Serpent's Fang#pass": {
+   "source_sha1": "a88b8e0d66f39cbed961aab85bcf7a694829f766",
+   "plain_sha1": "9665aa96632611cd596d65989d41e37170297700",
+   "ja": "敵チャンピオンにダメージを与えると3秒間毒を与え、その間にその敵が得るシールドを50%（近接）/ 35%（遠隔）減らし、対象がまだ毒を受けていなかった場合は、今あるシールドもすべて同じ量減らす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Serylda's Grudge#pass": {
+   "source_sha1": "956fb4df1698103946d25a3e08fd1e508e46b627",
+   "plain_sha1": "45719f65d41ef359d0fb0832a3494db13a6a6c08",
+   "ja": "最大体力の50%以下の敵にスキルのダメージを与えると、1秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shadowflame#pass": {
+   "source_sha1": "9928b561db9a799458853558b32969322e55cc58",
+   "plain_sha1": "0c356d2f897c2f95c854b829ec9d0001d74a3dee",
+   "ja": "魔法ダメージと確定ダメージは、最大体力の40%未満の敵に対してクリティカルになり、120%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sheen#pass": {
+   "source_sha1": "f31aa0df157775c77c5843fbfdb4d76effeca0e7",
+   "plain_sha1": "b2e7e48bb1134a1842846e49ab70ce8896481e2a",
+   "ja": "スキルを使った後、10秒以内の次の通常攻撃は攻撃時効果として基本攻撃力の100%の追加の物理ダメージを与える（クールダウン1.5秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shield of Molten Stone#pass": {
+   "source_sha1": "cdedb600c81d4c7dad96d0fa9f18afb1dc39e6ad",
+   "plain_sha1": "f86a2f399e2386b571f4933f10b5af72683cb1fa",
+   "ja": "合計物理防御が20%増加する。さらに、自身に当たった通常攻撃は、合計物理防御200ごとに5%の確率で防がれ、最大50%の確率。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shurelya's Battlesong#act": {
+   "source_sha1": "046de24c17f74758a9924545ac6a566895bebf59",
+   "plain_sha1": "26821f7b09885cd6a5fbe1e7364c918312669b16",
+   "ja": "自身と1000ユニット以内のすべての味方の移動速度を4秒間30%増加させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slightly Magical Boots#pass": {
+   "source_sha1": "bd410b38d1852a9ef0b9d96ae307d15c4b0143d3",
+   "plain_sha1": "826418aea7e5c8c958bec03eae2a4e3171dd844a",
+   "ja": "移動速度が10増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Solstice Sleigh#act": {
+   "source_sha1": "8228bd2cae03b0b372a61b5dc8ff4e4c7fe6fcdf",
+   "plain_sha1": "651eea226bd839e6d846df52fd7ca25716e5f12a",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。チャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Solstice Sleigh#pass": {
+   "source_sha1": "c4eee97ed5350dd3f759678352a5b8235fdea003",
+   "plain_sha1": "de22d949a7c80d377b8b08c9573da48097a8cc21",
+   "ja": "敵チャンピオンにスロウか移動不能を与えると、自身と1500ユニット以内で最も傷ついた味方チャンピオンは、2.5秒かけて減衰する20%の移動速度の増加と、2.5秒間50～230（自身のレベルに応じて）の増加体力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Solstice Sleigh#pass2": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Spear of Shojin#pass": {
+   "source_sha1": "2bc78487b488039e485d671c20f2070bedf7e0d4",
+   "plain_sha1": "d9e5537c4003565be41ef9960945b3e0d92ffcc7",
+   "ja": "基本スキルのスキルヘイストを25得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Spear of Shojin#pass2": {
+   "source_sha1": "005b85368109599a030a265bc55ca44e99fcd972",
+   "plain_sha1": "a2c982018cbadb016d7026f01dcab2696985b574",
+   "ja": "固有スキル以外のスキルでスキルのダメージを与えると6秒間スタックを得て、最大4回まで重なる（一回の使用につき毎秒一度まで。持続ダメージのスキルは毎秒）。スタックごとに、アイテム以外による通常攻撃以外のダメージが3%増加し、最大スタックで合計12%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Spectral Cutlass#act": {
+   "source_sha1": "8fce3e69baa946a6cfcd3544e8931b40994eb0a9",
+   "plain_sha1": "4343b5fb41db4ccf2e45a86a71ea66fc114ef474",
+   "ja": "今いる位置に印を付ける。5秒後、印の位置へ自動でブリンクする。効果時間中は「ソウルアンカー」を再発動して、手動で印の位置へブリンクできる（クールダウン15秒。ブリンクの後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Spirit Visage#pass": {
+   "source_sha1": "9e032cfb4f495584befe1f02488674234b666706",
+   "plain_sha1": "1624cc40b125a913f33ceb22db218998217e706d",
+   "ja": "受けるすべての回復とシールド、および体力自動回復が25%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Staff of Flowing Water#pass": {
+   "source_sha1": "ae636d59c6546703099b6b4ca119ddf29ba6b986",
+   "plain_sha1": "856da81f7f1030461d9269e2649e36e239579b60",
+   "ja": "味方チャンピオン（自身を除く）を回復するかシールドを付与すると、自身とその味方は6秒間魔力が45増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Statikk Shiv#pass": {
+   "source_sha1": "58529843d5c00a6737dfe2e46567bba9e57d55bf",
+   "plain_sha1": "73028b0de9b91579100f575ed6b03545092d2053",
+   "ja": "8秒以内の次の3回の通常攻撃（攻撃時効果）は強化され、60の追加の魔法ダメージを与え、チャンピオン以外には85になる。これは500ユニット以内の最も近い対象へ跳ね、新しい対象から繰り返して最大5体に当たる（クールダウン25～10秒〔レベルに応じて〕。最初の強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Statikk Shiv#pass2": {
+   "source_sha1": "ab5bf68133eb4f52de8f6f7135c1da287e6a47de",
+   "plain_sha1": "adc6203345f97203ce8c842e15d057e99510c951",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、「エレクトロスパーク」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stealth Ward#act": {
+   "source_sha1": "5a1244657e4f89f9648fc1ad0d170763758e9917",
+   "plain_sha1": "17316194dd19401f25820641c2742e0f248f2112",
+   "ja": "チャージを一つ消費して指定地点にインビジブルの「Totem Ward」を置き、90～120秒間（チャンピオンの平均レベルに応じて）周囲の範囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sterak's Gage#pass": {
+   "source_sha1": "3f67104f5c648d5c096aaa9287c36bc63f734075",
+   "plain_sha1": "d736068c5692abd2e1cc63b4a0fdbe94240c7597",
+   "ja": "基本攻撃力の45%に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sterak's Gage#pass2": {
+   "source_sha1": "531f8e2e0f8aabad82d221a4a361873a4bed1d97",
+   "plain_sha1": "aaa47350be879a533fcec90aa76acd6c9a34e3c8",
+   "ja": "受けるダメージで体力が最大体力の30%未満になる場合、先に増加体力の60%に等しいダメージを吸収するシールドを得て、シールドは4.5秒かけて減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stormrazor#pass": {
+   "source_sha1": "a5604122891cbda3c7fffbe332fba2a26ca0110f",
+   "plain_sha1": "35c4caf839ba152081099c2524f667a8d5e4e8ca",
+   "ja": "移動と通常攻撃で「Energize」のスタックを得て、最大100。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stormrazor#pass2": {
+   "source_sha1": "801d84e464ec817efe7e7afa928c01a29f5a042f",
+   "plain_sha1": "869f589048c1eddfa2fa461eefb0e492a6b42e9b",
+   "ja": "「Energize」が満タンのとき、次の通常攻撃は攻撃時効果として100の追加の魔法ダメージを与え、1.5秒間移動速度が45%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stormsurge#pass": {
+   "source_sha1": "924373bc75e5131a8fb42f9f0a06fbacabe70cb2",
+   "plain_sha1": "c44ff8ccf803f1975590c73f8d9bd4ab5b0488bb",
+   "ja": "敵チャンピオンに2.5秒以内にその最大体力の25%に等しいダメージを与えると、その敵に「Squall」を与える（クールダウン30秒。「Squall」の付与時から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stormsurge#pass2": {
+   "source_sha1": "403874bb785c2e0e435dc729b684b666d0a01174",
+   "plain_sha1": "3b08cafd805d36abfff0a38699f25c8e73e5437f",
+   "ja": "「Squall」を与えてから2秒後、対象に雷を落とし、125（+ APの10%）の魔法ダメージを与える。雷が落ちる前に対象が死ぬと、即座に電場を出し、その近くのすべての敵チャンピオンに同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stridebreaker#act": {
+   "source_sha1": "8045ef7c0f41eaa87f0af94fc69c4b1fe56d4fe7",
+   "plain_sha1": "5bf685a38f718917296687fdc89edf10483bc40d",
+   "ja": "自身を中心とした半径450の範囲の敵に攻撃力の80%の物理ダメージを与え、3秒間35%のスロウを与える。命中したチャンピオン一体ごとに、3秒かけて減衰する35%の移動速度の増加を得る。使用中も移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stridebreaker#pass": {
+   "source_sha1": "943b432fa0b3ca8a248573a876d7080e7e82404a",
+   "plain_sha1": "efcc488f7a0f7fe3c0350acb2532901e71586459",
+   "ja": "通常攻撃は攻撃時効果として、対象を中心とした半径350の範囲のほかの敵に攻撃力の40%（近接）/ 20%（遠隔）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sundered Sky#pass": {
+   "source_sha1": "d4bd45cf26fbadab797147078ee7cf78ccd71114",
+   "plain_sha1": "61afb95ec7c2f6f1e033269b2c0034a96802c381",
+   "ja": "チャンピオンへの次の通常攻撃は強化され、175%のダメージでクリティカルになり、基本攻撃力の100%（近接）/ 50%（遠隔）（+ 自身の減少体力の6%）回復する（対象ごとにクールダウン8秒）。最大体力を超えた回復は、8秒間増加体力に変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sunfire Aegis#pass": {
+   "source_sha1": "ddd5da3d2ee85833f04e8e65f4348bf58cd9d401",
+   "plain_sha1": "d251fcde6d095ec4ccfea6b6a361c188e29c5d35",
+   "ja": "ダメージを受けるか与えると、この自動効果が3秒間作動する。325（+ 増加サイズの100%）ユニット以内の敵に毎秒20（+ 増加体力の1%）の魔法ダメージを与え、ミニオンとモンスターには50%増加する。あと一回のダメージで倒れるミニオンは処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Super Mech Armor#pass": {
+   "source_sha1": "f907dc7cbc192beae8cdb27228d8dba4c787acaf",
+   "plain_sha1": "63b37d2d39fbfef75165c86aef5968b31886b054",
+   "ja": "タワーの通常攻撃は、このミニオンの最大体力の7%を軽減前のダメージとして与えるよう修正される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Super Mech Power Field#pass": {
+   "source_sha1": "0d5125be0c36ba2e8725cff1dbdc693b0ab50268",
+   "plain_sha1": "e670cf347498b9eb7e221ad6ebb224b43c9db0e9",
+   "ja": "近くのミニオン（スーパーミニオンを除く）に物理防御35と魔法防御35を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Swiftmarch#pass2": {
+   "source_sha1": "38f79b2412227ebcc38797efe58e216a210d1130",
+   "plain_sha1": "be21877a8e26869340f9fa5db4c141f9370ce68d",
+   "ja": "合計移動速度の5%に等しいアダプティブフォースを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sword of Blossoming Dawn#pass": {
+   "source_sha1": "1371aecf8ba287a48b4947be70f494674d7f803d",
+   "plain_sha1": "ab54b3e7ffa3f5ab24767aa526078dd59e236bd5",
+   "ja": "回復とシールドの効果1%ごとに、攻撃速度が1.2%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sword of Blossoming Dawn#pass2": {
+   "source_sha1": "30175dea59987bfee6492af95dcd7f014caa462e",
+   "plain_sha1": "f31cc5e2f9523fabed89268e8f5c91e11ebb7821",
+   "ja": "通常攻撃（攻撃時効果）で、最も傷ついていて最も近い味方チャンピオンを15～45（レベルに応じて）（+ 増加攻撃力の10%）（+ APの7%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sword of the Divine#pass": {
+   "source_sha1": "e632894161d92b2a8f881c87af33dcdb3dcb4a8c",
+   "plain_sha1": "9545a46aa8003dc12e444ad944a3acc54923128e",
+   "ja": "クリティカルは、クリティカル率の50%まで伸びるランダムな追加のクリティカルのダメージを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Symbiotic Soles#pass": {
+   "source_sha1": "a7cb77eece1393f13f29d677d672ea081fecfba9",
+   "plain_sha1": "5dfaed72ab2f68d71318d2c123ce069cfde5d02e",
+   "ja": "戦闘外の間、移動速度が10増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Symbiotic Soles#pass2": {
+   "source_sha1": "444c0fc1807af235feea110b681875c01f95dc2f",
+   "plain_sha1": "ba48f6d493f512034fda68da29ed95c26d945288",
+   "ja": "合計150,000ユニットの距離を移動すると（ダッシュとブリンクは一回につき500ユニットまで）、このアイテムは「シンクロナイズド ソウル」にアップグレードする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Synchronized Souls#pass": {
+   "source_sha1": "5e9e4bdf9290df6e53e880cba15fba045e0b339b",
+   "plain_sha1": "b7f5cf9ef0c9044f1fe815b2d1f5ae88ed767f1c",
+   "ja": "強化されたリコールを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Synchronized Souls#pass2": {
+   "source_sha1": "6a3d57286bc477c7f9e53f864358594dc6375cb8",
+   "plain_sha1": "a74bdacceb52280e5c759c2ec2370719ce86e8de",
+   "ja": "戦闘外の間、移動速度が45増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Talisman of Ascension#act": {
+   "source_sha1": "a6698c9aa42e2b06901ae3c349cf74271ab07ea1",
+   "plain_sha1": "669a526bcda44752965d044a0e69d4013aad0c65",
+   "ja": "このアイテムのステータスを振り直す。ラウンドごとに最大二回、「Apex Inventor」のオーグメントがあれば最大三回。振り直すたびに、ステータスの値は高くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Tear of the Goddess#pass": {
+   "source_sha1": "babdaf2e0d172f4831edb585ec9bbcfaac4a5199",
+   "plain_sha1": "bb1ed1f0dfe8a9f4646eea81e47212c212d10be8",
+   "ja": "8秒ごとにチャージを得て、最大4チャージ。敵か味方にスキルで効果を与えるとチャージを一つ消費して最大マナが3増加し、対象がチャンピオンなら6になる。増加マナは最大360。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Tear of the Goddess#pass2": {
+   "source_sha1": "23e9594724d7f733e85c989af1706e9cbd4efc36",
+   "plain_sha1": "44266ed41bdd0969932545af5ae8599c31a818e1",
+   "ja": "ミニオンへの通常攻撃は、攻撃時効果として5の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Terminus#pass": {
+   "source_sha1": "96db5fd5c504f17b9cffc3fa3fb4092ccae47046",
+   "plain_sha1": "335f7463fbf2cf8694cb7c8b2a47d1a8327cfef6",
+   "ja": "通常攻撃は攻撃時効果として、30の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Terminus#pass2": {
+   "source_sha1": "26c6652e161f1ecbcfe5f74c13b312f44df2cd7d",
+   "plain_sha1": "74349c220b5cc5660fc0f2331b7185b0f8f027b1",
+   "ja": "チャンピオンへの通常攻撃（攻撃時効果）は「光」と「闇」の命中を交互に行い、それぞれ5秒間続く増加を与えて最大3回まで重なる。「光」の命中は6 / 7 / 8（レベルに応じて）の物理防御と魔法防御の増加を、「闇」の命中は10%の物理防御貫通と魔法防御貫通を与え、それぞれ最大スタックで合計18～24（レベルに応じて）の防御の増加と30%の防御貫通になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "The Collector#pass": {
+   "source_sha1": "3321149ed4eab88a6f5a63f900ca2c524aeab057",
+   "plain_sha1": "7eae6db06d8d4a42358cf208582aad6fcc441162",
+   "ja": "チャンピオンの体力を最大体力の5%未満にする軽減後のダメージを与えると、そのチャンピオンを処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "The Collector#pass2": {
+   "source_sha1": "cb6aa08d76bbf8321746db895ec68c7821cd3138",
+   "plain_sha1": "2a265352a49f19236252c29b29c4e23aa78a9533",
+   "ja": "チャンピオンを倒すと、追加で25ゴールド（gold）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "The Golden Spatula#pass": {
+   "source_sha1": "aca5067b7af531b51bd77a38832fdcdfa1d57b2b",
+   "plain_sha1": "5af644f7fd782f46d183400502bb404158bbd806",
+   "ja": "永続的に「On Fire!」の状態になり、毎秒周囲の敵を燃やして魔法ダメージを与え、クールダウンが二倍の速さで減り、近くの敵チャンピオンの方を向いている間の移動速度の増加、攻撃速度の増加、マナ自動回復の増加を得る。ただし「On Fire!」の間は、受けるダメージが増え、受ける回復とシールドの効果が下がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Thornmail#pass": {
+   "source_sha1": "8a8ec8b4e2a6a9848cfe48604a02d9a48164a527",
+   "plain_sha1": "e755750d9a34e5ebb467f686d32d76fb1dfd846a",
+   "ja": "通常攻撃（攻撃時効果）を受けると、攻撃者に20（+ 増加物理防御の10%）の魔法ダメージを与え、攻撃者がチャンピオンなら3秒間重傷（Grievous Wounds）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Tiamat#pass": {
+   "source_sha1": "bfcf0b028cf029f2670c8e6857e7a95e75aaad70",
+   "plain_sha1": "37894790297a6685ceb0268ef2e3523400e49143",
+   "ja": "通常攻撃は攻撃時効果として、対象を中心とした半径350の範囲のほかの敵に攻撃力の40%（近接）/ 20%（遠隔）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Tiamat#act": {
+   "source_sha1": "a73b6f25f907b10356aa8fccd611858622d07cfe",
+   "plain_sha1": "65c8e66a74d0a90bf1979ba29c8dea384bb84e3c",
+   "ja": "自身の前方の半径450の範囲の敵に攻撃力の75%の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Titanic Hydra#pass": {
+   "source_sha1": "d63c06a5f3f63dce91f011ab5b0111671e6d893f",
+   "plain_sha1": "659b30d5bcfbbd8a521eb8fb8749d18c1f3ea522",
+   "ja": "通常攻撃は攻撃時効果として、対象に最大体力の1%（近接）/ 0.5%（遠隔）の追加の物理ダメージを、主対象の方向の扇形の範囲のほかの敵に最大体力の3%（近接）/ 1.5%（遠隔）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Titanic Hydra#act": {
+   "source_sha1": "96267146b61028686b25240404a4a822107cb940",
+   "plain_sha1": "55df0cbe306ba1c98aa4f477c27daa167ca1788b",
+   "ja": "10秒以内の次の通常攻撃で「なぎ払い」を強化し、主対象に最大体力の4%（近接）/ 2%（遠隔）の追加の物理ダメージを、副対象に最大体力の9%（近接）/ 4.5%（遠隔）の物理ダメージを与える（クールダウン10秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Trailblazer#pass": {
+   "source_sha1": "8214eb42cb0728a3b2e66db7ab55c9e54e6d2624",
+   "plain_sha1": "de86f702037e5cbd3bcda296e7cd1d42f3c8872c",
+   "ja": "移動中、0.25秒ごとに「Momentum」のスタックを7得て、3.75秒移動した後の100スタックで最大20の移動速度の増加を得る。最大スタックのとき、通り道を少しの間残し、その中の味方チャンピオンに自身の合計移動速度の15%を移動速度の増加として与える。通常攻撃はすべてのスタックを消費する。近接で最大スタックなら、次の通常攻撃は対象に1秒間50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Trinity Force#pass": {
+   "source_sha1": "1466a82c7d54323bf64e797508830c45c44b665e",
+   "plain_sha1": "05837f1489e76f1d4c6a10aacc5b1d4c7fdba7b7",
+   "ja": "スキルを使った後、10秒以内の次の通常攻撃は攻撃時効果として基本攻撃力の200%の追加の物理ダメージを与える（クールダウン1.5秒。強化された攻撃を使った後から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Trinity Force#pass2": {
+   "source_sha1": "2325899c26f65fd3d39d1e058e22aa8b9af922bc",
+   "plain_sha1": "26f99eaceadd6958914561df9f12083b5051a156",
+   "ja": "通常攻撃（攻撃時効果）で、2秒間移動速度が20増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Turbo Chemtank#act": {
+   "source_sha1": "8931817d956a6a3420433a91faf08028b4b75b62",
+   "plain_sha1": "31f6f1b50e5b0b634f2faf4d72a31f03fa7fec54",
+   "ja": "自身のチャンピオンからすべての行動妨害の弱体効果（ノックアップを除く）を取り除き、次の3秒間すべての行動妨害を無効にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Turret Plating#pass": {
+   "source_sha1": "04a700baf3ccdadbec855bfcff304bcdabbbb2dc",
+   "plain_sha1": "04a700baf3ccdadbec855bfcff304bcdabbbb2dc",
+   "ja": "追加の防御を与える。攻撃した側はプレートの一部を壊すと報酬を得る。このアイテムは14分後に消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Twilight's Edge#pass": {
+   "source_sha1": "aa86ad1d91029653e8acdc21814c419f5128cac3",
+   "plain_sha1": "c98273f8d4fe5f1037a9f1c78a0cb3cb81ae06b5",
+   "ja": "増加攻撃力が130以上かつ魔力が180以上なら、各ラウンドの戦闘フェーズの開始時に、ランダムで「Material World」か「Spirit World」のどちらかに入る：•「Material World」：攻撃力が20%増加し、攻撃速度が50%～150%（レベルに応じて）増加する。•「Spirit World」：魔力が20%増加し、スキルヘイストを30～120（レベルに応じて）得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Twin Mask#pass": {
+   "source_sha1": "eb1ab6c4e8c198913f141572c93bae7ee4eea9b8",
+   "plain_sha1": "6eeee0585f96b6dbb3761e724654141e23ec29d7",
+   "ja": "チームメイトの攻撃力・魔力・合計攻撃速度・最大体力・物理防御・魔法防御・スキルヘイストの15%を得て、チームメイトも「ツインマスク」を持っていて生きているなら30%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Umbral Glaive#pass": {
+   "source_sha1": "dde6a87a8f17f0f8cf8a11fd6aa7ecf998471acc",
+   "plain_sha1": "10eb2a702564df82c1f124a04518afe0478afabf",
+   "ja": "敵のステルス状態のワードか罠の近くにいると、8秒間「Blackout」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Umbral Glaive#pass2": {
+   "source_sha1": "c4e2f4cc1667c0476410b730590de74f9364cc83",
+   "plain_sha1": "4c9ecbfc4049a3559b6429a92ddc86744e9a38d6",
+   "ja": "「Blackout」の間、周囲のステルス状態のワードを無力化し、近くのステルス状態のワードと罠を露出させて可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Umbral Glaive#pass3": {
+   "source_sha1": "f66d41a353ca7335709cfb42dbfcb861c814d49e",
+   "plain_sha1": "ed649d973f1ece62fe3ba4915e83adc917eda6a1",
+   "ja": "通常攻撃はワードに2（近接）/ 1（遠隔）の追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Unending Despair#pass": {
+   "source_sha1": "8e92b1b146416e77343f90ba8dde870a6592da2d",
+   "plain_sha1": "57ee8d134dad0e45ae8fc95d73fd3b4042bdca65",
+   "ja": "チャンピオンとの戦闘に入った後4秒ごとに、650ユニット以内の周囲のすべての敵チャンピオンから吸い取り、自身の増加体力の3%に等しい魔法ダメージを与えて、与えた軽減後のダメージの250%に等しい量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Verdant Barrier#pass": {
+   "source_sha1": "0995aa4a83375aad4f0edfa7dd4eeea69e31c0e9",
+   "plain_sha1": "d63c5558750d1fab0d9bc9e81db1e60356e8d64a",
+   "ja": "次に受ける敵のスキルを防ぐスペルシールドを得る（クールダウン60秒。チャンピオンからダメージを受けるとタイマーがやり直しになる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Vigilant Wardstone#pass": {
+   "source_sha1": "5bcb69bbe190b218012e5a8b65cf1191bba4dafe",
+   "plain_sha1": "daa7023e3fd2ff10907f295efe471e6b743be174",
+   "ja": "「コントロール ワード」を購入すると、チャージとして蓄え、最大3。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Vigilant Wardstone#pass2": {
+   "source_sha1": "51ce7ceb38abbd93fff050b4784b3f5f03f64166",
+   "plain_sha1": "4b3b18c6aaa3a0cbfbbe0ac573fcd600e810a953",
+   "ja": "「ステルス ワード」「Totem Ward」「コントロール ワード」の設置数の上限がそれぞれ1増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Vigilant Wardstone#act": {
+   "source_sha1": "140decf9347e8a1422ee697fa3a2a50af5a19241",
+   "plain_sha1": "e59ee2be85a3132e6a3bdfddf618272da3c73e18",
+   "ja": "「Arcane Cache」のチャージを一つ消費して、指定地点（射程600）に見える「コントロール ワード」を置く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Voltaic Cyclosword#pass": {
+   "source_sha1": "a5604122891cbda3c7fffbe332fba2a26ca0110f",
+   "plain_sha1": "35c4caf839ba152081099c2524f667a8d5e4e8ca",
+   "ja": "移動と通常攻撃で「Energize」のスタックを得て、最大100。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Voltaic Cyclosword#pass2": {
+   "source_sha1": "786811e5023cbf1ec696fef91c6bf7a781ec517a",
+   "plain_sha1": "3cf3a2533c63907309cbac1a618eef4617b8e5a4",
+   "ja": "ダッシュ・突進・ブリンクで移動した距離と、ステルス状態で移動している間は、「Energized」のスタックの得られる量が75%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Voltaic Cyclosword#pass3": {
+   "source_sha1": "3c86f1600592ea0bd8368a252615b16cc77e8646",
+   "plain_sha1": "ff8b250f387d76b3bd47c7a355e61a02d9c6b312",
+   "ja": "「Energize」が満タンのとき、次の通常攻撃は攻撃時効果として100の追加の物理ダメージを与え、対象に0.75秒間99%（近接）/ 20%（遠隔）のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Warden's Eye#pass": {
+   "source_sha1": "73219838ce8a499bcce4f32e08c2d6f0d9d59add",
+   "plain_sha1": "d759a5c756b3d4366e3350eceb363d4953b9af61",
+   "ja": "1100ユニット以内のカモフラージュとインビジブルのユニットが見える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Warden's Mail#pass": {
+   "source_sha1": "2fd9c1c640dd1aedee7a225952243ba5cd657411",
+   "plain_sha1": "aaabd8fe16b9050e490f1fa252eaa0fae66f7fef",
+   "ja": "一回の使用ごとに最初に受ける軽減後の通常攻撃のダメージを15軽減し、それぞれ最大20%の軽減。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Warmog's Armor#pass": {
+   "source_sha1": "9a56d8db2c72e87d503fb715a52078ba662494f5",
+   "plain_sha1": "3a5c9c3a4147359ddaa0f7a21c55fc1eaf55aeff",
+   "ja": "増加体力が2000以上なら「Warmog's Heart」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Warmog's Armor#pass2": {
+   "source_sha1": "4e7fe51bb1a33103820c111f08a18f6feafb5aad",
+   "plain_sha1": "8cdf338e984984716bfedf2f97b70f09053383a6",
+   "ja": "直近8秒間ダメージを受けていなければ（チャンピオン以外からのダメージは3秒）、0.5秒ごとに最大体力の1.5%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Warmog's Armor#pass3": {
+   "source_sha1": "3bb70ad120c1557aaceca9d0ef2a4d614696372e",
+   "plain_sha1": "113fc65bdd8c0997f20404fa7612112715b3d1de",
+   "ja": "アイテムによる増加体力の12%に等しい増加体力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Watchful Wardstone#pass": {
+   "source_sha1": "5bcb69bbe190b218012e5a8b65cf1191bba4dafe",
+   "plain_sha1": "daa7023e3fd2ff10907f295efe471e6b743be174",
+   "ja": "「コントロール ワード」を購入すると、チャージとして蓄え、最大3。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Watchful Wardstone#act": {
+   "source_sha1": "140decf9347e8a1422ee697fa3a2a50af5a19241",
+   "plain_sha1": "e59ee2be85a3132e6a3bdfddf618272da3c73e18",
+   "ja": "「Arcane Cache」のチャージを一つ消費して、指定地点（射程600）に見える「コントロール ワード」を置く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Winter's Approach#pass": {
+   "source_sha1": "ad4f652f511002726d607ed811970ce457d5efd4",
+   "plain_sha1": "1092b33b3da30d33ab33bf70cfd1cf670f3130f9",
+   "ja": "増加マナの15%に等しい増加体力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Winter's Approach#pass2": {
+   "source_sha1": "6d0f8b915c4d6c0756cc20280d015edd3ea5813e",
+   "plain_sha1": "72f84e59b55191aeb6530119465c22cebca763ac",
+   "ja": "8秒ごとにチャージを得て、最大4チャージ。攻撃時効果と、スキルで敵か味方に効果を与えたときにチャージを一つ消費して最大マナが3増加し、対象がチャンピオンなら6になる。増加マナは最大360。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Winter's Approach#pass3": {
+   "source_sha1": "508b30aab26ec0cc9d6c196dec679dc29d77aa16",
+   "plain_sha1": "d2aabc2548171cd1db43250436415dc0a6e0f58e",
+   "ja": "増加マナが360になると「フィンブルウィンター」に変化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wit's End#pass": {
+   "source_sha1": "28449f1bb0e06b63cf825b2dfdda0844d8bb0c53",
+   "plain_sha1": "0524a6004e0369de71da6dc9d3692a82aacbc08b",
+   "ja": "通常攻撃は攻撃時効果として、45の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wooglet's Witchcap#act": {
+   "source_sha1": "db217fa96dab08c11c5ebdbcc2aeca50f6a57476",
+   "plain_sha1": "d61bd8e00b08e25a5af115e088293614e51eb54d",
+   "ja": "自身を2.5秒間固有時停止にし、その間対象指定不可かつ無敵になるが、移動・通常攻撃の指示・スキルの使用・サモナースペルの使用・アイテムの発動はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wooglet's Witchcap#pass": {
+   "source_sha1": "c8622b9de6675ab694d7fafb61ca97c281da8b73",
+   "plain_sha1": "75ca74cb8b975fc35174556bc2731d973855ba4b",
+   "ja": "魔力が50%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wordless Promise#act": {
+   "source_sha1": "96cca3e0aa8ed4db5d206c9b64e3ec57fcf948be",
+   "plain_sha1": "7c8e4f46d37bad752a49cc527b03b37422685f5b",
+   "ja": "対象の味方チャンピオンに「Promise」をし、自身との間にテザーを作る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wordless Promise#pass": {
+   "source_sha1": "07185a5a23103ed1030764db6012f608aa840d73",
+   "plain_sha1": "b2b35d880ed0894fc7712b0e7fbc934e710a143e",
+   "ja": "「Promise」の味方がテザーでつながっている間、その味方のAPの20%に等しい魔力を得て、その味方に自身のスキルヘイストの20%に等しいスキルヘイストを与える。各チームメイトのステータスが増減すると、この効果は計算し直される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "World Atlas#pass": {
+   "source_sha1": "69207d233c223e98329b07bcf65e90f88c743f2f",
+   "plain_sha1": "464e337b96154cf2bb7f53007f3b16b0e87390d5",
+   "ja": "「Shared Riches」で400ゴールド（gold）を稼ぐと自動で「ルーニック コンパス」にアップグレードし、蓄え3個のワードの発動効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "World Atlas#pass2": {
+   "source_sha1": "fa51b209f22af680d49ca064aca0ec1dfba427ed",
+   "plain_sha1": "a9d0468db90109178ada573bc509c5d288647a1a",
+   "ja": "20秒ごとに「Shared Riches」のチャージを得て、最大3チャージ。味方チャンピオンが自身から1050ユニット以内にいるとき、次の方法でチャージを消費する：• 何らかの方法でミニオンを倒すと、自身は15ゴールド（gold）、最も近い味方チャンピオンはキルのゴールドを得る。ミニオンの体力を最大体力の50%（近接）/ 30%（遠隔）未満にするダメージを与えると処刑する。• 通常攻撃かスキルで敵チャンピオンか建物にダメージを与えると、22（近接）/ 20（遠隔）ゴールドを得る。この方法でチャージを消費するのは、攻撃かスキル一回につき一度だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "World Atlas#pass3": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "World Atlas#pass4": {
+   "source_sha1": "26c09bd6bac88478081e8b02f747fc7994ee9977",
+   "plain_sha1": "deb1897b034140d808379a02adf89b5f55be0497",
+   "ja": "ゲーム序盤にトップかミッドのレーンで検知されると、「防衛拡張」（Lane Swap Detector）の不利な効果を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Youmuu's Ghostblade#act": {
+   "source_sha1": "d339d0f88431974ca00ea028b6a1f6ec6257b01f",
+   "plain_sha1": "76de90e736b66502f9d127e8d0148836dd9d972c",
+   "ja": "6（近接）/ 4（遠隔）秒間、移動速度が20%（近接）/ 15%（遠隔）増加し、ゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Youmuu's Ghostblade#pass": {
+   "source_sha1": "4d3f4e4c7113b33997774fa65e58426671db634c",
+   "plain_sha1": "e95d50f4af9aa07239dcf5b31ad340b0b7f9d1aa",
+   "ja": "敵チャンピオンとの戦闘から3秒離れている間、移動速度が20（近接）/ 10（遠隔）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Yun Tal Wildarrows#pass": {
+   "source_sha1": "18e2821581b4e1970a7ea5a0bc660a16a13c3aa0",
+   "plain_sha1": "97b724c7295f7b04273277c93e9c5ee4c6eae126",
+   "ja": "通常攻撃は攻撃開始時に永続的にクリティカル率を0.4%（近接）/ 0.2%（遠隔）得て、最大63（近接）/ 125（遠隔）回まで重なる（クリティカル率25%が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Yun Tal Wildarrows#pass2": {
+   "source_sha1": "dc5429b7e58b4989ab46c29771a870096235f382",
+   "plain_sha1": "02a5a764b3efbc75cf1a2ae0aac69c01bd408c51",
+   "ja": "敵チャンピオンに通常攻撃を使うと、6秒間攻撃速度が30%増加する（クールダウン30秒。攻撃開始時に1秒、クリティカルなら2秒短縮される）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zaz'Zak's Realmspike#act": {
+   "source_sha1": "8228bd2cae03b0b372a61b5dc8ff4e4c7fe6fcdf",
+   "plain_sha1": "651eea226bd839e6d846df52fd7ca25716e5f12a",
+   "ja": "チャージを一つ消費して指定地点に「ステルス ワード」を置き、周囲の範囲の視界を与える。チャージはショップに戻ると補充される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zaz'Zak's Realmspike#pass": {
+   "source_sha1": "0ea2e5dd7932e6d5ee2ad91104cb4187430fa75f",
+   "plain_sha1": "e3dbe33f2f3cfc7f08aa1a80d23629c34a0c2a71",
+   "ja": "敵チャンピオンにスキルのダメージを与えると、0.5秒の遅れの後にその位置で爆発が起き、範囲内の敵に10（+ APの15%）（+ 各対象の最大体力の3%）の魔法ダメージを与える。モンスターに対しては300が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zaz'Zak's Realmspike#pass2": {
+   "source_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "plain_sha1": "33576db95d18c5294fdee388b25073c75eb64257",
+   "ja": "ミニオンを倒しすぎると、得られるゴールドが減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zeke's Convergence#pass": {
+   "source_sha1": "ba80bb421260af00e81e427f9a75e35c10d97caa",
+   "plain_sha1": "07752a2564f66e3ed51bdd78d17c2a9458a2f50f",
+   "ja": "アルティメットスキルを使うと、自身の周囲に5秒間炎と氷の嵐を呼び出し、350ユニット以内の敵に0.25秒ごとに7.5の魔法ダメージを与えて、30%のスロウを与える（クールダウン45秒。アルティメットの使用時から始まる）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zephyr#pass": {
+   "source_sha1": "efc2b64ced37628a046c2535bb1b539c85fc95dd",
+   "plain_sha1": "64487b70eb89644f3d2ad86dcdad60200abca44a",
+   "ja": "通常攻撃（攻撃時効果）で6秒間「Like The Wind」のスタックを得て、攻撃のたびに更新される。スタックごとに移動速度が5%増加し、最大5回まで重なって合計25%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zhonya's Hourglass#act": {
+   "source_sha1": "db217fa96dab08c11c5ebdbcc2aeca50f6a57476",
+   "plain_sha1": "d61bd8e00b08e25a5af115e088293614e51eb54d",
+   "ja": "自身を2.5秒間固有時停止にし、その間対象指定不可かつ無敵になるが、移動・通常攻撃の指示・スキルの使用・サモナースペルの使用・アイテムの発動はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Anvil Voucher#consume": {
+   "source_sha1": "530947a32cb53b3f3c327c98709b1bf2b3b92aad",
+   "plain_sha1": "e2cc65316e912b4f3d2ca448d91a8d077d23f2d7",
+   "ja": "Crowd Favorite のチャンピオンを選んだため、この無料の Voucher が与えられた。ショップフェーズ中に消費すると、このアイテムがインベントリから取り除かれ、無料のステータスボーナスの金床（どの等級でも）を開く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Arcane Sweeper (Trinket)#limit": {
+   "source_sha1": "a1bdc2640d71256725134df73080825c82e3b549",
+   "plain_sha1": "a1bdc2640d71256725134df73080825c82e3b549",
+   "ja": "ゲーム開始から120秒間は発動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Hole Gauntlet#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Black Spear#limit": {
+   "source_sha1": "707234e400c24ef5e60addd24dae4342e099bea4",
+   "plain_sha1": "8bce064831c3612439157d4b4d29a5cf8b65acd6",
+   "ja": "Black Spear は1つまで。カリスタとサイラスだけが使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bravery Voucher#consume": {
+   "source_sha1": "aa4a154feae84351ae4e641f245b21fa171118b8",
+   "plain_sha1": "834ffa7b44373dcb1bd69b160a5451ddb9977c61",
+   "ja": "チャンピオン選択での Bravery に対して、この無料の Voucher が与えられた。ショップフェーズ中に消費すると、このアイテムがインベントリから取り除かれ、無料のステータスボーナスの金床（どの等級でも）を開き、リロールを2回得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cappa Juice#consume": {
+   "source_sha1": "50268860a1f9acf9674d6435f3cd906d5d52afd4",
+   "plain_sha1": "50268860a1f9acf9674d6435f3cd906d5d52afd4",
+   "ja": "自分のチャンピオンの頭にランダムな帽子をかぶせる。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cloak of Starry Night#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Control Ward#consume": {
+   "source_sha1": "fa202fe4148497feebb4dd164c7881a9618e1316",
+   "plain_sha1": "66f7054c5833f98d14ad57cde48859364ad73b13",
+   "ja": "指定した地点（射程600）に可視状態のコントロール ワードを設置する。コントロール ワードは周囲900ユニットの視界を得る。この視界は無効化されない。この視界はさらに次を行う：\n* 敵のワードを可視化し、無効化する。\n* ステルス状態の敵のトラップを可視化する。\n* カモフラージュ状態のチャンピオンを可視化する。\n上記のステルス状態のユニットのいずれかを可視化している間、または Tentacle の視界を得ている間は、このワード自体も敵から見える状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Control Ward#limit": {
+   "source_sha1": "b5a36e60db87c212f7e7d0946e595e12ddb42c7d",
+   "plain_sha1": "f18cf63f701b13020b350172b64c29a42caf4f89",
+   "ja": "インベントリに持てるコントロール ワードは2個まで。マップに設置できるコントロール ワードは1人1個まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Crown of the Shattered Queen#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cruelty#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cull#pass.description2": {
+   "source_sha1": "5e7679cf3ccfac6449fd7ca4dfbb935a0c9825cf",
+   "plain_sha1": "2fa7115d35557f6c3c6465efdf53173ad4434b51",
+   "ja": "ミニオンを100体倒すと、さらに350ゴールドを得て、このパッシブは以後無効になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Darksteel Talons#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Death's Daughter#limit": {
+   "source_sha1": "f3daf891e99325493ceb3fd86e0c454d107455ec",
+   "plain_sha1": "7ccb8d5346775a2d41adb99c7b9c4addfc4b13a6",
+   "ja": "ガングプランクだけが使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Decapitator#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Demon King's Crown#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Demonic Embrace#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Detonation Orb#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Diamond-Tipped Spear#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Divine Sunderer#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dragonheart#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Duskblade of Draktharr#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Eleisa's Miracle#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Elixir of Avarice#consume": {
+   "source_sha1": "5b0f4e11dc76fc221a1f8c35efb0050336c882e1",
+   "plain_sha1": "2976351660bbc39b134074278e9a86e3f58141d7",
+   "ja": "60秒間、ミニオンに対する通常攻撃時効果として5の追加確定ダメージを与える。さらに、効果が切れたときに40ゴールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Elixir of Force#consume": {
+   "source_sha1": "a7abb521d5c2032d76e834a5b1fd88e2b14b3808",
+   "plain_sha1": "4c4eee3eb62c97c32dc35ec71348200e99ce6dc6",
+   "ja": "60秒間、増加攻撃力12または魔力20（アダプティブ）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Elixir of Iron#consume": {
+   "source_sha1": "26b0c24d2c0268dca5edab6f25c6ff9c62b03bee",
+   "plain_sha1": "5a106794f2b895a8f89796bb3691e87e4d80b4f0",
+   "ja": "180秒間、増加体力300、行動妨害耐性25%を得て、サイズが15%大きくなる。効果中は、移動すると短い間だけ道が残り、その中にいる味方チャンピオンは15%の増加移動速度を得る。死亡中でも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Elixir of Skill#consume": {
+   "source_sha1": "94383493e14f3b92a14e350e791720dfcc7c5a08",
+   "plain_sha1": "94383493e14f3b92a14e350e791720dfcc7c5a08",
+   "ja": "スキルポイントを1得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Elixir of Sorcery#consume": {
+   "source_sha1": "0c6dd36e281855c61b8fcb1efaefd5ebb575906b",
+   "plain_sha1": "5238fb650a483a460daf14b263132e79b8debc5d",
+   "ja": "180秒間、魔力50と増加マナ自動回復15を得る。効果中は、敵チャンピオンかタワーに作用して戦闘状態になると、25の追加確定ダメージを与える（チャンピオンごとに5秒のクールダウン。タワーにはクールダウンなし）。死亡中でも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Elixir of Wrath#consume": {
+   "source_sha1": "eaa901774619c589ed8e86891ccaa83fb4ead03b",
+   "plain_sha1": "26c9d746150e46565a2ab81d1b6bcce03d998b75",
+   "ja": "180秒間、増加攻撃力30を得て、チャンピオンに与えた物理ダメージの12%の体力を回復する。範囲ダメージでは、この回復の効果は33%になる。死亡中でも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Empyrean Promise#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Everfrost#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Eye of the Herald#consume": {
+   "source_sha1": "0643c9d0b6a1c4f8ffcdf235769e826fc5ea872a",
+   "plain_sha1": "0031e63905006a0549ceca8dab6841985c4304b6",
+   "ja": "固有 - Herald's Call：1秒の詠唱時間の後、自分の前方350ユニットに Eye of the Herald を召喚する。これは5秒かけて砕かれ、敵の建造物を攻める味方の Rift Herald Mercenary を召喚する。Mercenary には、Rift Herald Rodeo を使って自分か味方のチャンピオンが乗れる。ミニオン以外と戦闘中は、この効果に3秒のクールダウンが入る。トリンケットの期限が切れると、所持者が死亡していても、0.033秒の遅延の後に必ず自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Eye of the Herald#limit": {
+   "source_sha1": "9bbde0b209151cce4633fbff132270f092e13bbe",
+   "plain_sha1": "4cc371c21fd4a34ec4e69f260539c13410fdacfb",
+   "ja": "Eye of the Herald は、240秒以内に使わないとインベントリから取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Farsight Alteration#limit": {
+   "source_sha1": "57041f7303989e12a7ef95d9c1700c3751ec1a86",
+   "plain_sha1": "57041f7303989e12a7ef95d9c1700c3751ec1a86",
+   "ja": "別のトリンケットに替えても、クールダウン中ならそのクールダウンは引き継がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fire at Will#limit": {
+   "source_sha1": "f3daf891e99325493ceb3fd86e0c454d107455ec",
+   "plain_sha1": "7ccb8d5346775a2d41adb99c7b9c4addfc4b13a6",
+   "ja": "ガングプランクだけが使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flesheater#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Force of Entropy#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fulmination#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Galeforce#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gambler's Blade#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gargoyle Stoneplate#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gold Stat Anvil Voucher#consume": {
+   "source_sha1": "ac3e66ddf5e03e04f992dedc239cd2bfc6a8daba",
+   "plain_sha1": "ee1dfbdced503c31d923956b6a921b62a898d69d",
+   "ja": "Viscero Guest of Honor が、自分とチームメイトへの補償としてこの無料の Voucher を与えた。ショップフェーズ中に消費すると、このアイテムがインベントリから取り除かれ、無料のゴールド等級のステータスボーナスの金床を開く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Goredrinker#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Gustwalker Hatchling#limit": {
+   "source_sha1": "0dd7519e91dc434f56137e4dfd9eb808f1e4daa6",
+   "plain_sha1": "9d19a817cd5ec04a13d0a8f239f4678c9bba68d7",
+   "ja": "Role Binding：ショップで消費アイテム以外のアイテムを買えるようにするには、ジャングルアイテムを購入する必要がある。ショップに売却できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hamstringer#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Health Potion#consume": {
+   "source_sha1": "5c607685e55b40d5c8a75a052948a5cb3108e702",
+   "plain_sha1": "23d440cbdcd7a088abd76d1a76c8c9e6f47ee3e9",
+   "ja": "15秒間、0.5秒ごとに体力を4回復し、合計で120回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Health Potion#limit": {
+   "source_sha1": "adf4403cf7f734d1c5ffdb58aca6efbfc7e7e134",
+   "plain_sha1": "adf4403cf7f734d1c5ffdb58aca6efbfc7e7e134",
+   "ja": "同時に5個まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hemomancer's Helm#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hexbolt Companion#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Hextech Rocketbelt#act.description2": {
+   "source_sha1": "f740d86ad1798016bd60a9f52364cf9783952a3a",
+   "plain_sha1": "611bfbea7cff66d93c40002c161fd12cc8f7c977",
+   "ja": "Supersonic は使用者の通常攻撃のタイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Innervating Locket#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Juice of Haste#consume": {
+   "source_sha1": "3a5797dd9802ad4bc2e8df400ed452c98b10e30d",
+   "plain_sha1": "46cd6748b79abb01e922540454bc7c8d4c15e2c6",
+   "ja": "現在のラウンドの間、20（+ スキルヘイストの15%）のスキルヘイストを得る。このジュースは戦闘ラウンドの開始時に自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Juice of Haste#limit": {
+   "source_sha1": "e0720a65eeecea5d5459db79616599f06d13e1db",
+   "plain_sha1": "cfb7944e222de578fa5423d08a4e3630a109957c",
+   "ja": "Juice of Haste は、装備中か消費済みのものを合わせて1つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Juice of Power#consume": {
+   "source_sha1": "b56436fa40787d8792d4b184863a54191bf41611",
+   "plain_sha1": "66f63ccfa1f1ea610999e4825b926f9dcef384eb",
+   "ja": "現在のラウンドの間、18（+ 攻撃力の10%）の増加攻撃力、または30（+ 魔力の10%）の魔力（アダプティブ）を得る。このジュースは戦闘ラウンドの開始時に自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Juice of Power#limit": {
+   "source_sha1": "82e7ff31b7e81e0288f83ed9cef68a08f01f9e79",
+   "plain_sha1": "59b776a5e5813048349dd514d70e92e083c41dcd",
+   "ja": "Juice of Power は、装備中か消費済みのものを合わせて1つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Juice of Vitality#consume": {
+   "source_sha1": "6462320788e78aa78c3cd14708034007bd6cadc8",
+   "plain_sha1": "6ec82c5653b282549bfbfdb2ec82d3dcd1b2900b",
+   "ja": "現在のラウンドの間、300（+ 最大体力の10%）の増加体力を得る。このジュースは戦闘ラウンドの開始時に自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Juice of Vitality#limit": {
+   "source_sha1": "caf24bd6fce62f404c35898f7d1e54af0211b5eb",
+   "plain_sha1": "ecbec1ffa9d2949410d46fc2775d359b475ea95f",
+   "ja": "Juice of Vitality は、装備中か消費済みのものを合わせて1つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Kinkou Jitte#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legendary Assassin Item#consume": {
+   "source_sha1": "5b67f59c43eadb0c6e00ba8b72505d3986d0416e",
+   "plain_sha1": "5b67f59c43eadb0c6e00ba8b72505d3986d0416e",
+   "ja": "Legendary のアサシンアイテムの半ランダムな選択肢を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legendary Fighter Item#consume": {
+   "source_sha1": "bc3ac5e15c8d44b7032e67f7facdb1d4ae1f17ad",
+   "plain_sha1": "bc3ac5e15c8d44b7032e67f7facdb1d4ae1f17ad",
+   "ja": "Legendary のファイターアイテムの半ランダムな選択肢を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legendary Mage Item#consume": {
+   "source_sha1": "86bcd1d775bc6092949cf966c77aadd792135fc3",
+   "plain_sha1": "86bcd1d775bc6092949cf966c77aadd792135fc3",
+   "ja": "Legendary のメイジアイテムの半ランダムな選択肢を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legendary Marksman Item#consume": {
+   "source_sha1": "20117be98d3e9b7047888e0167b4ea83c18c6b0f",
+   "plain_sha1": "20117be98d3e9b7047888e0167b4ea83c18c6b0f",
+   "ja": "Legendary のマークスマンアイテムを得る半ランダムな選択を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legendary Support Item#consume": {
+   "source_sha1": "9a62ea35664515ecb43aa639c1665b87a1f5143e",
+   "plain_sha1": "9a62ea35664515ecb43aa639c1665b87a1f5143e",
+   "ja": "Legendary のサポートアイテムの半ランダムな選択肢を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Legendary Tank Item#consume": {
+   "source_sha1": "c38af26265561a53cf0fa3c2d2ef6a6cfb7912e2",
+   "plain_sha1": "c38af26265561a53cf0fa3c2d2ef6a6cfb7912e2",
+   "ja": "Legendary のタンクアイテムの半ランダムな選択肢を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lightning Rod#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Locket of the Iron Solari#limit": {
+   "source_sha1": "7294381419aefd26d304040088f21456a71964fd",
+   "plain_sha1": "5a676ab9a0fec12090b8331613891c746f57b644",
+   "ja": "対象が直前の20秒以内に別の「献身」の効果を受けていた場合、「献身」のシールド量は75%減少する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mirage Blade#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Moonflair Spellblade#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mosstomper Seedling#limit": {
+   "source_sha1": "0dd7519e91dc434f56137e4dfd9eb808f1e4daa6",
+   "plain_sha1": "9d19a817cd5ec04a13d0a8f239f4678c9bba68d7",
+   "ja": "Role Binding：ショップで消費アイテム以外のアイテムを買えるようにするには、ジャングルアイテムを購入する必要がある。ショップに売却できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Night Harvester#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Oracle Lens#limit": {
+   "source_sha1": "57041f7303989e12a7ef95d9c1700c3751ec1a86",
+   "plain_sha1": "57041f7303989e12a7ef95d9c1700c3751ec1a86",
+   "ja": "別のトリンケットに替えても、クールダウン中ならそのクールダウンは引き継がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Poro-Snax#consume": {
+   "source_sha1": "7db9a15c221be80dce0282a5ce494e9d218438f3",
+   "plain_sha1": "be22f6ad0236c5a3869cf4b7eb7d13e679193d73",
+   "ja": "近くのポロにおいしいおやつを与え、ポロのサイズを大きくする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Poro-Snax#limit": {
+   "source_sha1": "77b0d7d38ac0f4998dbd0fec4ec3bc5e8b20145f",
+   "plain_sha1": "77b0d7d38ac0f4998dbd0fec4ec3bc5e8b20145f",
+   "ja": "同時に2個まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Prismatic Item#consume": {
+   "source_sha1": "65a812f2a9e91ab3e0f14d743fada7488a19a278",
+   "plain_sha1": "65a812f2a9e91ab3e0f14d743fada7488a19a278",
+   "ja": "プリズムアイテムの半ランダムな選択肢を開く。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Prismatic Stat Voucher#consume": {
+   "source_sha1": "d4e45089f99ca03e06d46bd1dce79ae3a4131db5",
+   "plain_sha1": "5aa12627e983f9d84ede3ecc3e7eb827033f513e",
+   "ja": "Viscero Guest of Honor が、自分とチームメイトへの補償としてこの無料の Voucher を与えた。ショップフェーズ中に消費すると、このアイテムがインベントリから取り除かれ、無料のプリズム等級のステータスボーナスの金床を開く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Prowler's Claw#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Puppeteer#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pyromancer's Cloak#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Radiant Virtue#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Raise Morale#limit": {
+   "source_sha1": "f3daf891e99325493ceb3fd86e0c454d107455ec",
+   "plain_sha1": "7ccb8d5346775a2d41adb99c7b9c4addfc4b13a6",
+   "ja": "ガングプランクだけが使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reality Fracture#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reaper's Toll#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Redemption#limit": {
+   "source_sha1": "e80e5f5a3f1361f00e697ae8c51eabe6e9d6d53c",
+   "plain_sha1": "517148509bd7a7f768b9ce8ef654ed51fe02efd9",
+   "ja": "対象が直前の12秒以内に別の「介入」の効果を受けていた場合、「介入」の効果は50%減少する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Refillable Potion#consume": {
+   "source_sha1": "e7fdc0d68243d0582453d62678d73eac8c3751a0",
+   "plain_sha1": "38377ce21357d2e38c3cc8543e75892ba6dc495d",
+   "ja": "チャージを消費して、12秒間、0.5秒ごとに体力を4.1666…回復し、合計で100回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Regicide#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Reverberation#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runaan's Hurricane#pass.description2": {
+   "source_sha1": "2968cba995e9905b00a05303332554edf4c1cf1e",
+   "plain_sha1": "dba6b6355511c2c883ba0c0dcb53a6ebb3b55ba8",
+   "ja": "矢は、メインの対象ではない敵のうち、自分に最も近い敵を狙う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runaan's Hurricane#limit": {
+   "source_sha1": "bc0d3c7edaa6c37426167f943862db1065173be8",
+   "plain_sha1": "86e95afbe595a26d22e72e094fe3f6df8df746c8",
+   "ja": "遠隔攻撃のチャンピオンだけが購入できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Runecarver#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sanguine Gift#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scarecrow Effigy#limit": {
+   "source_sha1": "04cf4d9505a4d72e8c2d98afdaa9f20bd38f12a1",
+   "plain_sha1": "1e9602457955fdf02b54eece93f1aa43729ff7b9",
+   "ja": "フィドルスティックスだけが使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scorchclaw Pup#limit": {
+   "source_sha1": "0dd7519e91dc434f56137e4dfd9eb808f1e4daa6",
+   "plain_sha1": "9d19a817cd5ec04a13d0a8f239f4678c9bba68d7",
+   "ja": "Role Binding：ショップで消費アイテム以外のアイテムを買えるようにするには、ジャングルアイテムを購入する必要がある。ショップに売却できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Scouting Ahead#limit": {
+   "source_sha1": "a1bdc2640d71256725134df73080825c82e3b549",
+   "plain_sha1": "a1bdc2640d71256725134df73080825c82e3b549",
+   "ja": "ゲーム開始から120秒間は発動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Seeker's Armguard#limit": {
+   "source_sha1": "3b8d3c6ced02f781e91ff8df1a268bd98d593b8a",
+   "plain_sha1": "730c489c6e361b1e9c913bd4a7591bb58fa1438c",
+   "ja": "発動すると「砕けたアームガード」に変わり、再び発動することはできない。一度砕けると、それ以降に購入するものもすべて砕けたものになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shattered Armguard#limit": {
+   "source_sha1": "3287ccc6a724bf5b8ea773ce4c0aae5588113102",
+   "plain_sha1": "5a1036239d152c9ff05be489f961d3718ca1700f",
+   "ja": "「シーカー アームガード」は「時間停止」の効果を発動するとこのアイテムに変わる。「シーカー アームガード」を壊した後は、ショップでは「砕けたアームガード」しか買えない。これは素材とステータスは同じだが、発動効果を持たない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shield of Molten Stone#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slightly Magical Boots#limit": {
+   "source_sha1": "b71db7f8d9bd11b4a9d99e565549faee97c4d517",
+   "plain_sha1": "6490b7e7fb7842adf109ad1eb39fdb4f73e4c2ec",
+   "ja": "「魔法の靴」を選んだときだけ使える。ブーツの代わりになり、一定時間後に無料で自動的に得られる。事前に購入することはできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Solstice Sleigh#limit": {
+   "source_sha1": "5b8d89987f167c95e123612e4b1c9ad46115fffe",
+   "plain_sha1": "ba52bf27fa99b595c2dbb02e59979fd3718d2800",
+   "ja": "「ソリ滑り」の発動には近くの味方が必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stat Bonus#consume": {
+   "source_sha1": "882f037eca9ab4306b6398d2d460825c44dedaa7",
+   "plain_sha1": "329e93380565196ccd37f78750b07952ef49d117",
+   "ja": "同じランダムな等級の Stat Shard の、半ランダムな選択肢を開く。Stat Shard は恒久的なステータスの増加を与える。このアイテムは購入すると自動で消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stealth Ward#limit": {
+   "source_sha1": "7f92fb2bcecc3471b12dab71d2519161d2af5209",
+   "plain_sha1": "6ad1dfcb5d36b4829bb1f6ef93e49099d46c0bd8",
+   "ja": "別のトリンケットに替えても、クールダウン中ならそのクールダウンは引き継がれる。各プレイヤーがマップに同時に置けるステルス ワードまたは Totem Ward は3個まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sword of the Divine#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Talisman of Ascension#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Titanic Hydra#act.description2": {
+   "source_sha1": "db5354923536b6145ae52e8d7699a32224cdcfbc",
+   "plain_sha1": "b59c6ba2eed3060f25625476ab45d5b4800b6a20",
+   "ja": "Titanic Crescent は使用者の通常攻撃のタイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Total Biscuit of Everlasting Will#consume": {
+   "source_sha1": "28a2b08db0daf3d35a2d9b9b4156d72400566998",
+   "plain_sha1": "ec02e1eca5c7bc3fab50c8d8b2932d01d1861a6e",
+   "ja": "5秒かけて20（+ 最大体力の2%）回復する。回復量は減少体力に応じて0%～100%増加し、最大で5秒かけて40（+ 最大体力の4%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Trailblazer#limit": {
+   "source_sha1": "a604465872eec5082957158d1c53f4c396e3ad2b",
+   "plain_sha1": "4cceebdbc2b9f0e40e1d3f4d32bef05d879ee79f",
+   "ja": "遠隔攻撃のチャンピオンはスロウを与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Turbo Chemtank#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Twilight's Edge#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Twin Mask#limit": {
+   "source_sha1": "4973dd57679eeca9aad53e8ede759c53ca8f9f94",
+   "plain_sha1": "f1a4a7193b6928246a81332b8546211bf4cfb5fa",
+   "ja": "プリズムアイテムの金床からのみ入手できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Vigilant Wardstone#limit": {
+   "source_sha1": "ef33ea4f497bbf94fe1ccf08e3bf9a42e5efbc73",
+   "plain_sha1": "0e7f2a2e017587c9cddd5eddf3cdccbf9f65710f",
+   "ja": "「アーケインキャッシュ」のチャージが最大のときは、コントロール ワードを追加で購入できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Watchful Wardstone#limit": {
+   "source_sha1": "ef33ea4f497bbf94fe1ccf08e3bf9a42e5efbc73",
+   "plain_sha1": "0e7f2a2e017587c9cddd5eddf3cdccbf9f65710f",
+   "ja": "「アーケインキャッシュ」のチャージが最大のときは、コントロール ワードを追加で購入できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wordless Promise#limit": {
+   "source_sha1": "211e99aa889b8918a3bbb63b22722076ab80c015",
+   "plain_sha1": "8643f2a66a5b1dda5fd6254522af8601a4d24e89",
+   "ja": "Wordless Promise は、各チームでどちらのチャンピオンが持つ場合も1つまで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Your Cut#consume": {
+   "source_sha1": "bdda8556d4b2d31ddc4da0347d5a2c5c5630f0c9",
+   "plain_sha1": "c036f8d9ac5caba14ebc64de7aec1e19296b7c1d",
+   "ja": "倒されたチャンピオンの賞金と同じゴールドを得る（基本の額が上限）。死亡中でも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Your Cut#limit": {
+   "source_sha1": "1a2ed53d7f9e79e78b7df8daa465889e7a699089",
+   "plain_sha1": "41f2373a640cb155460c633dfe356555b8ba4de2",
+   "ja": "Death from Below によってだけ与えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  }
+ },
+ "withheld": {}
+}

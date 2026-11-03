@@ -73,20 +73,28 @@
    "ja": "亡霊の騎兵の波はヘカリムとは独立に進み、常に同じ距離を突撃する。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Hecarim/Warpath#description": {
    "source_sha1": "10ebb5423f1d7a7347ea1a665020f15eee7de4da",
-   "reason": "residual_markup"
+   "plain_sha1": "8201872f19a5415c2d481393b725d4be66371f35",
+   "ja": "固有：ヘカリムは、移動速度の増加の12%～24%（レベルに応じて）に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Hecarim/Devastating Charge#description3": {
    "source_sha1": "9fa78aa3863d793858045cdf6a01cca55d019a23",
-   "reason": "residual_markup"
+   "plain_sha1": "9ac8c8fb1bb1a8932791a488d03fabcd3166b305",
+   "ja": "「チャージ」はクリティカルになりえ、攻撃力の（100% + 「インフィニティ・エッジ」 40%）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Hecarim/Onslaught of Shadows#description2": {
    "source_sha1": "2cf5c1cd92478e839802debc560424b2844e9dfb",
-   "reason": "residual_markup"
+   "plain_sha1": "b8782b8aa12837bca2df3578e8cd9385582e63e0",
+   "ja": "到着時、ヘカリムは周囲の敵に0.75～1.5秒間（移動した距離に応じて）フィアーを与え、0%～99%（ヘカリムからの距離に応じて）のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

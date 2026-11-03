@@ -84,12 +84,14 @@
    "ja": "この間、「毒の軌跡」は1秒間の「重傷」も与え、毒が続く間は0.25秒ごとに更新される。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Singed/Fling#description": {
    "source_sha1": "94a740cacf6d1ccffbe1a8d71fc0db16dab125a1",
-   "reason": "residual_markup"
+   "plain_sha1": "49f68af49f541ee07b030788cdbc1b5964b5203e",
+   "ja": "発動効果：シンジドは対象の敵を0.693秒（0.666秒を次のゲームのティックに切り上げた値）かけて自身の上を越えて550ユニット投げ飛ばし、魔法ダメージを与える。対象の体力の割合に応じたダメージは、ミニオンとモンスターに対しては300が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -108,12 +108,14 @@
    "ja": "スウェインは「Demonflare」の詠唱時間中に移動できる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Swain/Death's Hand#description": {
    "source_sha1": "482f80b5bc39483d38aa89fc0c2bc31f2ee06bfe",
-   "reason": "residual_markup"
+   "plain_sha1": "456c4c4f789bd135c0096f32c6f3cd03350e247b",
+   "ja": "発動効果：スウェインは0.264秒（0.25秒を次のゲームのティックに切り上げた値）かけて、指定方向の扇形に異界の力の弾を五発放ち、命中した敵に魔法ダメージを与える。同じ敵への二発目以降の弾は25%の追加ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

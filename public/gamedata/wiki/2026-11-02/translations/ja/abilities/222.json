@@ -94,12 +94,14 @@
    "ja": "主対象の周囲の敵は80%のダメージを受ける。対象の減少体力に応じた追加ダメージは、モンスターに対しては1200が上限。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Jinx/Switcheroo!#description": {
    "source_sha1": "9971c7c3ae41626748897468b30feba024af0740",
-   "reason": "residual_markup"
+   "plain_sha1": "a27d257c59f8c7f63acba41c34b1b2443016cde4",
+   "ja": "切り替え：ジンクスは、ミニガンの「Pow-Pow」とロケットランチャーの「Fishbones」を切り替える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

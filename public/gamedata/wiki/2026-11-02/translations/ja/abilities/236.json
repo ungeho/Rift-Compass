@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Lucian/Lightslinger#description": {
    "source_sha1": "bfaff2caaeeb30d9725f8b4ace39189f064accab",
-   "plain_sha1": "506460547df8ef6046e9a2f5667220892b1830e5",
-   "ja": "固有：スキルを使用した後、3.5秒以内のルシアンの次の通常攻撃は、攻撃開始時から0.25秒後に追加の一発を撃ち、攻撃力の50%～60%（レベルに応じて）の物理ダメージ（ミニオンには攻撃力の100%）を与える。同じ対象を撃ち、いなければ通常攻撃の射程から50ユニット外までの別の対象を自動で撃つ。",
+   "plain_sha1": "9c908960bd2197c9987510ad1c78e98b64cfc49f",
+   "ja": "固有：スキルを使用した後、3.5秒以内のルシアンの次の通常攻撃は、攻撃開始時から0.25秒後に追加の一発を撃ち、攻撃力の50% / 55% / 60%（レベルに応じて）の物理ダメージ（ミニオンには攻撃力の100%）を与える。同じ対象を撃ち、いなければ通常攻撃の射程から50ユニット外までの別の対象を自動で撃つ。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Lucian/Lightslinger#description2": {
    "source_sha1": "ef99b200d101d6a69d49002c33f920b2a5835c5b",
@@ -94,12 +94,14 @@
    "ja": "再発動：ルシアンは「二挺掃射」を終える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Lucian/The Culling#description": {
    "source_sha1": "46feaa0807c2ae72271c65b25b28f2eff9339181",
-   "reason": "residual_markup"
+   "plain_sha1": "d4a1936a43bf3e5942e5c566984ca44bec051a46",
+   "ja": "発動効果：ルシアンは最大3秒間詠唱し、効果時間の間に指定方向へ最大22（+ 0～22〔+ 「インフィニティ・エッジ」 0～8〕〔クリティカル率に応じて〕）発の弾を連射する。各弾は最初に命中した敵に物理ダメージを与え、ミニオンには二倍になる。詠唱中、0.75秒後から「二挺掃射」を再発動でき、詠唱が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

@@ -101,16 +101,21 @@
    "ja": "距離か無効な場所のためにダッシュで越えられない地形にぶつかると、跳躍は早く終わってその場で衝撃を起こす。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Sett/Pit Grit#description": {
    "source_sha1": "38f5a19c8a7643f87002ce7eaaf33f5133ffef1b",
-   "reason": "residual_markup"
+   "plain_sha1": "0a17559ba85dc013494aa63403781a07838f4220",
+   "ja": "固有 -「Heart of the Half-Beast」：セトは減少体力5%ごとに、0.5秒ごとに0.075 / 0.25 / 0.5 / 1 / 1.025 / 1.05（レベルに応じて）の体力を追加で回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Sett/Pit Grit#description3": {
    "source_sha1": "57c9684c81c3e6f16230d91e6bec033ea792ddab",
-   "reason": "residual_markup"
+   "plain_sha1": "9db2d4279f24a0980e8ff2619e761487192fb6db",
+   "ja": "セトの右パンチは強化され、射程が50増加し（「ナックルダウン」が有効なときを除く）、左パンチの8倍の攻撃速度で攻撃して、5～100（レベルに応じて）（+ 増加攻撃力の55%）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

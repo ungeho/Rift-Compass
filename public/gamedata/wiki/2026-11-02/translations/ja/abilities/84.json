@@ -48,10 +48,10 @@
   },
   "Template:Data Akali/Assassin's Mark#description": {
    "source_sha1": "ecd6cb49ee2843620c9746f993373cbe084a5d5b",
-   "plain_sha1": "638457b3187fcbadef9afcfbd7ecd96f3facf7e7",
-   "ja": "固有：アカリがスキルで敵チャンピオンにダメージを与えると、その敵の周囲に4秒間輪を作り、チャンピオンへのダメージを与えるスキルのたびに更新される。2秒間、輪の中心から離れる方向に動いている間、移動速度が30%～60%（レベルに応じて）増加する。一度に有効な輪は一つだけ。",
+   "plain_sha1": "07256e5becf2c13269e6430814c5ddb6e667d141",
+   "ja": "固有：アカリがスキルで敵チャンピオンにダメージを与えると、その敵の周囲に4秒間輪を作り、チャンピオンへのダメージを与えるスキルのたびに更新される。2秒間、輪の中心から離れる方向に動いている間、移動速度が30% / 40% / 50% / 60%（レベルに応じて）増加する。一度に有効な輪は一つだけ。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Akali/Assassin's Mark#description2": {
    "source_sha1": "cfcbe51b2860e3edf4828bac1d3a0acca9a850b7",
@@ -115,12 +115,14 @@
    "ja": "再発動：アカリは指定方向に800ユニットダッシュし、通過した敵に魔法ダメージ（対象の減少体力に応じて0%～200%増加）を与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Akali/Assassin's Mark#description3": {
    "source_sha1": "a77369c3e15978a5d2de7a1e00c1c80727178d20",
-   "reason": "residual_markup"
+   "plain_sha1": "b298bd6e3e2581f4388d5d261a8f92c047050e6d",
+   "ja": "「Swinging Kama」：アカリの次の通常攻撃は強化され、攻撃モーションが中断されなくなり、射程が二倍になって、35～182（レベルに応じて）（+ 増加攻撃力の60%）（+ APの55%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

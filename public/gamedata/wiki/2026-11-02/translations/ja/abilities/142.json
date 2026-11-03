@@ -108,16 +108,21 @@
    "ja": "「ポータルジャンプ」はゾーイの通常攻撃タイマーをリセットする。ゾーイは「ポータルジャンプ」の使用後と、ブリンクで戻った後に、短い間行動できなくなる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Zoe/More Sparkles!#description": {
    "source_sha1": "15989c9247b4984f3e540f89bc238d050f2d83e6",
-   "reason": "residual_markup"
+   "plain_sha1": "a5fdec3786c391f1e80d4bd887f3b2f3dc30ddd5",
+   "ja": "固有：スキルを使った後、ゾーイは5秒以内の次の通常攻撃か「スペルシーフ」の弾を強化し、飛翔物ではなくなって、16～150（レベルに応じて）（+ APの20%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Zoe/Spell Thief#description3": {
    "source_sha1": "ca14550ceac1a8b251ea4a8ae7ff207f55b55664",
-   "reason": "residual_markup"
+   "plain_sha1": "ede59b6f212c1738d93acb6501db5ffc3d763bd9",
+   "ja": "自動効果：敵チャンピオンが特定のサモナースペルかアイテムの発動効果を使うたびに、距離に関係なく、その敵は対応する「Spell Shard」を地面に落とし、それは半径100の範囲の視界を与えて40秒間残る。敵のミニオンは10%の確率でランダムな「Spell Shard」を持って出現し、ゾーイが倒すとそれを落として20秒間残る。味方チャンピオンが倒した場合は、ゾーイが近くにいるときだけ「Spell Shard」が落ちる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

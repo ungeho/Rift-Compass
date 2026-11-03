@@ -13,10 +13,10 @@
  "entries": {
   "Template:Data Camille/Adaptive Defenses#description": {
    "source_sha1": "58e6fa6a68878c2a816a615aad250b357be8ad06",
-   "plain_sha1": "a0ca131d92c335b6e4fa53e054bd6f032be5bf23",
-   "ja": "固有：一定時間ごとに、カミールの敵チャンピオンへの次の通常攻撃（攻撃時効果）で、最大体力の10%～25%（レベルに応じて）に等しいシールドを得る。シールドは2秒間続き、対象がそれまでにチャンピオンに主に与えた種類と、カミールの現在の物理防御と魔法防御に応じて、物理ダメージか魔法ダメージのどちらかだけを吸収する。",
+   "plain_sha1": "12033d70fdd43b629baa1fe650cc308c14cfbdc1",
+   "ja": "固有：一定時間ごとに、カミールの敵チャンピオンへの次の通常攻撃（攻撃時効果）で、最大体力の10% / 15% / 20%（レベルに応じて）に等しいシールドを得る。シールドは2秒間続き、対象がそれまでにチャンピオンに主に与えた種類と、カミールの現在の物理防御と魔法防御に応じて、物理ダメージか魔法ダメージのどちらかだけを吸収する。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Camille/Precision Protocol#description": {
    "source_sha1": "da420f66527d5942b2ded39543439ad43f188737",

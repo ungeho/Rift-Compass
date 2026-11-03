@@ -1,0 +1,1890 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Adaptive damage#description": {
+   "source_sha1": "ae1581b5ae8b3ad053845bafb7d7e2a77f462526",
+   "plain_sha1": "9360a603d7f62daa10ac7d1356191fd1a96f3531",
+   "ja": "「Adaptive Damage」：この効果は、増加攻撃力と魔力のどちらが多いかに応じて、物理ダメージか魔法ダメージを与える。* 増加攻撃力の方が多い → 物理ダメージ * 魔力の方が多い → 魔法ダメージ。攻撃力と魔力の寄与がどちらもゼロか等しい場合、ダメージの種類はチャンピオンのアダプティブの種類で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bandit#description": {
+   "source_sha1": "5a06eff078c0cfbfc86436ec53ae49af863dcbb9",
+   "plain_sha1": "3d321b1fb3677bd93e5490c192b2643f553e1832",
+   "ja": "味方が倒した近くのミニオン一体ごとに1ゴールド（gold）を得る（範囲1400）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bandit#description2": {
+   "source_sha1": "1f91db36622e8636332d63b74c3235cd5a96cc6e",
+   "plain_sha1": "cfcfce4074512c6f689b438a08cb33ea84da95de",
+   "ja": "敵チャンピオンに通常攻撃か攻撃時効果を与えるスキルを当てると、ゴールド（gold）を得る。対象ごとに5秒のクールダウンがある。* 近接チャンピオン：10ゴールド * 遠隔チャンピオン：3ゴールド",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blink#description": {
+   "source_sha1": "8749db784d48e63cba94a4e840d1ec9cf72bb09e",
+   "plain_sha1": "25815021b08327aaa2de1ed1e91231b741fb5b65",
+   "ja": "ブリンクは、ユニットが間の空間を通らずに地点Aから地点Bへ移る移動の形式を指す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Brittle#description": {
+   "source_sha1": "a272b9c534bc64616529b2facdf152ae7c82863e",
+   "plain_sha1": "2a00e79a46b0355ed9df44031979e9372b3aa566",
+   "ja": "「Brittle」を受けたユニットは、行動妨害耐性が30%低下する。対象が移動不能かサイレンスを受けると、「Brittle」の効果時間は早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Brittle#description2": {
+   "source_sha1": "7be033df2d27789735b49163b0de86101f7b4336",
+   "plain_sha1": "b5406cfd774d175a509e52774265624d0fd698d8",
+   "ja": "行動妨害耐性（Crowd Control Reduction）は、移動系の効果・眠気（drowsy）・ニアサイト・固有時停止・サプレッションを除くすべての受ける行動妨害の効果時間を短くするステータス。行動妨害耐性が0を下回ると、行動妨害の効果時間が長くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Centered range#description": {
+   "source_sha1": "8de533597538342e5a30dffcb9dede190ddf1def",
+   "plain_sha1": "f8bac83951583b7e3f3f2459557be9e47db3e2e2",
+   "ja": "「Centered range」（中心間の距離）は、元のユニットの当たり判定の中心から対象のユニットの当たり判定の中心までで計算する。* 中心間の距離は、ほとんどの対象指定スキルに使われる。* 大きなユニットに対しては効果が低く、届く距離が短く感じられることがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cleanse#description": {
+   "source_sha1": "3dd7d1b0e211e217eedbfa67276782c681de9783",
+   "plain_sha1": "7036d2f032346325f45017318292c189a3e7bcec",
+   "ja": "浄化（cleanse）を受けたユニットは、該当するすべての行動妨害の状態異常が取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cleanse#description2": {
+   "source_sha1": "7b47804e9d67cf5027d01c4c9fc061aee3cd0d38",
+   "plain_sha1": "1c42d64bd6a3b122a846ce6d67bb0e217fab4010",
+   "ja": "* 浄化という作用の性質上、浄化するスキルや効果は、特別な扱いがない限り、本来使用が妨げられる状況でも使える。*「浄化」が常にすべての行動妨害を取り除くことを指すとは限らず、一つか少数の種類の行動妨害だけを指定するものもある。* 浄化は固有時停止を取り除かないが、ノックアップのうち行動不能の部分は取り除く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Critical strike#description": {
+   "source_sha1": "d8aeb4c22ab5d7659c9bfecf55174183f270f804",
+   "plain_sha1": "8a5cf2f451c3802da0f00157d18aba605cee1df4",
+   "ja": "クリティカルとは、特定の状況でダメージが増える効果を指し、増えたダメージをクリティカルのダメージと呼ぶ。最も多いクリティカルは通常攻撃で起こり、クリティカル率に応じて発生する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Critical strike#description2": {
+   "source_sha1": "89d4b69f3adc84f021fbd85d66a9a023643d02fe",
+   "plain_sha1": "119a049a3ee924ad21c6e4e47ffb5b901ed03be0",
+   "ja": "既定では、クリティカルは通常のダメージの200%を与える。「インフィニティ・エッジ」などのクリティカルのダメージの補正で、この割合を増やせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Crowd control#description": {
+   "source_sha1": "9beea6e75918c14a78c7d70ca44295bfc6b384c1",
+   "plain_sha1": "44d97cf59fa44d0bad3b8a4883de08c7375b1658",
+   "ja": "行動妨害を受けたユニットは、移動・攻撃・スキルの使用・視界などの特定の行動を封じられたり、減らされたり、操られたりする状態異常の影響を受けている。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dash#description": {
+   "source_sha1": "01d7ed78781c6561d4f9f9fb41486173fac46b07",
+   "plain_sha1": "9ea832224e29f8e2afadf4b71cb249d09bc2785b",
+   "ja": "ダッシュは、ユニットが間の距離を通って特定の方向や位置へ移動するすばやい移動の行動で、地形の境界は無視する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dash#description2": {
+   "source_sha1": "52dec5ed2499496c21ff8637c22687bcc3d9b4c0",
+   "plain_sha1": "02f6b37da34a86c2a9ab8df30bd3e78cdf6d3f4a",
+   "ja": "ゲームのエンジンはユニットの高さを考えないので、空中を移動するように見えるダッシュも、スキルショットなどの対象の判定では地上にいるものとして扱われる。* ダッシュを移動系の効果と混同しないこと。移動系の効果は通常敵のユニットから受け、行動妨害の弱体効果に分類される。* ダッシュは（敵からの）固有時停止・ノックダウン・ブリンクで中断される。* ダッシュは、移動系の効果やほかのダッシュを含むすべての「move block」と、ほかのいくつかの場合で上書きされる。* すべてのダッシュが地形を越えられるわけではない（例：「正義の鉄拳」「灼熱の突撃」「タンブル」）。* 地形を越える方向に使うと距離が伸びるダッシュもある（例：「影進撃」「完遂」「亡者の引き波」）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dispel#description": {
+   "source_sha1": "46d0547bfcb7c06103711741a97efe9fd45ad98b",
+   "plain_sha1": "4ef9dfcf1eecc2a1ed6e878bc12ff854d094d60d",
+   "ja": "「Dispel」（解除）は弱体効果（例：毒）を取り除く。行動妨害だけを取り除く浄化とも、死後も残らないすべての状態異常（有利・不利に関係なく）を取り除く死亡とも異なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Dispel#description2": {
+   "source_sha1": "b3fbfd4c46f8fff4bfa7d65a59b6948cfcfd6de9",
+   "plain_sha1": "edc76a33c29beecfe2645e7079eb3fa12b580966",
+   "ja": "現在、解除の発生源は蘇生の中にだけある：*「Rebirth」*「戦威修養」*「はぐれスライム」*「クロノシフト」*「ガーディアン エンジェル」",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drain#description": {
+   "source_sha1": "bcf7696ba732c44a21e5efd01adf4a51045aed90",
+   "plain_sha1": "5a92cd36210824c1e160ce98d9e898da069b1023",
+   "ja": "「Drain」（Vamp としても知られる）は、与えたダメージに応じた回復の効果のうち、スペルヴァンプでもライフスティールでもないものを指す用語。「Drain」の効果は回復とシールドの効果の恩恵を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drowsy#description": {
+   "source_sha1": "865559713ec126fad7487ca0a0202f4d60fb7d8b",
+   "plain_sha1": "09cce6a181c122de3b2de191af8b905ec3ddcf1f",
+   "ja": "眠気（drowsy）を受けたユニットはスロウを受け、その後スリープになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drowsy#description2": {
+   "source_sha1": "10b641233e1009c7233fee72a95ad63d4be99248",
+   "plain_sha1": "c568fa40e378bbd1d8ad6b7e87c2663679badae9",
+   "ja": "眠気を取り除くか、その終わりの時点で移動系の効果か行動妨害を無効にしていれば、スリープにはならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drowsy#interrupts": {
+   "source_sha1": "558ffaeb39990538864d61579becd04af6545d78",
+   "plain_sha1": "558ffaeb39990538864d61579becd04af6545d78",
+   "ja": "どの行動も中断しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drowsy#reduction": {
+   "source_sha1": "e3311b05c8c53592666c6529bc84067cc5903ded",
+   "plain_sha1": "8ac173707b6898004de811e3f39d69f7b7caddfe",
+   "ja": "効果時間は行動妨害耐性の影響を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drowsy#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Drowsy#removal": {
+   "source_sha1": "dce71b64fe9784163fee0a55c8b8d181c546b5bf",
+   "plain_sha1": "4ba8d3fa1006add892c573b08d14687790190f86",
+   "ja": "浄化で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Edge range#description": {
+   "source_sha1": "02b22c7f5cdd6ca55af6f4837c89109277e39a14",
+   "plain_sha1": "a2aa260b345a791288fce85818352009e071ccd6",
+   "ja": "「Edge range」（縁間の距離）は、元のユニットの当たり判定の縁から対象のユニットの当たり判定の縁までで計算する。* 縁間の距離は主に通常攻撃・スキルショット・自身を中心とした範囲効果（オーラを含む）に使われる。* 大きなチャンピオンに対しては効果が高くなり、元の側の届く距離が伸びる。これは有利にも不利にもなる：耐久力のあるチャンピオンは大きいことが多く当たりやすく、もろいチャンピオンは小さいことが多く当たりにくい。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Energized#description": {
+   "source_sha1": "dbb88af6ee9daed8fb230359dcf7f99bacbf0953",
+   "plain_sha1": "bd91cfc7896dade0f2136a630dee27f37db12d46",
+   "ja": "「Energized」は、一部のアイテムとルーンの効果で、最大100の「Charge」を与える。「Energized」を持つチャンピオンは、通常攻撃一回ごとに「Charge」を6、何らかの方法で24ユニット移動するごとに1得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Energized#description2": {
+   "source_sha1": "27911c226371560abc664d65bee9ff54ae03cbbb",
+   "plain_sha1": "45afd28489368d95c37fda0e7246e03265762d64",
+   "ja": "100チャージで完全に「Energized」になり、次の通常攻撃を強化して、攻撃時効果としてチャージを消費し追加の効果を発動する。「Energized」のすべての発生源は互いに重なる：*「ラピッド ファイアキャノン」は射程を伸ばし、追加ダメージを与える。*「スタティック シヴ」は追加ダメージを与え、近くの追加の対象へ跳ねる。*「ストームレイザー」は追加ダメージを与え、移動速度を増やす。*「ボルテイク サイクロソード」は追加ダメージを与え、脅威を与える。*「フリートフットワーク」は移動速度を増やし、使用者を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ghosted#description": {
+   "source_sha1": "52541de2f89e8b42763844e4d6d93177ecddc2e7",
+   "plain_sha1": "82c51033cc7aedfe961c184cc57b000b85512d0e",
+   "ja": "ゴースト状態のユニットはユニットの当たり判定を無視し、ほかのユニットを通り抜けられ、ほかのユニットもそのユニットを通り抜けられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Grievous wounds#description": {
+   "source_sha1": "60ca78d94963d22a45bab21226b1b8fff8351f17",
+   "plain_sha1": "0829a68593e1ea9439799a855ee3de29afc8d2e1",
+   "ja": "重傷（Grievous Wounds）は、自身への回復・受ける回復・体力自動回復を40%減らす弱体効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Grievous wounds#description2": {
+   "source_sha1": "282b86c6de9a9a202620e9f6bf54e063f3431ab7",
+   "plain_sha1": "bea4db74e8b07edc26776064c658f7bc652879ab",
+   "ja": "重傷は重ならない。別の効果からの重傷は効果時間が重なり、同じ効果からは更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Interrupt#description": {
+   "source_sha1": "1ee635b620a6b2f343e8e315cba63bc2b0de2274",
+   "plain_sha1": "dea14460e1a226549ef6bf6f237f5b26937b8def",
+   "ja": "「Interrupt」（中断）は、進行中の効果を中断する行動妨害の性質で、その効果を完了させないか、中断された状態で発動させる。次の行動妨害は、詠唱するスキルと溜めるスキルを中断する（スキル側に記載がない限り）：* ノックアップ * 強制行動（チャーム、フィアー、タウント）* サイレンス（disrupt、ポリモーフ）* スリープ * 固有時停止 * スタン（サスペンション）* サプレッション。次の行動妨害はダッシュを中断する：* ノックアップ * ノックダウン * 固有時停止。通常攻撃の攻撃モーションは、攻撃を妨げるすべての形の行動妨害で中断される。グラウンドとスネアは、詠唱する移動スキルと溜める移動スキルだけを中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Invulnerability#description": {
+   "source_sha1": "b5db8bcd5f8a7579187885cf6fdc562b62da40e1",
+   "plain_sha1": "ebad22205c5f9b554a223caed761f88f136eca8e",
+   "ja": "無敵（Invulnerable）のユニットは、受けるすべてのダメージを0にし、ダメージで発動する効果を防ぐ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lunge#description": {
+   "source_sha1": "b2748b941209cc0605fe7b1209fa2686dc94bfa7",
+   "plain_sha1": "c09f4b2e6a685e3a1eb4b0b17794473aa1aa7533",
+   "ja": "「Lunge」（突進）は、スキルの詠唱モーション（短射程のスキルなど）や強化された攻撃のモーション（射程を伸ばす強化など）の間のチャンピオンの移動を指し、続く攻撃の射程に入るためのもの。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lunge#description2": {
+   "source_sha1": "3a8f4a5ae6c38492efad0ece8268444cc40266c6",
+   "plain_sha1": "a2b83065cd66a134184178580b01b3cf4e9fbe8f",
+   "ja": "突進はダッシュとは別の移動で、主に、ダッシュに作用する効果（「ステッドファスト」「フコウとユーウツ」など）を発動させない点が違う。プレイヤーが作った薄い地形を越えられる突進もある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Poison#description": {
+   "source_sha1": "fc219c3a261e2cd3b656f5b1ce0201ebbee4211e",
+   "plain_sha1": "8b88dc3c0fb3983ebf7f759e5005043ced91be8b",
+   "ja": "毒（poison）は、選ばれた少数の弱体効果の種類。「ツインファング」は、毒を受けている対象に使うと追加の効果がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Poison#description2": {
+   "source_sha1": "947b9ec3cbce676928ba269282c72ac88efe2e6f",
+   "plain_sha1": "fc4635611f070f983a1730f5c17cac59e7cbaf41",
+   "ja": "次のものが毒を与える：*「ノクサスブラスト」と「ミアズマ」*「毒の軌跡」*「毒たっぷり吹き矢」と「毒キノコ」*「スゴイ毒ダ！」",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Resurrection#description": {
+   "source_sha1": "e6e9565786251230355389cb8968a9851fe0a0cf",
+   "plain_sha1": "e5af16c8c30ae2f1683dcbd0f9e042e2f1e02986",
+   "ja": "蘇生に守られたユニットは、致命的なダメージを受けると復活の状態に入り、ほとんどの弱体効果を解除する。状態が終わるとユニットは復活する。蘇生の効果はキルにもアシストにも数えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Resurrection#description2": {
+   "source_sha1": "afeab4d5dd607cb5de5b6d40e42e85cc5d704c31",
+   "plain_sha1": "452d3937de2edeeee78cf55f864b68677a6eea63",
+   "ja": "蘇生の発生源には優先順位があり、次の順で発動する：#「クロノシフト」#「戦威修養」#「ガーディアン エンジェル」#「Rebirth」と「はぐれスライム」。蘇生は常にゾンビ状態の効果より優先される。蘇生に入っても詠唱時間はキャンセルされない。「緊急支援」は常に蘇生より優先される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Spell shield#description": {
+   "source_sha1": "86e37a4a3c50b5f7d1fc400030a354977442081d",
+   "plain_sha1": "99b83b394ab88f6839cdf3f1aa6f68fb284284b0",
+   "ja": "スペルシールドは、敵のスキルが受け手に適用されるのを無効にできるいくつかの効果の一つを指す。スペルシールドは、チャンピオンのスキル・エピックモンスター・チャンピオンが呼び出したユニット・アイテムからの多くの発動する効果を無効にしうるが、ルーンとサモナースペルからのものはほとんど無効にしない。例外は「秘儀の彗星」「Unleashed Smite」「Primal Smite」で、これらは防がれる。* 詳細は記事を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Takedown#description": {
+   "source_sha1": "7fee2f8116af337f781b55796fb67a5b1f2d1c0e",
+   "plain_sha1": "15259aac0b10520547ab1968b551bd0242c12c7b",
+   "ja": "「Takedown」（キル関与）は、キルかアシストが認められることを指し、敵の種類はそれぞれの使用場面で指定される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Takedown#description2": {
+   "source_sha1": "8981685ac98ed5ea7bd0d0e6c47c05d8383814ee",
+   "plain_sha1": "556385ae3eb0adb084622ce7f49b715efb29dc3e",
+   "ja": "キル関与は、自動効果の発動や、キル関与の直後の時間付きの効果と結び付いている。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Tenacity#description": {
+   "source_sha1": "731fc4a7f81e0a50306187ce8b209d95b8e48885",
+   "plain_sha1": "b5406cfd774d175a509e52774265624d0fd698d8",
+   "ja": "行動妨害耐性（Crowd Control Reduction）は、移動系の効果・眠気（drowsy）・ニアサイト・固有時停止・サプレッションを除くすべての受ける行動妨害の効果時間を短くするステータス。行動妨害耐性が0を下回ると、行動妨害の効果時間が長くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Tenacity#description2": {
+   "source_sha1": "5607409a7a35ce6655bc88fb41e1eb791fb922e5",
+   "plain_sha1": "b848e2cfa2a2ff28c00a13ea9b9c4c850315c7b0",
+   "ja": "* 行動妨害耐性は、効果の組み合わせに応じて乗算か加算で重なる。* 行動妨害の弱体効果の効果時間は付与した時点で計算され、行動妨害耐性で最短0.5秒まで短くできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Untargetable#description": {
+   "source_sha1": "1dc5cd7b67dc6b5bbd9dc79f965b0203980b22e1",
+   "plain_sha1": "daa7696756ff25b9b6b8b55061d68d8768d29232",
+   "ja": "対象指定不可のユニットは無効な対象で、選択することもできず、ほとんどの効果も当たらない。すでに適用された効果は、特別な扱いがない限り、ユニットが対象指定不可になっても無効にならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Untargetable#description2": {
+   "source_sha1": "6d05c5361964cad8e6d85e75437be1880f68ffe7",
+   "plain_sha1": "b8804e55baea3247699ef65bccfcaedc7db750a9",
+   "ja": "対象指定不可になると、対象の捕捉が中断される。これによりチャンピオン以外のユニットはアグロも失う。多くの対象指定不可は、向かってくる対象指定の飛翔物もすべて破壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Vanish#description": {
+   "source_sha1": "26685b4c3f67d0c70a496f416bfae85ff2c60046",
+   "plain_sha1": "e8b0591226f18c3b4b1897f90039f0786af12b93",
+   "ja": "「Vanish」（消失）は、対象指定不可に加えて、ユニットをゲームの描画から一時的に隠し、「オラクル レンズ」などの効果からも完全に探知できずインビジブル（見えない状態）にする。消失したユニットはミニマップ上で見えていると示されない。消失したユニットは行動できない。すべての対象指定不可と同じく、消失した対象にもテザーは残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Vanish#description2": {
+   "source_sha1": "b072049644c73e596ecef016294dc8334987aacc",
+   "plain_sha1": "704711b75867dae4c1503ecd7ede868b8769faf3",
+   "ja": "消失はステルスとはみなされず、視界の効果とも作用しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sight#description": {
+   "source_sha1": "914131dc410bbc9d28982f1495f47035f82c9420",
+   "plain_sha1": "a56ce0fd73634e36499fc2fd97e9056c1860696a",
+   "ja": "視界は、ユニット・建物・一部のサモナースペル・アイテム・スキルが持つ性質で、チームがある範囲やユニットの視界を持っていることを表す。常に中心の距離で測る。視界の線は、地形や可視化されていない茂みの先へは伸びない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sight#description2": {
+   "source_sha1": "8d80a90ec2c05646f60cfc22d5fced8cba27f30d",
+   "plain_sha1": "75fd5c2f300823541cba45f76a09680bcaf1e947",
+   "ja": "視界は、霧や茂みに関係なくユニットを見えるようにし、対象にできるようにする効果も指す。通常の視界ではステルス状態のユニットは見えないが、真の視界では見える。* ニアサイトは視界を妨げる行動妨害の弱体効果で、視界の半径が狭まるのに加えて味方の視界も失う。* 「Obscured vision」は、ユニットを観測できる点で視界に似ているが、ユニットを対象にできるようにはせず、その位置と存在を知らせるだけ。* 「Unobstructed vision」は、視界を制限する障害を無視して、自身の視界の半径をすべて見られる形の視界。* 対象指定を使う効果はすべて、対象の視界を必要とする。遅れのある対象指定の攻撃やスペルは、選んだ対象の視界を急に失うとキャンセルされることがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "True sight#description": {
+   "source_sha1": "39c1fc5b7e0f3e94a499f23e0c42718a472403fa",
+   "plain_sha1": "25be763dddf6bb89507f0c9a835f2b784bb831ca",
+   "ja": "真の視界は、霧・茂み・ステルスを通してユニットを可視化する。ニアサイトの効果は越えられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Exposed#description": {
+   "source_sha1": "95997177d497ff44aeff20f7fcba6888cc87b7ee",
+   "plain_sha1": "c009bcbf14ad6d99ea4ae049a8065a64b2bb0122",
+   "ja": "「Exposed」（露出）のユニットは、茂みの中にいても見える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disabled ward#description": {
+   "source_sha1": "ce71a65f4666e4c6eab9990786f6c07307b4e060",
+   "plain_sha1": "bf3543c22b0c8555b44c760552da174143413376",
+   "ja": "無力化されたワードは視界を与えない。攻撃されている無力化されたワードは、攻撃者を一瞬可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disabled ward#description2": {
+   "source_sha1": "927717ff147494cf44599cb9654ac8cf87563fc7",
+   "plain_sha1": "bda7b017eb57a59f408d075acc156f0173453bf0",
+   "ja": "「コントロール ワード」と「Effigy」は視界を無力化されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ward rubble#description": {
+   "source_sha1": "d7f7062517eeea970023d6f7c929dd77abce5f64",
+   "plain_sha1": "9003cfa080b82d7199b1779792f5520c53cbabd2",
+   "ja": "「Ward Rubble」（ワードの残骸）は、ワードが倒されるか時間切れになるか置き換えられたときにでき、最近そこにワードがあったことを示す。残骸の上に目印が表示され、時間とともに薄れる。残骸と目印は5分間残る。目印には、残骸ができてからの分数に応じた三つの段階がある。1分で一度薄れ、3分でもう一度薄れて、5分でマップから完全に消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Control ward#description": {
+   "source_sha1": "a825a114b2c067577f16b20c53b56652ab7f1232",
+   "plain_sha1": "73ae525cc890059f57e7d93a262fbe0804c8271c",
+   "ja": "周囲900ユニットの視界を与える。視界を無力化されない。その視界はさらに：* 敵のワードを可視化して無力化する。* 敵のステルス状態の罠を可視化する。* カモフラージュ状態のチャンピオンを可視化する。上記のステルス状態のユニットを可視化している間か、「触手」の視界を与えている間は、敵から露出する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Farsight ward#description": {
+   "source_sha1": "724bd7fed2a88a8f767c59fb9b3b6e9954473b99",
+   "plain_sha1": "31a1bc7f649d97a134defa5e78a863289ba8ef77",
+   "ja": "周囲500ユニットの視界を与える。味方からは対象指定不可。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Siege ward#description": {
+   "source_sha1": "61e68ee3195f61e7856393eef9ddc618dfb86fa0",
+   "plain_sha1": "53ffae792c8e8c38b27304590f8bb52f74751648",
+   "ja": "周囲1100ユニットの視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stealth ward#description": {
+   "source_sha1": "f2432396ca74a6d95b076a741e7247a98795b39e",
+   "plain_sha1": "a1580224eb45d53e395d5b9fa19d79e6e33d13cb",
+   "ja": "周囲900ユニットの視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sweeper drone#description": {
+   "source_sha1": "c174cd854c1fb991d348b12a26fb5986c14bfba0",
+   "plain_sha1": "7915d8e8c2967aa0d0f2aa31ffdece81f695b8a7",
+   "ja": "「Sweeper Drone」は周囲を探る装置で、範囲内の見えていない敵ユニットの「Obscured vision」を与える。* ステルス状態のワードと罠は可視化される。ステルス状態のワードは無力化もされ、可視化されなくなってから2秒間その状態が残る。* 探知したユニットの種類ごとにシルエットの色が違う。** チャンピオンは赤。** チャンピオン以外は濃い紫。** ワードは水色。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Totem ward#description": {
+   "source_sha1": "f2432396ca74a6d95b076a741e7247a98795b39e",
+   "plain_sha1": "a1580224eb45d53e395d5b9fa19d79e6e33d13cb",
+   "ja": "周囲900ユニットの視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Zombie ward#description": {
+   "source_sha1": "db76260f0b94359b574bad4fb5c5f54955b9d20f",
+   "plain_sha1": "43910aa799d2bdb12084e22b05bc45faf6e91b78",
+   "ja": "周囲900ユニットの視界を与える。味方からは対象指定不可。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ghost poro#description": {
+   "source_sha1": "94c730245def778125c743b3f7f225832f5f39d5",
+   "plain_sha1": "5dbb277cc9fea0e443adbd39eb1ee91cf2a7ec3c",
+   "ja": "周囲450ユニットの視界を与える。視界を無力化されない。対象指定不可で、敵チャンピオンが近づくと逃げていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Camouflage#description": {
+   "source_sha1": "78da16644779cc4fccec1bc4bf439a270f414847",
+   "plain_sha1": "f7d79286c02300640781cba0aef3bfc278f6693e",
+   "ja": "カモフラージュは、長い時間ユニットを敵の視界から隠すステルスの形式。* カモフラージュ状態のユニットは、敵チャンピオンの探知半径の中にいて、その敵の視線が通っている間（例：カモフラージュ状態のユニットが茂みに隠れていない、敵の視線が地形で遮られていない、ニアサイトで探知半径より狭められていない）、敵の「コントロール ワード」の視線の中（900ユニット）にいるとき、または真の視界を与える効果で可視化されたときに見えるようになる。* カモフラージュ状態のユニットが見えている間、本人には体力バーの上に感嘆符が表示され、見られていることが警告される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Camouflage#description2": {
+   "source_sha1": "7d0017ce15b3323799acae75e8f2e1e486c26e90",
+   "plain_sha1": "b09e764eca2a172a048d40fddcc08e757fe6c7e6",
+   "ja": "ステルス状態のユニットのキャラクターモデルは、ステルス中にダメージを受けるたびに一瞬揺らめく。この揺らめきでユニットが選択できるようになることも、ステルスの効果が解けることもなく、位置が知られるだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Invisibility#description": {
+   "source_sha1": "f270d3c9ff3e2e8aeb6c4a0cde9f84bf6e1d1743",
+   "plain_sha1": "c2da1559c887b9b1b52dfc95f22ceab11cd23b32",
+   "ja": "インビジブルは、短い時間ユニットを敵の視界から隠すステルスの形式。* インビジブル状態のユニットは、真の視界の影響を受けたときだけ見えるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Invisibility#description2": {
+   "source_sha1": "7d0017ce15b3323799acae75e8f2e1e486c26e90",
+   "plain_sha1": "b09e764eca2a172a048d40fddcc08e757fe6c7e6",
+   "ja": "ステルス状態のユニットのキャラクターモデルは、ステルス中にダメージを受けるたびに一瞬揺らめく。この揺らめきでユニットが選択できるようになることも、ステルスの効果が解けることもなく、位置が知られるだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stealthed trap#description": {
+   "source_sha1": "689e7767d4f0027a78a5f74f598949710f5700de",
+   "plain_sha1": "ec021164ffd5cda23ee985907f5c23c2878afb83",
+   "ja": "ステルス状態の罠は、呼び出されてすぐにステルスに入り、一定時間残って、可視化されるまで対象指定不可のユニット。「コントロール ワード」、「Sweeper Drone」（例：「無害なカカシ」や「オラクル レンズ」による）、「アンブラル グレイブ」の「Blackout」で可視化され、再び対象にできるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Krugs#description": {
+   "source_sha1": "3bd7404bc9617da2c9412deaff9d59b69924bb82",
+   "plain_sha1": "d22b8f443d5b58325883cd6ca047143bbe6561f9",
+   "ja": "「Ancient Krug」「Krug」「Mini Krug」は、サモナーズリフトの中立モンスター。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Krugs#description2": {
+   "source_sha1": "c1dde6b65918af86bb99062193c8329882f13a9c",
+   "plain_sha1": "53247e76cd5cfe6de2f653452fbc9833a73baa50",
+   "ja": "クルーグのキャンプは、大型の「Ancient Krug」一体と中型の「Krug」一体からなり、倒すと複数の小型の「Mini Krug」に分かれる。「Ancient Krug」を倒すと「Mini Krug」が四体、「Krug」を倒すと二体出て、キャンプの合計は8体。このキャンプを倒すとゴールド（gold）と経験値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Murk wolves#description": {
+   "source_sha1": "0aab1f163627998649a3e5904a680d106ae76962",
+   "plain_sha1": "c464e922c97b49d676cf3ec339a8e5afba2d4064",
+   "ja": "「Greater Murk Wolf」と「Murk Wolf」は、サモナーズリフトの中立モンスター。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Murk wolves#description2": {
+   "source_sha1": "307b3b5f4125ddddb77863021ecaec30c9ef0885",
+   "plain_sha1": "d687d20e850daca7d33a24b0a34a043f441e68f9",
+   "ja": "マーク・ウルフのキャンプは、大型の「Greater Murk Wolf」一体と小型の「Murk Wolf」二体からなる。このキャンプを倒すとゴールド（gold）と経験値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Raptors#description": {
+   "source_sha1": "b4e4dffc7d44cee5d3ad01a17c04eaf948750b1d",
+   "plain_sha1": "f3e04f0ab3168698361f28fc59e868b1b99ad641",
+   "ja": "「Crimson Raptor」と「Raptor」は、サモナーズリフトの中立モンスター。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Raptors#description2": {
+   "source_sha1": "bf5272351be0349a0bac2fa5c93bedf5c686dc3b",
+   "plain_sha1": "78c752e26399fb815618cbe3c63f65cc15d9609c",
+   "ja": "ラプターのキャンプは、大型の「Crimson Raptor」一体と小型の「Raptor」五体からなる。このキャンプを倒すとゴールド（gold）と経験値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Golems#description": {
+   "source_sha1": "7c542667759d723568465163bf51d38d0b3cb786",
+   "plain_sha1": "e9f9e1d5fcbbf6987f1f3e0c4f04e7f097ad7666",
+   "ja": "ゴーレムのキャンプは、大型のゴーレム一体と小型のゴーレム一体からなる。このキャンプを倒すとゴールド（gold）と経験値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wraiths#description": {
+   "source_sha1": "afc9748af08b03542c96760f27b347c9e2acc1e9",
+   "plain_sha1": "8c3b8efe493f3bd30546822b4f030367dc20eebf",
+   "ja": "レイスのキャンプは、大型のレイス一体と小型のレイス二体からなる。このキャンプを倒すとゴールド（gold）と経験値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wolves#description": {
+   "source_sha1": "aeccba87763ea213894640df4233cddbc50d8eb3",
+   "plain_sha1": "2b4e9b7b0a5ef28a912fcaa5b204f04affe38a31",
+   "ja": "ウルフのキャンプは、大型のウルフ一体と小型のウルフ二体からなる。このキャンプを倒すとゴールド（gold）と経験値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Impatience#description": {
+   "source_sha1": "b1c58462b4817fd053b3f7645afeabfbf5edb4f6",
+   "plain_sha1": "debaab838d193d39969766b8cd44918ebaf50714",
+   "ja": "モンスターは次の場合に時間とともに忍耐を失う：リーシュの範囲の外にいる間、対象を見つけられないとき（例：対象指定不可やステルスのため）、およびエピック以外のモンスターでは対象を切り替えるたび。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Impatience#description2": {
+   "source_sha1": "a1f36fae12185e632144f851561f388076b2262e",
+   "plain_sha1": "f23b8dd5fe5234ec55336e576adb3e7bf1814e9b",
+   "ja": "忍耐がゼロになると、モンスターは中立の位置へ歩いて戻り始め、最大6秒間、自身を回復し攻撃を無視する。この状態のモンスターをリーシュの範囲内で攻撃すると、忍耐が少し戻る。しかしそのタイマーが切れると、モンスターはキャンプへ走って戻り、急速に回復して完全にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forced action#description": {
+   "source_sha1": "8aebd1451489e2b324d35db1c3c087efc1f47a6e",
+   "plain_sha1": "cbed07e093b3b9383f1d9a530b2923f46ab56740",
+   "ja": "「Forced Action」（強制行動）は、行動妨害の種類のうち「Berserk」・チャーム・フィアー・タウントをまとめて呼ぶ用語。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forced action#description2": {
+   "source_sha1": "ad3abbd95e9e1788ca6c285bf52505bc259e63f3",
+   "plain_sha1": "10ba7ad1fceb11872bdf3cf9a580888e11c962e5",
+   "ja": "強制行動を受けたユニットは、自分で制御できない行動を強制され、特定の行動も封じられる。強制行動は、封じられている行動をユニットに強制することはできない。これらの行動妨害は、効果時間の短縮と無効について同じ作用を持つ。チャーム・フィアー・タウントは解除についても同じ作用を持ち、効果の「Source」（その状態異常を与えたスペルを使ったユニット）がある。強制行動は移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forced action#interrupts": {
+   "source_sha1": "96ba833282499e89897f51307dc91adb28a13792",
+   "plain_sha1": "10818fa4dc0ba699efd32133dc58a858fcd1d5c3",
+   "ja": "詠唱するスキルと溜めるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forced action#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forced action#resist": {
+   "source_sha1": "275d91340b1bd9b091737f90a3b2cb53153ab5f6",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Forced action#removal": {
+   "source_sha1": "02fcfb755a573d2d86cdfa8eafdb4ec0c1424410",
+   "plain_sha1": "40f1f99a1b842390f426ec17871003839cc96bf5",
+   "ja": "浄化で、または「Source」が死ぬと取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Immobilize#description": {
+   "source_sha1": "bcf323c4c8fedce3a330eab383810a1473f9dc7c",
+   "plain_sha1": "e3aec7a16ee235cc31d9c3d9f99be467dc0a6ffd",
+   "ja": "移動不能のユニットは自分の移動を制御できず、移動の指示も移動スペルの使用もできなくなる。次の行動妨害がユニットを移動不能にする：* ノックアップ * 強制行動（Berserk、チャーム、フィアー、タウント）* スネア * スリープ * 固有時停止 * スタン（サスペンション）* サプレッション。「Impaired movement」（移動の妨害）は、上記に加えてスロウを受けているユニットも指す似た用語。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Airborne#description": {
+   "source_sha1": "2fac3797b07a3009d2d8e2110d32256fba5ccca8",
+   "plain_sha1": "b2535d663431cafe832a2240c1ceca0fbb6a7fd2",
+   "ja": "ノックアップ（airborne）されたユニットは、指定の方向へ、特定の地点へ、または今の位置で一定時間、強制的に移動させられ（移動系の効果）、その間は移動を制御できず、攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用もできない。ノックアップは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Airborne#interrupts": {
+   "source_sha1": "ee7e1cc277338b55f5651d493cb50b911cb5d3da",
+   "plain_sha1": "456afe9b10561d1952a709cacd1a84a546a34e44",
+   "ja": "攻撃モーション（中断されないものを除く）と、詠唱するスキルと溜めるスキルをすべて中断する。伴う移動系の効果は、ダッシュやほかのノックアップを含む、それまでのすべての移動系の効果を上書きする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Airborne#reduction": {
+   "source_sha1": "7199572ae7a08df005496a403c4e1fa81675a840",
+   "plain_sha1": "7fd6dce1e060789bbcb9f391a48f4b2b69ced759",
+   "ja": "ノックアップとその強制移動の実行時間は、行動妨害耐性の影響を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Airborne#resist": {
+   "source_sha1": "7d9ed4c41f3fa6c2815413deb42c6ef18072face",
+   "plain_sha1": "f0561acac97478dc703da1f2abc1daaa87fa39b9",
+   "ja": "行動妨害の無効、移動系の効果の無効、「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Airborne#removal": {
+   "source_sha1": "613a46ad06019ba9c724c0b41cdef540240746cf",
+   "plain_sha1": "a85e4b644d9e990cf088184f60909a5727f0ae37",
+   "ja": "ノックアップに伴って適用される強制移動は浄化で取り除けず、それは本来攻撃と移動を封じるもので、ダッシュ・ブリンク・突進で上書きできる。浄化の効果は、「生命の息吹」「クレンズ」「ミカエルの祝福」「クイックシルバー」を例外として、ノックアップの状態異常を取り除く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blind#description": {
+   "source_sha1": "8868f9abf495f99aa75fff2e0299a65e3cc0f52a",
+   "plain_sha1": "3e383474b49c9fea1442e552e691d30fda691364",
+   "ja": "ブラインドを受けたユニットは、効果時間の間通常攻撃を外す。回避やブロックできる対象を攻撃するのに似ているが、仕組みは同じではない。外れた通常攻撃はダメージを与えられず攻撃時効果も与えないが、一部の強化された通常攻撃は例外。ブラインドは、通常攻撃の封印とは違い、攻撃の指示を出すことは妨げない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blind#interrupts": {
+   "source_sha1": "d5cccc8916be890739fcaecc4e878df2dc629fe5",
+   "plain_sha1": "9eecf1558f81ef2dde65c74bf602c02e35ca4933",
+   "ja": "どの行動も中断しないが、通常攻撃による攻撃時効果の発動を防ぐ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blind#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blind#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Blind#removal": {
+   "source_sha1": "15a8c5d5f1e2f021bbd75e4640e499c6752d9907",
+   "plain_sha1": "98c63ce3c9f5270192d1eb2daa8adfb164d8517b",
+   "ja": "浄化で取り除かれるが、「ミカエルの祝福」は例外。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Charm#description": {
+   "source_sha1": "839e81003344e99983e18d9290846e8efcd97b6f",
+   "plain_sha1": "c136d5106ed0e774c522c8f0bfcd79430e83e567",
+   "ja": "チャームを受けたユニットは、効果時間の間「Source」（チャームのスペルを使ったユニット）に向かって真っすぐ移動させられ、その間は指示した移動・攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。すべてのチャームはスロウも与える。チャームは移動不能の効果。強制行動は、封じられている行動をユニットに強制することはできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Charm#interrupts": {
+   "source_sha1": "486d169ebc9df03ab86e85c96eaf4471b85d1e4e",
+   "plain_sha1": "91d7ca8f132b3b2ef8f3a87480796aa8c154dacf",
+   "ja": "攻撃モーション（中断されないものを除く）と、詠唱するスキルと溜めるスキルをすべて中断し、それまでの強制行動の効果も上書きする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Charm#reduction": {
+   "source_sha1": "ed7c38d7ccdffccbaf70d0bcb26efb5ec7f46b47",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Charm#resist": {
+   "source_sha1": "e94544402a4eda023d6ea860efaa99a572ff44d2",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Charm#removal": {
+   "source_sha1": "eafe192be64209a7a5334c1c33bf4c02a3f44091",
+   "plain_sha1": "40f1f99a1b842390f426ec17871003839cc96bf5",
+   "ja": "浄化で、または「Source」が死ぬと取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#description": {
+   "source_sha1": "5bab76f4253e4e5f3f52e43506640c00fc850c01",
+   "plain_sha1": "8653e569fd4be51c9cdc0e9d5820250cb8379c53",
+   "ja": "攻撃速度低下（cripple）を受けたユニットは、効果時間の間、合計攻撃速度が一定の割合低下する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#description2": {
+   "source_sha1": "4d69feeaca066fce07bb95df43cc3935ab4806b9",
+   "plain_sha1": "1d4c357c22730716ed5c7b25416441810ace6ffb",
+   "ja": "攻撃速度低下の発生源どうしは乗算で重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#description3": {
+   "source_sha1": "a65cc117b1642df4f833b2481a5f9238508a1e46",
+   "plain_sha1": "971629de63085c3ad594499550cadb3a6a8a0cb2",
+   "ja": "攻撃速度低下の値が負なら、代わりにユニットの攻撃速度が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#interrupts": {
+   "source_sha1": "558ffaeb39990538864d61579becd04af6545d78",
+   "plain_sha1": "558ffaeb39990538864d61579becd04af6545d78",
+   "ja": "どの行動も中断しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#resist": {
+   "source_sha1": "2c0b247def88c3a1489ab3c3c39a93cc067810cc",
+   "plain_sha1": "044c5f5ff4140eda2c1e8cd63f98121b55736444",
+   "ja": "行動妨害の無効と攻撃速度低下の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cripple#removal": {
+   "source_sha1": "fc8a8d5371cf7d4885d2e76907aa37fb42230b8f",
+   "plain_sha1": "a00072b948b2af99fa564558ede8137c3fe40307",
+   "ja": "浄化と、特に「ハイランダー」で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disarm#description": {
+   "source_sha1": "7651f6a067445869535fd58b3b0348d4f7f39cf9",
+   "plain_sha1": "602eeac8425ae044075a119448403d62c2c7f586",
+   "ja": "通常攻撃の封印（disarm）を受けたユニットは、効果時間の間、通常攻撃の指示を出せない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disarm#interrupts": {
+   "source_sha1": "789c8d83ada9c427b5da1c9d31f0d1af7003f126",
+   "plain_sha1": "0cad7305120934097689e7a47d85a891dde501c5",
+   "ja": "通常攻撃の攻撃モーション（中断されないものを除く）と「インフェルノトリガー」を中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disarm#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disarm#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disarm#removal": {
+   "source_sha1": "15a8c5d5f1e2f021bbd75e4640e499c6752d9907",
+   "plain_sha1": "98c63ce3c9f5270192d1eb2daa8adfb164d8517b",
+   "ja": "浄化で取り除かれるが、「ミカエルの祝福」は例外。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disrupt#description": {
+   "source_sha1": "a6a406809e9782331657875bb4ca7776e0476c4a",
+   "plain_sha1": "ef72c627697a6888645117fca2866b25f51484d2",
+   "ja": "「Disrupt」を受けたユニットは、詠唱するスキルと溜めるスキルが中断される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disrupt#description2": {
+   "source_sha1": "4bbc3c4e45cdacd484027dc062117fbbb09edfcc",
+   "plain_sha1": "80474d0e7ca286726bf4569fc49b14cda4ba18e2",
+   "ja": "「Disrupt」は状態異常ではなく、状態異常も与えない。サイレンスと混同しないこと。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disrupt#interrupts": {
+   "source_sha1": "f23689a5d06071acd49edbb361b332d35615649d",
+   "plain_sha1": "88a2472673d7abc17e22dc4f5949e87a87bf3dee",
+   "ja": "詠唱するスキルと溜めるスキル、およびスキルの使用を妨げる行動妨害で中断されるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disrupt#reduction": {
+   "source_sha1": "a79eb388b014b728fb52b874b90b027e187a980e",
+   "plain_sha1": "298766bdcf40492a594d894cf2327dd4affeb6cd",
+   "ja": "効果は一瞬で、短くするものはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disrupt#resist": {
+   "source_sha1": "7d2e9051b030f34fdaf8ad1c1321e4548ae92ecd",
+   "plain_sha1": "bb2436830794a5117abc09ff228c7e5454f16d51",
+   "ja": "行動妨害の無効と、サイレンスを防ぐはずの効果で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Disrupt#removal": {
+   "source_sha1": "05637c7bf4dab46c30318af3d0c5a66d77fa5426",
+   "plain_sha1": "c3633ccdb003ebd5e96b7b47664f519e11cdb816",
+   "ja": "効果は一瞬で、取り除くものはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Entangle#description": {
+   "source_sha1": "efbfd50fdb600ef297f763c5812f95a6324957a0",
+   "plain_sha1": "97b4911342d925302afc8397f162396466c62056",
+   "ja": "「Entangle」を受けたユニットはスネアを受ける。スネアを受けたユニットは、効果時間の間、自分の移動を制御できず移動スペルも使えない。この効果は、すでにダッシュ中の対象を本来叩き落としはしない。スネアを受けたユニットも移動系の効果は受ける。スネアは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Entangle#description2": {
+   "source_sha1": "e93cb230b5356383892c1b4f5382a26432175427",
+   "plain_sha1": "638ca4ac9ddcb96dbff97d55ac4061a38b6be175",
+   "ja": "「Entangle」は R の代表的な効果で、対象を叩き落とし、通常攻撃も封じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Entangle#interrupts": {
+   "source_sha1": "bc6c6fce4eca75412df22c95d18678acfa103a9b",
+   "plain_sha1": "3492f17fa740ab1b9ee5b1028f38bbf6c743fa76",
+   "ja": "攻撃モーション（中断されないものを除く）と、記載がない限り移動の詠唱を中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Entangle#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Entangle#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Entangle#removal": {
+   "source_sha1": "d4bc8c97f785c7f72e878cf256720e6b2334854b",
+   "plain_sha1": "1c72f07018c792ad5206f44d04f6cfb8dfc54b2e",
+   "ja": "浄化で取り除かれる。「Mikael's Crucible」は「Entangle」のスネアの部分だけを取り除き、通常攻撃の封印は取り除かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flee#description": {
+   "source_sha1": "4d3645be763398a9efa7ab8a6956a8041e95124e",
+   "plain_sha1": "db835167341fbfc675c7860edc9f718afa459013",
+   "ja": "フィアー（flee / fear）を受けたユニットは、効果時間の間「Source」（フィアーのスペルを使ったユニット）から真っすぐ離れる方向へ移動させられ、その間は指示した移動・攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。すべてのフィアーはスロウも与える。フィアーは移動不能の効果。強制行動は、封じられている行動をユニットに強制することはできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flee#interrupts": {
+   "source_sha1": "486d169ebc9df03ab86e85c96eaf4471b85d1e4e",
+   "plain_sha1": "91d7ca8f132b3b2ef8f3a87480796aa8c154dacf",
+   "ja": "攻撃モーション（中断されないものを除く）と、詠唱するスキルと溜めるスキルをすべて中断し、それまでの強制行動の効果も上書きする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flee#reduction": {
+   "source_sha1": "ed7c38d7ccdffccbaf70d0bcb26efb5ec7f46b47",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flee#resist": {
+   "source_sha1": "e94544402a4eda023d6ea860efaa99a572ff44d2",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flee#removal": {
+   "source_sha1": "eafe192be64209a7a5334c1c33bf4c02a3f44091",
+   "plain_sha1": "40f1f99a1b842390f426ec17871003839cc96bf5",
+   "ja": "浄化で、または「Source」が死ぬと取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ground#description": {
+   "source_sha1": "f26ce372bb00dcf3ddd62ce0f18b6643ade82cc4",
+   "plain_sha1": "36f1d3eba1c8218832ce18f4fb59d0a71fd97e16",
+   "ja": "グラウンドを受けたユニットは、効果時間の間、移動スペルを使えない。この効果は、すでにダッシュ中の対象を本来叩き落としはしない。グラウンドを受けたユニットも移動系の効果は受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ground#description2": {
+   "source_sha1": "ab9ba9e31bd3b8c25837fb117c95a435736df3c9",
+   "plain_sha1": "9f2244013b188ee7e5c6c06a9b70a9f4032217d7",
+   "ja": "移動スペルには、すべてのダッシュとブリンクのスキル（リコール／強化されたリコール、サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Dash」を含む）と、いくつかの追加の場合が含まれる。グラウンドは、持続する範囲効果で最もよく使われる唯一の行動妨害で、その範囲は状態異常を続けて与え直す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ground#interrupts": {
+   "source_sha1": "5a95ded821a2c4ce7f35f6813f26c28ea6d24715",
+   "plain_sha1": "ee12ce8da28a13eee320d00fc639930c9acc09ab",
+   "ja": "記載がない限り、移動の詠唱を中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ground#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ground#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ground#removal": {
+   "source_sha1": "dce71b64fe9784163fee0a55c8b8d181c546b5bf",
+   "plain_sha1": "4ba8d3fa1006add892c573b08d14687790190f86",
+   "ja": "浄化で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knockdown#description": {
+   "source_sha1": "a9d649aee3300a09cca9bff981745a5420ef761c",
+   "plain_sha1": "abff2885dd22358544b6e707ad41148f1eb1fc09",
+   "ja": "ノックダウンは、ダッシュ中のユニットか、ノックアップの効果で移動させられているユニットにだけ効く。ノックダウンを受けたユニットはダッシュか移動系の効果を中断され、即座に地面に置かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knockdown#description2": {
+   "source_sha1": "990784bdce3f0cbccd62f1566d58b569134e2e53",
+   "plain_sha1": "4e36d64605e4bdd498d157e48fe80192f3b70052",
+   "ja": "ノックダウンは状態異常ではない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knockdown#interrupts": {
+   "source_sha1": "abf7124c0f3a2b3e6c026db7055b438e0f61f445",
+   "plain_sha1": "fd7a65a7b1236b1c565c572a297a830167d2e88c",
+   "ja": "すべてのダッシュとノックアップの効果（移動系の効果と状態異常）を中断する。ノックアップは場合によってノックアップの状態異常が取り除かれることがある（発生源によって一貫しない）が、移動系の効果は必ず早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knockdown#reduction": {
+   "source_sha1": "a79eb388b014b728fb52b874b90b027e187a980e",
+   "plain_sha1": "298766bdcf40492a594d894cf2327dd4affeb6cd",
+   "ja": "効果は一瞬で、短くするものはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knockdown#resist": {
+   "source_sha1": "d3268943b30a8b5224910e57e0dffe9ba21e93e9",
+   "plain_sha1": "ea8507e17032be03025b0066b732744d2dd38ed0",
+   "ja": "行動妨害の無効と移動系の効果の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Knockdown#removal": {
+   "source_sha1": "05637c7bf4dab46c30318af3d0c5a66d77fa5426",
+   "plain_sha1": "c3633ccdb003ebd5e96b7b47664f519e11cdb816",
+   "ja": "効果は一瞬で、取り除くものはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nearsight#description": {
+   "source_sha1": "a180af68207cc1e10e3cfdb5330f85d85c5cac79",
+   "plain_sha1": "e484d1040a96102ada916ff3944e547cf34c663a",
+   "ja": "ニアサイトを受けたユニットは視界の半径が狭まり、その半径より先は見えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nearsight#description2": {
+   "source_sha1": "48c1f81973a3d248bc3082399dd92f1a420591da",
+   "plain_sha1": "424c19a203133e175d18cbd5fb39c8e18d4cfd07",
+   "ja": "ニアサイトの間、ユニットはステルス状態のワードや罠を可視化できない。ニアサイトを受けたユニットは、すべての味方の視界と、外部のすべての視界（ワードやスキルからのものを含む）を失う。このため、通常攻撃を含む対象指定の効果は、ユニットの狭まった視界の半径の外には使えない。真の視界と「Unobstructed vision」も、ニアサイトで遮られた視界は越えられない。ニアサイトの発生源どうしは重ならず、視界を最も大きく狭めるものだけが効く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nearsight#interrupts": {
+   "source_sha1": "3287fc6b32ac8c3b977bd6f08c91eab240ea487b",
+   "plain_sha1": "8ae11e2c946e0e3f88d9e73c8aa6bbe7fe198020",
+   "ja": "ニアサイトを受けたユニットの対象が新しい視界の範囲の外にいると、対象への指示を中断し、自動の対象の捕捉を防ぐ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nearsight#reduction": {
+   "source_sha1": "e3311b05c8c53592666c6529bc84067cc5903ded",
+   "plain_sha1": "8ac173707b6898004de811e3f39d69f7b7caddfe",
+   "ja": "効果時間は行動妨害耐性の影響を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nearsight#resist": {
+   "source_sha1": "bab72c67c449f7538a7f121af80ecc91fa38c6d7",
+   "plain_sha1": "cf3c2d34df65a7fb4036a8ac31b8b36b3b79a632",
+   "ja": "行動妨害の無効で防がれるが、「リポスト」と「Black Shield」は例外。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Nearsight#removal": {
+   "source_sha1": "3e216a142dc84760cd8dd08abf5fe84fd52e4a3f",
+   "plain_sha1": "e938d7033b0e802ebfbcbec5d02523edafa60b92",
+   "ja": "浄化で取り除かれるが、「クレンズ」と「ミカエルの祝福」は例外。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pacify#description": {
+   "source_sha1": "9dca867e602c9a141a9cc0f00224eb2ccc3ebf86",
+   "plain_sha1": "efd9ba2f112f82feb2170afaebaa12fdf3a75639",
+   "ja": "「Pacify」を受けたユニットは、攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」の使用ができない。「Pacify」は通常攻撃の封印とサイレンスの効果を合わせたもので、ポリモーフはさらに対象を無力な小動物に変える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pacify#interrupts": {
+   "source_sha1": "67f96721e0ab42754fe5a8336045dfa9b8f496ef",
+   "plain_sha1": "02b46f6ca0c8a8c7ea78250b4e97ab528528ae7a",
+   "ja": "攻撃モーション（中断されないものを除く）と、詠唱するスキルと溜めるスキルをすべて中断し、「ブリザード」も中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pacify#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pacify#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Pacify#removal": {
+   "source_sha1": "90fb79d6d2b75b953a1e266a4498af70bf76130b",
+   "plain_sha1": "950045b3032c09dd05274aaca95f65e578061416",
+   "ja": "浄化で取り除かれる。「Mikael's Crucible」は「Pacify」のサイレンスの部分だけを取り除き、通常攻撃の封印は取り除かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Polymorph#description": {
+   "source_sha1": "3dd20426c0d27e7281e2690bdc5e6356f825ad5b",
+   "plain_sha1": "8c9f5e7a038d6a132de086e66940a1868b035d46",
+   "ja": "ポリモーフを受けたユニットはサイレンスを受け、無力な小動物に変えられる。ポリモーフを受けたユニットは、ミニマップ上で見えていると示されない。サイレンスを受けたユニットは、効果時間の間、スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Polymorph#description2": {
+   "source_sha1": "69fd1aeaefa90064df28d920ee8bf989e011ebdb",
+   "plain_sha1": "27f51c3f48b91dfeb08bf36c7a58d45b68efb77c",
+   "ja": "ポリモーフはサイレンスに追加の効果を合わせたもので、「Whimsy」の代表的な効果であり、効果時間の間、対象の通常攻撃も封じて移動速度を低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Polymorph#interrupts": {
+   "source_sha1": "b59f2a7ed8a4b31333df05c84c24571ffc2eecdb",
+   "plain_sha1": "d9b02aa1e06eb8bbaf10c62f58071f61b731b26d",
+   "ja": "すべての攻撃モーション（中断されないものを含む）と、詠唱するスキルと溜めるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Polymorph#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Polymorph#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Polymorph#removal": {
+   "source_sha1": "dce71b64fe9784163fee0a55c8b8d181c546b5bf",
+   "plain_sha1": "4ba8d3fa1006add892c573b08d14687790190f86",
+   "ja": "浄化で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Root#description": {
+   "source_sha1": "57a8ed277405446f0b6e0f59db5335840224f6d6",
+   "plain_sha1": "1e81d079a0ac92d120d2e35a8592ea34ce6e2286",
+   "ja": "スネアを受けたユニットは、効果時間の間、自分の移動を制御できず移動スペルも使えない。この効果は、すでにダッシュ中の対象を本来叩き落としはしない。スネアを受けたユニットも移動系の効果は受ける。スネアは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Root#description2": {
+   "source_sha1": "d25e4ef7d34a33cea4260cfc1223392b8fd9d781",
+   "plain_sha1": "f6d4079918c906e6b7954a77cd2ef117ab0c55b0",
+   "ja": "移動には移動の指示が含まれる。移動スペルには、すべてのダッシュとブリンクのスキル（リコール／強化されたリコール、サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Dash」を含む）と、いくつかの追加の場合が含まれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Root#interrupts": {
+   "source_sha1": "5a95ded821a2c4ce7f35f6813f26c28ea6d24715",
+   "plain_sha1": "ee12ce8da28a13eee320d00fc639930c9acc09ab",
+   "ja": "記載がない限り、移動の詠唱を中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Root#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Root#resist": {
+   "source_sha1": "275d91340b1bd9b091737f90a3b2cb53153ab5f6",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Root#removal": {
+   "source_sha1": "dce71b64fe9784163fee0a55c8b8d181c546b5bf",
+   "plain_sha1": "4ba8d3fa1006add892c573b08d14687790190f86",
+   "ja": "浄化で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Silence#description": {
+   "source_sha1": "2a83b9d91473a262c3faacd369c54c82387525ae",
+   "plain_sha1": "eb017112c9302e097d0b3ce8b394df0ff5cf9d40",
+   "ja": "サイレンスを受けたユニットは、効果時間の間、スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Silence#interrupts": {
+   "source_sha1": "96ba833282499e89897f51307dc91adb28a13792",
+   "plain_sha1": "10818fa4dc0ba699efd32133dc58a858fcd1d5c3",
+   "ja": "詠唱するスキルと溜めるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Silence#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Silence#resist": {
+   "source_sha1": "3175789b674a1c6016667289697e744aafea882a",
+   "plain_sha1": "6e6140b83b01b4a4159df482f85227ec3fa129b8",
+   "ja": "行動妨害の無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Silence#removal": {
+   "source_sha1": "dce71b64fe9784163fee0a55c8b8d181c546b5bf",
+   "plain_sha1": "4ba8d3fa1006add892c573b08d14687790190f86",
+   "ja": "浄化で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sleep#description": {
+   "source_sha1": "04191f394efa08f9e472155ac22aacad31db3359",
+   "plain_sha1": "6cc3c313ae234198d91e03de841043dbb7517d6c",
+   "ja": "スリープのユニットは、効果時間の間、自分の移動を制御できず、攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。スリープは眠気の効果時間が終わった後に起こる。スリープは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sleep#interrupts": {
+   "source_sha1": "72603a60a72119bb1c94318c9fd79a9c61f1f351",
+   "plain_sha1": "01ce642d56b03729cad67f933e2df96204d2815e",
+   "ja": "スリープになると、攻撃モーション（中断されない通常攻撃を除く）と、詠唱するスキルと溜めるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sleep#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sleep#resist": {
+   "source_sha1": "7d9ed4c41f3fa6c2815413deb42c6ef18072face",
+   "plain_sha1": "f0561acac97478dc703da1f2abc1daaa87fa39b9",
+   "ja": "行動妨害の無効、移動系の効果の無効、「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Sleep#removal": {
+   "source_sha1": "5472452be92d15dae53ecbfe71ae25a0397c5e15",
+   "plain_sha1": "8d14206cc415e9af2d49a3743d838d771f37165d",
+   "ja": "浄化と、持続でも間接でもないダメージを受けると取り除かれる。ミニオンと小型・中型のモンスターからのダメージはスリープに影響しない。軽減後の値が10以下のダメージも無視され、スリープに影響しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#description": {
+   "source_sha1": "4aedafeb734f498bf5d47e3dc921d24c6f7c72c2",
+   "plain_sha1": "d7d0beefa293cac6ea79015ee698ae8dd9e4c7f1",
+   "ja": "スロウを受けたユニットは、効果時間の間、移動速度が低下する。割合のスロウでは、対象の移動速度を110未満にはできない。スロウの中には、対象の移動速度を固定の値にするものもあり、その値からはさらに下げることも上げることもできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#description2": {
+   "source_sha1": "95f1391fb8f5ca9eb3425c2dccc34dfaaafb2ba5",
+   "plain_sha1": "95f1391fb8f5ca9eb3425c2dccc34dfaaafb2ba5",
+   "ja": "移動速度の計算には、値が最も大きいスロウだけが使われる。それ以外のスロウは、値の大きいスロウが切れるまで無視される。スロウの強さは効果時間の間に強まったり弱まったりすることがある。同じ弱体効果のスロウは、記載がない限り重ならず、付与のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#description3": {
+   "source_sha1": "48d5e9714b9082eae5c595ecdd62690cc8232dd4",
+   "plain_sha1": "1801202a403cea5b9882a5820b270469d40d37bb",
+   "ja": "スロウの値が負なら、代わりにユニットの移動速度が上がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#interrupts": {
+   "source_sha1": "558ffaeb39990538864d61579becd04af6545d78",
+   "plain_sha1": "558ffaeb39990538864d61579becd04af6545d78",
+   "ja": "どの行動も中断しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#reduction": {
+   "source_sha1": "49071a44b762c7d0b5d2bd5a96202d13ef4d35f2",
+   "plain_sha1": "f3439fe011fcb7e2f4c5a3f234f1e21a549c6f5d",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。強さはスロウ耐性で弱まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#resist": {
+   "source_sha1": "170e3055a279edbe5dd4cd9f1a5dc0def3647d3e",
+   "plain_sha1": "d7a92534d9ef4fce33d9e7e65cd921db72dfb09d",
+   "ja": "行動妨害の無効とスロウの無効で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow#removal": {
+   "source_sha1": "75887b5ef299ef76c6607f27013090e7198a6d68",
+   "plain_sha1": "11c083c861a762b86f62a66748d868c43ba308b8",
+   "ja": "浄化、「断固たる一撃」「ハイランダー」「超特大の雪玉！」で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stasis#description": {
+   "source_sha1": "7113c9f5acb4ea6cfe629485bc35c8a22051be23",
+   "plain_sha1": "e721bc8f9fd2c89c2930d4d2fb4699933d6dab8b",
+   "ja": "固有時停止のユニットは、効果時間の間、自分の移動を制御できず、攻撃の指示・スキルの使用・アイテムの発動・あらゆるサモナースペルの使用ができないが、無敵かつ対象指定不可でもある。固有時停止は移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stasis#interrupts": {
+   "source_sha1": "95ac5a618ba2020d7e12bc88912a85f68f794411",
+   "plain_sha1": "d9179bf2e08e4b537e816bbe890f6ffa7f6455b3",
+   "ja": "攻撃モーション（中断されないものを除く）、詠唱するスキルと溜めるスキルをすべて、すべてのダッシュと移動系の効果を中断する。ノックアップ中のユニットは地面に置かれるが、ノックダウンはされない（この場合ノックアップの状態異常は取り除かれない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stasis#reduction": {
+   "source_sha1": "e3311b05c8c53592666c6529bc84067cc5903ded",
+   "plain_sha1": "8ac173707b6898004de811e3f39d69f7b7caddfe",
+   "ja": "効果時間は行動妨害耐性の影響を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stasis#resist": {
+   "source_sha1": "09481a269dde66c8e0021105d882824ca7e4651b",
+   "plain_sha1": "146980d7b4270ff8168a08b490991c0cb8154aeb",
+   "ja": "行動妨害の無効、移動系の効果の無効、「気ままな往診」で防がれる。エピックモンスターとタワーは、行動妨害を無効にしていても特別に固有時停止の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stasis#removal": {
+   "source_sha1": "d979ea132edadb876c8e88a3137fcbb112c5569a",
+   "plain_sha1": "0d7372d3575414e618f74738b0dab533595eae7b",
+   "ja": "どの手段でも取り除けず（死亡を除く）、本来行動妨害を取り除くスキルの発動も防ぐ。「クイックシルバー」は、短いクールダウンに入るか、使えるまま残るか、使えなくなるかのいずれかになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stun#description": {
+   "source_sha1": "05f164631d8e0ed2b62aa8a6ed8638e6729dd623",
+   "plain_sha1": "9511581d48cf073d90a066bc7deac08a65c12467",
+   "ja": "スタンを受けたユニットは、効果時間の間、自分の移動を制御できず、攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。スタンは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stun#interrupts": {
+   "source_sha1": "821c02ee2355f36e0bfba602d734ae5cb3914474",
+   "plain_sha1": "b8dd9a7026f4dff0c76d362a15042e9a5b42108b",
+   "ja": "攻撃モーション（中断されないものを除く）と、詠唱するスキルと溜めるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stun#reduction": {
+   "source_sha1": "9162000d18c0a37902d7cfa8704ce0f6fa49143c",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stun#resist": {
+   "source_sha1": "275d91340b1bd9b091737f90a3b2cb53153ab5f6",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stun#removal": {
+   "source_sha1": "dce71b64fe9784163fee0a55c8b8d181c546b5bf",
+   "plain_sha1": "4ba8d3fa1006add892c573b08d14687790190f86",
+   "ja": "浄化で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suppression#description": {
+   "source_sha1": "6847abe26695c9b5ee0b2f18c44dca23979d0362",
+   "plain_sha1": "ca154ff82de248bef618165df6ed1b58cefb8b82",
+   "ja": "サプレッションを受けたユニットは、効果時間の間、自分の移動を制御できず、攻撃の指示・スキルの使用・アイテムの発動・あらゆるサモナースペルの使用ができない。サプレッションのスキルのアニメーションはさまざまなので、ノックアップの効果と混同しないこと。サプレッションは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suppression#interrupts": {
+   "source_sha1": "821c02ee2355f36e0bfba602d734ae5cb3914474",
+   "plain_sha1": "b8dd9a7026f4dff0c76d362a15042e9a5b42108b",
+   "ja": "攻撃モーション（中断されないものを除く）と、詠唱するスキルと溜めるスキルをすべて中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suppression#reduction": {
+   "source_sha1": "e3311b05c8c53592666c6529bc84067cc5903ded",
+   "plain_sha1": "8ac173707b6898004de811e3f39d69f7b7caddfe",
+   "ja": "効果時間は行動妨害耐性の影響を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suppression#resist": {
+   "source_sha1": "275d91340b1bd9b091737f90a3b2cb53153ab5f6",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suppression#removal": {
+   "source_sha1": "a8355f546e6f3ba856c906c07a7a58582d078c57",
+   "plain_sha1": "e938d7033b0e802ebfbcbec5d02523edafa60b92",
+   "ja": "浄化で取り除かれるが、「クレンズ」と「ミカエルの祝福」は例外。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suspension#description": {
+   "source_sha1": "fa47afb008e274857d6c09b311253d5528e9d0b5",
+   "plain_sha1": "509ff8f05454d816142c6b921a4c0528a3be6f5a",
+   "ja": "サスペンションを受けたユニットは、効果時間の間スタンする。スタンが続く間はノックアップしているようにもふるまう（サスペンションを受けた敵に「鬼哭啾々」を使える）。スタンを受けたユニットは、効果時間の間、自分の移動を制御できず、攻撃の指示・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。サスペンションは移動不能の効果。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suspension#description2": {
+   "source_sha1": "6579ebf3e8bf3b9b18e69c379e4c4f3aa0cdbe41",
+   "plain_sha1": "43c37eb77b029679541985f4ab5ac6d250db5f34",
+   "ja": "通常のスタンと違い、サスペンションは移動系の効果を防ぐ効果で防がれ、サスペンションを受けると進行中のダッシュとノックアップの移動も中断される。通常のスタンと同じく、行動妨害耐性の影響を受け、浄化の効果で完全に取り除ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suspension#interrupts": {
+   "source_sha1": "8481760cae3987b1ff9b5932f0b4706d52f6fc36",
+   "plain_sha1": "b26fd83ffa6ad7cb54d4bf6274306c3b73e261ff",
+   "ja": "攻撃モーション（中断されないものを除く）、詠唱するスキルと溜めるスキルをすべて、すべてのダッシュとノックアップの効果（移動系の効果と状態異常）を中断する。発生源のある弱体効果がなければノックアップの状態異常は取り除かれないが、強制移動は終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suspension#reduction": {
+   "source_sha1": "5c20058ef0af2b7a6e119944093523c2a39d3c7f",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suspension#resist": {
+   "source_sha1": "7d9ed4c41f3fa6c2815413deb42c6ef18072face",
+   "plain_sha1": "f0561acac97478dc703da1f2abc1daaa87fa39b9",
+   "ja": "行動妨害の無効、移動系の効果の無効、「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Suspension#removal": {
+   "source_sha1": "b4a80b40b8bf763e85b0082eb6ac77d842042fe8",
+   "plain_sha1": "c9ccef884634e20ddb4d22d2a81eeb1710852965",
+   "ja": "浄化で完全に取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taunt#description": {
+   "source_sha1": "626bf3d26628f154fdc5eb1b770c1dfca07f29da",
+   "plain_sha1": "d79a2831a9e13523ffc3640a2b0ea947ebf16545",
+   "ja": "タウントを受けたユニットは、効果時間の間「Source」（タウントのスペルを使ったユニット）に通常攻撃をしようとし、その間は指示した移動や攻撃・スキルの使用・アイテムの発動・サモナースペル「フラッシュ」「テレポート」「へクスフラッシュ」「Mark / Dash（ダッシュ）」の使用ができない。タウントは移動不能の効果。強制行動は、封じられている行動をユニットに強制することはできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taunt#interrupts": {
+   "source_sha1": "b0520793c9fc9feeedcca71a0cc4ef33e88fdbea",
+   "plain_sha1": "c7581139383ec8de6d84a4d0624e35d57cd93feb",
+   "ja": "攻撃モーション（中断されないものと「Source」への攻撃モーションを除く）と、詠唱するスキルと溜めるスキルをすべて中断し、それまでの強制行動の効果も上書きする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taunt#reduction": {
+   "source_sha1": "ed7c38d7ccdffccbaf70d0bcb26efb5ec7f46b47",
+   "plain_sha1": "bef6f4e116a517e5e6d35712c0370eba564b51b6",
+   "ja": "効果時間は行動妨害耐性の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taunt#resist": {
+   "source_sha1": "e94544402a4eda023d6ea860efaa99a572ff44d2",
+   "plain_sha1": "053262c405011d778aa42ce76029c2506d0c5e42",
+   "ja": "行動妨害の無効と「気ままな往診」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Taunt#removal": {
+   "source_sha1": "eafe192be64209a7a5334c1c33bf4c02a3f44091",
+   "plain_sha1": "40f1f99a1b842390f426ec17871003839cc96bf5",
+   "ja": "浄化で、または「Source」が死ぬと取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Top#description": {
+   "source_sha1": "6b2b763f1467a370f8e329243a588f8c1aca6ad4",
+   "plain_sha1": "75c15e73fa56a10e1754b08afcff6709e8af29a1",
+   "ja": "ドラフトで組まれたチームの中で、トップレーナーはトップレーンを担当するチャンピオン。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Jungle#description": {
+   "source_sha1": "d1f23e2c1a2e0a4e6810bb84ee2407a27d7f6df0",
+   "plain_sha1": "01f544bad9c3c5ea4ba4583dbda81390b47f9ee6",
+   "ja": "ドラフトで組まれたチームの中で、ジャングラーはジャングルを担当するチャンピオン。ジャングラーは、ジャングルのキャンプをあまり苦労せずに片付けられ、レーンのほかのチャンピオンを奇襲できる必要がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Support#description": {
+   "source_sha1": "d800a7107fcbc9176be8b79cc4ba2fe245a4c0f4",
+   "plain_sha1": "c1bd7d00ecb068314eaac179a4271eaccfc55814",
+   "ja": "ドラフトで組まれたチームの中で、サポートはボトムキャリーと一緒にボトムレーンを担当する二体のチャンピオンの一体。この役割の最初の目標はゲームの序盤を通じてより弱い味方を助けることで、ユーティリティ・離脱させる力・高い基本ダメージのいずれかを持つチャンピオンに向く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Support#description2": {
+   "source_sha1": "fd1cf1fad421c0dc8540d8a7b3f56b48c2322248",
+   "plain_sha1": "398c9530330a0e0d94179f1de61fb4ba7909c360",
+   "ja": "二人のレーンでは、ゴールドを稼ぐ最適な戦略は、一体のチャンピオンにファームさせ、もう一体には経済のアイテムを買うよう勧めること。サポートは後者の役割を担うことが期待されるので、アイテムによる強さの山場に大きく頼るチャンピオンには向かない。サポートはチームの視界に主に貢献することも期待される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Middle#description": {
+   "source_sha1": "183c2821d700f1416e6bafb5d4097ba545d0e37c",
+   "plain_sha1": "28798440969ee08415fdc6b55ed44828e51e1bf5",
+   "ja": "ドラフトで組まれたチームの中で、ミッドレーナーはミッドレーンを担当するチャンピオン。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bottom#description": {
+   "source_sha1": "f0f715cab1b52b7cf28320f91cce5fa3efcc4efa",
+   "plain_sha1": "88a2bd72b642e83e5ddb380e10209c24d56b631d",
+   "ja": "ドラフトで組まれたチームの中で、ボトムキャリーはサポートと一緒にボトムレーンを担当する二体のチャンピオンの一体。最も弱い立場なので、ボトムキャリーは戦う力を大きく高める重要なアイテムを買うため、できるだけ多くのゴールドを得る必要がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Bottom#description2": {
+   "source_sha1": "6946186aa4bb8cc12d2ef1c3743e305e3ba2ed06",
+   "plain_sha1": "3d4c85b3c89b300cfab7f94c9b514bc57e9059a1",
+   "ja": "二人のレーンでは、ゴールドを稼ぐ最適な戦略は、一体のチャンピオンにファームさせ、もう一体には経済のアイテムを買うよう勧めること。ボトムキャリーは前者の役割を担うことが期待され、このポジションはアイテムによる強さの山場に大きく頼るチャンピオンのためのもの。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fill#description": {
+   "source_sha1": "2018cf781a45727a0afe43b69e322dd0a03b8232",
+   "plain_sha1": "60bcaa52d201a67c89cd7647da7aadb17274ff7e",
+   "ja": "「Fill」は、ドラフトのチームを完成させるために任意のレーンを割り当てられることを指す。サモナーズリフトでは、トップ・ジャングル・ミッド・ボット・サポートのいずれか。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Roamer#description": {
+   "source_sha1": "17026333985bb3f978a609922701247078cf32d9",
+   "plain_sha1": "0d0ed9f1a4cead9d6154aa5a877cb97943cdfcd0",
+   "ja": "「Roamer」は、チームの中でチャンピオンが果たせる役割であり、チャンピオンが割り当てられうる非公式のポジションでもある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Roamer#description2": {
+   "source_sha1": "ad34f8b8d7eecc8eb43908eecb66e9a8f55ae73b",
+   "plain_sha1": "8ce2038f829fa9496783b3e5d1f8e00295e9a841",
+   "ja": "* 役割としてのローミングは一般にジャングラーが担うものと考えられるが、ミッド・トップ・サポートのプレイヤー、特に「Catcher」や「Assassin」のチャンピオンを使うプレイヤーもよく取る戦略。* ポジションとしてのローミングは通常サポートかジャングラーの代わりになり、プレイヤーはレーンに出ずに上記の役割だけを行う。ポジションとしてのローミングは、サモナースペル「スマイト」が解放される前のごく低いレベルで（トップに二人行く代わりに）よく見られるが、ほかの段階や、「Hexakill」などの特別なゲームモードでも使われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Melee#description": {
+   "source_sha1": "7796654fd8bb2e89b2054edb6959d76104015570",
+   "plain_sha1": "835c68ba8f5cc9655159823c939a872ecb30dc2c",
+   "ja": "近接チャンピオンの通常攻撃の射程は通常200ユニット以内。近接攻撃はダメージを与えるのに飛翔物を使わないので、「風殺の壁」などの飛翔物を防ぐ効果の影響を受けない。遠隔と近接の形態を切り替えられるチャンピオンもいて、一部のアイテム・ルーンは近接のキャラクターでは効果が違う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Ranged#description": {
+   "source_sha1": "ecf1173e8ede0b9665d5fda6eede21a95f057f0a",
+   "plain_sha1": "c6290c8ba05727860601a855e092de10ef65b2a0",
+   "ja": "遠隔チャンピオンの通常攻撃の射程は通常300ユニットを超える。多くは飛翔物でダメージを与え、それは「風殺の壁」などの防ぐ効果の影響を受ける。遠隔と近接の形態を切り替えられるチャンピオンもいて、一部のアイテム・ルーンは遠隔のキャラクターでは効果が違う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Mana#description": {
+   "source_sha1": "b4afbbf75db434f8a4b8e2364a31f3266841041b",
+   "plain_sha1": "ebf0773e2d3ea2f7b8a3f35e74c4abbefe61e8c0",
+   "ja": "マナ（MP とも呼ばれる）は、多くのチャンピオンがほとんどのスキルを使うのに必要な資源のステータス。マナはマナ自動回復と、一部のスキル・アイテム・ルーン・効果で回復できる。ゲーム内では HUD の青いバーで表され、チャンピオンの現在マナと最大マナを示す。現在マナは、スキルのマナコストを払って使うと減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Manaless#description": {
+   "source_sha1": "d6b3d3b749a885c8ffc7a4196de816a7ff778de6",
+   "plain_sha1": "c58d1684c8b7fc142c89a3179861606cce068cd6",
+   "ja": "マナを使わないチャンピオンは、マナもマナ自動回復も使わず恩恵も受けず、次のものが含まれる：* 気を使う * 「Flow」を使う * 「Fury」を使う * 「Heat」を使う * 体力だけを使う * 資源を使わない",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Energy#description2": {
+   "source_sha1": "2605dcc42d895aff89987cc5cc26e0c54702c745",
+   "plain_sha1": "69d6dbf223f97ac72c90e1510ed0af0da50276aa",
+   "ja": "気の最大は200（シェンは400）で、毎秒10の速さですばやく回復する。このため気のチャンピオンは長い時間で資源を使い切る心配はないが、容量が小さいので多くのスペルを続けて使うのは制限される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Heat#description": {
+   "source_sha1": "c9b06b61b2fc5ca7238014ef91e29d34782aabb9",
+   "plain_sha1": "ba04997a651bdb96a158fda21040b842a8a79aa7",
+   "ja": "「Heat」は「ポンコツタイタン」に固有の制限の仕組みで、使える時間を制限するためのものだが、気と同じく使えない時間が無限に続くことはない。「Heat」はスキルの使用に必要ではなく、代わりにスキルの使用時に溜まり、「Overheating」で一定時間特定の行動ができなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Fury#description": {
+   "source_sha1": "95108fa644efc2ecd537c61b8e426d26b2226d71",
+   "plain_sha1": "82df9ea75993153f1771b3dc959438fb2973eb1d",
+   "ja": "「Fury」は、使えるようになる前に溜める必要のある、名前の付いた多くの資源をまとめて呼ぶ用語で、マナや気のように最初からある程度ある資源と対比される。ほとんどの使用者では、この資源は一つのスキルか自動効果だけに必要。勢いを表し、使用者に攻撃を続けることを促し、強さの山場や強化を制限していることが多い。「Fury」の溜まり方は使用者で違うが、常に戦闘中（例：攻撃時効果、スキルの使用、ダメージを受ける）に溜まり、戦闘外では減ることが多い。呼び名：*「激情の支配」の Fury * Rage * Battle Fury * Dragon Fury * Crimson Rush * Courage * Grit *",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Flow#description": {
+   "source_sha1": "ce7750e435dce8920bcb5258bd66d7830ad8265f",
+   "plain_sha1": "c77348b400d880ea0fa091c52019926a329889b8",
+   "ja": "「Flow」は、使えるようになる前に溜める必要のある資源で、最初からある程度あるマナと対比される。体力バーの下に表示され、満タンになるまでは青く、満タンで白くなる。ただし「Fury」やその変種と違い、「Flow」はユニットの戦闘の状態の影響を受けない。「Flow」の例は一つしかないので、この例外の妥当性は今後問われるかもしれない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Heal#description": {
+   "source_sha1": "63b2c301d3b04686089f74dfefb4ab8acdac121b",
+   "plain_sha1": "3427aad10abaab758658ccf968135b57c5b992cb",
+   "ja": "回復はユニットの現在体力を回復するが、最大体力を超えることはない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Shield#description": {
+   "source_sha1": "9a6ea6bef8b51060eb54364fd3141f85cbd8bafa",
+   "plain_sha1": "d4b03340f74fd3d5dccee4d3ad8612e524ee4ec8",
+   "ja": "シールドはユニットの体力の上に耐久値を加え、実際の体力の代わりに次のダメージを吸収する。シールドの種類に応じて、さまざまなアイテムや効果で強化できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "On-hit#description": {
+   "source_sha1": "e7fef5b20f248f61a77c0b377c99ce95ee7f286e",
+   "plain_sha1": "45f47ce709980bad7164e60b15253f68b9a483ee",
+   "ja": "攻撃時効果（on-hit）は、一部のダメージで適用される効果の分類を指し、「TriggerOnHitEvents」という性質による。チャンピオンの通常攻撃による通常攻撃のダメージは既定で攻撃時効果を適用し、ほかの多くのスペルも同じようにする。ほとんどの攻撃時効果のダメージ自体は通常「proc」の分類で、これは反応しない（＝ダメージの分類に応じた効果をさらに発動しない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "On-hit#description2": {
+   "source_sha1": "c7b6782c7250da29a2d12a2b00ebc227cde65016",
+   "plain_sha1": "e3f0109e5488d65fc765634b7473d7a994f5d6ff",
+   "ja": "いくつかの重要な補足：* クリティカルは攻撃時効果ではない。その適用はまったく別に扱われる。* ライフスティールによる体力の回復は攻撃時効果ではない。ただし「ApplyLifesteal」という性質でダメージにライフスティールを適用させることができ、これは一部の攻撃時効果でも使われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Magic damage#description": {
+   "source_sha1": "8d1288b11a7ada5ee92b964c06ad15da2fb89aca",
+   "plain_sha1": "a06bb5b27b234c8235ac16cc9066f939852eb548",
+   "ja": "魔法ダメージは三つのダメージの種類の一つ。* 適用するもの：**「ブラッドレターの呪い」の「邪悪な腐敗」（条件つき）**「モレロノミコン」と「忘却のオーブ」の重傷 ** オムニヴァンプ * 発動させるもの：**「ヘクスドリンカー」と「マルモティウスの胃袋」の「ライフライン」* 軽減するもの：** 魔法防御 ** ダメージのシールドと魔法のシールド ** 無敵 ** ダメージ軽減 **「デス ダンス」の「強行突破」",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Physical damage#description": {
+   "source_sha1": "2436896a054314cc51eb054cd1ff8b824e850836",
+   "plain_sha1": "3f20a9b8fd0a2d1b5d50f89d6821edea26516810",
+   "ja": "物理ダメージは三つのダメージの種類の一つ。* 適用するもの：**「ブラック クリーバー」の「カーブ」**「ケミパンク チェーンソード」「エクスキューショナー コーリング」「モータル リマインダー」の重傷 ** オムニヴァンプ ** 物理のヴァンプ * 発動させるもの：**「装甲強化の進撃」の「ノクサスの忍耐」* 軽減するもの：** 物理防御 ** ダメージのシールドと物理のシールド ** 無敵 ** ダメージ軽減 **「デス ダンス」の「強行突破」",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "True damage#description": {
+   "source_sha1": "a9fb77591f4c42403e993cac0bf024b7a27c0786",
+   "plain_sha1": "035c30bafdae974bddac20f68de081f72c7d7451",
+   "ja": "確定ダメージは三つのダメージの種類の一つ。* 適用するもの：** オムニヴァンプ * 軽減するもの：** ダメージのシールド ** 無敵",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Phased#description": {
+   "source_sha1": "0a32dad1059d89611ea1f73dfa4f20112bb7916a",
+   "plain_sha1": "01486fd6518f79fe4d7fed10335d1b074b53e8fc",
+   "ja": "「Phased」のユニットは地形の当たり判定を無視し、地形や建物を通り抜けられる。さらに地形の中にいる間は「Unobstructed vision」を持つ。*「Phased」のユニットは戦場の外縁から550ユニット先まで移動できる。* 敵のユニットは、地形を貫く視界（例：「鷲の眼」「スカウトホーク」「Comet of Legend」）がない限り、地形の中にいる「Phased」のユニットを見られない。** 「Phased」のユニットが1000ユニット以内にいると、敵には近くの地形に入られたことが通知され、地形に目印が置かれて「Phased」のユニットとその敵チャンピオンの間に直線が示される。これは通常の視界の半径より少し短いが、カモフラージュの探知半径よりは長い。* 地形の中を移動している間、「Phased」のユニットはダッシュしているとみなされるので、ノックダウンの効果で移動が止まる。** 移動不能の行動妨害は「Phased」のスキルを早く中断する。* 地形の中にいる間、「Phased」のユニットは「ドラクサー ダスクブレード」の目的では見えていないとみなされない。* ニアサイトを受けている間、「Phased」のユニットの視界の半径は、つながった地形を越えて広がらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Purge#description": {
+   "source_sha1": "de5ac4591f5fa16acdde061074a9251a3c6a7737",
+   "plain_sha1": "d76b977d86c13b981e3568b387c99a2a1932cc3d",
+   "ja": "「Purge」を受けたユニットは、シールドを除く強化効果と有利な状態異常を取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Purge#description2": {
+   "source_sha1": "7164ff5a5c57fbd79cdbaed0cf7b77964794490e",
+   "plain_sha1": "eb713dbd0fbb44a0f05829d22fb9e539b58e3603",
+   "ja": "「Purge」は弱体効果に分類され、行動妨害の種類ではないので、復活の効果以外では短くすることも取り除くこともできない。ただし次は特筆すべき例外：*「リポスト」は「Purge」を移動不能の行動妨害として扱う。*「Black Shield」は「Purge」の付与を防ぐ。ほかの形の行動妨害の無効では、「Purge」の弱体効果の付与は防げない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wilt#description": {
+   "source_sha1": "2b3d3bf880f4b11e9622d09c9c20e45ad1c42a94",
+   "plain_sha1": "d17245863121446a2cefca2767302cb099201d62",
+   "ja": "「Wilt」を受けたユニットは、どの手段でも体力を回復できず（受ける回復と自身への回復、ライフスティール、スペルヴァンプ、ドレインの効果）、回復のスキルも発動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wilt#interrupts": {
+   "source_sha1": "61a6eb8d4917e25394cf1d46a6f3155f4229a285",
+   "plain_sha1": "6fa03e9041e26c22c7be14cf7280158e63bc398b",
+   "ja": "「Drain」「絶狼牙連撃」「明鏡止水」「Monsoon」を含む、すべての回復のスキルを中断する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wilt#reduction": {
+   "source_sha1": "e67e621a9e0615551a591aa0b7a2e6bcb42dd969",
+   "plain_sha1": "766090f9a9604162c1ecf9d030ab70a3083549fa",
+   "ja": "効果時間は行動妨害耐性で短くなり、行動妨害耐性は乗算で重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wilt#resist": {
+   "source_sha1": "980013c7414e5693d6e153c52bf08ea5b76aceb6",
+   "plain_sha1": "ab3458ab2c0e88ab53b5bc01a15e7f3646b0d314",
+   "ja": "止められない（unstoppable）ユニット、「Black Shield」「ラグナロク」「リポスト」「Void Shift」で防がれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Wilt#removal": {
+   "source_sha1": "da0ef73dec0567649b6a5624b0f41f3218cd8f07",
+   "plain_sha1": "3e061c2f23c19981920e689dba8d7ff9427637f6",
+   "ja": "「クレンズ」「クイックシルバー」「Mikael's Crucible」「狩りの雄叫び」「ラグナロク」「壊血病治癒」「Unbreakable Will」で取り除かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cc-immune#description": {
+   "source_sha1": "e4436b252c7ecb4b614730f841d2a9705d08250f",
+   "plain_sha1": "3eadf1ad4b46982a1738a8be0514090774e39ff4",
+   "ja": "行動妨害の無効は、あらゆる種類の行動妨害がユニットに適用されるのを防ぐ。すでに適用された行動妨害はそのユニットに効き続ける。エピックモンスター（呼び出された「リフトヘラルド」を除く）とタワーは、固有時停止を除くすべての行動妨害を常に無効にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow resist#description": {
+   "source_sha1": "6214fb3ff16cf4c759e844ef4c2e0f22bec77767",
+   "plain_sha1": "ffea84d890d2f319ee2332a5d0fa31cfaaa419f5",
+   "ja": "スロウ耐性は、スロウの効果を直接弱めるステータス。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow-immune#description": {
+   "source_sha1": "8c22e936995fa0dfcb4604d48c9290f8aa2fa8cc",
+   "plain_sha1": "1ea6832903d1250012489b9c4f7c6c05b39a8e18",
+   "ja": "スロウの無効は、スロウの付与を防ぐ状態異常。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Slow-immune#description2": {
+   "source_sha1": "bb5e1456ff26eb5a6acab19114cf3f89b979ee2e",
+   "plain_sha1": "b3dcf811ebbd0729c3833c99f6be7303327a962b",
+   "ja": "次のものがスロウの付与を防ぐ：*「Sentry」*「H-28G Evolution Turret」*「ハイランダー」*「超特大の雪玉！」*「極北の激憤」*「イシュタルの衝動」* すべての行動妨害の無効",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Unit-targeted#description": {
+   "source_sha1": "2c2049bac3d3a230e1252c7641da551d5d56f3cd",
+   "plain_sha1": "9a5327207d9a605001623fdd289b32d2a5c6bcbf",
+   "ja": "対象指定（unit-targeted）は、範囲内に有効な対象がないと使えない対象の指定方式。効果を使うには対象が見えている必要がある。すべての通常攻撃は対象指定を使う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Projectile#description": {
+   "source_sha1": "753c0bdaaead9566925e877f73d1b824d00903ec",
+   "plain_sha1": "9eb82dd742da3f5b3246967f2a50f9909cdafcf3",
+   "ja": "飛翔物（missile）は、ユニット（チャンピオン・ミニオン・モンスターなど）に分類されない、ある速さで移動するあらゆる存在。* 移動するユニットは、どんな場合でも飛翔物とはみなされない（ダッシュ中のユニット、ノックアップ中のユニット、「ダークフォース」や「殺意の雄叫び」などのスキルで投げられたユニットを含む）。*「Unbreakable」「反駁」「ブレードワール」「風殺の壁」は飛翔物を防ぐ・壊す・止めることができる。** 一部の遠隔の通常攻撃（タワーを含む）とスキルは飛翔物を使わず、飛翔物を防ぐ効果を無視する。* 一部のスキルは、向かってきている追尾の飛翔物をすべて破壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Homing projectile destruction#description": {
+   "source_sha1": "defa29425b916281f79819353978db4d71b25aaf",
+   "plain_sha1": "5c8241f49e8145a8b2bc3b3c0ca4e438ca6bd923",
+   "ja": "飛翔物の破壊は、遠隔の飛翔物の通常攻撃など、特定のユニットを今狙っているすべての追尾の飛翔物を破壊する効果を指す。破壊された飛翔物は、「風殺の壁」や「ブレードワール」で破壊されたときと同じになる（通常、何の効果もなく消える）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Homing projectile destruction#description2": {
+   "source_sha1": "de8d61b3274d7a0071effe66458a1bf8049e6872",
+   "plain_sha1": "23509cf245d75f545a5df0dba0eb4a0549c8cc7d",
+   "ja": "次のスキルが一回以上の飛翔物の破壊を行う：* 対象指定不可を与えるほとんどのスキルと効果は、その状態異常を得たときに飛翔物を破壊する。**「アルファストライク」は特に、効果時間の間ゲームのティックごとに対象指定の飛翔物を破壊する。**「聖なる霧」は、（範囲外の敵チャンピオンからの）グウェンを狙った飛翔物のうち、範囲を通り抜けようとするか範囲の中にあるものをすべて破壊する。*「死の国」に入るときと出るとき。* 次の詠唱を無事に終えたとき：**「瞬身護法」**「Gate」**「テレポート」",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stealth#description": {
+   "source_sha1": "ea8697e3d9f89d1cfd1bddba19c9be9705079bf9",
+   "plain_sha1": "19eda9ffd8e245f535ab9fdefec586525b1b64fb",
+   "ja": "ステルスは敵の視界からユニットを隠して選択できないようにし、見られていない間はゴースト状態を与える。ステルスにより、敵を避けたり奇襲したり、戦闘で位置を変えたりできる。* ステルスには、使用者の視界を得るための条件に応じて三つの分類がある：カモフラージュ、インビジブル、ステルス状態の罠。真の視界は常にステルス状態のユニットを可視化する。* 攻撃を始める、スキルを使う、一部のアイテムの発動効果を使うなど、特定の行動でステルスが解けることがある。* ステルス状態のユニットのキャラクターモデルは、ステルス中にダメージを受けるたびに一瞬揺らめく。この揺らめきでユニットが選択できるようになることも、効果が解けることもなく、位置が知られるだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Stealth#description2": {
+   "source_sha1": "547701be701297112174311e9c1ab45ef797eaf3",
+   "plain_sha1": "b954d23ac93cc4df855151087b2969508346c298",
+   "ja": "ステルスは対象指定不可の形式ではない。対象の視界を必要としない効果、たとえば自動で狙う効果・方向を指定する効果（スキルショット）・位置を指定する効果は、ステルス状態のユニットにも当たる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Channel#description": {
+   "source_sha1": "c04620aa67562627b3f46c2548c9540c4fe9840d",
+   "plain_sha1": "2a636785b84d01d6386892da1df8a62a97e28d32",
+   "ja": "詠唱するスキルは、使用者自身や、ほかの効果によって、完了を妨げられうるスキル。溜めるスキルは二回の発動で切り替わる詠唱を持ち、一回目で溜め始め、二回目でスキルを放つ。クイックキャストを使っているときは、ホットキーを押し続けて溜め、離して放つ。通常の詠唱と違い、記載がない限り、使用者は自由に移動でき、移動スキルも使える。移動の詠唱は、使用者が位置から動くことも含む詠唱の種類で、通常はダッシュやブリンクのような移動の形を取る。このため、どちらも移動スペルの発動を妨げる行動妨害のグラウンドとスネアは、その詠唱を中断できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Channel#description2": {
+   "source_sha1": "07bc3113ed87af7d62039df21598af88f89d26b9",
+   "plain_sha1": "2c4c88d7a51d5d06e010394ce3f962121ae9a8c0",
+   "ja": "次の行動妨害は、（中断されない詠唱を除く）すべての詠唱を中断する：* ノックアップ * 強制行動（チャーム、フィアー、タウント）* サイレンス（disrupt、ポリモーフ）* スリープ * 固有時停止 * スタン（サスペンション）* サプレッション",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lockout#description": {
+   "source_sha1": "8213e5ae67021434ad21646e9236eb2740ed6111",
+   "plain_sha1": "da97657ff9a9e9d3f8f1a720d277079fabe8fb73",
+   "ja": "行動不能（lockout）のチャンピオンは、完了させる必要のある別の行動をしているため、スキルの使用・移動・攻撃などの特定の行動ができない。封じられる行動は場合ごとに違う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Lockout#description2": {
+   "source_sha1": "38258dcccba2063a6647253e63e438c07ccc59e2",
+   "plain_sha1": "20e7fe1289004521fbd0d290eb0b4f6f0854f4fe",
+   "ja": "行動不能は、記載がない限り、行動妨害の仕組みとは作用しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cast-inhibiting crowd control#description": {
+   "source_sha1": "0f43d242565e8ca2fae4fb98e212ba11732b7ad9",
+   "plain_sha1": "08c6a17fd77859c9189ab6154fc200f6db27cb17",
+   "ja": "スキルの使用を妨げる行動妨害を受けたユニットは、スキルの使用・アイテムの発動・サモナースペルの使用ができない。次の行動妨害は、すべてのスペルとスキルの使用を封じ、すべての詠唱を中断する：* ノックアップ * 強制行動（Berserk、チャーム、フィアー、タウント）* サイレンス（ポリモーフ）* スリープ * 固有時停止 * スタン（サスペンション）* サプレッション",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Cast-inhibiting crowd control#description2": {
+   "source_sha1": "b3c0a50aa998286f8e7793a4e6d12c1cc285711f",
+   "plain_sha1": "1c8f127f27cf32d104b7a7c7b6dec356d138aa76",
+   "ja": "「Disrupt」は状態異常ではなく詠唱を中断するだけなので、この分類には入らない。ただし、スキルの使用を妨げる行動妨害で中断されるスキルは、「Disrupt」でも中断される。スネアとグラウンドは移動スペルと移動スキルだけを封じる。すべてのサモナースペルの使用を封じる行動妨害は固有時停止とサプレッションだけで、それ以外のスキルの使用を妨げる行動妨害は移動のサモナースペルだけを封じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Execute#description": {
+   "source_sha1": "f0c601ed1faf320f963e76b34a43c09beea5fa3f",
+   "plain_sha1": "8e3e6dca7925328991b52a42bd206bc7136b427a",
+   "ja": "処刑（execute）は対象の現在体力の100%に等しいダメージを与え、通常は確定ダメージで、すべての軽減を無視する。チャンピオンに効く処刑は、ダメージを与える前に対象の今のシールドを100%壊す性質を持つこともある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Execute#description2": {
+   "source_sha1": "7c75697eeb3145469e89bd5b86bcc21c37ffd7dc",
+   "plain_sha1": "aa0f545686903df3d523740f8a1ee162c7118b3c",
+   "ja": "ほとんどの処刑は、無敵・蘇生・体力の最低値を与える効果は無視しない。無視するものは「raw damage」と呼ばれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Omnivamp#description": {
+   "source_sha1": "52ac0a7fc2cdfbc7075560e578bd82c2a4f2600d",
+   "plain_sha1": "ff28aa4da9f6bce68a7dda51ffdbed637a69d14d",
+   "ja": "オムニヴァンプは、物理ダメージ・魔法ダメージ・確定ダメージを与えたことによる回復をまとめて呼ぶ用語。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Omnivamp#description2": {
+   "source_sha1": "c8fa3d5bdd88166da2a41727a67eaf885624bca4",
+   "plain_sha1": "c8fa3d5bdd88166da2a41727a67eaf885624bca4",
+   "ja": "範囲・ペット・持続のダメージでは、ミニオンとモンスターに対するオムニヴァンプの回復は33%の効果になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Basic attack#description": {
+   "source_sha1": "abccc4cf0d40ef2a742dcba2192693b54781408e",
+   "plain_sha1": "5f7f53b0893c6a20e42dcc138256097018e9d9c2",
+   "ja": "通常攻撃（「オート」）はユニットがダメージを与える既定の手段で、通常は攻撃力の100%の物理ダメージを与える。通常攻撃は通常、縁間の距離で測る対象指定のスペルで、攻撃の射程のステータスで届く距離が決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Basic attack#description2": {
+   "source_sha1": "52e82443d0a9f6cbdb904c814165d2510ae3b869",
+   "plain_sha1": "77c6c0d6893de19b088872d924d2e2561aadcc5b",
+   "ja": "使用者は、通常攻撃を放つ前に立ち止まって短い攻撃モーションを終える必要がある。使用者によって：* 攻撃が飛翔物でない（例：近接）なら、攻撃を放つと即座にダメージを与える。* 攻撃が飛翔物なら、攻撃を放つと対象を追う飛翔物を送り、当たったときにダメージを与える。その後、使用者には攻撃速度に応じた短いクールダウンが生じる。通常攻撃のダメージは、ダメージを与えたときにだけ攻撃時効果を発動しうる。攻撃開始時の効果は、攻撃モーションが終わると必ず発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Proc damage#description": {
+   "source_sha1": "5fce308fd377bdab8a468a671275a8e95f5189be",
+   "plain_sha1": "138d91752a55d59dabbe0e57f4a860a1bd1a6fc2",
+   "ja": "「Proc damage」は主要なダメージの分類の一つ。ほかの何とも作用すべきでない効果は通常「Proc」に分類される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  },
+  "Proc damage#description2": {
+   "source_sha1": "ce16ec3f991314ba97a3a6193a700ed3ae859745",
+   "plain_sha1": "12184bb27258ac0d5257d330b497947bb133aec8",
+   "ja": "「Proc damage」からも一般的な作用は発動しうる。たとえばミニオンのアグロや、（適切な性質があれば）オムニヴァンプや物理のヴァンプによる与えたダメージからの回復。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
+  }
+ },
+ "withheld": {
+  "Control ward#description2": {
+   "source_sha1": "aab718a06fb45ed0f0cf9fb89d8b3c08b191209a",
+   "reason": "residual_markup"
+  },
+  "Farsight ward#description2": {
+   "source_sha1": "a08b1bae2a6dabd1608093326e81f45d1908266d",
+   "reason": "residual_markup"
+  },
+  "Siege ward#description2": {
+   "source_sha1": "a002e72bb8507737e5ed681890b904cedb296567",
+   "reason": "residual_markup"
+  },
+  "Stealth ward#description2": {
+   "source_sha1": "5aa9605e3c7a3de9d490602b6de59a44f0cf4f52",
+   "reason": "residual_markup"
+  },
+  "Totem ward#description2": {
+   "source_sha1": "31f4bbaddec1707cbe9a7817185c2610405bf749",
+   "reason": "residual_markup"
+  },
+  "Zombie ward#description2": {
+   "source_sha1": "33b8b8a7a50717c551ab051cc5a30379bb04ffba",
+   "reason": "residual_markup"
+  },
+  "Ghost poro#description2": {
+   "source_sha1": "37208175ed3a3d8d24fa31fec46e0a628efe2fc9",
+   "reason": "residual_markup"
+  },
+  "Energy#description": {
+   "source_sha1": "91573d6f6ce18ffabe81b11c318bc5e33fd72262",
+   "reason": "residual_markup"
+  }
+ }
+}

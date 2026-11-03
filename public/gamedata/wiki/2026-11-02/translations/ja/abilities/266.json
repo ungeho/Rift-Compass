@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -62,10 +62,10 @@
   },
   "Template:Data Aatrox/The Darkin Blade#description6": {
    "source_sha1": "2c3a64a023c8603881a7d90a4f746d2594f0317e",
-   "ja": "「ダーキンブレード」はミニオンに55%～70%（レベルに応じて）のダメージを与える。モンスターに対しては、一回目の発動が25の追加の物理ダメージを与え、このダメージは後の発動とスイートスポットのダメージの倍率の影響を受ける。また、モンスターにスイートスポットで命中した場合のノックアップの効果時間は倍の0.5秒になる。",
+   "plain_sha1": "a07abe5cd808604618f84cbb6bde3d424ce275fa",
+   "ja": "「ダーキンブレード」はミニオンに55% / 60% / 65% / 70%（レベルに応じて）のダメージを与える。モンスターに対しては、一回目の発動が25の追加の物理ダメージを与え、このダメージは後の発動とスイートスポットのダメージの倍率の影響を受ける。また、モンスターにスイートスポットで命中した場合のノックアップの効果時間は倍の0.5秒になる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
-   "plain_sha1": "5a0a9ffe333adfc2adbd1fbb29aef10d48535bf0"
+   "translated_at": "2026-11-03"
   },
   "Template:Data Aatrox/Infernal Chains#description": {
    "source_sha1": "5eb84ead7644ffb6b48d46e3466ee7544bd3acda",

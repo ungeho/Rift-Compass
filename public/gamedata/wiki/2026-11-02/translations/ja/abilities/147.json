@@ -87,16 +87,21 @@
    "ja": "「アンコール」の飛翔物は、味方か敵のチャンピオン（セラフィーンを除く）に当たるたびに、残りの飛ぶ距離がリセットされる。当たった味方チャンピオンは「Note」を4得る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Seraphine/Stage Presence#description": {
    "source_sha1": "a9775a4f671abdec9f464e639594733785a11807",
-   "reason": "residual_markup"
+   "plain_sha1": "24c10299aa8ccb6590fac1ff3409c30e8eeb73da",
+   "ja": "固有 -「Echo」：セラフィーンの基本スキルの使用はそれぞれ「Echo」のスタックを得て、最大2回まで重なる。2スタックのとき、次の基本スキルの使用はすべてを消費し、0.033秒（0.01秒を次のゲームのティックに切り上げた値）の遅れの後、コストなしでもう一回使われる。試合開始時と復活時に、セラフィーンは「Echo」のスタックが最大になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   },
   "Template:Data Seraphine/Stage Presence#description3": {
    "source_sha1": "23b20e0e0bc3bedfc1c83dc7b32d2565f3116a0b",
-   "reason": "residual_markup"
+   "plain_sha1": "8833da0db9c7648527fae11037f2c5de53c99279",
+   "ja": "「Note」が一つでもある間、セラフィーンの次の通常攻撃は強化され、攻撃モーションが中断されなくなり、「Note」一つごとに通常攻撃の射程が25増加して、すべての「Note」を対象に放ち、それぞれ4～27.47（レベルに応じて）（+ APの4%）の魔法ダメージを与える。味方からの「Note」は75%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }

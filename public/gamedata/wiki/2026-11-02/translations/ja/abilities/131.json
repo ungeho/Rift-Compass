@@ -80,12 +80,14 @@
    "ja": "敵チャンピオンを引き寄せた場合、1秒後に自身の周囲に月光の柱を落とし、周囲のすべての敵に魔法ダメージを与える。引き寄せたチャンピオンが二体目以降なら、一体ごとにダメージが増える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
-  }
- },
- "withheld": {
+  },
   "Template:Data Diana/Moonsilver Blade#description2": {
    "source_sha1": "bf9a49f1b26aebcaad55f78b538d79360e786fde",
-   "reason": "residual_markup"
+   "plain_sha1": "04501675c9a0e0aaecd85f4375a6682bc55ce264",
+   "ja": "固有 -「繊月の刃」：ダイアナの通常攻撃は攻撃時効果として5秒間「繊月の刃」のスタックを得て、攻撃のたびに更新され、最大2回まで重なる。2スタックのとき、ダイアナは次の通常攻撃を強化し、攻撃時効果としてスタックを消費して周囲の敵もなぎ払い、20～220（レベルに応じて）（+ APの50%）の魔法ダメージを与える。「繊月の刃」はモンスターに270%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-03"
   }
- }
+ },
+ "withheld": {}
 }
