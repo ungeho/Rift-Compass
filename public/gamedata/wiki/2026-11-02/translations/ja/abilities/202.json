@@ -1,0 +1,133 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Jhin/Whisper#description": {
+   "source_sha1": "ea091b0a93cdc48e6f05062f460a3d7941235935",
+   "plain_sha1": "a31cdd1fafd725a5bee220a7184dd36a3d90aee0",
+   "ja": "固有 -「Death In 4 Acts」：ジンの通常攻撃は4発の弾を消費する。すべての弾を使い切った直後、または戦闘から離れて行動妨害も受けない状態が10秒続いて残りの弾を持ったままのときに、2.5秒かけて装填する。後者の装填は、攻撃の指示かスキルの使用で中断できる。装填の間、ジンは通常攻撃の指示ができない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Whisper#description2": {
+   "source_sha1": "b153c4fc745a9abb5e66ede295619c3c1dcb4605",
+   "plain_sha1": "975aa71f1b60c67923e1d6bbeee54971950fe05a",
+   "ja": "ジンの最後の弾の攻撃は攻撃モーションが中断されず、建物に対しても常にクリティカルになり、対象の減少体力の15%～25%（レベルに応じて）に等しい追加の物理ダメージを与える。対象の体力に応じたダメージは、モンスターに対しては800が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Whisper#description3": {
+   "source_sha1": "6912465d5eb3a01017dd76ed407db7bc6ed7c39a",
+   "plain_sha1": "9c9f2938f39f23e9519039402e8864838db8e862",
+   "ja": "固有 -「Every Moment Matters」：ジンは攻撃力の4%～44%（レベルに応じて）（+ クリティカル率1%ごとに0.35%）（+ 攻撃速度の増加1%ごとに0.3%）に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Whisper#description4": {
+   "source_sha1": "2371860d00f373cbc23be105db99149062cf0de7",
+   "plain_sha1": "f6fc771396d4332eb8e99c62252243f46589ac50",
+   "ja": "さらに、敵へのクリティカルのたびに、ジンは2秒間14%（+ 攻撃速度の増加1%ごとに0.44%）の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Dancing Grenade#description": {
+   "source_sha1": "560f966b563d69047d400f23b39e5daba59c79e3",
+   "plain_sha1": "7e5856117d1085af1d80cbfd09fa37893a9c42cb",
+   "ja": "発動効果：ジンは対象の敵にグレネードを投げて物理ダメージを与え、グレネードは近くの最大三体の追加の敵へ跳ねることができ、まだ当たっていない最も近い敵を優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Dancing Grenade#description2": {
+   "source_sha1": "b2d2348f9db76815df51fd45ded1b39938e995b9",
+   "plain_sha1": "b2d2348f9db76815df51fd45ded1b39938e995b9",
+   "ja": "グレネードが当たった敵が、次の対象に当たる前にどの手段でも死ぬたびに、グレネードのダメージが35%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Deadly Flourish#description": {
+   "source_sha1": "a38df98c8534048b3fa6f18987cacc5c2fdbf964",
+   "plain_sha1": "d9e54c61b43262b77f1532cf1da83fa9894f69bd",
+   "ja": "自動効果：「Lotus Trap」を咲かせた敵チャンピオンか、ジンか味方チャンピオンからダメージを受けた敵チャンピオンには、4秒間印が付く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Deadly Flourish#description2": {
+   "source_sha1": "cbcf821da458957119ad606c890a9a65c88e1362",
+   "plain_sha1": "1a523fa3489c6795e774996cb3f773dfbeb84ede",
+   "ja": "発動効果：ジンは指定方向に弾を撃ち、敵チャンピオンにぶつかるまで直線上のすべての敵に物理ダメージ（ミニオンには25%減少）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Deadly Flourish#description3": {
+   "source_sha1": "7d3d68fa22c321515645e41e50f92b88037cb852",
+   "plain_sha1": "e6c10a0380beb0641942a0436e8200a4ff96dd4e",
+   "ja": "印の付いたチャンピオンに命中すると一定時間スネアを与え、ジンは「Every Moment Matters」の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Captive Audience#description": {
+   "source_sha1": "42ed451ae637570de359c284b1c9cad22012145b",
+   "plain_sha1": "8ffeb28667c1bcfd2f711c85bb0755df1d9a2a55",
+   "ja": "自動効果 -「Beauty in Death」：ジンが敵チャンピオンを倒すたびに、その亡骸の上に咲いた「Lotus Trap」を呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Captive Audience#description2": {
+   "source_sha1": "14d392aa70b58ff26ec70b4a9b7864680da76e42",
+   "plain_sha1": "c21ff57f5badaabfbb6845772e0da894a7605755",
+   "ja": "発動効果：ジンは指定地点に「Lotus Trap」を置く。罠は着地して1秒かけて準備を終えるとステルスになり、最大180秒間残ってその範囲の視界を与える。「Lotus Trap」は敵が触れると咲き、作動した時点で範囲にいる敵は4秒間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Captive Audience#description3": {
+   "source_sha1": "393e8b5ab1b913d131eb51f6428c1aaf6f27ebcf",
+   "plain_sha1": "06af4bc1790842bac19f006f11931dfa997fcd80",
+   "ja": "ジンは一定時間ごとに「Lotus Trap」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Captive Audience#description4": {
+   "source_sha1": "2394a051b96952d15427d28349c0f6e0a62ddac9",
+   "plain_sha1": "348b25fd1051afcceb053f0db52257fe15fe564d",
+   "ja": "咲いた「Lotus Trap」は範囲内の敵に2秒間35%のスロウを与えた後に爆発し、敵に魔法ダメージを与える。「Lotus Trap」は、ミニオンと、直近1秒以内に別の「Lotus Trap」に当たったチャンピオンとモンスターには65%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Captive Audience#description5": {
+   "source_sha1": "0a1efadad1e22d3fe7fa0958e55646b21b0ba070",
+   "plain_sha1": "96395a5f2adabbf42a6574caf275e94e1c0d9cf3",
+   "ja": "「Lotus Trap」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Curtain Call#description": {
+   "source_sha1": "be9ea8ceb3cea01df5601a343ebce5b37382a0a5",
+   "plain_sha1": "7a303e528af229f201aaf5787265bef50261feca",
+   "ja": "発動効果：ジンは最大10秒間詠唱し、武器を大砲に変えて、効果時間中に「｢終演 -フィナーレ-｣」を4回再発動できるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jhin/Curtain Call#description2": {
+   "source_sha1": "68e172cde71f7eb3738e286afb49ca5bc30d9d61",
+   "plain_sha1": "abe7e9b42f378c3989947569f33d3683a7d77b0f",
+   "ja": "再発動：詠唱時間の0.2秒後、ジンは指定方向に弾を撃ち、弾は0.5秒間弾道の周囲の視界を与えながら、命中した敵に物理ダメージ（対象の減少体力に応じて0%～300%増加）を与える。弾は敵チャンピオンに当たると止まり、0.5秒間80%のスロウを与えて、2秒間可視化する。各発動には1秒の固定のクールダウンがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Jhin/Curtain Call#description3": {
+   "source_sha1": "3a182369a97ad4b91612c97d8a9aeb71aae9a0cb",
+   "reason": "residual_markup"
+  }
+ }
+}

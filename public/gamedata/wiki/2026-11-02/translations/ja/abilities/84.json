@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -34,8 +34,8 @@
   },
   "Template:Data Akali/Twilight Shroud#description4": {
    "source_sha1": "d8b648dfd9084a4e5901c35d91f4f7f2c15427c4",
-   "plain_sha1": "f8be2d03b69c3dcfb20113d0c288125529093d5d",
-   "ja": "「黄昏の帳」のうち「翻身手裏剣」の部分は、帳が終わった後も、印の効果時間の間残る。",
+   "plain_sha1": "f3247ee80c49b9a062f786e92c0f5b4bf285dd36",
+   "ja": "「黄昏の帳」のうち印の付いた部分は、帳が終わった後も、印の効果時間の間残る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   },
@@ -43,6 +43,76 @@
    "source_sha1": "39eec746a10389b04237f47f64e3c15f6d1c6571",
    "plain_sha1": "dc3553298f43f052519dee2fa80af5cca6ec0085",
    "ja": "アカリは「黄昏の帳」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Assassin's Mark#description": {
+   "source_sha1": "ecd6cb49ee2843620c9746f993373cbe084a5d5b",
+   "plain_sha1": "638457b3187fcbadef9afcfbd7ecd96f3facf7e7",
+   "ja": "固有：アカリがスキルで敵チャンピオンにダメージを与えると、その敵の周囲に4秒間輪を作り、チャンピオンへのダメージを与えるスキルのたびに更新される。2秒間、輪の中心から離れる方向に動いている間、移動速度が30%～60%（レベルに応じて）増加する。一度に有効な輪は一つだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Assassin's Mark#description2": {
+   "source_sha1": "cfcbe51b2860e3edf4828bac1d3a0acca9a850b7",
+   "plain_sha1": "cce2b31d36fbe03409e329b1c657f35f64e3b04d",
+   "ja": "アカリが輪を出ると、2秒間、近くの敵チャンピオンの方を向いている間は再び移動速度の増加を得て、4秒間「Swinging Kama」で強化され、その間は別の輪を作れない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Five Point Strike#description": {
+   "source_sha1": "d496c1c9e35cc2c6390c73432645d45988b6cfa8",
+   "plain_sha1": "807ec0d02f91ad7b900f5fe264d49bdc6afa723d",
+   "ja": "発動効果：アカリは指定方向の扇形の範囲に苦無を放ち、命中した敵に魔法ダメージを与える。一定の距離より遠くの対象には、0.5秒間50%のスロウも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Shuriken Flip#description": {
+   "source_sha1": "aa569c9fea06008dfa25513d450bbae8a487c821",
+   "plain_sha1": "2d503da521edda9d7db14e28205d9b98ed1c29db",
+   "ja": "発動効果：アカリは詠唱時間の0.15秒後に後ろへ宙返りし、詠唱時間の後に指定方向に手裏剣を投げ、最初に命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Shuriken Flip#description2": {
+   "source_sha1": "1f2d3c26dd34b4cf410a696653197e522b6a7325",
+   "plain_sha1": "64938117ee18ea665d853671141e1d994d5d37bc",
+   "ja": "手裏剣は、命中した敵か最後に当たった「黄昏の帳」の煙の部分に3秒間印を付けて可視化し、その間「翻身手裏剣」を再発動して印を消費できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Shuriken Flip#description3": {
+   "source_sha1": "185477cce0bc7a38c33df94b045fb3126a0bb320",
+   "plain_sha1": "8d26a8a946fbb7cfd9ce7f2415ae66b337f181a1",
+   "ja": "再発動：アカリは印の付いた対象か煙の部分へダッシュする。敵に対しては、到着時に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Shuriken Flip#description4": {
+   "source_sha1": "c8032fcbc2724b42d014dd2990a9bf8d2d0eb90c",
+   "plain_sha1": "27d817b240f3eff5a3106759f8858295d3a1ed3b",
+   "ja": "詠唱時間の最初の0.15秒の間に移動不能かグラウンドを受けた場合、アカリは後ろへ宙返りしない。再発動のダッシュ中に「黄昏の帳」と「完遂」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Perfect Execution#description": {
+   "source_sha1": "75ce64aadb44853f401cd5ed5e716ca4cc726992",
+   "plain_sha1": "546fc9ba23945ec834f2cfd6a5f217e9ae2bd51e",
+   "ja": "発動効果：アカリは対象の敵チャンピオンの方向に750ユニットダッシュし、通過した敵に魔法ダメージを与える。これが敵に命中すると、その敵を飛び越えて、通常の距離まで、ただし最低でもさらに150ユニットダッシュを続ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Perfect Execution#description2": {
+   "source_sha1": "4e65109b230dd1774d08aaf527a2fd2b6b909d7a",
+   "plain_sha1": "754733f2b07f2143ec0ce7c3a852002c56c98f3e",
+   "ja": "「完遂」は、最初の発動から10秒以内に、2.5秒の固定のクールダウンの後で再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akali/Perfect Execution#description3": {
+   "source_sha1": "40602e2eff0b4e2656ec8a6515ac14db62c8ecb1",
+   "plain_sha1": "dffccc7c15b8a2d29eb05fef75fd4c9df78e8de5",
+   "ja": "再発動：アカリは指定方向に800ユニットダッシュし、通過した敵に魔法ダメージ（対象の減少体力に応じて0%～200%増加）を与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

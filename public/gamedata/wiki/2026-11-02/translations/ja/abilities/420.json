@@ -1,0 +1,140 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Illaoi/Prophet of an Elder God#description": {
+   "source_sha1": "ab3d247bffa1077c9bd917d97c83795789e99dd8",
+   "plain_sha1": "48bc955d9a6ec2cecc26009445cf4e156f259423",
+   "ja": "固有：一定時間ごとに、イラオイは最も近い地形に、ほかの触手が周りにいなければ触手を出す。触手は2秒の遅れの後に完全に出現し、それまでは対象指定不可。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Prophet of an Elder God#description3": {
+   "source_sha1": "0495a159047de53b475e0cbf4f39ce1a38edea56",
+   "plain_sha1": "2fa7fc35ad38a3b16fe22381fd46c664d919bc85",
+   "ja": "各触手は、少なくとも一体の敵チャンピオンに当たると、イラオイの減少体力の5%も回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Prophet of an Elder God#description4": {
+   "source_sha1": "1c85d3e1c75f14744dc0fda64ce03550441abf69",
+   "plain_sha1": "c26e6fdf84218ad2b3328ac4dfd1daafecdf0676",
+   "ja": "触手の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Tentacle Smash#description": {
+   "source_sha1": "6b4f5292aa39e71586865527076985fa2f054479",
+   "plain_sha1": "28cd60eb7d910bfc9327bc2122c62e94b8ad6896",
+   "ja": "自動効果：触手のダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Tentacle Smash#description2": {
+   "source_sha1": "71306f499f230cd82486ddcafdb2f38b7f681e72",
+   "plain_sha1": "5d43dccb2570eda79366da3a088cd34b7b25d558",
+   "ja": "発動効果：イラオイは指定方向に触手を叩きつける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Tentacle Smash#description3": {
+   "source_sha1": "c8f3c4b898673b8e08fdf119ecd149ded1e43402",
+   "plain_sha1": "6c787ee35e20444eafcadb819c108aee6de7bbbf",
+   "ja": "近くに敵チャンピオンがいると、イラオイは詠唱中に自身が可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Harsh Lesson#description": {
+   "source_sha1": "c540d794fa5d0c7583e1f78ae9c30ae708cdafc9",
+   "plain_sha1": "4ab1c21beacf908dfb96288a8ee440baa4885edd",
+   "ja": "発動効果：イラオイは6秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が225増加して、対象が通常の射程より遠ければその位置へ跳ぶ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Harsh Lesson#description2": {
+   "source_sha1": "78870546a6c340be771654fbb7076c0a1d1d5d47",
+   "plain_sha1": "a2e5414d528a3d37af49fb39fb8e51b236069514",
+   "ja": "攻撃は追加の物理ダメージ（最低値あり、チャンピオン以外には300が上限）を与え、範囲内のすべての触手にその対象を攻撃させる。最低の追加ダメージはタワーにも与えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Harsh Lesson#description3": {
+   "source_sha1": "d13a1b3aed28e88fa02f50e9c26d126a92f35840",
+   "plain_sha1": "3be21e835b62ceb61b533c99dd4a768894451267",
+   "ja": "「過酷なる教訓」はイラオイの通常攻撃タイマーをリセットする。「過酷なる教訓」はイラオイのほかのスキルの使用中にも発動できる。跳躍が中断されると、スキルはキャンセルされてクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Test of Spirit#description": {
+   "source_sha1": "e97a2e7988114bfa757467789148f501fd9bc1bf",
+   "plain_sha1": "57d16fd08f56136dbb0c7f125ef2fdbcc184abb4",
+   "ja": "発動効果：イラオイは指定方向に触手を伸ばし、最初に命中した敵で止まって、それがチャンピオンなら0.75秒かけてその「Spirit」をイラオイの前に引きずり出す。対象は7秒間「Spirit」とつながり、つながっている間は可視化され、その周囲の視界も与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Test of Spirit#description2": {
+   "source_sha1": "fd124cadf3ebd2ff42f5aa17aaf10c65062a5bd3",
+   "plain_sha1": "207d26db5c5e29039f1a3ccc8b09d4266eaf7798",
+   "ja": "「Spirit」は対象の現在体力・物理防御・魔法防御で現れ、受けた軽減前のダメージの一部をつながったチャンピオンに伝える。倒れる直前の最後の攻撃では、伝わるダメージが減ることがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Test of Spirit#description3": {
+   "source_sha1": "f4919c79bed5ee45a6620ed2d7129e96323d7f11",
+   "plain_sha1": "2e4cd4068e349ad84d044c9177b37c60e9a4fd3a",
+   "ja": "「Spirit」が倒されるか対象がつながりの範囲から出ると、つながりは切れ、対象は4秒間「Vessel」の印が付き、つながりが戻ってきた時点で1.5秒間80%のスロウを受ける。各触手は4.5～3.5秒（レベルに応じて）に一度、最も近い「Vessel」か「Spirit」（後者を優先）を自動で攻撃する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Test of Spirit#description4": {
+   "source_sha1": "6b6f8cfc1661d98785494708ec07421042606f6a",
+   "plain_sha1": "d8301988bfe8019baf43d4d4cbcb1e168dc84940",
+   "ja": "「Vessel」になった敵は、可能であれば自身の近くに触手を出し続ける。この触手は、イラオイが出す場合より300ユニット互いに近くに出られる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Test of Spirit#description5": {
+   "source_sha1": "89269e3ee6852c9eb3f920c22c513768f7cbe629",
+   "plain_sha1": "fd284b7918054abf4c54f93129387ef46b2b283a",
+   "ja": "弾を撃っている間と対象の「Spirit」を引き出している間、イラオイは行動できない。近くに敵チャンピオンがいると、弾を撃っている間に自身が可視化される。「Vessel」はイラオイのキルに関与すると印を解除できる。「Spirit」が死ぬまで、「魂の試練」は再び使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Leap of Faith#description": {
+   "source_sha1": "2168b6e15c3c59e365b8ce284b406230eb12820c",
+   "plain_sha1": "c65dd41485b1c304e3cb43309dd884bfd4f28363",
+   "ja": "発動効果：イラオイは移動系の効果を受けなくなり、詠唱時間の間空中に跳ぶ。その後偶像を地面に叩きつけ、周囲の敵に物理ダメージを与える。命中した敵チャンピオン一体ごとに、8秒間触手を一本呼び出す（最大6本）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Leap of Faith#description2": {
+   "source_sha1": "2fd05684ef6ca6e73008a85d1a143f7d31167d9e",
+   "plain_sha1": "7768a6ce8136e4c4e8fc889dc8a78ad6e7f44bae",
+   "ja": "効果時間中、「過酷なる教訓」のクールダウンは半分になり、イラオイが目覚めさせたすべての触手は対象指定不可になって、当たり判定を表示せず、休眠もせず、攻撃に0.5秒かかる。ただしその後、新たな攻撃を始められるまで0.5秒の行動不能がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Illaoi/Leap of Faith#description3": {
+   "source_sha1": "5ae53d5a9e7f84d1da28f76f6f0f8dbc303dce84",
+   "plain_sha1": "e5f9ffbd9e126e06637145c085af4f8e2bc9d723",
+   "ja": "これは「触手の鉄槌」による触手の攻撃には影響しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Illaoi/Prophet of an Elder God#description2": {
+   "source_sha1": "22c26e15d305ef22e8b263d384bfe6a2148f7bdf",
+   "reason": "residual_markup"
+  }
+ }
+}

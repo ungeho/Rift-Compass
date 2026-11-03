@@ -1,0 +1,147 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Yuumi/Feline Friendship#description2": {
+   "source_sha1": "0abfbce530d3a24f2fe095fc30d5d1dd3986fbb4",
+   "plain_sha1": "605bab0243a3803fe9ddecec66c21be0692c1159",
+   "ja": "固有：味方に付いている間、その味方が敵チャンピオンかミニオンを倒すたびに、ユーミはその味方に永続的な「Friendship」のスタックを2与える。「Friendship」のスタックが最も多い味方はユーミの「Best Friend」になり、その味方に付いている間、ユーミのスキルは追加の効果で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Prowling Projectile#description": {
+   "source_sha1": "e9067c066c1791c0c3255231c917de4cc2952f32",
+   "plain_sha1": "9673c8e40e8055728697cbe5dbd74ee35eddac9b",
+   "ja": "発動効果：ユーミは指定方向に気まぐれなミサイルを撃ち、最初に命中した敵に魔法ダメージを与える。対象がチャンピオンなら、可視化して1秒間20%のスロウも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Prowling Projectile#description2": {
+   "source_sha1": "4a7a747f2e23a63e53d6009105a430d351e2c064",
+   "plain_sha1": "6c9284f32a0767a32144a982b87c3b1b84491a75",
+   "ja": "付いているときのボーナス：ユーミは最大1.35秒間詠唱して、遅い速度でミサイルを操る。同じ時間飛んだ後、ミサイルは現在の向きに0.5秒間加速し、増加したダメージを与えて、チャンピオンにはより強いスロウを与え、スロウは2秒かけて20%まで減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Prowling Projectile#description3": {
+   "source_sha1": "938736f7381370e335e781a6eb522656c70f582e",
+   "plain_sha1": "c8171cd5dd36c98f5b0da2eb885dae6016fd95b9",
+   "ja": "「Best Friend」のボーナス：「きまぐれミサイル」は常にチャンピオンに強化されたスロウを与え、チャンピオンに命中すると「Best Friend」は5秒間、攻撃時効果として追加の魔法ダメージを得て、それは「Anchor」のクリティカル率に応じて0%～75%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/You and Me!#description": {
+   "source_sha1": "53267c73c33fc35554e2b3dac68fa5620112eae6",
+   "plain_sha1": "400645400f2592f5ab7e41f348f4151d866da785",
+   "ja": "自動効果：付いている間、ユーミは対象指定不可（タワーと向かってくる飛翔物を除く）で、「Anchor」の位置からスキルを使い、スキルは追加の効果で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/You and Me!#description2": {
+   "source_sha1": "5cc013e96ec61a968f31adb67af3a4de88a5758c",
+   "plain_sha1": "3fc75f19ff09de23f028a5e6b64cd7b5bf0713a4",
+   "ja": "発動効果：ユーミは0.25秒間詠唱し、完了すると対象の味方チャンピオンへダッシュして到着時に付き、その味方を「Anchor」にする。付いてから0.5秒後に「ユー＆ミー！」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/You and Me!#description3": {
+   "source_sha1": "9e8902ee12356446854b3f1690149a8b82cebaf4",
+   "plain_sha1": "b60adcf2a893aa7af09fd6da45d257da659c6ff9",
+   "ja": "再発動 -「Change of Plan」：ユーミは「Anchor」から離れ、対象の味方チャンピオンへダッシュして付き、再発動が更新される。「Anchor」が死ぬか特定の状況では自動で離れる。有効な対象なしで再発動すると、ユーミは離れて指定方向に250ユニットダッシュし、「ユー＆ミー！」がクールダウン中でなければ0.25秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/You and Me!#description4": {
+   "source_sha1": "12b0607e72de5a4c6b5cb1728c07dda68c5b1dbe",
+   "plain_sha1": "6083b7089eae5b64b4bc924f44917fb7dd15efac",
+   "ja": "味方へのダッシュ中に移動不能かポリモーフの行動妨害を受けると、ユーミは叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/You and Me!#description5": {
+   "source_sha1": "0689f46cc397ad774dbe1c01f475e7c48e88b529",
+   "plain_sha1": "ccdcc37c5e7cb29af7eabc16e1ddaff7a0d389a4",
+   "ja": "ユーミは「ユー＆ミー！」にスキルポイントを一つ持って始まり、代わりに「きまぐれミサイル」は6ランクある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/You and Me!#description6": {
+   "source_sha1": "c0824502a5a651c34394679c48daf424bf487274",
+   "plain_sha1": "0413f900cf282ffeebc442818dc7511a7ab3f748",
+   "ja": "「Best Friend」のボーナス：ユーミは回復とシールドの効果が増え、「Best Friend」は攻撃時効果として回復を得る。ユーミが移動不能・グラウンド・ポリモーフを受けると、「ユー＆ミー！」は5秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Zoomies#description": {
+   "source_sha1": "b40dc9a6e5a5504bc4d8d071935f6ad1d414c9db",
+   "plain_sha1": "028cdc50d793d19939c5bf03a3c3b5c7681ddc8e",
+   "ja": "発動効果：ユーミは自身にシールドを付与し、3秒間攻撃速度が増加する。シールドが残っている間、移動速度も20%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Zoomies#description2": {
+   "source_sha1": "486cbb4a354a563af93f5db029dbc64ac24d32f0",
+   "plain_sha1": "68b435b0cc53bb8543d624efdf42b293e945fc9a",
+   "ja": "付いているときのボーナス：「バビューン！」はユーミの代わりに「Anchor」に効き、さらに「Anchor」のマナを回復する（「Anchor」の減少マナに応じて0%～100%増加）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Final Chapter#description": {
+   "source_sha1": "31f7a19fa3b8fce7c37c0f52292047a523fdc26a",
+   "plain_sha1": "160e4e595a276c756f6439f083cbbf6c589b36d1",
+   "ja": "発動効果：ユーミとブックは最大3.5秒間詠唱し、その間ゴースト状態になって、指定方向に5回の魔法の波を放つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Final Chapter#description2": {
+   "source_sha1": "b6b7d686edf3710a98715fa2146d7b6059b80a23",
+   "plain_sha1": "432bf0c79a7c0fb35387cbbe8fe415802b462c45",
+   "ja": "波が当たった味方チャンピオンは回復し、最大体力を超えた回復は代わりに、1.5秒と残りの詠唱時間だけ続くシールドに変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Final Chapter#description3": {
+   "source_sha1": "2d7c3e0119981214a9fc523cf535e8031cd3580f",
+   "plain_sha1": "6728bf7165b44641dd31907c40a909e65f63352c",
+   "ja": "波が当たった敵は魔法ダメージを受け、1.25秒間10%のスロウを受ける。スロウは命中のたびに重なって更新され、合計50%が上限。同じ敵への二回目以降の波は25%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Final Chapter#description4": {
+   "source_sha1": "8731812f84e3aedec27e23bf15d380c94d4952dd",
+   "plain_sha1": "d145aefd8e10c33e57582e9e6e827a4f9360ee32",
+   "ja": "付いているときのボーナス：付いている状態で使い始めた場合、ユーミは波の方向を操れる。離れると、効果時間の間このボーナスを失う。さらに、味方チャンピオンに当たったときも「ネコはトモダチ」が発動しうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Final Chapter#description5": {
+   "source_sha1": "6cdf5af246f537085f8e88a3823781d3d726bb2c",
+   "plain_sha1": "54fdf4f5d6c399b26d076576f5d0d2f5974507a6",
+   "ja": "「Best Friend」のボーナス：「ファイナルチャプター」の「Best Friend」への回復が30%～60%（レベルに応じて）増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yuumi/Final Chapter#description6": {
+   "source_sha1": "0c83fc3a8089f50f857bc14a74e9127bd0d8563d",
+   "plain_sha1": "b6f2503790d12b3ebd77bf2746afcbc73ba4d44f",
+   "ja": "付いていない間、ユーミは「ファイナルチャプター」の詠唱中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Yuumi/Feline Friendship#description": {
+   "source_sha1": "0166d790f10eab3c3bfe3f2ed893128efda5db6a",
+   "reason": "residual_markup"
+  }
+ }
+}

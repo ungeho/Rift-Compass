@@ -1,0 +1,138 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Jayce/Hextech Capacitor#description": {
+   "source_sha1": "1c18b4087360dc0af1b6b7608e227ca4e266392f",
+   "plain_sha1": "42a4ec6518ec093ee6d482cbc27bb6cc59c4b6dc",
+   "ja": "固有：ジェイスが「Hammer Stance」と「Cannon Stance」を切り替えるたびに、0.75秒間ゴースト状態になり、移動速度が30増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/To the Skies!#description": {
+   "source_sha1": "01eaf7897b42393a4caa4b124a0282c800c53dc5",
+   "plain_sha1": "550a9c12d13e709d767da6bc3152a3b67d112c0f",
+   "ja": "発動効果：ジェイスは0.5秒かけて対象の敵の位置へ跳ぶ。到着時にハンマーを地面に叩きつけ、範囲内のすべての敵に物理ダメージを与えて、2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/To the Skies!#description2": {
+   "source_sha1": "531445bf3fe1645ac22e333cab1a1c7c9e5d4ca6",
+   "plain_sha1": "42d1c403d5fe21976ff09d93749b40ef22093a50",
+   "ja": "「スカイバスター」はモンスターに10の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/To the Skies!#description3": {
+   "source_sha1": "5d18d3656b28e340b9699020fd3733c8f8cd48e5",
+   "plain_sha1": "d7b6eb4c7089d5da3ff1167e31c90e0b37b8eebd",
+   "ja": "ダッシュ中に「ライトニング」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Shock Blast#description": {
+   "source_sha1": "03d4192be9d0a0fa7e461c21838c476f1009627b",
+   "plain_sha1": "fe73e658233a1b55c628069e38bf531a1a06f689",
+   "ja": "発動効果：ジェイスは指定方向に電気の弾を撃ち、弾は敵に当たるか最大射程に達すると爆発して、周囲の敵に物理ダメージを与え、その範囲の視界を1.25秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Shock Blast#description2": {
+   "source_sha1": "9e8433d527af542cb80f40d1f61351b76bb26335",
+   "plain_sha1": "6a1ba8237507314d7cd44a92dd3975e4a968bb05",
+   "ja": "弾が「アクセルゲート」を通ると強化され、ダメージが40%増え、速度・射程・爆発の範囲も増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Shock Blast#description3": {
+   "source_sha1": "88b143fe43910b78fc7c5f572f1ed7d276cb0d24",
+   "plain_sha1": "e7c1a01e30815431898272222c53ebae5a63d537",
+   "ja": "「ショックブラスト」はモンスターに10の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Lightning Field#description": {
+   "source_sha1": "3519c76988f6b7f3411f1790decfc56d6939c63e",
+   "plain_sha1": "3851c7677a7a48472e8ad2c92ba9b76aa3fab9f8",
+   "ja": "自動効果：ジェイスの通常攻撃は攻撃時効果としてマナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Lightning Field#description2": {
+   "source_sha1": "76a4abd7936a3051b3ab10d1121dbe2427d45f68",
+   "plain_sha1": "abbc7cffca036a9fa5e3c86709569becd6490955",
+   "ja": "発動効果：ジェイスは4秒間自身の周囲に電気の場をまとい、毎秒周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Hyper Charge#description": {
+   "source_sha1": "b13d1392bdb05bc677eaec8e48ce19f8cb76aeba",
+   "plain_sha1": "15a7903d8d0235df0ce88fdbd2e2ce7234f5d6d5",
+   "ja": "発動効果：ジェイスは4秒以内の次の3回の通常攻撃を強化し、修正された物理ダメージを与えて、攻撃速度が360%増加する。「ハイパーチャージ」の合計ダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Hyper Charge#description2": {
+   "source_sha1": "600f129d6e66d23e73118fd1526269cb4b76f5bf",
+   "plain_sha1": "53f9725fee7c59ca9413ecb30190e2ffc10ae5e2",
+   "ja": "「ハイパーチャージ」はジェイスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Thundering Blow#description": {
+   "source_sha1": "5a22e1bbac75a22e6ed39a05bc76da89c91b40fe",
+   "plain_sha1": "3d3a07fadc9660822c13a89fc527eee3f44741eb",
+   "ja": "発動効果：ジェイスは詠唱時間の間、対象の敵にスネアを与え、その後ハンマーを振るって魔法ダメージ（モンスターには上限あり）を与え、600ユニットノックバックさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Thundering Blow#description3": {
+   "source_sha1": "199afb1b487fe9b25b9ea3475e00233d7c45274a",
+   "plain_sha1": "0e7f43ff329ed4b999ba9cce09e256524a926eea",
+   "ja": "「サンダーブロー」の詠唱時間の後0.4秒間、ジェイスは「スカイバスター」と「ショックブラスト」を使用できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Acceleration Gate#description": {
+   "source_sha1": "07af36a35068c7ef68e797557d3c11de0424dc32",
+   "plain_sha1": "712bac294668a5f52633c741e84f46607acd0f9a",
+   "ja": "発動効果：ジェイスは指定地点を中心にエネルギーの門を置き、門は4秒間残って周囲の視界を与える。ジェイスと味方チャンピオンは門を通ると3秒かけて減衰する移動速度の増加を得て、門の中にいる間は効果時間が更新され続ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jayce/Transform Mercury Hammer#description2": {
+   "source_sha1": "3a983724ea661741a8394deb7c4deabd2e33e34d",
+   "plain_sha1": "cd4acc53c2b703c30580401412bb48c5173a101a",
+   "ja": "ジェイスは「Transform」を持って試合を始めるが、そのランクは上げられない。代わりに、基本スキルはそれぞれ6ランクある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Jayce/Hextech Capacitor 2#description": {
+   "source_sha1": "9864cb86e17e05d24074350c3bfd20df9364cfc8",
+   "reason": "residual_markup"
+  },
+  "Template:Data Jayce/Transform Mercury Cannon#description": {
+   "source_sha1": "865893f0b2a6e3952ba71abc2ae5f317abd00af1",
+   "reason": "residual_markup"
+  },
+  "Template:Data Jayce/Transform Mercury Cannon#description2": {
+   "source_sha1": "3470c5ccdfaeb781a3c2860c429dcca2457679da",
+   "reason": "residual_markup"
+  },
+  "Template:Data Jayce/Transform Mercury Hammer#description": {
+   "source_sha1": "a2c12529a9f9cc3e7ea62da791ad27e7c03ddf77",
+   "reason": "residual_markup"
+  }
+ }
+}

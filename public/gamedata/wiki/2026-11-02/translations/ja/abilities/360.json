@@ -1,0 +1,141 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Samira/Daredevil Impulse#description": {
+   "source_sha1": "ea10766b9e75208b3fe09f0ba3b684db61af1df5",
+   "plain_sha1": "fc72544a3f8997f1d36676a565b9ccbdd9a889aa",
+   "ja": "固有：サミーラの通常攻撃とスキルが、チャンピオンへの直前のダメージとは別の敵チャンピオンに少なくとも一体ダメージを与えると、6秒間「Style」のスタックを得る。別の敵でも同じ敵でも命中のたびに更新され、最大6回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Daredevil Impulse#description2": {
+   "source_sha1": "b56c5e307ff5be54ce9c565ac68f0730b2f3905d",
+   "plain_sha1": "9539e380b0e19fcd475239b09291f6ea7d07c5a7",
+   "ja": "「Style」：スタックごとに移動速度が2.75%～3.5%（レベルに応じて）増加し、最大16.5%～21%（レベルに応じて）。最大スタックで「インフェルノトリガー」を使えるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Daredevil Impulse#description4": {
+   "source_sha1": "6282f66fd5581a17175ff821ee8a487bb227d439",
+   "plain_sha1": "23b01c5300c8623a8e3fefd27333b3ce3385f6ea",
+   "ja": "移動不能を受けている対象へのサミーラの通常攻撃は強化され、攻撃モーションが中断されなくなり、0.5秒かけて6発の弾を撃って、それぞれ攻撃力の17%の物理ダメージを与え、ライフスティールが適用される。対象がモンスターかノックアップ状態なら、攻撃は対象を0.5秒間ノックアップもさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Daredevil Impulse#description5": {
+   "source_sha1": "867c423dd087c92b50926521e6a818d72a2a0e75",
+   "plain_sha1": "12e009fef0ad936949f6285a1a7b8710a5d7b932",
+   "ja": "強化された攻撃はサミーラの通常攻撃タイマーをリセットし、クリティカルの倍率の影響を受け、攻撃時効果は一度だけ与え、同じ対象には数秒に一度しか起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Daredevil Impulse#description6": {
+   "source_sha1": "fbacb0a3e2171c894ab9ddb73282b1b87c5c2559",
+   "plain_sha1": "d7c1e61a468a3f37a2573f6cd673454e802042fd",
+   "ja": "対象がサミーラの通常攻撃の射程より遠い場合、有効な範囲内で移動不能の対象に攻撃を始めると、まず射程までその対象の方へダッシュし、その後自動で弾を撃つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Flair#description": {
+   "source_sha1": "1fa442f63330169f66411cba855b3a6b63dec0cc",
+   "plain_sha1": "575e87675280398cc20eb95d62f724cb09b41d92",
+   "ja": "発動効果：サミーラは指定方向に一発撃ち、最初に命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Flair#description2": {
+   "source_sha1": "90be891f6d09a935d8a914332fa187dab4d8ea05",
+   "plain_sha1": "5c6c1d7bbae1114a2e81a81af6f4293c1e1d6ddf",
+   "ja": "発動時に前方に対象指定可能な敵がいると、代わりに剣で扇形に斬りつけ、命中した敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Flair#description3": {
+   "source_sha1": "e8fff0c892bc26720eebe6cb4f72d85580944fc6",
+   "plain_sha1": "803c78988814960a98c65d28cd022decee6263e5",
+   "ja": "「ワイルドラッシュ」中に「フレア」を使うと、サミーラは通り道に爆薬を置き、ダッシュの終わりに起爆して命中した敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Blade Whirl#description": {
+   "source_sha1": "8b551c4da0d1070cf19e3d05e1d25ef492be68cf",
+   "plain_sha1": "0e23c313b31fe3cbbda7cf44f997a76772c48f95",
+   "ja": "発動効果：サミーラは0.75秒かけて剣を回転させ、その間範囲内のタワー以外の敵の飛翔物をすべて破壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Blade Whirl#description2": {
+   "source_sha1": "14b79909cf65fff72f31b4e59049a193f2a87861",
+   "plain_sha1": "fd9543e1839063d6b607526104c0938c98db85e9",
+   "ja": "「ブレードワール」の間にサミーラは二回斬りつけ、それぞれ周囲のすべての敵に物理ダメージを与える。一回目は即座に、二回目は効果時間の後に起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Blade Whirl#description3": {
+   "source_sha1": "9edcbe5d5bd78c5d07f10001e378c12f8e4fe835",
+   "plain_sha1": "6bb6c3075905055f5b7a69f2d06c33e4af1b6d28",
+   "ja": "「ブレードワール」の間、サミーラは通常攻撃も「フレア」の使用もできない。「インフェルノトリガー」を使うと「ブレードワール」は早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Wild Rush#description": {
+   "source_sha1": "1652be5183e86453920208f259105c45e8a79d4b",
+   "plain_sha1": "1e59fe8a56c28aaebafcace4b7ea8330a805eb11",
+   "ja": "発動効果：サミーラは対象の敵か敵の建物の方向に決まった距離ダッシュし、通過した敵に魔法ダメージを与える。さらに5秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Wild Rush#description2": {
+   "source_sha1": "214f9e6a96a5290a7dde35245eed794281d4b60a",
+   "plain_sha1": "bf7c1842b5edd8f8921e14604a45c4db58547d86",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、「ワイルドラッシュ」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Wild Rush#description3": {
+   "source_sha1": "bb9864dff6bf8a2f8ebaacf5f041b2a70ceb68f8",
+   "plain_sha1": "57b289890a6180b188bbdf7b2c14c29111c06511",
+   "ja": "ダッシュ中に「フレア」と「インフェルノトリガー」を使用できる。「ブレードワール」を使うと、ダッシュの終わりに使われるよう予約される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Inferno Trigger#description2": {
+   "source_sha1": "5f66e91915dd20795da8a90bd33aa0a1cf650e3b",
+   "plain_sha1": "763e4a19a6fd1e0a0dae75ed81609ce52ca2c455",
+   "ja": "このスキルを使用するには、近くに見えている敵が必要で、撃つ対象は見えている必要はない。「Style」のスタックは効果の終わりに消費される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Samira/Inferno Trigger#description3": {
+   "source_sha1": "d9544e287cc793153baf86450f37deea33385dad",
+   "plain_sha1": "497f727e3dd50351c64eec271104d1edffc27f48",
+   "ja": "「インフェルノトリガー」の間、サミーラは通常攻撃も「フレア」「ブレードワール」の使用もできないが、移動はできる。サミーラがスキルの使用を妨げる行動妨害か通常攻撃の封印を受けると、「インフェルノトリガー」は早く終わる。サミーラが通常攻撃を封じられている間は「インフェルノトリガー」を使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Samira/Daredevil Impulse#description3": {
+   "source_sha1": "8802fc1d1d5d929a63a6a52a6c5bd0a226a30de0",
+   "reason": "residual_markup"
+  },
+  "Template:Data Samira/Flair#description4": {
+   "source_sha1": "26d0383875106ee13b7746c9604f46de06de1a3a",
+   "reason": "residual_markup"
+  },
+  "Template:Data Samira/Inferno Trigger#description": {
+   "source_sha1": "95ae8e3e8e7480a75146df3746cccf533b3f22d9",
+   "reason": "residual_markup"
+  }
+ }
+}

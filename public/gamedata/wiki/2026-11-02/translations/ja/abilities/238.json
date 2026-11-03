@@ -1,0 +1,128 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zed/Contempt for the Weak#description": {
+   "source_sha1": "944fe1b778de0b50482dc5ee26b31ff38b43777f",
+   "plain_sha1": "06fb12a8e5d9077eb59634e10c1fad73a7c2dacc",
+   "ja": "固有：ゼドの最大体力の50%未満の対象への通常攻撃（攻撃時効果）は強化され、対象の最大体力の5%～10%（レベルに応じて）を追加の魔法ダメージとして与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Contempt for the Weak#description2": {
+   "source_sha1": "b0def9911d17f6ad845f98ff03db40f79d06ad53",
+   "plain_sha1": "f036cb17af18386cc8798382b283c2c392a23313",
+   "ja": "モンスターに対しては、「弱者必衰」は75%のダメージを与え、175が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Contempt for the Weak#description3": {
+   "source_sha1": "dc39137912b98db2390f43d41be0bbc30dc570af",
+   "plain_sha1": "ebcb2e02d8c86eb60c5e562113c94cfebe83c286",
+   "ja": "「弱者必衰」は、同じチャンピオンには数秒に一度しか起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Razor Shuriken#description": {
+   "source_sha1": "a880dfde71500ccd329eef8d432e3600bb87a720",
+   "plain_sha1": "1ba2618a4f4e472dbab5d3d607bae52b156664e5",
+   "ja": "発動効果：ゼドは指定方向に手裏剣を投げ、命中した敵に物理ダメージを与える。最初の一体より後の対象には60%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Living Shadow#description": {
+   "source_sha1": "9b5a060a3d3351efef29f0514f1681d09b775006",
+   "plain_sha1": "de5e1e2cc84e3db805c2b3dc018508aceeee1597",
+   "ja": "自動効果：ゼドと影、または複数の影が同じ対象にスキルを当てるたびに、ゼドは気を回復する。これは使用したスキル一つにつき一度だけ起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Living Shadow#description2": {
+   "source_sha1": "f3bde73717c2aa3531efd0ce28a9c3cc6265024f",
+   "plain_sha1": "e3f129aabac8e6efef7d55d9297e73a14d056f74",
+   "ja": "発動効果：ゼドは影を作り、影は指定地点へダッシュして5.25秒間そこに残り、距離に関係なく「風魔手裏剣」と「影薙ぎ」を真似できる。影の範囲内にいる間、「影分身」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Living Shadow#description3": {
+   "source_sha1": "e6b6f5bc27abfd3b59e99e0f651c40ebd9310239",
+   "plain_sha1": "f39600291431aa325266a5fd023367ff32ba6b0b",
+   "ja": "再発動 -「Shadow Swap」：ゼドと影がブリンクして位置を入れ替える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Living Shadow#description4": {
+   "source_sha1": "c41c452a9c90343c8078bb2697d30ab381a870f5",
+   "plain_sha1": "03079cbc9a66c4c2297285be2f9b9f582026a66e",
+   "ja": "影がダッシュしている間にスキルを使うと、影は置かれた時点でそのスキルを使う。影の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Shadow Slash#description": {
+   "source_sha1": "899cacbebb342ccd95976537a6f794d2ea6fe123",
+   "plain_sha1": "ffd59faf884da093026606babae60da694cffe9b",
+   "ja": "発動効果：ゼドは切り払い、周囲の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Shadow Slash#description2": {
+   "source_sha1": "3bfb597eb696f04d5070b0bb691891fb2f697747",
+   "plain_sha1": "7ba1eccaf2bf0df32a6f556b7839bd6e55aac78b",
+   "ja": "影の切り払いが命中した敵は1.5秒間スロウを受ける。複数の切り払いでもダメージは増えないが、スロウの効果は50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Shadow Slash#description3": {
+   "source_sha1": "8d737a1efa3897deddad2cdfc8716410759b8d9e",
+   "plain_sha1": "15213e979ee867c58054577463131e774c284f5e",
+   "ja": "ゼドの切り払いが命中した敵チャンピオン一体ごとに、「影分身」の残りクールダウンが3秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Death Mark#description": {
+   "source_sha1": "f3ee760308955faacb909b56ae0138b8d49812f3",
+   "plain_sha1": "1ea12203c8a592cf707988218114984245a7c582",
+   "ja": "発動効果：ゼドは対象指定不可になり、0.6秒の遅れの後、遅れの終わりの位置から0.35秒かけて対象の敵チャンピオンの125ユニット先へダッシュする。その後再び対象指定可能になり、対象を3秒間「Marked for Death」にして、同じ時間ゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Death Mark#description2": {
+   "source_sha1": "e4f9e0ca300f16b6f9b4031b6715ad5e1528a1cf",
+   "plain_sha1": "0750b8c870305c5eec350599db4faa2780a3ffe5",
+   "ja": "さらに、ゼドは発動した位置に9秒間影を出し、影は距離に関係なく「風魔手裏剣」と「影薙ぎ」を真似できる。影がある間、再び現れてから0.5秒後から「死の刻印」を再発動できるが、影の効果時間の最後の1.25秒の間はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Death Mark#description3": {
+   "source_sha1": "64f0ef3617d54dc2e726094933fc4dfe4d2239e7",
+   "plain_sha1": "7fb69b52229039bc701fa83b21d68c5fae137be8",
+   "ja": "「Marked for Death」：ゼドは、自身と影が対象に与えたすべての軽減前の物理ダメージと魔法ダメージの一部を蓄え、効果時間の終わりに起爆して物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Death Mark#description4": {
+   "source_sha1": "e6b6f5bc27abfd3b59e99e0f651c40ebd9310239",
+   "plain_sha1": "f39600291431aa325266a5fd023367ff32ba6b0b",
+   "ja": "再発動 -「Shadow Swap」：ゼドと影がブリンクして位置を入れ替える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zed/Death Mark#description5": {
+   "source_sha1": "957b466212a428370047c30a799c15b3c368273e",
+   "plain_sha1": "20e20d2b7064d51a009fa8108a77e57cfe76ad83",
+   "ja": "ダッシュが始まる前に対象が死ぬか1950ユニット以上離れると、「死の刻印」はキャンセルされ、スキルは0.5秒のクールダウンに入り、ゼドは発動した位置に再び現れて、出した影は消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

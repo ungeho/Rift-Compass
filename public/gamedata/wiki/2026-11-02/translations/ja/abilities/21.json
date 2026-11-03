@@ -1,0 +1,78 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Miss Fortune/Double Up#description": {
+   "source_sha1": "563ffb981e3a48b7705821d0ce465240809dc1b0",
+   "plain_sha1": "903c9d0c0e6debd2bf89dc785057bddd4ada2f09",
+   "ja": "発動効果：ミス・フォーチュンは対象の敵に弾を撃って物理ダメージを与え、弾はその後ろの別の敵へ跳ね返って命中する。主対象には攻撃開始時の効果を、命中した両方の敵には攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Miss Fortune/Double Up#description3": {
+   "source_sha1": "57e76e6cf8bb5aecadfcdc96c4ce9a961651e07c",
+   "plain_sha1": "d4a282f8499138313f6c8f5118b0aaf7a8249531",
+   "ja": "跳ね返りは主対象の真後ろのユニットを優先する。跳ね返りが命中する対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Miss Fortune/Strut#description": {
+   "source_sha1": "1bf045eda7d24ae28e714a0fcef119ed6c3a3a3c",
+   "plain_sha1": "38a0f7bf62d1c9217f530adbc436f8e8e5f0f177",
+   "ja": "自動効果：ミス・フォーチュンは、継続ではないダメージを受けない状態が4秒続くと、移動速度が増加する。さらに3秒たつと増加量が増え、「ストラット」を使用すると即座に得られる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Miss Fortune/Strut#description2": {
+   "source_sha1": "8f5873eba3da626a5c52853cd4d0e28760e2ebe2",
+   "plain_sha1": "251115f6705de286c556a86e29da617fad2c3b14",
+   "ja": "発動効果：ミス・フォーチュンは4秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Miss Fortune/Strut#description3": {
+   "source_sha1": "22fb9b5b089ede49f0f8e42e18d80b0e8656d823",
+   "plain_sha1": "1bf0a81ad4eadc0fd7283dacc73ac3fd119b0722",
+   "ja": "「ラブタップ」で新しい対象に印を付けると、「ストラット」の残りクールダウンが2秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Miss Fortune/Make It Rain#description": {
+   "source_sha1": "3fcc34d0dc8b1fbf0e8d5670189a83977d3a48c4",
+   "plain_sha1": "7c264a7b83d8310442a60763e174a6e49000b4e0",
+   "ja": "発動効果：ミス・フォーチュンは指定地点に2秒間弾丸の雨を降らせ、その範囲の視界を得て、範囲内の敵に0.25秒ごとに魔法ダメージを与え、40%（+ AP 100ごとに6%）のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Miss Fortune/Bullet Time#description": {
+   "source_sha1": "6ca0329b717d4a769427027d4af0f31e0b539b08",
+   "plain_sha1": "30039c50fd9fc67c8ca6e9902f88e2c825d9cd09",
+   "ja": "発動効果：ミス・フォーチュンは最大3秒間詠唱し、指定方向に何回かの弾の波を撃つ。各波は6発の弾が広がり、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Miss Fortune/Love Tap#description": {
+   "source_sha1": "f9f983248feda2d1f034c34e8d85c8199dd337e5",
+   "reason": "residual_markup"
+  },
+  "Template:Data Miss Fortune/Double Up#description2": {
+   "source_sha1": "ac1fd89370cb58595b01a62ae79d342519a6871c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Miss Fortune/Bullet Time#description2": {
+   "source_sha1": "d03519ef86a239ea400749140291bcdce64c38e7",
+   "reason": "residual_markup"
+  }
+ }
+}

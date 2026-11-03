@@ -1,0 +1,109 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zaahen/Cultivation of War#description": {
+   "source_sha1": "4ae2ffeb52a70d6c8a1c70d02b33a3a530fc016d",
+   "plain_sha1": "9ba3ad540c27a878cff867155db75c327fe307a9",
+   "ja": "固有：ザーヘンの通常攻撃とスキルでダメージを与えた敵チャンピオン一体ごとに、「Determination」のスタックを一つ得る。スタックは5秒間続き、発動のたびに更新され、最大12回まで重なる。効果時間の後、スタックは0.5秒ごとに1～5（経過秒数に応じて）ずつ切れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/The Darkin Glaive#description2": {
+   "source_sha1": "4c0448d23cc65ddc5c603cfc361c37157db1dfd2",
+   "plain_sha1": "fe6c4c2b5603174b2251c2723a3eb6569327468e",
+   "ja": "強化された攻撃を使ってから1.5秒後、次の4秒以内に追加のコストなしで「ダーキングレイヴ」を再発動でき、新しい効果に変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/The Darkin Glaive#description3": {
+   "source_sha1": "906892181ce5c57765447388dd49bd2be95bb9a7",
+   "plain_sha1": "e4ef56562869066f80964773c2fb83d5871a084d",
+   "ja": "再発動：ザーヘンは4秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が25増加して、追加の物理ダメージを与え、対象を0.75秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/The Darkin Glaive#description4": {
+   "source_sha1": "bd7b78a62490b7efb308861fa5efd675629de04b",
+   "plain_sha1": "2d47846f42d053fd4a3513928b643327f9f9a90e",
+   "ja": "「ダーキングレイヴ」はモンスターに200%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/The Darkin Glaive#description5": {
+   "source_sha1": "32723a7e7117681a619b264affdcc582ffdc0b5a",
+   "plain_sha1": "6339f1f919a1165bb2a9ee2544faebddb867ff15",
+   "ja": "「ダーキングレイヴ」はどちらの発動もザーヘンの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Dreaded Return#description": {
+   "source_sha1": "69d33f2d0bbf09bd70e800a9336ccf52128b4652",
+   "plain_sha1": "859efd756ae9c0b560ee95fc369c08579e9b69a2",
+   "ja": "発動効果：ザーヘンは指定方向にグレイヴを伸ばし、命中した敵に物理ダメージを与える。最大射程に達すると、命中したすべての敵に物理ダメージを与えて、0.25秒間スタンさせ、ザーヘンの方へ225ユニット引き寄せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Aureate Rush#description": {
+   "source_sha1": "6cad93bcb9c3897819ac5a085003b0ada1664334",
+   "plain_sha1": "c669b13fd3e76986ad7f750fb252ee11e10c149f",
+   "ja": "発動効果：ザーヘンは指定地点へダッシュする。到着時にグレイヴを振り回し、周囲の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Aureate Rush#description2": {
+   "source_sha1": "5e0c7b570f5af992e1be621718d2fb8e72b0ea94",
+   "plain_sha1": "710cdb4ab4ffcfc2872f9242b6ec0e4d962d000c",
+   "ja": "外縁に当たった敵は、50%増加した物理ダメージと追加の魔法ダメージを受け、追加の魔法ダメージはモンスターに対しては400が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Aureate Rush#description3": {
+   "source_sha1": "480b7d8f5ee9f3aa9eb10874a64dc71f6c440839",
+   "plain_sha1": "6f6ac1779324c630abc7179c245379ffa651fcf5",
+   "ja": "「絢爛たる進撃」はモンスターに50の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Grim Deliverance#description": {
+   "source_sha1": "88a444bb0b94fd3fa0a37b22b7db85f18d78f7fc",
+   "plain_sha1": "a28531f63be24daa30c7ebd91cbfd2bad0d35d43",
+   "ja": "自動効果：ザーヘンは物理防御貫通を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Grim Deliverance#description2": {
+   "source_sha1": "c03078fcaf5736f0252279e892d05baccac399a2",
+   "plain_sha1": "3af10985bdd0410004da6fead4e6319f3553670d",
+   "ja": "発動効果：ザーヘンは詠唱時間の間に行動妨害を無効にし、その後移動系の効果を受けない状態で指定地点へ空中を飛ぶ。0.6秒の遅れの後グレイヴを叩きつけ、衝撃波を放って周囲の敵に物理ダメージを与え、命中したチャンピオン一体ごとに自身を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zaahen/Grim Deliverance#description3": {
+   "source_sha1": "8889c378b54f3f60c33600bb4018e2431d07eae0",
+   "plain_sha1": "83f3cccb135601cbfeaea7deece48a4fc0f27f38",
+   "ja": "詠唱時間の開始から、ザーヘンは行動できず、50%のダメージ軽減を得る。叩きつける前の遅れの間と、その後最大0.25秒間、これらの効果と移動系の効果を受けない状態を保つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Zaahen/Cultivation of War#description2": {
+   "source_sha1": "411150dc78fea37ddf772d9c07613cc230820e26",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zaahen/The Darkin Glaive#description": {
+   "source_sha1": "a18b4cd9f645275f27547e07dc75d3c58a15a936",
+   "reason": "residual_markup"
+  }
+ }
+}

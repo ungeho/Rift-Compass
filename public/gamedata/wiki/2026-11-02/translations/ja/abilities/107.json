@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -36,6 +36,55 @@
    "source_sha1": "f15540986a5fb74b8b20cae7a1d81fdab422c786",
    "plain_sha1": "36273bea5a60c26dd47c970014edbaa8efe6129e",
    "ja": "通常攻撃をするか、「逆上」以外のスキルを使用すると、「狩猟本能」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Unseen Predator#description2": {
+   "source_sha1": "94c358f82ce0e36fd4d584356c37719a0e0003b1",
+   "plain_sha1": "26fa8d5a0c03c6325728c39672e2a45085570b91",
+   "ja": "固有：ブッシュの中にいる間、レンガーは「見えざる襲撃者」を得て、ブッシュを出た後も0.35秒残る。フラッシュかヘクスフラッシュでブッシュを出ると、「見えざる襲撃者」は即座に失われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Unseen Predator#description3": {
+   "source_sha1": "89b723ee8767270aa5aaa43434de491b2ce53946",
+   "plain_sha1": "0271ccf3e1f21ef73f466b9642e7f7651c9cdc3e",
+   "ja": "「見えざる襲撃者」：レンガーの次の通常攻撃は、現在の「Ferocity」にこの方法で得たものがなければ、攻撃開始時に「Ferocity」を1生む。この攻撃は射程が大きく伸び、対象が通常の射程より遠ければその位置へ跳び、到着時に攻撃して対象の50ユニット前に着地する。レンガーはダッシュ中にどのスキルも使用できる。跳躍の開始が攻撃モーションの終わりで、攻撃タイマーがクールダウンに入り、攻撃開始時の効果が発動し、「Ferocity」の効果時間も更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Savagery#description": {
+   "source_sha1": "b69047268d1137a29a7493e04ba5ffdd2dfc79f5",
+   "plain_sha1": "b377c29f9a9b2044e4f296de89613f35c86d4dcb",
+   "ja": "発動効果：レンガーは3秒以内の次の二回の通常攻撃（攻撃開始時）で、攻撃速度が40%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Savagery#description2": {
+   "source_sha1": "0bb152be61d86495d8e59c11a130c82fb11295b9",
+   "plain_sha1": "c5930a7b64b3e837f7ca5da9f6d2217258cb4bf0",
+   "ja": "一回目の攻撃（攻撃時効果）は強化され、対象を突き刺し、攻撃モーションが中断されなくなって、射程が25増加し、さらに物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Savagery#description4": {
+   "source_sha1": "8167fae4d50885bd02634adbe73efe56523337e8",
+   "plain_sha1": "0fd2a01e3ae34dd5114ea226eeaeb6c5644f7608",
+   "ja": "「逆上」はレンガーの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Battle Roar#description": {
+   "source_sha1": "add40b04a660c6ab0389e7dbed66c98cc9891e27",
+   "plain_sha1": "5f410f9a969d0c4ad244c41db08cd569d568880b",
+   "ja": "自動効果：レンガーは直近1.5秒間に受けた軽減後のダメージの50%を体力バーの灰色の体力として蓄え、モンスターから受けたダメージでは100%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rengar/Bola Strike#description": {
+   "source_sha1": "f31aa9096025a6259b8a393088dce600eef68f45",
+   "plain_sha1": "3204f7119a63988a897b9a850abbe7a8cb438d17",
+   "ja": "発動効果：レンガーは指定方向に投げ縄を投げ、最初に命中した敵に物理ダメージを与えて、1.75秒間スロウを与え、2秒間可視化して、同じ時間その周囲150ユニットの視界を与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

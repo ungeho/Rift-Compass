@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Thresh/Damnation#description": {
+   "source_sha1": "8777e0e91e3c3472c0c1e5b9efe7ccb061f5719a",
+   "plain_sha1": "bd9fa521fd4142a9d2f3cd282a888a82afd2d60f",
+   "ja": "固有：スレッシュの物理防御はレベルごとの成長では増えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Damnation#description3": {
+   "source_sha1": "3741bde7d71bbb571008f8bc0540b5183e6fdef6",
+   "plain_sha1": "eae017ec8a2cdac52546df5dae4bb7ae50671ed7",
+   "ja": "スレッシュは、自身か置いた「嘆きの魂灯」の近くの「Soul」を自動で集める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Damnation#description4": {
+   "source_sha1": "a7ae11077b1d18d36f2eecc49f2b1f8b21be0ad4",
+   "plain_sha1": "9acb410d3dea9b2c67178c87dfccd65b8adbdbeb",
+   "ja": "「Soul」：スタックごとに魔力が1、物理防御が1増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Death Sentence#description": {
+   "source_sha1": "6c68d5bbd1a84323ff105f4f69cb1a301f8b8ce3",
+   "plain_sha1": "945fff70b1cc561d6e304eec3a26d61c258a1b4b",
+   "ja": "発動効果：スレッシュは指定方向に鎌を投げ、鎌が飛んでいる間は移動も攻撃もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Death Sentence#description2": {
+   "source_sha1": "1db81f9bf35c6bf55e447f3475577a5e0e53aee7",
+   "plain_sha1": "443014f49f10eb85a0060e4399a8fef2151583be",
+   "ja": "鎌は最初に命中した敵を捕らえて魔法ダメージを与え、1.5秒間スタンさせて可視化し、0.4秒間ノックアップ状態にして、「死の宣告」の残りクールダウンを2秒短縮する。スレッシュは対象に1.5秒間「Shackled」の印も付け、その間は通常攻撃の指示ができず、1秒間20%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Death Sentence#description3": {
+   "source_sha1": "bf523969bbcbde2f4c1292791a41a633a83ce138",
+   "plain_sha1": "685651440bfdd791865acd33735fd8b6cbaef4b4",
+   "ja": "対象がスタンしている間、スレッシュはフックを自身の方へ二回引く（0.1秒の遅れの後と、その0.6秒後）。引くたびに、対象はスレッシュの方へ少し引き寄せられる。敵に当ててから0.5秒後、またはミニオンかモンスターに当てた直後から、対象が「Shackled」の間スキルを再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Death Sentence#description4": {
+   "source_sha1": "fa5d9c8e09e179484325b2bc3cfba04365d2d5ae",
+   "plain_sha1": "125235c59bc70daa8abd5c20489ff06eb457902d",
+   "ja": "再発動 -「Deathly Leap」：スレッシュはフックを引くのをやめ、「Shackled」の敵へダッシュし、到着すると再び攻撃できるようになる。ダッシュ中に「嘆きの魂灯」と「絶望の鎖」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Dark Passage#description": {
+   "source_sha1": "326e4e84543556f13c993bdd7a59dac052fec3f8",
+   "plain_sha1": "dbc79822580098690ac876b04637a666613708fb",
+   "ja": "発動効果：スレッシュは0.5秒かけて指定地点にランタンを投げ、ランタンはスレッシュが近くにいる間6秒間残って、周囲の視界を与える。スレッシュがランタンから離れすぎると、ランタンは即座に戻ってくる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Dark Passage#description2": {
+   "source_sha1": "9abd648eca8a703865ebc1dd0821a4275d03b2e0",
+   "plain_sha1": "a47cd4f00bac409991266bdfa47fd2375c6acf93",
+   "ja": "スレッシュと、最初にランタンの近くに来た味方チャンピオンは、4秒間シールドを得る。味方はランタンの近くにいるときにランタンを選ぶと、スレッシュのもとへダッシュしてシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Dark Passage#description3": {
+   "source_sha1": "119da6420c10471261b90553bbbe838c54d275a2",
+   "plain_sha1": "5d0a2878f46da0e97e86c020d17e3ea5522c02c1",
+   "ja": "移動不能・グラウンド・サイレンスを受けている間、味方はランタンを選べない。スレッシュが「Deathly Leap」でダッシュしている間は、離れすぎてもランタンは消えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Flay#description": {
+   "source_sha1": "fe498546ce3436da0c48c8d059485b846eefa95e",
+   "plain_sha1": "bc54314d63910fc711ecb9ea7aec01ba2ac4b487",
+   "ja": "自動効果：スレッシュの通常攻撃は強化されて追加の魔法ダメージを与え、敵に通常攻撃しない状態が10秒続く間に攻撃力の係数が増えていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/Flay#description2": {
+   "source_sha1": "0e06d01b0daafcd939865c7f7cb9932a4bf6d5ec",
+   "plain_sha1": "e99e4403cf4a9d2812390eeb3261fb6094ee8af8",
+   "ja": "発動効果：スレッシュは鎖を地面に沿って、太い直線状と自身の周囲の円形の範囲に振り抜く。振りは自身の後ろから指定方向に向かって行う。命中した敵は魔法ダメージを受けて指定方向に200ユニット飛ばされ、その後1秒間スロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/The Box#description": {
+   "source_sha1": "3cb66b0fc46407c71ff6b6cc858b87773bc6444c",
+   "plain_sha1": "18d23f185b132f7ce69cc50dc2bfdd0c47a4db41",
+   "ja": "発動効果：スレッシュは自身の周囲に五角形の霊の壁を立て、各壁は5秒間続く。壁は敵チャンピオンが触れると壊れ、魔法ダメージを与えて2秒間99%のスロウを与える。最初の壁が壊れた後は、残りの壁はダメージを与えず、スロウも1秒だけになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Thresh/The Box#description2": {
+   "source_sha1": "c2a560da249d0ba7a31061fe4d6c2340a6c252de",
+   "plain_sha1": "c2a560da249d0ba7a31061fe4d6c2340a6c252de",
+   "ja": "壁を壊した敵は、1秒間再び壁を壊せない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Thresh/Damnation#description2": {
+   "source_sha1": "847b64c2c0af4c27545a13335577a24f84ab19de",
+   "reason": "residual_markup"
+  }
+ }
+}

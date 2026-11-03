@@ -1,0 +1,98 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Maokai/Sap Magic#description2": {
+   "source_sha1": "12b0d36b620a4903654e67ad40770b79c5215235",
+   "plain_sha1": "bc9916f297599d395c26241e3f02ddd5460e4fff",
+   "ja": "マオカイがスキルを使用するたび、「苗木投げ」を少なくとも一体の敵チャンピオンかエピックモンスターに命中させるたび、または敵のスキルを受けるたびに、「魔樹液」のクールダウンが4秒短縮される。大型モンスターの通常攻撃かスキルを受けた場合は1.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Sap Magic#description3": {
+   "source_sha1": "658b94d3d70b184c10deee27f0cd4ec2ea1eba32",
+   "plain_sha1": "ec5e3af94eee959c893c1102abf3dc5c865f0d7f",
+   "ja": "「魔樹液」はマオカイの通常攻撃タイマーをリセットし、マオカイの体力が最大体力の95%を超えているときは発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Bramble Smash#description": {
+   "source_sha1": "c0deb5a7eb5ca187d960f6ee909b637a28241164",
+   "plain_sha1": "2d87cc0cfe328f20bdc20bd6b23f2821bcec2641",
+   "ja": "発動効果：マオカイは指定方向に衝撃波を放ち、命中した敵に魔法ダメージを与えて0.25秒間99%のスロウを与える。「茨打ち」はモンスターに追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Bramble Smash#description2": {
+   "source_sha1": "00f968c0591f47e5b335a3fb2569bf6ff0b36390",
+   "plain_sha1": "0da048a13bb44fedd44857a02b35da6f5644fbf5",
+   "ja": "マオカイの近くの敵は、さらに0.5秒間スタンし、マオカイとの近さに応じて最大300ユニットノックバックされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Twisted Advance#description": {
+   "source_sha1": "aa83dda3af30d365849eb3ab6ae544c3ff55f5b9",
+   "plain_sha1": "d94ef54adaaf0068e32456961e0fb7ab848094a9",
+   "ja": "発動効果：マオカイは対象指定不可の状態で対象の敵へダッシュする。到着時に魔法ダメージを与え、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Sapling Toss#description": {
+   "source_sha1": "4aaaf7d21af4dcbcc2a286a1689bc000d60dfa1a",
+   "plain_sha1": "e5387a187ebdac85c000b5b5b72d1173c1c92b2c",
+   "ja": "発動効果：マオカイは指定地点に苗木を投げ、飛んでいる間その範囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Sapling Toss#description2": {
+   "source_sha1": "101bb1f9aed4469288b0960edb982dd16f27867b",
+   "plain_sha1": "3a7142953749f6318d2deb1e7354abd7c801487a",
+   "ja": "着地すると、苗木は周囲の視界を与えて30秒間その場にとどまるか、近くの最初の見えている敵に反応して最大2.5秒間追いかける。苗木は敵にぶつかるか時間切れになると爆発し、周囲の敵に魔法ダメージ（チャンピオン以外には300が上限）を与えて、2秒間45%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Sapling Toss#description3": {
+   "source_sha1": "57cfcb2cd3452d55d2e76f2923fc394e50379aa0",
+   "plain_sha1": "ba25956ab7937373334d921affb8d4928ac46417",
+   "ja": "ブッシュに置いた苗木は強化される：30（+ 増加体力の1.5%）秒間残り、爆発は命中したミニオン以外の対象に66.7%のダメージを与えて、1.5秒間二本の苗木を取り付け、さらに命中した敵に2秒間45%（+ 増加体力100ごとに1%）（+ AP 100ごとに1%）のスロウを与えて3秒間可視化する。取り付いた苗木は効果時間の間0.75秒ごとに対象の上で爆発し、そのたびに同じダメージを与える。対象に一度に取り付く苗木は二本までで、その後の強化された苗木の爆発は効果時間を更新し、すでに一本が爆発している場合にだけ苗木を取り付ける。ミニオンに対しては、爆発は100%のダメージを与える。チャンピオン以外への合計のダメージは600が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Sapling Toss#description4": {
+   "source_sha1": "c69d207233c0980d104dc0c81d2a17f0a321a03e",
+   "plain_sha1": "78868220ca56ae5e0e99e9c95fa1bc8b9dac1065",
+   "ja": "苗木の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Nature's Grasp#description": {
+   "source_sha1": "64805f7d7782e0bf00af7e1f66ce89583db55b06",
+   "plain_sha1": "1b1fc3138e059f95f9c371d220297d89565cade5",
+   "ja": "発動効果：マオカイは五つの茨からなる巨大な壁を呼び出し、壁は指定方向へゆっくり進みながら加速し、各茨は敵チャンピオンにぶつかると止まる。敵チャンピオンに少なくとも一体命中すると、マオカイは2秒かけて減衰する移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Maokai/Nature's Grasp#description2": {
+   "source_sha1": "3dd9e020ab0ca0ac58303dc27a87c5e837859e78",
+   "plain_sha1": "2d8f46d76404576cf7f3dc0c578d4a2862d66af4",
+   "ja": "各茨は命中した敵に魔法ダメージを与え、0.75～2.25秒間（進んだ距離に応じて）スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Maokai/Sap Magic#description": {
+   "source_sha1": "74b233f8f2f6b198186c7f213ae7b1e46b4440a5",
+   "reason": "residual_markup"
+  }
+ }
+}

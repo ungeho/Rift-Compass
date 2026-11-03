@@ -1,0 +1,109 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Garen/Perseverance#description2": {
+   "source_sha1": "a1bad5ed74879b1df542738f3b53e1bd32a87197",
+   "plain_sha1": "502e6642b0641b6f14c07d62842c25021fe91519",
+   "ja": "ガレンがチャンピオン・エピックモンスター・タワーからダメージを受けるか、敵のスキルが命中するか、敵のサモナースペルの効果を受けると、「タフガイ」は8秒間失われ、それらからダメージや命中を受けるたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Decisive Strike#description": {
+   "source_sha1": "1cad00c37ffb756913a80165de6839696a299f56",
+   "plain_sha1": "1de9a6957ff98271f7da0c37051c58c4e68b7ec5",
+   "ja": "発動効果：ガレンは自身のすべてのスロウを解除し、一定時間移動速度が35%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Decisive Strike#description2": {
+   "source_sha1": "003d237404b24753e70adcf4624b0e0c8eb09fab",
+   "plain_sha1": "9e8396116a4d82b12a4698686e15812c6c24273a",
+   "ja": "さらに、4.5秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、対象に踏み込み、追加の物理ダメージを与えて、1.5秒間サイレンスを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Decisive Strike#description3": {
+   "source_sha1": "7361a103320dc97d16c0825284097c1f70a95db7",
+   "plain_sha1": "635f250c5d1bda254363d0557a9532964c830c74",
+   "ja": "「断固たる一撃」はガレンの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Courage#description": {
+   "source_sha1": "a3266a6734bbf5f12b9813cff60f61845e3bcd00",
+   "plain_sha1": "8aa63039668edc9fd40fe84c93cfcbf0a0600ea0",
+   "ja": "自動効果：ガレンは敵を倒すたびに「Courage」のスタックを得て、最大150回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Courage#description2": {
+   "source_sha1": "7798e014ed70b07000ab0c4885dd1cbed3587ce4",
+   "plain_sha1": "a301419f9c548e3e5d9537b9bbca45f1fe3b26ad",
+   "ja": "「Courage」：スタックごとに物理防御と魔法防御がそれぞれ0.2増加し、それぞれ最大30。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Courage#description3": {
+   "source_sha1": "3d7e145e4e400567fd1d0119e32ae09e97fd078f",
+   "plain_sha1": "0fe983809ed84c603e7ad2c8ce86424f4b804366",
+   "ja": "発動効果：ガレンは4秒間受けるダメージを軽減する。最初の0.75秒は、さらにシールドと60%の行動妨害耐性を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Judgment#description": {
+   "source_sha1": "4904a68083e89d7b22404d0c7b22ac2b87f3bd2d",
+   "plain_sha1": "d62bbc059ee18101e174bbae41e040b33e15e5cd",
+   "ja": "発動効果：ガレンは3秒かけて剣を素早く7回（+ 攻撃速度の増加25%ごとに1回）回転させ、通常攻撃の指示はできなくなるが、ゴースト状態になって、周囲の敵に定期的に物理ダメージを与える。効果中は1秒後から「ジャッジメント」を再発動でき、終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Judgment#description2": {
+   "source_sha1": "55a2d371cf9d3264904fdc19fd2497ef9fb76da3",
+   "plain_sha1": "04af89bf8168829622463e165b68f4c5d8d6d132",
+   "ja": "「ジャッジメント」が6回命中した敵チャンピオンは、6秒間25%の物理防御低下を受け、7回目の命中とその後6回目ごとの命中で効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Judgment#description3": {
+   "source_sha1": "58273b2590e1070f86275395e0a7b83a48968387",
+   "plain_sha1": "f3df996248f8a09315bfbecbfb2730f44402116e",
+   "ja": "「ジャッジメント」は、命中した最も近い敵に25%増加したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Judgment#description4": {
+   "source_sha1": "ec9928d91b3cddf22d378f3628f99015ba018674",
+   "plain_sha1": "13421ddcc7a022bf76198d7db1751c57249a1053",
+   "ja": "再発動：ガレンは「ジャッジメント」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Garen/Demacian Justice#description": {
+   "source_sha1": "4d5794a5b5dfd2be40b892722aad99bbb1274262",
+   "plain_sha1": "3f05b9be242bcd62b521ea0ca695a6b0c1b908f4",
+   "ja": "発動効果：ガレンは対象の敵チャンピオンにデマーシアの力を呼び下ろし、確定ダメージを与え、詠唱時間の開始時から1秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Garen/Perseverance#description": {
+   "source_sha1": "15d5f8fc08aecae2d31848d7bdf9c494e8f2f854",
+   "reason": "residual_markup"
+  },
+  "Template:Data Garen/Judgment#description5": {
+   "source_sha1": "3ee9f55c34c120fabd0110bf49f3a59bea687ab9",
+   "reason": "residual_markup"
+  }
+ }
+}

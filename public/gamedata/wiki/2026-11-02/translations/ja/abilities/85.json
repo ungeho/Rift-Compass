@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kennen/Mark of the Storm#description": {
+   "source_sha1": "be62a9f68bb9efa51fa0f16179bf1f610c59f44c",
+   "plain_sha1": "0933d4eaabe7d30240293ad71b732358d9718d7e",
+   "ja": "固有：ケネンのスキルは、命中した敵に6秒間「嵐の刻印」のスタックを与える。付与のたびに効果時間が更新され、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Mark of the Storm#description2": {
+   "source_sha1": "2c46b1280bf635b4b14b9dcccff810f7bd10bc1d",
+   "plain_sha1": "8861d04127e413815d3cd3c7916416b84776cf1e",
+   "ja": "対象への三つ目のスタックですべて消費し、対象を1.25秒間スタンさせて、気を25回復する。6秒以内に同じ対象に再び起こった場合、スタンの効果時間は0.5秒に短くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Mark of the Storm#description3": {
+   "source_sha1": "83a5b6b840253f84b993dd773edd0c2c0ed0add8",
+   "plain_sha1": "4c88c3a05907ef7a11c4eabdb4742ac377eef248",
+   "ja": "「雷撃の大嵐」は、対象に最大3スタックまでしか与えられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Thundering Shuriken#description": {
+   "source_sha1": "7a33efa76aac05166fc8b14f71ec25e279656b37",
+   "plain_sha1": "907bfc82cd109a9c1bf0955128715e1f5776970d",
+   "ja": "発動効果：ケネンは指定方向に手裏剣を投げ、最初に命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Electrical Surge#description2": {
+   "source_sha1": "5d19b9f4147303b9f33b0ddd1039372ad16a613d",
+   "plain_sha1": "aadfe4d112c7372948053be903a5b42670468fde",
+   "ja": "発動効果：ケネンは電気の波を放ち、「嵐の刻印」を受けているか「雷撃の大嵐」の中にいる周囲のすべての敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Electrical Surge#description3": {
+   "source_sha1": "fbb539ab183e41ca0413511368074a278d49fa78",
+   "plain_sha1": "3ce8cdf757a1584cb30c96a3fdbf108d9f66f968",
+   "ja": "このスキルを使用するには、775ユニット以内に「嵐の刻印」を受けているか「雷撃の大嵐」の中にいる敵が必要。対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Lightning Rush#description": {
+   "source_sha1": "560b7dcf960ac732d6d3232b8d70f9fabca88472",
+   "plain_sha1": "8c299e6a3ebd101b34e97bebdf5a666e7fc121bc",
+   "ja": "発動効果：ケネンは2秒間稲妻に変わり、通常攻撃の指示はできなくなるが、ゴースト状態になって移動速度が100%増加する。通過した敵に魔法ダメージ（チャンピオン以外には65%）を与え、少なくとも一体の敵にダメージを与えると気を40回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Lightning Rush#description2": {
+   "source_sha1": "de3d15a96ba31c6d50d793d2310b18fa24da43b5",
+   "plain_sha1": "24f6cd307505ef405d1441f6779f54cccf8bdd4f",
+   "ja": "「疾風迅雷」は0.5秒後から再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Lightning Rush#description3": {
+   "source_sha1": "03df1c7ead21a82c4f9037253cdc8fc2840e4a59",
+   "plain_sha1": "d4803f33da7ded30fe25ac6fa4eda97d6465e1cb",
+   "ja": "再発動：ケネンは「疾風迅雷」を終えて攻撃速度の増加を得て、4秒間、得た分だけ攻撃速度の上限を超えられる。クリティカルのたびに攻撃速度の増加の効果時間が1秒延びる（元の効果時間が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Lightning Rush#description4": {
+   "source_sha1": "3271954a983c12e93777feaeea17997cf0f22903",
+   "plain_sha1": "c344e3ae9082f980c81d232977f8ff83384d754d",
+   "ja": "「疾風迅雷」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Slicing Maelstrom#description": {
+   "source_sha1": "0e73efa37e4fe5dea2047cff0eaaa96382644876",
+   "plain_sha1": "6e3e6551cea8bc939c13e00643f73f6aea9f9d6c",
+   "ja": "発動効果：ケネンは自身の周囲に3秒間嵐を呼び、効果時間の間、物理防御と魔法防御が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Slicing Maelstrom#description2": {
+   "source_sha1": "786f814ad5278672f33f3ce36f781c76241e544a",
+   "plain_sha1": "c82bba51e19c279d53216466d05ec49522eff628",
+   "ja": "嵐は0.5秒ごとに周囲の敵に稲妻を落とし、それぞれ魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Slicing Maelstrom#description3": {
+   "source_sha1": "8cf9e3807001fcea1075814d6d9b620335261075",
+   "plain_sha1": "20d5defb34209a91db959f886fa5133c5a6f388d",
+   "ja": "「雷撃の大嵐」は、対象がそれまでに受けた落雷一回ごとに10%ずつダメージが増え、合計で最初の落雷のダメージの150%が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kennen/Slicing Maelstrom#description4": {
+   "source_sha1": "f8d15e3dceb8f27c54783aa525cc5415853c5a42",
+   "plain_sha1": "31ab255a28f4f0a7817183f3555d12a8b09236ae",
+   "ja": "ケネンは「雷撃の大嵐」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Kennen/Electrical Surge#description": {
+   "source_sha1": "54b42a9ec14dbab7d8c5f1ee9aef8a96047f9259",
+   "reason": "residual_markup"
+  }
+ }
+}

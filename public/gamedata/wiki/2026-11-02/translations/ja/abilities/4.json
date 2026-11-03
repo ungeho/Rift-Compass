@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -22,6 +22,69 @@
    "source_sha1": "705ff2e4c0f845288b75631dc8fc6ced029ca2bb",
    "plain_sha1": "5abcb6de8d949b24c9dd47bf295372ab20d79d44",
    "ja": "再発動 -「Gate」：ツイステッド・フェイトは1.5秒間詠唱した後に指定地点へブリンクし、その際、自分を狙う敵の飛翔物を破壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Wild Cards#description": {
+   "source_sha1": "b8e18524eeac8ce6746d6104ba299d89b5cf48ad",
+   "plain_sha1": "eaa89cc2efb623ada2810574b1543a3f179116a1",
+   "ja": "発動効果：ツイステッド・フェイトは指定方向の扇形の範囲に三枚のカードを投げ、それぞれ命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Wild Cards#description2": {
+   "source_sha1": "2b25183f1cd7eaba7b9adfe4fa7caa4e58e41fbd",
+   "plain_sha1": "710b0a73284885421f88817479834a4c1c0bf288",
+   "ja": "敵は一回の通過で一度だけダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Pick a Card#description": {
+   "source_sha1": "d5785ccbf292d39f6f2d19fe99099ac08ff59c9e",
+   "plain_sha1": "df058cd6903b2a591c0a0b2f1f6aa42280cfd932",
+   "ja": "発動効果：ツイステッド・フェイトは6秒間、三枚のカードを0.5秒ずつ順に切り替える。「ドロー」は効果時間中に再発動でき、その時点のカードを選ぶ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Pick a Card#description2": {
+   "source_sha1": "c4c5cbe071495faf6f9c7b6f368f010348837f92",
+   "plain_sha1": "5e6d415f7306b135b263116584b34144f9d7b167",
+   "ja": "再発動：ツイステッド・フェイトは6秒以内の次の通常攻撃を強化し、詠唱時間を0.25秒にして、修正された魔法ダメージを与え、選んだカードに応じた追加の効果を与える。この攻撃はクリティカルにならないが、クリティカル率に応じてダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Pick a Card#description3": {
+   "source_sha1": "566d1d725491142c69b366830509aa3e0a16ca0b",
+   "plain_sha1": "17992d7160d8a7b77fb3074adadac1f7c24e7e7d",
+   "ja": "ブルーカードのボーナス：魔法ダメージ（クリティカル率に応じて0%～57.5%増加）を与え、マナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Pick a Card#description4": {
+   "source_sha1": "dd6c60a8e69a5b9b8eeb1f8529a9462f6e2acf66",
+   "plain_sha1": "82348af98598023d61ac445071162d424f573004",
+   "ja": "レッドカードのボーナス：対象と周囲の敵に魔法ダメージ（クリティカル率に応じて0%～35%増加）を与える。命中したすべての対象に2.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Pick a Card#description5": {
+   "source_sha1": "d6c4bcfbae27727c2f7040d2a29bba0efeae8eb4",
+   "plain_sha1": "a198bd4b3df5649bcecedd54ef044dbad58f567e",
+   "ja": "ゴールドカードのボーナス：魔法ダメージ（クリティカル率に応じて0%～25%増加）を与え、対象を一定時間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Pick a Card#description6": {
+   "source_sha1": "1e62674cac44e40f87011e983d2233466e27fea3",
+   "plain_sha1": "e3775dcd6d656fdb3339978a058687700be8516b",
+   "ja": "「ドロー」の再発動はツイステッド・フェイトの通常攻撃タイマーをリセットする。再発動は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twisted Fate/Stacked Deck#description": {
+   "source_sha1": "1c3e2e334bc82a260bb752cde703f948d3349758",
+   "plain_sha1": "5d4f4e626f03600898aab6d2c9f1f4aef791e5f7",
+   "ja": "自動効果：ツイステッド・フェイトは攻撃速度が増加する。通常攻撃（攻撃時効果）のたびに「スタックデッキ」のスタックを得て、最大3回まで重なる。3スタックで次の通常攻撃が強化され、すべて消費して追加の魔法ダメージを与える（建物には50%）。復活時に「スタックデッキ」の最大スタックを得る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

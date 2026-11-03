@@ -1,0 +1,170 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Gnar/Rage Gene#description": {
+   "source_sha1": "fe5949103bd73cb4087470dbdaabda9d3d2cb4b6",
+   "plain_sha1": "eb33241a20d97a2a4d26e81c13d7ee682165b89f",
+   "ja": "固有 -「ぷんすこ」：ミニ・ナーはダメージを与えるか受けると、2秒かけて「Rage」を4～11（レベルに応じて）生み、最大100。チャンピオン以外に対しては、通常攻撃（攻撃時効果）と「ブーメラン」で即座に0.5～1.375（レベルに応じて）生む。チャンピオンに対しては、「ブーメラン」で即座に1～2.75（レベルに応じて）、通常攻撃（攻撃時効果）で即座に2～5.5（レベルに応じて）生む。「ブーメラン」が「Rage」を生むのは1回の発動につき一度で、最初に当たった敵に応じて決まる。戦闘から13秒離れると、ナーの「Rage」は減っていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Rage Gene#description2": {
+   "source_sha1": "9042478e1bcd1e09616fbc2cb40a62c5d12f7ee6",
+   "plain_sha1": "aac8701eba64916af2a27d8fc3847819faa95cde",
+   "ja": "「Rage」が最大になると、ナーのスキルは4秒間、および変身してミニ・ナーに戻るまで、メガ・ナーのスキルに切り替わる（「ぴょんぴょん」は変身の後に切り替わる）。この間にそのスキルを使うと即座にメガ・ナーに変身し、使わなければ4秒が経過した後に自動で変身する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Rage Gene#description3": {
+   "source_sha1": "c577313c6cf6949130c8c0156ed682804245a1f0",
+   "plain_sha1": "dfe22b697e7d261ed135f28094d3081eed71db48",
+   "ja": "メガ・ナーの形態は15秒間続き、残り時間に合わせて「Rage」のバーが減る。この形態の間は「Rage」を生めない。その後ナーはミニ・ナーに戻り、その時点の体力の割合を保ったまま、15秒間は疲れて「Rage」を生めない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Rage Gene#description4": {
+   "source_sha1": "3985dc9b654556d5fc91f1f0efaa404e233db923",
+   "plain_sha1": "891d79650d1a98290015267b1d47b44d3a3dc04b",
+   "ja": "ナーはミニとメガのどちらの形態かに応じて、違うステータスのボーナスを得る。どちらの形態もスキルのクールダウンを共有する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Boomerang Throw#description": {
+   "source_sha1": "363d69bff7edb17a8f4cc3077db795b71720eaaa",
+   "plain_sha1": "96711497d7ca60a614c6317951ddf3a017aeea90",
+   "ja": "発動効果：ナーは指定方向に直線状にブーメランを投げ、通り道の敵に物理ダメージを与えて、2秒間スロウを与える。最大射程に達するか敵に当たると、ブーメランはナーの現在の移動に応じて戻ってきて、その後の対象には50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Boomerang Throw#description2": {
+   "source_sha1": "7ec3c892e75209e5e1e2e398b297663b646d6d90",
+   "plain_sha1": "4c4440a228fc0561924996bdae9e4315ecae1f5a",
+   "ja": "戻ってくるブーメランをキャッチすると、スキルの合計クールダウンの40%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Boomerang Throw#description3": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Boulder Toss#description": {
+   "source_sha1": "c54503ab8c469c6ae8108812be9abce0b25058ab",
+   "plain_sha1": "161a944dbb25b46c30e617e129baa1bced7e4de3",
+   "ja": "発動効果：ナーは指定方向に岩を投げ、岩は敵に当たると止まって、着弾時に周囲の敵に物理ダメージを与え、2秒間スロウを与える。その後、岩は6秒間地面に残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Boulder Toss#description2": {
+   "source_sha1": "1b31dd040b98ccc68d5c7e6a07ccf607e0864936",
+   "plain_sha1": "800349ae19eaa752c1bdafa516900dbb9ab3e9cb",
+   "ja": "0.3秒後から、ナーは岩の90ユニット以内に移動すると岩を拾え、スキルの合計クールダウンの70%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hyper#description": {
+   "source_sha1": "07caab1b7bbf24e5a9e4ab0c9c9e6796098a78cd",
+   "plain_sha1": "050c63c16d9a3b1ce9581347a8b54216f9f7ea92",
+   "ja": "自動効果：ナーの通常攻撃（攻撃時効果）とスキルの命中は、敵に3.5秒間「ごきげん」のスタックを与える。付与のたびに効果時間が更新され、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hyper#description2": {
+   "source_sha1": "7795d2733f35e18d4b388b0c4519735c6de8c900",
+   "plain_sha1": "f318cef0ac84da1e11a11fe182bacc3d269e1274",
+   "ja": "対象への三つ目のスタックですべて消費し、追加の魔法ダメージ（モンスターには300が上限）を与えて、ナーに3秒かけて減衰する20%～80%（「ナー！」のランクに応じて）の移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hyper#description3": {
+   "source_sha1": "aa8a4e2f2d82ccfdb364b8fc6035912f761ed288",
+   "plain_sha1": "3ee8657da631e420edf37d8fdf977a18bc99abf9",
+   "ja": "メガの形態から戻ると、ナーは「ごきげん」の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Wallop#description": {
+   "source_sha1": "71613dcbcaeb30f720e7b9115d53d7bf3fd056a0",
+   "plain_sha1": "4ae47372da2a9a972bf9598cbe209b78675550db",
+   "ja": "発動効果：ナーは指定方向に腕を叩きつけ、範囲内で当たったすべての敵に物理ダメージを与えて、1.25秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hop#description": {
+   "source_sha1": "51b945173595d71144788392f800bbfca7ea94aa",
+   "plain_sha1": "d6b4fe4d13073f859f994a4edf9a361fd6804fd7",
+   "ja": "発動効果：ナーは指定地点へ跳び、その後6秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hop#description2": {
+   "source_sha1": "c707686c9e4137e7efb77cd8f97e970addb0ec11",
+   "plain_sha1": "71cde88051b401adbd711c5845e5548875ba2827",
+   "ja": "ユニットの上に着地すると、同じ方向にさらに500ユニット跳ねる。敵の上に着地すると、その敵に物理ダメージを与えて、0.5秒間80%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hop#description3": {
+   "source_sha1": "b8cb5c7058134eaf019608ec3428ec357969878c",
+   "plain_sha1": "a93ce58e3258ae5f9aff9e875b1d2ff8e091eb40",
+   "ja": "変身のために「ぴょんぴょん」を使った場合は、攻撃速度の増加は得られない。代わりに、跳ねた後に着地点で「ドーン！」と同じ衝撃波を放つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hop#description4": {
+   "source_sha1": "d71d3cbda45da73fd79733c5b1907f3f9936886e",
+   "plain_sha1": "fb9853f73adb7beab2c1e9b1b378e5d0961f3165",
+   "ja": "最初の跳躍の間に移動不能を受けると、ナーは跳ねない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Hop#description5": {
+   "source_sha1": "d371ee3324340492050920dd902ffbde260e7b16",
+   "plain_sha1": "29ea21322ddb8709c9cb15342ab8f96a4dd9b740",
+   "ja": "ダッシュ中に「ブーメラン」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/Crunch#description": {
+   "source_sha1": "dac745cb05efea030e999150a52c968ee2c7cd98",
+   "plain_sha1": "9360c04f9c83219c11ff612691dfdbfba2671b1b",
+   "ja": "発動効果：ナーは指定地点へ跳び、着地時に周囲の敵に物理ダメージを与えて、0.5秒間80%のスロウを与える。0.25秒の遅れの後、ナーは衝撃波を放ち、より広い範囲の追加の敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/GNAR!#description": {
+   "source_sha1": "663e8e8a26b57e4a17966e98c5cfce43b0f2a0f0",
+   "plain_sha1": "7d4be63cd6d3709028627a2a2d4afa4b39c0f1b7",
+   "ja": "ミニ・ナー - 自動効果：「ごきげん」の移動速度の増加が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/GNAR!#description2": {
+   "source_sha1": "6780d370fe91a57edb1609bfcacebe2141bf81b1",
+   "plain_sha1": "e132d8760e9039821b1d61f37524235ebc7c752d",
+   "ja": "メガ・ナー - 発動効果：ナーは指定方向に体を突き出し、周囲の敵をその方向に最大590ユニット吹き飛ばして（地形は越えない）、その後物理ダメージを与え、0.4秒の遅れの後に一定時間45%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gnar/GNAR!#description3": {
+   "source_sha1": "7b994ebbe0023eaaf8865681c6aacbb71e33ff40",
+   "plain_sha1": "07ca903225cc7bc16a003c86eacf76b68d4e9b19",
+   "ja": "地形にぶつかった敵は即座に50%増加したダメージを受け、遅れの後のスロウの代わりに即座にスタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

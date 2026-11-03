@@ -1,0 +1,107 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Annie/Pyromania#description": {
+   "source_sha1": "4f554aad283280874c574a32f78cf159dfe0cd07",
+   "plain_sha1": "3dfefa0e6121443976a8ce93baaf1b04fcfac89e",
+   "ja": "固有 -「火遊びだいすき」：アニーは「ファイアボール」を敵に命中させるか、ほかのスキルを使用するたびに「火遊びだいすき」のスタックを得る。最大4スタックまで重なり、4スタックで「Energized」状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Pyromania#description2": {
+   "source_sha1": "13605c2691a0208b57ffa13a411746a2d77a8bf8",
+   "plain_sha1": "6e71b6c55b8d08023cafb8dfded9df6eebc5e3bc",
+   "ja": "「Energized」：アニーは次の「ファイアボール」「バーニングファイア」「やっちゃえ！ティバーズ！」を強化し、「火遊びだいすき」のスタックをすべて消費して、命中した敵を1.25～1.75秒（レベルに応じて）スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Pyromania#description3": {
+   "source_sha1": "8d1fd3f3d58d9786f1884a74c04f2e0155b97182",
+   "plain_sha1": "722abb3c0b7371ba9c88bc2dd7399186309ccbc5",
+   "ja": "アニーは試合開始時と復活時に「火遊びだいすき」の最大スタックを得る。死亡すると「Energized」とすべての「火遊びだいすき」のスタックを失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Disintegrate#description": {
+   "source_sha1": "733e24ba3e5b9cdf65a2d1508857074c61516960",
+   "plain_sha1": "7195cdf22c76f7243a4cffb1fa9c59e8e701bad8",
+   "ja": "発動効果：アニーは対象の敵に火の玉を投げ、魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Disintegrate#description2": {
+   "source_sha1": "ed9c14ebc4e7f8e86e1239ec6a282e0a19cd773e",
+   "plain_sha1": "6a07abe52e5d3a3a9e5ef1f83b3794ce8e3ee5c4",
+   "ja": "これで対象を倒すと、「ファイアボール」のクールダウンが50%短縮され、マナコストが戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Incinerate#description": {
+   "source_sha1": "e87b5384f8754166abc1ffe28d3e18724348f06f",
+   "plain_sha1": "5b26e751d8c2314dd583934fea3a485121b09f5f",
+   "ja": "発動効果：アニーは指定方向の扇形の範囲に炎を放ち、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Molten Shield#description": {
+   "source_sha1": "b0f3f017db0957bf5a44149500e0610eddb145a5",
+   "plain_sha1": "37ba24527b2bcca182ce5fcbe8669b40acc9008a",
+   "ja": "発動効果：アニーは自身か対象の味方チャンピオンとティバーズに3秒間のシールドを付与し、1.5秒かけて減衰する20%～50%（レベルに応じて）の移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Molten Shield#description2": {
+   "source_sha1": "256c72bb746253809cde4ce50220c7de287f53a0",
+   "plain_sha1": "59a8e602f5eec27123e10f975612dc3b6a2508bb",
+   "ja": "「モルテンシールド」がある間、それにダメージを与えた敵は魔法ダメージを受ける。これは有効な「モルテンシールド」ごとに、一回の発動につき敵一体あたり一度だけ起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Summon: Tibbers#description": {
+   "source_sha1": "f627548f4426f7d9022c48326329994d675552b4",
+   "plain_sha1": "f29d205aec5f7bad231b98d7f2e2109a860c66ff",
+   "ja": "自動効果：アニーは魔法防御貫通を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Summon: Tibbers#description2": {
+   "source_sha1": "64201f1bb80a96a3f539054991ad00e1d716ff52",
+   "plain_sha1": "807847a27174e5ce5ea242b48215596e0d3564a5",
+   "ja": "発動効果：アニーは炎の爆発とともに指定地点にティバーズを召喚し、その周囲の敵に魔法ダメージを与える。「やっちゃえ！ティバーズ！」はティバーズが生きている間いつでも再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Summon: Tibbers#description3": {
+   "source_sha1": "4465d9737afe0710662b2638cf9c448664bed24b",
+   "plain_sha1": "6d2d2288f7c01f0b1018a9f2d54b481d2afd6148",
+   "ja": "その後ティバーズは、操作できるペットとして最大45秒間フィールドに残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Summon: Tibbers#description4": {
+   "source_sha1": "ec8f70cc77d4ed7576a2346051854a4672e57f20",
+   "plain_sha1": "92c60809c70cc13d6c714a455b02693d8d9daf87",
+   "ja": "再発動：アニーはティバーズに指定地点への移動を指示する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Annie/Summon: Tibbers#description5": {
+   "source_sha1": "58b06fbdfb8ba7babb0a81d2b1b571c4e377a63a",
+   "plain_sha1": "ce72c7cf748460f9e3dcac5aada109726e66346d",
+   "ja": "「やっちゃえ！ティバーズ！」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。ティバーズの詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

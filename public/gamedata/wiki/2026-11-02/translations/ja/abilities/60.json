@@ -1,0 +1,175 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Elise/Spider Queen#description": {
+   "source_sha1": "8f85167facfa86c01b1a1dfcc5b926274742ba29",
+   "plain_sha1": "e355fe1da71329185dbd28d2b1906ece649f8b43",
+   "ja": "固有 -「Human Form」：エリスはスキルを敵に命中させるたびに、眠っている子蜘蛛を一匹得る。一回の発動につき一匹で、一度に2～5匹（「Human Form」のランクに応じて）まで蓄える。試合開始時と復活時に最大数の子蜘蛛を蓄えている。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Queen#description2": {
+   "source_sha1": "8c1ea25a84eb0004ed363bd0dbc6e32495d0e0c5",
+   "plain_sha1": "6738900e44321dff73892d66f6d94802e1b19e7d",
+   "ja": "固有 -「Spider Form」：エリスの通常攻撃は、攻撃時効果として14～44（「Spider Form」のランクに応じて）（+ APの15%）の追加の魔法ダメージを与え、6～12（「Spider Form」のランクに応じて）（+ APの8%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Queen#description3": {
+   "source_sha1": "bdd8fd22164af24dd3cd7c9a9a2c9b8d3d1af0fb",
+   "plain_sha1": "c600e6ce8df1c3eedab44cadf151a48dd2f3f952",
+   "ja": "子蜘蛛の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Neurotoxin#description": {
+   "source_sha1": "567802ff561b6432397d7634731ed059669c86e3",
+   "plain_sha1": "05ae864a6556aef7a6d700f6e6859976f91c8ba8",
+   "ja": "発動効果：エリスは対象の敵に毒を撃ち、魔法ダメージを与える。対象の体力の割合に応じたダメージは、モンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Venomous Bite#description2": {
+   "source_sha1": "b334069a037d78e3021845b57dc808b8076717b2",
+   "plain_sha1": "b0e2678b2a8f440c2774a46411e950543b315a08",
+   "ja": "有効な子蜘蛛か「子蜘蛛爆弾」が近くにいる場合、「毒牙」の発動時にエリスとともに対象へダッシュし、その対象を優先して狙う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Volatile Spiderling#description": {
+   "source_sha1": "a0e2b0982fdae392e627003bca64443478f3910e",
+   "plain_sha1": "e4de4a928a4455fa35fed383b2c546b14a0415ae",
+   "ja": "発動効果：エリスは3秒間残る、毒で膨れた対象指定不可の蜘蛛を呼び出す。蜘蛛は近くの対象を探し、0.75秒の遅れの後にその対象へ這っていく。見つからなければ遅れなしにまず指定地点へ這い、地形に当たると道を探して進む。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Volatile Spiderling#description2": {
+   "source_sha1": "3bfba43c5da713586852b4b0dcf2d71fcbc531ca",
+   "plain_sha1": "f9ec3ea02d9010eff57ac61c94f38f218ed11fae",
+   "ja": "蜘蛛は、見つけた対象に近いほど移動速度が増加する。蜘蛛は敵に触れるか時間切れになると即座に爆発し、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Volatile Spiderling#description3": {
+   "source_sha1": "8d00dbb4b5cde56bfc5151e81a4528361a510a08",
+   "plain_sha1": "0afb1dc820af029bcdfd3c69d8031b786b7d698d",
+   "ja": "蜘蛛は、指定地点に着く前に敵を見つけた場合は最も近い敵を優先し、着いた後に見つけた場合は常にチャンピオンを優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Skittering Frenzy#description": {
+   "source_sha1": "76f2050be3bc9089b87449ced80f6074a05181a0",
+   "plain_sha1": "2cb48a90514af642b09bb777cfbc15dd511c1ba0",
+   "ja": "自動効果：エリスの子蜘蛛は攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Skittering Frenzy#description2": {
+   "source_sha1": "0ac27cb555bf6dfa08647445dafb66e922908584",
+   "plain_sha1": "ec3af65daaed4401eca9663f624216be4f252cea",
+   "ja": "発動効果：エリスと子蜘蛛は3秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Skittering Frenzy#description3": {
+   "source_sha1": "7db3fc60ce9502c97ac2e63061c13c68da6410e7",
+   "plain_sha1": "a13a99ac6aa78213f0b743c214af231afac62f92",
+   "ja": "「猛食」はエリスの通常攻撃タイマーをリセットする。エリスが「Human Form」に変わると、「猛食」の効果は即座になくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Cocoon#description": {
+   "source_sha1": "8c84e1bb7bdc19d1e8bf786981266433821125ff",
+   "plain_sha1": "bd7c1a91ffcbe3e5e49e724d3aafa8d8512ed4b1",
+   "ja": "発動効果：エリスは指定方向に糸を撃ち、最初に命中した敵を数秒間スタンさせ、その間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Rappel#description": {
+   "source_sha1": "c96bdc9b3796711439dd922ae7daeb97373f1ff1",
+   "plain_sha1": "401b0d87bc13c9342ca0bcb5ed69819466d6c93d",
+   "ja": "発動効果：エリスと子蜘蛛は0.6秒かけて空中に上がり、即座に対象指定不可で行動できない状態になって、その後最大1.95秒間姿を消し（vanish）、その間周囲900ユニットの視界を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Rappel#description2": {
+   "source_sha1": "e395aaa589b6d928ae26acadb0d338f206a11cca",
+   "plain_sha1": "7d8cbd59ea09521eacf79359afdcb6f883ec6af6",
+   "ja": "「蜘蛛の糸」は効果時間中、対象の敵に即座に、または対象なしで遅れの後に再発動でき、効果時間が終わると後者を自動で行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Rappel#description3": {
+   "source_sha1": "f976c9e8fe495239345a9cefb056e9b07145577c",
+   "plain_sha1": "71c6154eb23e24e918ea8439e060c8715ff3f8f1",
+   "ja": "再発動：エリスと子蜘蛛は再び現れ、0.4秒かけて地上に降り、その後再び対象指定可能になって行動できるようになる。さらに、5秒間「蜘蛛の女帝」のボーナスが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Rappel#description4": {
+   "source_sha1": "838858a8e1d306b40d421eba3129d6e5c30bfbd0",
+   "plain_sha1": "fbfa77d24f66dd3b92d53e6843ec0566ffdd5e6b",
+   "ja": "対象の敵に再発動した場合、エリスと子蜘蛛は対象の位置の後ろに降りる。そうでなければ、対象なしで現在の位置に降りる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Rappel#description5": {
+   "source_sha1": "0b0bb44e1976fec1aa4956612015b85fc8e46fd5",
+   "plain_sha1": "b5ca72930abe948d9dd8982b1c2cc58fa670c193",
+   "ja": "「蜘蛛の糸」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Form / Human Form#description": {
+   "source_sha1": "d7d1d15c28c04bfd246e418887ea994ad5184226",
+   "plain_sha1": "d42d185320da0da060f6150ccfaa6162e1ee4c27",
+   "ja": "自動効果：「蜘蛛の女帝」のボーナスが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Form / Human Form#description2": {
+   "source_sha1": "a88d581309bdb04e26da2890075aed797ce31a00",
+   "plain_sha1": "ab3bf6eb05475b4ddfd3b02296f704f003be6418",
+   "ja": "切り替え：エリスは「Human Form」と「Spider Form」を切り替える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Form / Human Form#description3": {
+   "source_sha1": "225aa326e006dcba20984c1784569ebcdecd3e4e",
+   "plain_sha1": "e286aaa7867934f474f0eac280a9f03f4ad2928c",
+   "ja": "「Spider Form」：エリスは蜘蛛に変身し、基本移動速度が25増加し、射程125の近接の通常攻撃と蜘蛛のスキルを使えるようになる。さらに、蓄えたすべての子蜘蛛を呼び出し、体力を全回復させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Form / Human Form#description4": {
+   "source_sha1": "a250b4b8a1b1c8d91345959c81b66fbf15975161",
+   "plain_sha1": "5c670cd4078f226277dec2f7423a381b5e2ad7f8",
+   "ja": "「Human Form」：エリスは人間に変身し、遠隔の通常攻撃と人間のスキルを使えるようになる。さらに、出ているすべての子蜘蛛を蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Elise/Spider Form / Human Form#description5": {
+   "source_sha1": "1f4b87fea349b9c910a686f5035810fc60af6844",
+   "plain_sha1": "1ad45fac4fdb7e903ee980aa8326471e50a4cb2a",
+   "ja": "エリスは「蜘蛛形態」のランクを一つ持って始まり、レベル6・11・16で上げられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Elise/Venomous Bite#description": {
+   "source_sha1": "f215fcae14d258dfcce6fd7818c8f29543f46561",
+   "reason": "residual_markup"
+  }
+ }
+}

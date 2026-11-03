@@ -1,0 +1,140 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Tahm Kench/An Acquired Taste#description": {
+   "source_sha1": "c1e16645b6cba606b5d8ae8848bac34d86164868",
+   "plain_sha1": "2b5c24df6f48aa9ab3724c10b5f2a208f1f745e7",
+   "ja": "固有：タム・ケンチの通常攻撃（攻撃時効果）と「味見」は強化され、5～60（レベルに応じて）（+ 増加体力100ごとにAPの1.25%）（+ 増加体力の4%）の追加の魔法ダメージを与え、敵チャンピオンに5秒間「舌慣らし」のスタックを与える。命中のたびに更新され、最大3回まで重なる。効果時間が終わると、スタックは0.67秒ごとに一つずつ消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/An Acquired Taste#description2": {
+   "source_sha1": "671b13ad0b93370e8dd4c9490cf358cf508040b6",
+   "plain_sha1": "4113b25742cdb55c3658628c0820ea36c8f21d38",
+   "ja": "「味見」と「丸呑み」は、3スタックの敵に対してすべてを消費して追加の効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Tongue Lash#description": {
+   "source_sha1": "4e30cd0963efaf98e9e17240f252171e2fc97b6d",
+   "plain_sha1": "213f0d18851f544edd025ec28ab867fc7ea8e008",
+   "ja": "発動効果：タム・ケンチは指定方向に舌を伸ばし、最初に命中した敵に魔法ダメージを与えて、2秒間50%のスロウを与える。これが敵チャンピオンに命中すると、タム・ケンチは自身も回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Tongue Lash#description2": {
+   "source_sha1": "3ba9a1311d5dac1da5a512f6ab50e5bbcbaffba3",
+   "plain_sha1": "991cd5e7d0a33d58a78a5cec53d1b50d48b49db0",
+   "ja": "「舌慣らし」のボーナス：対象は1.5秒間スタンする。「味見」の間に「丸呑み」をコストなしで使って、対象をタム・ケンチのもとへ引き寄せてから飲み込める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Tongue Lash#description4": {
+   "source_sha1": "9b5f6d42e4053671a46cf5d9ac3a286de643ec62",
+   "plain_sha1": "5e8a17e129187ef249803aa61567648d471b19fc",
+   "ja": "舌が飛んでいる間、タム・ケンチは移動・攻撃や、別の対象への「川潜り」「丸呑み」の使用ができない。「味見」の射程と速度は、タム・ケンチの大きさで増えることがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Abyssal Dive#description": {
+   "source_sha1": "b18ae9cb1981988b2f4d9bf53587e39877cf6f38",
+   "plain_sha1": "d2baa97b34f01e03e2c0f8ca10bc16cf8bf9f865",
+   "ja": "発動効果：タム・ケンチは1.35秒間詠唱して水に潜り、指定地点から現れる。詠唱中はその範囲の視界を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Abyssal Dive#description2": {
+   "source_sha1": "b96805025083bf59daf2fbd4a6cd1dd013863bdf",
+   "plain_sha1": "247475b321e1d2fafda06316ce7d88f6b9cfa2c9",
+   "ja": "詠唱を終えると、0.15秒の遅れの後にタム・ケンチは指定地点へブリンクし、周囲の敵に魔法ダメージを与えて、1秒間ノックアップとスタンを与える。少なくとも一体の敵チャンピオンに命中すると、「川潜り」のマナコストの40%とクールダウンの一定の割合が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Abyssal Dive#description3": {
+   "source_sha1": "307d2e2749e0718eb95135dd44a5f5cbfd60f457",
+   "plain_sha1": "3080814d6274bde19b8b0b75d5a868e0431da029",
+   "ja": "敵は、タム・ケンチが0.75秒詠唱した後、その範囲の視界があればタム・ケンチの行き先の表示を見られる。ブリンクの後0.65秒間、タム・ケンチは行動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Thick Skin#description": {
+   "source_sha1": "af81b29bcf17697646ef6fa879e5b9d785f90db6",
+   "plain_sha1": "501899be848660880d84983f44b4477736d6c1f0",
+   "ja": "自動効果：タム・ケンチは受けた軽減後のダメージの一部を体力バーの灰色の体力として蓄え、近くに生死を問わず見えている敵チャンピオンが2体以上いる間はその割合が増える。最大体力の300%まで蓄えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Thick Skin#description3": {
+   "source_sha1": "67bdd71042694c9f0ec265b7f8b10f96b9d4a5bb",
+   "plain_sha1": "547eb103d56c9dbf3361433a9e48d6399e41bfd6",
+   "ja": "発動効果：タム・ケンチは現在の灰色の体力を、2.5秒間続くシールドに変える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Devour#description": {
+   "source_sha1": "f9874fd07343b9ade1fa76e6b71844fba43fd863",
+   "plain_sha1": "9c0e61897fcb45c4a1910ebf4c7a263157f4ee30",
+   "ja": "発動効果：タム・ケンチは対象のチャンピオンをさらい、詠唱時間の間に引き寄せてから飲み込み、最大3秒間お腹の中に入れて運ぶ。中にいる間、対象はタム・ケンチに付いて対象指定不可になり、移動系の効果を受けない。「丸呑み」は「舌慣らし」が3スタックの敵にしか使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Devour#description2": {
+   "source_sha1": "52260e6a7e747b53f5343fbecdb72b5814bab236",
+   "plain_sha1": "26956359d93cc5318245e5abed31d2bd6d0f252b",
+   "ja": "対象が味方なら、味方は行動できなくなってシールドを得て、シールドは吐き出された後0.25秒ごとに50ずつ減る。味方がお腹の中にいる間、タム・ケンチは3秒間60%の移動速度の増加を得て、「川潜り」以外の移動スキルは使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Devour#description3": {
+   "source_sha1": "1a52f889603897a287f2920848af022694b70ccf",
+   "plain_sha1": "7bdb980eec43a8ffcabc941781aaa368a722fe2b",
+   "ja": "1秒後から、対象がお腹の中にいる間、タム・ケンチは「Regurgitate」を使用でき、効果時間が終わると自動で使用する。飲み込まれた味方は、移動不能を受けていなければ、移動の指示で、自分が選んだ方向にタム・ケンチに「Regurgitate」を使わせることもできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Devour#description4": {
+   "source_sha1": "ff9936e4f2da8043e6920cfefb21f73e62176822",
+   "plain_sha1": "180da771a572abe18c4822b9fadf6f468b202016",
+   "ja": "「舌慣らし」のボーナス：「丸呑み」の詠唱時間の間と付いている間、対象はサプレッションを受ける。同じ条件の間、タム・ケンチはグラウンドと40%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Devour#description5": {
+   "source_sha1": "47dbbeecaaf5021f40fa6f9eb8114cd21c748e3a",
+   "plain_sha1": "e33956b61422a3ccf4aaba1650db4561dee7e16e",
+   "ja": "タム・ケンチが「川潜り」を行っている場合、「Regurgitate」は「川潜り」の効果が終わるまで自動で使用されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Regurgitate#description": {
+   "source_sha1": "64ec73a09852c39f49d6a926d4d2a31a33ce6bf3",
+   "plain_sha1": "ca3b6f36eca4918987038b52270f8194f1411bb0",
+   "ja": "発動効果：タム・ケンチは飲み込んだチャンピオンを自身から離して、指定方向に吐き出す。対象が敵なら、移動系の効果の終わりに魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tahm Kench/Regurgitate#description2": {
+   "source_sha1": "f3c171b23c5cf04ec2d807174b782a8242a057d6",
+   "plain_sha1": "493043633a14b14507b191a669f5ec3cfc243447",
+   "ja": "「Regurgitate」の使用後0.4秒間、タム・ケンチは行動できない。「Regurgitate」が自動で使用された場合、タム・ケンチは向いている方向に対象を吐き出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Tahm Kench/Thick Skin#description2": {
+   "source_sha1": "5b229bb80097a01a29779ffc318e70b4cf844f4d",
+   "reason": "residual_markup"
+  }
+ }
+}

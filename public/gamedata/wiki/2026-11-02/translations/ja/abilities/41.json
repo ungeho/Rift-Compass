@@ -1,0 +1,130 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Gangplank/Trial by Fire#description": {
+   "source_sha1": "85e59f9ee8f3a589031c6ac6fb54576f0c91e522",
+   "plain_sha1": "9cb6756e913d73a6e2c8c70bae97da8f72057580",
+   "ja": "固有：一定時間ごとに、ガングプランクは次の通常攻撃を強化して対象に火をつけ、2.5秒かけて50～250（レベルに応じて）（+ 増加攻撃力の100%）の追加の確定ダメージを与える。タワーには50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Trial by Fire#description2": {
+   "source_sha1": "a14647f1247cc3743677c7c9f7a80b62de0cf65b",
+   "plain_sha1": "c1ddc7499288012dc87c6a30421e3a767654a8a0",
+   "ja": "「背水の銃剣」を対象に命中させると、ガングプランクは2秒間、移動速度が15%～30%（レベルに応じて）増加する。「火薬樽」が爆発するたびに、「背水の銃剣」のクールダウンがリセットされ、ガングプランクはその移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Trial by Fire#description3": {
+   "source_sha1": "219fe64bf794768d19a03df85c46034150933331",
+   "plain_sha1": "a6e436e714b375927df706be92e9437da4c2adf9",
+   "ja": "「背水の銃剣」は「偽りの発砲」や「火薬樽」では付与できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Parrrley#description": {
+   "source_sha1": "7c9ae25ee0c13144f35e0cab1e3a9075aad0d384",
+   "plain_sha1": "23a0a36e589e4c175a29ef6e76bf47ddfd861e1c",
+   "ja": "発動効果：ガングプランクは対象の敵に弾を撃って物理ダメージを与え、遠隔攻撃として攻撃時効果を与えて、攻撃開始時の効果を発動する。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Parrrley#description2": {
+   "source_sha1": "fce7e1aa1277a8b54ac2551299c4a7af589d8eae",
+   "plain_sha1": "8b6af879597fcbc47758af64f818d5ac81b73c21",
+   "ja": "「偽りの発砲」で対象を倒すと、ガングプランクはゴールド（gold）と「Silver Serpents」を奪う。「偽りの発砲」が起爆させた「火薬樽」の爆発で倒れた敵も、奪う対象に数える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Parrrley#description3": {
+   "source_sha1": "b1d4aa254e8b7c456e43fc5023b512cbe2ad6ffb",
+   "plain_sha1": "77c4a300cf8eefbc435e5c8198f78ca890c64dd1",
+   "ja": "「Silver Serpents」はショップで「一斉砲撃」の強化に使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Remove Scurvy#description": {
+   "source_sha1": "0ed59031684a3dc2b48409344da9968f5c62b58e",
+   "plain_sha1": "6571ae49fffb6055a993c5348b5126f9775c20f6",
+   "ja": "発動効果：ガングプランクは大量の柑橘類を食べ、自身のすべての行動妨害を解除して自身を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Powder Keg#description": {
+   "source_sha1": "89f01be9ecea4f54e5b25ae8bb95d8e0a2978821",
+   "plain_sha1": "e079246779c0633ae2f3683aa9f342d32e2ddc52",
+   "ja": "発動効果：ガングプランクはチャージを一つ消費して、指定地点に25秒間残る火薬樽を置く。樽は接続の範囲が重なるほかの樽と黒い火薬の筋でつながる。樽の体力は3で始まり、体力が1になるまで2～0.5秒（レベルに応じて）ごとに1ずつ減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Powder Keg#description2": {
+   "source_sha1": "be4a27d0b77867c3594505dfe0080d4623831581",
+   "plain_sha1": "7968d020afed4c85b616a7d49a38544c92bed3f6",
+   "ja": "ガングプランクは一定時間ごとに「火薬樽」のチャージを得て、上限まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Powder Keg#description4": {
+   "source_sha1": "00b908b74425b10c083a67d769e95ac4a9704c5a",
+   "plain_sha1": "b033aa1237bfec758d24b6480837293dbaa49f8d",
+   "ja": "爆発に巻き込まれた敵は、起爆させた攻撃のダメージを受け、2秒間スロウを受ける。チャンピオンに対しては、爆発が追加の物理ダメージも与える。各敵は連鎖一回につき一度だけ命中し、与えるダメージは対象の物理防御の40%を無視する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Powder Keg#description5": {
+   "source_sha1": "d47c451c26cd0533c46bebcc18b13c94e04f2798",
+   "plain_sha1": "e30500521061cdec4cbda437928d284c06ecb298",
+   "ja": "樽への起爆の攻撃はクリティカルになりうるので、爆発はその攻撃のクリティカルのダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Cannon Barrage#description": {
+   "source_sha1": "88dbffd5a59b2a5b99f47c143b54a3681e93612a",
+   "plain_sha1": "d57e10f8937080b2e693df688d168415b58d7e97",
+   "ja": "発動効果：ガングプランクは空に信号弾を撃ち、沖の船に指定地点を砲撃させて、2秒ごとに3回ずつのまとまりで12回の砲弾の波を降らせる（まとまりの中の各波は0.25秒ずつずれて着弾）。効果時間の間、その範囲の視界を与える。各波は範囲内のすべての敵に魔法ダメージを与えて、0.5秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Cannon Barrage#description2": {
+   "source_sha1": "6482fff171243b29726fadf8242c12e85eb3d7cf",
+   "plain_sha1": "caf55f17745909d01bb29fe6dfa46db3c60a3425",
+   "ja": "ショップの範囲にいる間、ガングプランクは船の強化をそれぞれ500の「Silver Serpents」で購入でき、「一斉砲撃」に新しい効果を加える：",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Cannon Barrage#description3": {
+   "source_sha1": "5388981eac5010c959a8cb6040e62ac92675fb5f",
+   "plain_sha1": "bd30750ba018dafca72812a7b3383c32f8800633",
+   "ja": "「Death's Daughter」：最初のまとまりの波の後、砲撃の中心に大きな砲弾が落ち、衝撃の範囲の敵にまとまり一つ分の確定ダメージを与えて、1秒間75%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gangplank/Cannon Barrage#description5": {
+   "source_sha1": "c72871c32c5c503f349dc4af4a20b6d39ae8aa72",
+   "plain_sha1": "3e28ff1a023390350c3eb98ebcf275433e471d78",
+   "ja": "「Raise Morale」：「一斉砲撃」はガングプランクと範囲内のすべての味方に40%の移動速度の増加を与え、2秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Gangplank/Powder Keg#description3": {
+   "source_sha1": "2269a345954771abc984b434d7f858c08ce57766",
+   "reason": "residual_markup"
+  },
+  "Template:Data Gangplank/Cannon Barrage#description4": {
+   "source_sha1": "0ad61d533575b1b89f928839f77c66e8ab98e352",
+   "reason": "residual_markup"
+  }
+ }
+}

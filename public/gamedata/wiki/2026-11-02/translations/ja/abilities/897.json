@@ -1,0 +1,158 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data K'Sante/Dauntless Instinct#description3": {
+   "source_sha1": "cd7ef549170027ce94b5f77dae22756cea42e16d",
+   "plain_sha1": "21984dd12ccc8f53af9536095a33373988029343",
+   "ja": "「オールアウト」のボーナス：カ・サンテの通常攻撃とスキルのダメージ、および「不屈の本能」の印の消費は強化され、対象の最大体力の1%（+ 増加物理防御100ごとに1%）（+ 増加魔法防御100ごとに1%）に等しい追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Ntofo Strikes#description": {
+   "source_sha1": "25d9530a835e87546098e7f2946989041d680257",
+   "plain_sha1": "ac6d36d0fd02ef5ba92b94266d326d1f33337781",
+   "ja": "発動効果：カ・サンテは指定方向にエントーフォを叩きつけ、命中した敵に物理ダメージを与えて、0.5秒間80%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Ntofo Strikes#description2": {
+   "source_sha1": "ccf1d1b0aa78cf81ce4114af964ac0ea734b8b0c",
+   "plain_sha1": "73d30d9f84ca0261c11b95b86b86d6e9b3fb5bf6",
+   "ja": "これが少なくとも一体の敵に当たると、カ・サンテは6秒間スタックを一つ得る。最大2回まで重なり、命中のたびに更新される。2スタックのとき、次の「破撃のエントーフォ」はすべてを消費して新しい効果で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Ntofo Strikes#description3": {
+   "source_sha1": "4b088d56bb3e2f283614a23c3e5cc618a4091f9b",
+   "plain_sha1": "c7b1c41ac4ff84251883187d9f6a01924630cf57",
+   "ja": "強化された発動効果：カ・サンテは指定方向に衝撃波を放ち、命中した敵に同じ効果を与えるが、さらに0.65秒かけて自身の方へ引き寄せ、0.8秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Ntofo Strikes#description4": {
+   "source_sha1": "e7f7bcd1335c1b757360a818e73ebe16ee5f6179",
+   "plain_sha1": "baa9ad0192ed82e0c499b147a7c93dc1fb1ba4d5",
+   "ja": "「オールアウト」のボーナス：「破撃のエントーフォ」のクールダウンが33%短縮される。「オールアウト」に入ると、「破撃のエントーフォ」のスタックはリセットされる。「オールアウト」に入る前に2スタックあった場合、「破撃のエントーフォ」のクールダウンはリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Ntofo Strikes#description5": {
+   "source_sha1": "1634899ff25ef2e626063f86bb525d52ed454597",
+   "plain_sha1": "27985e6ae7b2eefcc9501dd047a23a6b6a14fd22",
+   "ja": "「破撃のエントーフォ」はカ・サンテの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Path Maker#description": {
+   "source_sha1": "3a5f9357955c41e3a23ae7dd5db8618eed4d07f8",
+   "plain_sha1": "08370dddea37a45ee1a3f95ca0147c15e7a9d54c",
+   "ja": "発動効果：カ・サンテはエントーフォを構えて守りを固め、指定方向へダッシュする準備をして、最短0.4秒から最大1秒まで溜める。この間、移動系の効果を受けず、25%のダメージ軽減を得る。さらに、詠唱の最初の0.9秒の間に「切り開く猛進」の射程・スタンの効果時間・「オールアウト」の追加の確定ダメージの倍率が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Path Maker#description2": {
+   "source_sha1": "0e5f01d33bd8e90883b95b5aa222c67c46438ceb",
+   "plain_sha1": "9ef0f975282d423bf666c7884ebfb6f5014bb964",
+   "ja": "「切り開く猛進」は効果時間中に再発動でき、その後は自動で再発動する。「切り開く猛進」の溜めは行動妨害で中断されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Path Maker#description3": {
+   "source_sha1": "57caeb34b343c9afbd7a840cb41858a365522268",
+   "plain_sha1": "584021bacb456975e233c48814b95964216c889c",
+   "ja": "再発動：カ・サンテは発動時に狙った方向へダッシュし（地形は越えない）、通過した敵に物理ダメージを与えて一緒に運び、0.5～1.75秒間（詠唱時間に応じて）スタンさせる。このダメージはモンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Path Maker#description4": {
+   "source_sha1": "5815b33fe5e4bdcf5011fa326df22907cc269c24",
+   "plain_sha1": "a485e2c86f6718d0ab8e3a24c016e0a9f0ecc61c",
+   "ja": "「オールアウト」のボーナス：「切り開く猛進」はノックバックとスタンを与えなくなるが、ダメージ軽減が70%になり、ダッシュは10%～80%（詠唱時間に応じて）の追加の確定ダメージを与えて、ダッシュの速度が20%増加する。「オールアウト」に入ると、「切り開く猛進」のクールダウンが更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Path Maker#description5": {
+   "source_sha1": "b1610907223221008114b80f053ee7e1bf479cc0",
+   "plain_sha1": "6d38805454c3f247cbf690ce17d0229c57ca3624",
+   "ja": "ダッシュ中に「破撃のエントーフォ」と「オールアウト」を使用できる。「切り開く猛進」の再発動は、スキルの使用を妨げる行動妨害を受けている間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Footwork#description": {
+   "source_sha1": "fcb5cf03d2818a32192fed2f6e370f5e9b87d8a8",
+   "plain_sha1": "6e353f1d156d64ae8cc5f80fcf7fc0b27d940605",
+   "ja": "発動効果：カ・サンテは指定地点へダッシュし（地形は越えない）、自身に2秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Footwork#description2": {
+   "source_sha1": "d73e0897ec3c14b2a3a9dc74101b81ae5725559a",
+   "plain_sha1": "112275770efa762322c1377f01721d0e454e10c6",
+   "ja": "「辰砂の足取り」は味方にも使え、その場合は射程と速度が増え、地形を越えてダッシュできる。対象の味方がチャンピオンなら、その味方もシールドを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Footwork#description3": {
+   "source_sha1": "064db678feb47fdae2b1f34290d83999273aaaf5",
+   "plain_sha1": "055f45a87df92ed533c6c086d065fce29bfb317e",
+   "ja": "「オールアウト」のボーナス：「辰砂の足取り」のダッシュの速度が増加し、クールダウンが50%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/Footwork#description4": {
+   "source_sha1": "59ad80a55c9fc3c1e01f649ef338378bde44d967",
+   "plain_sha1": "967f50206324de2e63f09bf984f1d5dfecf8cd2b",
+   "ja": "カ・サンテはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/All Out#description": {
+   "source_sha1": "06656723907db96de220fe65d71b5fbc70624f4b",
+   "plain_sha1": "8bc4800fb0abe32a4070e958b4d3fc543242da4e",
+   "ja": "発動効果：カ・サンテは対象の敵チャンピオンに0.5秒間スネアを与え、詠唱時間の間に移動系の効果を受けなくなる。その後エントーフォを砕き、発動時の対象の位置から発動方向に300ユニット先の位置へ対象を引き寄せ（その間対象は可視化される）、その位置の175ユニット後ろへブリンクする。対象は移動の終わり近くで物理ダメージを受け、移動が終わると0.3秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/All Out#description3": {
+   "source_sha1": "7377f90d55e7a12471b2b7830810151561690cd8",
+   "plain_sha1": "a255210c11ed4dc247d89ff672ff7549e14beeb7",
+   "ja": "ブリンクした後、カ・サンテは15秒間「オールアウト」の状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/All Out#description4": {
+   "source_sha1": "d0dd31fa2fdc07fbc10563b7cdea4c5cf9ae022f",
+   "plain_sha1": "2a37de1bebd698c7b0bbea72251ed03b84291087",
+   "ja": "「オールアウト」：カ・サンテは最大体力の65%に等しい体力のしきい値を得て、これはどの手段でも変更も超過もできない。「オールアウト」に入ったとき、現在体力がしきい値を超えていれば、しきい値まで下がる。さらに、基本物理防御と基本魔法防御が、それぞれ増加物理防御の85%と増加魔法防御の85%だけ下がる。その代わり、攻撃速度が増加し、増加物理防御に対する50%の貫通と20%のオムニヴァンプを得て、基本スキルが変化してコストなしで使えるようになる。「オールアウト」に入ると、カ・サンテのマナは最大マナの100%まで回復する。その後マナは効果時間の間に0まで減り、効果が終わると「オールアウト」に入る前のマナの量に戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data K'Sante/All Out#description5": {
+   "source_sha1": "63017edccc24cba42569179ce734636964038e70",
+   "plain_sha1": "6d0239621baf0b8e25898139508e8c8ee34f65d0",
+   "ja": "「オールアウト」の間も、カ・サンテは最大体力と増加した防御を保つ。体力のしきい値によって失った体力は、効果が終わっても戻らない。対象が地形を越えて引き寄せられる場合、カ・サンテは対象の移動系の効果の間は姿を消し、その終わり近くで再び現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data K'Sante/Dauntless Instinct#description": {
+   "source_sha1": "6121653def249c558715bd953efa1f40f7874302",
+   "reason": "residual_markup"
+  },
+  "Template:Data K'Sante/All Out#description2": {
+   "source_sha1": "223885f64c7d6b68608a6ce9573752f6c24a2e29",
+   "reason": "residual_markup"
+  }
+ }
+}

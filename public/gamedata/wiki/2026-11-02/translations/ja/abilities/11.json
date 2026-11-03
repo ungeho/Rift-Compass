@@ -1,0 +1,127 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Master Yi/Double Strike#description": {
+   "source_sha1": "d80428e97e0eb2ea83535e5c92329c14b01358ca",
+   "plain_sha1": "4c5fcd1646613256c36b6b82cb9835b692f26ca5",
+   "ja": "固有：マスター・イーの通常攻撃（攻撃時効果）のたびに4秒間「ダブルストライク」のスタックを得る。命中のたびに効果時間が更新され、最大3回まで重なる。3スタックで次の通常攻撃（攻撃開始時）が強化され、命中時にスタックを消費して二回攻撃し、二回目は攻撃力の50%の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Double Strike#description2": {
+   "source_sha1": "ddcf75d6ec0f98067ea12f6d0aae1072a8c3f032",
+   "plain_sha1": "6c22581f4947ce1d9c27878c9328801d2b18cc18",
+   "ja": "二回目の攻撃は攻撃時効果と攻撃開始時の効果を発動し、クリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Double Strike#description3": {
+   "source_sha1": "bc389f94b0101f70288cc2aecd45a5545beb2dff",
+   "plain_sha1": "1d026ab558ee450f819444df858a2ebf715047fa",
+   "ja": "二回目の攻撃の前に主対象が倒れた場合、マスター・イーは自動で近くの別の敵を対象にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Double Strike#description4": {
+   "source_sha1": "600546edcbc0b4286fdc3ed6a7c7b7a964f37c4b",
+   "plain_sha1": "e031373cd1b903d27133f4ede3716505aa14d4e8",
+   "ja": "二回目の攻撃は建物に対してもクリティカルになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Alpha Strike#description3": {
+   "source_sha1": "672ff23b84fe1e20ce9ed47217a613466a21a450",
+   "plain_sha1": "e7c6aca2734c3c6339df7cfc2eb3820e9d3bc256",
+   "ja": "その後マスター・イーは印を起爆させて物理ダメージを与え、攻撃時効果を与える（攻撃時効果のダメージは75%）。同じ対象への二つ目以降の印は、付いた時点で即座に起爆して25%のダメージを与え、攻撃時効果を与える（攻撃時効果のダメージは18.75%）。「アルファストライク」はモンスターに命中ごとに追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Alpha Strike#description5": {
+   "source_sha1": "ef5871737800e75e43eabf2daea4f20abf9393e3",
+   "plain_sha1": "0d707b61c9f7f6dae2d36048d88d02338c7fb028",
+   "ja": "通常攻撃（攻撃時効果）のたびに「アルファストライク」の残りクールダウンが1秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Alpha Strike#description6": {
+   "source_sha1": "1106c476f70fcdf1230f7234613f35244de1d025",
+   "plain_sha1": "0d2ba5f6890374909594e1b4957e5f80bbf45335",
+   "ja": "「アルファストライク」中に「ウージュースタイル」と「ハイランダー」を使用できる。「アルファストライク」が対象に命中するたびに、「ウージュースタイル」と「ハイランダー」の残りの効果時間が更新される。「アルファストライク」の発動による攻撃時効果では、そのクールダウン短縮は起きず、「ダブルストライク」のスタックも得られない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Meditate#description": {
+   "source_sha1": "621a44087a82799189b4dd913d3dded79e37babe",
+   "plain_sha1": "3f518c8a899b483385cadba69f8fe2bdcabb9469",
+   "ja": "発動効果：マスター・イーは最大4秒間詠唱し、0.5秒ごとに自身を回復する（減少体力に応じて0%～100%増加）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Meditate#description2": {
+   "source_sha1": "dafb472011676f5a977795ff8620d27092ae82f8",
+   "plain_sha1": "2594fc69083057a41b116958af4b0fe8298f86a7",
+   "ja": "詠唱中、マスター・イーは最初の0.5秒間70%のダメージ軽減を得て、詠唱の残りの時間はより少ない量に変わる。「明鏡止水」のダメージ軽減はタワーに対しては半分で、詠唱が終わった後も0.5秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Meditate#description3": {
+   "source_sha1": "fd9c412e1ffbb85b69f97dc9c83ab11b7238ab84",
+   "plain_sha1": "a9af60de6509103c66a1b0967c38a91fce48c825",
+   "ja": "「明鏡止水」はマスター・イーの通常攻撃タイマーをリセットし、「ウージュースタイル」と「ハイランダー」の効果時間を止め、詠唱中は毎秒「ダブルストライク」のスタックを一つ与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Wuju Style#description": {
+   "source_sha1": "e52a87e2308ac4bf7d1b5f440f107ad9e3f133d5",
+   "plain_sha1": "574fbf143abcd75942682fa159f3f535ca3e212d",
+   "ja": "発動効果：マスター・イーは次の5秒間、通常攻撃を強化し、攻撃時効果として追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Highlander#description": {
+   "source_sha1": "fbbb8e053bba029eb280283212be1188b0e2e9f8",
+   "plain_sha1": "5a744849194655bbda5d5b8e280b84a4e9e6c776",
+   "ja": "自動効果：チャンピオンのキルに関与すると、マスター・イーの基本スキルの残りクールダウンが70%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Highlander#description2": {
+   "source_sha1": "6855487027f3ec60feec961baebf38a5577cc3dc",
+   "plain_sha1": "79ba9b64f19f82ee6e0781d783a19ea30eb1e6be",
+   "ja": "発動効果：マスター・イーは自身のすべてのスロウと攻撃速度低下（cripple）を解除する。次の7秒間、ゴースト状態、攻撃速度の増加、移動速度の増加、スロウの無効、攻撃速度低下の無効を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Master Yi/Highlander#description3": {
+   "source_sha1": "e25298a29fb49e1060d59318664d980f164ca5cb",
+   "plain_sha1": "cab0a863fadd55225aec805ff406eab9f213bbcf",
+   "ja": "効果中、チャンピオンのキルに関与すると「ハイランダー」の効果時間が7秒延長される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Master Yi/Alpha Strike#description": {
+   "source_sha1": "0d74256d3c07675497c3fde7ae898a2bf4565c3f",
+   "reason": "residual_markup"
+  },
+  "Template:Data Master Yi/Alpha Strike#description2": {
+   "source_sha1": "2f1981924b09ad2ee31621d862e901a1bdc3d5c7",
+   "reason": "residual_markup"
+  },
+  "Template:Data Master Yi/Alpha Strike#description4": {
+   "source_sha1": "f7fed55bfbfbc49742ee91f4874713eef82eac4b",
+   "reason": "residual_markup"
+  }
+ }
+}

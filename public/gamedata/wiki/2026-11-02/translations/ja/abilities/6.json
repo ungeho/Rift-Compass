@@ -1,0 +1,133 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Urgot/Echoing Flames#description": {
+   "source_sha1": "89395130b6fc5983aaebda24817ac04dbb02458f",
+   "plain_sha1": "17a84e7eed4a31e3f125fce1f6c9d8473ba2c8f6",
+   "ja": "固有：アーゴットの六本の脚にはそれぞれ散弾銃が隠されていて、それぞれ弧状の範囲を受け持ち、合わせて自身の周囲を一周覆う。各散弾銃は一度撃つと固有のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Corrosive Charge#description": {
+   "source_sha1": "e27fdb625e464ab7ea9594a4a97b544ad8843606",
+   "plain_sha1": "acc514bd1f4f67df7dba0eda976fbe86b2bca944",
+   "ja": "発動効果：アーゴットは指定地点に弾を撃ち出す。弾は着弾から0.3秒後に爆発し、命中した敵に物理ダメージを与えて1.25秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Purge#description": {
+   "source_sha1": "86c99efd609575bd2b594c8eb4d63a408f6b7dcc",
+   "plain_sha1": "0713a6bc4fc192db99281ae2500b3be56cc06d54",
+   "ja": "自動効果：アーゴットのほかのスキルは、命中した敵チャンピオンに5秒間印を付ける。印は一度に一体の敵にだけ付く。さらに、最大ランクでは「パージ」の効果時間が無期限になり、オンとオフを切り替えるスキルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Purge#description2": {
+   "source_sha1": "3b8315b0475772bedfc21082cafe9e31eb653df9",
+   "plain_sha1": "7c53a4a22f409d7ae3ddfa8c664b451b86cae768",
+   "ja": "発動効果：アーゴットは4秒間機関銃を構え、周囲のミニオンとエピックではないモンスターをゴースト状態にし、最も近い敵に固定の3.0の攻撃速度で自動で射撃する。印の付いた敵チャンピオンを優先し、攻撃のたびに印を更新する。射撃中、アーゴットは移動でき、40%のスロウ耐性を得るが、移動速度が125低下する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Purge#description3": {
+   "source_sha1": "4a5c562772570f7b1f91c9aea72e95f7f34a1f59",
+   "plain_sha1": "276798f7a4bffc981b3e21e3aa54ad64df600f50",
+   "ja": "「パージ」の攻撃は修正された物理ダメージを与え、モンスターとミニオンには最低50で、クリティカルにはならない。攻撃のたびに攻撃時効果と攻撃開始時の効果を発動し、それらのダメージは50%になる。アーゴットは通常攻撃を封じる行動妨害を受けている間は攻撃できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Purge#description4": {
+   "source_sha1": "82d5614ba6f1569ab4734a2c12df58d65c46a82f",
+   "plain_sha1": "8bd8918e14d7995527114b018edd0875cbb95dbf",
+   "ja": "「パージ」は効果時間中、0.5秒後から再発動でき、時間切れになると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Purge#description5": {
+   "source_sha1": "7485f80edc84b7ae91ad768ba98c6a6493674483",
+   "plain_sha1": "924f03e487ab4cc63aed8d84c46baabd7d9f8ee5",
+   "ja": "再発動：アーゴットは「パージ」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Disdain#description": {
+   "source_sha1": "6407b3469c6a4fb4f6623cc5cd61eac5a08f7290",
+   "plain_sha1": "36983dc40705090591a1be1a41a32e87c79b9030",
+   "ja": "発動効果：アーゴットは4秒間自身にシールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Disdain#description2": {
+   "source_sha1": "02673541bf59a8a81dd1b3cf0110fc286344824d",
+   "plain_sha1": "f04bba02ce9d0b6f769ac5d21ca4367f0eae2aeb",
+   "ja": "詠唱時間の後、アーゴットは指定方向へダッシュし（地形は越えない）、通過した敵に物理ダメージを与えて、脇へ押しのけ、1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Disdain#description3": {
+   "source_sha1": "88e2f432c72cb37f72ff6a657065e508a89e4164",
+   "plain_sha1": "24b40d8f2e3fff0ac993e7ad37dfb315a41328e0",
+   "ja": "アーゴットは敵チャンピオンに当たると止まり、その敵を1.5秒間スタンさせて、0.25秒後に自身の100ユニット後ろの位置へ投げ飛ばす（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Disdain#description4": {
+   "source_sha1": "95e081e547eee80a32b1f582223630ee6794a48c",
+   "plain_sha1": "e802081fe99dbd79568ab8cc5ec773be2e74e957",
+   "ja": "ダッシュ中に「パージ」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Fear Beyond Death#description": {
+   "source_sha1": "2af713867263217c382af557e0c920c0590c16f1",
+   "plain_sha1": "2d3be99e50d38f77ea68170608fa939f877fe457",
+   "ja": "発動効果：アーゴットは指定方向にケミドリルを撃ち出し、最初に命中した敵チャンピオンに突き刺して物理ダメージを与え、4秒間つなぎ止める。その間対象は可視化され、0%～75%（対象の減少体力に応じて）のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Fear Beyond Death#description2": {
+   "source_sha1": "09545b8b187d7074eee53276cbde28c702c5efe3",
+   "plain_sha1": "bf916d7fb2a4042c524229ce67c33cc4fda22816",
+   "ja": "「デスグラインダー」は、つなぎ止めた対象の体力が最大体力の25%未満なら再発動できる。ドリルで対象が倒れる場合、対象がしきい値を上回っている間に再び使用した後でしきい値に入った場合、または効果時間の終わりに対象がしきい値の範囲内にいる場合は、自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Fear Beyond Death#description3": {
+   "source_sha1": "93dc32851aaddd9ba74810f28d02051f4d40d71f",
+   "plain_sha1": "a7f02a97d2f6eccdcca8ceed24f7bf974f43dca9",
+   "ja": "再発動 -「Mercy」：アーゴットはつなぎ止めた対象に鎖を放ち、鎖がかかると1.5秒間詠唱する。この間、対象を引き寄せながらサプレッションを与え、可視化し、対象指定不可にして、ほかの発生源からのダメージを受けないようにする。鎖がつながったときに対象がアーゴットの近くにいる場合は、近さに応じて最大1000ユニット遠くへ押し出される。この詠唱は行動妨害では中断されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Fear Beyond Death#description4": {
+   "source_sha1": "bc4d93091e2015d123572e80a8c47f9cc73ab9b7",
+   "plain_sha1": "c13863c3a8826660866131ff141cfcafa6ee7417",
+   "ja": "詠唱を終えると、対象は処刑される。処刑に成功すると、アーゴットは周囲の敵に1.5秒間フィアーを与え、その間75%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Urgot/Fear Beyond Death#description5": {
+   "source_sha1": "82d76a55345b386ab429472895fa6c6d68f591db",
+   "plain_sha1": "2e2764eda6825f3fc249622f85f142ad60cb2fc5",
+   "ja": "「デスグラインダー」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。アーゴットは「デスグラインダー」の再発動の詠唱中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Urgot/Echoing Flames#description2": {
+   "source_sha1": "19c3c2a70a8e46eb0a10e850593616fba2eca09a",
+   "reason": "residual_markup"
+  }
+ }
+}

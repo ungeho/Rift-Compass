@@ -1,0 +1,98 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Rammus/Spiked Shell#description": {
+   "source_sha1": "f86d847b85242e393ccdc45766675fe5f6734bc5",
+   "plain_sha1": "df6eecffc662b6cb06b9de09d274d360f405dfbf",
+   "ja": "固有：ラムスは、合計物理防御の15%と合計魔法防御の15%の和に等しい増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Powerball#description2": {
+   "source_sha1": "d480cd266b13e849485587fb62b9d4adfd3b76d7",
+   "plain_sha1": "1599211fa40e9ac7ed242ff301b67e68cb8b5b8d",
+   "ja": "ラムスは敵にぶつかると転がるのをやめ、周囲のすべての敵に魔法ダメージを与えて125ユニットノックバックさせる（地形は越えない）。命中した敵はその後0.4秒間スタンして可視化され、1秒間スロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Powerball#description3": {
+   "source_sha1": "b242002ab760490f075174dea11ddef9edf4eda7",
+   "plain_sha1": "b26baa0be119f193136955fc73c1477efb47f168",
+   "ja": "再発動：ラムスは「ころころ」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Defensive Ball Curl#description": {
+   "source_sha1": "35ee5bdd9cf90dd20f8f5926f8968d5c693180f7",
+   "plain_sha1": "ec147c5c640bdd21dbca361a95c184794b96f662",
+   "ja": "発動効果：ラムスは7秒間防御の構えになり、物理防御と魔法防御が増加する。効果中、ラムスに通常攻撃（攻撃時効果）を当てた敵は、15（+ 合計物理防御の10%）（+ 合計魔法防御の10%）の魔法ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Defensive Ball Curl#description2": {
+   "source_sha1": "d958a0605bd545a69f99caef91dde3050aaa94d4",
+   "plain_sha1": "85b7b055eac231f4afe6bc4d374360178fdbfe30",
+   "ja": "「かたくなる」は効果時間中、1秒後から再発動でき、「ころころ」か「どーんどーん」を使用すると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Defensive Ball Curl#description3": {
+   "source_sha1": "825bf8e39f5710aeb7e8ee8c0ede49b92d91d32d",
+   "plain_sha1": "bca333fbb8f4ef660e96c384ae97ca623a8b75e3",
+   "ja": "再発動：ラムスは「かたくなる」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Frenzying Taunt#description": {
+   "source_sha1": "4745f6df7ffc38a24731e84438c9969dd7a34fe6",
+   "plain_sha1": "748056906c2be9da4b55d8ae291965ee13d1f983",
+   "ja": "発動効果：ラムスは対象の敵チャンピオンかモンスターに一定時間タウントを与える。モンスターには、効果を受けた時点で魔法ダメージも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Soaring Slam#description": {
+   "source_sha1": "62e84002c55a5a208996d26adff5dd66f8fbe452",
+   "plain_sha1": "e7cf53861de8cdf78d8b15a32b113d385ce84ee2",
+   "ja": "発動効果：ラムスは行動妨害を無効にしながら指定地点へ跳ぶ。到着時に衝撃を起こし、周囲の敵に魔法ダメージを与えて、1.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Soaring Slam#description2": {
+   "source_sha1": "c634913742be92fe17825d146d71607b826ef785",
+   "plain_sha1": "f25c236fd2bd045db4b4de927d8aff2fbc029a02",
+   "ja": "「ころころ」中に「どーんどーん」を使用した場合、衝撃の中心にいる敵は0.75秒間ノックアップし、「ころころ」のダメージも受ける。ダッシュ中、「ころころ」は敵にぶつからず、その詠唱はダッシュの間続いてその後に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Soaring Slam#description3": {
+   "source_sha1": "879e3c0f68143c30bf03afed851c6f7f2cd80853",
+   "plain_sha1": "319b8090241b0c5a5f658bd06920f355406d115d",
+   "ja": "衝撃の後、3.5秒かけて範囲から3回の余震が起こり、それぞれ最初のスロウを与えて効果時間を更新する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rammus/Soaring Slam#description4": {
+   "source_sha1": "4a23a94df8823849cf7a99d3badab211daa9321c",
+   "plain_sha1": "a5ce51291806089c5d4563b4017fac253487d4dc",
+   "ja": "「どーんどーん」のダメージは建物にも及び、タワーには二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Rammus/Powerball#description": {
+   "source_sha1": "de1abc0a88a8cff4e521b08c1bb8df6326ebac2b",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Anivia/Rebirth#description": {
+   "source_sha1": "8e3303fd2a9fa68b91542bf8281a0f6e53c965aa",
+   "plain_sha1": "54cd2b9c9504be9f769562c22cd8233bea74a160",
+   "ja": "固有：一定時間ごとに、致死ダメージを受けるとアニビアは6秒間蘇生状態になり、体力をすべて回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Rebirth#description2": {
+   "source_sha1": "4d730666762931a1057ea26855fd1a7956ce687d",
+   "plain_sha1": "21783683bf0b2215a0247fd705f9d0f14e0a3ac1",
+   "ja": "蘇生状態の間、アニビアは行動できず、物理防御と魔法防御が-40～20（レベルに応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Rebirth#description3": {
+   "source_sha1": "98a8dddd64f3ebe958aa51bcbcaac1528c250179",
+   "plain_sha1": "a536b3ac9ccb16693d62837e9d74ba362f6d740f",
+   "ja": "効果時間の終わりまでアニビアが生きていれば、その時点の現在体力で復活する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Flash Frost#description2": {
+   "source_sha1": "e2b130e2698c4cf0ca4e00df75ee5e3b59d40438",
+   "plain_sha1": "01ea41fffbc622376f577463b346d4f63ec4f220",
+   "ja": "「フラッシュフロスト」は詠唱時間の後、氷が飛んでいる間に再発動でき、最大射程に達すると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Flash Frost#description3": {
+   "source_sha1": "391a88e4a06f1cef352c1f5bfab1763ab982891e",
+   "plain_sha1": "1518cf78c5742960ec8009f0f96f52ee234c3a2a",
+   "ja": "再発動：アニビアは氷を砕き、周囲の敵に魔法ダメージを与えて一定時間スタンさせ、スロウも更新する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Crystallize#description": {
+   "source_sha1": "ecd1534ad4bbfffa8cd6793086d6c8942fd5fae6",
+   "plain_sha1": "0596275d44ff34d30ce2a360fda4fd3e98531f46",
+   "ja": "発動効果：アニビアは自身の向きと垂直に、指定地点に氷の壁を作り、すべてのユニットを壁から押しのける（地形は越えない）。壁は5秒間、通れない地形として残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Frostbite#description": {
+   "source_sha1": "a21a32ca662d6c423ceee40a3d3586c4e2fcb430",
+   "plain_sha1": "002acd44680e4d66f5e803ba2cbee7bee01c8326",
+   "ja": "自動効果：「フラッシュフロスト」か、完全に広がった「ブリザード」に当たった敵は、3秒間「Iced」になる。命中のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Frostbite#description2": {
+   "source_sha1": "d6a49110f4d0d4c99a8eb4d7ced752b6b68ee34a",
+   "plain_sha1": "685e6ad157bc83f4c9e540f514f645a805d533a0",
+   "ja": "発動効果：アニビアは対象の敵に凍える風を浴びせ、魔法ダメージを与える。対象が「Iced」なら二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Glacial Storm#description": {
+   "source_sha1": "a11a24fddb00c3f4b35136bf2e3dd30e6bd0cd0e",
+   "plain_sha1": "a7df81630cbf0156d9ec636ba7258773a2ca8863",
+   "ja": "自動効果：「フラッシュフロスト」のスロウの強さが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Glacial Storm#description2": {
+   "source_sha1": "14e951ed3e950466802a67a73c0bd8ce1f884930",
+   "plain_sha1": "73ce3b9f9662fd436735728607b6ca8b997fbb5e",
+   "ja": "切り替え：アニビアは指定地点に氷と雹の嵐を呼び、範囲内の敵に0.5秒ごとに魔法ダメージを与えて1秒間スロウを与える。範囲内にいる間は0.5秒ごとに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Glacial Storm#description3": {
+   "source_sha1": "d02abd3cbbb0da20b96256d8cca7d26c692bfcc1",
+   "plain_sha1": "e411519dc7652d4f590e2fb46cd0a77d2373bdd1",
+   "ja": "嵐は1.5秒かけて広がる。最大の大きさになると「ブリザード」は強化され、300%のダメージを与え、スロウの効果が50%増え、スロウは代わりに1.5秒続いて0.25秒ごとに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Anivia/Glacial Storm#description4": {
+   "source_sha1": "cc02332c8ef4042d75d782c3ff1eacd71e9c9ab0",
+   "plain_sha1": "dba4d8dbd38eeae20d3357e0f0626266af81c788",
+   "ja": "「ブリザード」をオフにすると、最後にもう一回ダメージを与えて、クールダウン全体に入る。アニビアが嵐から離れすぎるか、マナコストを払えなくなるか、スキルの使用を妨げる行動妨害を受けると、「ブリザード」は自動でオフになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Anivia/Flash Frost#description": {
+   "source_sha1": "6409bfb78d2d0708abc9c3c6e98bc4a49ebdc0ba",
+   "reason": "residual_markup"
+  }
+ }
+}

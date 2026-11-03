@@ -1,0 +1,128 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Lee Sin/Flurry#description": {
+   "source_sha1": "34d30bcca2f2f3904e2b36684e4859dd9e331572",
+   "plain_sha1": "39655c91938d1f17d5b44e919a65fb8562639581",
+   "ja": "固有：スキルを使用した後、3秒以内のリー・シンの次の2回の通常攻撃（攻撃時効果）は、攻撃速度が40%増加し、気を回復する。一回目の攻撃は気を20～40（レベルに応じて）、二回目は10～20（レベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Sonic Wave#description": {
+   "source_sha1": "8ed3feb65b98efe3cf2b28dafb04bbca2b911170",
+   "plain_sha1": "3c77c0f7ccbb2b3b5faaea590ef25bdd690ba5f4",
+   "ja": "発動効果：リー・シンは指定方向に音波を放ち、最初に命中した敵に物理ダメージを与えて3秒間印を付け、その間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Sonic Wave#description2": {
+   "source_sha1": "569aef9bfeac25005e8b888729626508f9f72311",
+   "plain_sha1": "caf2c7dd78ae6b56fa5736aa54137fce0c7feca2",
+   "ja": "対象に印が付いている間、リー・シンは「共鳴撃」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Resonating Strike#description": {
+   "source_sha1": "2b63c47e5a5b3bae3a907bfaaf783e6eabc59843",
+   "plain_sha1": "9769bee0fd9387bc7423b2e6d3871a74b80f4cec",
+   "ja": "発動効果：リー・シンは「響掌」の印が付いた近くの敵へダッシュする。到着時に印を消費して物理ダメージ（対象の減少体力に応じて0%～100%増加）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Resonating Strike#description2": {
+   "source_sha1": "bac646e05ecfb5f83368c19fff3403ce7282b9da",
+   "plain_sha1": "7bae9a5e3f94278968c792d6d4be610d6f4b37e0",
+   "ja": "このスキルを使用するには、印の付いた敵が射程内にいる必要がある。ダッシュ中に「鉄の意志」と「縛脚」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Safeguard#description": {
+   "source_sha1": "54d4686dd3e6c47cc7c7cd558f69e33178a04548",
+   "plain_sha1": "943d8deb540be7d127d3baf999a033ec09f547d6",
+   "ja": "発動効果：リー・シンは対象の味方ユニットの位置へダッシュする。到着時にその味方がチャンピオンなら、その味方とリー・シンの両方が2秒間シールドを得る。対象がミニオンかワードの場合は、リー・シン自身もシールドを得る。リー・シンは自身に「守りの型」を使ってシールドを得ることもできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Safeguard#description2": {
+   "source_sha1": "7aa806049f42fbd9009015943f57a2ac9477d13c",
+   "plain_sha1": "c05095faa026a6829b6cd68bcfa9252c81e961dc",
+   "ja": "「守りの型」の使用後、次の3秒以内に「鉄の意志」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Safeguard#description3": {
+   "source_sha1": "9e9495a8fc30922367939e6e04ef95ac3d857d5b",
+   "plain_sha1": "30052b38806a1000760514527089b00285831d8e",
+   "ja": "ダッシュ中に「鉄の意志」と「縛脚」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Iron Will#description": {
+   "source_sha1": "8ed900415c697670c0ec5441bcbecc4ff3c96efc",
+   "plain_sha1": "2c2e3b99313b61e3ceaaa1c40c723fe15bee706e",
+   "ja": "発動効果：リー・シンは4秒間オムニヴァンプを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Tempest#description": {
+   "source_sha1": "1b7e81520edfc57684c13c3a47766af9742ed182",
+   "plain_sha1": "ab5c84ab4c9ea01d77000deabc885b1fc98cfc65",
+   "ja": "発動効果：リー・シンは足元の地面を叩きつけ、周囲の敵に魔法ダメージを与えて4秒間印を付け、命中した時点でインビジブルでない敵は同じ時間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Tempest#description2": {
+   "source_sha1": "ec3076ff3ccffe7e8ad22b3d184e773fc491c265",
+   "plain_sha1": "8b9bb281c4ee0eb8f5fec1c7dbd79c57816e9374",
+   "ja": "「破風」が敵に命中すると、0.1秒の遅れの後、次の3秒以内に「縛脚」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Cripple#description": {
+   "source_sha1": "1000aaf51743f049201b8a1c7608794d2ef395c5",
+   "plain_sha1": "797048c4ee70ec3c9ca26263260c3402991083f6",
+   "ja": "発動効果：リー・シンは「破風」の印が付いた周囲の敵にスロウを与え、スロウの強さは4秒かけて減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Cripple#description2": {
+   "source_sha1": "66908eeb60bc5ff22d2425014f14b87dbdae3c00",
+   "plain_sha1": "d5ef1945b71205ab60bc787970521ed3cd4ef207",
+   "ja": "このスキルを使用するには、印の付いた敵が近くに必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Dragon's Rage#description": {
+   "source_sha1": "38690225abffe0b054bf17189003bdcf9e24d7d7",
+   "plain_sha1": "8855814c2a7b76c1bd2af607247c7d8b8784a5c0",
+   "ja": "発動効果：リー・シンは詠唱時間の間、対象の敵チャンピオンにスネアを与え、その後回し蹴りで物理ダメージを与えて、0.8秒かけて最大800ユニットノックバックさせ、1秒間ノックアップ状態にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Dragon's Rage#description2": {
+   "source_sha1": "eaf1751e158429746714691db92176a9d006bb26",
+   "plain_sha1": "bc800aad2d4e689fa0355d4b696f2f76a6ce2dbe",
+   "ja": "ノックアップ状態で飛ばされた敵にぶつかった敵は、同じダメージと追加の物理ダメージを受け、1秒間ノックアップする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lee Sin/Dragon's Rage#description3": {
+   "source_sha1": "c3a4f2d51556710b71b63562216d01f870e36885",
+   "plain_sha1": "1d63fdbb7eaef3262d04883966793f7c3909aa1d",
+   "ja": "「龍の怒り」で主対象が倒れても、ノックバックは起こり、対象の亡骸が飛ばされて、通過した敵にぶつかる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

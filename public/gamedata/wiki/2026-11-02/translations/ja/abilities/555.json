@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -22,6 +22,97 @@
    "source_sha1": "42d583a835b73c62f47a21450afdb4f6d775454c",
    "plain_sha1": "8f725ebe78c1b12a2ed3909b6bb31887a899f8f9",
    "ja": "パイクの1500ユニット以内にいる敵チャンピオンには、パイクの存在と、自分が「水底の急襲」で倒されうるかどうかが知らされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Gift of the Drowned Ones#description": {
+   "source_sha1": "0cb3eb9ebce167ba0001e7105e12ea6d7c4cc5ea",
+   "plain_sha1": "25099ae6e49e5a71ca95898a007b61d021c2a871",
+   "ja": "固有：パイクの最大体力は（レベルごとの）成長以外では増えず、代わりに増加体力14ごとに増加攻撃力を1得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Gift of the Drowned Ones#description2": {
+   "source_sha1": "efd1c9b384bec43aedd5b3450e74f1ac03ba7e8a",
+   "plain_sha1": "f712b660d4708ab679b307716a6c7997aed12602",
+   "ja": "固有：パイクは川にいる間、移動速度が1増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Gift of the Drowned Ones#description3": {
+   "source_sha1": "7052932b868c6eece5e3f877a0f81f2cde0f9deb",
+   "plain_sha1": "385b4178fab0ebadfd21494a37a82beda88ec687",
+   "ja": "固有：パイクは敵チャンピオンから受けた軽減後のダメージの9%（+ 脅威1ごとに0.2%）を体力バーの灰色の体力として蓄え、近くに見えている敵チャンピオンが二体以上いる間は40%（+ 脅威1ごとに0.4%）になる。灰色の体力は最大80（+ 増加攻撃力の800%）まで蓄えられ、最大体力の55%が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Gift of the Drowned Ones#description4": {
+   "source_sha1": "e9106b70a5486543fa26615c3d237a8d17b214bf",
+   "plain_sha1": "bce1e12a408d75385f8031894ae1227062e14ce3",
+   "ja": "パイクが敵から見えていない間、灰色の体力をすばやく消費して同じ量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Bone Skewer#description": {
+   "source_sha1": "c0ab2c4e87d0378d6f1e89e99139bb3d1bb267bf",
+   "plain_sha1": "bcf185f5443aef9ac62da3ecf2fc76b22c673660",
+   "ja": "発動効果：パイクは最大3秒間、20%のスロウを受けながら溜め、詠唱の最初の一秒の間に「ボーンスキューア」の射程が増える。効果時間中に「ボーンスキューア」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Bone Skewer#description2": {
+   "source_sha1": "d620133551a225fcb848cb0e8ca6e976c5309aa8",
+   "plain_sha1": "db869e36f5e64a4a983029282b62b84f3777d645",
+   "ja": "再発動：パイクは指定方向に銛を投げ、銛が飛んでいる間は行動できない。最初に命中した敵に物理ダメージを与えて引き寄せ、その間可視化し、その後1秒間90%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Bone Skewer#description3": {
+   "source_sha1": "4901e702c62b370378c75808e03f20095b911f38",
+   "plain_sha1": "5abf60564e4caefb2f6638f76e750a4bc1877cdf",
+   "ja": "0.4秒以内に放すと、パイクは代わりに指定方向に刃を突き出し、最も近い敵チャンピオン、いなければ最も近い敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Bone Skewer#description4": {
+   "source_sha1": "f4d1f88bc2555b969b93787d3c4fd822c2f727e4",
+   "plain_sha1": "6992031e0b129b7f27c35a68dd740c33365cdee1",
+   "ja": "溜めが中断されるか、再発動せずに最後まで溜めきると、「ボーンスキューア」はキャンセルされ、クールダウン全体に入るがマナコストの75%が戻る。敵チャンピオンに当たった場合も「ボーンスキューア」のマナコストは戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Phantom Undertow#description": {
+   "source_sha1": "e204d87b31eeeba343041283db0ef34a50b5a1ec",
+   "plain_sha1": "baf223d7810fb7d9a97973daae761e5b3cedf572",
+   "ja": "発動効果：パイクは指定方向にダッシュし、亡霊を残す。亡霊がいる間、パイクはゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Phantom Undertow#description2": {
+   "source_sha1": "a76db30e848ec5d6229b14de9d114661921f4545",
+   "plain_sha1": "90fd5459ff9376129ecb06db8fbe3e38eee41300",
+   "ja": "1秒後、亡霊はパイクのもとへ追尾して戻り、周囲の敵と途中で通過した敵を1.25（+ 脅威10ごとに0.1）秒間スタンさせる。命中した敵チャンピオンは物理ダメージも受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Death from Below#description": {
+   "source_sha1": "5c4cd0f852b998643b869317fe8af3b68884956c",
+   "plain_sha1": "e982f0de268755901f3e6f5db84b9a64c5836847",
+   "ja": "発動効果：パイクは指定地点にXの形の印を付けてから打ち、範囲内で体力が250～550（レベルに応じて）（+ 増加攻撃力の80%）（+ 脅威1ごとに1.5）未満の敵チャンピオンを処刑する。命中したほかの敵と、しきい値を超える敵チャンピオンは、代わりにその50%の物理ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Death from Below#description2": {
+   "source_sha1": "0fc9e2e27ba9bcce9de5e527850d2d75b3321cfd",
+   "plain_sha1": "7cd91e5cb5c71b82b02235c3148d57cdb0db16ac",
+   "ja": "「水底の急襲」が敵チャンピオンに当たるか、Xの中で処刑か味方によって少なくとも一体が倒されると、パイクはXの中心へブリンクする。後者の場合、パイクは20秒以内ならコストなしでスキルを再発動もできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pyke/Death from Below#description3": {
+   "source_sha1": "ccd62e662b9d29232382f657e0c18e48a0c234af",
+   "plain_sha1": "66cd0f3a8806281944c5b2b596dfe42eb87b5db6",
+   "ja": "処刑が成功するたびに、最後にアシストした味方は、本来のアシストのゴールド（gold）の代わりに「Your Cut」を一つ得る。そうでない場合、「水底の急襲」の詠唱時間中にXの中で味方が倒した敵チャンピオン一体ごとに、パイクが「Your Cut」を得る。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

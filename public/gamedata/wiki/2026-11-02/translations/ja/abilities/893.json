@@ -1,0 +1,109 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Aurora/Twofold Hex#description": {
+   "source_sha1": "628dd28475d44959bafbcd1840810c39f4645a1f",
+   "plain_sha1": "738102d22232f79c3782018ec592be487ca9185f",
+   "ja": "発動効果：オーロラは指定方向にエネルギーの弾を撃ち、命中した敵に魔法ダメージを与えて、3.5秒間呪いの印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Twofold Hex#description2": {
+   "source_sha1": "7ca5a5c0707fabd269394f2df90d769fbda6a611",
+   "plain_sha1": "16edfd1ea408aef6b105fc79f888fe38d3198e51",
+   "ja": "少なくとも一体の対象に印が付いている間、0.1秒後から「折れ重なる魔法」を再発動でき、印の効果時間の終わりには自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Twofold Hex#description3": {
+   "source_sha1": "98023bed0dc4e3211251a0915f197568a14ccb3e",
+   "plain_sha1": "8b60fbba55de1cd477164fd536c2105a4094f5b8",
+   "ja": "再発動：オーロラは印の付いたすべての対象から呪いを引きはがし、霊の力を弾としてオーロラのもとへ引き戻す。弾はそれぞれ通過したすべての敵に魔法ダメージを与え、ミニオンには40%、モンスターには50%になり、対象の減少体力に応じて0%～50%増加する。同じ敵への二発目以降の弾は20%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Across the Veil#description": {
+   "source_sha1": "7dc9e390fc97647815541385ff10b2bee9995cd5",
+   "plain_sha1": "a48a363ee15ae5698c95a97e434958b0a209565a",
+   "ja": "発動効果：オーロラは精霊界への入口に入って指定方向に跳ぶ。ダッシュを終えると、一定時間インビジブルになり、4秒間「Realm Hopper」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Across the Veil#description2": {
+   "source_sha1": "2f3469bee7acaf89cec0cd136a62930e3ef8222b",
+   "plain_sha1": "0c4cc9f25c4357e91178ec2be4ac2d65530e6c99",
+   "ja": "「Realm Hopper」：効果時間中、オーロラはゴースト状態になり、移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Across the Veil#description3": {
+   "source_sha1": "7d587063caceae0878bc0904e54510da577d4ecb",
+   "plain_sha1": "b2ec3e741df3d5cfe7184f634c934f2b8742db97",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、「ベールを越えて」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/The Weirding#description": {
+   "source_sha1": "3b3eedae6696480ee355774cc2b8546fc7d7e050",
+   "plain_sha1": "f34491c96f02ed63d241c0b679390cce527011a8",
+   "ja": "発動効果：オーロラは指定方向の直線上にエネルギーを放ち、反対方向へ250ユニット反動で下がる。この衝撃は命中した敵に魔法ダメージを与えて、1秒間80%のスロウを与える。スロウは最初の0.15秒の後に減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Between Worlds#description": {
+   "source_sha1": "5d87743f032167544699db48d9ff58cd8975a8fc",
+   "plain_sha1": "6c59d36463c0867ad81508f582af4604c6c8fa2c",
+   "ja": "発動効果：オーロラは移動系の効果を受けない状態で、0.4秒かけて指定方向に跳ぶ。その後一定時間「Realm Hopper」を得て、自身の425ユニット前方から衝撃波を放ち、衝撃波は0.75秒かけて広がって、命中した敵に魔法ダメージを与え、2秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Between Worlds#description2": {
+   "source_sha1": "d8de556b0426dadde6c0466a7369b684ae8915fa",
+   "plain_sha1": "dae5a8a4f59cbb5e7e661332937433a86bc6a459",
+   "ja": "衝撃波は一定時間、円形の精霊界の裂け目を残し、その境界はオーロラと敵に作用する。オーロラが境界にぶつかると、0.4秒かけて裂け目の真反対側へダッシュし、移動中は対象指定不可で行動できない。敵が境界にぶつかると、一定時間50%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Between Worlds#description3": {
+   "source_sha1": "fdd58fec9c169dd16607e39c004a7c7cfbcfc21c",
+   "plain_sha1": "4c8393fee68190cbdc47ce3689c59df9d022fe43",
+   "ja": "裂け目がある間、衝撃波を放ってから1秒後に「世界の狭間」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Between Worlds#description4": {
+   "source_sha1": "b6377db2316da06c3c470c24b88dd9fd33635a64",
+   "plain_sha1": "64e1570adc8f341c3cab65db307fc58ab8a7073f",
+   "ja": "再発動：オーロラは裂け目を早めに閉じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aurora/Between Worlds#description5": {
+   "source_sha1": "e76389af45f57c88d2ed9a4815eb51aad2988ca4",
+   "plain_sha1": "27fdf4568aef0b11d596745a788241675959afed",
+   "ja": "オーロラが死ぬ、蘇生に入る、範囲から出る、または作ったときに範囲内にいなかった場合、裂け目は即座に閉じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Aurora/Spirit Abjuration#description": {
+   "source_sha1": "ee8aa44719578a2900da8a44220c5a3e5d565b29",
+   "reason": "residual_markup"
+  },
+  "Template:Data Aurora/Spirit Abjuration#description2": {
+   "source_sha1": "aee45df5d87eeec95cbbe53c7770fc7cda2d4c04",
+   "reason": "residual_markup"
+  }
+ }
+}

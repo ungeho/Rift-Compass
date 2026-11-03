@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -43,6 +43,83 @@
    "source_sha1": "2b377b4536a7ca05c4ba7371dfcf5b6a2f419f79",
    "plain_sha1": "d72dd46515ff7627eba6aa3c45a5415b3a41be11",
    "ja": "進化ボーナス：インビジブルが2秒間続くようになり、「捕食の本能」を二回再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Unseen Threat#description": {
+   "source_sha1": "359172883a63f399fd9425e66780b6dc34f26a90",
+   "plain_sha1": "cf35b737382564701a0a351f2d0066a6605869ca",
+   "ja": "固有：敵がカ＝ジックスの視界を失うか、カ＝ジックスが「捕食の本能」を発動するたびに、「見えざる脅威」を得る。「見えざる脅威」：カ＝ジックスの敵チャンピオンへの次の通常攻撃が強化され、22～141（レベルに応じて）（+ 増加攻撃力の50%）の追加の魔法ダメージを与えて、2秒間25%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Taste Their Fear#description": {
+   "source_sha1": "9c37582f5ee1f8939fcf62e3d4ba7ac4df5c7c9d",
+   "plain_sha1": "b66ba7f1a22f7c3d9cd6b13b33d3638f75dc1100",
+   "ja": "自動効果：カ＝ジックスは、味方の近くにいない敵ユニットを「Isolated」とみなす。「甘美なる恐怖」「Evolved Reaper Claws」「Evolved Spike Racks」は、「Isolated」の対象に対して特有の効果を持つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Taste Their Fear#description2": {
+   "source_sha1": "ae7a3bac8daf172e387602273089a0c71107597a",
+   "plain_sha1": "bcba4270965ce849ab034ec02e33e83ca251004c",
+   "ja": "発動効果：カ＝ジックスは対象の敵を切り裂き、物理ダメージを与える。「Isolated」の対象には210%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Evolved Reaper Claws#description": {
+   "source_sha1": "227bfdb01543a76d2d8a3bd1fb09ba4e424a3384",
+   "plain_sha1": "48eb33bb1a9082144c019b54f2e7bed07b77ac8c",
+   "ja": "自動効果：カ＝ジックスの通常攻撃と「甘美なる恐怖」の射程が50増加する。進化のボーナス：対象が「Isolated」なら、クールダウンが45%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Void Spike#description": {
+   "source_sha1": "b7c159e67edd18b3a329d212c6b3e14a6c0a269d",
+   "plain_sha1": "9df7f32f8194bd47de5d2c394a67d795751f2c21",
+   "ja": "発動効果：カ＝ジックスは指定方向にトゲの弾を放ち、弾は敵に当たると爆発して周囲の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Void Spike#description2": {
+   "source_sha1": "94fe969b97dfa8ebb6ddf1e9f19c77c919111e9e",
+   "plain_sha1": "6d6f6ea27ea23833ca97cd8d16c8896b97b1734f",
+   "ja": "爆発の範囲内にいると、カ＝ジックスは自身を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Evolved Spike Racks#description": {
+   "source_sha1": "2095bbf8137adc72bea43c59a9cbd34b34d9d9bd",
+   "plain_sha1": "49961f5dde4e25bd5c93fe42d106d65cd42e9bd4",
+   "ja": "進化のボーナス：「ヴォイドの刺棘」は扇形に三つの塊を放つようになり、40%のスロウを与えて、命中した敵チャンピオンを2.25秒間可視化する。複数の爆発が同じ対象に当たっても、追加のダメージもカ＝ジックスへの追加の回復もない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Evolved Spike Racks#description2": {
+   "source_sha1": "9ceac3cd8f0fe33586e188190ee6aef93e897617",
+   "plain_sha1": "c01b7e6ac72bc5a1a356896b59046fdd36e23037",
+   "ja": "「Evolved Spike Racks」が命中した「Isolated」の対象は、代わりに60%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Leap#description": {
+   "source_sha1": "469fbcb07aeba5398f2901b42db6c246f9d90a21",
+   "plain_sha1": "c01d2032bc71f21b2c9bc3b29f02187e0cf55aae",
+   "ja": "発動効果：カ＝ジックスは指定地点へ跳び、到着時に周囲の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Leap#description2": {
+   "source_sha1": "7a89f59ec91213d89d6508b024149ba6f2dd74b8",
+   "plain_sha1": "7b322b29612e81e6250a1660a0b627fed3fd225a",
+   "ja": "ダッシュ中に「甘美なる恐怖」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kha'Zix/Evolved Wings#description": {
+   "source_sha1": "7012114271d35bc6b84ddd3580eb9789e5b65ab9",
+   "plain_sha1": "a25535f0f9a775ae61fd05f3b25953d2d227299a",
+   "ja": "進化のボーナス：「リープ」の射程が300増加し、チャンピオンのキルに関与するとクールダウンがリセットされる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

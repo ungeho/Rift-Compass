@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Shen/Ki Barrier#description2": {
+   "source_sha1": "733aab899f2b117941b7574fd40b00eec527aff0",
+   "plain_sha1": "e37001ea5067e45801d5b8f31cf5f8c018db18da",
+   "ja": "シェンは「Spirit Blade」を作り出し、「護刃招来」と「防人の帳」で操る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Twilight Assault#description": {
+   "source_sha1": "d7b747d2ca7d72bf1d4bef6f1bd698bedbf75168",
+   "plain_sha1": "44974edaf52676b5621fbd09c1487e1596fa9044",
+   "ja": "発動効果：シェンは「Spirit Blade」を自身のもとへ呼び戻す。その通り道で「Spirit Blade」に当たった敵チャンピオンは、次の2秒間、シェンから離れる方向に動いている間スロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Twilight Assault#description2": {
+   "source_sha1": "d215c99c87add24a900c626e1babd6ba5e1b4aac",
+   "plain_sha1": "442c618d063285899dea9da7c6b3a4ef0f0631b8",
+   "ja": "刃が着くと、シェンは8秒以内の次の3回の通常攻撃を強化し、射程が75増加して、攻撃時効果として追加の魔法ダメージを与える。建物に対しては、固定のダメージの部分だけが与えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Twilight Assault#description3": {
+   "source_sha1": "ede5b989ccd2d9060b3be03821b43c8f852f4b6e",
+   "plain_sha1": "2c951f2e092220a80372df111955c0637c7a4f91",
+   "ja": "移動中に「Spirit Blade」が少なくとも一体の敵チャンピオンに当たると、攻撃はさらに強化され、さらに多い追加の魔法ダメージを与え、シェンは攻撃速度が50%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Twilight Assault#description4": {
+   "source_sha1": "1a190fac415b12c5e2c4d2d3f502de7339dd2045",
+   "plain_sha1": "64c3078eab89d53ebf1f73c897fda5d3f9315929",
+   "ja": "モンスターへの強化された攻撃は100%の追加ダメージを与えるが、合計のダメージには上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Spirit's Refuge#description": {
+   "source_sha1": "0db09c45c9c97e58d07a0e74478b3c158308360a",
+   "plain_sha1": "2cb7478545c5b01df6f10c45fb7ee611b5e47cf2",
+   "ja": "発動効果：シェンは「Spirit Blade」を構えて、その周囲に範囲を作る。2秒後、またはシェンか味方チャンピオンが範囲に入ると、「Spirit Blade」は1.75秒間守りの領域を作り、範囲内のシェンと味方チャンピオンに当たるタワー以外の通常攻撃をすべて防ぐ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Shadow Dash#description": {
+   "source_sha1": "1eb751a957c152889dd3ddd6a1001bb765d1a695",
+   "plain_sha1": "a79efd2462cfe88247100f6270cff9b2ab79ab57",
+   "ja": "自動効果：「護刃招来」か「殺気駆け」でダメージを与えると、気を30～50（レベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Shadow Dash#description2": {
+   "source_sha1": "ce58c76e60df95fa1a3fba125c28ddd1a627e165",
+   "plain_sha1": "4988e6f99ecbb7ee641b5fc971a04c856a1c44dc",
+   "ja": "発動効果：シェンは指定地点へダッシュし、通過した敵チャンピオンとモンスターに物理ダメージを与えて、1.5秒間タウントを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Shadow Dash#description3": {
+   "source_sha1": "2ce88317036efa97dc55150ce19b8ece04ac8a9e",
+   "plain_sha1": "2f7c5cd2015ae9619655b2c41e75c285e15b8dcb",
+   "ja": "ダッシュ中に「護刃招来」と「防人の帳」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shen/Stand United#description2": {
+   "source_sha1": "4bfbf96e33c3a9d1289263d2178f34775c618e60",
+   "plain_sha1": "84a1d5e79fcebb8fd29aa82d356b0d85a3685e22",
+   "ja": "詠唱を終えると、シェンと「Spirit Blade」は対象の味方の位置へブリンクし、その味方と最も近い敵チャンピオンの間に置かれる。さらに、完了の時点で自身を狙う飛翔物をすべて破壊する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Shen/Ki Barrier#description": {
+   "source_sha1": "33fb19019c2ffae725f2b91cd7d1c74152d314b4",
+   "reason": "residual_markup"
+  },
+  "Template:Data Shen/Stand United#description": {
+   "source_sha1": "f559ede4915c74f2fbeff10390c277a4117eadcd",
+   "reason": "residual_markup"
+  }
+ }
+}

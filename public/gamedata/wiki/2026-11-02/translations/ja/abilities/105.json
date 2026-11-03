@@ -1,0 +1,135 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Fizz/Nimble Fighter#description": {
+   "source_sha1": "f7fdaa2a5101f91181be7ec39a9d0c4db05ef3e1",
+   "plain_sha1": "041d55dd4af08f1dcec222964be71ef039f82e05",
+   "ja": "固有：フィズは常にゴースト状態で、受ける軽減前のダメージを毎回4（+ APの1%）軽減する（最大50%まで）。モンスターに対しては軽減が14（+ APの1%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Urchin Strike#description": {
+   "source_sha1": "97000fa3ce201934fce366e731ba19d7e1670561",
+   "plain_sha1": "ce377200f5b18a4378918cd76c58ebd36c1b8052",
+   "ja": "発動効果：フィズは対象の敵の方向に決まった距離ダッシュする。到着時に対象が範囲内にいれば、魔法ダメージと攻撃力の100%の物理ダメージを与えて、攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Urchin Strike#description2": {
+   "source_sha1": "bd844162a1f4da9cbe34527d5edf211609516a89",
+   "plain_sha1": "5fd3c3d0048b3131d2b87b7acfad9147bdfdb622",
+   "ja": "ダッシュ中に「シートライデント」と「フィッシング」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Seastone Trident#description": {
+   "source_sha1": "2733ee5dd365edffad6577ec399cc10ba4e1df07",
+   "plain_sha1": "3fbd24e166c3d36e9484c259ec3537b2ef039696",
+   "ja": "自動効果：フィズの通常攻撃は攻撃時効果として敵を引き裂き、3秒間0.5秒ごとに魔法ダメージを与え、命中のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Seastone Trident#description2": {
+   "source_sha1": "7d5e424e84450598bd532c518b02f916f7042774",
+   "plain_sha1": "b4920cc2f2c38228e0e713bfc26aacddd7092fd9",
+   "ja": "発動効果：フィズは4秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Seastone Trident#description3": {
+   "source_sha1": "80a3303cc6196328af9d6658182a5be864964596",
+   "plain_sha1": "e4915bf6f630926d1b8b5039d9ed772448419657",
+   "ja": "「シートライデント」で対象を倒すと、クールダウンが1秒になり、マナコストが戻る。対象を倒せなかった場合は、次の5秒間、フィズの通常攻撃が攻撃時効果として追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Seastone Trident#description4": {
+   "source_sha1": "de278e4b405e18e6e09481b976033baae1d00069",
+   "plain_sha1": "b9632a5d8bc32f937978c2a76ad8a2ef8ef24088",
+   "ja": "「シートライデント」の発動効果のダメージは、建物にも50%の効果で与えられる。発動効果と攻撃時効果のダメージは、モンスターにさらに90の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Seastone Trident#description5": {
+   "source_sha1": "348662a2edd479fe9190a991a71c86275aa5a2a8",
+   "plain_sha1": "89f6f81d47e7da15891cafe1820173a85394cf4b",
+   "ja": "「シートライデント」はフィズの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Playful#description": {
+   "source_sha1": "a237ceb68211fe9f7e8e86b77d3ca6dfd5d149a7",
+   "plain_sha1": "1071d420ce9068bad6c451e0277935cea8e54a2f",
+   "ja": "発動効果：フィズは対象指定不可になりながら指定地点へダッシュし、0.75秒間トライデントの上でバランスを取る。その間、効果時間の0.15秒後から「トリックスター」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Playful#description2": {
+   "source_sha1": "5abd6bde27755fb7ab91066d1595efc83a700576",
+   "plain_sha1": "c7f50be5a635de28e014ef416b894be1fe8d598e",
+   "ja": "その後0.5秒かけてトライデントから飛び降り、その間移動速度が50%増加し、その後対象指定可能になって着地し、水しぶきで周囲の敵に魔法ダメージを与えて2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Playful#description3": {
+   "source_sha1": "a78e99baf613e3311075ae9c2765661752cc4904",
+   "plain_sha1": "c1cb58cf8c7dea6ca2a1e8df9fa127ecbca7b3bd",
+   "ja": "トライデントから飛び降りる間、フィズは移動の指示で着地点を操作できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Trickster#description": {
+   "source_sha1": "3108c4a61340680ca709bb20d2e50f7e7faf2e26",
+   "plain_sha1": "ae0817e39f143514d1f235a13a591d41ea28debb",
+   "ja": "発動効果：フィズは指定地点へダッシュし、到着時に早めに飛び降りて地面にしぶきを上げ、より小さい範囲に同じ魔法ダメージを与えるが、スロウは与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Chum the Waters#description": {
+   "source_sha1": "2fce517be04c323815e042264d76ba234be246ee",
+   "plain_sha1": "33ff617a58769b13ccdea9a8b53d08d844274cc1",
+   "ja": "発動効果：フィズは指定地点に餌を投げてサメを呼び寄せ、サメが出てくる前からその範囲の視界を与える。2秒後にサメが現れて餌に食らいつき、周囲の敵に魔法ダメージを与えてノックバックさせ（地形は越えない）、2秒間スロウを与える。餌が最初に飛んだ距離が長いほど大きなサメが寄ってきて、「フィッシング」のダメージ・スロウ・噴出の範囲・ノックバックの距離が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Chum the Waters#description2": {
+   "source_sha1": "73bc6f3e1211f9813c2f22f01163578035bb9dde",
+   "plain_sha1": "ec257d9f0e016c1cdebf26189f49be24f611a7cb",
+   "ja": "「Guppy」（<455）：40%のスロウ、噴出の範囲200、ノックバックの距離150ユニット。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Chum the Waters#description3": {
+   "source_sha1": "86449ef0f873855b8f4e8cda85c7dc0cd99f278a",
+   "plain_sha1": "9a91163f7e1f83af3634db233e8665c27c9362ee",
+   "ja": "「Chomper」（455-910）：125%のダメージ、60%のスロウ、噴出の範囲325、ノックバックの距離250ユニット。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Chum the Waters#description4": {
+   "source_sha1": "bc5500dddb7fb6b6931905df071b440cdadb287f",
+   "plain_sha1": "463eca8adef8ffc12daee1296704275f622b26b0",
+   "ja": "「Gigalodon」（>910）：150%のダメージ、80%のスロウ、噴出の範囲450、ノックバックの距離350ユニット。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fizz/Chum the Waters#description5": {
+   "source_sha1": "1f103440148c5277a87441cbadcdc116551e2d52",
+   "plain_sha1": "f9bac807affc5746b6e6cda7fb3fdadfc7caf29d",
+   "ja": "敵チャンピオンは飛んでいる餌を受け止めることができ、餌は触れたチャンピオンに付いて、同じ遅れの後にその位置にサメが現れる。餌を付けられた敵は効果時間の間スロウを受けて可視化され、その後噴出を受けるが、ノックバックではなく1秒間ノックアップする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

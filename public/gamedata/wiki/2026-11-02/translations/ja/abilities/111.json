@@ -1,0 +1,102 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nautilus/Staggering Blow#description2": {
+   "source_sha1": "2db75d079839becf67bd46c3cbde1eb6004a2301",
+   "plain_sha1": "2db75d079839becf67bd46c3cbde1eb6004a2301",
+   "ja": "この効果は、同じ対象には数秒に一度しか起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Dredge Line#description": {
+   "source_sha1": "80010e06c4ef1199e645fb67c798d19244508614",
+   "plain_sha1": "76953b0cb475c9f6f74eab902dabab010b2a62ab",
+   "ja": "発動効果：ノーチラスは指定方向に錨を投げ、錨は最初に当たった敵か地形で止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Dredge Line#description2": {
+   "source_sha1": "6880d3139a1101c30450b3ef10fddf993d4cb7ce",
+   "plain_sha1": "3ab18d26123965db58ca2fb674dd70058d7465ef",
+   "ja": "錨が敵に当たると、魔法ダメージを与えて1.15秒間可視化し、1秒間スタンさせ、0.9秒かけてノーチラスの方へ引き寄せ、同時にノーチラスもその敵に向かってダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Dredge Line#description3": {
+   "source_sha1": "6220e964eb1eb372cd82a377463096b6b735b3c5",
+   "plain_sha1": "65345039576e099c1b5d1128c94f2526d2e402c9",
+   "ja": "錨が地形に当たると、ノーチラスはその地点へダッシュし、「錨投げ」のクールダウンとマナコストの50%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Dredge Line#description4": {
+   "source_sha1": "1cf3c41c563920913722d37fb2677c40285151be",
+   "plain_sha1": "5671928854e6c0a45dcac422e544c0e36b159638",
+   "ja": "「錨投げ」が飛んでいる間、ノーチラスは移動も攻撃もできない。ダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Titan's Wrath#description": {
+   "source_sha1": "604f6f46679b16a8a8af4b0733e6b510a7095c66",
+   "plain_sha1": "8b7698948d08977e51d28ae0a26f6d13fcf24366",
+   "ja": "発動効果：ノーチラスは6秒間自身にシールドを付与し、シールドが残っている間、通常攻撃は強化されて対象とその周囲の敵に「Pain of Wrath」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Titan's Wrath#description2": {
+   "source_sha1": "3a4cd3c83b142490d5084ef638eaf6fbc8707141",
+   "plain_sha1": "c436e81120cfac3556cdfb210b1c26fdb19f87b8",
+   "ja": "「Pain of Wrath」：対象は継続して魔法ダメージを受け、半分は即座に、残りの半分は1.25秒後に与えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Titan's Wrath#description3": {
+   "source_sha1": "04afbd235906e2392a598c1d57d6efaca7c36fdf",
+   "plain_sha1": "efe688d4dc27408fbc6d10964af9e6a92092d966",
+   "ja": "「大海の激憤」はノーチラスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Riptide#description": {
+   "source_sha1": "05e0a50959ba2e3e3ba3d19d7c2dbce701ae8c9c",
+   "plain_sha1": "99f38b9d27816deb395ae6bd4536e79b8d7fbb84",
+   "ja": "発動効果：ノーチラスは自身から0.561秒かけて広がる三つの爆発の波を送る。各波は命中した敵に魔法ダメージを与え（一つ目より後の波で当たった敵には50%）、1.5秒かけて減衰するスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Riptide#description2": {
+   "source_sha1": "1d6292d14add5a2c45349aa983edf882511cddae",
+   "plain_sha1": "76284f196f6d678e0443ddbf3c5723698216b5cc",
+   "ja": "モンスターへの最初の命中は追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nautilus/Depth Charge#description2": {
+   "source_sha1": "b095fd9e64744b07cd53464724376902b6405a63",
+   "plain_sha1": "9fd2c410949726692567fd5dc8c20b8f657210be",
+   "ja": "主対象に届くと、「爆雷発射」は最後にもう一度その位置で噴き上がる。主対象はより大きなダメージを受け、同じ時間スタンし、修正された時間ノックアップする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nautilus/Staggering Blow#description": {
+   "source_sha1": "80d871a686b7e86716503a242787a503404d6306",
+   "reason": "residual_markup"
+  },
+  "Template:Data Nautilus/Depth Charge#description": {
+   "source_sha1": "01483a54d971b0a90f91d2710942c77b057d0d3d",
+   "reason": "residual_markup"
+  }
+ }
+}

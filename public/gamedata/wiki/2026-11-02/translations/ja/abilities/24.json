@@ -1,0 +1,107 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Jax/Relentless Assault#description": {
+   "source_sha1": "50944e8aa0a24ecdd64a8929273ee39df155da80",
+   "plain_sha1": "6222155cc70e529b10a0fca9c94ec11f5d2a3eaa",
+   "ja": "固有：ジャックスの通常攻撃（攻撃開始時）のたびに2.5秒間「アサルトアタック」のスタックを得る。攻撃のたびに効果時間が更新され、最大8回まで重なる。効果時間が終わると、スタックは0.25秒ごとに一つずつ消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Relentless Assault#description2": {
+   "source_sha1": "f36773ee7e177a99f658c9b6c8d2077a64970e29",
+   "plain_sha1": "e70d982ebe67391a3b9cc2488ab2e38ee94f324a",
+   "ja": "「アサルトアタック」：スタックごとに攻撃速度が5%～14%（レベルに応じて）増加し、最大40%～112%（レベルに応じて）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Leap Strike#description": {
+   "source_sha1": "85aeb4eb956cebb72e8af0ed95225bd6fbd8a2d4",
+   "plain_sha1": "5bfdc8773c6a572ef2254e03b077aa0bab4c5a22",
+   "ja": "発動効果：ジャックスは対象のユニットの位置へダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Leap Strike#description2": {
+   "source_sha1": "7b238b210f8bdb8662e7dc47c4fc505a3b30c4ac",
+   "plain_sha1": "ed6b9b1e0fb97e7209f90f7f96e2cda6ed15bfb6",
+   "ja": "対象が敵で、到着時に範囲内にいれば、ジャックスはその敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Leap Strike#description3": {
+   "source_sha1": "857926413c9195a5cd87a2cf0f291c15fbbbc0ea",
+   "plain_sha1": "da679d83479f826590cb4894bba528f1b9316d6c",
+   "ja": "ジャックスはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Empower#description": {
+   "source_sha1": "edc996d05f4b7f3bc3cc01f79ccdc59ec1a89fc0",
+   "plain_sha1": "ee8ef70aa26b6aaefc866246f6de2feba9025660",
+   "ja": "発動効果：ジャックスは10秒以内の敵への次の通常攻撃か「リープストライク」を強化し、追加の魔法ダメージ（建物には50%）を与える。通常攻撃に使った場合は、射程が50増加し、攻撃モーションが中断されなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Empower#description2": {
+   "source_sha1": "583c8511ffe2c270c641339b05592514258597cc",
+   "plain_sha1": "1e1ce8d35b7b613eb309781eb2eeb14c1c340aab",
+   "ja": "「パワーバッシュ」はジャックスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Counter Strike#description": {
+   "source_sha1": "028f9dcb7b4279409182f711bd372007abefaf45",
+   "plain_sha1": "c478adaa9ce4df26ae922667eb4a26217037aace",
+   "ja": "発動効果：ジャックスは2秒間「Evasion」の構えになり、タワー以外からのすべての通常攻撃を回避し、チャンピオンからの範囲のスキルのダメージを25%軽減する。「カウンターストライク」は1秒後から再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Counter Strike#description2": {
+   "source_sha1": "0c408e738f46c9ac0e26dd7f23120df8602d5deb",
+   "plain_sha1": "2842ac52d39bda0184dda63337bfb1ba1d4800ea",
+   "ja": "再発動：ジャックスは周囲の敵に魔法ダメージを与え、回避した攻撃1回ごとに合計のダメージが20%増え（最大100%）、1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Grandmaster-at-Arms#description": {
+   "source_sha1": "157e95ffad8fbf3dc127e111fdd567e5318b20fd",
+   "plain_sha1": "ed904b74ada39c00d705d214852613a59a543b4c",
+   "ja": "自動効果：ジャックスの通常攻撃（攻撃時効果）のたびに2.5秒間「ウェポングランドマスター」のスタックを得る。命中のたびに効果時間が更新され、最大2回まで重なる。2スタックで次の通常攻撃（攻撃時効果）が強化され、攻撃モーションが中断されなくなり、すべてのスタックを消費して追加の魔法ダメージ（建物には50%）を与える。「ウェポングランドマスター」の発動中は、1スタックで強化された攻撃が発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Grandmaster-at-Arms#description2": {
+   "source_sha1": "4220a0bd89fac457cd50f9fc1e37b23544438560",
+   "plain_sha1": "d1f87d17d526b784c4bc752bf9b99f8f65d25e3c",
+   "ja": "発動効果：ジャックスはランタンを振り回し、周囲の敵に魔法ダメージを与える。これがチャンピオンに命中すると、8秒間、物理防御が増加し（二体目以降のチャンピオン一体ごとに増加量が増える）、その量の60%に等しい魔法防御が増加し、サイズが10%大きくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Relentless Assault#description3": {
+   "source_sha1": "841239c341348ddca547464373440eac7217fd30",
+   "plain_sha1": "e4f1a321fee8b21cc9f1ea70d8333895e84721e1",
+   "ja": "「Grandmaster at Angling」：チャンピオンとの戦闘から離れ、川で何もしない状態が10秒続くと、ジャックスはときどき魚を釣り、5秒間、1 ゴールド（1 gold）と1の魔力を得る。魚は平均して15秒に一匹釣れる。5%の確率で珍しい魚を釣り、5秒間、10 ゴールド（10 gold）と10の魔力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jax/Grandmaster-at-Arms#description3": {
+   "source_sha1": "e2ad0ef55e9751704fa31d46999c20f381c9d091",
+   "plain_sha1": "91ac3b85ac6b022b0b06570fe71bb97826e540d5",
+   "ja": "ジャックスは「ウェポングランドマスター」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

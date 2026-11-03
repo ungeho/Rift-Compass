@@ -1,0 +1,93 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Amumu/Cursed Touch#description": {
+   "source_sha1": "719b7b6f7001323a807f5a847c8e29d708eaae40",
+   "plain_sha1": "9edf053644fb91f29df9d3635a8ccecacb165adc",
+   "ja": "固有：アムムの通常攻撃と「めそめそミイラの呪い」は強化され、敵に3秒間「Curse」の印を付ける。付与のたびと「めそめそ」の各回のダメージで効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Cursed Touch#description2": {
+   "source_sha1": "de840cdf9b8df5e638fedc197832c3b81f9692a7",
+   "plain_sha1": "5533b67cd9fd3285fd19637a65101f211cb9e1a2",
+   "ja": "「Curse」を受けた対象は、受ける軽減前の魔法ダメージから、10%の追加の確定ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Bandage Toss#description": {
+   "source_sha1": "727944998dde3ef2921046d2b878d22fa502693b",
+   "plain_sha1": "ef55dbb198b617c6bdcf13c4d973c853263fc02a",
+   "ja": "発動効果：アムムは指定方向に包帯を投げ、最初に命中した敵に魔法ダメージを与えて1秒間スタンさせ、その敵のところへ自身を引き寄せる。その間対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Bandage Toss#description2": {
+   "source_sha1": "eb28bf71ea7198ffcf52525ee524fba0f4a0fedf",
+   "plain_sha1": "1bbfedd32f080a46178714caa1d3ca89ead41572",
+   "ja": "アムムは一定時間ごとに「絡みつく包帯」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Bandage Toss#description3": {
+   "source_sha1": "3973472a7cc3db3aac2f33fee481b172ba6aa0b8",
+   "plain_sha1": "09babef21678a88faa32c9283918cf9087ee2412",
+   "ja": "ダッシュ中に「めそめそ」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Despair#description": {
+   "source_sha1": "3393d7861033e6ed9b3c2d248feb0a97449b8d9d",
+   "plain_sha1": "6dbc458abf26643b00ddaadb8555c9c19793824a",
+   "ja": "切り替え：アムムは涙の池を出し続け、0.5秒ごとに周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Despair#description2": {
+   "source_sha1": "c301699134218869caee1dd5a372ba266980808f",
+   "plain_sha1": "3e7e253ff707b064af915dc1ca6fb1d211f9d865",
+   "ja": "マナコストを払えなくなると、「めそめそ」は自動でオフになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Tantrum#description": {
+   "source_sha1": "5cd3cf45f594016ec323757206f46a78fc4588bb",
+   "plain_sha1": "6852a02dc0a368be74937c5e62e64b14ee6b4d0a",
+   "ja": "自動効果：アムムは受ける軽減前の物理ダメージを、毎回軽減する（一回のダメージの50%が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Tantrum#description2": {
+   "source_sha1": "aa487ed96b4e472e93174f9187e2eef7b83c290c",
+   "plain_sha1": "9e0b9edb88900a499c544999a43d38ce30f253ad",
+   "ja": "発動効果：アムムは怒りを爆発させ、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Tantrum#description3": {
+   "source_sha1": "c40eec97942843439c7dde2c43d911cb2aa94697",
+   "plain_sha1": "7761416cf0b85094c219cd7183f30f0c8614544c",
+   "ja": "アムムが通常攻撃（攻撃時効果）を受けるたびに、「だだっこ」の残りクールダウンが0.75秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Amumu/Curse of the Sad Mummy#description": {
+   "source_sha1": "95faf23389acc6fc1ad7d2d806e282b5d75ad758",
+   "plain_sha1": "10108fadc48d9ab2c4f17a745b3e047ad27e507e",
+   "ja": "発動効果：アムムは周囲の敵を包帯で絡め取り、魔法ダメージを与えて押し倒し、1.5秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

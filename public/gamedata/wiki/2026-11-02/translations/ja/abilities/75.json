@@ -1,0 +1,77 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nasus/Soul Eater#description": {
+   "source_sha1": "1aecbb941747bb9dce93b52e4c1cdf91e3d3e670",
+   "plain_sha1": "b5678809fdc3172f35a3ae356a6272f42dad5e05",
+   "ja": "固有：ナサスは10%～20%（レベルに応じて）のライフスティールを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Siphoning Strike#description": {
+   "source_sha1": "314a713c3820a086c14633dd96d855263dd03c3f",
+   "plain_sha1": "2f5a0591e95ceb9c60ff7f474912c49739a6797a",
+   "ja": "発動効果：ナサスは10秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、追加の物理ダメージを与える。「サイフォンストライク」の固定の追加ダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Siphoning Strike#description2": {
+   "source_sha1": "0120a7fe24bd55dbcd12712279c32aec40cd5eea",
+   "plain_sha1": "41834828a560a66fe83d6fdeafba929caaeb966b",
+   "ja": "「サイフォンストライク」で対象を倒すと、ナサスはスタックを永続的に4得て、対象がチャンピオン・大型ミニオン・大型モンスターの場合は10になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Siphoning Strike#description3": {
+   "source_sha1": "6af149cf4deeff6ff22b184f37fa272494e56045",
+   "plain_sha1": "c2363080cdd294ec7474653fb49f65a2a68498f4",
+   "ja": "「サイフォンストライク」はナサスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Wither#description": {
+   "source_sha1": "1419089846c096b0249d3cb814b0f5fedec56120",
+   "plain_sha1": "c4bc037bfd78ac199c0152170784ddbe246ca883",
+   "ja": "発動効果：ナサスは対象の敵チャンピオンを5秒間老化させ、35%のスロウと、その量の75%の攻撃速度低下（cripple）を与える。どちらも効果時間の間、毎秒強くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Spirit Fire#description2": {
+   "source_sha1": "7e4e253bb1e51df5b98e00ae3ab510c3b1ea9534",
+   "plain_sha1": "c59df7e2edd115b0f24e8f231d78aec76e9065ad",
+   "ja": "炎はその後5秒間残り、範囲内の敵に毎秒魔法ダメージを与えて物理防御低下を与え、出た後も1秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Fury of the Sands#description": {
+   "source_sha1": "415b1206c5a844a74d59cc2f3e38fde8a61e67e4",
+   "plain_sha1": "f0c1387a4742937ba22f698705478743471ef011",
+   "ja": "発動効果：ナサスは15秒間自身を強化し、その間、増加体力・物理防御・魔法防御・サイズの増加・通常攻撃の射程50の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nasus/Fury of the Sands#description2": {
+   "source_sha1": "2e1bed3297c38256216b1d263e2c99c585ecd596",
+   "plain_sha1": "91c8c92cc23a1b8f5d00e65bada7ce37ce133c65",
+   "ja": "強化されている間、ナサスは0.5秒ごとに周囲の敵に魔法ダメージ（毎秒240が上限）を与え、「サイフォンストライク」のクールダウンが半分になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nasus/Spirit Fire#description": {
+   "source_sha1": "398e762a46aa98d88ac9e27e0e9a5310a6efff3a",
+   "reason": "residual_markup"
+  }
+ }
+}

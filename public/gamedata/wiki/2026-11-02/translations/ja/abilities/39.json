@@ -1,0 +1,130 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Irelia/Ionian Fervor#description": {
+   "source_sha1": "241a3815be701561787141fffe9cf007f7067436",
+   "plain_sha1": "077501af896a469b6b547a591938914afb1d9125",
+   "ja": "固有：イレリアは、スキルが命中した敵チャンピオン一体ごと、またはチャンピオン以外に少なくとも一体命中した場合に「アイオニアの熱情」のスタックを得る。スタックは6秒間続き、敵チャンピオン・大型モンスター・建物への通常攻撃とスキルの命中で更新され、最大4回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Ionian Fervor#description2": {
+   "source_sha1": "6b47385c10625f8d141ccbc08d1aa261a575daff",
+   "plain_sha1": "0f149422274dd11c058d4530fabc8537b9daabfa",
+   "ja": "「アイオニアの熱情」：スタックごとに攻撃速度が10%～25%（レベルに応じて）増加し、最大40%～100%（レベルに応じて）。最大スタックでは、イレリアの通常攻撃が強化され、攻撃時効果として10～61（レベルに応じて）（+ 増加攻撃力の20%）の追加の魔法ダメージ（建物には50%）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Ionian Fervor#description3": {
+   "source_sha1": "97fd2b61a13b208b6ea41517e1bf301fc718b5e8",
+   "plain_sha1": "a88060f0c59b32f73706f21c12da21783eda9011",
+   "ja": "固有 -「Unsteady」：「無欠の連舞」か「先陣の刃」の最初の一斉攻撃が命中した敵チャンピオンと大型モンスターには、5秒間「Unsteady」の印が付く。印は「瞬刃」で消費できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Bladesurge#description": {
+   "source_sha1": "1d1fc75ad0d194f7b07ffab7647c9f67fe91ca09",
+   "plain_sha1": "de5b44b36d2e506f56f16abca1b2ed089e477516",
+   "ja": "発動効果：イレリアは対象の敵の位置を100ユニット突き抜けてダッシュし、ぶつかるかダッシュを終えると、物理ダメージを与え、攻撃時効果を与えて、自身を回復する。「瞬刃」はミニオンに50～237（レベルに応じて）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Bladesurge#description3": {
+   "source_sha1": "82e62e4d71984a72790c5fc685d0d68b982fe8b7",
+   "plain_sha1": "77c961d83b0e7d8c01ace602d230eaa381d93daf",
+   "ja": "ダッシュ中に「無欠の連舞」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Defiant Dance#description": {
+   "source_sha1": "7fe6e1042a55e86d19bcb09a7ab7244de5cee289",
+   "plain_sha1": "2e393b85b68017559b72cb30ec0d278e3975b75c",
+   "ja": "発動効果：イレリアは刃を構えて防御の構えになり、最大1.5秒間溜める。その間、受ける物理ダメージを40%～70%（レベルに応じて）（+ AP 100ごとに8%）、受ける魔法ダメージを20%～35%（レベルに応じて）（+ AP 100ごとに4%）軽減する。さらに、詠唱の最初の0.75秒の間に「不屈の舞」のダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Defiant Dance#description2": {
+   "source_sha1": "a35ed8b12129b7f149b53507eca9f454d27f3903",
+   "plain_sha1": "ff73c603b3193a16f978a3dcec2bbbe15e0fbb12",
+   "ja": "「不屈の舞」は効果時間中に再発動でき、その後は自動で再発動する。「不屈の舞」の溜めは行動妨害で中断されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Defiant Dance#description3": {
+   "source_sha1": "f52f2c06a6e7f52e619cc45a23a3172c1b17fd77",
+   "plain_sha1": "e607f6fb73f000b4e492d6869ec797cdd7379518",
+   "ja": "再発動：イレリアは指定方向に刃を振るい、周囲と直線上の敵に物理ダメージ（詠唱時間に応じて0%～200%増加）を与える。さらに0.5秒間ダメージ軽減を保つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Defiant Dance#description4": {
+   "source_sha1": "87bafbc70a39c88066a5fb798925520551e63e69",
+   "plain_sha1": "b4cd6ad70db3884eaef7eadb16b18a6673fadc57",
+   "ja": "「不屈の舞」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。溜めの間は「アイオニアの熱情」の効果時間が止まる。溜めを始めたときに「アイオニアの熱情」の残りが1秒未満なら、溜めが終わったときに1秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Flawless Duet#description": {
+   "source_sha1": "f7ed82dc000081a41aa2f6a3876378762bb5573c",
+   "plain_sha1": "fa39f0b272bc68e026c51f40fa6a25b8441d51ad",
+   "ja": "発動効果：イレリアは指定地点に3.5秒間刃を送る。「無欠の連舞」は刃がある間、0.15秒後から再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Flawless Duet#description2": {
+   "source_sha1": "f5dc0d793dc86890aeffed5b03170b891d2b03f0",
+   "plain_sha1": "071387a652e80f8defc21014576048af210c213b",
+   "ja": "再発動：イレリアは二本目の刃を指定地点に送る。自動で再発動した場合は、自身の現在の位置に送る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Flawless Duet#description3": {
+   "source_sha1": "8579e9345423453718ecb6dab3eb49c966f8fb53",
+   "plain_sha1": "46bc21b645ed750e2296c3dc8e03f15f75de2ce8",
+   "ja": "両方の刃が置かれると、距離に関係なく互いに向かって飛び、0.25秒かけて合わさった後、間の直線上のすべての敵に魔法ダメージを与えて0.75秒間スタンさせ、その間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Vanguard's Edge#description": {
+   "source_sha1": "574985b5fb47740d6bad6f030054ae975b7d418b",
+   "plain_sha1": "291eaa225c8a63085da09b5acf21796b8143e046",
+   "ja": "発動効果：イレリアは指定方向に刃を一斉に放ち、刃は敵チャンピオンに命中すると外側へ広がって、命中したすべての敵に魔法ダメージを与え、1秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Vanguard's Edge#description2": {
+   "source_sha1": "0f668e2115195d03687929066f9a3677fe99ca8e",
+   "plain_sha1": "50ae1a22cd258d1c66ab7d1fe21a4b32c287cdee",
+   "ja": "広がった後、刃は地面に落ちて、すべての敵ユニットを刃から押しのけ（ノックアップ状態にはしない）、命中した敵チャンピオンの周囲に2.5秒間スペード型の囲いを作り、その周囲の視界を与える。初めて刃を通過した敵は同じ魔法ダメージを受け、1.5秒間90%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Irelia/Vanguard's Edge#description3": {
+   "source_sha1": "d4ff008b8da97614a4e5e2cee55a09c1b825382b",
+   "plain_sha1": "8ee6e8830c2adcc1a8dc0abd708e1a3bd066b0ad",
+   "ja": "囲いは、イレリアが使用した向きと同じ角度を向くが、対象の中心を基準にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Irelia/Bladesurge#description2": {
+   "source_sha1": "26cc61e695c134bd80f708d2543718a269f45a4e",
+   "reason": "residual_markup"
+  },
+  "Template:Data Irelia/Flawless Duet#description4": {
+   "source_sha1": "f1ed05482ac3bf4ed94f47cde86c1abd3244785a",
+   "reason": "residual_markup"
+  }
+ }
+}

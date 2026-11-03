@@ -1,0 +1,116 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Sett/Pit Grit#description2": {
+   "source_sha1": "4e6c4ea0ba2fe6d381a3eccbe891f8a53d72bf96",
+   "plain_sha1": "dc43e00a00259cc682580d6d96805a18090d4bf2",
+   "ja": "固有 -「Heavy Hands」：セトの通常攻撃は、攻撃開始時に左パンチと右パンチで交互に行う。最初は左パンチで攻撃し、右パンチをしない状態が2秒続くと左パンチに戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Knuckle Down#description": {
+   "source_sha1": "d189abc089185e5f3ff52866242d74e5c98c3ead",
+   "plain_sha1": "236349dc96469129c9efcca686d7500b45d24b3a",
+   "ja": "発動効果：セトは5秒以内の次の二回の通常攻撃を強化し、射程が50増加して、追加の物理ダメージを与える。モンスターに対しては、各攻撃の合計ダメージが400までになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Knuckle Down#description2": {
+   "source_sha1": "e6c76f8dfbdc9e239805fb49d3db63a9e6701391",
+   "plain_sha1": "c2156c703e922eada24cdb4f7421196e2c9c15d3",
+   "ja": "さらに1.5秒間、2000ユニット以内の見えている敵チャンピオンの方を向いている間は移動速度が30%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Knuckle Down#description3": {
+   "source_sha1": "5a97455e772bd40fe396bf3ea5bf68062e0bd4d2",
+   "plain_sha1": "6542c656ab1914fde581538e0bbbac8bfc00e744",
+   "ja": "「ナックルダウン」はセトの通常攻撃タイマーをリセットする。強化された攻撃は必ず左パンチの後に右パンチになり、セトの今の「ファイティングスピリット」の状態を（該当すれば）リセットして、続く右パンチの通常の時間切れを無視する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Haymaker#description": {
+   "source_sha1": "f964df0482932262726b82539397cc7c390a1f4e",
+   "plain_sha1": "bcf15fac136243934eac56c36a697c5c89199243",
+   "ja": "自動効果：セトは受けた軽減後のダメージの100%を、リソースバーに「Grit」として蓄え、最大体力の50%が上限。蓄えた「Grit」はそれぞれ、4秒後から毎秒30%ずつ価値が減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Haymaker#description2": {
+   "source_sha1": "39076120556cad7221bca24be4860fc4f28fc533",
+   "plain_sha1": "42f4c2145c70b6380c0780aafd5f012a77bbaf54",
+   "ja": "発動効果：セトは詠唱時間の間に一撃を溜める。さらに、詠唱時間の開始時に蓄えたすべての「Grit」を即座に消費し、消費した「Grit」に等しいシールドを3秒間自身に付与する。シールドは0.75秒後から効果時間の間に弱まっていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Haymaker#description3": {
+   "source_sha1": "8e251900699e2532473931f9f88bf71e0cb078f0",
+   "plain_sha1": "59faf6af67835c72741b89dce3332532cc692f4a",
+   "ja": "詠唱時間の後、セトは指定方向の範囲に巨大な衝撃を放ち、命中した敵に物理ダメージを与える。中央の直線上に当たった敵は、代わりに確定ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Facebreaker#description": {
+   "source_sha1": "b925e5f16e6815a65ad3e7dbff4da02a18de6802",
+   "plain_sha1": "448fdba6411a17f54c48e774b039b5af24b903e5",
+   "ja": "発動効果：セトは指定方向に沿って前と後ろの敵を引き寄せ、物理ダメージを与えて、0.5秒間70%のスロウを与える。「フェイスブレイカー」はモンスターに125～250（レベルに応じて）の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Facebreaker#description2": {
+   "source_sha1": "a990c011237d1a24142701a416a3c33973c7d6ef",
+   "plain_sha1": "664af106685926614f7d25a0e32b43e3236997cd",
+   "ja": "「フェイスブレイカー」が両側の少なくとも一体ずつの敵に効くと、叩きつけた時点ですべての敵が1秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/Facebreaker#description3": {
+   "source_sha1": "e9fcd3aa47b744bcdb7da40574580cacce38c931",
+   "plain_sha1": "be9f9ef4dcb75338b3987bcc88e4db634dec062d",
+   "ja": "「フェイスブレイカー」の詠唱時間の後、セトは0.25秒間移動も攻撃もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/The Show Stopper#description": {
+   "source_sha1": "1572a4ce8286e5e567f3c14fbeaacc5c2fad1993",
+   "plain_sha1": "c3f3c79403fbd7746b2facb4a4713259bf33efbe",
+   "ja": "発動効果：セトは対象の敵チャンピオンにサプレッションを与えて可視化し、移動系の効果を受けない状態でその位置へダッシュして、到着時に対象をつかむ。同じ方向にさらに600ユニット跳んで対象を地面に叩きつけ、巨大な衝撃波を起こして、着地点から250ユニット先まですばやく前へ滑る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/The Show Stopper#description2": {
+   "source_sha1": "c28f8cea7c45f445e9047b84c3bae140993b1bb1",
+   "plain_sha1": "5208efe0b1391c71b229781c4d50696ebdfa80ca",
+   "ja": "中心にいる敵は物理ダメージを受け、衝撃波に当たったほかの敵は、近さに応じて最大75%減った物理ダメージを受ける。命中したすべての対象は1秒間99%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sett/The Show Stopper#description3": {
+   "source_sha1": "5066a35d267d5dd0e0ef6cc7d3c7bf00f98992d5",
+   "plain_sha1": "77b3bcfa74355808ca5ab44b372a6d3d0830ddaa",
+   "ja": "距離か無効な場所のためにダッシュで越えられない地形にぶつかると、跳躍は早く終わってその場で衝撃を起こす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Sett/Pit Grit#description": {
+   "source_sha1": "38f5a19c8a7643f87002ce7eaaf33f5133ffef1b",
+   "reason": "residual_markup"
+  },
+  "Template:Data Sett/Pit Grit#description3": {
+   "source_sha1": "57c9684c81c3e6f16230d91e6bec033ea792ddab",
+   "reason": "residual_markup"
+  }
+ }
+}

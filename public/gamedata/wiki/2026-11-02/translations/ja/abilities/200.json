@@ -1,0 +1,148 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Bel'Veth/Death in Lavender#description": {
+   "source_sha1": "197c2571d376ea35a137d00fbeee6f44960157a5",
+   "plain_sha1": "413b897db1d75d94492e0434fb4ecc72e607f4af",
+   "ja": "固有：ベル＝ヴェスは攻撃速度の上限を超えられる。攻撃速度はレベルごとの成長では増えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Death in Lavender#description2": {
+   "source_sha1": "2a69dfc6d7dbe52ac1e51267c32a00eb2bbbac12",
+   "plain_sha1": "48f332a51554a7eb25ef3817bc2d9e7892032de8",
+   "ja": "固有 -「Empress's Decree」：ベル＝ヴェスのスキルの使用は、3秒間ゴースト状態と20%の攻撃速度の増加を与え、使用のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Void Surge#description2": {
+   "source_sha1": "3cc8453d873917b223d3b7bdcdebfae5bcb0ae85",
+   "plain_sha1": "03426d35ecab60770632989835ecd6851d94f2bf",
+   "ja": "「ヴォイドサージ」はモンスターに70の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Void Surge#description3": {
+   "source_sha1": "92ba3f1272515ca1e123e0354075d873afd5733a",
+   "plain_sha1": "18cbdf5f1d46d75c60dda753a8043596e9192e2c",
+   "ja": "「ヴォイドサージ」はクールダウン中でない方角にしか使えず、使用の間にもクールダウンが生じる。方角ごとに固有のクールダウンがあり、攻撃速度の増加1%ごとにスキルヘイスト0.2に相当する分だけ短縮される。これらのクールダウンは復活時にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Void Surge#description4": {
+   "source_sha1": "892750f3e0fd9fe71177b0a70145fa91667a256c",
+   "plain_sha1": "22bc3c1e15391a768550da02e25734167c980b58",
+   "ja": "「ヴォイドサージ」はベル＝ヴェスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Above and Below#description": {
+   "source_sha1": "c0cffa182f84bbd00adb9b7de7d4430e757c99c8",
+   "plain_sha1": "4a31a2732e4e564867f144721cf27846a3da587b",
+   "ja": "発動効果：ベル＝ヴェスは指定方向に尾を叩きつけ、命中した敵に魔法ダメージを与えて一定時間ノックアップさせ、2秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Above and Below#description2": {
+   "source_sha1": "309ecb5c364f1aa3ed05f6b0741fef9ae6db53c7",
+   "plain_sha1": "05ac7a0f1713eb1bc9b4756a8a0c0a6dd1bcc939",
+   "ja": "これが敵チャンピオンに命中すると、指定方向の「ヴォイドサージ」のダッシュのクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Royal Maelstrom#description": {
+   "source_sha1": "2c0c3442848095f736503ba42c17a9eea0563916",
+   "plain_sha1": "daf45dc14a21810e645f8318bf325567b084b5fd",
+   "ja": "発動効果：ベル＝ヴェスは1.5秒間激しい状態になり、その間は移動できないが、ダメージ軽減とライフスティールを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Royal Maelstrom#description2": {
+   "source_sha1": "fe73ead8cc4567c7f1664d27cb0845abebc60964",
+   "plain_sha1": "47b63f32eb095bc1b0340dce3e066b927db08817",
+   "ja": "効果中、ベル＝ヴェスは効果時間の間に、現在体力の割合が最も低い最も近い敵を最大6（+ 攻撃速度の増加40%ごとに1）回素早く切りつける。切りつけはそれぞれ物理ダメージ（対象の減少体力に応じて0%～100%増加）を与え、攻撃時効果・攻撃開始時の効果・スキルの効果を与えるが、攻撃時効果と攻撃開始時の効果のダメージは12%～24%（対象の減少体力に応じて）の効果になる。スキルの使用を妨げる行動妨害を受けている間、ベル＝ヴェスは切りつけられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Royal Maelstrom#description3": {
+   "source_sha1": "ee24784e8060b4e733d94861bab526bab857837a",
+   "plain_sha1": "d5551f8a06a67cdeb307f74f5b4b6228a20c53d9",
+   "ja": "「ロイヤルストーム」はモンスターに200%のダメージを与え、ライフスティールが適用され、クリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Royal Maelstrom#description4": {
+   "source_sha1": "1f7cdea335357aeef4f6fa6dbe112c15eef103ad",
+   "plain_sha1": "5c6cb97851eb3ea86edba9681c638a3c27863584",
+   "ja": "「ロイヤルストーム」は効果時間中、0.75秒後から再発動でき、効果時間が終わるかベル＝ヴェスがスキルを使用すると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Royal Maelstrom#description5": {
+   "source_sha1": "9b93808d090d4fe2ea7987b1cf227e54411c48ef",
+   "plain_sha1": "42804421ab5b6e8834e0c6688f1d51dc9e26cb2b",
+   "ja": "再発動：ベル＝ヴェスは「ロイヤルストーム」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Royal Maelstrom#description6": {
+   "source_sha1": "95ffcd8c7c2cbd05a06abb3b7135887838c01076",
+   "plain_sha1": "20a277c34097e6d3a7e10c535d953c11888d8aa0",
+   "ja": "このスキルが命中する対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Endless Banquet#description": {
+   "source_sha1": "ff3eea8c3d401cdd128dfe8b0445a20695909553",
+   "plain_sha1": "6d742838fd9822b440c0d9ffe846b3acc6e0f071",
+   "ja": "自動効果：ベル＝ヴェスの通常攻撃（攻撃時効果）は対象に5秒間印を付け、命中のたびに更新される。印の付いた対象への通常攻撃（攻撃時効果）のたびに追加の確定ダメージを与え、このダメージを同じ値だけ増やす「終わりなき晩餐」のスタックを得る。この効果は上限なく重なるが、エピックモンスターに対しては8スタックが上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Endless Banquet#description2": {
+   "source_sha1": "d786d553f23fa06eed86be901186ee459bdc1bd0",
+   "plain_sha1": "fea0cc26b78f2b3b0633e0f14906aa8849bfe8e8",
+   "ja": "自動効果：ベル＝ヴェスが生きている状態で敵チャンピオンかエピックモンスターのキルに関与すると、その亡骸から15秒間「Void Coral」が出る。バロンナッシャー、ピットのリフトヘラルド、ヴォイドグラブ（出現のまとまりごとに一度）は「Enhanced Void Coral」を出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Endless Banquet#description4": {
+   "source_sha1": "e297399abfcb7a715ea2f66f2e70c56683cb9b1b",
+   "plain_sha1": "214fb5cfa0d90befda551b6d579e993166fdad7f",
+   "ja": "「True Form」：ベル＝ヴェスは怪物（モンスター）に進化し、増加体力・通常攻撃の射程の増加・サイズの増加と、合計の攻撃速度の増加を得る。「ヴォイドサージ」で地形を越えてダッシュできる。「Void Coral」を取り込むと「True Form」の効果時間が更新され、ベル＝ヴェスは回復する。「Enhanced Void Coral」のボーナス：「True Form」が強化され、近くで死んだ味方と敵のミニオンから「Void Remora」が出る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bel'Veth/Endless Banquet#description5": {
+   "source_sha1": "cfeea79a45bf58178599f23cf0a58f840be54f06",
+   "plain_sha1": "7e979fffaba680a4bff6742881a50a618278ad3c",
+   "ja": "このスキルを使用するには、近くに「Void Coral」が必要。自動効果の追加の確定ダメージは、「ロイヤルストーム」の攻撃時効果の倍率の影響を受ける。「Void Remora」と「Void Coral」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Bel'Veth/Death in Lavender#description3": {
+   "source_sha1": "be808e909e7aec4802f9398fef3d94ce9cdc4526",
+   "reason": "residual_markup"
+  },
+  "Template:Data Bel'Veth/Void Surge#description": {
+   "source_sha1": "9a3434cb77f7065b57b433edc334c9025d426f3a",
+   "reason": "residual_markup"
+  },
+  "Template:Data Bel'Veth/Endless Banquet#description3": {
+   "source_sha1": "b8868d1c35ef506fd429d80eca92261975fd524c",
+   "reason": "residual_markup"
+  }
+ }
+}

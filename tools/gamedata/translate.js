@@ -41,6 +41,20 @@ function fieldsOf(key) {
   return out;
 }
 
+/** Data Dragon の全チャンピオンのスキル名（英語、長い順）。用語の照合から除くため */
+let SKILL_NAMES = null;
+function skillNames() {
+  if (SKILL_NAMES) return SKILL_NAMES;
+  const dir = path.join(ROOT, "public/gamedata/ddragon", manifest().current.ddragon, "champions");
+  const set = new Set();
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) {
+    const c = readJson(path.join(dir, f));
+    for (const s of [c.passive, ...(c.spells || [])]) if (s && s.name && s.name.en && /\s/.test(s.name.en)) set.add(s.name.en);
+  }
+  SKILL_NAMES = [...set].sort((a, b) => b.length - a.length);
+  return SKILL_NAMES;
+}
+
 const numbers = (s) => (s.match(/\d+(?:\.\d+)?/g) || []).map((x) => String(Number(x)));
 
 /** 訳の検査：原文の数がすべて訳にある、訳に原文にない数がない、用語集の対応、記法が残っていない */
@@ -50,7 +64,9 @@ function checkOne(plain, ja) {
   for (const n of new Set(src)) if (!dst.includes(n)) problems.push(`数 ${n} が訳にない`);
   for (const n of new Set(dst)) if (!src.includes(n)) problems.push(`訳に原文にない数 ${n}`);
   // 用語集の順（長い・具体的な語が先：true sight は sight より先）で照合し、照合した部分は後の短い語の照合から除く
+  // スキル名（例：Shield of Durand＝デュランドの守り）の中の語は用語の照合から除く（公式の日本語名に用語が含まれないため）
   let rest = plain;
+  for (const name of skillNames()) if (rest.includes(name)) rest = rest.split(name).join(" ");
   for (const term of glossary().terms) {
     const re = new RegExp(term.en, "gi");
     const m = rest.match(re);
@@ -59,8 +75,14 @@ function checkOne(plain, ja) {
     rest = rest.replace(re, " ");
   }
   if (/\{\{|\}\}|⟦|\b[a-z_]+\d*\s*=/.test(ja)) problems.push("記法が残っている");
+  // 否定（できる／できない）：原文に否定があれば、訳にも否定の表現が要る（逆向きの訳の検出。意味の正しさは保証しない）
+  if (NEG_EN.test(plain) && !NEG_JA.test(ja)) problems.push("原文の否定（not・cannot・no など）が訳にない");
   return problems;
 }
+
+/** 否定の表現（検査用の近似）*/
+const NEG_EN = /\b(cannot|not|no|unable|never|without|neither|nor|none|unaffected)\b|n't\b/i;
+const NEG_JA = /ない|なかっ|なけれ|なく|ず|不可|なし|無|せず|できな|ません|除く|以外|受けない|影響しない|妨げ/;
 
 function worklist(keys, out) {
   const items = keys.flatMap((k) => fieldsOf(k));
@@ -85,28 +107,45 @@ function importFile(file) {
     // 訳した英文の sha1（worklist の plain_sha1）があれば、現在の英文と同じかも確かめる
     if (tr.plain_sha1 && cur.plainSha1 !== tr.plain_sha1) { console.log(`英文（解析の結果）が変わった：${tr.id}`); rejected++; continue; }
     if (cur.residual) { console.log(`保留の原文は訳さない：${tr.id}`); rejected++; continue; }
+    // 訳さずに保留する（例：英文の抽出に欠けがあり、推測でしか訳せない）。理由を記録し、next の対象から外す
+    if (tr.withhold) {
+      if (!byKey.has(key)) byKey.set(key, []);
+      byKey.get(key).push({ title, field, sha1: tr.sha1, plainSha1: cur.plainSha1, withhold: tr.withhold });
+      ok++;
+      continue;
+    }
     const problems = checkOne(cur.plain, tr.ja);
     if (problems.length && !tr.allow) { console.log(`検査で不合格：${tr.id}：${problems.join("・")}`); rejected++; continue; }
     if (!byKey.has(key)) byKey.set(key, []);
-    byKey.get(key).push({ title, field, sha1: tr.sha1, plainSha1: cur.plainSha1, ja: tr.ja, problems });
+    byKey.get(key).push({ title, field, sha1: tr.sha1, plainSha1: cur.plainSha1, ja: tr.ja, problems, allowReason: tr.allow_reason || null });
     ok++;
   }
   for (const [key, list] of byKey) {
     const f = fs.existsSync(trFile(key)) ? readJson(trFile(key)) : null;
     const entries = f ? f.entries : {};
+    // 保留：未解決の記法（residual_markup）は毎回作り直し、それ以外の理由の保留は原文と英文が同じ間は残す
+    const curById = new Map(fieldsOf(key).map((x) => [`${x.title}#${x.field}`, x]));
+    const withheld = {};
+    for (const [id, w] of Object.entries((f && f.withheld) || {})) {
+      const c = curById.get(id);
+      if (w.reason !== "residual_markup" && c && c.sha1 === w.source_sha1 && c.plainSha1 === w.plain_sha1) withheld[id] = w;
+    }
+    for (const x of curById.values()) if (x.residual) withheld[`${x.title}#${x.field}`] = { source_sha1: x.sha1, reason: "residual_markup" };
     for (const x of list) {
+      if (x.withhold) {
+        withheld[`${x.title}#${x.field}`] = { source_sha1: x.sha1, plain_sha1: x.plainSha1, reason: x.withhold, withheld_at: today() };
+        delete entries[`${x.title}#${x.field}`];
+        continue;
+      }
       entries[`${x.title}#${x.field}`] = {
         source_sha1: x.sha1,
         plain_sha1: x.plainSha1,
         ja: x.ja,
         status: "ai_translated_unreviewed",
         translated_at: today(),
-        ...(x.problems.length ? { check_notes: x.problems } : {}),
+        ...(x.problems.length ? { check_notes: x.problems, ...(x.allowReason ? { allow_reason: x.allowReason } : {}) } : {}),
       };
     }
-    // 保留（未解決の記法）も記録する（訳がない理由を画面に出すため）
-    const withheld = {};
-    for (const x of fieldsOf(key)) if (x.residual) withheld[`${x.title}#${x.field}`] = { source_sha1: x.sha1, reason: "residual_markup" };
     writeJson(trFile(key), {
       license: { name: "CC BY-SA 3.0", url: "https://creativecommons.org/licenses/by-sa/3.0/", attribution: "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者", modification: "英語の原文（記法を簡略化したもの）を日本語に翻訳した" },
       translator: meta.translator || "AI（Claude Opus 5.5）",
@@ -150,6 +189,33 @@ function bindPlain(file) {
   console.log(`plain_sha1 を記録 ${bound}件、英文が変わった ${changed}件、worklist にない ${skipped}件`);
 }
 
+/**
+ * 次に訳す原文（全チャンピオン、キーの数の順）。訳が有効なものと保留（未解決の記法）は除く。
+ * 取り込んだ分は次の next で除かれるので、中断しても未処理の分から再開できる。
+ */
+function next(limit, out, maxChars) {
+  const keys = fs.readdirSync(path.join(snapDir(), "abilities")).map((f) => f.replace(/\.json$/, "")).sort((a, b) => Number(a) - Number(b));
+  const todo = [];
+  let chars = 0;
+  outer: for (const k of keys) {
+    const tr = fs.existsSync(trFile(k)) ? readJson(trFile(k)) : { entries: {} };
+    for (const x of fieldsOf(k)) {
+      if (x.residual) continue;
+      const e = tr.entries[`${x.title}#${x.field}`];
+      if (e && valid(e, x)) continue;
+      const w = (tr.withheld || {})[`${x.title}#${x.field}`];
+      if (w && w.reason !== "residual_markup" && w.source_sha1 === x.sha1 && w.plain_sha1 === x.plainSha1) continue;
+      if (todo.length >= limit || (maxChars && todo.length && chars + x.plain.length > maxChars)) break outer;
+      todo.push({ id: x.id, sha1: x.sha1, plain_sha1: x.plainSha1, plain: x.plain });
+      chars += x.plain.length;
+    }
+  }
+  const res = { generated_at: today(), todo, withheld: [] };
+  if (out) writeJson(out, res);
+  console.log(`次に訳す原文 ${todo.length}件（英文 ${chars}文字）`);
+  return res;
+}
+
 function check() {
   const dir = path.join(snapDir(), "translations", "ja", "abilities");
   let n = 0, bad = 0, stale = 0;
@@ -171,7 +237,7 @@ function check() {
 
 function status() {
   const keys = fs.readdirSync(path.join(snapDir(), "abilities")).map((f) => f.replace(/\.json$/, ""));
-  let total = 0, residual = 0, translated = 0, stale = 0;
+  let total = 0, residual = 0, translated = 0, stale = 0, reviewed = 0, manual = 0;
   for (const k of keys) {
     const fields = fieldsOf(k);
     total += fields.length;
@@ -180,12 +246,19 @@ function status() {
       const tr = readJson(trFile(k));
       for (const x of fields) {
         const e = tr.entries[`${x.title}#${x.field}`];
-        if (e && valid(e, x)) translated++;
-        else if (e) stale++;
+        if (e && valid(e, x)) {
+          translated++;
+          // 人による確認は status で別に管理する（検査の合格だけでは human_reviewed にしない）
+          if (e.status === "human_reviewed") reviewed++;
+        } else if (e) stale++;
+        else {
+          const w = (tr.withheld || {})[`${x.title}#${x.field}`];
+          if (!x.residual && w && w.reason !== "residual_markup" && w.source_sha1 === x.sha1 && w.plain_sha1 === x.plainSha1) manual++;
+        }
       }
     }
   }
-  const res = { description_fields: total, translated, withheld_residual: residual, not_yet: total - translated - residual, stale };
+  const res = { description_fields: total, translated, translated_ai_unreviewed: translated - reviewed, human_reviewed: reviewed, withheld_residual: residual, withheld_other: manual, not_yet: total - translated - residual - manual, stale, translated_rate: Number((translated / total).toFixed(4)) };
   console.log(JSON.stringify(res));
   return res;
 }
@@ -198,6 +271,7 @@ if (require.main === module) {
   else if (cmd === "check") process.exitCode = check().bad ? 1 : 0;
   else if (cmd === "status") status();
   else if (cmd === "bind-plain") bindPlain(args[0]);
+  else if (cmd === "next") next(Number(args[0] || 60), opt("--out"), Number(opt("--chars") || 0));
   else { console.log(fs.readFileSync(__filename, "utf8").split("\n").slice(1, 9).join("\n")); process.exitCode = 1; }
 }
 module.exports = { checkOne, fieldsOf, numbers, valid };

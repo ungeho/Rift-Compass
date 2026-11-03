@@ -1,0 +1,72 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Morgana/Soul Siphon#description": {
+   "source_sha1": "5d9281e9c75c18ba886800f55ac9261151335dc5",
+   "plain_sha1": "221a1a5d87dda77e60d623847f897eb10c89a43b",
+   "ja": "固有：モルガナは、チャンピオン・大型ミニオン・中型と大型のモンスターにスキルで与えた軽減後のダメージの18%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Dark Binding#description": {
+   "source_sha1": "b3520544111d40c5b952ae3a62b5016ede33a02b",
+   "plain_sha1": "915b1303045d908e50e98ce5db7b6c40cd83df39",
+   "ja": "発動効果：モルガナは指定方向に闇の魔法の玉を投げ、最初に命中した敵に魔法ダメージを与えて、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Tormented Shadow#description": {
+   "source_sha1": "0880a01d963f763d1e2b52ba09e8a53d5a6db481",
+   "plain_sha1": "2f70b8d262f818a1307f8b3c7443dedde5d5d90c",
+   "ja": "自動効果：「ソウルサイフォン」が発動するたびに、「苦悶の影」の残りクールダウンが合計クールダウンの5%短縮される。複数の対象から同時に発動した場合は、短縮が重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Tormented Shadow#description2": {
+   "source_sha1": "7b5ab1850f44dd63b250602981d307a5cee7761e",
+   "plain_sha1": "0144d10d825e24e326282be9ab36e050bcd202f9",
+   "ja": "発動効果：モルガナは指定地点の地面を苦しめ、5秒間その範囲を汚す。範囲内の敵は、発動時とその後0.5秒ごとに魔法ダメージ（対象の減少体力に応じて0%～100%増加）を受ける。「苦悶の影」はモンスターに170%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Black Shield#description": {
+   "source_sha1": "2e72310de25816c16179552671ce21155be02899",
+   "plain_sha1": "b3d52b1742960ae67f23d2670ec71728e54420e4",
+   "ja": "発動効果：モルガナは対象の味方チャンピオンか自身に5秒間シールドを付与する。シールドは受ける魔法ダメージを吸収し、残っている間は行動妨害を無効にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Soul Shackles#description": {
+   "source_sha1": "387acb7eb49873596f56e8668b94e2e46e0d61a7",
+   "plain_sha1": "f473b6d4574aacac0f85d7ba86cb5ca9feca9b03",
+   "ja": "発動効果：モルガナは詠唱時間の間に周囲の敵チャンピオンにエネルギーの鎖をかけ、魔法ダメージを与えて、自身と各対象の間に3秒間テザーを作る。その間モルガナは移動速度が増加し、対象は可視化されて20%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Soul Shackles#description2": {
+   "source_sha1": "b990be137b13a8370811581014c78fae9a9d475e",
+   "plain_sha1": "dd5c70709b2df7f3e9d6c86832b2b210fe01ec91",
+   "ja": "効果時間の終わりまでに対象がテザーを切らなければ、同じ魔法ダメージを再び受けて一定時間スタンし、その間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Morgana/Soul Shackles#description3": {
+   "source_sha1": "09b51c9827ff24a6e07f656c81975035902972fb",
+   "plain_sha1": "e34162828458fe62be6de1b5dfb23450e4aacca2",
+   "ja": "このスキルを使用するには、575ユニット以内に敵チャンピオンが必要。テザーでつなぐのに対象が見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

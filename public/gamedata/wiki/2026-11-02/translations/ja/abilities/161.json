@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Vel'Koz/Organic Deconstruction#description": {
+   "source_sha1": "85dd45fa4483400e3304ce461e2b0c0748741f53",
+   "plain_sha1": "ef00bc1370aa3a448732588a6ebac79d45e2a360",
+   "ja": "固有：ヴェル＝コズのスキルは、命中した敵に7秒間「Deconstruction」のスタックを与える。通常攻撃（攻撃時効果）と付与のたびに更新され、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Organic Deconstruction#description2": {
+   "source_sha1": "8bd7c93be462ebb3324728ef61a21ed339d9d964",
+   "plain_sha1": "51317d140f658014982bc5db960269833c0417e9",
+   "ja": "三つ目のスタックですべて消費し、35～205（レベルに応じて）（+ APの65%）の追加の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Plasma Fission#description": {
+   "source_sha1": "44058b28f9ab739eb737937d45e2562487a45d6b",
+   "plain_sha1": "0fa421b766e8158f3580824fd583f1760317afc7",
+   "ja": "発動効果：ヴェル＝コズは指定方向にプラズマの弾を撃ち、最初に命中した敵に魔法ダメージを与えて、一定時間かけて減衰する70%のスロウを与える。弾が飛んでいる間、0.25秒後から「電離炸裂弾」を再発動でき、敵に当たるか最大射程に達すると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Plasma Fission#description2": {
+   "source_sha1": "62bbcf575022490c008056395140a76c4ff29589",
+   "plain_sha1": "9c28e6a30428032d82eff98caab20b3d6f502369",
+   "ja": "再発動：ヴェル＝コズは0.25秒かけて弾を二つに分け、それぞれ垂直に反対方向へ飛ばして、命中した敵に同じ効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Plasma Fission#description3": {
+   "source_sha1": "9f42f16905bd882ce129f448d8c21309a91ef824",
+   "plain_sha1": "b2a65fc300f6e503bb1135e377d911dca3e8a356",
+   "ja": "「電離炸裂弾」で敵を倒すたびに、ヴェル＝コズはマナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Void Rift#description": {
+   "source_sha1": "d7bbcf4cca12d95f602a513d67f29e1f70748990",
+   "plain_sha1": "cd42afa5e056c75a20d99fb7154a703ed84cb2a8",
+   "ja": "発動効果：ヴェル＝コズは指定方向に裂け目を入れ、裂け目は0.25秒の遅れの後に開いて、0.65秒かけて範囲に広がりながら範囲内の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Void Rift#description2": {
+   "source_sha1": "05a3ea5b9fb400951ff4751f7a3f939d75a53556",
+   "plain_sha1": "cce1f0a2a29fe2b57b4f90f7e9ba2f93fee9ff96",
+   "ja": "0.75秒後、裂け目は激しく崩れ、範囲内の敵に魔法ダメージを与えて、周囲の範囲の視界を0.25秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Void Rift#description3": {
+   "source_sha1": "eabe75cf49ea38169e31dc56eb9a69dad90357f0",
+   "plain_sha1": "1ab20e64ff139ec0c056380d00c381b609cd34a6",
+   "ja": "ヴェル＝コズは一定時間ごとに「ヴォイドの裂谷」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Tectonic Disruption#description2": {
+   "source_sha1": "193f3a1972419bbbad92f6a92cc4332a46082d8c",
+   "plain_sha1": "ac78add616c5b1c268f35e00dff8021224a213a9",
+   "ja": "ヴェル＝コズのすぐ近くで「地殻砕裂」を使うと、異常は命中した敵を発動の方向へ少しノックバックさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Life Form Disintegration Ray#description": {
+   "source_sha1": "5830c96dae9cd2788ce00bef6e6bfb35f9ed6b50",
+   "plain_sha1": "e8e26dd8dbf1bd5cc4220916528fd6eff18e2220",
+   "ja": "自動効果 -「Researched」：敵チャンピオンに「Deconstruction」を3スタック与えると、7秒間「Researched」の印が付き、その敵への通常攻撃とスキルの命中で更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Life Form Disintegration Ray#description2": {
+   "source_sha1": "c3e75463ec86abcad40ac644ddbdc53e863da05a",
+   "plain_sha1": "47095655244d0d607b039d44966c04d1cab54cf2",
+   "ja": "発動効果：0.2秒の遅れの後、ヴェル＝コズは最大2.6秒間詠唱してエネルギーの光線を放ち、その間光線を指定方向に向けられる。詠唱中、1秒後から「生体破壊光線」を再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Life Form Disintegration Ray#description3": {
+   "source_sha1": "17f37304abd9a11a4ee74ffe89aa0484321465bf",
+   "plain_sha1": "93e624e8b9d201c7eaf78e1e20a469a5dc26afd0",
+   "ja": "光線は命中した敵に0.2秒ごとに魔法ダメージを与え、20%のスロウを与えて、スロウは1秒残る。命中した敵には0.7秒ごとに「Deconstruction」が付く。「Researched」の敵は代わりに確定ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vel'Koz/Life Form Disintegration Ray#description4": {
+   "source_sha1": "405a59b2c9f2eb41c5604291b183ea8891cf12cd",
+   "plain_sha1": "d1a8cb812718d65575a4806e5b6446c36533688c",
+   "ja": "再発動：ヴェル＝コズは「生体破壊光線」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Vel'Koz/Tectonic Disruption#description": {
+   "source_sha1": "2954c28868fcdb98c19683b690af592015cdc3a6",
+   "reason": "residual_markup"
+  }
+ }
+}

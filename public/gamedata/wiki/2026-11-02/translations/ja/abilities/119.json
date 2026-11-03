@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Draven/League of Draven#description": {
+   "source_sha1": "9561338d7258d5040865d5f65a41e7022cc78d17",
+   "plain_sha1": "c92149ee16fc094ca23276ec88393217b7c03787",
+   "ja": "固有：ドレイヴンは「回転斬斧」をキャッチするか、チャンピオン以外を倒すか、タワーを破壊すると、「Adoration」のスタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/League of Draven#description2": {
+   "source_sha1": "d2bba4a4570e84b6be6df5590a6fbe2d36921cd7",
+   "plain_sha1": "97c7e7f97467e1fb7b563d349a70ecd22a3ed599",
+   "ja": "ドレイヴンが敵チャンピオンを倒すと、「Adoration」のスタックをすべて消費して、25 +（2×スタック数）の追加のゴールド（gold）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/League of Draven#description3": {
+   "source_sha1": "30c957aa5dd1fc9a1aa4c120f2aeae92594e2e9f",
+   "plain_sha1": "4d20f02ebcb2ac589a90338e134e3cfaa51ec9b0",
+   "ja": "ドレイヴンは死亡すると「Adoration」のスタックの50%を失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Spinning Axe#description": {
+   "source_sha1": "4e01b61aea5b72b61a0db9cfa2b3bfd9bec755c1",
+   "plain_sha1": "18da3e80770fc60bd6dec7bbed4fcf03610d98b2",
+   "ja": "発動効果：ドレイヴンは斧を回し始め、5.8秒以内の次の通常攻撃を強化して、追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Spinning Axe#description2": {
+   "source_sha1": "daa5e91d2e5383dc143494c1811a36fd9076bc91",
+   "plain_sha1": "e3b2c645d7be4e34e6b895a7e46d9eb37ef5ea74",
+   "ja": "対象に命中した後、斧は対象から跳ね返り、およそ1.4秒後に落ちる。落ちる位置はドレイヴンの現在の移動で決まる。ドレイヴンが斧をキャッチすると、再び「回転斬斧」の強化された攻撃を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Spinning Axe#description3": {
+   "source_sha1": "915df5d9729c3eab1eef161763eead33618a68c0",
+   "plain_sha1": "cf743518d22d367dd5120ff2ad22378e1c0af7f9",
+   "ja": "ドレイヴンは一度に「回転斬斧」を二本まで持てる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Blood Rush#description": {
+   "source_sha1": "2383baf44929c8fd847f6b8032b9d398559bfaf8",
+   "plain_sha1": "2bd797fb0a14c4dff667368dc3373a7623c4e9ac",
+   "ja": "発動効果：ドレイヴンは興奮状態になり、3秒間攻撃速度が増加し、1.5秒間減衰する移動速度の増加とゴースト状態を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Blood Rush#description2": {
+   "source_sha1": "bd5aa322bfb25ebbc285e152c3f36dc0e3486775",
+   "plain_sha1": "57e8e1251628151fea65f8f9260d3f884ba8ef8f",
+   "ja": "「回転斬斧」をキャッチすると、「血の疼き」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Stand Aside#description": {
+   "source_sha1": "da8b0755e42aa4d6bd8c66666cbe07da7adadebf",
+   "plain_sha1": "e19675db45acf2bcf6efd43e5d2974a5587745b0",
+   "ja": "発動効果：ドレイヴンは指定方向の直線上に斧を扇状に投げ、命中した敵に物理ダメージを与えて、脇へ押しのけ（地形は越えない）、2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Whirling Death#description": {
+   "source_sha1": "50532045d9f012d5372d632853c1ce7fcfed89e0",
+   "plain_sha1": "7dd22ad45333a7ed951873c1945464a162694a84",
+   "ja": "発動効果：ドレイヴンは指定方向に巨大な斧を二本投げ、斧は周囲の視界を一瞬与えながら、命中した敵に物理ダメージを与える。「Adoration」のスタック数に等しい体力のしきい値以下になった、またはその状態の敵チャンピオンは処刑される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Whirling Death#description2": {
+   "source_sha1": "7c81dd1b114ef81e6a19e7654a79d2c3ebc65e07",
+   "plain_sha1": "432df415a1c892a092b7d9ab325820a2bb508589",
+   "ja": "斧が飛んでいる間、1秒後から「死の車輪」を再発動でき、斧が敵チャンピオンかマップの端に当たると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Whirling Death#description3": {
+   "source_sha1": "04d682219879e7dca7b633943485ed52f953703f",
+   "plain_sha1": "094abd5a307e43f14a8e81f34ee080207b201e4a",
+   "ja": "再発動：ドレイヴンは斧の向きを逆にし、斧はゆっくり止まった後ドレイヴンのもとへ戻りながら、命中した敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Draven/Whirling Death#description5": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Draven/Whirling Death#description4": {
+   "source_sha1": "d2328b378e1957621e18c028e4e760e772d1a4dc",
+   "reason": "residual_markup"
+  }
+ }
+}

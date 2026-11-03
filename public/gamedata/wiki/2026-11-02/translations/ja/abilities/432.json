@@ -1,0 +1,107 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Bard/Traveler's Call#description": {
+   "source_sha1": "8551074fc492299a6cd628864fd632e48f9e78d7",
+   "plain_sha1": "3f2eb16c0411bfff856d5716076959e50a3366c6",
+   "ja": "固有 -「Ancient Chimes」：バードがいると、戦場のランダムな位置に一定時間ごとに聖なる「Chime」が現れ、最大10分間残る。「Chime」を集めると最大マナの12%を回復し、20 +（5分以降は1分ごとに1）の経験値と、戦闘外で20秒間24%の移動速度の増加を得る。この増加は最大10回まで重なる。二つ目以降の「Chime」は代わりに移動速度の増加を14%ずつ加え、合計150%が上限。バードは「Chime」を5個集めるたびに「Meep」を強化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Traveler's Call#description2": {
+   "source_sha1": "eb2dc741c38c65fe0daeca829c996d4ab669f2ed",
+   "plain_sha1": "7e83e25cbca38bdbb01b5ab3349d480772498c07",
+   "ja": "固有 -「Meep」：バードがいると数秒ごとに「Meep」が集まる。小さな精霊で、バードのそばに来る。「Meep」がいる間、通常攻撃は強化され、攻撃開始時に「Meep」を一体消費して30（+「Chime」5個ごとに6）（+ APの40%）の追加の魔法ダメージを与える。* 「Chime」5個で、「Meep」はダメージを与えた敵に1秒間25%～75%（「Chime」の数に応じて）のスロウを与える。* 「Chime」15個で、「Meep」は主対象の150ユニット以内の敵と、その後ろの扇形の範囲の敵にもダメージを与える。* 「Chime」35個で、扇形の半径が広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Traveler's Call#description3": {
+   "source_sha1": "bc83d9d2bd6479ffb005ead9b634d2cd272275fd",
+   "plain_sha1": "2db83bbbde226b579c2723bf7a9418df438c5c89",
+   "ja": "バードは「Meep」を同時に1～9体（「Chime」の数に応じて）まで持てる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Cosmic Binding#description": {
+   "source_sha1": "922bca70c182317fcdc389c64222cc74948712af",
+   "plain_sha1": "4cac3eda4e34cd04224fd1adcead881fb36b3965",
+   "ja": "発動効果：バードは指定方向にエネルギーの弾を撃ち、最初に命中した敵に魔法ダメージを与えて、一定時間60%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Cosmic Binding#description2": {
+   "source_sha1": "a88f654d95e6dfe8562d65280431ffd621da7e7f",
+   "plain_sha1": "a57f63f326ae44414028b888d1b9b46e099672ab",
+   "ja": "「宇宙の法則」が敵に当たると、弾はその後ろへ300ユニット進み続ける。弾が地形か二体目の敵に当たると、両方の対象を同じ時間スタンさせ、二体目の対象にも同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Caretaker's Shrine#description": {
+   "source_sha1": "8937e2de0a0a447893160585f03e8e4a926e1c5d",
+   "plain_sha1": "0c8057a4e142278e480dae278a15ab89eea8da51",
+   "ja": "発動効果：バードは指定地点に遺物を出し、遺物は周囲の視界を1秒間与えて、5秒かけて力を溜める。遺物は同時に3個まで置ける。遺物はチャンピオンが上を通って消費するまで、いつまでも残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Caretaker's Shrine#description2": {
+   "source_sha1": "94bb991e7049b2a84736e5d7939b2a95b14bcedc",
+   "plain_sha1": "97ce7f9d4b4da281a76e8c39098ecb6250a8bf8a",
+   "ja": "そのチャンピオンが味方かバード自身なら、遺物の力に応じた量を回復し、1.5秒かけて減衰する移動速度の増加を得る。移動速度の増加は、続けて発動した遺物と重なる。そのチャンピオンが敵なら、遺物は壊れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Caretaker's Shrine#description3": {
+   "source_sha1": "a665279028acde4014c0db23bfe0c1213e938c88",
+   "plain_sha1": "6b0b391f0cfa989bbd39ce545e1c2ae4ba97f0ea",
+   "ja": "バードは一定時間ごとに「回復の遺物」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Magical Journey#description": {
+   "source_sha1": "4cdb87636eeeec9d0a407d3cd29412ef40ddf2e8",
+   "plain_sha1": "1850b42bd1eed192621e08720e64fbd3b92c8468",
+   "ja": "発動効果：バードは指定方向の地形を通り抜ける一方通行の魔法の通路を10秒間開く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Magical Journey#description2": {
+   "source_sha1": "b50d0b5e23077fff30193fd2c03b3cd9105b8e66",
+   "plain_sha1": "131671bfb88a418b41ccc19962466939e6fa3f8c",
+   "ja": "チャンピオンは通路の近くでそれを選ぶと通り抜けられ、移動中は可視化される。バードと味方は33%速く通路を通る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Magical Journey#description3": {
+   "source_sha1": "5a331b5486116c419fbdbea4484b5233e052a5b9",
+   "plain_sha1": "42436364a7ff9de460e1337cf0c39f2b64606c71",
+   "ja": "このスキルを使用するには、範囲内に有効な地形が必要。移動不能かグラウンドを受けている間は「精霊の旅路」を通れない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Tempered Fate#description": {
+   "source_sha1": "91a2bca6600e1a8fc5cb5dac0528be5c4fdc887f",
+   "plain_sha1": "13bfee0f4b0d7c1110a0be26f6fb06d2e8470a90",
+   "ja": "発動効果：バードは魔法のエネルギーを弧を描いて指定地点へ飛ばし、飛んでいる間その範囲の視界を与える。着弾すると範囲内のすべてのユニットを2.5秒間固有時停止にし、当たったすべての敵チャンピオン・ミニオン・タワーを同じ時間スタンさせる。命中した敵は効果時間の間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Bard/Tempered Fate#description2": {
+   "source_sha1": "155d3d3b0a066c0f505d7378096dce5003b46a8a",
+   "plain_sha1": "2f2e4ef95bcd92735c3bbbb06d4aee68040e2b78",
+   "ja": "エピックモンスターとタワーは、行動妨害を無効にしていても「運命の調律」の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

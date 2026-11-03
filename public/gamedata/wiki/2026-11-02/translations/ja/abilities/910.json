@@ -1,0 +1,217 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Hwei/Signature of the Visionary#description": {
+   "source_sha1": "cf4517bdba6dd7f4b836db0a8501a00e7a244dd9",
+   "plain_sha1": "312753a78c13538ca9fe3ea3007e457e9748232a",
+   "ja": "固有：フェイのダメージを与えるスキルは、命中した敵に4秒間印を付ける。印の付いた対象への次のダメージを与えるスキルは印を消費して足元に爆発を起こし、0.85秒の遅れの後、範囲内の敵に40～285（レベルに応じて）（+ APの35%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Subject: Disaster#description": {
+   "source_sha1": "87396e12e79e89507e3a951e895fad83346ee8d7",
+   "plain_sha1": "feb1035d3cb19b37ad0e082daf8072a79e237ed4",
+   "ja": "切り替え：フェイは厄災の気分に入り、そのスキルと「Wash Brush」を使えるようになる。そのいずれかを使うと、気分から抜ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Devastating Fire#description": {
+   "source_sha1": "fb3239436ed989c6d437e61d825b2445c74b3d8e",
+   "plain_sha1": "8514130dd0032a5f18889dfde66135c423aa2c85",
+   "ja": "発動効果 - QQ：フェイは指定方向に火の玉を投げ、火の玉は最初の敵にぶつかるか最大射程で爆発して、周囲のすべての敵に魔法ダメージを与える。対象の体力の割合に応じたダメージは、モンスターに対しては250が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Severing Bolt#description": {
+   "source_sha1": "ac49c91e931547b907f89b37f43fa4b59e060060",
+   "plain_sha1": "f435b44837da047fb4b34c324b48ae04d41bdbff",
+   "ja": "発動効果 - QW：フェイは指定地点に1秒後に落ちる雷を呼び、範囲内の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Severing Bolt#description2": {
+   "source_sha1": "e8f6d73e8909890df67211ad8418b7e47b45a8da",
+   "plain_sha1": "f97e908a8460c6b66564df71f980ea90e37c5e06",
+   "ja": "「Severing Bolt」が敵一体だけに当たるか、移動不能の敵に当たると、対象の減少体力に応じて増加したダメージを与える。この追加ダメージはモンスターに対しては300が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Severing Bolt#description3": {
+   "source_sha1": "9227d70b8f992499b94ae8406274801ced1eb9aa",
+   "plain_sha1": "32afb252181b30ec91f0a6772094ea99a705afb2",
+   "ja": "「Severing Bolt」はミニオンとエピック以外のモンスターに50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Molten Fissure#description": {
+   "source_sha1": "98b3f89adbc55107e0831bc932882afe2dbfef83",
+   "plain_sha1": "b0c7344222283a31b80cde53fae5b799a191a658",
+   "ja": "発動効果 - QE：フェイは指定方向に燃える道を示す。0.6秒後、道は発動地点から0.2秒ごとに火山の爆発を起こし、合計7回爆発する。各爆発は衝撃波を起こして周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Molten Fissure#description2": {
+   "source_sha1": "4e82c367022f80d431c466355a211f6c0719ed8e",
+   "plain_sha1": "2103673fdbf5977c895875f7220472ad84bac404",
+   "ja": "各爆発は通った跡に溶岩の裂け目も残す。裂け目は2.5秒間続き、0.25秒ごとに範囲内の敵に魔法ダメージを与えて、35%のスロウを与える。敵は複数の裂け目から同時にダメージを受けうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Molten Fissure#description3": {
+   "source_sha1": "9e00cb525761014bf09e68e632eba53ecf295942",
+   "plain_sha1": "94a95bbb67c2c3de44b3fc8f66e1a9a8239b75a0",
+   "ja": "「Molten Fissure」のダメージは、ミニオンには60%に減り、モンスターには135%に増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Molten Fissure#description4": {
+   "source_sha1": "f9ba598de779ef29b487ae1cae9a8c74ffb29310",
+   "plain_sha1": "738b0f2e57cc93330f350cbf40ac9d1a8913f11e",
+   "ja": "「Molten Fissure」のスロウは、「Grim Visage」「Crushing Maw」「絶望の渦」のスロウと乗算で重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Subject: Serenity#description": {
+   "source_sha1": "5e12e573c3d6c2af3ae3ff4ead0acb82a44112d3",
+   "plain_sha1": "c28ca0e41c230e35d067c45dbb2074afdfea7381",
+   "ja": "切り替え：フェイは静謐の気分に入り、そのスキルと「Wash Brush」を使えるようになる。そのいずれかを使うと、気分から抜ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Fleeting Current#description": {
+   "source_sha1": "0ab0ecce72a049880061d58b60ff266c38c9a6ac",
+   "plain_sha1": "753683f7c71f506534cbaa0b63d2edd71ee92e5e",
+   "ja": "発動効果 - WQ：フェイは指定方向に水の流れを作り、一定時間道を作る。道はフェイと味方チャンピオンに0.5秒間移動速度の増加とゴースト状態を与え、範囲内にいる間0.125秒ごとに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Fleeting Current#description2": {
+   "source_sha1": "41d985a7fb7fdaf5b6f5e0e0bbc94b9d990a0a77",
+   "plain_sha1": "228e22453bca370594261a97a3dfcfaebd03c5ea",
+   "ja": "フェイは「Fleeting Current」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Pool of Reflection#description2": {
+   "source_sha1": "cf0c6d96c7a45a378c6b37e6ff99e519549ccc04",
+   "plain_sha1": "9c78f56e9bb83446ab637a57f3d2cbc48593998b",
+   "ja": "味方に対しては、「Pool of Reflection」のシールドの量は85%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Stirring Lights#description": {
+   "source_sha1": "8b3a20462361b1538b24a0fddb581a78a293f3ad",
+   "plain_sha1": "73e9e4409e4735ba046c6f05f710018033df47cc",
+   "ja": "発動効果 - WE：フェイは周りに渦巻く光を出し、9秒以内の次の3回の通常攻撃かスキルの命中を強化して、それぞれ追加の魔法ダメージを与えてマナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Stirring Lights#description2": {
+   "source_sha1": "1aaf1260a961002f903c4a20cfded84e421c4a7a",
+   "plain_sha1": "a89961a184a54f26513ff1575acebacb34be2eb9",
+   "ja": "範囲効果のスキルで与えた場合、「Stirring Lights」の追加ダメージはミニオンかモンスターには50%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Subject: Torment#description": {
+   "source_sha1": "6d331a3f072204e64c9a4b1590f141dadb8eed27",
+   "plain_sha1": "3bf15b06a37ad6d8dbada0a301cd051fc0e08bdc",
+   "ja": "切り替え：フェイは苦悩の気分に入り、そのスキルと「Wash Brush」を使えるようになる。そのいずれかを使うと、気分から抜ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Grim Visage#description": {
+   "source_sha1": "676d849a06dd96f7d24819780ee574e3e6e6d3ae",
+   "plain_sha1": "d3155cb25f249e0bde4d4a896a92b41c54a6441b",
+   "ja": "発動効果 - EQ：フェイは指定方向に恐ろしい笑みを放ち、最初に命中した敵に魔法ダメージを与えて、ひるませ、一定時間フィアーを与える。同じ時間、70%～99%（フェイからの距離に応じて）のスロウも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Grim Visage#description2": {
+   "source_sha1": "ebc871a13d11b7e555ce383b5a8c317fe4bc19a9",
+   "plain_sha1": "37b89beaa33f9b212cec6e3f27bcb8d062dd6511",
+   "ja": "「Grim Visage」のスロウは、「Molten Fissure」「Crushing Maw」「絶望の渦」のスロウと乗算で重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Gaze of the Abyss#description": {
+   "source_sha1": "d5a3f6a4d82bd2176b6f4f7b866d1496406c8c6c",
+   "plain_sha1": "ed66761fc5df2728162b05c10d454aca4bcfd5d5",
+   "ja": "発動効果 - EW：フェイは指定地点に目玉を投げる。到着すると0.2秒かけて広がって暗い視線になり、3秒間続いてその範囲の視界を与える。置かれてから0.7秒後、目玉は最も近くの見えている敵チャンピオンを捕捉し、いなければ敵チャンピオンが範囲に入るまでその場に残る。捕捉すると、0.3秒の遅れの後に目玉は対象へ飛び、最初に命中した敵にぶつかって魔法ダメージを与え、2.5秒間可視化して、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Crushing Maw#description": {
+   "source_sha1": "f326ba40ab6105f1705a01ff77435c2d6760b31a",
+   "plain_sha1": "f56ebcba4cfa584acc76cf0cd33768fbc2c99a79",
+   "ja": "発動効果 - EE：フェイは指定地点に顎を出し、顎は0.6秒後に閉じて、範囲内の敵に魔法ダメージを与え、1.25秒かけて減衰するスロウを与える。顎が閉じるときに中心に立っていない敵は、中心へ引き寄せられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Crushing Maw#description2": {
+   "source_sha1": "86a1387767e9620a730160730ee1270b90216a24",
+   "plain_sha1": "ee79d73d2431f8465c9c39edda43a866cd8cc551",
+   "ja": "「Crushing Maw」のスロウは、「Molten Fissure」「Grim Visage」「絶望の渦」のスロウと乗算で重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Spiraling Despair#description": {
+   "source_sha1": "c86680ead4ce2b7a1a04042c5c04df1a0cb4299f",
+   "plain_sha1": "8aace5039e7605bf8ac2ebe7ec0c91bdf9a64b9c",
+   "ja": "発動効果：フェイは指定方向に純粋な絶望の塊を放ち、塊は最初に命中した敵チャンピオンにぶつかって、3秒かけて広がるオーラを与え、対象を可視化して、その半径内の視界を与える。範囲内の敵は0.25秒ごとに魔法ダメージを受け、「Despair」のスタックを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Spiraling Despair#description2": {
+   "source_sha1": "afad8dd270668378d7f8925fc0bb88104fb2fbe0",
+   "plain_sha1": "2701111b67772d7e6059cf4a277c65323ab8dd7c",
+   "ja": "「Despair」：スタックごとに、対象は0.25秒間10%のスロウを受け、最大12回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Spiraling Despair#description3": {
+   "source_sha1": "86bcceeb2379581f6b2453decf62b7411af5e094",
+   "plain_sha1": "fb6a7d607f84f57fae81c99baefb8157db692126",
+   "ja": "効果時間の終わりか対象が死ぬと、オーラは爆発して範囲内の敵に魔法ダメージを与え、効果を受けた敵からすべての「Despair」のスタックを取り除く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Spiraling Despair#description4": {
+   "source_sha1": "4c7c1c9fb0d0675f9851c425511e1964e8394266",
+   "plain_sha1": "97294551cc5772553e0fe2263617e2c08f7c0747",
+   "ja": "「絶望の渦」は、フェイがどの気分にも入っていないときだけ使える。「絶望の渦」のスロウは、「Molten Fissure」「Grim Visage」「Crushing Maw」のスロウと乗算で重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Wash Brush#description": {
+   "source_sha1": "977f67b14a86d3e79461482fd2939c4f5ace4ae3",
+   "plain_sha1": "e38e0abe09ba6c0b608131b5c59f70a8fc21bb58",
+   "ja": "切り替え - QR、WR、ER：フェイは、スキルのコストやクールダウンを払わずに今の気分から抜け、切り替えを解除する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hwei/Wash Brush#description2": {
+   "source_sha1": "789ec62172a618e5702199f4a8b3151e87d0d860",
+   "plain_sha1": "ec2d02f1ef29a43ef817f58b08afa8d1d5e6e876",
+   "ja": "「Wash Brush」は、フェイが気分に入っているときだけ使え、スキルの使用を妨げる行動妨害を受けている間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Hwei/Pool of Reflection#description": {
+   "source_sha1": "c3873f347d500cfa64de208166763261db79ce23",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Tristana/Rapid Fire#description": {
+   "source_sha1": "7c2ddcdbf45247b5c7df090a025b91c6ec3e6c4f",
+   "plain_sha1": "cb0f6a9292421f9deb296b72a6590b2be4b72336",
+   "ja": "発動効果：トリスターナは大砲を強化し、7秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Rocket Jump#description": {
+   "source_sha1": "0fd5f4e91ba2d097ac1c60578b6db03652b9ef66",
+   "plain_sha1": "d6c441feacbba1cfadc9e7d4ef29d535b7a8e4e7",
+   "ja": "発動効果：トリスターナは指定地点へ跳ぶ。着地時に周囲の敵に魔法ダメージを与えて、2秒間40%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Rocket Jump#description2": {
+   "source_sha1": "765c9fa8fa57822d66acb820c7e22ccfd358361e",
+   "plain_sha1": "de069ad81a702e86cb2fe0f2b15d10365b205f1a",
+   "ja": "敵チャンピオンのキルに関与するか、チャンピオンに付けた「ヨードルグレネード」を最大スタックで起爆させると、「ロケットジャンプ」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Rocket Jump#description3": {
+   "source_sha1": "67e2932695827ea1a58dae0a3e15625722357ae1",
+   "plain_sha1": "e448fbfcc2027bdee7950b7d4e919c7eb991bb50",
+   "ja": "トリスターナはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Explosive Charge#description": {
+   "source_sha1": "e2192d4b84990a3184b58b004cf2e64ac0f2c4ab",
+   "plain_sha1": "4f579efe477c7b1658f94e2f45f9ecf9b3ba5b7d",
+   "ja": "自動効果：トリスターナの通常攻撃は強化され、対象を倒すと爆発を起こし、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Explosive Charge#description2": {
+   "source_sha1": "2b0c4da7f6d7ee27160fb35752b6eeacc1c1920d",
+   "plain_sha1": "3a1d1fbd7710291c3b2534d9b8ae5f6938bd4451",
+   "ja": "発動効果：トリスターナは対象の敵に爆弾を投げて4秒間取り付ける。その後爆弾が起爆し、周囲の敵に物理ダメージを与える。「ヨードルグレネード」はタワーを対象にしてダメージを与えることができ、タワーに付けた場合はより広い範囲で爆発する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Explosive Charge#description4": {
+   "source_sha1": "04fcb9694dca2d60362003a7ceff5c0069987119",
+   "plain_sha1": "2c9b9812c53420507e32081495237ef4ef3fda77",
+   "ja": "「バスターショット」で最後のスタックを付けた場合、起爆はノックバックの終わりか4秒の経過まで遅れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tristana/Buster Shot#description": {
+   "source_sha1": "a24757c99d2b3b1c952f2e3ab90e0b2b4e0b2bbc",
+   "plain_sha1": "a00d0d3b541f8665782b7ad5ee1b6c0db6303aa3",
+   "ja": "発動効果：トリスターナは対象の敵に巨大な砲弾を撃ち、魔法ダメージを与える。対象と周囲の敵はノックバックされて一定時間スタンし、その間すべての対象が可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Tristana/Draw a Bead#description": {
+   "source_sha1": "c928d979867df6de93a260e12a88c336206ae83b",
+   "reason": "residual_markup"
+  },
+  "Template:Data Tristana/Explosive Charge#description3": {
+   "source_sha1": "e05c1ee254fcde6eed5fdf74e20311c59cd2612c",
+   "reason": "residual_markup"
+  }
+ }
+}

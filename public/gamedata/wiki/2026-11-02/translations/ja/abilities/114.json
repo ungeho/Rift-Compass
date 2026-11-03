@@ -1,0 +1,121 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Fiora/Duelist's Dance#description": {
+   "source_sha1": "8f60a3abf3895dfa62fcebd8c494357978e13b53",
+   "plain_sha1": "150ea2c956c1a0630de7ca160cbb3e08bb4bd1d8",
+   "ja": "固有：フィオラは近くの敵チャンピオンの「Vitals」を見つけ、北・東・南・西のいずれかの方向の弧として示される。「Vitals」は1.75秒で攻撃可能になり、フィオラが対象の近くにいる間はその後13.25秒間残り、そうでなければ消える。「Vitals」が切れると、フィオラは対象に新しい「Vitals」を見つける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Duelist's Dance#description2": {
+   "source_sha1": "cf56c4d082bcf814ac9dbbbfeff6f05c8dc9004f",
+   "plain_sha1": "187e2f49c86809073da13b13dd295cecd8ae8345",
+   "ja": "「Vitals」の方向からダメージを与えると発動し、対象の最大体力の3%（+ 増加攻撃力100ごとに4%）に等しい追加の確定ダメージを与え、フィオラは35～100（レベルに応じて）回復して、1.85秒かけて減衰する20%～50%（「グランドチャレンジ」のランクに応じて）の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Lunge#description": {
+   "source_sha1": "06abafc914ac5fb6df0ff905afddb23448af13ad",
+   "plain_sha1": "a9a7766ae9715f57e7f780266990400c50f74ce1",
+   "ja": "発動効果：フィオラは指定方向にダッシュし、その後優先順位に従って近くの敵を突く。「ファント」は建物とワードにも当たる。対象を突くと、「ファント」のクールダウンが50%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Lunge#description2": {
+   "source_sha1": "dc1f09dbba8119c3d954b77a70af35aa8e2abffb",
+   "plain_sha1": "bc9972740a3914ba4d29fb5bab4ed66a11b28692",
+   "ja": "突きは物理ダメージを与え、攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Lunge#description3": {
+   "source_sha1": "d043cc7d47bd3a56871c7200293af0208eac6b79",
+   "plain_sha1": "297934bd0486847fb2cd618f4d2bf6312f925bb9",
+   "ja": "フィオラはダッシュ中にどのスキルも使用できる。対象がワードでない限り、このスキルが命中する対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Riposte#description": {
+   "source_sha1": "666a78a6e2b02432bcb5c05149e74d2f1463b5fa",
+   "plain_sha1": "8f32ee5b217dcb6bf7637f3f39df3f6253729246",
+   "ja": "発動効果：フィオラは0.75秒間防御の構えになり、その間行動できないが、タワー以外からのすべてのダメージを受けず、弱体化の効果を無効にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Riposte#description2": {
+   "source_sha1": "041666fcc381bcb4fba88762804fef6be3bad18b",
+   "plain_sha1": "27e5b89437e854775069c47bc2f676b04531e04c",
+   "ja": "さらに、効果時間の最初の0.5秒で攻撃の構えを取り、その後指定方向の直線上に剣で衝撃を送って、敵チャンピオンにぶつかるまで命中したすべての敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Riposte#description3": {
+   "source_sha1": "591727b5d35a95f3862604acea15acfc7cd85cdc",
+   "plain_sha1": "68f26a9a00e2d505e647b526f31b082e1616b67a",
+   "ja": "当たった敵チャンピオンは、2秒間25%のスロウと攻撃速度低下も受ける。「リポスト」が敵の移動不能の効果を少なくとも一つ無効にした場合は、代わりに同じ時間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Bladework#description": {
+   "source_sha1": "4c878191eb1e03d9e850096986e8d0671f68801c",
+   "plain_sha1": "d41998273755f1b1928dbec575b9decae469e13e",
+   "ja": "発動効果：フィオラは4秒以内の次の二回の通常攻撃（攻撃開始時）を強化し、射程が25増加して、攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Bladework#description2": {
+   "source_sha1": "e3f86b26b8319b769dd9b0f806ab777288b9ad51",
+   "plain_sha1": "c5d5fa6dbc6e0a49241d73c984470c9bb2e5d47f",
+   "ja": "一回目の攻撃は対象に1秒間30%のスロウを与えるが、クリティカルにならない。二回目の攻撃は、建物に対しても、修正されたクリティカルのダメージでクリティカルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Bladework#description3": {
+   "source_sha1": "fa2e26fe10e9b9d6e69a70c9087f84d28fb35275",
+   "plain_sha1": "ee2f8a3dc08100a3ff1df2cc4350efab6cae86a6",
+   "ja": "「ブレードワーク」はフィオラの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Grand Challenge#description": {
+   "source_sha1": "0923b026b44ff13c8ac3f2ddd302d8397927d174",
+   "plain_sha1": "e0e0d7ee114ae7326b320de543cfe4a700dbc6e3",
+   "ja": "自動効果：「デュエリスト・ダンス」の移動速度の増加が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Grand Challenge#description2": {
+   "source_sha1": "89e57ad8a8a2080506b18e6127839848d7c31b7c",
+   "plain_sha1": "6c17121ce3730cd5606a1a63caea4cfb7f2afd54",
+   "ja": "発動効果：フィオラは8秒間対象の敵チャンピオンに挑み、0.5秒の遅れの後、その四つの「Vitals」をすべて示す。効果中、「デュエリスト・ダンス」は「グランドチャレンジ」の対象に新しい「Vitals」を見つけず、「デュエリスト・ダンス」と違って「グランドチャレンジ」の「Vitals」は距離に関係なく残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Grand Challenge#description3": {
+   "source_sha1": "010e508af7af40648b079e8d2823d0a6213dc861",
+   "plain_sha1": "ce9e22c9c06c312eafc03fb5ff8f5cf2b58e2140",
+   "ja": "対象の近くにいる間、フィオラは「デュエリスト・ダンス」の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiora/Grand Challenge#description4": {
+   "source_sha1": "0e85f1be261463534843aba1fae46135feeee5a0",
+   "plain_sha1": "a215d3eb9a7748153bddc72b49f6b864ad2b5879",
+   "ja": "対象が死ぬ前にフィオラが「Vitals」を少なくとも一つ発動させるか、そうでなければ四つすべて発動させると、対象が死んだ地点に5秒間「Victory Zone」ができ、0.25秒ごとにフィオラと範囲内のすべての味方を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

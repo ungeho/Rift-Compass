@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Sivir/Fleet of Foot#description": {
+   "source_sha1": "80bd9a3b229a07510c6535f4ba868784b2618269",
+   "plain_sha1": "de61e928feb5a877913e498f5cd765400b41b15a",
+   "ja": "固有：シヴィアの敵チャンピオンへの通常攻撃（攻撃開始時）とスキルの命中は、1.5秒かけて減衰する55～75（レベルに応じて）の移動速度の増加を与え、命中のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/Boomerang Blade#description2": {
+   "source_sha1": "9d5a3bca678e1f1b94d417031ffd6448edc8611b",
+   "plain_sha1": "e0157af134e3d5d9b9a4d343c5954d3e03b3272e",
+   "ja": "「ブーメランブレード」のダメージは、命中したチャンピオン以外の数に応じて0%～60%減る。最大射程に達すると刃はシヴィアのもとへ戻り、ダメージの減少をリセットして、戻る途中の敵にも同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/Boomerang Blade#description3": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/Ricochet#description2": {
+   "source_sha1": "bd3d25b6e38faaee01eb0d8fceb1c69ff4473a0d",
+   "plain_sha1": "bd3d25b6e38faaee01eb0d8fceb1c69ff4473a0d",
+   "ja": "跳ね返りは最大8回までで、強化された攻撃ごとに各敵をさらに一度まで対象にできる。最も近い新しい対象を優先し、新しい対象がいなければ最も近い対象を狙う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/Ricochet#description3": {
+   "source_sha1": "0d3f07aad9fb3084ce63728c1a46ac9fe2bf3b0d",
+   "plain_sha1": "365a469d906a9a34e87e4c42f263c188858fa42e",
+   "ja": "「跳刃」が有効でない場合、使用するとシヴィアの通常攻撃タイマーをリセットする。跳ね返る先の対象が見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/Spell Shield#description": {
+   "source_sha1": "84884ebae631f0373ed6d629e69177a806241ed5",
+   "plain_sha1": "cbf5f4465eb2fe2357c127c3d68933668f6cab7e",
+   "ja": "発動効果：シヴィアは1.5秒間スペルシールドを得る。敵の効果を防ぐと、自身を回復し、0.25秒後に「戦駆け」を発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/On the Hunt#description": {
+   "source_sha1": "518d0dca7f0f5484171864ba1d336bf49c51f4c8",
+   "plain_sha1": "a086422405b467a7062975bf6398137749bbe05a",
+   "ja": "発動効果：シヴィアは一定時間「On the Hunt」を得て、周囲の味方チャンピオンにも残りの時間だけ与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/On the Hunt#description2": {
+   "source_sha1": "1a29a6c6ddcf501f94eb07231f438b780d5f977f",
+   "plain_sha1": "e0e7c2f6b2adbb987b7af34a02ce489408472f11",
+   "ja": "「On the Hunt」：移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/On the Hunt#description3": {
+   "source_sha1": "e4e5f7581d8294deb0a4622081d3d85066e2f9c5",
+   "plain_sha1": "f86e73faf20d51a63bc5198ae520dc1ad1b74282",
+   "ja": "効果中、シヴィアの通常攻撃（攻撃開始時）のたびに、基本スキルの残りクールダウンがそれぞれ0.5秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sivir/On the Hunt#description4": {
+   "source_sha1": "05d6b2c2e4852170b9d13b00280def043d6a6d1f",
+   "plain_sha1": "d622d23e535b5d53441225e1aa736a8f75089a41",
+   "ja": "シヴィアは、ダメージを与えてから3秒以内に敵チャンピオンのキルに関与するたびに、「On the Hunt」の効果時間を更新できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Sivir/Boomerang Blade#description": {
+   "source_sha1": "f29b35e5e918e0f73849c7614514619eb5a2ad4c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Sivir/Ricochet#description": {
+   "source_sha1": "968e30417495dc255fba6a3eb63cf08623e85c02",
+   "reason": "residual_markup"
+  }
+ }
+}

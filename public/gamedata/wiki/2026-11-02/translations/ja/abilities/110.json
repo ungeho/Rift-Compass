@@ -1,0 +1,124 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Varus/Living Vengeance#description": {
+   "source_sha1": "133b42480fe0fdcbf7758a598b87a9eb5ce70c9a",
+   "plain_sha1": "7fba215ca8bd315a2fd33508c1338df8f1493ab9",
+   "ja": "固有：ヴァルスが敵を倒すと、5～11秒間（レベルに応じて）、攻撃速度が10%～20%（レベルに応じて）増加し、合計の攻撃速度の増加の14%に等しい増加攻撃力と魔力を得る。ユニットを倒すたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Living Vengeance#description2": {
+   "source_sha1": "8547e82c2e5d2cc824f6b5757198de855d722034",
+   "plain_sha1": "46d94a94e97d84bb59e88d2f1eaafa9ad0dc9431",
+   "ja": "チャンピオンのキルに関与したときも「復讐の化身」のボーナスを得て、同じ時間強化され、攻撃速度が30%増加し、合計の攻撃速度の増加の42%に等しい増加攻撃力と魔力を得て、攻撃速度の上限が3.33に上がる。強化を更新できるのは、その後のチャンピオンのキルへの関与だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Piercing Arrow#description": {
+   "source_sha1": "03e0706e28ac39c8e617bb2f6a67f0bc7e823a04",
+   "plain_sha1": "22b5417b422cfecd711eacee66a9d3ceef308f8b",
+   "ja": "発動効果：ヴァルスは最大4秒間、20%のスロウを受けながら溜め、詠唱の最初の1.5秒で「乾坤一擲」の射程が、最初の1.25秒で効果が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Piercing Arrow#description2": {
+   "source_sha1": "d19155768f3ac43a49971efa6f3624b90ad1a44d",
+   "plain_sha1": "481a309682487cf6e23d0f5c7b4bd73b2fb62bbf",
+   "ja": "「乾坤一擲」は効果時間中に再発動できる。再発動せずに最後まで溜めきると、「乾坤一擲」はキャンセルされ、マナコストの50%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Blighted Quiver#description": {
+   "source_sha1": "806f81fc670f159143e8541d1126e65eb0719bf4",
+   "plain_sha1": "686285d1e383269153091161b10a184aaa132f91",
+   "ja": "自動効果：ヴァルスの通常攻撃は攻撃時効果として追加の魔法ダメージを与え、6秒間「Blight」のスタックを与える。付与のたびに効果時間が更新され、最大3回まで重なる。ヴァルスのスキルは、命中した敵のすべての「Blight」のスタックを起爆させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Blighted Quiver#description4": {
+   "source_sha1": "0aada0a6713a325a03fc592861dd94489c96f7f9",
+   "plain_sha1": "32881d93dc0c3805d565ce2ddff206f17196bb43",
+   "ja": "ヴァルスが「乾坤一擲」を使わない場合、効果時間中1秒後から「枯死の矢筒」を再発動でき、その後か死亡時に自動で再発動する。「乾坤一擲」の溜めの最初の0.85秒の間に「枯死の矢筒」を使用でき、溜めが終わると「乾坤一擲」を再発動しなくても全体のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Blighted Quiver#description5": {
+   "source_sha1": "1d4142bacd8dead7faf66fc2788abb5e1511992c",
+   "plain_sha1": "c18d8b7450810c3de745b45f9bbe8a252892e7fb",
+   "ja": "再発動：ヴァルスは「枯死の矢筒」を終え、1秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Blighted Quiver#description6": {
+   "source_sha1": "cdfe9a5a5d6c15a5ee96ba01c8be3264294a250d",
+   "plain_sha1": "e71e9e8c6dc07c5e113de25a250ab732a837d4ee",
+   "ja": "「枯死の矢筒」の発動と再発動は、どちらもスキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Hail of Arrows#description": {
+   "source_sha1": "82b363f920564732b84b75ede8482949ed729445",
+   "plain_sha1": "3cb3193deb0cb1c41dc957e4a6f00bad58cbe871",
+   "ja": "発動効果：ヴァルスは指定地点に矢を雨のように放ち、0.5秒後に着弾して命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Hail of Arrows#description2": {
+   "source_sha1": "511c112531c3c31fda9d46e6e09bf50a7f13bd47",
+   "plain_sha1": "63156e1904fb3d2626f534cc98e684c434322963",
+   "ja": "その後、範囲は4秒間汚され、範囲内の敵にスロウと「重傷」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Chain of Corruption#description": {
+   "source_sha1": "e15d01e79a61087637fa593613bced4a7f63c240",
+   "plain_sha1": "fd1f742c1b58d3df2cf7a0cb3e78b0d1895a842f",
+   "ja": "発動効果：ヴァルスは指定方向に穢れの触手を放ち、最初に命中した敵チャンピオンを侵して魔法ダメージを与え、2秒間スネアを与えて、その間可視化する。スネアの最初の1.75秒の間に、「Blight」の最大スタックも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Varus/Chain of Corruption#description2": {
+   "source_sha1": "b0d34e26055a88dec6124384085d26837a7e22cb",
+   "plain_sha1": "450f35fdf958e890ca973aadfec8743ef8aef0a0",
+   "ja": "命中すると、触手は対象が当たった地点から地面に根を張り、すぐ近くの範囲にいる敵チャンピオンを探す。対象が2秒以内に範囲から出なければ、その対象も侵されて同じダメージと効果を受ける。その後、近くのまだ侵されていない敵チャンピオンに最も近い、侵された対象から新しい触手が伸びる。侵食は新しい対象がいなくなるまで繰り返し広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「スネア」がない（原文：roots）"
+   ],
+   "allow_reason": "原文の roots into the ground は触手が地面に根を張る意味で、スネア（CC）ではない"
+  },
+  "Template:Data Varus/Chain of Corruption#description3": {
+   "source_sha1": "7a581289397bb03a29356cfef0ab57cd54f09425",
+   "plain_sha1": "9eceb3e3abdc9ee4ad4c94490b1913b769bd0a73",
+   "ja": "触手に捕まる対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Varus/Piercing Arrow#description3": {
+   "source_sha1": "dde1f6164fcced9a6835b19632c7d3063f259d6f",
+   "reason": "residual_markup"
+  },
+  "Template:Data Varus/Blighted Quiver#description2": {
+   "source_sha1": "86a4ee11d8b6d82b55c7d9a7dbe4eb4130829484",
+   "reason": "residual_markup"
+  },
+  "Template:Data Varus/Blighted Quiver#description3": {
+   "source_sha1": "e5ecfcbdfb15e9df9e2b5259a1f030e8e62c66fb",
+   "reason": "residual_markup"
+  }
+ }
+}

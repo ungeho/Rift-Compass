@@ -1,0 +1,87 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Leona/Sunlight#description": {
+   "source_sha1": "570a0da73b046593acf53cd359a6359774e98d16",
+   "plain_sha1": "c923155ef6b5c3d143a4f9f08064e64c3d6a2ec6",
+   "ja": "固有：レオナのスキルは命中した敵に2.5秒間印を付け、命中のたびに更新される。味方チャンピオンのダメージを与える攻撃とスキルが印の付いた対象に当たると、印を消費して32～151（レベルに応じて）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Leona/Shield of Daybreak#description": {
+   "source_sha1": "52b59633965817af78e8d5d4b0a9a362da1c24f1",
+   "plain_sha1": "058af2f0e5416b8d17ceb97043ffa311f78e91e1",
+   "ja": "発動効果：レオナは盾を光らせ、6秒以内の次の通常攻撃を強化して、攻撃モーションが中断されなくなり、射程が50増加し、追加の魔法ダメージを与えて、対象を1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield は盾（防具・物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Leona/Shield of Daybreak#description2": {
+   "source_sha1": "21f8f0ee6b9ded8d91e388815ad8e00e601f55f2",
+   "plain_sha1": "e43a9c117925e4905dd7d60c93944d03b3379c15",
+   "ja": "「シールド・オブ・デイブレイク」はレオナの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Leona/Eclipse#description": {
+   "source_sha1": "4f49a801108bc8f04e0cac53f0c9bc42cefed67e",
+   "plain_sha1": "903de6644f7d21fa252f819ad4bfaa0ec57da470",
+   "ja": "発動効果：レオナは3秒間構え、軽減前のダメージを一定量（一回のダメージの最大50%）軽減し、物理防御と魔法防御が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Leona/Eclipse#description2": {
+   "source_sha1": "9c6059170c3bf3a7777687af3a1331abb5f2a968",
+   "plain_sha1": "d73d77b9f0243af385462941ce0c048145035520",
+   "ja": "効果時間の後、盾が爆発して周囲の敵に魔法ダメージを与える。これが敵に命中すると、構えがさらに3秒延長される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield は盾（防具・物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Leona/Zenith Blade#description": {
+   "source_sha1": "431ac0166385e16e78d4c8dbf6dea182f5b67682",
+   "plain_sha1": "4486ee7bc0970256f308fc97d85e2794e3f8bc40",
+   "ja": "発動効果：レオナは指定方向に剣を放ち、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Leona/Zenith Blade#description2": {
+   "source_sha1": "1597c6fe7f42d1bdce056467df90c345e6e11b52",
+   "plain_sha1": "e2ba8dc892aa44dc0d98380986a6dedf1ae69ef1",
+   "ja": "剣が最大射程に達したとき、飛んでいる間に敵チャンピオンに命中していれば、レオナは最後に当たったチャンピオンの位置の225ユニット先へダッシュし、そのチャンピオンを0.5秒間スネアにかける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Leona/Zenith Blade#description3": {
+   "source_sha1": "722680fdd42329c658b45709f481d04e99ee8d4e",
+   "plain_sha1": "ecbdd7938d6ff8a2646662a30fbdf4310b666a03",
+   "ja": "「ゼニスブレード」が飛んでいる間、レオナは移動も攻撃もできない。ダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Leona/Solar Flare#description": {
+   "source_sha1": "c69fe2319849b00c42bd53d685f3d427364c3c8e",
+   "plain_sha1": "170683dc520ac66b5789a94f67ada9144bc9a4cd",
+   "ja": "発動効果：レオナは太陽の閃光を呼び、閃光は0.625秒後に指定地点に落ち、着弾の前とその後3秒間、その範囲の視界を与える。命中した敵は魔法ダメージを受けて1.75秒間80%のスロウを受け、中心で当たった敵は同じ時間スタンもする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

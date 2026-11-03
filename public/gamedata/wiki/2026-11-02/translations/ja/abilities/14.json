@@ -1,0 +1,158 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Sion/Glory in Death#description2": {
+   "source_sha1": "9dccc06214fbd31d30cc467f39ddac88648160b6",
+   "plain_sha1": "08349ed6e216d3c0e684b4617bd30b8e336512ac",
+   "ja": "サイオンは移動と通常攻撃とアイテムの発動効果の使用だけができ、以下の効果で強化される：* 攻撃速度が最低かつ最大で1.75 * 100%のライフスティール * 通常攻撃は攻撃時効果として対象の最大体力の10%に等しい追加の物理ダメージを与える（チャンピオン以外には75が上限） * ゴースト状態 * 「Death Surge」を一回使用でき、これがすべてのスキルの代わりになる",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Glory in Death#description3": {
+   "source_sha1": "d3dfd74a57ad898495689dafa38322150edb18a6",
+   "plain_sha1": "3a3af26c091972e6f4db1f645bbb7803079fa02d",
+   "ja": "「名誉ある死」の効果中、サイオンの建物へのダメージは40%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Death Surge#description": {
+   "source_sha1": "7ffecfc0078423ba9cfc3e64087a39c1b846bc2f",
+   "plain_sha1": "439eb47a5542f1719a2373434f19dd30ea7899db",
+   "ja": "発動効果：サイオンは2.376秒かけて減衰する67%の移動速度の増加を得る。少なくとも一つのスキルを習得していれば、「Death Surge」はまだ習得していないスキルも含めて、どのスキルのキーでも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Decimating Smash#description": {
+   "source_sha1": "c71a90008d7ddc1b28ee4c378613da3f661d0cd6",
+   "plain_sha1": "a104326dc10e93255448f78e85d4dbfd4d4505a6",
+   "ja": "発動効果：サイオンは指定方向への一撃の準備をし、最大2秒間溜めて、0.25秒ごとに「破滅の斧」の範囲・ノックアップの時間・スタンの時間・ダメージを増やす。基本ダメージには最大のボーナスがあり、係数のダメージには最大200%のボーナスがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Decimating Smash#description2": {
+   "source_sha1": "2f5625c857ff1cbe45ffbbddfced629165ec0d61",
+   "plain_sha1": "47e27c8e97b4fba1c29e44729e37188b9f22bfb9",
+   "ja": "「破滅の斧」は効果時間中に再発動でき、時間切れになると自動で再発動する。溜めが中断されると、「破滅の斧」は2秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Decimating Smash#description3": {
+   "source_sha1": "b056051b468ea824f135b610200e69510e1053c3",
+   "plain_sha1": "d5769036417132b9f3147ebe5fc675a90cb32943",
+   "ja": "再発動：サイオンは発動時に狙った方向に斧を振り回し、命中した敵に物理ダメージを与えて0.25秒間50%のスロウを与える。「破滅の斧」はモンスターに165%、ミニオンに60%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Decimating Smash#description4": {
+   "source_sha1": "a1aee7b71a7097dae103a62a7e1a7cc77836a14c",
+   "plain_sha1": "4743728b11811a8a475872dd497c87bc992d86d7",
+   "ja": "「破滅の斧」を1秒以上溜めていた場合、サイオンは代わりに斧を振り下ろし、命中した敵に物理ダメージを与えて、0.5～1秒間（詠唱時間に応じて）ノックアップさせ、1.25～2.25秒間（詠唱時間に応じて）スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Soul Furnace#description": {
+   "source_sha1": "6fcdcfd72d0e92807cdbb63621646add83121303",
+   "plain_sha1": "04a29f68473f056189a0da5b9eaf7660bd526d52",
+   "ja": "自動効果：サイオンは敵を倒すたびに増加体力を4得る。大型の敵を倒したときと敵チャンピオンのキルに関与したときは15になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Soul Furnace#description2": {
+   "source_sha1": "2c4a313d47e4e40de7dd667317fcbafb15a60bb0",
+   "plain_sha1": "62d5f37cf62cfe00624377a53bcc52022776da56",
+   "ja": "発動効果：サイオンは最大6秒間続くシールドを自身に付与する。「魂の炉心」はシールドが残っている間、3秒後から再発動でき、効果時間の終わりに自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Soul Furnace#description3": {
+   "source_sha1": "7ee5e814af19898c517f68f7df17202d0da968d9",
+   "plain_sha1": "5bc297dc65e5a09fb711c53add5b5b5e3c34becd",
+   "ja": "再発動：サイオンはシールドを消費して周囲の敵に魔法ダメージを与える（ミニオンとモンスターには400が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Soul Furnace#description4": {
+   "source_sha1": "274784966333243761095be901cb61546dc91b2f",
+   "plain_sha1": "53e3fea9e66034b54f81567330d746f2eaccd5d4",
+   "ja": "「魂の炉心」の両方の発動は、サイオンのほかのスキルの使用中にも使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Roar of the Slayer#description": {
+   "source_sha1": "290ef35d1ccd6cfe77b50bffda1584eafc568597",
+   "plain_sha1": "9d492459430b9a7ee3b257f1b8914f0152f215fa",
+   "ja": "発動効果：サイオンは指定方向に衝撃波を放ち、最初に命中した敵に魔法ダメージを与えて、2.5秒間スロウを与え、4秒間25%の物理防御低下を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Roar of the Slayer#description2": {
+   "source_sha1": "e0b192d81234d65fa634a2dd340138d2ea5f344d",
+   "plain_sha1": "e640de9bb120823db609bd76e5973592e906700b",
+   "ja": "対象がミニオンかエピックではないモンスターの場合、0.75秒間スタンさせて、さらに最大1350ユニットノックバックさせる（地形は越えない）。飛ばされた対象が通過した敵にも「殺意の雄叫び」の効果を与え、その軌道の周囲の視界を一瞬与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Unstoppable Onslaught#description": {
+   "source_sha1": "f2e16f6eb7923cbe7a7c0079a6c05d02fd0c6cfd",
+   "plain_sha1": "62f8781578824a6779e81c8d2fce1bce5323bcfd",
+   "ja": "発動効果：サイオンは行動妨害を無効にしてゴースト状態になり、少しの遅れの後、カーソルの方向へ最大8秒間突進する。その間、移動は自動で進み、ゆっくりした旋回で向きを変えられる。「猪突猛進」は詠唱中、0.4秒後から再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「スロウ」がない（原文：slow）"
+   ],
+   "allow_reason": "原文の slow は旋回の遅さ（slow turn rate）で、スロウ（CC）ではない"
+  },
+  "Template:Data Sion/Unstoppable Onslaught#description2": {
+   "source_sha1": "890f4ecbdf234111d60ca8cc44a8ba610a362363",
+   "plain_sha1": "9cd7eecfd2a046f7d1c52ca447ea586339a90bdf",
+   "ja": "突進は、発動時のサイオンの移動速度を0.1秒ごとに40ずつ上げ、合計で最大950の移動速度になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Unstoppable Onslaught#description3": {
+   "source_sha1": "d4e3172d406d083bf28d4eb89078080a45bede12",
+   "plain_sha1": "df37881c2818aaef9ada48fe8aa31cbb67e8e0c9",
+   "ja": "突進の効果時間の終わりに、サイオンは300ユニット前方へ跳び、0.55秒後に着地して足元の地面を叩きつける。突進中に敵チャンピオンか地形にぶつかると止まり、叩きつけで「猪突猛進」を終える。地形にぶつかると、サイオンは0.5秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Unstoppable Onslaught#description4": {
+   "source_sha1": "0d1ee9124a7b6468bc5f39a3f87eba58ef2fd044",
+   "plain_sha1": "9211c35904ea9e023f6096b32cc141ed7e3875fa",
+   "ja": "サイオンの突進が命中した敵は、物理ダメージ（詠唱時間に応じて0%～200%増加）を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Unstoppable Onslaught#description5": {
+   "source_sha1": "436f3b03bb1545ccff8b05e96afcb0c65d8463c6",
+   "plain_sha1": "456d3bbf7156e3eb681bd90eb67aeb73e9e177f8",
+   "ja": "叩きつけが命中した敵（タワーを含む）は同じダメージを受け、3秒間スロウを受ける。より小さい範囲の敵は、0.5秒かけてサイオンの方へ引き寄せられ、少しの遅れの後0.25～1.75秒間（詠唱時間に応じて）スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sion/Unstoppable Onslaught#description6": {
+   "source_sha1": "a45bd129dd4039af8e30d747e36b0304e2b16d75",
+   "plain_sha1": "717e77a368804beab83dcdd5fd1525abb026265c",
+   "ja": "再発動：サイオンは前方へ跳び、突進をやめて、「猪突猛進」の効果時間が終わったときと同じように足元の地面を叩きつける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Sion/Glory in Death#description": {
+   "source_sha1": "ccb775b1ec902bf909f040cd3b79708b930969c6",
+   "reason": "residual_markup"
+  }
+ }
+}

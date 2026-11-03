@@ -1,0 +1,121 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ambessa/Drakehound's Step#description": {
+   "source_sha1": "2c52e99dec5de7d065fdf1671009d32c8964ddda",
+   "plain_sha1": "a08d374669951e56d07c5733eb13d6ac53a6a471",
+   "ja": "固有：アンベッサのスキルによる行動不能の間に攻撃か移動の指示を出すと、行動不能が終わった後に、それぞれ対象へ、または指定地点の方向へダッシュする。このダッシュは地形を越えられない。移動不能かグラウンドを受けている間は、アンベッサはダッシュできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Drakehound's Step#description2": {
+   "source_sha1": "6f3f26ec5840e5f9d6adc535edfa07f416d4843e",
+   "plain_sha1": "7bd674e6a64c345e6bfc0f86de564e8cd031e327",
+   "ja": "固有：アンベッサがスキルを使うたびに、そのスキルの行動不能の後、4秒間「Medarda Maxim」のスタックを得る。使うたびに効果時間が更新され、最大3回まで重なる。通常攻撃はスタックを一つずつ消費して強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Drakehound's Step#description3": {
+   "source_sha1": "02df976b263c0dc85affee07d6ef599b2d265729",
+   "plain_sha1": "342217f2fdce613dd0db155f6cebbdd91b49b02a",
+   "ja": "「Medarda Maxim」：アンベッサの次の通常攻撃は攻撃開始時に強化され、攻撃モーションが中断されなくなり、射程が75、攻撃速度が50%増加して、5～25（レベルに応じて）（+ 増加攻撃力の20%）の追加の物理ダメージ（ライフスティールが適用される）を与え、気を40～70（レベルに応じて）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Cunning Sweep#description": {
+   "source_sha1": "cf6e598af226040339f49c0f265e959e248f692d",
+   "plain_sha1": "efd794be27a9c2f6b15c08cedbe25351ba7b81c0",
+   "ja": "発動効果：アンベッサは0.225秒の行動不能に入り、その終わりに二頭のドレイクハウンドで指定方向の扇形を切り払い、命中した敵に物理ダメージを与える。範囲の外縁に当たった敵へのダメージは二倍になる。行動不能の間に「ドレイクハウンドの猛攻」のダッシュを予約するか、行動不能が終わってから0.275秒以内に始めることができ、アンベッサは切り払いを終えた後にダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Cunning Sweep#description2": {
+   "source_sha1": "487df276c59f3002b61538ee9feac3084f2c11b7",
+   "plain_sha1": "f33fee8a8064aabac4f71b63651c27150a4f4039",
+   "ja": "これが少なくとも一体の敵に当たると、アンベッサは次の4秒以内に「サンダリングスラム」を使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Cunning Sweep#description3": {
+   "source_sha1": "07f6670bd2d69552f37959aaa63c6da4af1519c9",
+   "plain_sha1": "e00147809daaea9e970d64194a8fee8669a47087",
+   "ja": "モンスターに対しては、「カニングスイープ」は75の追加の物理ダメージを与え、体力の割合に応じたダメージは100～300（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Sundering Slam#description": {
+   "source_sha1": "7e6e6f66e20de5c47250337cbfaa65b36f3e5db7",
+   "plain_sha1": "ac6b0500c1677f6461b045638a3924bbf1666c09",
+   "ja": "発動効果：アンベッサは0.225秒の行動不能に入り、その終わりに二頭のドレイクハウンドを指定方向の直線上に叩きつけ、命中した敵に物理ダメージを与える。最初に命中した敵へのダメージは二倍になる。行動不能の間に「ドレイクハウンドの猛攻」のダッシュを予約するか、行動不能が終わってから0.275秒以内に始めることができ、アンベッサは叩きつけを終えた後にダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Sundering Slam#description2": {
+   "source_sha1": "f83492263f72a57abe3cafb5c18454f2227fb811",
+   "plain_sha1": "c2d6a9b9e3fb835a6f9ce1c39d9c8e447989c6c5",
+   "ja": "モンスターに対しては、「サンダリングスラム」は75の追加の物理ダメージを与え、体力の割合に応じたダメージは100～300（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Repudiation#description": {
+   "source_sha1": "6288c4203ff3d1dae2bf7180b8bdb7f7f04f9b28",
+   "plain_sha1": "3875a21351466ba9db9c17798ad343a1c1159e3b",
+   "ja": "発動効果：アンベッサは最大0.5秒間身構え、最初の0.225秒の間は行動できない。身構えを終えると足元の地面を叩き、周囲の敵に物理ダメージを与える。行動不能の間に「ドレイクハウンドの猛攻」のダッシュを予約するか、行動不能が終わってから0.25秒以内に始めることができる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Repudiation#description2": {
+   "source_sha1": "10fa14121dffde7a4b27c019d2d61a1ea8223361",
+   "plain_sha1": "0ad34e596627c877741e590bec08d3acc3646df7",
+   "ja": "さらに、アンベッサは発動時に1.5秒間、50～320（レベルに応じて）（+ 増加攻撃力の150%）のシールドを自身に付与する。アンベッサが地面を叩く前に、このシールドがチャンピオン・大型モンスター・タワーから受けたダメージを少しでも軽減すると、「断交」のダメージが50%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Repudiation#description3": {
+   "source_sha1": "cb948e73ff8e00e024a38136bca2fb3ba975e18e",
+   "plain_sha1": "f358831ef3b23a01d6a44f290836d55aaad07eb1",
+   "ja": "「ドレイクハウンドの猛攻」のダッシュ中に身構えが終わる場合、アンベッサはダッシュの終わりに地面を叩く。それ以外の場合は、身構えの時間の終わりにいる位置で必ず地面を叩く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Lacerate#description": {
+   "source_sha1": "6aa6c44f11e7121315fb2c45dbdbd6432c8359ed",
+   "plain_sha1": "8ad4e6c1ca74dce52061d7a07c2d819293179f8e",
+   "ja": "発動効果：アンベッサは0.225秒の行動不能に入り、二頭のドレイクハウンドを周囲で回転させて、周囲の敵に物理ダメージを与え、1秒かけて減衰する99%のスロウを与える。行動不能の間に「ドレイクハウンドの猛攻」のダッシュを予約するか、行動不能が終わってから0.275秒以内に始めることができ、どちらの場合もダッシュの終わりにもう一度回転して、追加のコストなしで同じ効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Public Execution#description": {
+   "source_sha1": "95af4830bae6878d0b1dc58bd68725608c30daaf",
+   "plain_sha1": "f3940a2e877d0fafacbd150abe9da2dba2a132fc",
+   "ja": "自動効果：アンベッサは物理防御貫通を得て、発動するスキルで敵に与えた軽減後のダメージの一定割合を回復する。ミニオンとモンスターに対しては、回復の効果は25%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Public Execution#description2": {
+   "source_sha1": "15b62a40c606f2a47612de6b64b32d413fba50ce",
+   "plain_sha1": "c1ee155f6fd29624782707e1547e0c6bf6c18168",
+   "ja": "発動効果：アンベッサは指定方向の直線上に一撃を構え、その後範囲内で最も遠い敵チャンピオンの後ろへブリンクしてつかむ。つかむのに成功すると、対象を自身に付けて0.75秒間サプレッションを与える。サプレッションの間、対象は可視化され、アンベッサは対象を地面から持ち上げてから叩きつけ、その後物理ダメージを与えて0.4秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ambessa/Public Execution#description3": {
+   "source_sha1": "b69e8d826812e24162a8aa0af6ee99eafdf582d9",
+   "plain_sha1": "72de417fb6e1de0b8c0e96677250ae9419b4dca9",
+   "ja": "詠唱時間中と対象がサプレッションを受けている間、アンベッサは移動系の効果を受けず、行動できない。詠唱時間中か行動不能の間に「ドレイクハウンドの猛攻」のダッシュを予約するか、行動不能が終わってから0.275秒以内に始めることができる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

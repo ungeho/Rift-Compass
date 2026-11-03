@@ -380,10 +380,17 @@ function plainText(raw) {
       // sti は {{sti|ステータスの種類|表示する文}}：表示するのは2つ目
       if (name === "sti") return pos[1] ?? pos[0] ?? "";
       // 1つ目の引数を表示するテンプレート（色・書式・名前のリンク・トグルの既定の表示）
-      if (/^(sbc|as|ccs|cs|fd|g|tt|ft|nie|ci|cai|ai|si|sis|ii|ri|bi|ui|csl|cis|pi|tt2|sm2|mi|ci2|rp|ms|hp|mana|ad|ap2|ri2|sbi)$/.test(name)) return pos[0] ?? "";
+      // {{g|N}} はゴールドのアイコンつきの数（例：{{g|1}} は 1 gold）。数だけにすると何の量か分からなくなる
+      if (name === "g") return pos[0] ? `${pos[0]} gold` : "gold";
+      // 名前のリンクの表示の文：{{ai|スキル|チャンピオン|表示}} は3つ目、{{ii|アイテム|表示}}・{{si}}・{{ri}}・{{ci}} などは2つ目（あれば）を表示する
+      if (/^(ai|cai|ais)$/.test(name)) return pos[2] || pos[0] || "";
+      if (/^(ii|si|ri|ci|cis|bi|ui|csl|pi|sis|ri2|ci2)$/.test(name)) return pos[1] || pos[0] || "";
+      if (/^(sbc|as|ccs|cs|fd|tt|ft|nie|ci|cai|ai|si|sis|ii|ri|bi|ui|csl|cis|pi|tt2|sm2|mi|ci2|rp|ms|hp|mana|ad|ap2|ri2|sbi)$/.test(name)) return pos[0] ?? "";
       // アイコンつきの名前（{{ais|名前|チャンピオン}}・{{uis|名前}}）・小文字のリンク（{{lc|語}}）は名前・語を表示。anchor は表示しない
       if (/^(ais|uis|lc)$/.test(name)) return pos[0] ?? "";
       if (name === "anchor") return "";
+      // アイコンだけのツールチップ（{{tip|er|icononly = true}} など）は文字を出さない
+      if (name === "tip" && parts.some((x) => /^icononly\s*=\s*true$/i.test(x))) return "";
       if (name === "tip") return pos[pos.length - 1] ?? pos[0] ?? "";
       if (name === "st") return `${pos[0] ?? ""}: ${pos[1] ?? ""}`;
       // 近接・遠隔で違う値（{{rd|近接|遠隔}}）と、2つ以上の値（{{dv}}）は全部を示す

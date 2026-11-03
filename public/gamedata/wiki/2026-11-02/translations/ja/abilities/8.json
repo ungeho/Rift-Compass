@@ -1,0 +1,109 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Vladimir/Crimson Pact#description": {
+   "source_sha1": "49a86e60c1bc7421d22313b8022ec6a86caa9807",
+   "plain_sha1": "db3452d608c84ee8afa61458de82b29822d6adf5",
+   "ja": "固有：ブラッドミアは（増加体力の3.333%）を魔力として、（APの160%）を増加体力として得る。この二つのボーナスは互いに重ならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Transfusion#description": {
+   "source_sha1": "4278b91f1004d4e4fa44bde3865f0a28636fe3cc",
+   "plain_sha1": "3542bcac8fd0bac6e21910388c601d7af6920643",
+   "ja": "発動効果：ブラッドミアは対象の敵から血を吸い取り、魔法ダメージを与えて自身を回復する。その後、クールダウンの間に「Crimson Rush」を1ポイント溜める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Sanguine Pool#description": {
+   "source_sha1": "74e964b014e925c07f1c44657de82bdedc202a72",
+   "plain_sha1": "37c1459981f7d98cd6ce4f59fbfe1c84fe74194a",
+   "ja": "発動効果：ブラッドミアは血の沼に沈み、2秒間対象指定不可かつゴースト状態になる。さらに、1秒かけて指数関数的に減衰する37.5%の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Sanguine Pool#description2": {
+   "source_sha1": "edae0d184b27f934d19c06ec05cb38a5fd57fb52",
+   "plain_sha1": "4c6c6b3f3c9709a14d314de54f25ade34dcd2b98",
+   "ja": "沼の中の敵は効果時間中0.5秒ごとに魔法ダメージを受け、40%のスロウを受ける。ブラッドミアは与えた軽減前のダメージの30%を回復する（ミニオンに対しては18%）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Sanguine Pool#description3": {
+   "source_sha1": "09a1e104610503651c603c79848a6adc41b61245",
+   "plain_sha1": "ebb215556939e370b25ec571c71c2285ff9876f1",
+   "ja": "「紅血の沼」の間、ブラッドミアは通常攻撃もスキルも使えないが、移動はできる。「紅血の沼」の発動時に「血液奔流」を溜めていた場合は、そのスキルをまだ再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Tides of Blood#description": {
+   "source_sha1": "551cb3ec6e436884ef1a06d0fe9c012c9c4b1a0a",
+   "plain_sha1": "362b0c98560bbcdb4be813b851faf45e8e735aee",
+   "ja": "発動効果：ブラッドミアは最大1.5秒間溜め、詠唱の最初の一秒の間に「血液奔流」のダメージを増やし、その後残りの時間は20%のスロウを受ける。「血液奔流」は効果時間中に再発動でき、時間切れか中断されると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Tides of Blood#description2": {
+   "source_sha1": "054051d892b2ad316335574dfbe47ce7b9256927",
+   "plain_sha1": "6cab4572b89e230ba9b3602c98e161c7270b662f",
+   "ja": "再発動：ブラッドミアは自身の周囲に血の弾を15発放ち、それぞれ最初に命中した敵に魔法ダメージを与える。ダメージは最初の一秒までの溜めの時間に応じて増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Tides of Blood#description3": {
+   "source_sha1": "73d5437c5c1073b028abb65ce96601fbe23ea54f",
+   "plain_sha1": "9a9afa14cc0d2a1d47b64af4eed764f12326dcbb",
+   "ja": "「血液奔流」を1秒以上溜めていた場合、命中した敵に0.5秒間スロウも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Tides of Blood#description4": {
+   "source_sha1": "4472b1fec721df3d3c315c331b19f773b6dda568",
+   "plain_sha1": "4cc4e8d70a595dab6399be83ba9d53e677983976",
+   "ja": "敵は複数の弾を受け止めることができるが、ダメージは一度だけ受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Tides of Blood#description5": {
+   "source_sha1": "31efaa953df5086de7702cbd9020eb520a7d3f5a",
+   "plain_sha1": "4f4b389a239ee0125a3a2b06ea12daa0d96f23ee",
+   "ja": "ブラッドミアの体力が最大体力の12%未満の場合、「血液奔流」は体力を消費しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Hemoplague#description": {
+   "source_sha1": "7ad509aa770553269e7f8c92f2a6697052287d77",
+   "plain_sha1": "0762e135160b7cb00f7bc3d18b836e808c4d6ebd",
+   "ja": "発動効果：ブラッドミアは指定地点に強力な病を広げ、命中した敵を4秒間感染させて、あらゆる発生源から受けるダメージを10%増やす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vladimir/Hemoplague#description2": {
+   "source_sha1": "439fae0499866fcd700772ef8ec498077d74d737",
+   "plain_sha1": "fbc7f29cd04cac73e804ee2f6950242d1ed3c2a9",
+   "ja": "効果時間の後、感染が破裂して影響を受けたすべての対象に魔法ダメージを与え、0.4秒の遅れの後、感染したチャンピオンごとにブラッドミアを回復する（二体目以降のチャンピオンでは40%）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Vladimir/Transfusion#description2": {
+   "source_sha1": "506548dc3ee6ad342da459a2c6b1ec9f9cba455f",
+   "reason": "residual_markup"
+  },
+  "Template:Data Vladimir/Transfusion#description3": {
+   "source_sha1": "34811c5f84fe82aca4b102040beaef895c91e69e",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Poppy/Hammer Shock#description": {
+   "source_sha1": "a3593ea687b90a0eebf0f011690a1ac980931f5b",
+   "plain_sha1": "6a2b0e5a448cfcf25985b0da7026fb8f39944059",
+   "ja": "発動効果：ポッピーは指定方向の範囲を打ち付け、命中した敵に物理ダメージを与える。ミニオンとモンスターに対しては、体力の割合に応じたダメージに上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Hammer Shock#description2": {
+   "source_sha1": "7b0fd05f1d3715c33648ac06f47d407bacf72732",
+   "plain_sha1": "e0018e404dd10c4997ebe9147dc1f2b741eba3c2",
+   "ja": "衝撃は1秒間範囲を作り、範囲内の敵にスロウを与え、その後破裂して同じ物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Steadfast Presence#description": {
+   "source_sha1": "b1bd736c87187f5e459c73b76ba129499a52dac4",
+   "plain_sha1": "90bf515721cc9cf6a9bf3801645610b17fb416c8",
+   "ja": "自動効果 -「Stubborn to a Fault」：ポッピーは合計物理防御と合計魔法防御が16%増加し、最大体力の40%未満の間は二倍の32%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Steadfast Presence#description2": {
+   "source_sha1": "470bba4a0a60dd2b1d658c78d6bf8da9df3a7770",
+   "plain_sha1": "53c6a9a26a33ceb16e12ed5ec2f6d97e37e1df18",
+   "ja": "発動効果：ポッピーは移動速度が40%増加し、自身の周囲に2秒間オーラを作る。オーラの中へ、またはオーラの中でダッシュしようとしたすべての敵は魔法ダメージを受けて0.5秒間ノックアップする。対象の妨害に成功すると、その対象は2秒間グラウンドと25%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Steadfast Presence#description3": {
+   "source_sha1": "2a8bd77ce1b7d4b8caa1493564702970d70b1654",
+   "plain_sha1": "66e7e917363f7de75228f520749407970f177bdb",
+   "ja": "「ステッドファスト」は、一回の発動につき敵一体あたり一回のダッシュだけを止められる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Heroic Charge#description": {
+   "source_sha1": "f24adc5e96a277b3d39ef56b10e55e7c1344b554",
+   "plain_sha1": "29497657eb937a5b3935f396336245004f81df49",
+   "ja": "発動効果：ポッピーは対象の敵の位置へダッシュする。到着時に対象が範囲内にいれば、物理ダメージを与えて、最大400ユニット一緒に運ぶ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Heroic Charge#description2": {
+   "source_sha1": "bca7a1b253e8f4aaf8d3e798d123f5133f130b12",
+   "plain_sha1": "c80431bd8f094c4a298c8d02b090592a7d99e39c",
+   "ja": "対象が地形にぶつかると、ポッピーは止まって同じ物理ダメージを再び与え、一定時間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Keeper's Verdict#description": {
+   "source_sha1": "41b0deeb2ef56b67f939aff02aa5a0c6e56888cd",
+   "plain_sha1": "bf6493157f5539284ed2d99e8190e2c777c12332",
+   "ja": "発動効果：ポッピーは最大4秒間、15%のスロウを受けながら溜める。詠唱の最初の0.5秒の後、0.5秒かけて「守護者の鉄鎚」の射程とノックバックの距離が増える。「守護者の鉄鎚」は効果時間中に再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Keeper's Verdict#description2": {
+   "source_sha1": "907ed24349b7745a4da5201296d20754e1b4ad37",
+   "plain_sha1": "5b4e97c7b84021b300a9f161ef270685a1e3b2fd",
+   "ja": "再発動：ポッピーは溜めを解いてハンマーを振り上げ、周囲と前方の範囲の敵に物理ダメージを与えて、1秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Keeper's Verdict#description3": {
+   "source_sha1": "73e21f587f7ba151f9c706314a54f7729424fe73",
+   "plain_sha1": "6d80b070713b05c8cff6466115f2dcb3d7add582",
+   "ja": "「守護者の鉄鎚」を0.5秒以上溜めていた場合、ダメージが100%増え、命中した敵は敵チームの泉の方へ最大3400ユニットノックバックされ、その間可視化されて対象指定不可になる。さらに、ポッピーの前方で敵に命中しなかった場合、指定方向に衝撃波を送り、敵チャンピオンにぶつかるとハンマーが噴き出す。衝撃波か噴き出しに当たった対象は、溜めたときの効果を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Poppy/Keeper's Verdict#description4": {
+   "source_sha1": "1f016f1e69a5ec9e4e6dedf2655896e9493a911d",
+   "plain_sha1": "7e7a5d524af1749a1ce0900aa3578dd960d207b6",
+   "ja": "溜めが中断されるか、再発動せずに最後まで溜めきると、「守護者の鉄鎚」はキャンセルされ、30秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Poppy/Iron Ambassador#description": {
+   "source_sha1": "074b5ce27e1c0ea14ecfcd7063bd8bad91f08470",
+   "reason": "residual_markup"
+  },
+  "Template:Data Poppy/Iron Ambassador#description2": {
+   "source_sha1": "3d8dd34606823d3b193ede700715962f372acf84",
+   "reason": "residual_markup"
+  }
+ }
+}

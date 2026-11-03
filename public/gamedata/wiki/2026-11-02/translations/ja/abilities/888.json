@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Renata Glasc/Leverage#description": {
+   "source_sha1": "488421a39818547ca7ee9b1d765da0cd45d65459",
+   "plain_sha1": "4846f83bd3c6ccabbc5a1f1dad67bda766a59a86",
+   "ja": "固有：レナータの通常攻撃は強化されて印を付ける。印は6秒間続き、命中のたびに更新され、新しい敵を攻撃すると切れる。印の付いていなかった敵には、攻撃は対象の最大体力の1%～2%（レベルに応じて）（+ AP 100ごとに2%）に等しい追加の魔法ダメージも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Leverage#description2": {
+   "source_sha1": "9e22dc505c3d4cc450f3a17d599dc05e018afceb",
+   "plain_sha1": "de1c31dd92925590a6d237c984ac317e0eca1a30",
+   "ja": "印の付いた対象への味方チャンピオンのダメージを与える攻撃とスキルは、印を消費して、対象の最大体力の1%～2%（レベルに応じて）（+ AP 100ごとに2%）に等しい追加の魔法ダメージをさらに与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Leverage#description3": {
+   "source_sha1": "2dd56a227c5cbfce0e1a3f905d245e87e1711c9a",
+   "plain_sha1": "71f038c2e090fcb98f4f1cd65325f9ce13df9879",
+   "ja": "「レバレッジ」のダメージは、エピックモンスターに対しては150が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Handshake#description": {
+   "source_sha1": "f51d79286e99a2e5a15a85027e49565fa1b6bd01",
+   "plain_sha1": "458bebc047aa1ab3e47fa29fbd859e739371f05b",
+   "ja": "発動効果：レナータは指定方向にフックを撃ち、最初に命中した敵に魔法ダメージを与えて1秒間スネアを与え、その間可視化する。スネアを与えた場合、レナータは同じ時間自身と対象の間にテザーを作り、その間レナータは攻撃の指示ができず、移動速度が30%低下する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Handshake#description2": {
+   "source_sha1": "6da2b3859037abac755b1dad0534005afea2046e",
+   "plain_sha1": "224f0d9f0d4689bf6b2e7aae9c44f03d9fd69f34",
+   "ja": "テザーがある間、「手荒い挨拶」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Handshake#description3": {
+   "source_sha1": "573867505a5e568af9125551da554113a087e4fb",
+   "plain_sha1": "a3906e2dcdd7768b4ccb348762155ab6a14a4e0d",
+   "ja": "再発動：レナータはテザーを切って対象を指定方向へ投げ飛ばし（地形は越えない）、対象が通過した敵に同じダメージを与える。投げた対象がチャンピオンなら、当たったすべての副対象は0.5秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Bailout#description": {
+   "source_sha1": "830600b439249064a3130b0e33a8c49087d92ad1",
+   "plain_sha1": "a15a9932323852b61927913eaab8edd38079aef2",
+   "ja": "発動効果：レナータは自身か対象の味方チャンピオンに5秒間ケミテックの薬を注入し、近くの見えている敵チャンピオンかミニオンの方を向いている間、攻撃速度と移動速度を増加させる。どちらの増加も、経過秒数に応じて効果が0%～100%増える。対象が敵チャンピオンにダメージを与えてから6秒以内にキルに関与するたびに、「緊急支援」の効果時間がリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Loyalty Program#description2": {
+   "source_sha1": "fb8053bbf2e94f92a93a0e90ccb9e037eeccb48d",
+   "plain_sha1": "83e32b1f4c8e6c80292e8caceae59f126dfe18d6",
+   "ja": "当たったレナータと味方は3秒間シールドを得て、当たった敵は魔法ダメージを受けて2秒間30%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Hostile Takeover#description": {
+   "source_sha1": "88d59ae37152b8d7b036973c9178bb1ec3a4d705",
+   "plain_sha1": "50e9e4e64fddd2381f93f89a4426cd795d528b1d",
+   "ja": "発動効果：レナータは強力な薬品の雲を指定方向に放ち、雲は周囲の視界を与えながら進む。当たった敵チャンピオンとミニオンは、一定時間狂乱状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renata Glasc/Hostile Takeover#description2": {
+   "source_sha1": "826a38ad6b639c426b9276b29af6ed6ddd46f9c9",
+   "plain_sha1": "82b30156971939b512deb7e099c52a1abeaef875",
+   "ja": "狂乱状態のユニットは攻撃速度が100%増加し、大きさが25%増える。対象選択の範囲内で、次の区分の順に最も近いユニットを優先して攻撃する：# 自分の味方のチャンピオン # 味方のチャンピオン以外 # 味方のワード # 敵のユニット（モンスターを含む）",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Renata Glasc/Bailout#description2": {
+   "source_sha1": "08877f43d55955e71af5a45b7df88b635b573d07",
+   "reason": "residual_markup"
+  },
+  "Template:Data Renata Glasc/Loyalty Program#description": {
+   "source_sha1": "6cd4069a2f7898c5f02dc6f6d3ad9a8578bb38b9",
+   "reason": "residual_markup"
+  }
+ }
+}

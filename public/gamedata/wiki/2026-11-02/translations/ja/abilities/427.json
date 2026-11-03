@@ -1,0 +1,147 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ivern/Friend of the Forest#description2": {
+   "source_sha1": "18c41b16f21393aa1ce1b40e61b65ce747ab8240",
+   "plain_sha1": "028b949469a30f42395f0eeaa650fe1ccd1419fc",
+   "ja": "スキルの使用を妨げる行動妨害や、スキルを封じる行動不能を受けている間、アイバーンは森を植えられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Friend of the Forest#description3": {
+   "source_sha1": "20e9f0eb17d805372d840693031e1ebd9a38ec03",
+   "plain_sha1": "6a6910acd962e6500acd773a2373771183d61021",
+   "ja": "森は40～1秒（レベルに応じて）かけて育つ。育ちきると、アイバーンは再びキャンプを対象にして0.5秒の詠唱時間の後に解放でき、キャンプを片付けて全額のゴールドと経験値の報酬を得る。森の中のモンスターにスマイトを使うと、育ち具合に関係なく即座にキャンプを解放する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Friend of the Forest#description4": {
+   "source_sha1": "ca2f86fe955b6b33e78675983b6766dcfba7008e",
+   "plain_sha1": "ec2423422555f7b0268e896e26aab0efef1945e6",
+   "ja": "森を植える前にキャンプの大型モンスターがすでに倒されていた場合、アイバーンは詠唱を終えると無料でキャンプを解放する。同様に、大型モンスターが倒されると森は即座に育ちきる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Rootcaller#description": {
+   "source_sha1": "6a6d8b7f190d073b3f5b9873c70c1558f0e0a7f4",
+   "plain_sha1": "eee11ab81c3e5e96927d25861ae42dd8bcd5da0c",
+   "ja": "発動効果：アイバーンは指定方向につるを投げ、最初に命中した敵に魔法ダメージを与えて一定時間スネアを与え、その間可視化する。対象がスネアを受けている間、「ネッコナゲ」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Rootcaller#description2": {
+   "source_sha1": "eb88bd285f1f6ff5dc421a08d4539cef9afbf702",
+   "plain_sha1": "337d0c9ea4c94c16bf238ff8232ce40bcfdaecf2",
+   "ja": "アイバーンと味方チャンピオンは、「ネッコナゲ」でスネアを受けた対象に攻撃の指示を出すと、その位置へダッシュでき、攻撃の射程で止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Rootcaller#description3": {
+   "source_sha1": "028ea52123ccca1b6e231bfa50017cbfd6c81365",
+   "plain_sha1": "7494014e40ced4588dad5372daebc58e3f5ae9bf",
+   "ja": "再発動：アイバーンはスネアを受けた対象へダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Rootcaller#description4": {
+   "source_sha1": "614499e8257d48741cc45d20f5e788a93b25a077",
+   "plain_sha1": "7023c53222f519e45e960eba0f5dac35a6cd02eb",
+   "ja": "エピック以外のモンスターに当てると、「ネッコナゲ」のクールダウンが50%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Brushmaker#description": {
+   "source_sha1": "ff614069ef0044ebeab14cc22459ab8685e2681b",
+   "plain_sha1": "1d248180409f9b57824bdb6acdbe030a3f5765d6",
+   "ja": "自動効果：アイバーンが茂みの中にいる間、通常攻撃は強化されて対象に弾を撃ち、さらに魔法ダメージを与える。この効果は茂みを出た後3秒間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Brushmaker#description2": {
+   "source_sha1": "5e78ad751983d1f5f7c050cebd7bd2e6f7aaaa94",
+   "plain_sha1": "0cf9d2d59c83188112d44a5658c2ebe1ada4bb8c",
+   "ja": "発動効果：アイバーンは指定地点に45秒間茂みを生やし、その中と周囲の視界を8秒間与える。茂みの中の味方の視界が失われると、茂みは即座に消える。地形やほかの茂みの近くに生やすと半径が大きくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Brushmaker#description3": {
+   "source_sha1": "a8c936998f3b90f38cf7ec38e2c24e0c4245683a",
+   "plain_sha1": "aa21597a6beee040fe8e16527e786168458fb43b",
+   "ja": "アイバーンが1000ユニット以内にいるとき、味方チャンピオンがいずれかの茂みの中にいる間、その通常攻撃は強化されて対象に弾を撃ち、さらに魔法ダメージを与える。この効果は茂みを出た後1.5秒間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Brushmaker#description4": {
+   "source_sha1": "2def3dc97b2dcb601053f6dc98f44829930ae881",
+   "plain_sha1": "863ce4166f0aded7155e0b424c176cde5544902b",
+   "ja": "アイバーンは一定時間ごとに「シゲミヅクリ」のチャージを得て、最大3まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Triggerseed#description": {
+   "source_sha1": "41703fd0319a4f10678c7ca2933a1652efeb01de",
+   "plain_sha1": "6e7ffca619498f0bdef7466d67680d721f9bcb32",
+   "ja": "発動効果：アイバーンは対象の味方チャンピオン・デイジー・自身のいずれかに種を付け、対象に2秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Triggerseed#description2": {
+   "source_sha1": "69fd9ee0507cafde24ad202ba48ca45115f9acae",
+   "plain_sha1": "195aee9f29387b485d483c5172f79b8347f0ca1e",
+   "ja": "2秒後、種は爆発して周囲の敵に魔法ダメージを与え、2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Triggerseed#description3": {
+   "source_sha1": "2a55118acde562f661f7d7899048974a2aa915cb",
+   "plain_sha1": "2a55118acde562f661f7d7899048974a2aa915cb",
+   "ja": "種が敵チャンピオンにダメージを与えず、効果時間の終わりまでシールドが残っていた場合、同じ量と効果時間でシールドが再び付与されるが、爆発の効果はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Daisy!#description": {
+   "source_sha1": "119320f33fa7e615ece74a5016d20c76da138e94",
+   "plain_sha1": "65f4012e74ddb18f0efe55b31a7a4a1e664500cb",
+   "ja": "発動効果：アイバーンは番人の友デイジーをそばに呼び出し、デイジーは指定方向にアイバーンから350ユニット離れた位置に着地して、操作できるペットとして最大45秒間戦場に残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Daisy!#description2": {
+   "source_sha1": "87550646b5bcd65c89e0ee39d90037eaad08a98f",
+   "plain_sha1": "1328ee05deeca1b043482b5fb05a48d0572185f5",
+   "ja": "デイジーが生きている間、いつでも「デイジー！」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Daisy!#description3": {
+   "source_sha1": "13e60d1042c40b92c8a59169281e5d8c3984258d",
+   "plain_sha1": "ac48aa9ea9e8add8dfd63476e7778a609e8b3d5c",
+   "ja": "再発動 -「Daisy, wait!」：アイバーンはデイジーに指定地点へ移動するよう命じる。アイバーンを対象にすると、デイジーはアイバーンについていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ivern/Daisy!#description4": {
+   "source_sha1": "b6036ba21408e800b151a2d16902acd6bebde32f",
+   "plain_sha1": "a26466e9b3f1e239ba5ceab694b91eadf82c9c12",
+   "ja": "「デイジー！」の再発動は、スキルの使用を妨げる行動妨害を受けている間も使える。デイジーの詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Ivern/Friend of the Forest#description": {
+   "source_sha1": "494357f8427aab933e35bb74210f53a13a14f253",
+   "reason": "residual_markup"
+  }
+ }
+}

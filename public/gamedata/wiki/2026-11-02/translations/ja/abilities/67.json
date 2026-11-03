@@ -1,0 +1,93 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Vayne/Night Hunter#description": {
+   "source_sha1": "bb56b8f7f96928fb133093ced9ecc9fec0e81280",
+   "plain_sha1": "799252b45910131bae6fe5cfa2d57a8ca38c61dc",
+   "ja": "固有：ヴェインは近くの見えている敵チャンピオンの方を向いている間、移動速度が30増加し、「ファイナルアワー」の効果中は90になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Tumble#description": {
+   "source_sha1": "f632db4d0b0e959829cec62766755ae3e897bda8",
+   "plain_sha1": "1a614dcebc318ddeab7103ce9896edc1ba208f9a",
+   "ja": "発動効果：ヴェインは指定方向に決まった距離ダッシュし（地形は越えない）、3秒以内の次の通常攻撃を強化して、攻撃モーションが中断されなくなり、追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Tumble#description2": {
+   "source_sha1": "01b537f2e301d9a089363e904e9f8d4204fe34f7",
+   "plain_sha1": "c234d0a4e953330cec4b778b525ad7a543ff3e73",
+   "ja": "「タンブル」はヴェインの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Silver Bolts#description": {
+   "source_sha1": "1ae8152204aa2addd97ba887f6bf1621049c1ece",
+   "plain_sha1": "7464eee083712d87d37eab19a4d665453e2bf718",
+   "ja": "自動効果：ヴェインの通常攻撃（攻撃時効果）と「パニッシュメント」は、3.5秒間「シルバーボルト」のスタックを与える。付与のたびに効果時間が更新され、新しい敵を攻撃すると消え、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Silver Bolts#description2": {
+   "source_sha1": "6100053917f8b1fb3588c2dc81fc5306e08f2c69",
+   "plain_sha1": "478342201ee63912f01ef9819d9d0b3093cf348a",
+   "ja": "三つ目のスタックですべて消費し、追加の確定ダメージを与える（最低値あり）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Silver Bolts#description3": {
+   "source_sha1": "aab532632f466a80c1aabbcb7371687053e2b8ef",
+   "plain_sha1": "dcbcdca330a02223f5e9ead04e1de628d026b046",
+   "ja": "「シルバーボルト」はモンスターに修正されたダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Condemn#description": {
+   "source_sha1": "3161addb5a86954e31a7f03179cd14cecc0be13c",
+   "plain_sha1": "b689ef39ed693e2d027a6ee91b74d9e8ff366647",
+   "ja": "発動効果：ヴェインは対象の敵に重い矢を撃ち、物理ダメージを与えて475ユニットノックバックさせる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Condemn#description2": {
+   "source_sha1": "7ff885c6f3fb89d430b3e736e0ef3875917e83c1",
+   "plain_sha1": "5066e6cb14eee5310eb21b4e69fd55031dbcf880",
+   "ja": "対象が地形にぶつかると、追加の物理ダメージを受けて1.5秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Final Hour#description": {
+   "source_sha1": "8eaead72de4ee77e59a45fa83fd4e54338daabbb",
+   "plain_sha1": "3447e76e21d690045453fd18f45eed694d9a3778",
+   "ja": "発動効果：ヴェインはクロスボウを構え、一定時間増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Final Hour#description2": {
+   "source_sha1": "46ae5f42d02d58f2ac6fde434164dda1c8ed40b0",
+   "plain_sha1": "80042c9d7f1cf2c18a6769d760c934f23b4c3959",
+   "ja": "効果中、「ファイナルアワー」は「ナイトハンター」の移動速度の増加を三倍にし、「タンブル」のクールダウンを短くする。さらに、「タンブル」を使用するとヴェインは1秒間インビジブルになる。通常攻撃かスキルの使用で、このステルスは即座に解ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vayne/Final Hour#description3": {
+   "source_sha1": "4e5f368b81de44f83685429c9e1f48f02d495407",
+   "plain_sha1": "9b11f5125fc93f5f8e13241dd32fbd52ad14230a",
+   "ja": "ダメージを与えてから3秒以内に敵チャンピオンのキルに関与すると、「ファイナルアワー」の効果時間が4秒延長される（元の効果時間が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

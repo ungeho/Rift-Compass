@@ -1,0 +1,93 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Malphite/Granite Shield#description": {
+   "source_sha1": "03ef5d8a88cc3dc51caf97c438ed7016d4b101a4",
+   "plain_sha1": "3a11ff3a03308a1219dc8a2bf1700f37a1425b96",
+   "ja": "固有 -「Shard of the Monolith」：マルファイトは合計物理防御の8%に等しい割合だけサイズが大きくなり、物理防御437.5で35%が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Granite Shield#description2": {
+   "source_sha1": "6ba6f191f1948ae4d8da8b014b396c1cd51413b8",
+   "plain_sha1": "235f206d554fd490483d3c05bbc1b52e7fe39763",
+   "ja": "固有 -「グラナイトシールド」：マルファイトは最大体力の10%に等しいシールドを自身に付与する。シールドは壊されるまで続き、ダメージを受けない状態が数秒続くと満タンまで回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Seismic Shard#description": {
+   "source_sha1": "c477cb1f05177b72f6492762e075f4ee071a73b5",
+   "plain_sha1": "4391f26176c894b20ca5d9b8cb8afdf4a53b1b20",
+   "ja": "発動効果：マルファイトは対象の敵に破片を飛ばし、命中時に魔法ダメージを与えて3秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Seismic Shard#description2": {
+   "source_sha1": "ec961a786c8d2f89f8e80ded2ae655f945989bc5",
+   "plain_sha1": "bbacbe384136a23f9c2b20a49c31936acb5144ce",
+   "ja": "さらにマルファイトは、効果時間の間、スロウで対象が失った移動速度の実数と同じだけ移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Thunderclap#description": {
+   "source_sha1": "eff6202a55be1ca28f0c2f4ada7c33f9caa90acb",
+   "plain_sha1": "40ce5e99457ce1d5f62094a526737efe472bc5f4",
+   "ja": "自動効果：マルファイトは物理防御が増加し、「グラナイトシールド」がある間は三倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Thunderclap#description2": {
+   "source_sha1": "44f2c81fe7964ac284fe79055f2a83b57cc11af6",
+   "plain_sha1": "6f3327ba3c18b0fac8a3b7d608a6985d610692c4",
+   "ja": "発動効果：マルファイトは6秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、攻撃時効果として追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Thunderclap#description3": {
+   "source_sha1": "09e3e2f1d5aba7177d12dd726598953ccc36652c",
+   "plain_sha1": "23327f421e975ffe20ce2c831231e5f746774b2c",
+   "ja": "さらに、次の5秒間、マルファイトの通常攻撃（攻撃時効果）は強化され、対象の方向に扇形の範囲を発生させて、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Thunderclap#description4": {
+   "source_sha1": "dd98269fc2f173e76d78b586c5c4730b43881552",
+   "plain_sha1": "23c2ee065233c373c5eb3230eae8db24f42e6d07",
+   "ja": "「サンダークラップ」はモンスターに180%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Thunderclap#description5": {
+   "source_sha1": "3cacef5de5cfb919ce25748d7de78f19373bf376",
+   "plain_sha1": "37dd22582b32e20aabbae84e02be02a08988ed21",
+   "ja": "「サンダークラップ」はマルファイトの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Ground Slam#description": {
+   "source_sha1": "dbe00a19efe31532c6dc95aee0d21d350ba5db40",
+   "plain_sha1": "88131ab872b3680cb9d902f516c8e8f594103f49",
+   "ja": "発動効果：マルファイトは足元の地面を叩きつけ、周囲の敵に魔法ダメージを与えて、3秒間攻撃速度低下（cripple）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malphite/Unstoppable Force#description": {
+   "source_sha1": "aae21185c85972a0a45c489a434bfa6f768bb089",
+   "plain_sha1": "1eb36fc9f00d410e92cfd57bb6d7d13e716f21e4",
+   "ja": "発動効果：マルファイトは移動系の効果を受けない状態で指定地点へダッシュする。到着時に周囲の敵に魔法ダメージを与え、1.5秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

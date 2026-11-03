@@ -1,0 +1,113 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kai'Sa/Second Skin#description": {
+   "source_sha1": "dbb819651c1ece86d3d72f889d348ef5176bc2ac",
+   "plain_sha1": "48b21d5accbf44e31e94576898fd512d0e8c5ca7",
+   "ja": "固有 -「Living Weapon」：カイ＝サは、アイテムと成長による永続的なステータスを一定量得ると、各基本スキルを進化させて追加の効果を与えられる。進化させると2秒の詠唱時間に入る。ステータスの条件を満たさなくなると、強化は失われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Second Skin#description2": {
+   "source_sha1": "4f7968fedf62ffb3bc710d8e4c51f4079d8cd17f",
+   "plain_sha1": "e345c32dfc319f24daf9607de5900b1d9ebc1bcc",
+   "ja": "固有 -「Plasma」：カイ＝サの通常攻撃（攻撃時効果）と「ヴォイドシーカー」は、敵に4秒間「Plasma」のスタックを与える。付与のたびに効果時間が更新され、最大5回まで重なる。通常攻撃はそれぞれ1スタック、「ヴォイドシーカー」は2スタック（進化後は3）を与える。カイ＝サと近くの味方が敵チャンピオンに与える移動不能の効果とポリモーフも、「Plasma」のスタックを一つ与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Second Skin#description3": {
+   "source_sha1": "52c3b683fc63d8d0b41fad73ecd4dab8df487117",
+   "plain_sha1": "ee776a7c4482167b9aa9beb700ee814e7871ddb4",
+   "ja": "固有 -「Caustic Wounds」：カイ＝サの通常攻撃か「ヴォイドシーカー」で与える「Plasma」のスタックは、4～30（レベルに応じて）（+ APの12%）の追加の魔法ダメージと、付与の前の対象の「Plasma」のスタックごとに1～8（レベルに応じて）（+ APの3%）の追加の魔法ダメージを与え、付与の前が4スタックのとき合計8～62（レベルに応じて）（+ APの24%）の追加の魔法ダメージになる。対象への五つ目のスタックですべて消費し、対象の減少体力の15%（+ AP 100ごとに6%）に等しい追加の魔法ダメージ（モンスターには400が上限）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Icathian Rain#description": {
+   "source_sha1": "fb7c6df19aaf83780d37221070184db007328261",
+   "plain_sha1": "c36f4c055e29d8897040d2591d8d22d3aa7aeb1d",
+   "ja": "発動効果：カイ＝サは6発のミサイルの群れを放ち、ミサイルは近くの見えている敵に均等に分かれて、0.4秒後に対象に当たり、物理ダメージを与える。体力が35%未満のミニオンは二倍のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Icathian Rain#description2": {
+   "source_sha1": "8a78788cf7156c376419e1fc0eeb076d48b56675",
+   "plain_sha1": "88e5f84e39c943e6955819dc556f395b4e20612d",
+   "ja": "ミニオン以外は、二発目以降のミサイルから25%のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Icathian Rain#description4": {
+   "source_sha1": "781c45f3b2ef4f7e06dca5473ebd7bce2bc6a644",
+   "plain_sha1": "ed46a55dec1983f15fb83059e6499217c7acb8f4",
+   "ja": "このスキルを使用するには、近くに敵が必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Void Seeker#description": {
+   "source_sha1": "e477899004fa2e5b9a83a078f98def1d3860569d",
+   "plain_sha1": "f30a5369969a4446f0208cd3543117429fa87b7f",
+   "ja": "発動効果：カイ＝サは指定方向にヴォイドの弾を撃ち、弾は進みながら弾道の周囲の視界を一瞬与え、最初に命中した敵に魔法ダメージと「Plasma」2スタックを与えて、4秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Void Seeker#description2": {
+   "source_sha1": "77e9d1065a19d0552682022ddcecb9a4257ca417",
+   "plain_sha1": "4ce8dbc17b360a755dbd1796f5d83b879590bde3",
+   "ja": "進化：進化にはアイテムによる魔力100が必要 －「ヴォイドシーカー」は代わりに「Plasma」を3スタック与え、敵チャンピオンに命中するとクールダウンの75%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Supercharge#description": {
+   "source_sha1": "493bf6650a0ac94ad74fd37ae2e0f2830f3844b5",
+   "plain_sha1": "e435b2e13d3c2d918197d15e9aca8c84d6a53618",
+   "ja": "発動効果：カイ＝サは詠唱時間の間に力を溜め、その間も移動でき、ゴースト状態になって移動速度が増加する。効果は攻撃速度の増加に応じて0%～100%高まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Supercharge#description3": {
+   "source_sha1": "abd721fd97e356f410eb5460a7dc36d7e8246fd5",
+   "plain_sha1": "1c8e4f82ed11fdd98ebb9095943eeac5721d87eb",
+   "ja": "攻撃開始時のたびに、「スーパーチャージ」の残りクールダウンが0.5秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Killer Instinct#description": {
+   "source_sha1": "2b4f98157890d53cbeaf35a1952ce403602218dd",
+   "plain_sha1": "dd034d86901c94be607eabcf03a29d1ee29534fd",
+   "ja": "発動効果：カイ＝サは自身に2秒間シールドを付与し、直近4秒以内に「Plasma」の影響を受けた見えている敵チャンピオンの近くの指定地点へダッシュする。ダッシュが終わるとシールドの効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kai'Sa/Killer Instinct#description2": {
+   "source_sha1": "110eb5fe78e0177eb867a4f1d989f68eb8e2bfca",
+   "plain_sha1": "ca3ac757fa2c09f94748b20d34a2413056a31586",
+   "ja": "このスキルを使用するには、射程内に「Plasma」の影響を受けた敵チャンピオンが必要。「キラーヴォイド」はカイ＝サの通常攻撃タイマーをリセットする。カイ＝サはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Kai'Sa/Icathian Rain#description3": {
+   "source_sha1": "bb48607ca4b691bfd11314ceddcda53d52da9916",
+   "reason": "residual_markup"
+  },
+  "Template:Data Kai'Sa/Supercharge#description2": {
+   "source_sha1": "f2cc3058365e7fd166efcd47091d74f6aab2bd42",
+   "reason": "residual_markup"
+  },
+  "Template:Data Kai'Sa/Supercharge#description4": {
+   "source_sha1": "cdaaf07e9b9839f7798c8aa80c5c7346179429fa",
+   "reason": "residual_markup"
+  }
+ }
+}

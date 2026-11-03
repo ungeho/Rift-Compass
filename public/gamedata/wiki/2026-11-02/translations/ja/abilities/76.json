@@ -1,0 +1,154 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nidalee/Prowl#description": {
+   "source_sha1": "29058532ec1e17bb91d3a1acbbba352445122a46",
+   "plain_sha1": "18a31f5ce7d52b91d023cbadf9ba39636f986c2f",
+   "ja": "固有 -「品定め」：ブッシュの中では、ニダリーはゴースト状態になって移動速度が10%増加し、1400の範囲内の見えている敵チャンピオンの方を向いている間は30%になる。これらの効果はブッシュを出た後も2秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Prowl#description2": {
+   "source_sha1": "16a0c899d08ad62de8543702de4aecdfa2081eb2",
+   "plain_sha1": "3495897a66fed143eea644a47030ef006ed20305",
+   "ja": "固有 -「Hunt」：「槍投げ」か「虎挟み」を敵チャンピオンかモンスターに命中させると、対象に4秒間「Hunted」の印が付き、その間対象は可視化され、その周囲300ユニットの視界も与える。対象が命中したときにニダリーが近くにいれば、4秒間ゴースト状態になって移動速度が10%増加し、「Hunted」の対象の方を向いている間は30%になる。さらに、「Hunted」の対象への「テイクダウン」と「ジャンプ」の最初の発動が強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Prowl#description3": {
+   "source_sha1": "3fd02b7822ba14fe67d835f4717c0fa1efa07e11",
+   "plain_sha1": "4267271938e3915a4f569c921be38704571dff29",
+   "ja": "「品定め」と「Hunt」の移動速度の増加は重なるが、30%を超えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Javelin Toss#description": {
+   "source_sha1": "ebf1f1d1cb59cc7180153ef7f6fcfa959d336c44",
+   "plain_sha1": "ab94ddf1310fc05d9ca7c5a1068be792e274ac5a",
+   "ja": "発動効果：ニダリーは指定方向に槍を投げ、最初に命中した敵に魔法ダメージ（飛んだ距離に応じて0%～225%増加）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Takedown#description2": {
+   "source_sha1": "820cffbbc79da34693f7f51ea598525920f44313",
+   "plain_sha1": "7e4e72070d7c6c02a388db4b86a08c92c44a3191",
+   "ja": "「Hunt」のボーナス：「Hunted」の対象に命中すると、「テイクダウン」のダメージが30%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Takedown#description3": {
+   "source_sha1": "298bbf2dc2ab398f84d6f627eccbf936917c89ef",
+   "plain_sha1": "ca9875914c03924c9d53ce4f4abbc4cf08fd2f57",
+   "ja": "「テイクダウン」はニダリーの通常攻撃タイマーをリセットする。「テイクダウン」で魔法ダメージに変わったほかのダメージは、「テイクダウン」のそれぞれの効果では増えない。ニダリーが「Human Form」に変わると、「テイクダウン」の強化された攻撃は即座になくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Bushwhack#description": {
+   "source_sha1": "308f8c1a3f74076c36e8de458d34d4518d79b295",
+   "plain_sha1": "df9efd1d79f2189fef34ea03e39e1d3fb4e14851",
+   "ja": "発動効果：ニダリーは指定地点に罠を仕掛ける。罠は1.5秒かけて準備を終えるとステルスになり、最大120秒間残って、その範囲の視界を与える。罠は敵が触れると作動し、4秒間、毎秒魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Bushwhack#description2": {
+   "source_sha1": "13f32b2743f4dee5b992563b1ae058002d6bd753",
+   "plain_sha1": "1b830c2cd1d191290d0780ad919d7fd650f9fbc7",
+   "ja": "罠の最大体力は6で、チャンピオンの通常攻撃でだけダメージを受ける（遠隔攻撃で2、近接攻撃で3）。一度に有効な罠は最大4～10個（レベルに応じて）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Bushwhack#description3": {
+   "source_sha1": "39d005213e977ef0ef8c8f666d54760bb8210944",
+   "plain_sha1": "62346bd0aa1f1a22a5d79b556ab284f454569a7a",
+   "ja": "罠の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Pounce#description": {
+   "source_sha1": "2644c6c93f1f10ddafc687ed97a077e43da7250a",
+   "plain_sha1": "598089d351e45803cd526aad2d6d7851942799fa",
+   "ja": "自動効果：「Cougar Form」で敵を倒すか、「ジャンプ」の「Hunt」のボーナスを使うと、「ジャンプ」の残りクールダウンが最小値まで短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Pounce#description2": {
+   "source_sha1": "a21967b87b9f09832dae9a80aced137f7de9c9df",
+   "plain_sha1": "8e12aa3fe3a1c916b40508b1d8cad1c67d87feb7",
+   "ja": "発動効果：ニダリーは指定方向に決まった距離跳ぶ。到着時に周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Pounce#description3": {
+   "source_sha1": "cb74538279d9394b9185b4eb885559bdf75030a1",
+   "plain_sha1": "c3c8f114afa33920dfc08592a3093c1fe221cdf6",
+   "ja": "「Hunted」のボーナス：カーソルに最も近い「Hunted」の敵に対しては、より遠い距離から「ジャンプ」できる。対象の前方に跳ぶ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Pounce#description4": {
+   "source_sha1": "5df5e59bbe1e7524b7b200b50245fa598d2fb2bf",
+   "plain_sha1": "5bb10da4049dd03ce7562c60afeda55dc6d061e4",
+   "ja": "ダッシュ中に「テイクダウン」と「クーガーの心」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Primal Surge#description": {
+   "source_sha1": "2d95dc038676971d5f8d0c812ea57f5bbcf6b151",
+   "plain_sha1": "671b2ea91bbeba040740417f4db6a03178f2c9d5",
+   "ja": "発動効果：ニダリーは自身か対象の味方チャンピオンを活気づけ、7秒間攻撃速度を増やし、対象の減少体力に応じて0%～100%増える量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Swipe#description": {
+   "source_sha1": "2e5a879a9a8d9f56a6e46bfb11415f96ff0120d6",
+   "plain_sha1": "091684d3a0d77bb465c6030ffb68a8ce3939a0ec",
+   "ja": "発動効果：ニダリーは指定方向に弧状に切り裂き、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Aspect of the Cougar#description": {
+   "source_sha1": "d84ca92be9eb904a3571b2ca504f394b3a37a25a",
+   "plain_sha1": "89401b86f4b3f8a37f2e301191d6e44b5675a782",
+   "ja": "発動効果：ニダリーは「Human Form」と「Cougar Form」を切り替える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Aspect of the Cougar#description2": {
+   "source_sha1": "e52eed8061a51738ef385eeb3037f2fda8c69ed6",
+   "plain_sha1": "2e307e7424274b514a013e8dd41723faa8e8a49e",
+   "ja": "「Cougar Form」：ニダリーはクーガーに変身し、射程125の近接攻撃とクーガーのスキルを使えるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Aspect of the Cougar#description3": {
+   "source_sha1": "3c3d6ea8a33d1d1bb461ad89db5c32dd363cee0f",
+   "plain_sha1": "7818186cb9e472d416d95e452d0ba7d66c83a083",
+   "ja": "「Human Form」：ニダリーは人間に変身し、射程525の遠隔攻撃と人間のスキルを使えるようになる。この形態で「Hunted」の印を付けると、「クーガーの心」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nidalee/Aspect of the Cougar#description5": {
+   "source_sha1": "d20f07408eabdb35f4dac592ab58c706b5007150",
+   "plain_sha1": "99c0427f1731d65521b1e5a66b4c8ae47065999e",
+   "ja": "ニダリーは「クーガーの心」のランクを一つ持って始まり、レベル6・11・16で上げられる。「Cougar Form」のスキルは「クーガーの心」のランクに応じて強くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nidalee/Takedown#description": {
+   "source_sha1": "b803b468dec3c67b5cadfc43ec3515fbe03b1b2c",
+   "reason": "residual_markup"
+  }
+ }
+}

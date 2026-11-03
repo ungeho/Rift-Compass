@@ -1,0 +1,149 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kalista/Martial Poise#description": {
+   "source_sha1": "f6a004db76fb3aa2a6e1065069ab95bd67cc4928",
+   "plain_sha1": "f96f9f5f6102e21e5843185cb2c1b50c25508165",
+   "ja": "固有：カリスタが通常攻撃のモーション中か完了直後、または「貫魂の一投」の詠唱時間中に移動の指示を出すと、その方向にダッシュする。移動不能かグラウンドを受けている間はダッシュできず、ダッシュ中に移動不能かポリモーフの行動妨害を受けると叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Martial Poise#description2": {
+   "source_sha1": "31f9ebde4de198420c439cbac0fcb1ba47227ba4",
+   "plain_sha1": "7c75a5dc8629ec2563e1827cf4ff6e1dc9c0d91a",
+   "ja": "「戦の所作」のダッシュの距離と速度の詳細：* 通常攻撃のダッシュ距離は、カリスタのブーツの段階とダッシュの角度で変わる。** 対象に向かって0°の角度では、最小のダッシュ距離は140～175（ブーツの段階に応じて）ユニット。** 90°の角度では、最大のダッシュ距離は240～300（ブーツの段階に応じて）ユニット。* 「貫魂の一投」のダッシュ距離は、発動地点の方向のどこへダッシュしても300ユニット。** 発動地点から離れる位置へダッシュを指示した場合、距離は角度に応じて減り、真反対の位置なら最小150ユニット。* ダッシュの速度はカリスタのブーツの段階に応じて増え、攻撃速度の増加と、受けている移動速度の補正（スロウを含む）の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Martial Poise#description3": {
+   "source_sha1": "1cfa476d32a4b9e2d4d632253da479779064b031",
+   "plain_sha1": "fd39bc316aef69cd1aecc899bfa49da305280242",
+   "ja": "固有 -「Oathsworn Bond」：カリスタは専用の「Black Spear」を持ってゲームを始め、味方チャンピオンに使ってその味方を「Oathsworn」にし、テザーでつながる。カリスタと「Oathsworn」の味方が互いにテザーの範囲内にいる間、二人とも「Soul-Mark」と「宿命の呼び声」に関われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Martial Poise#description4": {
+   "source_sha1": "e4efd82971a1b4a1f6fe3e68b3ac2c2fe14c6fc5",
+   "plain_sha1": "bfaa8fe075010bbd94258b1809e01de7aeb64466",
+   "ja": "カリスタはショップで「Black Spear」を無料で買い直せ、ゲーム時間3分になる前なら、別の対象に再び使って新しい「Oathsworn」を指定できる。詳細は「Black Spear」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Pierce#description": {
+   "source_sha1": "8d753505bd1c97b68c14c9f9770746ec88cd59e3",
+   "plain_sha1": "4878ebd21f6f923d72584c9ba9fc7684b7d1ca63",
+   "ja": "発動効果：カリスタは指定方向に槍を投げ、最初に命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Pierce#description2": {
+   "source_sha1": "aaf1292d73d2c98031df53679778b499f07d570b",
+   "plain_sha1": "69c995369ea7a700bb216ac230b88f5eeb8961d2",
+   "ja": "「貫魂の一投」で対象を倒すと、槍はそのまま進み、対象の「引き裂く遺恨」のスタックをすべて次に当たった敵に移す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Sentinel#description": {
+   "source_sha1": "63b5d038111484837d621018eb7931c688ef2af8",
+   "plain_sha1": "8a34956a5fea1f65e17d700f5a1d957f0d9b42c7",
+   "ja": "自動効果 -「Soul-Marked」：カリスタと「Oathsworn」がつながっている間、二人の通常攻撃と「貫魂の一投」は命中した対象に4秒間「Soul-Mark」を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Sentinel#description2": {
+   "source_sha1": "4b1bc9b1cfb2716e02f6c6bc1b626b77772e86f9",
+   "plain_sha1": "ed62e454567210fab093d9e4ec476e8862061851",
+   "ja": "カリスタと「Oathsworn」の両方の「Soul-Mark」が同じ敵に付くと、印が消費されて対象に魔法ダメージ（チャンピオン以外には上限あり）を与える。「Soul-Mark」は同じ敵には数秒に一度しか効かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Sentinel#description3": {
+   "source_sha1": "ae744751593dcf0d113c4c568dd126dfcab0aea6",
+   "plain_sha1": "ca09fd75179e1ff9ae2fea75ab045bab1f5ebe8e",
+   "ja": "発動効果：カリスタは「Sentinel」を呼び出し、「Sentinel」は指定方向の経路を行き来して巡回し、移動しながら周囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Sentinel#description4": {
+   "source_sha1": "8793583a57e6e237b5ec503ba0528dff4ca6b973",
+   "plain_sha1": "2875779af892fcc5578942bd906134c122903a9c",
+   "ja": "カリスタは一定時間ごとに「執念の霊魂」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Sentinel#description5": {
+   "source_sha1": "3e03a3578c88798cd2833d42a43246455f489d26",
+   "plain_sha1": "d28643312959c03259fc4ff066c749f5c3ba416c",
+   "ja": "「Sentinel」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Rend#description": {
+   "source_sha1": "bc6a8b997ceab1f84feadd30d5983368b0e247f6",
+   "plain_sha1": "496c6343e4b877e5e29d03120c9934da53fb7b5b",
+   "ja": "自動効果：カリスタの通常攻撃（攻撃時効果）と「貫魂の一投」は、敵に4秒間「引き裂く遺恨」のスタックを与える。命中のたびに更新され、敵一体につき254回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Rend#description2": {
+   "source_sha1": "a8ab26ff3ee8f088c59282d5dc575e420725c8ae",
+   "plain_sha1": "8ad32d966113498159b0e791b5152d62d86913e6",
+   "ja": "発動効果：カリスタは「引き裂く遺恨」のスタックが付いた周囲のすべての敵から刺さった槍を引き抜き、各対象のスタックを消費して物理ダメージを与え、2秒間スロウを与える。最初の一つより後のスタックごとに、対象はさらに物理ダメージを受ける。「引き裂く遺恨」はエピックモンスターに50%のダメージを与える。使用すると、飛んでいる最中の通常攻撃と「貫魂の一投」の弾も強化され、命中した直後に対象に「引き裂く遺恨」の効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Rend#description3": {
+   "source_sha1": "96fa66a5c7a1ebb4604e418083fecc0f6efd1558",
+   "plain_sha1": "96c301616bd63dfff3a0a8df4be4645976529299",
+   "ja": "「引き裂く遺恨」で少なくとも一体の対象を倒すと、クールダウンがリセットされ、カリスタはマナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Rend#description4": {
+   "source_sha1": "c4adf3dfd6a5aa3e2f5a7f0a4a615074cb67fa75",
+   "plain_sha1": "08557f9cd6d1271402a60a797938020923a7b733",
+   "ja": "このスキルを使用するには、「引き裂く遺恨」のスタックが付いた敵が近くに必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Fate's Call#description": {
+   "source_sha1": "54541028d65d4e4826cbc1be30ed911606758177",
+   "plain_sha1": "2bdffb7c9a2c8a64664cf6aa28a1e3282797fe40",
+   "ja": "発動効果：カリスタはテザーを使って「Oathsworn」を引き戻し、4秒間抱える。効果時間中、「Oathsworn」のすべての行動妨害を解除して無敵と対象指定不可にし、1秒かけて自身のもとへ引き寄せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Fate's Call#description2": {
+   "source_sha1": "4e55062d6a5ac31b8772969b64c7895f48320077",
+   "plain_sha1": "d4d98a13690f39822db7fe93d7d391f976fbe99f",
+   "ja": "抱えられている間、「Oathsworn」は姿を消し、指定地点を選んで移動系の効果を受けない状態でダッシュでき、「宿命の呼び声」は終わってその位置に再び現れる。「Oathsworn」が指定地点を選ばずに効果が終わった場合、カリスタの向いている方向の最大射程へ自動でダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Fate's Call#description3": {
+   "source_sha1": "9871f6f84d366ff35423faf4a2b730bece3aa64e",
+   "plain_sha1": "abef183967b6db49e8282981e2857a21df2720d5",
+   "ja": "「Oathsworn」のダッシュは敵チャンピオンにぶつかると止まる。ぶつかるか指定地点に着いてダッシュが終わると、「Oathsworn」は周囲のすべての敵をノックバックさせて一定時間ノックアップ状態にし、同時に命中した最も近い対象から自身の基本の攻撃射程の位置に着地する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kalista/Fate's Call#description4": {
+   "source_sha1": "3bef40722ce741c4f7cf933e1051a5bc9295b0e2",
+   "plain_sha1": "f04ac9cf823ba6d2ea92793e14f0d8f2f083b79f",
+   "ja": "このスキルを使用するには「Oathsworn」がテザーの範囲内にいる必要があり、「宿命の呼び声」の効果中、「Oathsworn」はサイレンスを受け、移動や攻撃の指示もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

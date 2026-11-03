@@ -1,0 +1,124 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Udyr/Bridge Between#description": {
+   "source_sha1": "b5f4cd97a4513b860f1b56f65fa8727c003eac9e",
+   "plain_sha1": "cde7a75fba2a54a84833112e1e570044368ed7b4",
+   "ja": "固有 -「Awakened Spirit」：ウディアには究極スキルがなく、代わりに4つの基本スキルを持ち、それぞれ使用すると1.5秒の共通クールダウンが生じる。各スキルは通常攻撃を強化する構え（Stance）を与え、構えを切り替えると前の構えの強化された攻撃は置き換わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Bridge Between#description2": {
+   "source_sha1": "d1224f2cb439b8a9013140704d670486232f5d95",
+   "plain_sha1": "f8ca1133c549aaab8202eaf20db2d05ce6a75081",
+   "ja": "一定時間ごとに、ウディアは構えに入った後、0.25秒後から5秒以内に同じスキルをコストなしでもう一度使って「Awaken」でき、構えに追加の効果を与えて、その効果はクールダウンに入る。効果時間内に「Awaken」を使わず構えも切り替えなかった場合、現在の構えのスキルに0.25秒のクールダウンが生じる。「Awakened Spirit」は試合開始時にクールダウン全体に入っている。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Bridge Between#description3": {
+   "source_sha1": "94fdcd0d2f8dc1a7208779c7efb05acee1dda82c",
+   "plain_sha1": "b62a80c58347807fa657967d06216d6034ef36ba",
+   "ja": "固有 -「Monk Training」：スキルを使用した後、4秒以内のウディアの次の二回の通常攻撃（攻撃時効果）は強化され、攻撃速度が30%増加し、「Awakened Spirit」の合計クールダウンの5%を戻す。ただし残りクールダウンが1秒未満なら戻さない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Wilding Claw#description": {
+   "source_sha1": "79930471871e7956b7d7ca9ccef685acf7a0b273",
+   "plain_sha1": "8c6d24d6e18817a75b6d9f41d2b593e531eda70a",
+   "ja": "発動効果 - 構え：ウディアは「Claw Stance」に入り、次の二回の通常攻撃を強化して、射程が50増加し、攻撃時効果として追加の物理ダメージを与える。モンスターに対しては15（+ 増加攻撃力の100%）（+ APの50%）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Wilding Claw#description2": {
+   "source_sha1": "1db6b02e5622538f1d42cfe1175ca329f1dfec76",
+   "plain_sha1": "b4964ad404438e6d9783bc22d8a93e2e14579e68",
+   "ja": "さらに、ウディアは4秒間攻撃速度が増加し、攻撃時効果として追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Iron Mantle#description": {
+   "source_sha1": "a69ae1ed8a5a7e1f782e8841efbb02530d823aac",
+   "plain_sha1": "db2a4a985dc61ef253ab02be4baacf8cfc11f35e",
+   "ja": "発動効果 - 構え：ウディアは「Mantle Stance」に入り、次の二回の通常攻撃（攻撃時効果）を強化して、ライフスティールを得て、最大体力の1.2%（+ APの8%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Iron Mantle#description2": {
+   "source_sha1": "755c1fec6b5dac20427afd50d21e2b659ac1ee6f",
+   "plain_sha1": "b61a6e72fb42ba55534304b8dbb1b76a9cf547c8",
+   "ja": "さらに、ウディアは自身に4秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Iron Mantle#description3": {
+   "source_sha1": "ec011086d3f0d923763594994b168bfdf9c8eab6",
+   "plain_sha1": "67c502b96fad983ed5ae4fe9b57f4b529d481384",
+   "ja": "再発動 -「Awaken」：ウディアはシールドの量を増やし（最初の発動の残りのシールドに加算）、次の4秒間0.25秒ごとに回復し、強化された攻撃は代わりに二倍のライフスティールを得て、最大体力の2.4%（+ APの16%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Iron Mantle#description4": {
+   "source_sha1": "5f7b2d38cc91b95423a6a246116a1ee47fcc802d",
+   "plain_sha1": "c1cf0b4ed17d86c0de7c66bb6b699617cf08a378",
+   "ja": "攻撃時効果の回復は、ミニオンに対しては60%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Blazing Stampede#description": {
+   "source_sha1": "92e410663125c4b24468a3f028bbea4ea3a352e8",
+   "plain_sha1": "1a4ee4387d6f8d392f5648dc350020eb1cb31668",
+   "ja": "発動効果 - 構え：ウディアは「Stampede Stance」に入り、通常攻撃を強化して、攻撃モーションが中断されなくなり、対象に飛びかかって0.75秒間スタンさせる。これは同じ対象には数秒に一度しか効かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Blazing Stampede#description2": {
+   "source_sha1": "82b1ce4f5f7e210ef225ad52736c87123483dcee",
+   "plain_sha1": "3124d3d83d26ea58450fc193e35ef76752433b58",
+   "ja": "さらに、ウディアはゴースト状態になって4秒間移動速度が増加し、増加は1.5秒かけて30%の効果まで減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Wingborne Storm#description2": {
+   "source_sha1": "3c56b13901efa6ef6efa72bf1aba099a9f0a27f1",
+   "plain_sha1": "c096c37e2a9edd1d0b57833744e2ec78412e8acf",
+   "ja": "さらに、ウディアは自身の周囲に4秒間吹雪を呼び、0.5秒ごとに周囲の敵に魔法ダメージを与え、範囲内にいる間スロウを与える。ミニオンは50%～80%（レベルに応じて）のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Udyr/Wingborne Storm#description4": {
+   "source_sha1": "43d242e15e060acd3741704703e4ddf3d0b817cf",
+   "plain_sha1": "e78b5e701203a70cef331945406d111104749f82",
+   "ja": "嵐は周囲の視界を与え、効果中にウディアが最後に攻撃した敵、敵チャンピオン、チャンピオン以外、ウディアの順に優先して追いかける。嵐が追いかけられるのは見えている敵だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Udyr/Wilding Claw#description3": {
+   "source_sha1": "f96060d708ec37a66eb9354e076681234336e470",
+   "reason": "residual_markup"
+  },
+  "Template:Data Udyr/Blazing Stampede#description3": {
+   "source_sha1": "96c408e86f235f69103840ccad6740090a3b9904",
+   "reason": "residual_markup"
+  },
+  "Template:Data Udyr/Wingborne Storm#description": {
+   "source_sha1": "d8f7e37f10224fc7e3c8925c977b96bae07386c7",
+   "reason": "residual_markup"
+  },
+  "Template:Data Udyr/Wingborne Storm#description3": {
+   "source_sha1": "d4ed18ddcd85cc3abbfa4c60a974a57dcc135ede",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Rakan/Fey Feathers#description2": {
+   "source_sha1": "f8b35a3175933dd907949b3db1c1ce71b5847d70",
+   "plain_sha1": "af1539f0356148604f1b28a53ac81c9c70107f04",
+   "ja": "ラカンの通常攻撃とスキルの命中で、命中した敵チャンピオン一体ごとに「神秘の翼」のクールダウンが1秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Fey Feathers#description3": {
+   "source_sha1": "aea3bcfd9751949fe23f4691c6b4d18c25c68516",
+   "plain_sha1": "f1a30677fc8e2a21d42786b90f1aa34aef8c1f53",
+   "ja": "固有 -「Lover's Leap」：ラカンかザヤのどちらかがリコールを詠唱しているとき、もう一方は近くに移動して自分のリコールを詠唱すると、一緒に帰還できる。二人とも、先に始めた方のリコールが完了した時点で基地に着く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Gleaming Quill#description": {
+   "source_sha1": "ce6268ab8cfe4bf24078ba07cd1c07bbfe06a1de",
+   "plain_sha1": "c067803b27215298303430d32dd59a58fa13df18",
+   "ja": "発動効果：ラカンは指定方向に魔法の羽を投げ、最初に命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Grand Entrance#description": {
+   "source_sha1": "511875d801d1a8e5911c500b0cb4819b13449350",
+   "plain_sha1": "adee01c99da5f61aa1cf151cd5a26c7d4b7c7d43",
+   "ja": "発動効果：ラカンは指定地点へダッシュする。到着から0.35秒の遅れの後、周囲の敵に魔法ダメージを与えて1秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Grand Entrance#description2": {
+   "source_sha1": "0fe26903a738756513f99bd333289e89f8ce75a1",
+   "plain_sha1": "469b5222a53a01ae1b6313590e52fe3297ac475b",
+   "ja": "ダッシュ中に移動不能かポリモーフの行動妨害を受けると、ラカンは叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Battle Dance#description": {
+   "source_sha1": "c9499aeb4a036c1b3ca85a142eea992371277ae7",
+   "plain_sha1": "d9f421b3cf18ec7e945ade886f1b191bdc032588",
+   "ja": "発動効果：ラカンは対象の味方チャンピオンに3秒間シールドを付与し、その味方のもとへダッシュして周りを回る。「バトルダンス」は5秒以内なら追加のコストなしで再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Battle Dance#description2": {
+   "source_sha1": "5f7fcee9c47a11e5249d4a772b8b4c5db61d498c",
+   "plain_sha1": "8fedc47ff53a355bdf6d3b210bb36d8b74d0de87",
+   "ja": "再発動：ラカンは一回目の発動と同じ効果を行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Battle Dance#description3": {
+   "source_sha1": "0fe26903a738756513f99bd333289e89f8ce75a1",
+   "plain_sha1": "469b5222a53a01ae1b6313590e52fe3297ac475b",
+   "ja": "ダッシュ中に移動不能かポリモーフの行動妨害を受けると、ラカンは叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/Battle Dance#description4": {
+   "source_sha1": "e661a26484747d16d4c6dd7846c837d2acdc5180",
+   "plain_sha1": "0a9b5e08f896494085cbdd564b9ee17055bf1ec1",
+   "ja": "対象がザヤなら、「バトルダンス」はより遠くから使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/The Quickness#description": {
+   "source_sha1": "7dc47f349bc055dc28a6a93d0a9b37fedd7c6324",
+   "plain_sha1": "5aa090477fb8f8bed6a2550418a29d237f7ed462",
+   "ja": "発動効果：ラカンは4秒間魅惑的な疾走を始め、効果時間中ゴースト状態になって移動速度が75%増加する。この間、ぶつかった敵に魔法ダメージを与えて、一定時間チャームと75%のスロウを与える。同じ敵には一度しか効かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/The Quickness#description2": {
+   "source_sha1": "96699e5acfc491c6a18de7f6568110f085a2d65b",
+   "plain_sha1": "7a37dab6ba20381bf5f8d3e33c32d5eeca3a3ae8",
+   "ja": "敵チャンピオンにぶつかると「みんなオレに夢中」の効果時間が0.25秒延び、これはチャンピオン一体につき一度起こる。最初の敵チャンピオンにぶつかると、ラカンはさらに75%の移動速度の増加を得て、それは0.5秒後から0.5秒ごとに20%ずつ減り、1.5秒かけて60%減った後は15%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rakan/The Quickness#description4": {
+   "source_sha1": "626387e8138358e221ae7755181bb1d11957a716",
+   "plain_sha1": "c5676480632e2090d8db2016769a0685e81a75f8",
+   "ja": "「みんなオレに夢中」の間、ラカンはぶつかっていない敵チャンピオンには通常攻撃できない。ただし、スキルを発動する前に攻撃の指示を出していた場合は除く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Rakan/Fey Feathers#description": {
+   "source_sha1": "e1474b74855aabbda8c64cb140c1d026e1537ebc",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rakan/Gleaming Quill#description2": {
+   "source_sha1": "3d955c88a78d84d3fcd9b75eed15ae305d84d5be",
+   "reason": "residual_markup"
+  }
+ }
+}

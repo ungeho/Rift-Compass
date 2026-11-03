@@ -1,0 +1,133 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Azir/Shurima's Legacy#description": {
+   "source_sha1": "870b647be017e89cf3afeb10e9846a3a4de1fc36",
+   "plain_sha1": "eccf9f86c84d3f8f7da00ff014c7803d678ba9d5",
+   "ja": "固有：敵チームの基地の外のタワーが破壊されるたびに、その跡の上に目印が置かれ、アジールが対象にできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Shurima's Legacy#description2": {
+   "source_sha1": "0f6da3c97b47bc288facbd1a4d8d9a7575649818",
+   "plain_sha1": "6d8e91c72fede859b544f7a37b9590c40faf0832",
+   "ja": "固有 -「Disc of the Sun」：アジールは目印を選び、0.5秒の詠唱時間の後、跡の上に「Sun Disc」を建てられる。「Sun Disc」は5秒かけて組み上がった後に作動する。アジールは、スキルの使用を妨げる行動妨害や、スキルを封じる行動不能を受けている間は、目印で「Sun Disc」を建てられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Shurima's Legacy#description3": {
+   "source_sha1": "a0981e0ba92947abfa318c9b8bf7c6e634bf5173",
+   "plain_sha1": "a1bb2e1e20eaa6eabac8b3bc7f073ee7f3d7fdc1",
+   "ja": "「Sun Disc」は通常のインナータワーと同じように働くが、魔法ダメージを与え、APの40%の増加攻撃力を得て、倒したユニットのキルはアジールのものになる。アジールが生きていないか離れすぎている間、「Sun Disc」の体力は45秒かけて減り、物理防御と魔法防御を100ずつ失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Shurima's Legacy#description4": {
+   "source_sha1": "0a09a2ed8268d92cee941b007e2399c92abedd52",
+   "plain_sha1": "b1daa620d8a926065fbb47ed428142971366f18e",
+   "ja": "「Sun Disc」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Conquering Sands#description": {
+   "source_sha1": "de21896e7c117fedfc3c3a386d7dd2decfe8a9f6",
+   "plain_sha1": "d4a3f1229fa6545d25cd523369f9ddfa95b44c61",
+   "ja": "発動効果：アジールはすべての「Sand Soldier」に指定地点へダッシュするよう命じ、通過したすべての敵と到着時に前方にいる敵に魔法ダメージを与えて、1秒間25%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Conquering Sands#description2": {
+   "source_sha1": "7c381d0239dc0814a635fc26e486a693e79c1f0f",
+   "plain_sha1": "877c9050b7cfa5be5b09c222f9735570f85ea2aa",
+   "ja": "二体目以降の兵士に当たった敵は、追加のダメージもスロウも受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Conquering Sands#description3": {
+   "source_sha1": "30324dba66fe7e4d8a9675f925ec0cafb7b339ef",
+   "plain_sha1": "4a65bc3de136af33e5231234502ee9f939e1cf55",
+   "ja": "このスキルを使用するには、「Sand Soldier」を出している必要がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Arise!#description": {
+   "source_sha1": "196be867da9a505db67ec26acdd2bbaf0f94dd94",
+   "plain_sha1": "71d885dc6af010eeae121306a0eca2fc5e0779b9",
+   "ja": "発動効果：アジールは指定地点に対象指定不可の「Sand Soldier」を呼び出し、兵士は10秒間残って周囲の視界を与える。敵のタワーの射程内では「Sand Soldier」は二倍の速さで消え、アジールが離れすぎると即座に消える。アジールは一定時間ごとに「Sand Soldier」を得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Arise!#description3": {
+   "source_sha1": "cd22b7b3cbe6b6fc2410f9abf7d93457743fa4fd",
+   "plain_sha1": "3a07dabd886b40cbdae012161c10a6bcd8c3dfa0",
+   "ja": "「Sand Soldier」は、建物・ワード・罠を攻撃できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Arise!#description4": {
+   "source_sha1": "8b8dda451702c36b043afc0529733732f0583f8e",
+   "plain_sha1": "73a29289e2be7ff8f283b3053ee92d4a08ac0ad2",
+   "ja": "「Sand Soldier」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Shifting Sands#description": {
+   "source_sha1": "50b1551046118534c7464eb0208cad1a59706f22",
+   "plain_sha1": "5b87a877e02b9bb4b5945c58a3c66652a735a531",
+   "ja": "発動効果：アジールは自身に1.5秒間シールドを付与し、カーソルに最も近い「Sand Soldier」へダッシュして、通り道の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Shifting Sands#description2": {
+   "source_sha1": "afe77185870070d44b15af6319466c4d34482c9e",
+   "plain_sha1": "7b2440fc77d90ca3c4377ddcd8cc0fa3d41dfef5",
+   "ja": "アジールがダッシュで敵チャンピオンにぶつかると、止まって「目覚めよ！」のチャージを一つ得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Shifting Sands#description3": {
+   "source_sha1": "ea1c1920cdea60151fecf5fc24305ac5f3d25d41",
+   "plain_sha1": "8752aad449181a8bf3db24ee6c28157cf74eb5f2",
+   "ja": "このスキルを使用するには、「Sand Soldier」を出している必要がある。アジールはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Emperor's Divide#description": {
+   "source_sha1": "ca124e5447da891e7648d9c28e3a23b52a2eb382",
+   "plain_sha1": "e70e3597b158161072f516d857954bd0d2b787bd",
+   "ja": "発動効果：アジールは自身の175ユニット後ろから兵士の密集隊を呼び出し、最大325ユニット後ろの敵を巻き込みながら、指定方向へ575ユニット突撃させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Emperor's Divide#description2": {
+   "source_sha1": "112a83a00c4d9b233cbb713d84722de1a0490519",
+   "plain_sha1": "8985cc08f75716cb2729589a03c80b824b0ea359",
+   "ja": "突撃に当たった敵は魔法ダメージを受け、1秒かけてアジールの650ユニット前方の線まで押し出される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Azir/Emperor's Divide#description3": {
+   "source_sha1": "9f341b897c2209c2fb3eba1719c20ec1fe52f126",
+   "plain_sha1": "ebab995c84bb8432e569d2977fa862fd9e0d76e3",
+   "ja": "突撃を終えると、兵士は5秒間壁として立ち、敵にとって通れない地形になって周囲の視界を与える。アジールと味方はこの兵士を通り抜けられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Azir/Arise!#description2": {
+   "source_sha1": "c1eb9cbb8d975221289e50eff4065c9eaf50e9df",
+   "reason": "residual_markup"
+  }
+ }
+}

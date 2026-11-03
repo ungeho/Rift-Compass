@@ -1,0 +1,131 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nunu/Call of the Freljord#description": {
+   "source_sha1": "9fb2377d6f153235ec6887bb75b892dbc36cbfbd",
+   "plain_sha1": "06327189b6321b7a98e4e4fcaf3af1ad3e77d370",
+   "ja": "固有：ヌヌ＆ウィルンプが敵チャンピオン・大型モンスター・建物にダメージを与えると、自身と近くの味方チャンピオン一体が4秒間「フレヨルドの呼び声」を得る。味方は攻撃速度の最も高い者が優先される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Call of the Freljord#description2": {
+   "source_sha1": "e0922e6089637ebefa438c8c320bd1695af4c4bd",
+   "plain_sha1": "c9f07bac1ef83fc6110c91ecc805fdab42c7cc61",
+   "ja": "「フレヨルドの呼び声」：攻撃速度が20%、移動速度が10%増加する。ウィルンプの通常攻撃は、前方の扇形の範囲の二次的な対象にも攻撃力の30%の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Call of the Freljord#description3": {
+   "source_sha1": "38e3d23df51a0d4ad1630cddf90b51f6e3c6eba3",
+   "plain_sha1": "5eedbf2df89058869f1ea8b10bdb84f47905b386",
+   "ja": "ヌヌ＆ウィルンプは、同じ敵からは一定時間「フレヨルドの呼び声」を再び発動できない。効果中に続けて発動させると、効果時間が4秒延長される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Consume#description": {
+   "source_sha1": "8fa9e3a97448d799e0053aadb1bfc046ad1d34ac",
+   "plain_sha1": "8042391627e6abb0ba75b517b89cffe58aa857ae",
+   "ja": "発動効果：ウィルンプは対象の敵にかじりつき、ダメージを与えて自身を回復する。ウィルンプの体力が最大体力の50%未満の間は、回復量が50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Consume#description2": {
+   "source_sha1": "638ddb3768af76ca57566f2f1e99d7f25da2774d",
+   "plain_sha1": "cf0e5c9782e504c09a871b365efd41a77769aa36",
+   "ja": "ミニオンとモンスターには確定ダメージを与える。さらに、「丸かじり」で対象のミニオンか小型・中型のモンスターが倒れる場合、ウィルンプは対象を丸のみし、詠唱時間の間にスタンさせて引き寄せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Consume#description3": {
+   "source_sha1": "84097be952bdbf4d8e0cae43f83c37a7757476de",
+   "plain_sha1": "44dd46e5d1973a7d2a710f52ebf7b1a1daa553b4",
+   "ja": "チャンピオンには魔法ダメージを与え、回復量は60%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Biggest Snowball Ever!#description2": {
+   "source_sha1": "d99a7ea84521bccc85f705850f27cb3cfba869e7",
+   "plain_sha1": "3b155db6f2563881b92c11a180f67b04b5c8dd7c",
+   "ja": "雪玉は効果時間の間に、大きさと威力が直線的に増える。溜め始めてから2.5秒で小から中に、5秒で大になる。「超特大の雪玉！」は詠唱中、0.5秒後から再発動でき、詠唱が終わるか中断されると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Biggest Snowball Ever!#description4": {
+   "source_sha1": "2384a84c1f06d125644d23d8e340da7d483a77c9",
+   "plain_sha1": "931369d18ceeaf00dfccebbaba5a9cdc308e0466",
+   "ja": "雪玉は命中した敵のミニオンと小型モンスターを巻き込みながら転がり、ダメージの33.3%を魔法ダメージとして与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Biggest Snowball Ever!#description5": {
+   "source_sha1": "9d22ec93193017245519aab73eb1a2b0ee1d3521",
+   "plain_sha1": "c53de89231fa5c40e29c1343d84670ab507b292a",
+   "ja": "再発動：ウィルンプは雪玉を放し、最大距離まで前方へ転がす。その間、雪玉はそれ以上大きくならず、敵に当たると爆発する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Snowball Barrage#description": {
+   "source_sha1": "4e8cff75e7e15d8a56cbfa009bb59568e5f58118",
+   "plain_sha1": "7f1157f725616acc5789233a72666bd5d05318c5",
+   "ja": "発動効果：ヌヌは0.4秒かけて指定方向に雪玉を3個投げ、それぞれ敵に当たると砕けて、扇形の範囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Snowball Barrage#description2": {
+   "source_sha1": "ac19f8237753f9a6abb0ddcb7e349cb594b1677b",
+   "plain_sha1": "5d3de5bd61eb8e17c48068499dcccae33ebd5233",
+   "ja": "3回命中した敵は1秒間スロウを受ける。一度命中した敵チャンピオンと大型モンスターには4秒間「Snowbound」の印が付き、命中のたびに更新される。「雪玉連射」は3秒以内に追加のコストなしで二回再発動でき、発動の間には1秒のクールダウンがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Snowball Barrage#description3": {
+   "source_sha1": "1011c2018c4fca3b8017815fc938bbfe6fdb3401",
+   "plain_sha1": "1d3e32d427b0cbb32a5f048385aa86292cb2ab73",
+   "ja": "再発動：ヌヌは再び雪玉を投げ、最初の発動と同じ効果を与える。敵が雪玉の命中でスロウを受けるのは一度だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Absolute Zero#description2": {
+   "source_sha1": "8eb2f0e309a265c7805ce8aa29e39c07543ba63a",
+   "plain_sha1": "842bb1a7aa835b73ec7b71723fb1299089afd442",
+   "ja": "「アブソリュート・ゼロ」は詠唱中、0.5秒後から再発動でき、詠唱がどのような形で終わっても自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nunu/Absolute Zero#description3": {
+   "source_sha1": "7e2419283eb0511b4043772724bc71b99f1efed1",
+   "plain_sha1": "28c1fbcea02af3c57c03ec7e4f60027806a36cf8",
+   "ja": "再発動：ヌヌ＆ウィルンプは吹雪を爆発させ、周囲の敵に魔法ダメージを与える（詠唱時間に応じて0%～100%に修正）。影響を受けた敵は0～3秒間（詠唱時間に応じて）スロウを受けたままになり、二人の残りのシールドは3秒かけて減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nunu/Biggest Snowball Ever!#description": {
+   "source_sha1": "d15bef360b82459caa62e2ce1f8721c2221ef7e7",
+   "reason": "residual_markup"
+  },
+  "Template:Data Nunu/Biggest Snowball Ever!#description3": {
+   "source_sha1": "530f8ed5ed50f1e133567f6872f1d7b1fd666cde",
+   "reason": "residual_markup"
+  },
+  "Template:Data Nunu/Snowball Barrage#description4": {
+   "source_sha1": "e6d9bd326e53d30fbb180bf6411bd9d5247f0333",
+   "reason": "residual_markup"
+  },
+  "Template:Data Nunu/Absolute Zero#description": {
+   "source_sha1": "ce58a58665ac9084cdb1609b6e23544e46f08132",
+   "reason": "residual_markup"
+  }
+ }
+}

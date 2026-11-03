@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -76,8 +76,8 @@
   },
   "Template:Data Shaco/Hallucinate#description3": {
    "source_sha1": "67987d8e099a7e7f47840fd8ffcbb273bf5c0281",
-   "plain_sha1": "c1a6a358912f3d2c9bfc423dd18204ccf2d17a5b",
-   "ja": "分身は倒されるか時間切れになると爆発し、周囲の敵に魔法ダメージを与えて、即座に作動する「びっくり箱」を三つ出す。箱は周囲の敵に1秒間（チャンピオン以外には2.2秒間）のフィアーと、0.5秒間（モンスターには0.6秒間、ミニオンには1秒間）のスネアを与える。箱の作動から0.15秒後に、命中した敵の移動速度も下がる。敵チャンピオンの移動速度は固定の100に、チャンピオン以外は固定の60になる。移動速度の低下は、フィアーと同じ時間に0.3秒を足した時間続く。",
+   "plain_sha1": "68194bc39c9aeeedf3daa7c78e2124f0c4d611c6",
+   "ja": "分身は倒されるか時間切れになると爆発し、周囲の敵に魔法ダメージを与えて、即座に作動する小さな箱を三つ出す。箱は周囲の敵に1秒間（チャンピオン以外には2.2秒間）のフィアーと、0.5秒間（モンスターには0.6秒間、ミニオンには1秒間）のスネアを与える。箱の作動から0.15秒後に、命中した敵の移動速度も下がる。敵チャンピオンの移動速度は固定の100に、チャンピオン以外は固定の60になる。移動速度の低下は、フィアーと同じ時間に0.3秒を足した時間続く。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   },
@@ -92,6 +92,27 @@
    "source_sha1": "a2e28fb57df0e61581b0f064b4dfc82b22ac61fa",
    "plain_sha1": "80c7f16812befba969704cd86e03f00c232180b5",
    "ja": "シャコの分身の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Backstab#description2": {
+   "source_sha1": "07355cb0bc918af90098ec7b750472490765c295",
+   "plain_sha1": "288713c360524267c39baa6ce3a27d2661d868f5",
+   "ja": "「幻惑」と「ポイズンダガー」は、敵の背後から命中すると追加の効果がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Two-Shiv Poison#description": {
+   "source_sha1": "3eb029f98053fa67f5f7e03fb3cf389a3291f091",
+   "plain_sha1": "845a446b0e30f1438827ed71921b92a8e6756489",
+   "ja": "自動効果：「ポイズンダガー」がクールダウン中でない間、シャコの通常攻撃は敵に2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shaco/Two-Shiv Poison#description2": {
+   "source_sha1": "5af09f71693b56583c9e6aeaa6b1b0e64e15e346",
+   "plain_sha1": "bbef227e34168beb9a744982df14d8f0b24ff056",
+   "ja": "発動効果：シャコは対象の敵に短剣を投げ、魔法ダメージ（最大体力の30%未満の対象には50%増加）を与えて、3秒間スロウを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

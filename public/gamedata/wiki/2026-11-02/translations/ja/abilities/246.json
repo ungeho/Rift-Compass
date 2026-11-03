@@ -1,0 +1,141 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Qiyana/Royal Privilege#description2": {
+   "source_sha1": "f1d5de47428d21fd404b7c8d52c70c9a6290a251",
+   "plain_sha1": "e30054f3b7d969870434e7a3d855889d1f8af199",
+   "ja": "「大地の力」でエレメントを得ると、別のエレメント（またはエレメントなし）で「女帝の威風」を受けた敵に対する、「女帝の威風」の対象ごとのクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Edge of Ixtal#description": {
+   "source_sha1": "e0d8da6673be62a065a720c94e14b7b413c00cd1",
+   "plain_sha1": "0d9abbbc71e63b1c4fdc7f266206b9b61cb745aa",
+   "ja": "発動効果：キヤナは指定方向に前方へ斬りつけ、直線上の敵に物理ダメージを与える。最初の一体より後の対象には75%になる。「イシュタルの切先」はモンスターに160%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Edge of Ixtal#description2": {
+   "source_sha1": "aa66cb45df5ac82929fc44f6f8ead60ef908d336",
+   "plain_sha1": "1ea421dfed2c3f7d1599945edc7dcdfae035475d",
+   "ja": "「大地の力」でエレメントを得ると、「イシュタルの切先」のクールダウンがリセットされ、「エレメントの怒り」に強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Edge of Ixtal#description3": {
+   "source_sha1": "9a2c34c7347c6830d3d9b9724f060a57993de0fb",
+   "plain_sha1": "ae8b00269d4e9c8918a677b4f0b10bb17f2ac7b7",
+   "ja": "敵チャンピオンへの「俊烈」のダッシュ中に使い、ダッシュの終わりに対象がキヤナの150ユニット以内にいれば、「イシュタルの切先」は自動でその対象を狙う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Elemental Wrath#description": {
+   "source_sha1": "a277fe6f48264cd74a78c4393f758dc06f59c30c",
+   "plain_sha1": "a8c6731cb686081a838710638f3c56fcf7eafad9",
+   "ja": "発動効果：キヤナは指定方向に刃を投げ、刃は敵に当たるか最大射程で直線状に爆発し、現在のエレメントを消費して刃を追加の効果で強化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Elemental Wrath#description2": {
+   "source_sha1": "f90fa17297980bfa9ed75b55c2e21a15e5d43b88",
+   "plain_sha1": "cc0ec8489930726e13637b805a4c5c4ca5762f68",
+   "ja": "命中した敵は「イシュタルの切先」のダメージを受け、最も近い敵より後の敵には75%になる。「エレメントの怒り」はモンスターに160%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Elemental Wrath#description3": {
+   "source_sha1": "8e4bdfa83161bd363d6ba1129fa330b104f68279",
+   "plain_sha1": "748a256062eedd3e83c9e1048636aabd669f15f4",
+   "ja": "「Brush」：刃はキヤナの周囲に最大3秒間続く草地を作り、キヤナが攻撃するか、「大地の力」以外のスキルを使うか、草地を出るまで、インビジブルと20%の移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Elemental Wrath#description4": {
+   "source_sha1": "1160251f31a013e5df278561fdfe58039da24bd3",
+   "plain_sha1": "b6d5d2fa9dbb5513947bdcc9ec7a24e9bc59c82d",
+   "ja": "「River」：爆発は命中した敵に0.5秒間スネアを与え、その後1秒間20%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Elemental Wrath#description5": {
+   "source_sha1": "88bdaa6cee2f7414c8c3c98e3d757c8b3554f939",
+   "plain_sha1": "c588235a8d0995da2d3dd3710ecdfd918d4a4f2a",
+   "ja": "「Terrain」：爆発は最大体力の50%未満の敵に60%増加したダメージを与える。最も近い敵より後の対象でしきい値未満のものは、代わりに35%増加したダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Terrashape#description": {
+   "source_sha1": "dbe6ad72bdfdcf017ec42a727947016ced8aa29e",
+   "plain_sha1": "6c902c1cea4f5c22c04be73e1ead3d7b6ec4e7cf",
+   "ja": "自動効果：エレメントを持っている間、キヤナは攻撃速度が増加し、通常攻撃の射程が25増加して、通常攻撃（攻撃時効果）と基本スキルに追加の魔法ダメージを得る。戦闘から離れて、今持っているエレメントの近くを移動している間は移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Terrashape#description3": {
+   "source_sha1": "b17407dec040c4a5abddb678da3a1378d27f653f",
+   "plain_sha1": "cdf63f77e2089d3bf8dd7b03fa9e64b4921ddc47",
+   "ja": "このスキルを使用するには、対象のエレメントが必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Terrashape#description5": {
+   "source_sha1": "a0a1035bc4a2d77351999dfd0de8e1e02103c8d5",
+   "plain_sha1": "2839886176759e6aaa663ad4aae2017d3b9eeb2a",
+   "ja": "キヤナはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Audacity#description": {
+   "source_sha1": "584fa140af6e85cd67252d6dd499e4c18e30bc3a",
+   "plain_sha1": "3be75f1a13636500b82e285a24777ff3e46272a6",
+   "ja": "発動効果：キヤナは対象の敵の方向に決まった距離ダッシュする。到着時に対象が範囲内にいれば、物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Audacity#description2": {
+   "source_sha1": "a0a1035bc4a2d77351999dfd0de8e1e02103c8d5",
+   "plain_sha1": "2839886176759e6aaa663ad4aae2017d3b9eeb2a",
+   "ja": "キヤナはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Supreme Display of Talent#description": {
+   "source_sha1": "94351a02d492c24d745b5bae9019ce7df50d67c4",
+   "plain_sha1": "6cf71139a69c279de988cf2ab541470f214aaddb",
+   "ja": "発動効果：キヤナは指定方向に突風を放ち、命中した敵を375ユニットノックバックさせ（地形は越えない）、「Terrain」に当たると止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Qiyana/Supreme Display of Talent#description2": {
+   "source_sha1": "66e9645a1c3be66c557a4f79dec5f6a94b9a0f7c",
+   "plain_sha1": "50e4b9c35be578d3bc910fa45d45f5814c6b3efd",
+   "ja": "突風は通過した「River」と「Brush」、および到達した「Terrain」の縁に沿って連鎖する衝撃波を起こし、命中した敵に物理ダメージを与えて、0.5～1秒間（近さに応じて）スタンさせ、通り道の範囲の視界を一瞬与える。対象の体力の割合に応じたダメージは、モンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Qiyana/Royal Privilege#description": {
+   "source_sha1": "98bf5cde12adcf60a72223267f27d7618ce1f91c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Qiyana/Terrashape#description2": {
+   "source_sha1": "56c7060e2e565e843f72a028a637d281ad7777bd",
+   "reason": "residual_markup"
+  },
+  "Template:Data Qiyana/Terrashape#description4": {
+   "source_sha1": "751b6c7df47c0485e4c285f878b2deddff3ac803",
+   "reason": "residual_markup"
+  }
+ }
+}

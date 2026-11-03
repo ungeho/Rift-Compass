@@ -1,0 +1,77 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Taric/Starlight's Touch#description": {
+   "source_sha1": "910d33924fab487fab186d010180136cd3f7b3a0",
+   "plain_sha1": "5151873412f34fa80ca2f17339a0ed2bcc1eb261",
+   "ja": "発動効果：タリックは、一定時間ごとに上限まで蓄える「スターライトタッチ」のチャージ一つにつき、自身と周囲の味方チャンピオンを25（+ APの15%）（+ 自身の最大体力の1%）回復する。「ブラバド」で強化された攻撃は、それぞれチャージを一つ与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Starlight's Touch#description2": {
+   "source_sha1": "682f8a85bcce814e94ca988c94c24f4242a6f16c",
+   "plain_sha1": "2bda8c5e18e3c121245d001af255aadd24c04a5b",
+   "ja": "「スターライトタッチ」は5チャージで最大125（+ APの75%）（+ タリックの最大体力の5%）回復できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Bastion#description": {
+   "source_sha1": "e2deea9a29dfd23622435ca9976543bab8941a2f",
+   "plain_sha1": "26a9726385e03e3c004b204cbe937a0f62284d77",
+   "ja": "自動効果：タリックは物理防御が増加し、「バスティオン」で結ばれた味方との間にテザーを作る。テザーが続く間、その味方も物理防御の増加を得て、タリックのスキルがその味方からも同じように放たれるが、効果は重ならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Bastion#description2": {
+   "source_sha1": "6a92f7bec7e4e74f9a50df36935d938ceaa84315",
+   "plain_sha1": "19e56e514de8eaf83343b9a0187dc7632779d5f7",
+   "ja": "発動効果：タリックは自身と対象の味方チャンピオンに2.5秒間シールドを付与し、その味方と「バスティオン」で結ばれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Bastion#description3": {
+   "source_sha1": "13e1bb812b6d92c30ddfeda821c621d3e308fbee",
+   "plain_sha1": "fa622044aedb4e91860b72d008f5d0424de0951c",
+   "ja": "タリックは自身に使ってシールドを得ることもできる。自身に使ったときにテザーがなければ、最も近い味方とつながる。同様に、味方とつながっている状態で自身に使うと、自身と味方の両方がシールドを得る。結ばれるのは一度に一人の味方だけで、新しい味方を選ぶと前の結びつきは置き換わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Dazzle#description": {
+   "source_sha1": "e5ab4af779a72f6c45d1b3fa601731654d11949d",
+   "plain_sha1": "bb51eef2f5a01580dec446b2fe1a3a06529d503e",
+   "ja": "発動効果：タリックは1秒かけて構え、周囲のユニットをゴースト状態にした後、指定方向に星の光の光線を放ち、命中した敵に魔法ダメージを与えて1.5秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Dazzle#description2": {
+   "source_sha1": "f06fc2f4e369edd5de79d2f72e546ae045d86d54",
+   "plain_sha1": "27c3fd18a20b6711be84163c8494bc9fa07ca76f",
+   "ja": "タリックは「ダズル」中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taric/Cosmic Radiance#description": {
+   "source_sha1": "b6d97241032676e698de3fd0a966d89aea33b635",
+   "plain_sha1": "7f9a4f24f608eb17a22c43322353d2904ee83c89",
+   "ja": "発動効果：タリックは天から星を呼び、星は2.5秒かけて降りてくる。その後、タリックと周囲の味方チャンピオンは2.5秒間無敵になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Taric/Bravado#description": {
+   "source_sha1": "2ed5b61d7b2c846b2f8e07c755277737b3aa49ed",
+   "reason": "residual_markup"
+  }
+ }
+}

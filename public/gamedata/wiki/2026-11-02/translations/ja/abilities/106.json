@@ -1,0 +1,133 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Volibear/The Relentless Storm#description": {
+   "source_sha1": "aa7415f2e0eccd2a5a5fb18dfe2e79d0c873817a",
+   "plain_sha1": "1bc04789bed7c56ddf0ec2bf7c521c5af4545e8f",
+   "ja": "固有：ボリベアが通常攻撃かスキルで少なくとも一体の敵にダメージを与えるたびに、6秒間「無慈悲の嵐」のスタックを得る。ダメージのたびに更新され、最大5回まで重なる。5スタックで「Lightning Claws」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/The Relentless Storm#description2": {
+   "source_sha1": "a849545d8d32ad069c7f292d3c0f14a8fb271699",
+   "plain_sha1": "a61bd095537b9351d7a8fbb885eb3c5f046fdb6c",
+   "ja": "「無慈悲の嵐」：スタックごとに攻撃速度が5%（+ AP 100ごとに4%）増加し、最大25%（+ AP 100ごとに20%）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Thundering Smash#description": {
+   "source_sha1": "84d7462f8fab11914dda39f3145b3b074bd0fcd0",
+   "plain_sha1": "072275955e32eb5851962a954e6c0fb18fab55c2",
+   "ja": "発動効果：ボリベアは四つ足になり、4秒間ゴースト状態になって移動速度が増加する。近くの見えている敵チャンピオンの方を向いている間は二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Thundering Smash#description2": {
+   "source_sha1": "e0b4bd66f219330536c8a09a0aa1e39657e6c21e",
+   "plain_sha1": "f0e1735729f0853640ea0038022530ed590a6e0a",
+   "ja": "この間、ボリベアの次の通常攻撃は攻撃モーションの時間が修正され、強化されて攻撃モーションが中断されなくなり、射程が25増加し、対象に飛びかかって追加の物理ダメージを与え、1秒間スタンさせる。このダメージにはライフスティールが適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Thundering Smash#description3": {
+   "source_sha1": "079cbc04a7e9fce23df6ed5c81725774735c39d8",
+   "plain_sha1": "c71e180cc2b6147ffb4d10c95a2848b11c00175c",
+   "ja": "「稲妻の猛攻」の間にボリベアが敵から移動不能かポリモーフを受けると、効果は早く終わり、クールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Thundering Smash#description4": {
+   "source_sha1": "3516a4a1a1e6c6e3580187d752b3eda29aaa1fc7",
+   "plain_sha1": "661ef7edf8ed75f8ae84d5277b3c9b04ab0b3e33",
+   "ja": "「稲妻の猛攻」はボリベアの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Frenzied Maul#description": {
+   "source_sha1": "a5218434a9d1441269aa9b452fa3c5f2bafe1fdc",
+   "plain_sha1": "a44dcbde218705d36260aea328a6d42fd801b94f",
+   "ja": "発動効果：ボリベアは対象の敵を爪で切り裂き、物理ダメージを与えて、攻撃時効果と攻撃開始時の効果を発動し、対象に8秒間「Wounded」の印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Frenzied Maul#description2": {
+   "source_sha1": "c2c09781aff20de1d0eb8c761a2ce2318c9ceccc",
+   "plain_sha1": "74dfcac8410798a8db807bafc29a6ce9e36245cf",
+   "ja": "「Wounded」のボーナス：対象がすでに「Wounded」なら、ボリベアは代わりに噛みつき、50%（+ 増加攻撃力100ごとに25%）増加したダメージを与えて、自身を回復する。ミニオンに対しては回復量が半分になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Frenzied Maul#description3": {
+   "source_sha1": "7ed711e835e7aea2ebb2f53a75045dadf7fe266b",
+   "plain_sha1": "5d9c419fd78fe590b560220256ad6a08702a2e3b",
+   "ja": "「激昂の斬撃」にはライフスティールが適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Sky Splitter#description": {
+   "source_sha1": "cbcfa3dcbae21ab43d6cab16cf62b663a45a963b",
+   "plain_sha1": "b66f382452f8267722bc7e582d95b6265735f6e3",
+   "ja": "発動効果：ボリベアは2秒の遅れの後に指定地点に雷を落とし、遅れの最初の1秒が過ぎた後、その範囲の視界を1秒間与える。落雷の範囲にボリベアがいると、最大体力の14%（+ APの75%）に等しいシールドを3秒間得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Sky Splitter#description2": {
+   "source_sha1": "7f45b6c4ed484981a3abb1bc8e895666ad2c0eb9",
+   "plain_sha1": "9c717ffdc8f6c076f7951eb084669851ea8b48c6",
+   "ja": "雷は命中した敵に魔法ダメージ（チャンピオン以外には上限あり）を与え、2秒間40%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Stormbringer#description": {
+   "source_sha1": "41b1f9eae4018f06e3f2b1b663a6ee26b5170450",
+   "plain_sha1": "00631b87e97a49aaee3e65f37d36a8641867309e",
+   "ja": "発動効果：ボリベアは12秒間「嵐を起こす者」を得て、移動系の効果を受けない状態で1秒かけて指定地点へ跳び、移動中は半径500の範囲の視界を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Stormbringer#description2": {
+   "source_sha1": "85ff49dff31a79fda3567ba9e52a0275c0115ae8",
+   "plain_sha1": "b8924892190521cb5f8c2f55aecee47de46cc1b6",
+   "ja": "「嵐を起こす者」：ボリベアはゴースト状態になり、増加体力、通常攻撃の射程50の増加、「激昂の斬撃」の射程25の増加、サイズの35%増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Stormbringer#description3": {
+   "source_sha1": "89df27eac71a10a572844cc05c2415944941c168",
+   "plain_sha1": "d950331624518ea197e7b8757882e52c051eba77",
+   "ja": "ボリベアは1秒後に着地し、周囲の敵に1秒かけて減衰する50%のスロウを与える。中心にいる敵は物理ダメージも受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Stormbringer#description4": {
+   "source_sha1": "f7b32a04d592a62714d1b3d78d315bd11ad4bc6a",
+   "plain_sha1": "1901680a07f718b7a92f25e67d75ae06b590e4cb",
+   "ja": "さらに、範囲内の敵のタワーを一定時間無効化して攻撃できなくし、同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Volibear/Stormbringer#description5": {
+   "source_sha1": "404a9dfd51f94f9b6e4e1979d77cbb352eb35c0d",
+   "plain_sha1": "dfbe4bb56cb99f09541cca20a72e65434b234292",
+   "ja": "跳躍の間、「稲妻の猛攻」の効果時間は止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Volibear/The Relentless Storm#description3": {
+   "source_sha1": "1980aea4e98ddbc7dc99305d2a55894e852273ca",
+   "reason": "residual_markup"
+  }
+ }
+}

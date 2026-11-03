@@ -158,7 +158,8 @@ export function wikiPlain(text: string | undefined | null): string {
       const name = (parts[0] || "").toLowerCase();
       const args = parts.slice(1).filter((x) => !/^[a-z]+\s*=/.test(x));
       if (name === "sti") return args[1] ?? args[0] ?? ""; // {{sti|種類|表示する文}}
-      if (name === "sbc" || name === "as" || name === "fd" || name === "g") return args[0] ?? "";
+      if (name === "g") return args[0] ? `${args[0]} gold` : "gold"; // {{g|N}} はゴールドの数
+      if (name === "sbc" || name === "as" || name === "fd") return args[0] ?? "";
       if (name === "ap" || name === "pp" || name === "rd") return args.join(" / ").replace(/\s+to\s+/g, "〜");
       if (name === "st") return `${args[0] ?? ""}: ${args[1] ?? ""}`;
       if (name === "tt") return args[0] ?? "";

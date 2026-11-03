@@ -1,0 +1,140 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ornn/Living Forge#description": {
+   "source_sha1": "3284c5133f3bb827f1cd0eca581f5109c67fbdb9",
+   "plain_sha1": "b36ab035189c977323c4d0fd07452be3590e0593",
+   "ja": "固有 -「Living Forge」：オーンはショップの範囲外でも、戦場のどこからでも、鍛造することでショップのアイテムを購入できる。消耗品以外のどのアイテムも鍛造でき、おすすめのアイテムをすばやく鍛造するための「Forge Menu」も表示される。アイテムを購入しようとすると鍛造を始め、4秒間詠唱する。詠唱を終えるとアイテムを作り、そのゴールド（gold）のコストを払う。敵チャンピオンかタワーからダメージを受けると詠唱は中断される。詠唱を始めた後、「Living Forge」は4秒間使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Living Forge#description2": {
+   "source_sha1": "201386c5e2ef42fe3cf3d642a42dba15be4684d7",
+   "plain_sha1": "bdd88d76aacbe2b5da5b9e304e56e80e01e0ca86",
+   "ja": "固有 -「Master Craftsman」：オーンは鍛冶の技で、自身と味方が持つほとんどのレジェンドアイテムを「Masterwork」アイテムに強化し、アイテムの強化できるステータス全体のゴールド価値を、均等に分けてちょうど1000 ゴールド（gold）分上げる。オーンがレベル13になると、インベントリ内の最初の対象のレジェンドアイテムが自動で強化される。13より後で18より前のレベルごとに（レベル14～17、合計4回、味方一人につきゲーム中一度）、オーンは味方チャンピオンのインベントリ内の最初の対象のレジェンドアイテムを「Masterwork」版に強化できる。600の範囲内で味方を選び、「Living Forge」の詠唱を行うことでアイテムの強化を鍛造する。さらに、オーンはすべての要因からの物理防御の増加・魔法防御の増加・増加体力を10%増やし、レジェンドアイテムを「Masterwork」に強化するたびにさらに4%増え、最大5回の強化の後は各ステータスで合計30%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Living Forge#description4": {
+   "source_sha1": "9a6f6a63c440126f851be397d3ef7908b754006d",
+   "plain_sha1": "6e6ec58778dd8a530b1de118851d244c54ed4bb8",
+   "ja": "「Masterwork」の強化は、チャンピオンのインベントリの各スロット（スロット1～6）を順に調べて対象のレジェンドアイテムを探し、最初に見つかった対象のアイテムを強化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Volcanic Rupture#description": {
+   "source_sha1": "81a4653a2e4ef7794ab9b26f4a15a182549ec22e",
+   "plain_sha1": "9ae743c706471bd2b14d8559bae93b8bc65cd282",
+   "ja": "発動効果：オーンは指定方向に地割れを走らせ、命中した敵に物理ダメージを与えて、2秒間40%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Volcanic Rupture#description2": {
+   "source_sha1": "7b1521203b254d6f87440e73d681d29134ee84d8",
+   "plain_sha1": "f693629a5b1d538a24c1842c50d826f94e5b187e",
+   "ja": "地割れは最大射程か、最初に当たった敵チャンピオンの200ユニット後ろで止まる。1.125秒の遅れの後、その位置に溶岩の柱が噴き出して敵を脇へ押しのけ（地形は越えない）、4秒間通れない地形として残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Volcanic Rupture#description3": {
+   "source_sha1": "e1b3f7c10cb2f00a87efb736c419dedf5f70abc4",
+   "plain_sha1": "31e22321bb08e4207e8e5dbdd536594558fc1fb3",
+   "ja": "「灼熱の突撃」のダッシュ中は、柱は消えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Bellows Breath#description": {
+   "source_sha1": "4ef04c85fddae148598eaacde5a444b89fc75da0",
+   "plain_sha1": "113fec7a0ea3c4c65bc9ec6336b1b645aadaa7ed",
+   "ja": "発動効果：オーンは0.75秒かけて指定方向に前進し、効果時間中は移動系の効果を受けず、行動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Bellows Breath#description2": {
+   "source_sha1": "00bb19d70c07dc4077ac77f8efa32e0acb08c7b2",
+   "plain_sha1": "8398319467abf3e64ab6149fb631ab235605b8d9",
+   "ja": "前進中、オーンは前方の扇形に炎を吐き、命中した敵に0.15秒ごとに魔法ダメージを与える。最後の炎は少し遠くまで届き、3秒間「Brittle」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Bellows Breath#description3": {
+   "source_sha1": "35b9c358cca59a06dc8f73e220bd2161cb528a70",
+   "plain_sha1": "5509855abff1eff5d6fdd6212b962f337d1ac668",
+   "ja": "「ふいごの息」にはダメージの最低値があり、それがミニオンへのダメージにもなる。モンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Searing Charge#description": {
+   "source_sha1": "c23cdaf53e94696b7700a037c7ff96af60070f03",
+   "plain_sha1": "986543c6f076ad91f66f8f885e438424ff876fe7",
+   "ja": "発動効果：オーンは指定方向に突進し、通過した敵に物理ダメージを与えて、地形にぶつかると止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Searing Charge#description2": {
+   "source_sha1": "effdc6dfdf1574c2e8843c35a565a8efa6709ecb",
+   "plain_sha1": "a5e8029c4bbd11c31b47e92d569f7b7520ab459b",
+   "ja": "突進中に地形にぶつかると、オーンは衝撃波を起こして周囲の敵を1.25秒間ノックアップさせてスタンさせ、突進がまだ当たっていなかった敵には同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Searing Charge#description3": {
+   "source_sha1": "b24a094bd06b9071ad30d8548fdcf2662269014b",
+   "plain_sha1": "830812159d23ada7212f8f169b07504d25d36dc3",
+   "ja": "衝撃波は「溶岩隆起」で作られた柱を壊し、敵チャンピオンが作った地形を一部壊す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Searing Charge#description4": {
+   "source_sha1": "0e55682b5f88301c4ea21d842792d4d7c4624fe7",
+   "plain_sha1": "4c68ccbd44d69f9f4c8cb55716810af5baf5fd49",
+   "ja": "ダッシュが終わった後、オーンは0.5秒間行動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Call of the Forge God#description": {
+   "source_sha1": "af9760c550fad80da7c5a61e329b6fca5cc8d86b",
+   "plain_sha1": "1eefda0fcd528c92f9611fd100aea8c65b95875c",
+   "ja": "発動効果：オーンは角笛を鳴らし、指定方向の最大射程に溶岩の精霊を呼び出す。精霊は加速しながらオーンが発動した位置へ突進する。精霊は通過した敵に魔法ダメージを与えて、2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Call of the Forge God#description2": {
+   "source_sha1": "8f50db8423d3ca335ef846ef0edd600dd572ce22",
+   "plain_sha1": "6e887789a4cf795447778945cf61b5b2cfccbcbd",
+   "ja": "精霊がいる間、1.25秒後から「鍛冶神の呼び声」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Call of the Forge God#description3": {
+   "source_sha1": "223c535449dcdda894da026692d202080e604443",
+   "plain_sha1": "54d9d762298180d884effad7fb50c0c9b996b113",
+   "ja": "再発動：オーンは指定方向にダッシュする（地形は越えない）。精霊にぶつかると、精霊を同じ方向へ突進させる。精霊は通過した敵に同じダメージを与えて、1秒間ノックアップさせてスタンさせ、最初に命中した敵チャンピオンより後は0.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ornn/Call of the Forge God#description4": {
+   "source_sha1": "2751e43b7690d2ab58c890a0a0a0ca1ca09bdf6d",
+   "plain_sha1": "40050a10fb5a51e7a057729aaa6978545399e84f",
+   "ja": "通過のたびに対象に3秒間「Brittle」を与え、同じ敵には一度しか効かない。精霊は進みながら、軌道の周りの視界を一瞬与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Ornn/Living Forge#description3": {
+   "source_sha1": "df56a35cb28f5861d5fed9f292e4d61b8da260f9",
+   "reason": "residual_markup"
+  }
+ }
+}

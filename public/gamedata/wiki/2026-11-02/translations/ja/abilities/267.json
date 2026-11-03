@@ -1,0 +1,67 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nami/Surging Tides#description": {
+   "source_sha1": "9ef36acc44d7440d1ab5825468c648e8b1ca9c18",
+   "plain_sha1": "1b42ae5cfc0d8cf1b80aafddd94c97366718048b",
+   "ja": "固有：ナミのスキルは命中した味方チャンピオンに、1.5秒かけて減衰する100（+ APの25%）の移動速度の増加を与える。「海神の舞」からの増加は二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nami/Aqua Prison#description2": {
+   "source_sha1": "2950c678e3e268e8768e699368dda7ee85c8a0ca",
+   "plain_sha1": "bc72556a5e4436c05d4fa9d15c51d487e792bf22",
+   "ja": "味方チャンピオンには、少し広い範囲で「さざなみの後押し」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nami/Ebb and Flow#description": {
+   "source_sha1": "c3936a42c522bb25aa6b2258bcb2fbb6c627b6a3",
+   "plain_sha1": "8b9b3f58f332b1c0e1690164b81051346df048f6",
+   "ja": "発動効果：ナミは対象のチャンピオンか自身に水の流れを放ち、流れはその後、まだ影響を受けていない近くのチャンピオンへ最大二回跳ね、敵と、味方およびナミの間を交互に移る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nami/Ebb and Flow#description2": {
+   "source_sha1": "c641b6f276f2625e7b024318e99cad9aafd8670f",
+   "plain_sha1": "1015241e31e7c149d8dcf0aaf58c92e7a6ed3725",
+   "ja": "「潮の流れ」は味方を回復し、敵に魔法ダメージを与え、跳ねるたびに次の効果が-20%（+ AP 100ごとに15%）変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nami/Tidecaller's Blessing#description": {
+   "source_sha1": "03f92ef7bc594632503c501b88f03bc55fcadee1",
+   "plain_sha1": "3353606f72baa676c5fec3570217379cec50eed7",
+   "ja": "発動効果：ナミは自身か味方チャンピオンを6秒間祝福し、次の3回の通常攻撃かスキルを強化して、それぞれ追加の魔法ダメージを与え、敵に1秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nami/Tidecaller's Blessing#description2": {
+   "source_sha1": "06591c1f7ab6a0bf5fb375a4808d61a5d064e502",
+   "plain_sha1": "c102e06fd470d3097a8f90b75ac01a1fecd489a0",
+   "ja": "範囲ダメージを与える強化されたスキルは、チャンピオン以外には追加ダメージの33%～66%（レベルに応じて）しか与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nami/Aqua Prison#description": {
+   "source_sha1": "0af04203ccf68006a342eae9b72dc7c0e1f5cae0",
+   "reason": "residual_markup"
+  },
+  "Template:Data Nami/Tidal Wave#description": {
+   "source_sha1": "3153e23319410bbc9a71dfb0c4f4d588d8aa4481",
+   "reason": "residual_markup"
+  }
+ }
+}

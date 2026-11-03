@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Sylas/Petricite Burst#description": {
+   "source_sha1": "becc934b9888baf0987dd37b348fa41076a62b4e",
+   "plain_sha1": "020577273e09aa070540f775e77188ffc052b2a7",
+   "ja": "固有：サイラスがスキルを使うたびに、4秒間「Unshackled」のスタックを得る。使うたびに効果時間が更新され、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Petricite Burst#description2": {
+   "source_sha1": "5dbc160120002f7fb832d56cd1d94cde70ee894d",
+   "plain_sha1": "2fd3508c95e8775e7e531573daa317afe995869f",
+   "ja": "「Unshackled」：サイラスの次の通常攻撃は攻撃速度が125%増加し、強化されて攻撃モーションが中断されなくなり、スタックを一つ消費して鎖を周囲に振り回し、主対象に攻撃力の130%（+ APの30%）の魔法ダメージ、周囲の敵に攻撃力の40%（+ APの20%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Petricite Burst#description3": {
+   "source_sha1": "313ab2ec062bf027904e326af9ceadc362ab5010",
+   "plain_sha1": "0b1f6b3e4e90902d723067967657093defd8b30e",
+   "ja": "「Unshackled」はモンスターに115%のダメージを与え、副対象で体力が25未満になるミニオンは処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Chain Lash#description": {
+   "source_sha1": "c0bd891bada65b4c0420c96a9b1cd31327577f9e",
+   "plain_sha1": "e90564279565d4c1d9f0b1c141f85efd2187b5c0",
+   "ja": "発動効果：サイラスは二本の鎖を振り出し、鎖は指定地点で交差してその先の最大射程まで伸び、命中した敵に魔法ダメージを与えて、1.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Chain Lash#description2": {
+   "source_sha1": "e97237a177f0f1ee4324e323d5390e1429e863de",
+   "plain_sha1": "9c11e40e8f43fa3f0958b46ca7a79e85401a9205",
+   "ja": "0.6秒の遅れの後、鎖の交点が爆発して中の敵に魔法ダメージを与える。ミニオンには40%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Kingslayer#description": {
+   "source_sha1": "dd1735f6505356b583e289c59303081e26d02f51",
+   "plain_sha1": "b116115971fedfddf6461d62108c5d8e3e097129",
+   "ja": "発動効果：サイラスは対象の敵の位置の手前へダッシュし、その敵を打って魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Kingslayer#description2": {
+   "source_sha1": "32a3a7188eb198ee200da0f0f4078818877e74e2",
+   "plain_sha1": "2af24c3cfd3cd22f971d755b8ee79c70b4221f3e",
+   "ja": "これがチャンピオンにダメージを与えると、サイラスは回復もし、回復量は減少体力に応じて0%～100%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Abscond#description": {
+   "source_sha1": "d677d25cff6a0c914c644b8be9bbcd01049c368d",
+   "plain_sha1": "11d78ef10880ed801ae834c96f977cf1fed24bac",
+   "ja": "発動効果：サイラスは指定地点へダッシュする。「逃亡」の使用から0.2秒の遅れの後、3.5秒以内に「拉致」を使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Abscond#description2": {
+   "source_sha1": "004dc78760b99dc9e5a44b24a95e762eff98c6a8",
+   "plain_sha1": "a2170d8a02ba3c4e26e9d20bd9508042a4f17fec",
+   "ja": "ダッシュ中に「王殺し」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Abduct#description": {
+   "source_sha1": "188dabfa5cff45dd14adfa01afe484fb3d0ee37c",
+   "plain_sha1": "f3357b88a3fbd136d72fa5cee583deaed92c5d3a",
+   "ja": "発動効果：サイラスは指定方向に鎖を振り出し、最初に命中した敵に魔法ダメージを与えて、0.5秒間可視化してスタンさせる。対象に当たると、サイラスはその位置へダッシュし、到着時に0.5秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Abduct#description2": {
+   "source_sha1": "988ed46f7421c6f5f6213b1cc8169c4d97f706b4",
+   "plain_sha1": "cf03f38553f18ac94e9118e70863258844ea73b5",
+   "ja": "鎖が飛んでいる間、サイラスは「鎖の鞭」を使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Hijack#description": {
+   "source_sha1": "958e3827766e22362b30bfeb0a0f99883b444aab",
+   "plain_sha1": "87c5ed0718b5917ef6121856452c18637f5643e4",
+   "ja": "発動効果：サイラスは対象の敵チャンピオンに鎖を放ち、そのアルティメットスキルの複製を得て、対象を0.825秒間可視化する。サイラスは一定時間同じチャンピオンを再び選べず、奪ったアルティメットスキルを最大90秒間保持でき、その間「乗っ取り」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Hijack#description2": {
+   "source_sha1": "806f7f920bfe1c35948450dab4b419b3f7fc0892",
+   "plain_sha1": "56a21b260066a618ab5f42ce9834e43e077f873a",
+   "ja": "再発動：サイラスは奪ったアルティメットスキルをコストなしで使い、その効果は「乗っ取り」のランクとサイラス自身のステータスに応じて変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sylas/Hijack#description3": {
+   "source_sha1": "3a1e84ddb59786fab4f577cfe982921ab6e67da7",
+   "plain_sha1": "37408e57804a1ae865c92ca3cc44ac17ad70475d",
+   "ja": "魔力で伸びない、奪ったアルティメットスキルとスキルは、攻撃力の係数が魔力の係数に変換され、それぞれ合計攻撃力1%ごとにAP 0.6%、増加攻撃力1%ごとにAP 0.4%で伸びる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Sylas/Petricite Burst#description4": {
+   "source_sha1": "374a3feb1e59ea1bdc31cecdd455ff530b07960a",
+   "reason": "residual_markup"
+  }
+ }
+}

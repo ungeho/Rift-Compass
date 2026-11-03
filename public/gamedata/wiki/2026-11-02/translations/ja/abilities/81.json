@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ezreal/Rising Spell Force#description": {
+   "source_sha1": "dfd30f5dc7dbc26790d3cc6b4ba040e6b4b33c23",
+   "plain_sha1": "48356b80f976b376a0018f2c0205d73c5942a7d9",
+   "ja": "固有：エズリアルはスキルが命中した敵一体ごとに「ライジングスペルフォース」のスタックを得る。スタックは6秒間続き、命中のたびに更新され、最大5回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Rising Spell Force#description2": {
+   "source_sha1": "f36475df16fa4b5bb6e3823b38830dccb6ca356c",
+   "plain_sha1": "9353cd81d4c2bc562416729c10b9ce9872025452",
+   "ja": "「ライジングスペルフォース」：スタックごとに攻撃速度が10%増加し、最大50%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Mystic Shot#description": {
+   "source_sha1": "e0c48048e356e1b28630623c6cfe28afce4836de",
+   "plain_sha1": "7145961df13e90f149f9df94c645872008a975b1",
+   "ja": "発動効果：エズリアルは指定方向にエネルギーの弾を撃ち、最初に命中した敵に物理ダメージを与えて、攻撃時効果と攻撃開始時の効果を発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Mystic Shot#description2": {
+   "source_sha1": "99069ee80fb14dcf4a95f5f137caeb59dbacbe71",
+   "plain_sha1": "2af6f62dcefeef8d3fdb7868e506be0cf248493a",
+   "ja": "「ミスティックショット」が敵に命中すると、「ミスティックショット」を含むエズリアルのスキルの残りクールダウンが1.5秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Essence Flux#description": {
+   "source_sha1": "1c3c5c61c82caa8ff26fd17618f7df4caa1a65e3",
+   "plain_sha1": "18b853de59bd2acab644ced822159eb3a48b35f4",
+   "ja": "発動効果：エズリアルは指定方向に玉を撃ち、最初に命中した敵チャンピオン・エピックモンスター・建物に4秒間印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Essence Flux#description2": {
+   "source_sha1": "d21916b2aaf75dcf445d5b3b37145b6a2938413c",
+   "plain_sha1": "f11d7455090807e545ebf3484b9e8effdd50a53b",
+   "ja": "その対象への次の通常攻撃かスキルが印を起爆させ、追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Essence Flux#description3": {
+   "source_sha1": "fee2d2f3645a14b8bea58e48083de3580bc6061a",
+   "plain_sha1": "0381ec70e113c5092678572030d3257ac1f99d56",
+   "ja": "スキルで印を起爆させた場合、エズリアルはマナを60と、そのスキルのマナコストの分だけ回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Arcane Shift#description": {
+   "source_sha1": "10ac841a2051857cdc603df14c48f4436b9bd127",
+   "plain_sha1": "06e0be6319ab72ef93bc1ad32858a2c7fe2c3efc",
+   "ja": "発動効果：エズリアルは現在の位置から指定地点の方へ最大475ユニットブリンクし、その後最も近い敵に追尾弾を撃って魔法ダメージを与え、1秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Arcane Shift#description2": {
+   "source_sha1": "d6afd3047658bb9ead4bd5eff9ea9e851c0e8905",
+   "plain_sha1": "c9c1185f6d0ca83bf9e03f3971cb04d017898185",
+   "ja": "「アーケインシフト」は、「エッセンスフラックス」の印が付いた最も近い敵を優先して撃つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Arcane Shift#description3": {
+   "source_sha1": "95ffcd8c7c2cbd05a06abb3b7135887838c01076",
+   "plain_sha1": "20a277c34097e6d3a7e10c535d953c11888d8aa0",
+   "ja": "このスキルが命中する対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Trueshot Barrage#description": {
+   "source_sha1": "e4b018d20d9bf87dc14a8769ec47a189a2aeaaef",
+   "plain_sha1": "c04ee042bcc53f0d245400f123505f280626eca8",
+   "ja": "発動効果：エズリアルは指定方向に強力なエネルギーの弧を放ち、周囲の視界を一瞬与えながら、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ezreal/Trueshot Barrage#description2": {
+   "source_sha1": "16621a53d96c48536b7e3f6b6168447001779a6d",
+   "plain_sha1": "cf5743bbc89e5f9c4e7312710fdc80078b6baca8",
+   "ja": "ミニオンとエピックではないモンスターは、修正されたダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

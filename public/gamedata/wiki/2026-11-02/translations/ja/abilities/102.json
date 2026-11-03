@@ -1,0 +1,140 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Shyvana/Scalemail#description": {
+   "source_sha1": "9d1eaf3070e7170c9289c7e223eefbc03d0d0d52",
+   "plain_sha1": "84b85307cb2e0c4997a2ebbf8912a1fe367c9db7",
+   "ja": "固有：シヴァーナは、特定の敵のキルに関与すると「スケールメイル」のスタックを得る。大型モンスターと大型ミニオンは1スタック、敵チャンピオンとエピックモンスターは3スタックを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Scalemail#description2": {
+   "source_sha1": "fdbaf8e126d2ef1848196cebf57d7068605f9ff6",
+   "plain_sha1": "e24ad976e8f6a8af58d7738e67cb8337580c8d52",
+   "ja": "「スケールメイル」：スタックごとに物理防御と魔法防御がそれぞれ0.3増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Emberstrike#description": {
+   "source_sha1": "e7523b579f46f9767e6949e9d11fe1e27c974670",
+   "plain_sha1": "595c97b3c44d89588c799b2147ff994ce6f2f5b7",
+   "ja": "自動効果：シヴァーナの通常攻撃（攻撃時効果）は「エンバーストライク」の残りクールダウンを0.5秒短縮し、対象の最大体力の1%（+ 増加攻撃力100ごとに1.1%）に等しい追加の魔法ダメージを与える。チャンピオン以外に対しては、最低10、上限200。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Emberstrike#description2": {
+   "source_sha1": "a0f5bffb2698d049dc9bdff0e7618eb081a011ca",
+   "plain_sha1": "193010886a9e3fc98446437de4524f8053714a3d",
+   "ja": "発動効果：「エンバーストライク」は「Human Form」で二回、「Dragon Form」で三回使用できる。使用するたびに、6秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなって、追加の固有の効果を与える。「エンバーストライク」の攻撃を使ってから1.5秒後、または通常攻撃の直後から、それぞれ次の4秒以内にスキルを再発動でき、その後クールダウンに入る。「エンバーストライク」が有効な間、シヴァーナのすべての通常攻撃は射程が50増加する。攻撃はモンスターに10の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Emberstrike#description3": {
+   "source_sha1": "b2b728b6bb81549d9610163e3e81b975fdc7693c",
+   "plain_sha1": "9acb485361573a8b268664a95abd19913a9796bb",
+   "ja": "一回目：シヴァーナは爪で切り裂き、対象の方向に扇形の爆風を起こして、命中した敵に修正された物理ダメージを与える。主対象へのダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Emberstrike#description4": {
+   "source_sha1": "4d4d76fafc1b174d14e0d10d719cfc46610471b1",
+   "plain_sha1": "b0cab2a76d27862f1ced89d0c3d7869de91752ef",
+   "ja": "二回目：シヴァーナは尾を叩きつけ、対象と周囲の敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Emberstrike#description5": {
+   "source_sha1": "20ff441e08fbeaf63bd0a1fefde1dac136db2f94",
+   "plain_sha1": "3a67f6e82d2518352cc2332fbec03acc7ca58829",
+   "ja": "「Dragon Form」のボーナス — 三回目：シヴァーナは対象に噛みつき、修正された確定ダメージを与える。このダメージはクリティカルにならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Emberstrike#description6": {
+   "source_sha1": "dfa20676825555192977a3e0064f00988a174794",
+   "plain_sha1": "9af32e0cb5aea0a9886c6a247889839f2dd059bb",
+   "ja": "すべての発動はシヴァーナの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Inferno Aegis#description": {
+   "source_sha1": "d80115fc998665578a2fdf38866705fd15c83f20",
+   "plain_sha1": "422288effb18d5e414282e7b5bf96e232d324e37",
+   "ja": "発動効果：シヴァーナは2.5秒間自身にシールドを付与し、シールドの量は近くの敵チャンピオン一体ごとに30%増える。同じ時間、移動速度が25%増加し、見えている敵チャンピオンの方を向いている間は43.75%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Inferno Aegis#description2": {
+   "source_sha1": "6c3f9fb7c17d776e7a4c0c3ec3f708fb0b73ece5",
+   "plain_sha1": "82ba57f9f3deebc191ed8476136333d396f4ad3b",
+   "ja": "1秒後から、シールドが残っている間「インフェルノイージス」を再発動でき、時間切れか壊されると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Inferno Aegis#description3": {
+   "source_sha1": "24ff3d14d2829547ace532161b9c1002d42e7695",
+   "plain_sha1": "d73a2be7efa8a28c75dafad989ad049e6a8b117c",
+   "ja": "再発動：シヴァーナはシールドを消費して爆発し、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Molten Burst#description": {
+   "source_sha1": "01659ee159cde5e31e5c100864bd12b0726e8b62",
+   "plain_sha1": "c0afd56962d01ee8437fba71a9a6ef40a55cfac5",
+   "ja": "発動効果：シヴァーナは指定方向に火の玉を放ち、火の玉は最初の敵にぶつかるか最大射程に達すると爆発して、命中した敵に魔法ダメージを与え、2秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Molten Burst#description2": {
+   "source_sha1": "8fa2a1aaac0105842422b4e91dd6957aab0ea871",
+   "plain_sha1": "5888d7e6d03f8d4336d1e2b2288ef4a08f3a8a42",
+   "ja": "「Dragon Form」のボーナス：火の玉は幅が広がり、敵を貫通し、ダメージが25%増える。敵チャンピオンか大型モンスターに当たったとき、および最大射程に達した後、火の玉は当たった対象とその地点に同じ効果を与える爆発を起こす。「モルテンバースト」は触れた地面も2秒間焦がす。焦げた地帯の中の敵は0.25秒ごとに3.75～6.25（レベルに応じて）（+ APの1.25%）の魔法ダメージを受け、合計の最大ダメージは30～50（レベルに応じて）（+ APの10%）。敵が同時にダメージを受ける焦げた地帯は一つだけ。同じ対象への二回目以降の爆発は40%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Dragon's Descent#description": {
+   "source_sha1": "ce24bd5c1eaea97ed814295dd624113320616489",
+   "plain_sha1": "33f587c8780adef1eb2737d6229915bfd75fafee",
+   "ja": "自動効果 -「Fury」：シヴァーナは「Human Form」の間、0.5秒ごとに「Dragon Fury」を生む。通常攻撃とスキルも、ダメージを与えた敵一体ごとに「Dragon Fury」を1.25生み（1回の発動につき敵一体あたり一度まで）、「Dragon Form」の間は200%増える。スキルでダメージを与えたチャンピオン以外に対しては、生む量が25%になる。シヴァーナは究極スキルのヘイスト1ごとに、すべての発生源から生む「Dragon Fury」が1%増える。「龍の降臨」を習得すると「Dragon Fury」を100得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Dragon's Descent#description2": {
+   "source_sha1": "7b1c5de555497271f7ac6efc2cbfa22016b708d2",
+   "plain_sha1": "6bd21bcca9e96fa7eaddb6682a43a88cb5284a3f",
+   "ja": "発動効果：シヴァーナは「Dragon Form」に変身し、移動系の効果を受けない状態で指定地点へ飛び、途中で扇形の範囲に炎を吐いて、命中した敵に魔法ダメージを与え、0.75秒間フィアーを与えて、同じ時間99%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Dragon's Descent#description3": {
+   "source_sha1": "af2bd2136c5747af75ddf335df8d84401becb397",
+   "plain_sha1": "dd9b21650f03e32d67758ef5602615bba8d26beb",
+   "ja": "「Dragon Form」：シヴァーナは増加体力・通常攻撃の射程の増加・サイズの増加を得る。基本スキルは強化され、追加の効果を与える。「Dragon Fury」を継続して消費して「Dragon Form」を保ち、「Dragon Fury」がすべてなくなると「Human Form」に戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Shyvana/Dragon's Descent#description4": {
+   "source_sha1": "7f35244ebf8d5372c21b9f05d9db43cda44c3648",
+   "plain_sha1": "f5b3ec1311f65c090d1f4573e974f383fd005354",
+   "ja": "このスキルを使用するには、「Dragon Fury」が100必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Shyvana/Inferno Aegis#description4": {
+   "source_sha1": "72705673075d0593667f36f52d03be5d3c9a7cd4",
+   "reason": "residual_markup"
+  }
+ }
+}

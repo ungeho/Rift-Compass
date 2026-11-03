@@ -1,0 +1,84 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Cho'Gath/Carnivore#description": {
+   "source_sha1": "b9aa67f10d2921219c422f982ea21d3aa334732a",
+   "plain_sha1": "1c4a1cd585c924df674dd6e9022a74a6e30a8e3b",
+   "ja": "固有：チョ＝ガスは敵を倒すたびに、18～52（レベルに応じて）回復し、4.72～9.48（レベルに応じて）のマナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Feral Scream#description": {
+   "source_sha1": "109901fe5fe39581c4c899d4eb2e890bc9096556",
+   "plain_sha1": "46b9723fd083c3aa1d72339bdc21ae890d7105d0",
+   "ja": "発動効果：チョ＝ガスは指定方向の扇形の範囲に咆哮し、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Feral Scream#description2": {
+   "source_sha1": "215cdb6f106862aee200f1f65a3291bb9764789f",
+   "plain_sha1": "694dcde1d9ab792a436894f8fd2166d4b18d4339",
+   "ja": "命中した敵チャンピオンとスカトルには、一定時間サイレンスも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Vorpal Spikes#description": {
+   "source_sha1": "619276b82068d9be241fddc81377e14753b5db03",
+   "plain_sha1": "a5ef3b3f57ec3a0ac9436607614d0cc755ef1041",
+   "ja": "発動効果：チョ＝ガスは6秒以内の次の3回の通常攻撃を強化し、射程を50増やして、攻撃開始時に対象の方向へトゲの爆風を放つ。当たった敵は魔法ダメージを受け、1.5秒かけて減衰するスロウを受ける。モンスターへのダメージは修正される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Vorpal Spikes#description2": {
+   "source_sha1": "e44137a9444a16eb19f56ac0aef84f895980b2a7",
+   "plain_sha1": "e6cbf88304ad9b94e564709d942defabea6ed7aa",
+   "ja": "トゲの爆風の幅は、放った時点のチョ＝ガスの大きさの倍率（「捕食」のスタックによる増加に限らない）に応じて広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Vorpal Spikes#description3": {
+   "source_sha1": "757e3c4626d5a859219491d608286be49ca4e8b0",
+   "plain_sha1": "b35bb2f92f1c225718e68b728aeb9e0aaa21e94d",
+   "ja": "「ヴォーパルスパイク」はチョ＝ガスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Feast#description": {
+   "source_sha1": "7625f2f74a41ad9d5c809ce8b09e52898088664e",
+   "plain_sha1": "e38416e03b3c3bf7118285b6c2bbdc595de84d32",
+   "ja": "発動効果：チョ＝ガスは対象の敵を食べようとし、確定ダメージを与える。チャンピオン以外に対しては、基本ダメージが修正される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Feast#description2": {
+   "source_sha1": "23e472a54e96dd9d43610897337801f8e3083ad3",
+   "plain_sha1": "3940ad85b2f231080eeef3b6f709304d05785f7c",
+   "ja": "対象が倒れると、チョ＝ガスは「捕食」のスタックを得る。エピックではないモンスターとミニオンからは6スタックまでしか得られない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Cho'Gath/Feast#description3": {
+   "source_sha1": "1f8faf68c05782b7bd1664c3637aefa07cd7139d",
+   "plain_sha1": "cb915dd18ad3b519fc9ac3f34806355d04a81ce0",
+   "ja": "「捕食」のスタックごとにスキルの射程が2.5伸び（10スタックで最大25）、チョ＝ガスは増加体力・通常攻撃の射程の増加・サイズの増加を得る。上限は通常攻撃の射程75とサイズの100%増加。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Cho'Gath/Rupture#description": {
+   "source_sha1": "b6efecd2ba2268576cd96086e09d4670b461aafb",
+   "reason": "residual_markup"
+  }
+ }
+}

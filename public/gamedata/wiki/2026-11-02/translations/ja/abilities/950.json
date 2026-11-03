@@ -1,0 +1,128 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Naafiri/We Are More#description": {
+   "source_sha1": "f1c76b3c4bea978c46e7f24f8522d63f7d391a4f",
+   "plain_sha1": "fd7d89ba85975dc2f8ab2976e7f459da05324184",
+   "ja": "固有：一定時間ごとに、ナフィーリは一緒に戦う「Packmate」を呼び出す。「Packmate」は同時に2～5体（レベルに応じて）まで持てる。ゲーム開始時と復活時には、上限の数の「Packmate」を呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/We Are More#description2": {
+   "source_sha1": "fd9442bd1c14206c2c27c4d59b4ec4daeb60bcfa",
+   "plain_sha1": "5b93e4da2e7dbb3e1fb6be678866c49ec40561a9",
+   "ja": "スキルでチャンピオンか大型モンスターに当てるとクールダウンが4秒短縮される。敵を倒すと1秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/We Are More#description3": {
+   "source_sha1": "84d6ec7407ecae9fbe9c56af7ae83655590266f0",
+   "plain_sha1": "efcb7d96fdd08590d7ae19b7e7becd33f614e098",
+   "ja": "「Packmate」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Darkin Daggers#description": {
+   "source_sha1": "abf5a9503273b56d6b2d81fea5426e9421c91971",
+   "plain_sha1": "5b5b5ef70994b0b00de99140e43fe76b6664f16d",
+   "ja": "発動効果：ナフィーリは指定方向に短剣を投げ、命中した敵に物理ダメージを与えて出血を与え、出血は5秒かけて0.5秒ごとに追加の物理ダメージを与える。ミニオンとエピック以外のモンスターは、出血で体力が30～70（レベルに応じて）未満になる場合は処刑される。「ダーキンダガー」は0.5秒後から4秒以内に追加のコストなしで再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Darkin Daggers#description2": {
+   "source_sha1": "b494bb530961a0a82f0187e2a0b6d8b8c1de8f51",
+   "plain_sha1": "473cd7871ca4193959f38f0a205d9cfee674507e",
+   "ja": "すでに出血している対象に短剣が当たると、代わりに残りの出血ダメージと、さらに追加の物理ダメージを与える。追加ダメージの基本値は対象の減少体力に応じて0%～100%増加し、係数は対象の減少体力に応じて0%～250%増加する。その対象がチャンピオンか大型モンスターなら、ナフィーリは自身を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Darkin Daggers#description3": {
+   "source_sha1": "7f16ff8e63ec5bac4ec197445348b67d3aed7513",
+   "plain_sha1": "e51a326a6cbc257f89d33b1aa5005932a9dd7011",
+   "ja": "再発動：ナフィーリは一回目の発動と同じ効果を行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/The Call of the Pack#description": {
+   "source_sha1": "b8fed50b706af286889f71e990294b9fe58961f7",
+   "plain_sha1": "794a2046ed5c5fcd6a1803e4c0898aa319d15440",
+   "ja": "発動効果：ナフィーリは次の5秒間狩りに出て、最初の1秒間は対象指定不可とゴースト状態になり、最初の0.9秒の間に出ているすべての「Packmate」が姿を消す。出ていた「Packmate」は、消えた後にナフィーリの近くに再び現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/The Call of the Pack#description2": {
+   "source_sha1": "68c12306c63ca78e7e02579ca3a0a286d5cd1efb",
+   "plain_sha1": "4d33eb63a60cee44ebb698e348cc3be13cf7eef1",
+   "ja": "狩りに入って1.25秒後、ナフィーリは残りの効果時間の間続く「Packmate」をさらに2体呼び出し、これは「我らは一つ」の呼び出し上限を超えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/The Call of the Pack#description3": {
+   "source_sha1": "f32f3f8e8d58ea60b610f665c28be8f714226c5f",
+   "plain_sha1": "5271151e47ea9cb0ee0aeffa9e3986c02e889d54",
+   "ja": "狩りの間、ナフィーリは攻撃力の20%の増加攻撃力を得て、自身とすべての「Packmate」の移動速度を増加させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/The Call of the Pack#description4": {
+   "source_sha1": "fbf2c97da10bfe92f1960d2f12afbe177b9f626b",
+   "plain_sha1": "07b0b97dfca1052de86c7cb7c6996f1ff52aa796",
+   "ja": "「猟犬の追跡」を使うと、「群れの呼び声」の狩りの効果時間が1.75秒延び、元の効果時間が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/The Call of the Pack#description5": {
+   "source_sha1": "a74c350b5ca9def16cce6889042dfdf635f01ebb",
+   "plain_sha1": "2da9784983cb1f5c2b3e89ddf3cc758f36584abe",
+   "ja": "ナフィーリは「群れの呼び声」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Eviscerate#description": {
+   "source_sha1": "adca5cbb236a405c41cbaef5fda7378c76be8574",
+   "plain_sha1": "1874b7e34dc6cb271046c4f9ff2066fe1deef874",
+   "ja": "発動効果：ナフィーリは指定方向にダッシュし、通過した敵に物理ダメージを与える。到着時に刃の嵐で爆発し、周囲の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Eviscerate#description2": {
+   "source_sha1": "4b2593f5b447795470ee84f4a30166df1c58073e",
+   "plain_sha1": "7f471b38554815e28624c2ed450a829b1be12c30",
+   "ja": "ダッシュ中「Packmate」は姿を消し、ナフィーリの到着時にその近くに再び現れる。再び現れたとき、体力も満タンまで回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Hounds' Pursuit#description": {
+   "source_sha1": "27daba4314078024df94be4e57154cf8fd9de9ae",
+   "plain_sha1": "96fb6c7f54b3b32315d56b37b6243859f40f8d3d",
+   "ja": "発動効果：ナフィーリと「Packmate」は0.75秒間詠唱して対象の敵チャンピオンを狙い定め、その間対象を可視化する。詠唱を終えると対象へダッシュし、到着時にナフィーリは物理ダメージを与えて対象に0.25秒間99%のスロウを与え、各「Packmate」はそのダメージの10%を与える。「Packmate」は詠唱中とダッシュ中は対象指定不可になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Hounds' Pursuit#description2": {
+   "source_sha1": "c3eb8f25ae35c89a88dd1483057f150965c26c37",
+   "plain_sha1": "fb8d3beb455bbcacbc9795ff6738bf62c328a6d8",
+   "ja": "使用から7秒以内にナフィーリがチャンピオンのキルに関与すると、衝撃波を起こして周囲の範囲の視界を1秒間与え、範囲内の敵チャンピオンを4秒間可視化する。この効果の発動から12秒以内に、コストなしで「猟犬の追跡」を一回再発動もできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Naafiri/Hounds' Pursuit#description3": {
+   "source_sha1": "0572fea1a14f6bd851301b41036c33cd85dcd46f",
+   "plain_sha1": "e29dca64aeb313674b2e9c6360f513989157ba41",
+   "ja": "再発動：ナフィーリは即座に自身に3秒間シールドを付与してから、一回目の発動と同じ効果を行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

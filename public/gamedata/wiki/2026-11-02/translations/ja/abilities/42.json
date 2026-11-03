@@ -1,0 +1,98 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Corki/Hextech Munitions#description": {
+   "source_sha1": "e020205a0a9f93791b379633f8d026eb60e20bcd",
+   "plain_sha1": "6b2de446f20e1a40545d0617da88110e5c4316f7",
+   "ja": "固有：コーキの通常攻撃は、攻撃力の20%に等しい追加の確定ダメージを与える。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Phosphorus Bomb#description": {
+   "source_sha1": "d72d6c75b78a4dd89749658b86e57eb6ec754691",
+   "plain_sha1": "2ad03465f85a658c7dfbb41735a81eae59ff45bc",
+   "ja": "発動効果：コーキは指定地点に爆弾を撃つ。爆弾は飛んでいる間に周囲の視界を一瞬与え、着弾すると爆発して命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Phosphorus Bomb#description2": {
+   "source_sha1": "af2cc3f09df35b959931ce7d7fd32681b6664826",
+   "plain_sha1": "a8d10af2fb84d75357e6f46a829ed16c1c3ab52f",
+   "ja": "爆弾は着弾の範囲の視界を6秒間与え、命中した敵チャンピオンを同じ時間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Valkyrie#description": {
+   "source_sha1": "119a7020803c7213e370abece7d61dadda4bee4f",
+   "plain_sha1": "894aee961bb79ad4049e3793f12a67c5c78348a1",
+   "ja": "発動効果：コーキは指定地点へダッシュしながら爆弾を落とし、進んだ距離に応じて最大3か所に燃える地面を残す。燃える地面はそれぞれ2.5秒間続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Valkyrie#description2": {
+   "source_sha1": "9702a49734acfe9583fe7d3aa32607916b053241",
+   "plain_sha1": "7aa9a5bf662e7e52dd9ec9113b56fee0cee4a5ae",
+   "ja": "燃える地面の中の敵は0.5秒ごとに魔法ダメージを受け、出た後も1秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Valkyrie#description3": {
+   "source_sha1": "8a8851868b039b630b9894387d1d0d7be46b2ec0",
+   "plain_sha1": "e50a8570312491944c1efe76f43a47a55a6dd300",
+   "ja": "ダッシュ中に「ガトリングガン」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Gatling Gun#description": {
+   "source_sha1": "57f68fac18572c7a29dd8e8f418325a6af415a57",
+   "plain_sha1": "0286f922975e280c47d83107d932e25830afe139",
+   "ja": "発動効果：コーキは4秒間、自身の向いている方向の扇形の範囲に弾をばらまき、命中したすべての敵に0.25秒ごとに物理ダメージを与え、同じ間隔で2秒間のスタックを与える。スタックは命中のたびに更新され、最大4回まで重なり、スタックごとに対象の物理防御と魔法防御を低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Missile Barrage#description": {
+   "source_sha1": "b82a08bfa22b5ba82d36e938c0100091c225257f",
+   "plain_sha1": "e6c45d5b4a47cd4796f71b6a17d818b855fd56c7",
+   "ja": "自動効果：チャンピオンへの通常攻撃（攻撃時効果）のたびに、「連発ミサイル」の残りのチャージ時間が2～6秒（クリティカル率に応じて）短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Missile Barrage#description2": {
+   "source_sha1": "d454e5fc607942369bae09678f899133c8284290",
+   "plain_sha1": "829a6853401a72d73fba0f6cfe7d7ed58154a531",
+   "ja": "発動効果：コーキは指定方向にミサイルを撃ち、ミサイルは最初に命中した敵で爆発して、範囲内の敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Missile Barrage#description3": {
+   "source_sha1": "f21c0f6c55b6df0d625a03e4ba1983d74fcbfc4b",
+   "plain_sha1": "b6d4eee8e512efb58317dc9ae4691a4bccbe1270",
+   "ja": "コーキは一定時間ごとに「連発ミサイル」のチャージを得て、最大4まで蓄える。スキルを習得すると2チャージを得て、復活時に最大チャージを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Corki/Missile Barrage#description4": {
+   "source_sha1": "b90cfc746c4966d3fe53bb0bbd5fb0b019895cca",
+   "plain_sha1": "b1214f389b80ca421f439f5635e7d6f05b6cc0dc",
+   "ja": "三発目ごとのミサイルは「Big One」になり、100%増加したダメージを与え、射程と爆発の範囲も広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Corki/Hextech Munitions#description2": {
+   "source_sha1": "6cd228269d2f93fd1b3eb82bd4dbf014d36e79ed",
+   "reason": "residual_markup"
+  }
+ }
+}

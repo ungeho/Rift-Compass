@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Milio/Fired Up!#description": {
+   "source_sha1": "aca07ae679db24acaead742d75734da8a3ea655c",
+   "plain_sha1": "8b005bab0a12389ae0372921c45313e6012f14bd",
+   "ja": "固有：ミリオのスキルが自身か味方チャンピオンに命中すると、4秒間の付与効果を与える。付与効果を受けた者の次の敵への通常攻撃かスキルの命中は、その者の攻撃力の7%～15%（レベルに応じて）の追加の魔法ダメージを与え、1.5秒かけて10～50（レベルに応じて）（+ ミリオのAPの20%）の魔法ダメージを与える燃焼を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Ultra Mega Fire Kick#description": {
+   "source_sha1": "7fe03b1e08b7be73f197b3673fb6676ca38824e9",
+   "plain_sha1": "50115fe84e5802aaf31b05f93d35f69ca434fca5",
+   "ja": "発動効果：0.25秒の遅れの後、ミリオは指定方向に火の玉を蹴り、火の玉は通り道の視界を与えて、最初に命中した敵を1秒かけてノックバックさせてスタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Ultra Mega Fire Kick#description2": {
+   "source_sha1": "8aa33da35bb11158ff2e1d2b96b03ecaae1c6146",
+   "plain_sha1": "be5279d645f1aa4fd9a6cc898b0fda2d77b809d3",
+   "ja": "ぶつかると、火の玉は対象の位置から同じ方向に一度跳ね、範囲の視界を与えてから、短い遅れの後に同じ半径で爆発し、命中した敵に魔法ダメージを与えて、1.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Ultra Mega Fire Kick#description3": {
+   "source_sha1": "1d1158786da44f9a560f4756aa16bc274c4007b8",
+   "plain_sha1": "68d588de3ad3521b5e4c0435b279151615a195f6",
+   "ja": "主対象がチャンピオン以外なら、火の玉はより遠くまでノックバックさせ、より大きな爆発を起こす。火の玉か爆発が少なくとも一体のチャンピオンに当たると、「ウルトラメガファイヤーキック」はマナコストの50%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Ultra Mega Fire Kick#description4": {
+   "source_sha1": "5c4f5ed2669ce0f8726b22617e2d730072ff6a13",
+   "plain_sha1": "4250b39da2dd6290fa4fdb279c0ad3e06ebb796e",
+   "ja": "「ウルトラメガファイヤーキック」の遅れの間、ミリオはほかのスキルを使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Cozy Campfire#description2": {
+   "source_sha1": "a6b8253e5691418bef63934d06ac30b9d204d6de",
+   "plain_sha1": "57f31919091efb64fd8e72d70172558dbb2d58da",
+   "ja": "効果時間中、0.5秒後から「癒しの焚き火」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Cozy Campfire#description3": {
+   "source_sha1": "018a91cef18fc9f455fdf9b72d12a3dc803173ae",
+   "plain_sha1": "a22a3181b48b0ff8034e9a0ab93e532451cc8920",
+   "ja": "再発動：ミリオはフエミーゴに対象の味方チャンピオンの150ユニット以内までついていくよう命じ、再発動は0.5秒の固定クールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Cozy Campfire#description4": {
+   "source_sha1": "0457f860720b0dcd8c22b67892c4e5c114951f35",
+   "plain_sha1": "796e2446a2922575d6fe296f684434235d28a9e3",
+   "ja": "このスキルでは、ミリオも味方チャンピオンとして扱われる。「癒しの焚き火」は呼び出したときと、その後最大3秒に一度「ファイヤーアップ！」を与えうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Warm Hugs#description": {
+   "source_sha1": "b3528666d4b93b6981f2cbfc1bd5afe353b71796",
+   "plain_sha1": "adfd5337e2f194d1accfda2f49954fed0a34121c",
+   "ja": "発動効果：ミリオは自身か対象の味方チャンピオンを守りの炎で包み、対象に2.5秒間シールドと移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Warm Hugs#description2": {
+   "source_sha1": "2e7e7ad290940526d4549c9a75e8cd2a43ec9045",
+   "plain_sha1": "a7e8af36f9fd54155eaff61dbb55c17467cfe0aa",
+   "ja": "ミリオは一定時間ごとに「抱擁のぬくもり」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Warm Hugs#description3": {
+   "source_sha1": "56f69e2bbae26dc6db1f3fc5176d2f741e73f7bf",
+   "plain_sha1": "986a7c8ffce1fb07ff129a53220979a1801d361e",
+   "ja": "「抱擁のぬくもり」の効果は最大2回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Breath of Life#description": {
+   "source_sha1": "2c15bc5f77dbab8c0041765cdbd9ed90fb31bd09",
+   "plain_sha1": "e8bfae01fafbf17a6dc0772a1ac823121ced1a3d",
+   "ja": "発動効果：ミリオは癒しの炎で爆発し、自身と近くの味方チャンピオンを回復して、ノックアップ以外の行動妨害を解除し、3秒間65%の行動妨害耐性を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Milio/Breath of Life#description2": {
+   "source_sha1": "8bed7e0d7ac8b86a2da9f349e6f9c997ebf156d1",
+   "plain_sha1": "75f6b55cb803dc32f24436ad4a5e59a1a1288a6d",
+   "ja": "「生命の息吹」の発動から0.75秒間、ミリオはほかのスキルを使えない。スキルの使用を妨げる行動妨害を受けている間は「生命の息吹」を使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Milio/Cozy Campfire#description": {
+   "source_sha1": "0aae6578c4f3bec2ba61129f721d555f54a19350",
+   "reason": "residual_markup"
+  }
+ }
+}

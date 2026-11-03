@@ -1,0 +1,161 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Rek'Sai/Fury of the Xer'Sai#description": {
+   "source_sha1": "ab9967a91bf5f1258ac8996beeb56455bab2b45e",
+   "plain_sha1": "a655cfd25f995c83762762266e1f4d7d8b276b7f",
+   "ja": "固有：レク＝サイの通常攻撃は攻撃時効果として「Fury」を25生み出し、ミニオンには命中ごとに4、ワードとジャングルの植物には命中ごとに5に減る。「女王の怒り」以外のスキルは、少なくとも一体のユニットに当たると「Fury」を25生み出す。「獲物定め」はチャンピオン以外に当たっても「Fury」を生み出さない。戦闘から8秒離れると、毎秒20の「Fury」を失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Queen's Wrath#description": {
+   "source_sha1": "f7754ffbe10fc04f6941e4909baf1ecbe2ccec42",
+   "plain_sha1": "e1a2ae075a2c7189381d73a3a365a0c9f13c2c83",
+   "ja": "発動効果：レク＝サイは3秒間攻撃速度が35%増加する。効果時間中の次の通常攻撃（攻撃時効果）は攻撃モーションが中断されなくなり、対象と周囲の敵に追加の物理ダメージを与える。「女王の怒り」の主対象へのダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Queen's Wrath#description2": {
+   "source_sha1": "949aae8514d3453a0c4e3273b5b246e1dcc95603",
+   "plain_sha1": "e228879f2b2dc118e82f3c853f93e0f17f0df849",
+   "ja": "レク＝サイが攻撃を終えると効果時間が更新され、強化された攻撃は合計3回まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Queen's Wrath#description3": {
+   "source_sha1": "686ec9a98db55e9d354eea88ee920834f05ca9da",
+   "plain_sha1": "5dbcd36590eb0191820086c8854d1874aa16088c",
+   "ja": "「女王の怒り」はレク＝サイの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Prey Seeker#description": {
+   "source_sha1": "610a3f7b2a184ec84c2c278ca0485dfd2e673121",
+   "plain_sha1": "0e9e8713743ea33e3004181d520792da15d6d5ab",
+   "ja": "発動効果：レク＝サイは指定方向にヴォイドの弾を撃ち、弾は最初に命中した敵で爆発して、周囲のすべての敵に魔法ダメージを与え、5秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Burrow#description": {
+   "source_sha1": "368c2cb7f148997a33be3bc99293e1e661defa53",
+   "plain_sha1": "d0ed61c8a25bb0cf5fe89f050e299e19b830b9e8",
+   "ja": "発動効果：レク＝サイは「Burrowed」の状態になり、通常攻撃の射程が50減って視界の半径が385ユニットになるが、潜伏中のスキルを使えるようになる。さらにゴースト状態になって移動速度が増加し、「Tremor Sense」も得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Burrow#description2": {
+   "source_sha1": "1b92effc129c261935cd08f8ee9582f983ac0bff",
+   "plain_sha1": "61dd5f6f6d96a788302d1c2e018aea4fd1476f4e",
+   "ja": "「Tremor Sense」：レク＝サイと味方は、範囲内で見えていない移動中の敵について、毎秒一回の頻度でぼやけた視界を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Burrow#description3": {
+   "source_sha1": "30cb12e28b46535e046d93c9b2a8a0bc784a58df",
+   "plain_sha1": "fdc694e4d2f710d2d543d6157c28d10dde9aa364",
+   "ja": "「潜伏」を習得していれば、レク＝サイはリコールの詠唱を終えるか復活すると、自動で「Burrowed」になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Unburrow#description": {
+   "source_sha1": "64e9a83a716c9340b2885bf19c453071f6c3613a",
+   "plain_sha1": "7ef8802e1e50782e38d60b451c78ddbadecbe86d",
+   "ja": "発動効果：レク＝サイは「Un-Burrowed」の状態になって地上のスキルを使えるようになり、地面から飛び出して周囲の敵に魔法ダメージを与え、1秒間ノックアップさせる。ミニオンと小型モンスターは代わりに短い距離ノックバックされる。命中した対象は、しばらくの間再び「襲撃」で移動させられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Unburrow#description2": {
+   "source_sha1": "f0633cde336011a45f694df0150f9ba9d912c9ad",
+   "plain_sha1": "7c37aea5e127a4c0909ca6992e9976157ad27ddc",
+   "ja": "レク＝サイは攻撃の指示を出すことでも「襲撃」を発動でき、対象が攻撃の射程に入るとスキルを使ってノックアップを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Unburrow#description3": {
+   "source_sha1": "d3204c215f945b7798702da3c578e9cba1b638b8",
+   "plain_sha1": "0775f2b77a8489c95733d8eebedb72a305a9faa4",
+   "ja": "「襲撃」を敵に当てた後、レク＝サイは0.15秒間移動も攻撃もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Furious Bite#description": {
+   "source_sha1": "cf4e983fae73c5414966ca811901e2136ece228d",
+   "plain_sha1": "1945eb926dc4c7460f3501aa0d90348780095c5e",
+   "ja": "発動効果：レク＝サイは対象の敵に噛みつき、物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Furious Bite#description2": {
+   "source_sha1": "4780ca182a00326f18b85ab6914bb43b679be50e",
+   "plain_sha1": "9d0200f66c2aa06e9d0de9a44f7dd71ed3ca9518",
+   "ja": "「Fury」が最大のとき、「激情の牙」は120%のダメージを与え、確定ダメージに変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Tunnel#description": {
+   "source_sha1": "ddc7fb6c9f17f727f127f49fb6994df19666ac1c",
+   "plain_sha1": "22ab23c83bf33aa3997a415551aa3af6642a2118",
+   "ja": "発動効果：レク＝サイは指定方向にダッシュし、つながった二つの入口を持つトンネルを残す。トンネルは最大10分間残る。レク＝サイがどちらかの入口を指定すると再びトンネルを通れ、選んだ入口へダッシュしてからトンネルを通って反対側へ移動する。トンネルを通った後、数秒間は閉じて、その間レク＝サイは再び入れない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Tunnel#description2": {
+   "source_sha1": "68b5c25c8b93468099050c1838c79b8bb21edd52",
+   "plain_sha1": "bfdca77f2424e67f0f31a8b59d51c22bf20ff4f2",
+   "ja": "レク＝サイは戦場に同時に最大8本のトンネルを持てる。上限を超えて作ると、最も古いものが壊れる。敵チャンピオンはどちらかの入口に1.5秒立つとトンネルを壊せ、壊すと5 ゴールド（gold）を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Tunnel#description3": {
+   "source_sha1": "60aed73d0a2eb6518da5e82e690e767534df3d78",
+   "plain_sha1": "d655bcbb23bfa9dd59e98419c68578d3ced3308e",
+   "ja": "「Un-Burrowed」の状態でトンネルに入ろうとすると、レク＝サイは触れた時点で自動で潜伏し、出た後に自動で地上に出る。これは「潜伏」をクールダウンに入れず、「ゼル＝サイの怒り」も発動しないが、ほかの「潜伏」の効果と「襲撃」は発動する。トンネルに触れた時点で「潜伏」がクールダウン中なら、クールダウンはリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Tunnel#description4": {
+   "source_sha1": "1aae3be32ec2875bb608af2ab69c6a2458bad02d",
+   "plain_sha1": "55855440af5c02b12f17bda115e8d10a83647ddf",
+   "ja": "移動不能・グラウンド・サイレンスを受けている間、レク＝サイはトンネルに入れない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Void Rush#description": {
+   "source_sha1": "f8b7087393ae654bbdc0975ec534ce2c2293202b",
+   "plain_sha1": "dc3c76fa2425677e14f0315408253f65968b2564",
+   "ja": "自動効果：レク＝サイは、ダメージを与えた敵チャンピオンに5秒間「Marked as Prey」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Void Rush#description2": {
+   "source_sha1": "a9200a9b7cede92dddb9051b9b18cbe20ec2fe81",
+   "plain_sha1": "d62a9774fef8ab69f0d4df7f4a3a43b17e215b19",
+   "ja": "発動効果：レク＝サイは「Marked as Prey」の付いた対象の敵チャンピオンを狙い定め、移動系の効果を受けず行動できない状態で地中に消え、対象を1.5秒間可視化する。0.9秒後、対象の近くの位置へブリンクし、再び対象指定可能になって地面から飛び出し、対象に飛びかかる。到着時に爪で切り裂いて物理ダメージを与え、対象を突き抜けて125ユニットダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rek'Sai/Void Rush#description3": {
+   "source_sha1": "dbbd0f1fe8a66f926ee51b55c04701d62510d0c8",
+   "plain_sha1": "1655dec37a54d2fa2bbec0c10a41df959a8561ca",
+   "ja": "「Burrowed」の状態で使うと、レク＝サイは「ヴォイドラッシュ」の詠唱時間の終わりに自動で地上に出て（「襲撃」の効果は発動しない）、「潜伏」を1秒のクールダウンにする。「潜伏」がすでにクールダウン中なら、残りクールダウンが1秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Rek'Sai/Fury of the Xer'Sai#description2": {
+   "source_sha1": "506001b161b33c88c1cba0916572b976585fb35b",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ahri/Essence Theft#description": {
+   "source_sha1": "6821c3e325db49cb78d6d01e8b08c265019ee23b",
+   "plain_sha1": "7e0a77e0524cf69258f8b05ca6f4fc7fa13aee9b",
+   "ja": "固有：アーリはミニオンかモンスターを倒すたびに「Essence Fragment」のスタックを得る。9スタックで消費して、35～95（レベルに応じて）（+ APの20%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Essence Theft#description2": {
+   "source_sha1": "e0ba9434dca403b0ec7510479c6ddd471042719e",
+   "plain_sha1": "638c9b08aade0dbc238dd831b11b7be78d046346",
+   "ja": "さらに、ダメージを与えてから3秒以内にチャンピオンのキルに関与するたびに、そのチャンピオンの生気を吸い取り、75～165（レベルに応じて）（+ APの30%）回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Orb of Deception#description": {
+   "source_sha1": "c017694cf5875087d025763b02bfa7fe24891aa4",
+   "plain_sha1": "ee6de7291d5abb5de1a2f8c867144ac57d3b8206",
+   "ja": "発動効果：アーリは指定方向にオーブを送り、通過した敵に魔法ダメージを与える。最大射程に達すると、オーブはアーリのもとへ戻り、通過した敵に同じ量の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Orb of Deception#description2": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Fox-Fire#description": {
+   "source_sha1": "ca21609c7ac3713af5fb24803943e2a3a253d9c4",
+   "plain_sha1": "e5f92393adf0e47accdd1915fc1182d4c952d0db",
+   "ja": "発動効果：アーリは2秒かけて減衰する40%の移動速度の増加を得て、最大2.5秒間自身の周りを時計回りに回る三つの炎を呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Fox-Fire#description2": {
+   "source_sha1": "6a8177a3503685d68f26d859f892d36039fbbbc9",
+   "plain_sha1": "690c537fe61f1f94d655262cb0378498c1f698c5",
+   "ja": "発動から0.25秒後に各炎が優先順位に従って見えている敵を狙い、0.4秒後からは単に範囲内で最も近い見えている敵を狙う。炎はそれぞれ魔法ダメージを与え、同じ対象への二つ目以降の炎は40%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Fox-Fire#description3": {
+   "source_sha1": "024b8ba2269a5d2709fbeaf04433ae899930c3e5",
+   "plain_sha1": "43e4cd85fbf329b7cea9ae16411ae955dfeedb9b",
+   "ja": "炎は「チャーム」が命中した敵チャンピオン、敵チャンピオン、「フォックスファイア」のダメージで倒れるミニオン、3秒以内にアーリが最後に通常攻撃した対象の順に優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Fox-Fire#description4": {
+   "source_sha1": "02d4f2fc7e3974bce5aa55253bfa818fd6dfdf7f",
+   "plain_sha1": "e97c1a7c39277520b0808d341400dba99daf1f34",
+   "ja": "「フォックスファイア」のダメージは、最大体力の20%未満のミニオンには二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Charm#description": {
+   "source_sha1": "c5132f38b7daa61adaff380b88e78318f5a0ae45",
+   "plain_sha1": "fbad02440c81438d6ee10338ceb093d83c7dba34",
+   "ja": "発動効果：アーリは指定方向に投げキッスを放ち、最初に命中した敵に魔法ダメージを与えて押し倒し、一定時間チャームと65%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Spirit Rush#description": {
+   "source_sha1": "15515360e92b95b49bc46a0b92ba066a90d953ee",
+   "plain_sha1": "9b6906b4d26721321f54e9e069b709b769b8e41b",
+   "ja": "発動効果：アーリは指定地点へダッシュし、その後近くの見えている敵最大3体に生気の弾を放ち、それぞれ魔法ダメージを与える。「スピリットラッシュ」は発動から15秒以内に追加のコストなしでさらに二回再発動でき、発動の間には1秒の固定のクールダウンがある。「スピリットラッシュ」の効果中に「生気吸引」でチャンピオンの生気を吸い取ると、再発動できる時間が10秒（最大10秒まで）延び、再発動が一回増え、一度に最大3回まで蓄えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Spirit Rush#description2": {
+   "source_sha1": "7f9dcd0a03f18eac7402905101a6474efba41855",
+   "plain_sha1": "1a81bb3ff0b43bf08044435117b066473b98d2ad",
+   "ja": "再発動：アーリは最初の発動と同じ効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ahri/Spirit Rush#description3": {
+   "source_sha1": "89202a514725d4650ce79f14be72c14f949118fe",
+   "plain_sha1": "07e733e763f2142741ca651634b9d9fd942a4d8c",
+   "ja": "「スピリットラッシュ」の再発動できる時間は、すべての再発動を使った後も残る。ダッシュ中に「フォックスファイア」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

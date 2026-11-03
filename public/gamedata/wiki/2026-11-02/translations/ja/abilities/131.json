@@ -1,0 +1,91 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Diana/Moonsilver Blade#description": {
+   "source_sha1": "85d0520e5d53023821ec2fe5033d8e8945174572",
+   "plain_sha1": "3ccb788d64c3ab70efade07d5395d69e3dd860bb",
+   "ja": "固有：ダイアナは攻撃速度が15%～35%（レベルに応じて）増加する。スキルを使用した後の5秒間、この増加は三倍の45%～105%（レベルに応じて）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Crescent Strike#description": {
+   "source_sha1": "7faf8e5a54847fb94a12dc37055c0c10ee243ca7",
+   "plain_sha1": "9fc8fb825da0c9775801a82f24f2d70b73d8e490",
+   "ja": "発動効果：ダイアナは月のエネルギーの弾を放ち、弾は反時計回りの弧を描いて指定地点で爆発し、その範囲の視界を0.5秒間与え、命中した敵に魔法ダメージを与えて、3秒間「Moonlight」を与え、その間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Crescent Strike#description2": {
+   "source_sha1": "314765712551ff5ec295b5f885fd2f1c274e78f4",
+   "plain_sha1": "e3dc342ee98f6f980a10953a5c94bf2626744fa7",
+   "ja": "「月下美刃」は「Moonlight」と特有の効果を持つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Pale Cascade#description": {
+   "source_sha1": "00fe9272b9a9392b079429e65d3465809e908f00",
+   "plain_sha1": "3af6488814b844bb31834f61a86ccad6f7784c59",
+   "ja": "発動効果：ダイアナは最大5秒間自身にシールドを付与し、同じ時間自身の周りを反時計回りに回る三つの球を作る。球はそれぞれ敵に触れると爆発し、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Pale Cascade#description2": {
+   "source_sha1": "c59dbe458b51c0830feb6e786deaa2cf2e6176db",
+   "plain_sha1": "7983b054d3385a3b8596d875afdd6017c7e2a390",
+   "ja": "三つの球がすべて爆発すると、「朧月の羽衣」のシールドが再び付与され、元のシールドに加算されて効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Lunar Rush#description": {
+   "source_sha1": "114a8277abfaa9677359db636ee9f5cf01c0c41f",
+   "plain_sha1": "874564c52da7060f92c2ca566412d629c82da2fe",
+   "ja": "発動効果：ダイアナは対象の敵の位置へダッシュし、到着時にその敵に魔法ダメージを与えて、すべての敵から「Moonlight」を消費する。対象が400の範囲内にいれば、ダイアナは対象の位置を突き抜けてダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Lunar Rush#description2": {
+   "source_sha1": "31ce8cee663440e3994499558ebd4a3e4556804f",
+   "plain_sha1": "67c108678e11df2cdc24aa16369d8b299be949be",
+   "ja": "対象から「Moonlight」を消費した場合、「月下美刃」の残りクールダウンが0.25秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Lunar Rush#description3": {
+   "source_sha1": "cb1f0e46341ecb964665eb602f5a36ac2642f6af",
+   "plain_sha1": "a58aafb2d7780c98706947cc472108532aca04b7",
+   "ja": "ダイアナはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Moonfall#description": {
+   "source_sha1": "d5fb893277897952889de6c57d50dab0c5def1fb",
+   "plain_sha1": "5d6d36edb7d252321eb865f81effd63d573f7d31",
+   "ja": "発動効果：ダイアナは周囲のすべての敵を自身の方へ引き寄せ、その間可視化し、その後2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Diana/Moonfall#description2": {
+   "source_sha1": "e4d7d09b302877d6c235ab386c3e5e467c8a7924",
+   "plain_sha1": "cea75aeb5dc0d2e774db075a36fccb9f56c4ca15",
+   "ja": "敵チャンピオンを引き寄せた場合、1秒後に自身の周囲に月光の柱を落とし、周囲のすべての敵に魔法ダメージを与える。引き寄せたチャンピオンが二体目以降なら、一体ごとにダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Diana/Moonsilver Blade#description2": {
+   "source_sha1": "bf9a49f1b26aebcaad55f78b538d79360e786fde",
+   "reason": "residual_markup"
+  }
+ }
+}

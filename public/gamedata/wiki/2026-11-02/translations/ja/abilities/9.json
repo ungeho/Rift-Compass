@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Fiddlesticks/A Harmless Scarecrow#description": {
+   "source_sha1": "83d774b7d95cb101857795fd15d052a0bc4095e5",
+   "plain_sha1": "5a7efef2d82b47f54ade16e1994a89e4ee2b6108",
+   "ja": "固有 -「Scarecrow Effigy」：フィドルスティックスは専用の「Scarecrow Effigy」を持って試合を始め、これはトリンケットの枠を常に占める。フィドルスティックスは、動かず行動せず何の効果も受けない状態が2秒続くと Effigy のふりをでき、その間は体力バーを隠し、体をかかしの形にして腕を伸ばし、ランタンを見せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Terrify#description": {
+   "source_sha1": "a2df257246947881fcc2077c6d36c35afbaa5509",
+   "plain_sha1": "783e838dab2a00d46e7f3c723b3dc32c5071ca94",
+   "ja": "自動効果：フィドルスティックスが2.25秒以上戦闘していない状態で敵チームから見えていないとき、または Effigy のふりをしているとき、ダメージを与えるスキルは命中した対象に一定時間フィアーも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Terrify#description2": {
+   "source_sha1": "6685f6b3618e47022e3bec1f73a413997f9972c5",
+   "plain_sha1": "b47256f009230dd34707620dcbb79219b569a538",
+   "ja": "発動効果：フィドルスティックスは対象の敵にカラスを放ち、カラスは0.35秒後に到着して魔法ダメージを与え、一定時間フィアーを与える。「テラー」のダメージには最低値があり、モンスターに対しては400が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Terrify#description3": {
+   "source_sha1": "7ebf8c792752bed3be8620ac6c22ed21e7f1dc2c",
+   "plain_sha1": "328e1394a3fa9c0afa1e57be6a865d5b9199d791",
+   "ja": "フィドルスティックスにどの手段でもフィアーを受けた対象は、「テラー」のクールダウンと同じ時間、再びその効果を受けない。この対象に対しては、「テラー」のダメージと最低値が二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Terrify#description4": {
+   "source_sha1": "6943179cbeff65fbfc28ea4af8137d8907fc7a3f",
+   "plain_sha1": "3ceaa559f9220383bf2e17a98776762f5223641e",
+   "ja": "「テラー」は影響を受けた対象に90%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Bountiful Harvest#description": {
+   "source_sha1": "65c6633b87db8b3602d742016ccc6e831539b7ed",
+   "plain_sha1": "da3e3fc6c47afbf105016e83341bb305011f01e7",
+   "ja": "発動効果：フィドルスティックスは詠唱時間の間に自身と周囲の各敵の間にテザーを作り、その後最大2秒間詠唱して魂を刈り取り、その間敵を可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Bountiful Harvest#description2": {
+   "source_sha1": "3d352bb577eae0058eed62bd906921012cba549c",
+   "plain_sha1": "9d67bfc6229ef0e22c7c244832438845ec010dcc",
+   "ja": "フィドルスティックスが詠唱している間、テザーでつながった敵は0.25秒ごとに魔法ダメージを受ける。詠唱の終わりの最後の一回は追加の魔法ダメージを与え、モンスターに対しては400が上限。「豊かな収穫」はモンスターに135%、ミニオンに50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Bountiful Harvest#description3": {
+   "source_sha1": "61bd345b315e172774b11c79c0173064601d27f5",
+   "plain_sha1": "f159a8e4a82053b9f9201ab2ffe8a0ef390bf651",
+   "ja": "フィドルスティックスは与えた軽減前のダメージの一部を回復する（モンスターに対しては45%、ミニオンに対しては15%）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Bountiful Harvest#description4": {
+   "source_sha1": "800691ed30f451b8ffa75deaa9c7c3448fcb7685",
+   "plain_sha1": "91e771c9d1579a098d588bd569b337448fcd814d",
+   "ja": "すべての対象が死亡するかテザーを切ると、「豊かな収穫」は終わる。詠唱が中断されなかった場合は、残りクールダウンの60%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Bountiful Harvest#description5": {
+   "source_sha1": "90ecd4039ea219a14e54d8caed598f7eb6d86cd2",
+   "plain_sha1": "638c398e7c480268a6931feedca9fd2b281239a9",
+   "ja": "このスキルを使用するには、近くに敵が必要。テザーでつなぐのに対象が見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Reap#description": {
+   "source_sha1": "e425a95c423c26a0c5e28fcd7da62e64deda7893",
+   "plain_sha1": "3a54d3a114834cf8dc88e7f1feb4bda8be2b677f",
+   "ja": "発動効果：フィドルスティックスは指定地点を鎌で切り裂き、範囲内の敵に魔法ダメージを与えて1.25秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Reap#description2": {
+   "source_sha1": "b6edb78c6cb3a41b6fd1a5ce7168d6c72c2ae3f8",
+   "plain_sha1": "0ca47a411aca0b5d4a415c07d8bc4bc4a31d8b93",
+   "ja": "範囲の中心で命中した敵には、1.25秒間サイレンスも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Fiddlesticks/Crowstorm#description": {
+   "source_sha1": "fde9eebc9bf4b79362495e55d68ce761ad40ecdd",
+   "plain_sha1": "895e79282a6bd27519d7369fd85d225528e6c963",
+   "ja": "発動効果：フィドルスティックスは1.5秒間詠唱し、完了すると指定地点へブリンクして、5秒間カラスの群れを周囲に激しく飛び回らせ、0.25秒ごとに周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Fiddlesticks/A Harmless Scarecrow#description2": {
+   "source_sha1": "d00a5aa1e8a492f69843d74c95471f6d62b09cba",
+   "reason": "residual_markup"
+  }
+ }
+}

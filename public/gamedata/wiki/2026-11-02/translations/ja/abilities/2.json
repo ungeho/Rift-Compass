@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Olaf/Undertow#description": {
+   "source_sha1": "bfaecbe4b470f54bbb6b00087cbecde3ef2d0271",
+   "plain_sha1": "e6fe0b8c7be3b66af7017958f656a0f6d9b706bd",
+   "ja": "発動効果：オラフは指定地点に斧を投げ、通過した敵に物理ダメージを与えて、1～3秒間（飛んだ距離に応じて）スロウを与える。命中した敵チャンピオンには、さらに4秒間20%の物理防御低下を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Undertow#description2": {
+   "source_sha1": "6a643921cc473404bc5d0aace0b13f9ce4891a92",
+   "plain_sha1": "f6d16bb74a9728e6ebeb98f0b6a84caf6bf28caa",
+   "ja": "「斧投げ」はモンスターに追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Undertow#description3": {
+   "source_sha1": "c5995fb929e4dd9dcf23ecb561b6c68e507a002e",
+   "plain_sha1": "53e0b91005848efde9aa74e884f7a57b84974208",
+   "ja": "斧は「斧投げ」のクールダウンと同じ時間その場に残り、周囲の視界を0.5秒間与える。オラフは斧を拾うと、「斧投げ」の残りクールダウンを2.5～0秒（斧が落ちてからの経過秒数に応じて）に短縮できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Undertow#description4": {
+   "source_sha1": "e08bb3c0d296c2fcb114b36858a7e44ba6ce66e2",
+   "plain_sha1": "f0db712c39839ac53ed8c932be16860e5771fed9",
+   "ja": "「斧投げ」を使用すると、近くのモンスターは5秒間ゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Tough It Out#description": {
+   "source_sha1": "6e9736dfe6389d8fd022a643fac637e89de26db7",
+   "plain_sha1": "2a3509f7d5c62007855f02d1b87d54172a4ede5c",
+   "ja": "発動効果：オラフは5秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Tough It Out#description2": {
+   "source_sha1": "22f4f89c0aaa3690621ef8f8ec825a717693f64b",
+   "plain_sha1": "18c4497ba2f34308474f9ae614647e513efc6dee",
+   "ja": "さらに、2.5秒間自身にシールドを付与する。シールドの量は減少体力の70%が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Tough It Out#description3": {
+   "source_sha1": "a0c2fcc3fd0c71a31e7c632b2c2aa5bfa7fa3a46",
+   "plain_sha1": "8733a448aa60ea562696e9343db8af2eb0752209",
+   "ja": "「根性比べ」はオラフの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Reckless Swing#description": {
+   "source_sha1": "d25f1c54b0d7643a3eb0079b3fffb841698b4fc4",
+   "plain_sha1": "e7c3160e9b447ede9bdc0f685a19ec4a00367b60",
+   "ja": "発動効果：オラフは対象の敵に雷を打ち込み、確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Reckless Swing#description2": {
+   "source_sha1": "5919616f2a263409d49109600b3fbb16ad3e949e",
+   "plain_sha1": "2d68b7d2dea89b36af6025f1dec780c9ebecfa44",
+   "ja": "「捨て身切り」で対象を倒すと、オラフは体力のコストと同じ量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Reckless Swing#description3": {
+   "source_sha1": "08e9bc4d782556a7aa7f48f2dad32d7689380aea",
+   "plain_sha1": "6dd720c7012d4ab0b9526495a1b13d67f6f79fab",
+   "ja": "通常攻撃のたびに「捨て身切り」のクールダウンが1秒短縮され、モンスターに対しては2秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Ragnarok#description": {
+   "source_sha1": "4f06691d32dd73024b71f541f07ed9ac13b79d19",
+   "plain_sha1": "9c58c683ed731625fa69a0b6ef6b73f60091e0d0",
+   "ja": "自動効果：オラフは物理防御と魔法防御が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Ragnarok#description2": {
+   "source_sha1": "c24ae4eb1320163b9f36e102b2e0254546831438",
+   "plain_sha1": "5ff190d9c851c21f7ec1791bafe4bb53cf2823d0",
+   "ja": "発動効果：オラフは3秒間激怒し、自身のすべての行動妨害を解除して行動妨害を無効にし、さらに増加攻撃力を得てサイズが10%大きくなる。「ラグナロク」の最初の一秒間は、2000ユニット以内の見えている敵チャンピオンの方を向いている間、移動速度も増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Olaf/Ragnarok#description3": {
+   "source_sha1": "aaa5bb7beedbd72b2c3e75e32ef75d36fe48fae0",
+   "plain_sha1": "e5485598afa16e6079a32fcf1a8227229908364c",
+   "ja": "敵チャンピオンへの通常攻撃（攻撃時効果）か「捨て身切り」のたびに、「ラグナロク」の効果時間が2.5秒延び、延長は2.5秒が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Olaf/Berserker Rage#description": {
+   "source_sha1": "eba497c20539b3acde609ee3a1b5e4711b5c0481",
+   "reason": "residual_markup"
+  }
+ }
+}

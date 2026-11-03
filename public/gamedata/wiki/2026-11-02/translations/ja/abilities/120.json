@@ -1,0 +1,92 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Hecarim/Rampage#description": {
+   "source_sha1": "7a102740327adcae2c03dcb8aedc11e1a07cb532",
+   "plain_sha1": "e12b74a29b06f909654740d4ecdd0f70e93b6341",
+   "ja": "発動効果：ヘカリムは自身の周囲を大鎌でなぎ払い、周囲の敵に物理ダメージ（ミニオンには60%）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Rampage#description2": {
+   "source_sha1": "170a3561e45746c4c15227921cf12b24dda94b01",
+   "plain_sha1": "ce03c84ede19b2faeeb0a563be72a4714593ac6c",
+   "ja": "これが敵にダメージを与えると、ヘカリムは8秒間「ランページ」のスタックを得る。ダメージのたびに更新され、最大3回まで重なる。スタックごとに「ランページ」のダメージが3%（+ 増加攻撃力100ごとに3%）増え、基本クールダウンが0.75秒短くなり、最大スタックでダメージは9%（+ 増加攻撃力100ごとに9%）増加、基本クールダウンは2.25秒短縮になる。効果時間が終わると、スタックは1秒ごとに一つずつ消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Spirit of Dread#description": {
+   "source_sha1": "b8ff1502fa8ff2b5aee518cf608709d2e65d1082",
+   "plain_sha1": "4d21e981f8553beaeace1ee7e1a6819c5af9c974",
+   "ja": "発動効果：ヘカリムは4秒間「ソウルドレイン」をまとい、毎秒周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Spirit of Dread#description2": {
+   "source_sha1": "24cd9402e89b04e5405be1ae6afeb85e3955328e",
+   "plain_sha1": "312a439224cc5d1945f907d4dc33e00cb3953601",
+   "ja": "効果中、ヘカリムは物理防御と魔法防御が増加し、範囲内の敵に与えられた軽減後のダメージ（どの発生源でも）の25%を回復する（味方によるダメージは半分の12.5%）。ミニオンとモンスターからの回復には上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Devastating Charge#description": {
+   "source_sha1": "e8ec931a2926ba035d4afa567c11252e78d356ac",
+   "plain_sha1": "94baf4197cbe4c422275d111bd27857a8130e8c1",
+   "ja": "発動効果：ヘカリムは4秒間ゴースト状態になり、合計の移動速度が25%～65%（発動している時間に応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Devastating Charge#description2": {
+   "source_sha1": "2b18e66fa21e37222e41fb7bd50437a9441bafec",
+   "plain_sha1": "bafcfda6ddd11669d6032266aa59fc64a4d07998",
+   "ja": "この間、ヘカリムの次の通常攻撃は「チャージ」に置き換わり、射程が50～250（進んだ距離に応じて）増加して、対象の方向へダッシュし、対象を1秒間可視化する。ダッシュ中に対象が近くにいれば、ゴースト状態と移動速度の増加は早く終わり、ヘカリムは対象を150～350ユニット（進んだ距離に応じて）ノックバックさせ（地形は越えない）、0.25秒間スタンさせて、修正された物理ダメージ（進んだ距離に応じて0%～100%増加）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Devastating Charge#description4": {
+   "source_sha1": "b2e85af99fb02f7043eae9f758036d4d95fc7395",
+   "plain_sha1": "7790cecca8000ce684471e510c25fbed1d2db991",
+   "ja": "「チャージ」はヘカリムの通常攻撃タイマーをリセットする。ヘカリムはダッシュ中にどのスキルも使用できる。「スペクターズ・オンスロート」の間は「チャージ」の効果時間が止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Onslaught of Shadows#description": {
+   "source_sha1": "d216ba9ae09ab6a7721be921b6d402856ebdf0cb",
+   "plain_sha1": "6a164aff7112c28961fb0ffefc1f596578613f3e",
+   "ja": "発動効果：ヘカリムは移動系の効果を受けない状態で指定地点へダッシュし、矢じり形の陣形の5体の亡霊の騎兵を呼び出して、ともに指定方向へ突撃させ、通り道のすべての敵に魔法ダメージを与えて、2.5秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Hecarim/Onslaught of Shadows#description3": {
+   "source_sha1": "454a0fea61af25a0b3cff375448e543e468ab6eb",
+   "plain_sha1": "1d029f6340277b13bb9d4cc8b8cc6f9f3ba89778",
+   "ja": "亡霊の騎兵の波はヘカリムとは独立に進み、常に同じ距離を突撃する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Hecarim/Warpath#description": {
+   "source_sha1": "10ebb5423f1d7a7347ea1a665020f15eee7de4da",
+   "reason": "residual_markup"
+  },
+  "Template:Data Hecarim/Devastating Charge#description3": {
+   "source_sha1": "9fa78aa3863d793858045cdf6a01cca55d019a23",
+   "reason": "residual_markup"
+  },
+  "Template:Data Hecarim/Onslaught of Shadows#description2": {
+   "source_sha1": "2cf5c1cd92478e839802debc560424b2844e9dfb",
+   "reason": "residual_markup"
+  }
+ }
+}

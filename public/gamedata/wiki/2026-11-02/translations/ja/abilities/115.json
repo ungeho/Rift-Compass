@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ziggs/Short Fuse#description2": {
+   "source_sha1": "269f406fd82279cddc728998cc32ea8646fb48a4",
+   "plain_sha1": "27bcb414199a2527c6d6608fb5556af66f2cd02e",
+   "ja": "ジグスがスキルを使用するたびに、「ショートヒューズ」のクールダウンが4～6秒（レベルに応じて）短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Bouncing Bomb#description": {
+   "source_sha1": "a93eba37bcb47eafe6afccf1935d7aa47df06c8d",
+   "plain_sha1": "3a6ee9548a733da650f5e510e3d4840a7ea99488",
+   "ja": "発動効果：ジグスは指定地点に爆弾を投げ、爆弾は前方へ最大二回跳ねる。毎回の飛ぶ距離は最初に投げた距離に応じて決まり、各跳ねは距離に関係なく0.495秒かかる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Bouncing Bomb#description2": {
+   "source_sha1": "c750686c36a4ab92884a43929ec852cbb79924d8",
+   "plain_sha1": "49e3b84963c2c8854c7fee995e12b3a0cd6b8a16",
+   "ja": "爆弾は敵の近くに着地するか、地形の中に入るか、最後の跳ねで爆発し、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Satchel Charge#description": {
+   "source_sha1": "989b3039b3cfe8eb3b85947937938fbadd4434b4",
+   "plain_sha1": "e17901d8bc863a004e5c4efef004bdc072c819d6",
+   "ja": "発動効果：ジグスは指定地点に爆弾を投げ、爆弾は4秒間その場に残ってその範囲の視界を与える。「エンジニアボム」は効果時間中に再発動でき、その後は自動で再発動する。飛んでいる間に再発動すると、着地した時点で即座に爆発する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Satchel Charge#description2": {
+   "source_sha1": "de2a4566a7d2f302221e53d1bd477bf07c65d247",
+   "plain_sha1": "55eb973edb9b25415bed7d76f47c28c569dab62b",
+   "ja": "再発動：ジグスは爆弾を起爆させ、周囲の敵に魔法ダメージを与えて、爆発の中心から最大500ユニット先まで0.5秒かけてノックバックさせる（地形は越えない）。これがジグスに当たると、ジグスは中心から最大825ユニット離れる方向へダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Satchel Charge#description4": {
+   "source_sha1": "be5721ba06c51b933287f2ba8c51fba8e1082e0c",
+   "plain_sha1": "d29cfb6b36295bc9fc9733c4dfeea2f0dbd9eb43",
+   "ja": "移動不能かグラウンドを受けている場合、ジグスは爆発でダッシュしない。ダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Hexplosive Minefield#description": {
+   "source_sha1": "dec70396b3f77ae9c121ebb742903af911b231ac",
+   "plain_sha1": "d51a951dd31ed109d2c9c32c5187eb946b9be3c3",
+   "ja": "発動効果：ジグスは指定地点に11個の近接地雷をばらまき、その範囲の視界を2秒間与える。地雷は0.5秒後に作動可能になり、最大10秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Hexplosive Minefield#description2": {
+   "source_sha1": "e439903c6cabed474fbe6044e75712ea1f2c9350",
+   "plain_sha1": "eb8e97749ca00a4f7715487a727d9d9f61f5cdbb",
+   "ja": "範囲内の各地雷は、地形か敵に触れると爆発し、魔法ダメージと1.5秒間のスロウを与えて、爆発の周囲の視界を2秒間与える。敵は二つ目以降の地雷から40%のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Mega Inferno Bomb#description": {
+   "source_sha1": "8071fad28e1bf9996fccdcc25d1abab070c7e2ff",
+   "plain_sha1": "8913423481f028425805bf57cf8b6d192bb28864",
+   "ja": "発動効果：ジグスは指定地点に「メガインフェルノボム」を打ち上げ、その範囲の視界を4秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ziggs/Mega Inferno Bomb#description2": {
+   "source_sha1": "c8b1f3b5b60b79d7d63c1a74eddda40bbc2ad610",
+   "plain_sha1": "4634c343907531ef0f9d92f4f9741a31c31bf3df",
+   "ja": "爆弾は到着すると爆発して命中した敵に魔法ダメージを与え、中心の外にいる敵には65%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Ziggs/Short Fuse#description": {
+   "source_sha1": "d980e9b61f004be4b2efd1ad14a0f4656ec42350",
+   "reason": "residual_markup"
+  },
+  "Template:Data Ziggs/Satchel Charge#description3": {
+   "source_sha1": "44d39172473c91c4ae4c40b8062a7b5c69ce9f34",
+   "reason": "residual_markup"
+  }
+ }
+}

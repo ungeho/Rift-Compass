@@ -1,0 +1,116 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kindred/Mark of the Kindred#description": {
+   "source_sha1": "31e71d3a3231e722737878e99151d3418b297b9a",
+   "plain_sha1": "309f3fe72a66213ce61861f73f4da9b72cad6ead",
+   "ja": "固有：ラムとウルフは、どちらも狩る対象に印を付ける。狩る対象のキルに関与すると「キンドレッドの刻印」のスタックを一つ得る。「キンドレッドの刻印」：ラムの通常攻撃と「忍び寄る恐怖」の射程が75～250（印の数に応じて）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Mark of the Kindred#description2": {
+   "source_sha1": "b133f6b19426a8c15d4410a54653a91a883f4fb6",
+   "plain_sha1": "6c668bf1d763bdc2594491458ba9cf9eb303b9e1",
+   "ja": "固有 -「Lamb」：直近6秒間戦闘していない敵チャンピオンの中から、ラムは狩る対象を選べる。選ぶと8秒の遅れの後に印が付き、その後キンドレッドが集められるようになる。ラムは75秒ごとに新しい対象を選べるようになる。狩りに成功した対象には、4分間再び印を付けられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Mark of the Kindred#description3": {
+   "source_sha1": "89ce6514199dbbbc181468c2dfbc0ebc54b0b9be",
+   "plain_sha1": "fffdb1be580ad2754a27e9f5852a91db1ab31095",
+   "ja": "固有 -「Wolf」：2:53から、ウルフは一定時間ごとに、敵チームのジャングルのランダムな大型モンスター一体に180秒間印を付ける。狩られるキャンプは両チームのミニマップに表示される。狩る対象が倒されるか印が切れると、ウルフは45秒待ってから新しい対象を選ぶ。ウルフが印を付けられるモンスターの種類は、キンドレッドの現在の「キンドレッドの刻印」のスタックに応じて変わる：* 0：スカトル * 1～3：スカトル・クリムゾンラプター・グロンプ * 4～7：エンシェントクルーグ・ブルーセンチネル・グレーターマークウルフ・レッドブランブルバック * 8 +：リフトヘラルドかバロンナッシャー、ドラゴンかエルダードラゴン",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Dance of Arrows#description": {
+   "source_sha1": "0f2d39c06577ec6c9d2f522a86410582f0abfabb",
+   "plain_sha1": "7ef6be15d92a38c1c4884283c7f93200e7e18825",
+   "ja": "発動効果：ラムは指定地点の方へダッシュし、4秒間35%（+ 印ごとに5%）の攻撃速度の増加を得て、近くの見えている敵最大3体に矢を放ち、物理ダメージを与える。範囲内にいる現在の攻撃対象は、矢の一本が優先して狙う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Dance of Arrows#description2": {
+   "source_sha1": "5585a7a505639192c06f305d18895f4ca0908830",
+   "plain_sha1": "2e428c6489dc8dfa1963445b71ae5974ba82e2bd",
+   "ja": "ラムが「狼の激昂」の範囲内にいる間、「矢の輪舞」の合計クールダウンが一定の値に短くなる。「狼の激昂」を使うと、「矢の輪舞」の残りクールダウンが同じ値に短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Dance of Arrows#description3": {
+   "source_sha1": "cf477d2236d9015f98eb04fee4a5e8b9cd808302",
+   "plain_sha1": "463e07b610ebcc72bbb82f254d48ab35ef7a4f77",
+   "ja": "「矢の輪舞」はラムの通常攻撃タイマーをリセットする。ラムはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Wolf's Frenzy#description2": {
+   "source_sha1": "9c4b2afc1f43c963d118b05e2ae250dad4a02784",
+   "plain_sha1": "36c8f48816e23d1c1889c12569efa8dc519a692d",
+   "ja": "発動効果：ウルフは指定地点へダッシュし、次の8.5秒間周囲の範囲を縄張りにして、ラムから離れる。範囲内で最も近い見えている敵を自動で攻撃し、ラムが最後に攻撃した敵、敵チャンピオン、チャンピオン以外の順に優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Wolf's Frenzy#description3": {
+   "source_sha1": "1f9fd2009f917d67071692245f72f8dab9b36f18",
+   "plain_sha1": "90078c46ee70c50668b850f78c8c5642b0959cda",
+   "ja": "ウルフの攻撃は魔法ダメージを与え、攻撃の速さはキンドレッドの攻撃速度の増加の25%に応じて上がる。モンスターに対しては、攻撃は165%のダメージを与え、対象に2秒間50%のスロウを与える。対象の体力の割合に応じたダメージは、モンスターに対しては112.5（+ 印ごとに15）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Wolf's Frenzy#description4": {
+   "source_sha1": "05285d018bb3209a1fdb5eb83d818cf8a5b095cd",
+   "plain_sha1": "33fbe7f6e5accde3c804b5a9669334fa8c7525a7",
+   "ja": "ラムが範囲を出るか死ぬと、「狼の激昂」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Mounting Dread#description": {
+   "source_sha1": "f8d4b9adc2fb0dcbb3363a7748620d4e38f64cd3",
+   "plain_sha1": "2f7f421770ae85dc8ae855f86c6460428d81b883",
+   "ja": "発動効果：ラムは対象の敵に矢を撃ち、1.5秒間30%（+ AP 100ごとに5%）のスロウを与えて、4秒間印を付ける。印の付いた対象へのラムの通常攻撃はそれぞれスタックを与え、効果時間を更新して、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Mounting Dread#description3": {
+   "source_sha1": "fd1b0bc5980e2fada1dd7e534184f64caeafdab9",
+   "plain_sha1": "ca28a023742882c13669d03bdc81f626fc3e714f",
+   "ja": "減少体力の割合に応じたダメージは、モンスターに対しては200が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Lamb's Respite#description": {
+   "source_sha1": "0f194d4f7f51d0c8a4d68d438223acb676794da3",
+   "plain_sha1": "d5e6ee08e31a30df2220b187cf11b7cc1ce9dcec",
+   "ja": "発動効果：ラムは足元の地面を祝福し、その場に4秒間続く聖域を作る。聖域の中のすべてのユニットは最大体力の10%に等しい体力の最低値を得て、そのしきい値に達するかしきい値にある間は、範囲にとどまる限り無敵になり、その間回復は受けられないが、体力の自然回復はできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kindred/Lamb's Respite#description3": {
+   "source_sha1": "e059992c0285e5147b54f98b408798a2808618fd",
+   "plain_sha1": "13d34734dbe6ce6c14d17998c09e725c31d2799d",
+   "ja": "祝福が終わると、聖域の中の対象指定可能なすべてのユニットが回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Kindred/Wolf's Frenzy#description": {
+   "source_sha1": "a993bbcc90685f48e052c0785f4f2a605992e5bd",
+   "reason": "residual_markup"
+  },
+  "Template:Data Kindred/Mounting Dread#description2": {
+   "source_sha1": "c723aa0b8b5a388e6fb7a7eddbaea5a6740e2fb6",
+   "reason": "residual_markup"
+  }
+ }
+}

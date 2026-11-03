@@ -1,0 +1,126 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Quinn/Harrier#description": {
+   "source_sha1": "2e4a9e90d8d5c550a9cda02cceb8fca5a72dabca",
+   "plain_sha1": "2399bd70ae7510018817ab0922eb31041dcada9c",
+   "ja": "固有：クインの主対象への「暗闇の強襲」「飛翔撃」「Skystrike」は、命中した敵に4秒間「鷲匠」の印を付け、その間可視化する。「鷲匠」の対象が1秒間いない場合、ヴェイラーは定期的に近くの見えている敵に印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Harrier#description3": {
+   "source_sha1": "1d514f08ce058a2819d9c6e37d9daaefae331a6d",
+   "plain_sha1": "172da1ea88d3b12194f95beb7e66ff44531a279b",
+   "ja": "「鷲匠」はモンスターに75の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Harrier#description4": {
+   "source_sha1": "8f07a1b1d3233d3162328c65c13a35381218dc5b",
+   "plain_sha1": "995d9d0c3e2022b34ed07196f2ca9195ad899f07",
+   "ja": "「相棒」の効果中は「鷲匠」が無効になり、すべての「鷲匠」の印が外れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Blinding Assault#description": {
+   "source_sha1": "5d4cafc720221e2eae776ab269f66587a602f5e0",
+   "plain_sha1": "ff9a73b03660954daa804b220eb3e2e808eecbc2",
+   "ja": "発動効果：クインはヴェイラーを指定方向に送り、ヴェイラーは敵に当たると止まって、その敵に「鷲匠」の印を付け、周囲のすべての敵に物理ダメージ（モンスターには200%）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Blinding Assault#description2": {
+   "source_sha1": "6a3ae7196d91ecb61ab277e53a1f86f03bfdea4d",
+   "plain_sha1": "6f2f223aa59b9ff89c8a318f54355c9e24ffd548",
+   "ja": "主対象がチャンピオンなら1.75秒間ニアサイトを与えて視界の半径を350ユニットに狭める。そうでなければ、同じ時間通常攻撃を封じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Heightened Senses#description": {
+   "source_sha1": "196f7356f24069c36821adb0e86bf489855b1a7e",
+   "plain_sha1": "3a4c7d8e43d6b73d422c6453ed6f86ca8b513281",
+   "ja": "自動効果：クインが「鷲匠」の印が付いた対象に通常攻撃（攻撃開始時）を当てるか、その印を消費するたびに、2秒間攻撃速度と移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Heightened Senses#description2": {
+   "source_sha1": "6530e8d8794e7cd4dfa2e03250592a5a502bf7fb",
+   "plain_sha1": "2d91c0cb97c936b3e9d9a204dd4b4814370e5498",
+   "ja": "発動効果：ヴェイラーは周囲の範囲の視界を2秒間与え、範囲内の敵チャンピオンを同じ時間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Vault#description": {
+   "source_sha1": "4784925394f4f18106433cc1dceaf2871f5a15b1",
+   "plain_sha1": "914f73b36bcda7439919efb86f7259e1be31aa24",
+   "ja": "発動効果：クインは対象の敵へダッシュし、その敵に「鷲匠」の印を付けて物理ダメージを与え、0.5秒かけてごく短い距離ノックバックさせ、1.5秒かけて減衰する50%のスロウを与える。その後、その敵から525ユニット離れる方向へ跳び退く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Vault#description2": {
+   "source_sha1": "7e649b33aef6d2d5188db2a516ac7df696969d0b",
+   "plain_sha1": "8302587a80a4db46ce65667fa6b0fef520fa59e5",
+   "ja": "「飛翔撃」は最初のダッシュの直後にクインの通常攻撃タイマーをリセットする。どちらのダッシュ中にも「鷲の眼」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Behind Enemy Lines#description": {
+   "source_sha1": "721e5c5b5bfb2887699e991aacb5c3a51a156f75",
+   "plain_sha1": "f7d87e2f338d74f4c4e7e7103eab1bba90233ac0",
+   "ja": "発動効果：クインは2秒間詠唱してヴェイラーに合流を合図する。完了するとヴェイラーがクインを拾って一体になり、合計の移動速度が増加し、ゴースト状態になって、「Skystrike」を使えるようになる。詠唱中、0.5秒後から「相棒」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Behind Enemy Lines#description2": {
+   "source_sha1": "01615123309d91f6b177c01d60096fae52e35eb6",
+   "plain_sha1": "298e6b24b1a640063caaa13824c79e9639d44f9a",
+   "ja": "「相棒」の効果中か詠唱中にミニオン以外からダメージを受けると、3秒間合計の移動速度の増加を失う。移動不能・グラウンド・サイレンスを受けると、「相棒」は即座に終わってクールダウンに入り、「Skystrike」は行われない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Behind Enemy Lines#description3": {
+   "source_sha1": "eb70367fd889402ad1a2d88b438c49eaeb5aef9c",
+   "plain_sha1": "e64e5085d8e1fd0e613ac523e3eef41f54b68364",
+   "ja": "「相棒」を習得した後は、復活時かどちらかのチームの出撃地点に入ると、ヴェイラーが即座に現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Behind Enemy Lines#description4": {
+   "source_sha1": "342e4e6339c652ee128277cd8bcf8ad0aadc006d",
+   "plain_sha1": "e76a691175c836b73ca6ec87794019d68b6dc86d",
+   "ja": "再発動：クインは詠唱をキャンセルし、「相棒」はクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Skystrike#description": {
+   "source_sha1": "389d5cca5e7d676eb8c836178c222e9a715c6e6a",
+   "plain_sha1": "5041275d13d1e0efbe9573fd56ef7122934b7dd3",
+   "ja": "発動効果：クインはヴェイラーから離れて「相棒」の効果を終え、周囲に矢の雨を降らせて、周囲の敵に物理ダメージを与え、「鷲匠」の印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Quinn/Skystrike#description2": {
+   "source_sha1": "f67c566f4e43bf0a67cf260a42f6bb4e2a258054",
+   "plain_sha1": "8978a3d406d31fb45430147a091843fe817dee06",
+   "ja": "「相棒」の間に通常攻撃の指示をするか、「暗闇の強襲」か「飛翔撃」を使用すると、自動で「Skystrike」が発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Quinn/Harrier#description2": {
+   "source_sha1": "57a5159105274cca4bb1a0d459503dd9e9a4d5ed",
+   "reason": "residual_markup"
+  }
+ }
+}

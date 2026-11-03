@@ -1,0 +1,105 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Lucian/Lightslinger#description": {
+   "source_sha1": "bfaff2caaeeb30d9725f8b4ace39189f064accab",
+   "plain_sha1": "506460547df8ef6046e9a2f5667220892b1830e5",
+   "ja": "固有：スキルを使用した後、3.5秒以内のルシアンの次の通常攻撃は、攻撃開始時から0.25秒後に追加の一発を撃ち、攻撃力の50%～60%（レベルに応じて）の物理ダメージ（ミニオンには攻撃力の100%）を与える。同じ対象を撃ち、いなければ通常攻撃の射程から50ユニット外までの別の対象を自動で撃つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Lightslinger#description2": {
+   "source_sha1": "ef99b200d101d6a69d49002c33f920b2a5835c5b",
+   "plain_sha1": "759bbc54b76fdd37d6dfb16be593db054d8086cd",
+   "ja": "二発目にはライフスティールと攻撃時効果が適用され、攻撃開始時の効果を発動し、クリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Lightslinger#description3": {
+   "source_sha1": "6e904f93d4c8299c9cdc036a99b0ffee187fbc81",
+   "plain_sha1": "616046cb9d9ade3cd244789fb0b90095fa61513b",
+   "ja": "固有 -「Vigilance」：ルシアンが味方から回復かシールドを受けるか、1000ユニット以内の敵チャンピオンが移動不能を受けるたびに、6秒以内の次の二発の弾が強化され、攻撃時効果として5（+ 攻撃力の15%）の追加の魔法ダメージを与える。強化された弾は一度に4発まで蓄えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Piercing Light#description": {
+   "source_sha1": "fc5991c524ddab03518365fbd320510fe003abd3",
+   "plain_sha1": "728f051ba5926443579c79385b5455e17d6622c0",
+   "ja": "発動効果：ルシアンは対象の敵の方向の直線上にレーザーを撃ち、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Ardent Blaze#description": {
+   "source_sha1": "c46aa804a19c5ca013b7c77b395cd76328414cf0",
+   "plain_sha1": "70857e94b763eb6cc236c55173a930d90b8d654b",
+   "ja": "発動効果：ルシアンは指定方向にミサイルを撃ち、ミサイルは敵に当たるか最大射程に達すると十字形に爆発して、命中した敵に魔法ダメージを与え、その範囲の視界を1秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Ardent Blaze#description2": {
+   "source_sha1": "c1995503b3a65f28856fd8c648872c4bed7b9a35",
+   "plain_sha1": "c1995503b3a65f28856fd8c648872c4bed7b9a35",
+   "ja": "命中した敵には6秒間印が付く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Ardent Blaze#description3": {
+   "source_sha1": "385196f765d63013be1fabd92b2c63e183b5a471",
+   "plain_sha1": "efc5708cde711e463bb09eb8848c95ac7acffdb1",
+   "ja": "ルシアンか味方チャンピオンが印の付いた対象にダメージを与えると、ルシアンは1秒間移動速度が増加する。味方チャンピオンがこの効果を発動させると、ルシアンに「Vigilance」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Relentless Pursuit#description": {
+   "source_sha1": "ad480f6757555955f2ed28a101c14dbd549f2b48",
+   "plain_sha1": "7e21165766750c4774b5064a758805d90f7d52c9",
+   "ja": "自動効果：「二挺拳銃」の弾が命中するたびに「スライド」の残りクールダウンが1秒短縮され、敵チャンピオンに対しては二倍の2秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Relentless Pursuit#description2": {
+   "source_sha1": "310231dcb0d3bc0e82c83d0743d0abc79ab2df4d",
+   "plain_sha1": "6f0dedcb97db165624b9ea31b8cd05ad1c117fb4",
+   "ja": "発動効果：ルシアンは指定方向にダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/Relentless Pursuit#description3": {
+   "source_sha1": "9d42e2fba4c95874fa3ef35effd7246816993155",
+   "plain_sha1": "3eef4bdedfc9329cbc29b1510c0faa6cdb461308",
+   "ja": "「スライド」はルシアンの通常攻撃タイマーをリセットする。ルシアンはダッシュ中にどのスキルも使用できる。「スライド」は W の詠唱時間中と R の詠唱中にも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/The Culling#description2": {
+   "source_sha1": "c875c4c3d4a820739fb60fb19b58e79ed8189fd8",
+   "plain_sha1": "dc3312e30e45228d666fa27ff8b94b5f6ae1cb78",
+   "ja": "詠唱中、ルシアンはゴースト状態で、移動もできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lucian/The Culling#description3": {
+   "source_sha1": "130ed58af667b0214bfe61622150a4b95fe5368b",
+   "plain_sha1": "ffe43c91460fda3f53ab5603fd2441f5d76ae375",
+   "ja": "再発動：ルシアンは「二挺掃射」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Lucian/The Culling#description": {
+   "source_sha1": "46feaa0807c2ae72271c65b25b28f2eff9339181",
+   "reason": "residual_markup"
+  }
+ }
+}

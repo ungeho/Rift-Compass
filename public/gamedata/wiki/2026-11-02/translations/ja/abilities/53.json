@@ -1,0 +1,79 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Blitzcrank/Mana Barrier#description": {
+   "source_sha1": "b3cf0d6a09069342eb318e29e0ed46362f9d9bba",
+   "plain_sha1": "12c59b86d1aaafe51b4e4e3611d51d7671ebdcf0",
+   "ja": "固有：一定時間ごとに、ダメージで最大体力の30%まで減ると、ブリッツクランクは最大マナの35%に等しいシールドを得る。シールドは最大10秒続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Rocket Grab#description": {
+   "source_sha1": "d72051a689bb45fa17cf546cf10526a38f657400",
+   "plain_sha1": "8208fee3d823f1d0b84faaf31f8ee607a10d4ded",
+   "ja": "発動効果：ブリッツクランクは指定方向に右手を発射し、最初に命中した敵を捕まえて魔法ダメージを与え、0.65秒間スタンさせ、ブリッツクランクの方へ引き寄せる。その間対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Rocket Grab#description2": {
+   "source_sha1": "64af75092078cce7dfe9549cccff66843486e90d",
+   "plain_sha1": "9170878dc40e87e56a861f96dc8157bf2354e219",
+   "ja": "「ロケットグラブ」が飛んでいる間と、敵に命中した後0.25秒間、ブリッツクランクは移動も攻撃もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Overdrive#description": {
+   "source_sha1": "2a0a79984fe515ded239156d7f988aa8b69a3004",
+   "plain_sha1": "8b86d59a252c7a03d624dced68e5238908dfb1f6",
+   "ja": "発動効果：ブリッツクランクはオーバードライブ状態になり、5秒間攻撃速度が増加し、最初の2.9秒で10%まで減衰する移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Overdrive#description2": {
+   "source_sha1": "c89ec9889f5617359e094078bdc8fee27e2bd46b",
+   "plain_sha1": "630abaed20fdbe47114b24ee555cb20898e47ba6",
+   "ja": "「オーバードライブ」が終わると、ブリッツクランクは1.5秒間30%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Power Fist#description": {
+   "source_sha1": "82e9e9dca5220c5587977df1750a29f3196c464c",
+   "plain_sha1": "08190b38ca902a262b6defdfbcb47858c4be2b16",
+   "ja": "発動効果：ブリッツクランクは5秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、攻撃力の100%（+ APの25%）の追加の物理ダメージを与えて、対象を1秒間ノックアップさせる。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Power Fist#description3": {
+   "source_sha1": "4871934fc6c0495dcd956cafa1fb8a994cc0e4de",
+   "plain_sha1": "77a6f31b91190ed3f5df082c04573ab1843addcf",
+   "ja": "「パワーフィスト」はブリッツクランクの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Static Field#description": {
+   "source_sha1": "45122d6a11d5302f1afcdb5cde3dc36b654ab851",
+   "plain_sha1": "248bccf8dcbebabc24602f031082de5db69013d7",
+   "ja": "自動効果：「イナズマフィールド」がクールダウン中でない間、ブリッツクランクの通常攻撃は攻撃時効果として対象にスタックを付ける。スタックが付いている間、1秒ごとにスタックを一つ消費して対象に雷を落とし、そのたびに魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Blitzcrank/Static Field#description2": {
+   "source_sha1": "fd3c1d4f5a63395effe22216f9e28fe8335bd3fb",
+   "plain_sha1": "1af7bd762a690ee83820bc5075e5b1eabcc19cb7",
+   "ja": "発動効果：ブリッツクランクは静電気の場を爆発させ、周囲のすべての敵のダメージを防ぐシールド（モンスターのシールドを除く）を破壊し、その後魔法ダメージを与えて0.5秒間サイレンスを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

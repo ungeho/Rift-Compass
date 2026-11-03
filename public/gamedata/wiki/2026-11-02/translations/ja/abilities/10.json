@@ -1,0 +1,130 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kayle/Divine Ascent#description2": {
+   "source_sha1": "18c0002113c1472655b6860de55c069d564d0cbf",
+   "plain_sha1": "6858a6bc5c7883155af454a8ca82461d371d05e8",
+   "ja": "レベル1 -「Zealous」：ケイルの通常攻撃（攻撃開始時）のたびに5秒間「Zeal」のスタックを得る。攻撃のたびに効果時間が更新され、最大5回まで重なる。スタックごとに攻撃速度が6%増加し、最大30%。最大スタックでは「Exalted」になり、移動速度が10%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Divine Ascent#description3": {
+   "source_sha1": "da1a04a67aeec1376fac9f4ceda0549cf0518714",
+   "plain_sha1": "521b3bf846bdb9263efe9602e42ba77258da3c05",
+   "ja": "レベル6 -「Arisen」：ケイルは遠隔攻撃になり、通常攻撃の射程が350増加して合計525になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Divine Ascent#description5": {
+   "source_sha1": "6e50df443909ad91335b4d7867f2b4f97fccf573",
+   "plain_sha1": "119b56a1f331eb3d746b8043cd3c4fa2a3dffeff",
+   "ja": "レベル16 -「Transcendent」：ケイルはさらに通常攻撃の射程が100増加して合計625になり、「Zealous」の効果を常に最大で得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Radiant Blast#description": {
+   "source_sha1": "5297edb4bf91db7988121c0f7a6ce94c5acea5be",
+   "plain_sha1": "d3119e98ff72518d865caf204f67daf13d20e55a",
+   "ja": "発動効果：ケイルは自身の前方に指定方向を向いた門を出し、0.25秒後にそこから天の剣を前方へ放つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Radiant Blast#description2": {
+   "source_sha1": "d6719be337fc7891f41ef492727a3f330ce87e84",
+   "plain_sha1": "09dd41ca7773f8012dc8715df6d9cf948229091f",
+   "ja": "剣は敵に命中すると広がり、範囲内で当たった対象に魔法ダメージを与えて、2秒間スロウを与え、4秒間物理防御と魔法防御を15%低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Celestial Blessing#description": {
+   "source_sha1": "6d9a2da03cc8309b9ef4226b3de9bb81a9b75ecb",
+   "plain_sha1": "0210643bc7094b6c2969808751d2f60bc9e33166",
+   "ja": "発動効果：ケイルと対象の味方チャンピオンは回復し、詠唱時間の開始から2秒間、移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Celestial Blessing#description2": {
+   "source_sha1": "7e7bc97050f71951fc6f9ed4b6872b10095affba",
+   "plain_sha1": "b80ea4d1092855a4a43100d3d03105786c5bf314",
+   "ja": "有効な対象なしで使用するか自身に使用した場合、「天の祝福」は範囲内で最も近い味方チャンピオンを自動で対象にし、体力の最も低い味方を優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Celestial Blessing#description3": {
+   "source_sha1": "fcc614b5edb3233a0bec989b89405b009ddc5fd6",
+   "plain_sha1": "bb0e44f13c2fd48847cffc2db3df6c7b15026959",
+   "ja": "ケイルは「天の祝福」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Starfire Spellblade#description": {
+   "source_sha1": "8f260c8774b4ce92f1c6a97d6d4081da03bcccf0",
+   "plain_sha1": "6ba892f3700ae8bee894151e4c0aee697ae84402",
+   "ja": "自動効果：ケイルは攻撃時効果として追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Starfire Spellblade#description2": {
+   "source_sha1": "09d02f2ae949b149d52e088451754b317f4bd079",
+   "plain_sha1": "cbcda6f8736aec7acf881ce74fa1b88356732f82",
+   "ja": "発動効果：ケイルは剣に火をともし、6秒以内の次の通常攻撃を強化して、攻撃モーションが中断されなくなり、攻撃時効果としてさらに追加の魔法ダメージ（モンスターに対しては400が上限）を与える。ケイルがまだ「Arisen」でなければ、この攻撃は射程525の遠隔攻撃になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Starfire Spellblade#description3": {
+   "source_sha1": "78bebc83dfd7f4be76d042107858973eeb61eab6",
+   "plain_sha1": "8df1f48c947ce43a8aa0c3f0067c7832a8bd2a5d",
+   "ja": "「Aflame」のボーナス：攻撃は対象の上で爆発し、そのダメージを周囲の敵にも与え、攻撃時効果を与える。これはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Starfire Spellblade#description4": {
+   "source_sha1": "3ea8f7d201cb469930bdb861c9a15144b1f39af0",
+   "plain_sha1": "7c57fb4e534673c5ab0ca8c177c45a4b68b33b37",
+   "ja": "「星炎の刃」はケイルの通常攻撃タイマーをリセットする。「星炎の刃」は建物には追加ダメージを与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Divine Judgment#description": {
+   "source_sha1": "f751532efb9ca6eba09fdba96fecf09475469f2c",
+   "plain_sha1": "71a62a68177c43291fdeef1cbf44978299d904c7",
+   "ja": "発動効果：ケイルは詠唱時間の開始から2.5秒間、自身か対象の味方チャンピオンを無敵にし、自身の周囲に炎の剣を呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Divine Judgment#description2": {
+   "source_sha1": "e937b77fdebb556b86352f5730257e983acc3b38",
+   "plain_sha1": "9ee119b56a46c7f4a985ab3612d8ad76752d0f3c",
+   "ja": "2.5秒後、対象の周囲に剣を降らせ、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayle/Divine Judgment#description3": {
+   "source_sha1": "a36c655a0cf83037944f056fd0aa4f41a78c881a",
+   "plain_sha1": "79beb06242b55588c8293952a8b8cf491b5d9d0b",
+   "ja": "ケイルは「聖なる審判」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Kayle/Divine Ascent#description": {
+   "source_sha1": "f19a1c6d582b19f50928853f02331678c2d43073",
+   "reason": "residual_markup"
+  },
+  "Template:Data Kayle/Divine Ascent#description4": {
+   "source_sha1": "e76c78c89324d4a39e9a222d748422cd1a1a932f",
+   "reason": "residual_markup"
+  }
+ }
+}

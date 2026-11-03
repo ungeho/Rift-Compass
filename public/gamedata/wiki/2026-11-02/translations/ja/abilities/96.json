@@ -1,0 +1,86 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kog'Maw/Icathian Surprise#description": {
+   "source_sha1": "267bd7b8d28fb99dbc407dacaec22cd0efaf6b5b",
+   "plain_sha1": "3aa7b8e151d969d62937d5cf403fedf94b28dcf6",
+   "ja": "固有：致死ダメージを受けると、コグ＝マウは4秒間ゾンビ状態になり、ゴースト状態になって、効果時間の間に最大50%まで増える10%の移動速度の増加を得る。効果時間の終わりに爆発し、周囲の敵に140～650（レベルに応じて）の確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Icathian Surprise#description2": {
+   "source_sha1": "ffff0d7593e31daed24bfb5ab6a92e13de66b48a",
+   "plain_sha1": "8705efc3ae327e48ac67034d37dfb95f1bbefe40",
+   "ja": "この状態の間、コグ＝マウは無敵・対象指定不可で行動妨害を無効にするが、通常攻撃の指示・スキルの使用・サモナースペル・アイテムの発動はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Caustic Spittle#description": {
+   "source_sha1": "d1488f72802794392da2bae8470b0baf28f96d26",
+   "plain_sha1": "341546f597565412436e8036e6a3062ab8c45930",
+   "ja": "自動効果：コグ＝マウは攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Caustic Spittle#description2": {
+   "source_sha1": "2c112383b6422ba2d24d5e41243b36c46f8edbf2",
+   "plain_sha1": "5f849924e3d010ddd629559debc9be86eb6ae394",
+   "ja": "発動効果：コグ＝マウは指定方向に粘液の塊を吐き、最初に命中した敵に魔法ダメージを与えて、4秒間物理防御と魔法防御を低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Bio-Arcane Barrage#description": {
+   "source_sha1": "96535ed5264ce2ace168a59bded67a774f6febc0",
+   "plain_sha1": "e642e8fd1f7549cdc09d13d714d2f5bc9e8ecc5b",
+   "ja": "発動効果：コグ＝マウは次の8秒間通常攻撃を強化し、射程が増加して、攻撃時効果として追加の魔法ダメージ（ミニオンとモンスターには100が上限）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Void Ooze#description": {
+   "source_sha1": "d8a6f15f24ef90f433e62f056311763fd687f8a9",
+   "plain_sha1": "b3153d4b977b599c01d3359a832dd325a3d2c743",
+   "ja": "発動効果：コグ＝マウは指定方向に分泌液の塊を吐き、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Void Ooze#description2": {
+   "source_sha1": "b2cf331d3e3b567fb85056ad9ccc993166fab5f7",
+   "plain_sha1": "0f2a97bb65db7f89e26cf4d8ba27403dd21b6a34",
+   "ja": "通り道に3秒間分泌液の地帯ができ、範囲内の敵に0.25秒ごとにスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Living Artillery#description": {
+   "source_sha1": "e24566098d5470cd46da86f5ad08c8d37487b1e6",
+   "plain_sha1": "9b9a633850fe464f31d25dc069cc8d7dc746a747",
+   "ja": "発動効果：コグ＝マウは空中に酸の塊を吐き、塊は0.6秒後に指定地点に落ちる。着弾の前からその範囲の視界を与え、命中した敵に魔法ダメージを与えて2秒間可視化する。「生体空撃砲」のダメージは対象の減少体力に応じて0%～50%増加し、対象の体力が最大体力の40%未満なら代わりに100%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Living Artillery#description2": {
+   "source_sha1": "c61d4c2aa78088d008303661ccc8a385c4d87e58",
+   "plain_sha1": "bde8adede6c005d903f0724b5052e880e920059f",
+   "ja": "その後、コグ＝マウは8秒間「生体空撃砲」のスタックを得る。使用のたびに効果時間が更新され、最大9回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kog'Maw/Living Artillery#description3": {
+   "source_sha1": "3aa53e7092d42b062a5f2ebc4d368a0434f479ef",
+   "plain_sha1": "33e91b9f1582e4053c4753242a6bc06d2aaf3df9",
+   "ja": "「生体空撃砲」：スタックごとに「生体空撃砲」のマナコストが40増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

@@ -1,0 +1,72 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Alistar/Triumphant Roar#description": {
+   "source_sha1": "428be777a9068c3b0f64b5d96d434adc6a3563d9",
+   "plain_sha1": "f303737fb4bbafa46e786ef38545a7bb99676203",
+   "ja": "固有：アリスターは、スキルで敵チャンピオンをスタンさせるか移動させるたび、および近くの敵ミニオンかエピックではないモンスターが死ぬたびに「Triumph」のスタックを得る。近くの敵チャンピオンかエピックモンスターが死ぬと7スタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Triumphant Roar#description2": {
+   "source_sha1": "e2eaecc8869c12a373710c1b9e1939eabd030d5e",
+   "plain_sha1": "35c2a3657db781a6dcd2c430e6e047fd38ac478e",
+   "ja": "7スタックで、アリスターはすべて消費して、自身の最大体力の5%を回復し、近くの味方チャンピオンを自身の最大体力の7%回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Triumphant Roar#description3": {
+   "source_sha1": "b29eeb9333c9e5257ddc4e3a0b0cb8d1ab091d42",
+   "plain_sha1": "4658b34ff0b4eca484659fb90caaa503fb740b61",
+   "ja": "「戦士の咆哮」は数秒に一度だけ起こるが、その前でもスタックは溜められる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Pulverize#description": {
+   "source_sha1": "6e718386ac907f4a0cd279e4bc5157371b213e51",
+   "plain_sha1": "47fd0bfde686c2d56376e45e01bbdfef3814c1ee",
+   "ja": "発動効果：アリスターは足元の地面を叩き、周囲の敵に魔法ダメージを与えて、1秒間スタンとノックアップを同時に与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Headbutt#description": {
+   "source_sha1": "68cb4830c78a798c5e83b63e0888b85e8d424963",
+   "plain_sha1": "4a2560a799e1e049fdb7971df659321a8e385733",
+   "ja": "発動効果：アリスターは対象の敵の位置へダッシュする。到着時に対象が400ユニット以内にいれば、魔法ダメージを与えて、0.5秒かけて700ユニットノックバックさせ、0.75秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Trample#description": {
+   "source_sha1": "fee5510be6f488d492e72ec58b233f2206ae645e",
+   "plain_sha1": "3a9ddf895d0874d4c4caf1690ac21665f9607bde",
+   "ja": "発動効果：アリスターは5秒間、0.5秒ごとに周囲の地面を踏み鳴らし、ゴースト状態になって周囲の敵に魔法ダメージを与える。これが少なくとも一体の敵チャンピオンにダメージを与えるたびに「踏破」のスタックを得て、残りの効果時間の間続き、最大5回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Trample#description2": {
+   "source_sha1": "842b29a6bbff46ba10a624c2b5b8ff4718125c14",
+   "plain_sha1": "b3012bbbcdc0b32e72788106fa07ff4503260d7d",
+   "ja": "5スタックで、6秒以内のチャンピオンへの次の通常攻撃（攻撃時効果）で「踏破」の効果が終わり、20～275（レベルに応じて）の追加の魔法ダメージを与えて、対象を1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Alistar/Unbreakable Will#description": {
+   "source_sha1": "4e1d602c82ad1acdf376ac427022961c9ddcd902",
+   "plain_sha1": "b16e05b9e21b4afc7c9f8aa86584d8015dd67947",
+   "ja": "発動効果：アリスターは自身のすべての行動妨害を解除する。次の7秒間、受けるダメージを軽減する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

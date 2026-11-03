@@ -1,0 +1,128 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Taliyah/Rock Surfing#description": {
+   "source_sha1": "3593bec5560a7355d651f2e2c6f2c74f71928100",
+   "plain_sha1": "90240bcf2084a1598c20b3b68f40098979ec59fb",
+   "ja": "固有：地形の近くにいる間、タリヤは移動速度が10%～40%（レベルに応じて）増加する。範囲内に0.4秒以上いると1秒かけて増え、範囲外に3秒以上いると同じ速さで減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Rock Surfing#description2": {
+   "source_sha1": "1bdb7884ba927aa72409ff6ba048062a34bb60ca",
+   "plain_sha1": "fe7da3f364a3158c572fdb8e56cb2a1503e63294",
+   "ja": "タリヤがスキルを使っているか、チャンピオンとの戦闘に入ると、数秒間「ロックサーフィン」は起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Threaded Volley#description": {
+   "source_sha1": "b1a580295f68d0b41e5da8284538ce230967c950",
+   "plain_sha1": "1a098e9e30b54b0f5c4715ad5ca81072b19b4652",
+   "ja": "発動効果：タリヤは1.5秒かけて指定方向に5個の「Stone Shard」を連続で放ち、それぞれ最初に命中した敵で砕けて、周囲の敵に魔法ダメージを与え、0.5秒間可視化する。二発目以降の命中は40%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Threaded Volley#description2": {
+   "source_sha1": "0ac4dae8b2816f0b187cb0d0cd4e0228062effc8",
+   "plain_sha1": "f406ac47ba7fd529bb6ec6111fc762793d1c6020",
+   "ja": "「Stone Shard」を放っている間、タリヤは移動とほかのスキルの使用ができ、三発目を放つまで通常攻撃はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Threaded Volley#description3": {
+   "source_sha1": "16fdf1e7608b4db603d263aad496af3f0cad6e15",
+   "plain_sha1": "dc7cac1f2e243b9905bf33eb4e894c1a132d1ab0",
+   "ja": "「スレッドボレー」を使うと、発動した位置に半径400ユニット・30秒間続く「Worked Ground」の範囲ができる。タリヤが「Worked Ground」の範囲内にいると、「スレッドボレー」の発動はその範囲を消費して新しい効果で強化され、マナコストは10になり、クールダウンが50%短縮される（0.75秒未満にはならない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Threaded Volley#description4": {
+   "source_sha1": "34f0750bb7e3299471d30a4b8f2188c05dde8922",
+   "plain_sha1": "27b5b734eee06e9fac3c0ae7d83321289a51ede9",
+   "ja": "強化された発動効果：タリヤは大岩を投げ、大岩は最初に命中した敵で爆発して、その敵に180%のダメージと、周囲の敵に通常のダメージを与え、命中したすべての対象に1.5秒間スロウを与えて、0.5秒間可視化する。命中したモンスターは3秒間スタンもする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Threaded Volley#description5": {
+   "source_sha1": "5bad9ad23119bda695fc538f534fb7a32fc45a52",
+   "plain_sha1": "de53214e153617bc3caaa55e99af0a80d9c3cad0",
+   "ja": "モンスターに対しては、「スレッドボレー」は「Stone Shard」ごとに追加の魔法ダメージを与え、強化された発動の大岩は主対象に80%の追加ダメージを与える。この追加ダメージは、二発目以降の命中のダメージの倍率の影響を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Seismic Shove#description": {
+   "source_sha1": "da5d6777599782500cb1fcd441a8b903d5e5e5de",
+   "plain_sha1": "c70d54fc9ccaae3162390ae79198aa3338cbc8e3",
+   "ja": "発動効果：タリヤは指定地点に印を付け、方向を選ぶ。0.792秒後、範囲から岩棚が噴き出し、命中した敵を1秒かけて指定方向に400ユニット飛ばす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Unraveled Earth#description": {
+   "source_sha1": "5e663d06b815fb5551cbba3c992edfb0d81b4725",
+   "plain_sha1": "1e4d966d8e9376085ab94de4a426c39871ddc018",
+   "ja": "発動効果：タリヤは指定方向の地面に22個の石を散らし、石は噴き出す際に命中した敵に魔法ダメージを与える。その後、石は4秒間残り、範囲内の敵に20%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Unraveled Earth#description2": {
+   "source_sha1": "cfc7f2600af976ed5d4b2ba69d85b6006b7aacff",
+   "plain_sha1": "da21ac8c47b9555e314e70e2290c99fcb96e3182",
+   "ja": "石の上をダッシュするか飛ばされて通った敵は石を爆発させ、魔法ダメージを受けて0.75秒間スタンし、モンスターなら2秒になる。スタンは移動系の効果が終わった時点で与えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Unraveled Earth#description3": {
+   "source_sha1": "71ed5d8dc923d0ebd12df23a36eac5f4f86e5498",
+   "plain_sha1": "8a6fb682242dc1e936202d940b21637027316f65",
+   "ja": "敵は最大4個の石を爆発させられるが、爆発させた石の数に応じてダメージは0%～75%減る。「アンレイベルアース」は一回の発動につき各対象に一度だけ効き、石はそれでも爆発するが効果は与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Unraveled Earth#description4": {
+   "source_sha1": "0364ef53f0913fdbef7b519ca8749a27e19cd949",
+   "plain_sha1": "b2b7833369d1f8b00233596491ea7aac36642f3a",
+   "ja": "「アンレイベルアース」はモンスターに225%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Weaver's Wall#description": {
+   "source_sha1": "8e6f1f53d6cfceb48a59166281ad1088a4e6f6b7",
+   "plain_sha1": "d8eea0ae43729d9aa489c38739c5e27d0cf42463",
+   "ja": "発動効果：タリヤは渦巻く岩の奔流を呼び、指定方向へ流れ落ちさせて、当たったチャンピオンを脇へ押しのけ、通り道に地形の壁を立てる。壁は完成後4秒間続き、その後始点から徐々に崩れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Weaver's Wall#description2": {
+   "source_sha1": "3866b3b0f5f3332f54ae3d8d5e19369a548fcb16",
+   "plain_sha1": "f4afaed364c32401e512de85ffee5de9b97273e6",
+   "ja": "さらにタリヤは1秒間詠唱し、その間「ウィーバーウォール」を再発動でき、自身は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Weaver's Wall#description3": {
+   "source_sha1": "1d9289423170b718daa4fca1a87b146af03bde6d",
+   "plain_sha1": "9ecb942907f16b5b712008a9e3f7688c061d6fda",
+   "ja": "再発動：詠唱を終えると、タリヤは現れる壁に乗って進み、その間自身は可視化される。0.75秒後から、移動の指示で壁から指定地点へ飛び降りられ、移動不能かサイレンスを受けるか最大射程に達すると自動で飛び降りる。壁が完成した後に再発動すると、壁を即座に壊せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Taliyah/Weaver's Wall#description4": {
+   "source_sha1": "f9bb8100126adb6b5c4ebccce2d92929b531ad28",
+   "plain_sha1": "ef3e352d6b817e30961f94291b61dd11862f0923",
+   "ja": "チャンピオンかタワーからダメージを受けると、「ウィーバーウォール」は3秒の固定のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

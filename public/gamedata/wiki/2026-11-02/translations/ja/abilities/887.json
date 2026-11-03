@@ -1,0 +1,128 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Gwen/A Thousand Cuts#description": {
+   "source_sha1": "1565b63447c435fa31f6e4b3f2e377a6f9073151",
+   "plain_sha1": "af70d63e93c36d7bbce06cd921c5dd59ff8ce662",
+   "ja": "固有：グウェンの通常攻撃（攻撃時効果）、「チョキチョキッ！」の中心、「針仕事」は、対象の最大体力の1%（+ AP 100ごとに0.6%）に等しい追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/A Thousand Cuts#description2": {
+   "source_sha1": "49bd728cc5dc14f3f93dd9ae3d61ecd733190360",
+   "plain_sha1": "4e6fc7e45b56f12d66635816ca0fb5f5c656b681",
+   "ja": "「裁断」は対象によって変わる：* チャンピオンに与えた軽減後のダメージの67%をグウェンが回復し、一回につき12～40（レベルに応じて）（+ APの7%）が上限。* 体力が40%未満のミニオンには、さらに8～30（レベルに応じて）の追加の魔法ダメージを与える。* モンスターには最大3（+ APの5%）の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Snip Snip!#description": {
+   "source_sha1": "e75d6f48aff8945555f95240e7b0b5ef7db00e67",
+   "plain_sha1": "efebde9a7e2575385aa4597bcb18571c40ceb483",
+   "ja": "自動効果：グウェンの通常攻撃は攻撃時効果として6秒間「Snippy」のスタックを得て、最大4回まで重なり、攻撃のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Snip Snip!#description2": {
+   "source_sha1": "fafa80fe748cf8f0c1f6ec43d42a6eea5956c0e2",
+   "plain_sha1": "63cfeb433c356c8c44c511a8eb311bc78beac8cf",
+   "ja": "発動効果：グウェンは詠唱時間の間に指定方向の扇形をハサミで少なくとも二回切り、範囲内のすべての敵に切るたびに魔法ダメージを与え、最後の一回は増加したダメージを与える。各切りの中心ではダメージの50%が確定ダメージに変わり、その後「裁断」を与える。「チョキチョキッ！」はミニオンに80%のダメージを与え、体力が20%未満のミニオンは最初のダメージで処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Snip Snip!#description3": {
+   "source_sha1": "3d7f9aa369e695c033484a93729dbdedd2226283",
+   "plain_sha1": "ae593ed0c3c9f5917f41c83f111488134fdaf0d8",
+   "ja": "グウェンに「Snippy」のスタックがあれば、それを消費して、スタック一つごとに一回多く切る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Hallowed Mist#description": {
+   "source_sha1": "a338f31d19ef558b5860be0deb566fbc7562c536",
+   "plain_sha1": "5a53f8b4fed3a36c65132e07374a760a31cdee4c",
+   "ja": "発動効果：グウェンは今いる位置に「聖なる霧」を呼び出し、霧は4秒間続く。「聖なる霧」は0.5秒後から再発動でき、グウェンが範囲から出ようとすると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Hallowed Mist#description2": {
+   "source_sha1": "f31a3644b33e69a294aeb63be21834ab5de6e9d2",
+   "plain_sha1": "bfd29bb2ccd1ddb74e27327a150dacf362219148",
+   "ja": "霧の中にいる間、グウェンはゴースト状態になり、物理防御と魔法防御が増加して、霧の外にいるすべての敵（タワーとモンスターを除く）から対象指定不可になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Hallowed Mist#description3": {
+   "source_sha1": "dedb6e2bf2bba4c06ff4ef46f10af6d20482c4c1",
+   "plain_sha1": "a74f9fe46aedec4a41c7491f354f5502c5224501",
+   "ja": "再発動：グウェンは霧を自身の今いる位置へ移動させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Hallowed Mist#description4": {
+   "source_sha1": "e41055e07174b6a647d01f724db0d489a058cd08",
+   "plain_sha1": "1d6ca12e7870b18c7bed8248f0dbde24650de95a",
+   "ja": "グウェンは、霧の外にいるモンスターからの攻撃をすべて無効にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Skip 'n Slash#description": {
+   "source_sha1": "b5efb57e6a25950f3365892a20bee4b4ba1fd493",
+   "plain_sha1": "65a95d499fd3f2ed642bdfda478cae1e21f17ef0",
+   "ja": "発動効果：グウェンは指定地点へダッシュし、その後次の4秒以内の通常攻撃を強化して、攻撃時効果として15（+ APの20%）の追加の魔法ダメージを与え、攻撃速度が増加して通常攻撃の射程が75増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Skip 'n Slash#description2": {
+   "source_sha1": "de933f23b62cc4de938cf5b708db3fe8fa403735",
+   "plain_sha1": "7f9580aac123cac6cf8442fadeb4d739be9d52b9",
+   "ja": "効果時間中のグウェンの最初の通常攻撃で、「スキップスラッシュ」のクールダウンの一定割合が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Skip 'n Slash#description3": {
+   "source_sha1": "494f4844dd8522a2a8f3e83a983a2e564b5b0c11",
+   "plain_sha1": "fdccd374273dd6da5282a49706533844bd21cfdf",
+   "ja": "「スキップスラッシュ」はグウェンの通常攻撃タイマーをリセットし、グウェンのどのスキルの最中にも使用でき、その逆も同様。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Needlework#description": {
+   "source_sha1": "ceb17f718ebf4adbc74408a44ccda3383791d75a",
+   "plain_sha1": "0f0111f28ddf2e32284b8dda22e58b90d6466e88",
+   "ja": "発動効果：グウェンは指定方向に針を放ち、命中した敵に魔法ダメージを与えて、1.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Needlework#description2": {
+   "source_sha1": "9fc578eea0e173eb9b9d8ca2848e8dc6249c4e92",
+   "plain_sha1": "be6ff6c03734433264521dfc01496d98005217da",
+   "ja": "「針仕事」は発動から8秒以内に追加のコストなしでさらに二回再発動でき、使用の間には1秒の固定クールダウンがある。続けて使うたびに効果時間が更新され、放つ針が2本増える。二本目以降の針の命中は、対象ごとにスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Needlework#description3": {
+   "source_sha1": "cb65a385ea11cf25c2449a87a7a8935d1d281cd9",
+   "plain_sha1": "406f789fdc06e3ab5a7d91645121403cc48bb7da",
+   "ja": "再発動：グウェンは一回目の発動と同じ効果を行い、二回目は三本、三回目は五本の針を一斉に放つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gwen/Needlework#description4": {
+   "source_sha1": "e1011f4910539c074ec86e377f3d0140618e3e65",
+   "plain_sha1": "3b75af0109e0960c76e1ced112c9a3e95a0f0bb1",
+   "ja": "グウェンは「針仕事」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

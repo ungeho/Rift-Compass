@@ -1,0 +1,96 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Xerath/Mana Surge#description2": {
+   "source_sha1": "2fadbe8ad12e72a347521b15e652a529333e5024",
+   "plain_sha1": "bc63f102dfafa860cdb2b31ed97c65400c9ccab1",
+   "ja": "ゼラスが敵を倒すたびに、「マナサージ」のクールダウンが3.5秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Mana Surge#description3": {
+   "source_sha1": "304d9514f7d34b6654312e74135305bed0df4941",
+   "plain_sha1": "13043503696c64ff7b85a2aff8f88295cc829b5d",
+   "ja": "回復でゼラスのマナが最大マナを超える場合、「マナサージ」は発動しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Arcanopulse#description": {
+   "source_sha1": "3057c96e47ce8aded387a9aec2df54e63108e01e",
+   "plain_sha1": "864a590e73723cf032d6f737d0d571ade9b4d0ca",
+   "ja": "発動効果：ゼラスは詠唱時間に応じて0%～40%のスロウを受けながら最大3秒間溜め、詠唱の最初の1.5～1.75秒の間に「アルカノパルス」の射程が伸びる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Arcanopulse#description2": {
+   "source_sha1": "b4cfc610a56cf90316a279a07d1afc4e1ca66054",
+   "plain_sha1": "793a437f794997cf237556cfad74ed06bb95261b",
+   "ja": "「アルカノパルス」は効果時間中に再発動できる。溜めが中断されるか、再発動せずに最後まで溜めきると、「アルカノパルス」はキャンセルされ、マナコストの半分が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Eye of Destruction#description2": {
+   "source_sha1": "49f8b22dc17229b687c130214ca9e98b71a0b19d",
+   "plain_sha1": "0aacbcd727af0f061a7234513c4b855509781760",
+   "ja": "中心にいる敵は66.7%増加したダメージを受け、より強いスロウを受ける。スロウは効果時間の間に25%まで減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Shocking Orb#description": {
+   "source_sha1": "4a1c2ecd6df4d7cd27c705c5768ca84f63dfce15",
+   "plain_sha1": "2f17488b7bd8de9eaebf1fbba054fd59451f82a2",
+   "ja": "発動効果：ゼラスは指定方向にエネルギーの玉を放ち、最初に命中した敵に魔法ダメージを与えて、0.75～2.25秒間（玉が飛んだ距離に応じて）スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Rite of the Arcane#description": {
+   "source_sha1": "083d029590ab4d5134b5d2d278297d68926b8f1e",
+   "plain_sha1": "66d23bee33faf5e3d20e837433af2faf76d776cb",
+   "ja": "発動効果：ゼラスは最大10秒間詠唱し、0.5秒後から効果時間中に「アーケーンライト」を何度も再発動できるようになる。再発動を一度も使わずに「アーケーンライト」が終わった場合、クールダウンの半分が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Rite of the Arcane#description3": {
+   "source_sha1": "615c705b3a8a3af9f7a8d59188bd1edc2c37a4aa",
+   "plain_sha1": "90d06c66c595f1caf397f7fc305ca80a81090250",
+   "ja": "少なくとも一体の敵チャンピオンに命中すると、詠唱中に「Arcane Perfection」のスタックを得て、上限まで重なる。スタックごとに「Arcane Barrage」のダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xerath/Rite of the Arcane#description4": {
+   "source_sha1": "1e6c6d5c13e3ff3daaa413686fb7d50391f4c682",
+   "plain_sha1": "b014f0f92e9e2536babcc3b9b3c4bfdb4d17feed",
+   "ja": "近くに敵チャンピオンがいないとき、弾が敵ユニットから一定の距離内に着弾すると、ゼラスは数秒間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Xerath/Mana Surge#description": {
+   "source_sha1": "3db761808946fd9ade13edaab3127ad7ab5bb59e",
+   "reason": "residual_markup"
+  },
+  "Template:Data Xerath/Arcanopulse#description3": {
+   "source_sha1": "4234b817c6cbb7ec763deb29a4f4feafd54b4e37",
+   "reason": "residual_markup"
+  },
+  "Template:Data Xerath/Eye of Destruction#description": {
+   "source_sha1": "1e501e391272f0f6af68ff7384b372055a4d3003",
+   "reason": "residual_markup"
+  },
+  "Template:Data Xerath/Rite of the Arcane#description2": {
+   "source_sha1": "24c2c499914733cec0ea1c8732545431b4f10eb4",
+   "reason": "residual_markup"
+  }
+ }
+}

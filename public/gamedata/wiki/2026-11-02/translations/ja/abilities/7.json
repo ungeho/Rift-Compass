@@ -1,0 +1,114 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data LeBlanc/Sigil of Malice#description": {
+   "source_sha1": "2eff248f76e31ee8eca7b8177b77d530ebd9730b",
+   "plain_sha1": "9f02611cc17ee37ea243caa92f0602adf2c8b835",
+   "ja": "発動効果：ルブランは対象の敵に玉を放って魔法ダメージを与え、3.5秒間印を付ける。ミニオンには10～146（レベルに応じて）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Sigil of Malice#description2": {
+   "source_sha1": "e444e172fdd66a3ecede0f138b7bfe67e3c76281",
+   "plain_sha1": "7bbfbd509db5d901d8194a7f98543bb3125e4119",
+   "ja": "ルブランが次に印の付いた対象にダメージを与えるスキルを当てると、印を消費して同じ魔法ダメージをもう一度与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Sigil of Malice#description3": {
+   "source_sha1": "4df3be271ef1526cffa9ce4b3be989bd7148f2b7",
+   "plain_sha1": "64829196afa57c9dab35290d7b6c6dfd49837a13",
+   "ja": "玉か印の消費で対象を倒すと、「シジルマリス」の玉はマナコストの100%と残りクールダウンの30%を戻す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Distortion#description": {
+   "source_sha1": "0a5ee67c6e98af670982d95cbb47cada2f27cf05",
+   "plain_sha1": "aeecf20dcc121c19f1def6cc416445c89f954f57",
+   "ja": "発動効果：ルブランは指定地点へダッシュし、到着時に周囲のすべての敵に魔法ダメージを与え、発動地点に4秒間戻り用の印を残す。「ディストーション」は、ダッシュが終わってから0.2秒後から、印が残っている間再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Distortion#description2": {
+   "source_sha1": "70d490d9d421d1464f065cf0b47158e9e056745f",
+   "plain_sha1": "ecc2c7bcc4f6caf255c9d2b62ba7bbc1ec074b43",
+   "ja": "再発動：ルブランは距離に関係なく「ディストーション」の戻り用の印へブリンクする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Ethereal Chains#description": {
+   "source_sha1": "b8287bd9fb5b4b6e737fd3cd5df216f122838a7a",
+   "plain_sha1": "24ca318ed12b8e885a680677c15b1f34ca3f3de1",
+   "ja": "発動効果：ルブランは指定方向に幻影の鎖を投げ、最初に命中した敵に魔法ダメージを与えて、ルブランと対象の間に1.5秒間つながりを作る。その間対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Ethereal Chains#description2": {
+   "source_sha1": "5d252c5075b807505dfc15e6e516a73e0176c06d",
+   "plain_sha1": "5aa4954e7d8ef3e0c5871908e22bbd4db92ee88a",
+   "ja": "効果時間の終わりまでにつながりが切れなければ、鎖が砕けて対象に魔法ダメージを与え、1.5秒間スネアを与える。その間対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mimic#description": {
+   "source_sha1": "9e6dd37ed2c88de8a918d64e7d4551b2f39da401",
+   "plain_sha1": "7e28c36e91b93cc41e35926a981ab4805ce55a13",
+   "ja": "発動効果：ルブランは最後に使った基本スキルの模倣版を使い、同じ効果を与えて修正された魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mimic#description2": {
+   "source_sha1": "c109c7fc8856c0cc928404004f580f4359315996",
+   "plain_sha1": "20cce9c2615e90d983de32569d0069d7e692707a",
+   "ja": "模倣：「シジルマリス」：玉は修正されたダメージを与え、印の消費はその二倍の量を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mimic#description3": {
+   "source_sha1": "3d366909b06c37ddae445a29e6f2e2d40b0c940e",
+   "plain_sha1": "30698cb2b1b2c0b65e75714bd9301e35f881ed34",
+   "ja": "模倣：「ディストーション」：修正されたダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mimic#description4": {
+   "source_sha1": "1fe7a3273815f56ef77f47cf6b32d4f8181f30db",
+   "plain_sha1": "9b8d204dac977c70a22383137972970fa7a93f5a",
+   "ja": "模倣：「エーテルチェイン」：つながりの付与時に修正されたダメージを与え、砕けたときにその二倍の量を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mirror Image#description": {
+   "source_sha1": "6bef7e061ddef53f073b558f90ed51fcfd418b3e",
+   "plain_sha1": "c56761ece2ccfb94b869f51175f3b1ef4341db1c",
+   "ja": "固有：一定時間ごとに、ルブランがダメージで最大体力の40%まで減ると自身の分身を作り、その後どちらも即座に1秒間インビジブルになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mirror Image#description2": {
+   "source_sha1": "eb2d5ff3c3069e4d0b316a1e7119aa9964cddde9",
+   "plain_sha1": "d8727cd3e9e32400bdd26159be6a2bb951885775",
+   "ja": "分身は効果のない通常攻撃を行うことができ、8秒間残る。出現すると、出現した時点のルブランの移動方向の前方のランダムな方向へ、最大1900ユニット移動し始める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data LeBlanc/Mirror Image#description3": {
+   "source_sha1": "bbdfa44dcbbb64bf54bb9dc5dd286161b4df5e52",
+   "plain_sha1": "9494b06db4efb157df8545f140e5b5b416996cb0",
+   "ja": "ルブランの分身の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

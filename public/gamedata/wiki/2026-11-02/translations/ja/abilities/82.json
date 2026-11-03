@@ -1,0 +1,104 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Mordekaiser/Darkness Rise#description": {
+   "source_sha1": "2c1c4409f842a79f755c76b2599fada44383dcc2",
+   "plain_sha1": "f3b70db0ff7eeee1dbe3ae922803f68fd54ed87f",
+   "ja": "固有：モルデカイザーの通常攻撃は強化され、攻撃時効果としてAPの40%の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Darkness Rise#description2": {
+   "source_sha1": "c5d2819cf66f4991903171e68ac8cccf4f4b15f2",
+   "plain_sha1": "c889b170dddd0ab221395274f4a41311fe742757",
+   "ja": "固有：モルデカイザーは、通常攻撃でダメージを与えたか基本スキルが命中した敵チャンピオンか大型モンスター一体ごとにスタックを得る。スタックは4秒間続き、発動のたびに更新され、最大3回まで重なる。3スタックで「無窮の闇」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Darkness Rise#description3": {
+   "source_sha1": "c1e8824d88ba45aabb237f73fda5660a5593d23d",
+   "plain_sha1": "b0a0388247f5b29f9ea229631354053578ddb48b",
+   "ja": "「無窮の闇」：モルデカイザーは移動速度が3%～18%（レベルに応じて）増加し、周囲の敵に毎秒5（+ APの30%）（+ 対象の最大体力の1%～5%〔レベルに応じて〕）の魔法ダメージを与える。モンスターに対しては、ダメージは毎秒40～200（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Obliterate#description": {
+   "source_sha1": "554cc7db1d5dc41c3c69ad77be4f6fcec6357505",
+   "plain_sha1": "2139d25ac07574e272d3f4f1077199bf50b9410a",
+   "ja": "発動効果：モルデカイザーは指定方向の直線上にメイスを振り下ろし、範囲内の敵に魔法ダメージを与える。命中した敵が一体だけの場合はダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Indestructible#description": {
+   "source_sha1": "07433a32d622ec43210e1fd83e3333f302a27043",
+   "plain_sha1": "dc35cf06c9c56ca497ce9782087164ff6be369ed",
+   "ja": "自動効果：モルデカイザーは、与えた軽減後のダメージの45%と、受けた軽減前のダメージの7.5%（チャンピオン以外の発生源からは75%減少）を、二つ目のリソースのバーに「Potential Shield」として最大体力の30%まで蓄える。ダメージを与えも受けもしない状態が1秒続くと、「Potential Shield」は毎秒8～25（レベルに応じて）減る。「不滅の鎧」がクールダウン中でない間は、「Potential Shield」は最大体力の5%より下には減らず、クールダウンが明けたときにそれより少なければその量になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：Shield）"
+   ],
+   "allow_reason": "原文の Shield は名前（Potential Shield）の一部。効果としてのシールドは次の段落で訳している"
+  },
+  "Template:Data Mordekaiser/Indestructible#description2": {
+   "source_sha1": "c3d0b29d61262ed09463bef858fbc28a33f13e96",
+   "plain_sha1": "bf2e3055fdaa3f44579cd6b4c078b590f4d8e300",
+   "ja": "発動効果：モルデカイザーは「Potential Shield」を消費して、同じ量のシールドを4秒間自身に付与する。シールドは効果時間の間に指数関数的に減衰する。シールドがある間、0.5秒後から「不滅の鎧」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Indestructible#description3": {
+   "source_sha1": "0aa1aae787712cf43a9cd3056c1a55800de50a25",
+   "plain_sha1": "378f562933556d16f7c92e41b26e9811b3d2756c",
+   "ja": "再発動：モルデカイザーは残りのシールドを消費し、その一部を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Death's Grasp#description": {
+   "source_sha1": "41452eb160642b9fc1b8e0f76f0f71916063c607",
+   "plain_sha1": "592078157b7aeeb3eaba99a43b468a00d6b1b9af",
+   "ja": "自動効果：モルデカイザーは魔法防御貫通を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Death's Grasp#description2": {
+   "source_sha1": "c132ad6899c5f8cd17a032affaf2c5d430f9392b",
+   "plain_sha1": "ece6d0b663363cb35f1e008693566fb7ee5aa543",
+   "ja": "発動効果：モルデカイザーは指定方向に爪を呼び出し、その範囲の視界を得る。0.5秒後、範囲内の敵に魔法ダメージを与えて250ユニット引き寄せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Realm of Death#description": {
+   "source_sha1": "ee82f210b7e8c6e3835f7b1d17f7ebb68aef3c01",
+   "plain_sha1": "e1e2599101464a1431a62af4f064145350a0d75f",
+   "ja": "発動効果：モルデカイザーは対象の敵チャンピオンにメイスを向け、詠唱時間の間75%のスロウを与えて可視化し、その後7秒間ともに「死の国」へ送る。さらに7秒間対象の魂を食らい、対象の最大体力の10%を回復して、効果時間の間、対象の現在の魔力・合計の攻撃速度・最大体力・物理防御・魔法防御・サイズを10%減らす。加えて、同じ時間、対象の基本攻撃力を現在の合計攻撃力の10%減らす。モルデカイザーは同じ時間、減らした分のステータスを自身が得て、対象が「死の国」の中で死んだ場合は、対象が復活するまでその一部のステータスを保つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Realm of Death#description3": {
+   "source_sha1": "c2dd8d1a24413ea8450538247b26046778a302e2",
+   "plain_sha1": "01304788732e42635135435c4afa7a42e97e35c6",
+   "ja": "別々の世界にいるユニットは互いを霊として見て、互いに死んでいるものとして扱い、互いの干渉を無効にする。世界に入るのはモルデカイザーと対象だけで、ほかのチャンピオンはついていけない。「死の国」の中で起きることは外のユニットからは見えず、その逆も同じ。世界の中に残ったペットの多くは、終了時に倒される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Mordekaiser/Realm of Death#description4": {
+   "source_sha1": "471cb2a9c909acaa6b37a8959e3ccce240581ead",
+   "plain_sha1": "86440e86d55ba25cd0e2d170f82eb1a5b4826da2",
+   "ja": "「死の国」が終わると、影響を受けたチャンピオンはすべて通常の世界へ戻る。影響を受けたどちらかのチャンピオンが死ぬか、世界から押し出されると、「死の国」は早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

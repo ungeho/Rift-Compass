@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Nilah/Joy Unending#description": {
+   "source_sha1": "fa8b840abd3b2553bfe8ba5a8ca9b04e44875f68",
+   "plain_sha1": "9dc03c4e81b8ae3f36dfa6acfd01cfdae063a2ed",
+   "ja": "固有：ニーラがミニオンを倒すたびに、ニーラと最も近い味方チャンピオンは、経験値を分け合うことで失うはずだった分の50%を追加で得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Joy Unending#description2": {
+   "source_sha1": "303bd750793c2c71e8a845dcfeefc5aceaba101a",
+   "plain_sha1": "c40b444fb65f8db3ca6445898b294d3148ff50b4",
+   "ja": "固有：近くの味方チャンピオンがスキルでニーラか自身を回復するかシールドを付与するたびに、0.5秒の遅れの後、その味方とニーラの両方が、回復の7.5%かシールドの15%に等しい追加の量を受ける。追加のシールドは、発動のきっかけとなったシールドと同じ時間（最大4秒）続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Formless Blade#description": {
+   "source_sha1": "649b3bfa014144006ea1157b1553ea5ea00909a1",
+   "plain_sha1": "ed0a88c8ff7376e8e42d4ccaa13b1dd9eb187bc8",
+   "ja": "自動効果：ニーラはクリティカル率に応じて0%～30%の物理防御貫通を得る。通常攻撃と「形なき刃」は、チャンピオンに与えた軽減後のダメージの0%～20%（クリティカル率に応じて）を回復し、最大体力を超えた回復はそれぞれ6秒間続くシールドに変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Formless Blade#description3": {
+   "source_sha1": "cd08cb620cff0a5810285a64c53077d4ccc78423",
+   "plain_sha1": "ddf4b353913f2c81dd6f9e3708c346d55ed9d4b4",
+   "ja": "「流撃」の間に「形なき刃」を使うと、ニーラは波を残し、波はダッシュの終わりにニーラの位置へ向かって飛び、命中した敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Formless Blade#description4": {
+   "source_sha1": "b2e137d8c83242fc25cb842beb8fe52a35ab3bca",
+   "plain_sha1": "6670f4165f605033489b57af038f56cfdb63670b",
+   "ja": "「形なき刃」が敵に当たると、ニーラは4秒間自身を強化する：通常攻撃の射程が125、攻撃速度が10%～60%（レベルに応じて）増加し、通常攻撃は扇形の範囲を打って、命中した敵に攻撃力の100%の物理ダメージを与える。チャンピオン以外の副対象に対しては、ミニオンには攻撃力の33%になり、さらに体力が20未満になるミニオンは処刑する。攻撃時効果は主対象にのみ適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Jubilant Veil#description": {
+   "source_sha1": "ebb2a9d9a296c8a53fdbe0e85c86842dd1fc6dff",
+   "plain_sha1": "d65d07bd2b13bf13aba4c4b62a72c921ec53bcba",
+   "ja": "発動効果：ニーラは2.25秒間霧に包まれ、その間ゴースト状態になって移動速度が増加し、受ける魔法ダメージを25%軽減して、タワー以外のすべての通常攻撃を回避する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Jubilant Veil#description2": {
+   "source_sha1": "83daad0786e12d3919e84244710d0ee92aaf5fe2",
+   "plain_sha1": "27a137b96606bbdd17b18493e2b0d0daec11cc13",
+   "ja": "ニーラが触れた味方チャンピオンも1.5秒間霧に包まれ、同じ効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Slipstream#description": {
+   "source_sha1": "c98f212d930ab34ac3d4af908162d227060522d2",
+   "plain_sha1": "81d5bf7be8f6e98bbe8fbc2b952d8ee2916d91b0",
+   "ja": "発動効果：ニーラは対象のユニットの方向に決まった距離ダッシュし、通過した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Slipstream#description2": {
+   "source_sha1": "6d482d6f51284d33607c1dbf42003e62b05842f3",
+   "plain_sha1": "7e1e7c7de239618b40cfc5d6a946b2b81637038d",
+   "ja": "ニーラは一定時間ごとに「流撃」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Slipstream#description3": {
+   "source_sha1": "3163244409edb76ccabcdb0e9a43048515e06483",
+   "plain_sha1": "ed28691162461dd556ffe0a7dffb1e9ee16ab52f",
+   "ja": "「流撃」はニーラの通常攻撃タイマーをリセットする。ダッシュ中に「形なき刃」と「アポテオシス」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Apotheosis#description": {
+   "source_sha1": "16fdd328de58c66036abdaafceb976beb2805122",
+   "plain_sha1": "3dfd1fa61670a3ee173908c4ce201a141e63f0c5",
+   "ja": "発動効果：ニーラは1秒かけて鞭剣を振り回し、0.25秒ごとに周囲の敵に物理ダメージを与える。その後衝撃を放って物理ダメージを与え、敵を自身の方へ250ユニット引き寄せる。命中のたびに対象に3秒間10%のスロウも与え、命中のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Apotheosis#description2": {
+   "source_sha1": "d82d163828664a3a5a049d8517f022ec44a7abd0",
+   "plain_sha1": "3af33596d8f73ba26f59971b1382db0faa85cc14",
+   "ja": "ニーラは、チャンピオンに与えた軽減後のダメージの20%～50%（クリティカル率に応じて）を自身と近くの味方チャンピオンに回復し、チャンピオン以外には10%になる。最大体力を超えた回復はそれぞれ6秒間続くシールドに変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nilah/Apotheosis#description3": {
+   "source_sha1": "94df8878dd132740870610bc244715a5bd666c5d",
+   "plain_sha1": "4f88f779c1076412e0c9aef7fab716413a5c4fd6",
+   "ja": "「アポテオシス」の間、ニーラは通常攻撃もほかのスキルの使用もできないが、移動はできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Nilah/Formless Blade#description2": {
+   "source_sha1": "40bbd4ce98cd7e38a1c44d87464191670838d60e",
+   "reason": "residual_markup"
+  }
+ }
+}

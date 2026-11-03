@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ashe/Frost Shot#description2": {
+   "source_sha1": "0211625c28eea76377e21b9da350657f95cbcb0d",
+   "plain_sha1": "35576bf16c6e792ba78362f56b0b3f6e833f9150",
+   "ja": "固有 -「フロストショット」：アッシュの通常攻撃とスキルの命中は、敵に2秒間「Frost」を与え、その間20%～30%（レベルに応じて）のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Frost Shot#description3": {
+   "source_sha1": "708f17e4e5300fea08f40b9f834f78d21a294aa9",
+   "plain_sha1": "ce772fa4bb927a731f137d2597048662cd7b5774",
+   "ja": "固有 -「Critical Slow」：アッシュのクリティカルは「Frost」のスロウを二倍の40%～60%（レベルに応じて）にし、効果時間の最初の一秒の間に通常の強さまで減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Ranger's Focus#description": {
+   "source_sha1": "b4c6a946c00088fab9cb6d41ae52bba47e60f1a9",
+   "plain_sha1": "f4919dc8ea922f73830b6b30b624cdca47938ed2",
+   "ja": "自動効果：「レンジャーフォーカス」が発動していない間、アッシュの通常攻撃（攻撃開始時）のたびに4秒間「Focus」のスタックを得る。攻撃のたびに効果時間が更新され、最大4回まで重なる。効果時間が終わると、スタックは毎秒一つずつ消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Ranger's Focus#description2": {
+   "source_sha1": "1f2f62a1a5eeb77db1f36f96f5e2cf02bb899726",
+   "plain_sha1": "ef799c2949894a9f92947748c714da4f2536b349",
+   "ja": "発動効果：アッシュは6秒間攻撃速度が増加し、通常攻撃を強化して、修正された物理ダメージを与える五本の矢を一度に放つ。矢ごとにライフスティールと「フロストショット」が適用されるが、攻撃時効果は一度だけ適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Ranger's Focus#description4": {
+   "source_sha1": "16e039d9248502dea05b1bce3bc1c3329c99d7ac",
+   "plain_sha1": "09ed9a3538ebb5154a1cbb2811824787d855e55c",
+   "ja": "「レンジャーフォーカス」はアッシュの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Volley#description": {
+   "source_sha1": "ad3b754774b9aad01071f083c2a71993e8a8cc46",
+   "plain_sha1": "ca20ceef8608711f9c24df0eeda3105da12579bc",
+   "ja": "発動効果：アッシュは指定方向の扇形の範囲に矢を一斉に放ち、それぞれ最初に命中した敵に物理ダメージを与え、命中した敵チャンピオンに「Critical Slow」（クリティカル時のスロウ）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Volley#description2": {
+   "source_sha1": "8e57a009a0ccefb1f07f2114c7ddce72bd0ff852",
+   "plain_sha1": "8e57a009a0ccefb1f07f2114c7ddce72bd0ff852",
+   "ja": "敵は複数の矢を受け止めることができるが、最初の一本以外からはダメージを受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Hawkshot#description": {
+   "source_sha1": "58ecb30cb43fdb5779da9d6663d8eddd5d1e7e6b",
+   "plain_sha1": "94dd5c00a21ae413c985c80cd6bf36559cd8f426",
+   "ja": "発動効果：アッシュは指定地点に鷹の霊を送り、その進路で100ユニット進むごとに0.5秒間の視界を、目的地では5秒間の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Hawkshot#description2": {
+   "source_sha1": "475a136f8d2e949a4947eb2c626301ced4460a3c",
+   "plain_sha1": "06523e69251fa717201d8467bc91fc078e7bf518",
+   "ja": "アッシュは一定時間ごとに「スカウトホーク」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ashe/Enchanted Crystal Arrow#description2": {
+   "source_sha1": "0c0c4ef1b445213f4bac93c268119ef3a611cde4",
+   "plain_sha1": "17b50a2c189cf0e9e79cbad56dbc26194d97e0c8",
+   "ja": "主対象の周囲の敵は同じダメージを受け、「フロストショット」を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Ashe/Frost Shot#description": {
+   "source_sha1": "94908e711c825aacc5d27cee412679e9fe77c349",
+   "reason": "residual_markup"
+  },
+  "Template:Data Ashe/Enchanted Crystal Arrow#description": {
+   "source_sha1": "12ca67668dd56d0be215d6e0ad50932b56e733a1",
+   "reason": "residual_markup"
+  }
+ }
+}

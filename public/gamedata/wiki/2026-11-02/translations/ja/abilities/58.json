@@ -1,0 +1,144 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Renekton/Reign of Anger#description": {
+   "source_sha1": "ac303c42d8ad073619bc8241836b18d2a70e56e8",
+   "plain_sha1": "64562ec98114da3a393f5c295819605df1859e4a",
+   "ja": "固有：レネクトンの通常攻撃は攻撃時効果として「Fury」を5得る。戦闘から離れて通常攻撃もしない状態が12秒続くと、0.25秒ごとに「Fury」を1失う。戦闘に入るか攻撃をすると「Fury」の減少が止まり、時間がリセットされる。また、「セベクの怒り」の効果中は時間が常にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Reign of Anger#description2": {
+   "source_sha1": "964969d94a1dbda19db9e701cf30e289bd9bb2b0",
+   "plain_sha1": "803303c429965963a93c574f04b8767a64e58d33",
+   "ja": "レネクトンの「Fury」が50以上ある間、次の基本スキル（「Slice」を除く）は「Fury」を50消費して強化され、追加の効果を得る。強化されたスキルは「Fury」を生まない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Reign of Anger#description3": {
+   "source_sha1": "3612f59a47f66d17b009380abbe12c17cffc5799",
+   "plain_sha1": "dc3ac4ace0510248de6c4dd6aba6903f5b93a33d",
+   "ja": "レネクトンは、体力が最大体力の50%未満の間、あらゆる発生源から得る「Fury」が50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Cull the Meek#description": {
+   "source_sha1": "38d3005984e71c29dd293ffc999003d495ee100d",
+   "plain_sha1": "c0a45c0a448ed5e32d00d38488dc14dc80c95b58",
+   "ja": "発動効果：レネクトンは周囲をなぎ払い、周囲の敵に物理ダメージを与えて、命中した敵一体ごとに自身を回復する（上限あり）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Cull the Meek#description2": {
+   "source_sha1": "3a5fe6896b2971ba0b0fe60b06316ab8ad2bd164",
+   "plain_sha1": "c9823a4c271f2de0e5fe4ab183ad3bde14424e2a",
+   "ja": "チャンピオンに対しては回復量が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Cull the Meek#description3": {
+   "source_sha1": "6e2647eda3c7d30b0ae72ea459c77cd244821824",
+   "plain_sha1": "c38331775253dd674e76a66f2453741e8f82035e",
+   "ja": "レネクトンは、命中したチャンピオン以外の敵一体ごとに「Fury」を2.5、チャンピオン一体ごとに10得る。一回の発動で合計30まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Cull the Meek#description4": {
+   "source_sha1": "60c13abe6ea4415367a82b94ade82e38272ba746",
+   "plain_sha1": "021318bfd2c6b97c66cc57795a3e666a572910b7",
+   "ja": "「激情の支配」のボーナス：「ミートカット」のダメージが増え、合計の回復量が三倍になり、回復の上限が四倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Cull the Meek#description5": {
+   "source_sha1": "e9d4ac0371b80eab0540664561fb50787cee0136",
+   "plain_sha1": "2622a5a076c2d18b859b4ad3f5cff1ca00cfebd0",
+   "ja": "「ミートカット」の発動後0.25秒間、レネクトンは通常攻撃も「スライス・アンド・ダイス」と「セベクの怒り」の使用もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Ruthless Predator#description": {
+   "source_sha1": "36e932a78e3468c52a72c84921aac26a5ee7ef63",
+   "plain_sha1": "d6e6ddff2bbb234b60a2809ea693413a166da99f",
+   "ja": "発動効果：レネクトンは7秒以内の次の通常攻撃を強化し、詠唱時間を0.2秒、射程を175にして、対象を二回攻撃し、修正された物理ダメージを与えて0.75秒間スタンさせる。攻撃はそれぞれ攻撃時効果を与え、「Fury」を生む。敵チャンピオンに命中すると「Fury」を追加で10得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Ruthless Predator#description3": {
+   "source_sha1": "a6d4b56616f81ab75f83c3a9d8a2aab1d5115d58",
+   "plain_sha1": "ee8d04b76d698afee46442585d4c32d045025ab4",
+   "ja": "「激情の支配」のボーナス：レネクトンは代わりに3回攻撃し、対象がモンスターでなければ最初の攻撃で対象のダメージを防ぐシールドを完全に破壊し、スタンの効果時間を1.5秒に延ばす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Slice and Dice#description": {
+   "source_sha1": "df1bc5855273295a0a410d31ceab682c83c1e8aa",
+   "plain_sha1": "3f4333128ecd5eb5543f2076c07f66de9a1f5fa5",
+   "ja": "発動効果 -「Slice」：レネクトンは指定方向に決まった距離ダッシュし、通過した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Slice and Dice#description2": {
+   "source_sha1": "9b274ce2cdd9ef3c3c9a894a3109f0613143445f",
+   "plain_sha1": "ab766a6def82351c3ccf6b067484002326e4cbd5",
+   "ja": "レネクトンが敵に命中させると、次の4秒以内に「スライス・アンド・ダイス」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Slice and Dice#description3": {
+   "source_sha1": "528f320ae2e966e49b1ea6857cc946c0692f8ede",
+   "plain_sha1": "b4eae1347366c543d11034addc7ce9e83de17d63",
+   "ja": "再発動 -「Dice」：レネクトンは最初の発動と同じ効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Slice and Dice#description4": {
+   "source_sha1": "e955e6407b6f6f75af799bca6425984cee46b411",
+   "plain_sha1": "42a91e32196d5c1cf03d5e3eac4777c2ec1c22dd",
+   "ja": "どちらの発動も、命中したチャンピオン以外の敵一体ごとに「Fury」を2、チャンピオン一体ごとに10生み、一回の発動で合計30まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Slice and Dice#description5": {
+   "source_sha1": "0ab521f9a79bef8e6a49cb6160e0b61dae49690c",
+   "plain_sha1": "3759a12bfd9bae9b09a333b944e90ef0a9775319",
+   "ja": "「激情の支配」のボーナス：再発動の「Dice」は追加の物理ダメージを与え、命中した敵に4秒間物理防御低下を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Dominus#description": {
+   "source_sha1": "b10a3f8c7eaab648a3c93937c93f81000fb1ffbd",
+   "plain_sha1": "66656c8be0044240254ccce079fbd178e6ea2b34",
+   "ja": "発動効果：レネクトンは15秒間自身を強化し、増加体力、サイズの20%増加、通常攻撃の射程25の増加、「Fury」20を得て、「ミートカット」の効果範囲も広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Renekton/Dominus#description2": {
+   "source_sha1": "1f27b45ae2e760e97db61f0f9d64244206aedc17",
+   "plain_sha1": "fa3d5dc6718f070bdcbb15c90d5a2529bdb6c7c0",
+   "ja": "この間、0.5秒ごとに周囲の敵に魔法ダメージを与え、毎秒「Fury」を5生む（最大75まで）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Renekton/Ruthless Predator#description2": {
+   "source_sha1": "97e5c9880936eeed48345d6cc117119c8f107b0c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Renekton/Ruthless Predator#description4": {
+   "source_sha1": "3adbb1a0e7d9b419476e64c5f262a6a4f17e1e2e",
+   "reason": "residual_markup"
+  }
+ }
+}

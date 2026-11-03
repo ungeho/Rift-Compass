@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -22,6 +22,129 @@
    "source_sha1": "63fc3c2ddf60a14bb88327d8119be900cbfba919",
    "plain_sha1": "709bd88decf55b62a713f37a837af3b525d11a8e",
    "ja": "「妖魔の影」：体力が250～590（レベルに応じて）（+ APの250%）未満の間、イブリンは毎秒15～150（レベルに応じて）体力を回復する。レベル6以降は、「妖魔の影」がカモフラージュも与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Hate Spike#description": {
+   "source_sha1": "a27fcb1ff3f2d59a3f97ee32b084825343cf88be",
+   "plain_sha1": "2d17f42d2589a509b06a8203236765eaed891d74",
+   "ja": "発動効果：イブリンは指定方向にトゲを放ち、最初に命中した敵に魔法ダメージを与えて、4秒間印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Hate Spike#description2": {
+   "source_sha1": "89eb7617f48b94128ffeafb27ebcc47a9a715336",
+   "plain_sha1": "e5902f397fffc317731f3fec397a208fae42615d",
+   "ja": "印の付いた対象への次の3回の通常攻撃（攻撃時効果）かスキルは、追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Hate Spike#description3": {
+   "source_sha1": "54f87663b771f31d35fc79088965b005ef87c26d",
+   "plain_sha1": "9d29957c629fb35a9a5b605f06b34e4a9d188454",
+   "ja": "「ヘイトスパイク」は、スキルのクールダウンが終わるまで、コストなしで3回まで再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Hate Spike#description4": {
+   "source_sha1": "dce2f5c98a6c1d667b048568d07f9f1a39f65632",
+   "plain_sha1": "a3d17fb8a20bc54644e3da37ac68cc2844df2967",
+   "ja": "再発動：イブリンは最も近い見えている敵の方向に直線状に致死のトゲを放ち、命中したすべての敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Hate Spike#description5": {
+   "source_sha1": "efa9b82f5bbdf65d806932b31e569585cf8f3329",
+   "plain_sha1": "426e3e3611efd29624d31f450040a14a90b5366d",
+   "ja": "「ヘイトスパイク」の再発動は、イブリンの攻撃対象、最も近い敵チャンピオン、最も近いチャンピオン以外の順に狙う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Hate Spike#description6": {
+   "source_sha1": "d9e15f1c135e180d4d6f20f09e20c973f68cfcca",
+   "plain_sha1": "24294f634be23d43ae19eda59216afc0168b2b21",
+   "ja": "このスキルを再発動するには、近くに見えている敵が必要。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Allure#description": {
+   "source_sha1": "906f657173aedadfa12e0cf324fbb45ddf6b609b",
+   "plain_sha1": "884d115a8657253f2e0cd1b68fe979acf13f5740",
+   "ja": "発動効果：イブリンは対象の敵チャンピオンか中型・大型モンスターに5秒間呪いの印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Allure#description2": {
+   "source_sha1": "1f0460db283b83333736d9ba920fe581f810c171",
+   "plain_sha1": "8e71258e464c490e206496d56d7c32e04fedf44f",
+   "ja": "対象へのイブリンの次の通常攻撃かスキルの命中が印を消費し、0.75秒間45%のスロウを与えて、「アリュール」のマナコストを戻す。対象に2.5秒以上印が付いていた場合は、消費が強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Allure#description3": {
+   "source_sha1": "927afd6aa79b579169c192e016949e90f6a26915",
+   "plain_sha1": "5038d66900c09bf4c924e6d7d86d435d26033f36",
+   "ja": "強化のボーナス：対象は数秒間チャームを受け、スロウの効果時間も同じ長さになる。対象の種類に応じて追加の効果がある：* チャンピオンには、4秒間魔法防御を低下させる。* モンスターには、発動させた効果が追加の魔法ダメージを与え、チャームの効果時間が2.25秒延びる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Allure#description4": {
+   "source_sha1": "e8ee952c37fa3f9f4812341771d8ecf4a72b5056",
+   "plain_sha1": "3fbb9f14e9a88c8a9dd616b3c9a2792d6cce31a2",
+   "ja": "「アリュール」を使用しても、「妖魔の影」もそれに入る途中の状態も解けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Whiplash#description": {
+   "source_sha1": "801231c153f1d00b43291c7322c22fffe3154834",
+   "plain_sha1": "67a680bb51aa2dbf42c06d3f4645099c4b41cd19",
+   "ja": "発動効果：イブリンは対象の敵を触手でむち打ち、魔法ダメージを与えて攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Whiplash#description2": {
+   "source_sha1": "1935b3138559f82cbe6c66b4940aec2865e2e3d7",
+   "plain_sha1": "423a00a20b7ebac41336e322f1dc198619d0030c",
+   "ja": "さらにイブリンは2秒間移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Whiplash#description3": {
+   "source_sha1": "340d2ec6d077afae1b366e937d025e889c243db8",
+   "plain_sha1": "0df9501f9dc5ee9929835ddc96489f82b77a14bf",
+   "ja": "「妖魔の影」を得ると、「ウィップラッシュ」のクールダウンがリセットされ、次の発動が強化される。「ウィップラッシュ」と強化された発動の対象の体力の割合に応じたダメージは、最低25で、モンスターには450が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Empowered Whiplash#description": {
+   "source_sha1": "cf396a93cf990b11603066aea9d10ff5d7e37863",
+   "plain_sha1": "f5b0671541b0179b91e0834bfa877dedd814ed04",
+   "ja": "発動効果：イブリンは触手で対象の敵へダッシュし、到着時にその敵と、通り道のすべての敵に増加したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Empowered Whiplash#description2": {
+   "source_sha1": "8df5f9114d8ceb564b1f880b592d515b2ab72108",
+   "plain_sha1": "22b493ac8c8310eb19569ef0170fe78e8ad6a383",
+   "ja": "「Empowered Whiplash」は、主対象にだけ攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Evelynn/Last Caress#description": {
+   "source_sha1": "b047c6c66f96c12984fc8842c818f5fb14f5ab4e",
+   "plain_sha1": "c188c543f6f1b0bb50e05b09442d8103072826bc",
+   "ja": "発動効果：イブリンは真の姿を現し、詠唱時間の開始時に対象指定不可になって、指定方向の扇形の範囲に触手を放ち、範囲内で命中した敵に魔法ダメージを与える。0.5秒後、反対方向へ700ユニットブリンクし、再び対象指定可能になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「可視化」がない（原文：reveals）"
+   ],
+   "allow_reason": "原文の reveals her true form は姿を現す意味で、可視化（視界の効果）ではない"
+  },
+  "Template:Data Evelynn/Last Caress#description2": {
+   "source_sha1": "ef9f1996435994fc7a82178f41fa726b40bceead",
+   "plain_sha1": "3cabc103db83fc521291ec34664f4b5ef512f6b1",
+   "ja": "「ラストカレス」は、最大体力の30%未満の敵に240%のダメージを与えるよう強化される。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

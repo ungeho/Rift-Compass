@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Galio/Colossal Smash#description": {
+   "source_sha1": "c039409832fe2e3c964614f47b7a18dbd4ec94d9",
+   "plain_sha1": "1897fa907c4778d39f36d4f1583939dc7f5c84a3",
+   "ja": "固有：一定時間ごとに、ガリオの次の通常攻撃が強化され、攻撃モーションが中断されなくなり、攻撃速度が40%増加し、対象とその周囲のすべての敵に15～115（レベルに応じて）（+ 攻撃力の100%）（+ APの40%）（+ 増加魔法防御の60%）の修正された魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Colossal Smash#description2": {
+   "source_sha1": "5b11e95a3c333e60c3b01b9f71b0fbe284f0efaa",
+   "plain_sha1": "ba6b2f1d6b295560b74041a2a2639a9a93ec53ca",
+   "ja": "ガリオがスキルを敵チャンピオンかエピックモンスターに少なくとも一体命中させるたびに、「巨像の一撃」の残りクールダウンが3秒短縮される。これは一回の発動につき一度だけ起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Winds of War#description": {
+   "source_sha1": "1a57269e33b0277e13e15d759f3fda2848956d96",
+   "plain_sha1": "8b50245aa01dad0bebf76dcc779ad1eb154f36e2",
+   "ja": "発動効果：ガリオは自身の両側250ユニットの位置に風の弾を二つ作り、弧を描いて指定地点に集まりながら、通過したすべての敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Winds of War#description2": {
+   "source_sha1": "459e47a5c1571a2864e8dd9482ae4856004ede20",
+   "plain_sha1": "ee189650514c2cadd7e109f732cabfe3893bd594",
+   "ja": "弾が合わさると竜巻になって2秒間残り、ゆっくり前進しながら、範囲内の敵に0.5秒ごとに対象の最大体力の2%（+ AP 100ごとに1%）に等しい魔法ダメージを与える。モンスターへは1回150が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Shield of Durand#description": {
+   "source_sha1": "60fa5dcce7b9c866322a42abb5120f0bc70b6d4c",
+   "plain_sha1": "1c909fd56534bf4ff3269b68f9517da457ea578b",
+   "ja": "自動効果：ガリオは「Anti-Magic Bulwark」を得て、ダメージを受けない状態が12～8秒（レベルに応じて）続くと回復する。「Anti-Magic Bulwark」：魔法ダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Shield of Durand#description3": {
+   "source_sha1": "0ae3eeca6f573011d3a5338108ab907af1cfe03f",
+   "plain_sha1": "802da5225b0212eec4c10872423815a5674b04bd",
+   "ja": "発動効果：ガリオは最大2秒間溜め、その間自身に15%のスロウがかかり、物理ダメージと魔法ダメージの軽減を得る。詠唱の最初の1.25秒間、溜めるほど「デュランドの守り」の範囲・ダメージ・タウントの効果時間が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Shield of Durand#description4": {
+   "source_sha1": "52eaa5eac9f6725c2ee231c817326490494f7f3f",
+   "plain_sha1": "c4e94a06bbd5b9b470002da4738a252a51abf816",
+   "ja": "「デュランドの守り」は効果時間中に再発動でき、時間切れか中断されると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Shield of Durand#description5": {
+   "source_sha1": "e141f2ebd20b1b46ece355e4865fcd9a65a958e8",
+   "plain_sha1": "6ae138c6844e16cfcb9ade4e596b7dc0157cad1e",
+   "ja": "再発動：ガリオはダメージ軽減を2秒間更新し、周囲の敵チャンピオンに魔法ダメージを与える（詠唱時間に応じて0%～200%増加）。さらに0.5～1.5秒間（詠唱時間に応じて）タウントを与え、少し遅れて、同じ時間よりわずかに長く移動速度を固定の60にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Shield of Durand#description6": {
+   "source_sha1": "facbd35347f8c97224f9564b7602235b1ed132ad",
+   "plain_sha1": "3a8f4d82a0c90d3e61138369070ee173fbed07b2",
+   "ja": "再発動の後0.4秒間、ガリオは通常攻撃もスキルの使用もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Justice Punch#description": {
+   "source_sha1": "dc926f66c483f75b4bee3a01753e703a5ad20af7",
+   "plain_sha1": "cf3ada06d3ed891477a8b92dbdc4c3e574cb9fbc",
+   "ja": "発動効果：ガリオは詠唱時間の間に逆方向へ一歩下がり、その後、敵チャンピオンか地形に当たるまで指定地点へダッシュする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Justice Punch#description2": {
+   "source_sha1": "96a0bff4e53367589e4bba5648caaf63e66a0c0f",
+   "plain_sha1": "461516965d96075fe5f482e595b88d86e105246d",
+   "ja": "ガリオは通過した敵に魔法ダメージ（チャンピオン以外には80%）を与え、0.75秒間ノックアップさせ、同じ時間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Hero's Entrance#description": {
+   "source_sha1": "2081c047ddb57335aa9bedc0ee560b421f473445",
+   "plain_sha1": "f584a2f2e416b5e8d5d04eabf7407c1128f54a2a",
+   "ja": "発動効果：ガリオは登場の準備をして2.75秒間詠唱し、発動時点の対象の味方チャンピオンの位置を着地点に指定する。さらに、自身の「デュランドの守り」の自動効果のシールドをリセットし、範囲内のすべての味方チャンピオンにも5秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Galio/Hero's Entrance#description2": {
+   "source_sha1": "54df70f8a653a9fcda9ebdf02ba3db12e1c53a88",
+   "plain_sha1": "a25675cd5f2ebc6db041ba5c527c1806e6a801ce",
+   "ja": "1.25秒詠唱した後、残りの時間は行動妨害を無効にして対象指定不可になり、0.8秒間空中に跳び上がってから、0.2秒かけて目的地へダッシュする。その後着地して再び対象指定可能になり、着地時に周囲のすべての敵に魔法ダメージを与えて、0.75秒かけて100ユニットノックバックさせ、0.5秒間その場にとどまる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Galio/Colossal Smash#description3": {
+   "source_sha1": "0cfeae3d391f8d88b237709fadf8237e6bc29c05",
+   "reason": "residual_markup"
+  }
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Ryze/Arcane Mastery#description": {
+   "source_sha1": "4a70797bbb0a836c7350e77097b2ecdbd7856298",
+   "plain_sha1": "c9a051616ce0382d9ab10472073a2fa410c5462d",
+   "ja": "固有：ライズは最大マナが（AP 100ごとに10%）増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Overload#description": {
+   "source_sha1": "0fd286bbaba20c0d93725b9c4df4ad9ca2c6d115",
+   "plain_sha1": "6075fa56f4ba3f146d91e3b1603500c7e9730d27",
+   "ja": "自動効果：ライズがほかの基本スキルを使用すると「オーバーロード」のクールダウンがリセットされ、4秒間「Rune」のスタックを溜める。使用のたびに効果時間が更新され、最大2回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Overload#description2": {
+   "source_sha1": "80ea5e2d44f3ca27b6a9c6dbfa3619f6d4a0a483",
+   "plain_sha1": "83d780ca95be9dcfb86d4b723521d283ca9a6d80",
+   "ja": "発動効果：ライズは指定方向にルーンの爆発を放ち、最初に命中した敵に魔法ダメージを与えて、すべての「Rune」のスタックを消費する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Overload#description3": {
+   "source_sha1": "562a366e8872e5a39bca5ddc9e7def7f6929f2a1",
+   "plain_sha1": "59266d189b6b2a92d2dd7c2085904d0e648bbd83",
+   "ja": "2スタックを消費した場合、ライズは2秒間移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Overload#description4": {
+   "source_sha1": "a6a6b22fea7c42b18e9c3d127af3fbafcbdbcfbf",
+   "plain_sha1": "1941054d0d7a37775f78756d3fb450dacf4e5aad",
+   "ja": "「Flux」のボーナス：「オーバーロード」のダメージが10%～100%（「ポータルワープ」のランクに応じて）増加し、周囲の「Flux」状態の敵に広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Rune Prison#description": {
+   "source_sha1": "6218e7d49a8ffa046ecbd95156b12900438e1321",
+   "plain_sha1": "c4ab2a8fb2a9bbdb9fd0f5639f8ae46b15f298ea",
+   "ja": "発動効果：ライズは対象の敵を捕らえ、魔法ダメージを与えて、1.5秒間50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Rune Prison#description2": {
+   "source_sha1": "1f343644e832a386f56259b63e251b38b9271bcb",
+   "plain_sha1": "41c0d1257656438296e308e819d502fb32e43c7b",
+   "ja": "「Flux」のボーナス：対象はスロウの代わりにスネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Spell Flux#description": {
+   "source_sha1": "81df67124b999a0a37c1d795340cfe46e22c5ef5",
+   "plain_sha1": "34d22ee0585702377e61a6774e0921305851b57e",
+   "ja": "発動効果：ライズは対象の敵に玉を放ち、魔法ダメージを与える。対象と周囲の敵には4秒間「Flux」の印も付く。印の付いた対象にライズの基本スキルを当てると、印を消費して追加の効果で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Spell Flux#description2": {
+   "source_sha1": "361d5b20465adee96230b3570ea78e7163bf5b4f",
+   "plain_sha1": "9045b467b774e4c728f3419e88267223f40ae7a5",
+   "ja": "「Flux」のボーナス：「スペルフラックス」がさらに遠くまで広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Realm Warp#description": {
+   "source_sha1": "ff11917fa8e70176d924d5e9fdf05b9ef99340f3",
+   "plain_sha1": "29764a1d2bf3c571a13b4a5aefe2cec14cfca968",
+   "ja": "自動効果：「オーバーロード」の「Flux」による強化されたダメージが増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Realm Warp#description2": {
+   "source_sha1": "3de81d0671c38809e14bc7dd08783ebe566ee0b8",
+   "plain_sha1": "3600d514f0fb71c9f3e5353f5cdc39e9767b684f",
+   "ja": "発動効果：ライズは2秒間詠唱して足元に門を開き、指定地点を行き先に指定して、その範囲の視界を得る。ライズは詠唱中も行動できるが、中断されると門は消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Ryze/Realm Warp#description3": {
+   "source_sha1": "f18e18cd5cb4490af26669f83fb1f0f5b5c71fd4",
+   "plain_sha1": "0389cf1c39713f8ac9a33aace93f9ebf5e7fda95",
+   "ja": "完了すると、ライズと門の中のすべての味方ユニットはその地点へブリンクし、0.75秒間スネア・通常攻撃不可・サイレンス・対象指定不可の状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

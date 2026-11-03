@@ -1,0 +1,109 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Rumble/Junkyard Titan#description": {
+   "source_sha1": "4e0d5ae8c50fed23d4ede65a862e9d5e86447dc6",
+   "plain_sha1": "9697b9cd4c8ebac32668b099e7c5c3e61d08b332",
+   "ja": "固有：ランブルの基本スキルの使用は「Heat」を生み、基本スキルを4秒以内に、または「イコライザー」を2秒以内に使用しないと、毎秒10ずつ減る。「Heat」が50以上で機体は「Danger Zone」に入り、150で「Overheated」になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Junkyard Titan#description2": {
+   "source_sha1": "c878898cedce62d5bfe06337c2009418804933f5",
+   "plain_sha1": "6a9b580c0c86196dc2b901f099c099c4a6d1bda0",
+   "ja": "「Danger Zone」：ランブルの機体が「Danger Zone」に入り、基本スキルが強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Flamespitter#description": {
+   "source_sha1": "e17b3ea0632a830c32ca07bedf4f6ea8995f6680",
+   "plain_sha1": "d53fa3562c099058f5c8fc10ccebf1755e675105",
+   "ja": "発動効果：ランブルは「Heat」を20生み、3秒間火炎放射器を作動させ、0.25秒ごとに前方の扇形の範囲に炎を吐く。炎が当たった敵は0.6秒間焼かれ、0.25秒ごと、および焼かれていない状態で当たったときに魔法ダメージを受け、再び受けると効果時間が更新される。「スピットファイア」のダメージはミニオンに対しては70%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Scrap Shield#description": {
+   "source_sha1": "593115f565d615985f7ca99d0abb978e5f75b666",
+   "plain_sha1": "3cee03f4e05dad81292d7a590f4bd39a086f038f",
+   "ja": "発動効果：ランブルは「Heat」を20生み、自身に1.5秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Scrap Shield#description2": {
+   "source_sha1": "39ed1d20fbb9332d25e37f870175379d0d87cc83",
+   "plain_sha1": "39698fd74604c74101a78cdd97d98619d7e3ef0c",
+   "ja": "さらに、1～1.32秒間移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Scrap Shield#description3": {
+   "source_sha1": "c51fef4d667937ea3b1c1159c74b9e5d74f1c64a",
+   "plain_sha1": "4becf5035f420ae6efad50c88261a985b47c392c",
+   "ja": "「Danger Zone」のボーナス：「ジャンクシールド」のシールド量と移動速度の増加の効果が50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Electro Harpoon#description": {
+   "source_sha1": "8cfa3d21c5a10f6d37197c80516eaf99cf3d8f1e",
+   "plain_sha1": "01c1a57054d115d00dd4e7a86fe2234e6382549a",
+   "ja": "発動効果：ランブルは「Heat」を20生み、指定方向に銛を撃ち、最初に命中した敵に魔法ダメージを与えて、4秒間魔法防御低下を与え、2秒間スロウを与える。これらの効果は複数の銛で加算で重なり、効果時間が更新され、最大2回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Electro Harpoon#description2": {
+   "source_sha1": "275b94707f1f4b8d2c378f927e9f912047cc9859",
+   "plain_sha1": "ba7f83a5c4ca050b352983b02b0cfc39830e4b51",
+   "ja": "ランブルは一定時間ごとに「エレクトロハープーン」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Electro Harpoon#description3": {
+   "source_sha1": "8c78dd760e6fe1e320b2f6a9b06d88b1890b4dfe",
+   "plain_sha1": "c9e129c0bffc60e30dfd1070d0178c957fba963c",
+   "ja": "「Danger Zone」のボーナス：「エレクトロハープーン」の効果が50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/Electro Harpoon#description4": {
+   "source_sha1": "79e758a975eac8d4c0f5eac5bd67336c67e84f91",
+   "plain_sha1": "ff5873999e6ade2c335e32308ed1699fcbe3f9ba",
+   "ja": "機体が「Overheated」になる前に「エレクトロハープーン」を使った場合、最初の発動から3秒以内ならもう一つのチャージを使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/The Equalizer#description": {
+   "source_sha1": "41e83bc5c6dbb856745746b5e41c5be537776542",
+   "plain_sha1": "b3460d0b233f007ab278498fc2e3457e6daf4150",
+   "ja": "発動効果：ランブルは0.75秒かけて、指定した経路に沿って空から直線状にロケットを降らせる。ロケットはそれぞれ着弾して4.5秒間続く炎の地帯を作る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rumble/The Equalizer#description2": {
+   "source_sha1": "a3d6fbff54b53fd9da368d84bf4462d5c4a7b584",
+   "plain_sha1": "8fec4f588469cc87f77b1c8e9de015548b3ffbc9",
+   "ja": "着弾に当たった敵か地帯の中の敵は1秒間「Burning」の印が付き、0.25秒ごとに魔法ダメージを受けて35%のスロウを受け、範囲内にいる間は更新される。敵が「Burning」でいられるのは最大5秒で、効果は合計20回まで。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Rumble/Junkyard Titan#description3": {
+   "source_sha1": "7a17ebcd8e51b2c0dfb6788c57c84ad024312057",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rumble/Flamespitter#description2": {
+   "source_sha1": "ea1624d4757112fe6bc23a48c67c653d753f0ddb",
+   "reason": "residual_markup"
+  }
+ }
+}

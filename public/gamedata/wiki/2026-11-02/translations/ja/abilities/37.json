@@ -1,0 +1,98 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Sona/Power Chord#description": {
+   "source_sha1": "6e011e7c0bfb394b4ae490444fb52fa5f1ce7356",
+   "plain_sha1": "e750883baae6ce0ec2a2d33421c73e1217db1cd1",
+   "ja": "固有 -「Accelerando」：ソナは「ヒム・オブ・ヴァロー」を敵チャンピオンに命中させるたび、および「パーセヴァランス」で十分なダメージを防ぐかダメージを受けた味方を回復するたびに「Accelerando」のスタックを得て、最大120回まで重なる。最大スタックでは、代わりにそのたびに「クレッシェンド」の残りクールダウンを1.5秒短縮する。「Accelerando」：スタックごとに基本スキルのスキルヘイストが0.5増加し、最大スタックで60。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Power Chord#description2": {
+   "source_sha1": "c2a8b35cb3d4ee8ca2bfe5b551d0c01bc3df09a6",
+   "plain_sha1": "a7956d0918a44435d909bb5698e3fa0d8843eb48",
+   "ja": "固有 -「Melody」：ソナが基本スキルを使用するたびに、ほかの基本スキルは0.5秒の共通クールダウンになり、3秒間、自身と周囲の味方チャンピオンを強化する固有のオーラを出す。一度に有効なオーラは一つだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Power Chord#description4": {
+   "source_sha1": "24b2577095a637b2462cf6b7c080cc74b4f0503f",
+   "plain_sha1": "69d5470b2d4dbf3aeeb90ca65596ca1a7e5672e1",
+   "ja": "「パワーコード」の強化された攻撃を得ると、ソナの通常攻撃タイマーがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Hymn of Valor#description": {
+   "source_sha1": "7fcd2a63337ce44469eb50a5def6c673a9ed7f48",
+   "plain_sha1": "d5e52c6bd537a8c2f007a364bf70da637d060eb0",
+   "ja": "発動効果：ソナは最も近い見えている二体の敵（チャンピオンを優先）に音の弾を放つ。弾はそれぞれ魔法ダメージを与え、対象の周囲の視界を1秒間与える。弾が敵チャンピオンに命中するたびに、ソナは「Accelerando」のスタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Hymn of Valor#description2": {
+   "source_sha1": "636ef67252f08e697ada8b16701bc629d691e244",
+   "plain_sha1": "c99e8f1643d74e192cd66acb95288c3ec2729ac5",
+   "ja": "「Melody」のボーナス：ソナとオーラを受けた味方チャンピオンは、5秒以内の次の攻撃（攻撃時効果）で追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Aria of Perseverance#description": {
+   "source_sha1": "44fa446920f9876d33014462fdbbbdcc4d358098",
+   "plain_sha1": "b288452657fb3ff724b7d9777f903099c9ea47d2",
+   "ja": "発動効果：ソナは自身を回復し、近くで最も傷ついている味方チャンピオンに音を送って回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Aria of Perseverance#description2": {
+   "source_sha1": "5e3e334922a56174dea6232665280464dc9254cf",
+   "plain_sha1": "bc6aa6ac979ce71477a3a61c06d460004dbe92cd",
+   "ja": "「Melody」のボーナス：ソナとオーラを受けた味方チャンピオンに1.5秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Aria of Perseverance#description3": {
+   "source_sha1": "611ee61ead548b153d7c967e1fe4abc24e50270f",
+   "plain_sha1": "1b4099cc8826ae814bf11391f997e230c3258729",
+   "ja": "ソナは、「パーセヴァランス」で傷ついた味方を回復するか、味方への一定量以上のダメージをシールドで防ぐたびに「Accelerando」のスタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Song of Celerity#description": {
+   "source_sha1": "f5853eb81235befdd1b29a65ff30a1e3cbba69ae",
+   "plain_sha1": "d30cff832b674febd344f769e41946c1bca28948",
+   "ja": "発動効果：ソナは7秒間、20%（+ AP 100ごとに2%）の移動速度の増加を得る。この間にダメージを受けると、3秒が経過した時点で（すでに経過していれば即座に）効果が早めに終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Song of Celerity#description2": {
+   "source_sha1": "cad1f27f47d79ad444ab894932d897ddefe955ea",
+   "plain_sha1": "162410744c24294eb80f6f3160e4af5b2533a565",
+   "ja": "「Melody」のボーナス：オーラを受けた味方チャンピオンは3秒間移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sona/Crescendo#description": {
+   "source_sha1": "e0ce5a4f4498957854d9bbedd0620160efc67330",
+   "plain_sha1": "c5a84a51c3525e59b81c8272a5c68d172b18d1dd",
+   "ja": "発動効果：ソナは指定方向に抗えない和音を奏で、命中した敵に魔法ダメージを与えて1.5秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Sona/Power Chord#description3": {
+   "source_sha1": "70ebd93115d3cf3bb47a936ae2300fa18ccbaf49",
+   "reason": "residual_markup"
+  }
+ }
+}

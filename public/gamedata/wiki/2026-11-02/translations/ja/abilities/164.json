@@ -1,0 +1,149 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Camille/Adaptive Defenses#description": {
+   "source_sha1": "58e6fa6a68878c2a816a615aad250b357be8ad06",
+   "plain_sha1": "a0ca131d92c335b6e4fa53e054bd6f032be5bf23",
+   "ja": "固有：一定時間ごとに、カミールの敵チャンピオンへの次の通常攻撃（攻撃時効果）で、最大体力の10%～25%（レベルに応じて）に等しいシールドを得る。シールドは2秒間続き、対象がそれまでにチャンピオンに主に与えた種類と、カミールの現在の物理防御と魔法防御に応じて、物理ダメージか魔法ダメージのどちらかだけを吸収する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Precision Protocol#description": {
+   "source_sha1": "da420f66527d5942b2ded39543439ad43f188737",
+   "plain_sha1": "129298da0aad4bdf2f0b6a0088748b1ffe9eefc5",
+   "ja": "発動効果：カミールは4秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、追加の物理ダメージを与えて、1秒間移動速度が増加する。この攻撃はクリティカルにならない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Precision Protocol#description2": {
+   "source_sha1": "51ee5142ede244782b811eefc959883e4d7418a4",
+   "plain_sha1": "f60120d928c492da87aae0ba6fd8e4d1986654f1",
+   "ja": "強化された攻撃の0.25秒後から、次の3.5秒以内に追加のコストなしで「プレシジョンプロトコル」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Precision Protocol#description3": {
+   "source_sha1": "f679d03854472073bc634b851adcb8ccf0e6fbde",
+   "plain_sha1": "bf1e75a7483fda96134b34f3d6581d2999eba625",
+   "ja": "再発動：カミールは最初の発動と同じ効果を得る。最初の攻撃から1.5秒以上たってから再発動した場合、追加のダメージが二倍になり、攻撃の合計ダメージの40%～100%（レベルに応じて）が確定ダメージになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Precision Protocol#description4": {
+   "source_sha1": "ac68cafe5095cab839b9a0b9b9d8de297a655dec",
+   "plain_sha1": "f868808ee7cf9ed7004f8a9dc379262ae81d3e52",
+   "ja": "「プレシジョンプロトコル」の両方の発動は、カミールの通常攻撃タイマーをリセットする。「プレシジョンプロトコル」の強化された攻撃の攻撃モーション中に、それをキャンセルせずに「タクティカルスイープ」「フックショット」「ヘクステック・アルティメイタム」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Tactical Sweep#description": {
+   "source_sha1": "2d49624bd8ca672dba2fa73831001613931ca504",
+   "plain_sha1": "19fae980ed8d38fe6159607df8d4e1bc4a7c16bc",
+   "ja": "発動効果：カミールは1.1秒かけて指定方向の扇形の範囲を脚でなぎ払い、その間ゴースト状態で、通常攻撃の指示はできない。その後、範囲内のすべての敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Tactical Sweep#description2": {
+   "source_sha1": "20518c7d037630d829f3aa536a494bb592ad7077",
+   "plain_sha1": "75c71fbfb53ff97d5caf8b952ba6c7278b232539",
+   "ja": "扇形の外側の半分で当たった敵は、追加の物理ダメージ（モンスターには300が上限）を受け、2秒かけて減衰する80%のスロウを受ける。カミールは、外側の半分の敵チャンピオンに与えたこの追加ダメージの軽減後の100%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Tactical Sweep#description3": {
+   "source_sha1": "38f30a08b41d7ffd096ae7f11a557522d31b79b3",
+   "plain_sha1": "99e22b80c5a01876f49423f8efc56f38290344db",
+   "ja": "エピックではないモンスターは、「タクティカルスイープ」から50%のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Tactical Sweep#description4": {
+   "source_sha1": "8b5e227b8d6722724ef2ccbefd1ede4f1347749b",
+   "plain_sha1": "d3ca4012b445f740ff40431ca06ff0535828ee21",
+   "ja": "動作中に、それをキャンセルせずにほかのスキルを使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Hookshot#description": {
+   "source_sha1": "255b60c86ca3ec4de6ed50272e60d2cd1afe9658",
+   "plain_sha1": "e35830c7ea6c0333e6727c8491435565c6919f2a",
+   "ja": "発動効果：カミールは指定方向にフックを撃つ。フックが地形にぶつかると、カミールはその地点へダッシュし、到着すると1秒間地形に張り付いて、その間「Wall Dive」を使えるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Hookshot#description2": {
+   "source_sha1": "999dd54fb1d792bf76e356709c8faeef0af3cfba",
+   "plain_sha1": "1d395fa4e702ba18db803db7356aa2720ac327c2",
+   "ja": "ダッシュ中に移動不能かポリモーフの行動妨害を受けると、カミールは叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Hookshot#description3": {
+   "source_sha1": "b04f18baacd1e249c27bdc460fb681dbb191a488",
+   "plain_sha1": "ac3cfbc3e6e026ac8183ace28b1e8afbea821c1c",
+   "ja": "このスキルの間にほかのスキルを使用できる。「ヘクステック・アルティメイタム」を使うと、飛んでいるフックは消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Wall Dive#description": {
+   "source_sha1": "697e9bfe91c3244e02a241a65ab09685d97e7853",
+   "plain_sha1": "f446660c13b6151864ec7e8c8ecf0f344c0bfe65",
+   "ja": "発動効果：カミールは指定方向にダッシュし、着地点の近くの敵に物理ダメージを与える。1400ユニット以内の敵チャンピオンの方へは「Wall Dive」の射程が二倍になる。通過したチャンピオン以外を4秒間ゴースト状態にする。ダッシュの後、カミールは5秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Wall Dive#description2": {
+   "source_sha1": "b7bccdd86eceb53e6bd8455e59a4908b098c342e",
+   "plain_sha1": "085ae0fd221bbde8ce8aa7a09e44b8935841356a",
+   "ja": "敵チャンピオンにぶつかると、カミールは早めに止まり、周囲のすべての敵チャンピオンをノックバックさせて（地形は越えない）、0.75秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/Wall Dive#description3": {
+   "source_sha1": "8846df5fb0bfc695ca0bec027b92264d831eb797",
+   "plain_sha1": "95e6fd0d68cbfe1e7be64a5a7f2397c3e88656a5",
+   "ja": "「Wall Dive」は移動か攻撃の指示でも使える。張り付いている間かダッシュ中に、「ヘクステック・アルティメイタム」以外のスキルを使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/The Hextech Ultimatum#description": {
+   "source_sha1": "aaf154b95429d3be4b089921a00278f4e0ef02b9",
+   "plain_sha1": "0078233b676a5a0e03b36fda22c0340e7a11fac4",
+   "ja": "発動効果：カミールは対象指定不可になり、移動系の効果を受けない状態で0.5秒かけて対象の敵チャンピオンへ跳び、その間対象を可視化して、その詠唱を中断させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/The Hextech Ultimatum#description2": {
+   "source_sha1": "79ff9d665d3c94c4022d40fd8beb7782b86701fb",
+   "plain_sha1": "fdc199db028d9a59cb0906238ca8975fa510dc15",
+   "ja": "対象の上に着地すると、再び対象指定可能になり、自身の現在の位置の周囲に一定時間六角形の領域を作って、着地時にほかの周囲の敵をすべて領域の端まで吹き飛ばす（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/The Hextech Ultimatum#description3": {
+   "source_sha1": "1a80b8845b8659478f61d1bb5b82b70e7aaaf7de",
+   "plain_sha1": "2d3a5faca3f6b9fe6bcd909630af7f598dd13e10",
+   "ja": "対象はどの手段でも領域から出られない。領域の中にいる間、カミールの対象への通常攻撃は追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Camille/The Hextech Ultimatum#description4": {
+   "source_sha1": "057a379cbccd12243194b0e51e23bafd6614890b",
+   "plain_sha1": "72d3d381647a9d7f1b1100335ac76e26fc4245e4",
+   "ja": "カミールが範囲を出るか死ぬと、「ヘクステック・アルティメイタム」は1秒以内に自動で終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

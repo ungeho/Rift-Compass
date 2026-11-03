@@ -1,0 +1,112 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Vi/Blast Shield#description": {
+   "source_sha1": "ed247b8891ee09a4f691490eb9d950c7ee250ff5",
+   "plain_sha1": "31f87aa8cf847be72c426328e46da4c5b41cf2ea",
+   "ja": "固有：一定時間ごとに、ヴァイの次のスキルの命中で、最大体力の10%に等しいシールドを3秒間得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Blast Shield#description2": {
+   "source_sha1": "0f41b9b80e06bc9a7dc649953ff40bc007b525b4",
+   "plain_sha1": "6356a05371e0dc67eaad801978db8db10b51ed76",
+   "ja": "「メッタ打ち」を消費するたびに、「ケンカの作法」のクールダウンが4秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Vault Breaker#description": {
+   "source_sha1": "894508fc768cb42d15e01a6d688e120177071395",
+   "plain_sha1": "27ed912748ad051215d5c5986b8c1bec0cd1dfe6",
+   "ja": "発動効果：ヴァイは最大4秒間、15%のスロウを受けながら溜め、詠唱の最初の1.25秒の間に「真っすぐいってぶっとばす」の射程・速度・ダメージが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Vault Breaker#description2": {
+   "source_sha1": "aefb69f9b41a6a993f484a00db7c37e7d8a5a90e",
+   "plain_sha1": "b0e1252a0375625fda9db1619a4e30b9e65b98b7",
+   "ja": "「真っすぐいってぶっとばす」は効果時間中に再発動できる。再発動せずに最後まで溜めきると、スキルはキャンセルされ、マナコストの50%が戻り、クールダウン全体に入る。溜めが中断されると、マナコストの50%が戻り、3秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Vault Breaker#description3": {
+   "source_sha1": "6b101fd095337f4c9d46d9c0949b1885d58535aa",
+   "plain_sha1": "d4cb5c3cd59d96478fcd32b2d58ff32b1f35aef4",
+   "ja": "再発動：ヴァイは指定方向にダッシュし、通り道の敵に物理ダメージ（詠唱時間に応じて0%～150%増加）を与えて、命中したチャンピオン以外すべてを自身の方へ引き寄せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Vault Breaker#description4": {
+   "source_sha1": "b1b6063a92729b12189a0c8074294fdef41617a6",
+   "plain_sha1": "11e9c35afe308ad97d3b5b4c5957ae905b54398b",
+   "ja": "敵チャンピオンに当たると止まり、その敵を0.75秒かけてノックバックさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Vault Breaker#description5": {
+   "source_sha1": "f4ac1ac2e86d20da43237dce257d76a81bfc8f66",
+   "plain_sha1": "159e7968ed810d74a0cedcab4b84128bb2fb7cf4",
+   "ja": "ダッシュ中に「無慈悲な連撃」と「突入捜査」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Denting Blows#description": {
+   "source_sha1": "08b625615077d883b09c644ffda15b75048ae11c",
+   "plain_sha1": "01556b09ef041cc066e47ab47f8a8f6dfb83ad8c",
+   "ja": "自動効果：ヴァイの通常攻撃（攻撃時効果）と「真っすぐいってぶっとばす」は、命中した敵に4秒間「メッタ打ち」のスタックを与える。付与のたびに効果時間が更新され、最大3回まで重なる。三つ目のスタックですべて消費し、追加の物理ダメージ（チャンピオン以外には300が上限）を与えて、4秒間20%の物理防御低下を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Denting Blows#description2": {
+   "source_sha1": "b6966120a69eec2a7faf3b716b58b8b577f71410",
+   "plain_sha1": "feeea42ccf0a6f6d04f5f588f7f19a1f7688cf1e",
+   "ja": "「メッタ打ち」を消費した後、ヴァイは4秒間攻撃速度が増加し、発動のたびに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Relentless Force#description2": {
+   "source_sha1": "c32b4749ab5bb7514c25991fb73ab1e739be2096",
+   "plain_sha1": "81c26e8d0232aeb400be13e5526af7f43f310eec",
+   "ja": "ヴァイは一定時間ごとに「無慈悲な連撃」のチャージを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Relentless Force#description3": {
+   "source_sha1": "7ae263eccd4d82a2a9d7ab89e2c79f4be6a6789d",
+   "plain_sha1": "9707f919d43c603c9addeb2847f5316100ef20f2",
+   "ja": "「無慈悲な連撃」はヴァイの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Cease and Desist#description": {
+   "source_sha1": "dbb1cb699ddd4164c3849aeb21fcc96685912738",
+   "plain_sha1": "cd8766d94f0d5f825f4ec05abbeb3d18d3633072",
+   "ja": "発動効果：ヴァイは対象の敵チャンピオンを狙い定め、移動系の効果を受けない状態でその敵に向かってダッシュし、可視化する。対象の300ユニット以内に近づくと、1.05秒かけて突き抜けながらつかみ、1.3秒間ノックアップさせ、つかんでから0.75秒後に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vi/Cease and Desist#description2": {
+   "source_sha1": "7296be1f163034667a5113d96e2d1335d60859e2",
+   "plain_sha1": "27011a8e00926fc7330f7287017b87d1e6f8f580",
+   "ja": "ヴァイがダッシュで突き抜けた敵は同じダメージを受け、0.25秒かけて350ユニット脇へ押しのけられ、0.75秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Vi/Relentless Force#description": {
+   "source_sha1": "1b327b2ae264cddbba1a6855768bcc89649147c3",
+   "reason": "residual_markup"
+  }
+ }
+}

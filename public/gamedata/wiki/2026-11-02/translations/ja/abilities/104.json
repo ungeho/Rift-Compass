@@ -1,0 +1,120 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Graves/New Destiny#description": {
+   "source_sha1": "e4feb301c478ed58b6ad3846a880f1268ef9cbfe",
+   "plain_sha1": "9fba5a694ab2a6d58ec4a343ac46d18d09dbe139",
+   "ja": "固有 -「Double Barrel」：グレイブスの通常攻撃はショットガンを撃ち、2発の弾を消費する。すべての弾を使い切った直後、または残った一発を一定時間撃たずにいると、数秒かけて装填する。装填の時間はグレイブスのレベルと攻撃速度の増加で短くなり、「クイックドロー」で一発装填するか残った一発を撃つとキャンセルされる。すべての弾を使い切った場合、装填の間は通常攻撃の指示ができない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/New Destiny#description4": {
+   "source_sha1": "095786cab89d3638492f767d56f97e63627d4b01",
+   "plain_sha1": "97cb3239fd6d85999bb7cf46297d1a86471cd646",
+   "ja": "散弾にはライフスティールが適用される。攻撃時効果を与えるのは、各敵に最初に当たった散弾だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/New Destiny#description5": {
+   "source_sha1": "64539014a0872903e1e2150cb8a46b5d0fe4e836",
+   "plain_sha1": "629eac193cfd41405ddfe1d7b909a0dea0ff6242",
+   "ja": "固有 -「Buckshot」：二発以上の散弾が当たったチャンピオン以外のユニットはノックバックされる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/End of the Line#description": {
+   "source_sha1": "4c5a1a19e089cd399333a140ba76d497193f2f92",
+   "plain_sha1": "5a26c97988f24a3b18d8d80990faa9b740d2779c",
+   "ja": "発動効果：グレイブスは指定方向に弾を撃ち、通過した敵に物理ダメージを与えて、火薬の跡を残す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/End of the Line#description3": {
+   "source_sha1": "e298bf9dafc00c60bf95d3b6592b44815dc6fc27",
+   "plain_sha1": "7b13fc67781b65b69767164e676c188191b754b5",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Smoke Screen#description": {
+   "source_sha1": "48d5d0ab8c5fd3f1905e9393dcacc99a76df1202",
+   "plain_sha1": "27602debd1095a9203de386650a02bd24e0ebd9a",
+   "ja": "発動効果：グレイブスは指定地点に煙の弾を撃ち、着弾時に範囲内の敵に魔法ダメージを与えて、0.5秒間50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Smoke Screen#description2": {
+   "source_sha1": "c9d68bfa7bbfdf2a9c567aeefbd9d92a3496b54a",
+   "plain_sha1": "17ed112e5318982c42a5f9a5326e9d7f8aa860df",
+   "ja": "弾は4秒間煙の雲を作り、0.25秒ごとに範囲内のすべての敵に、範囲の外が見えなくなるニアサイトを与え、視界の半径を中心から250ユニットに狭める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Quickdraw#description": {
+   "source_sha1": "d3e4f1f09c5dd61d27bc1b19403c747e4fcdf60f",
+   "plain_sha1": "01e81a9386054bcb5194023930ece8cea7add5c1",
+   "ja": "発動効果：グレイブスは指定地点へダッシュし、弾を一発装填して、4秒間「True Grit」のスタックを得る。最大8回まで重なる。敵チャンピオンの方へダッシュすると「True Grit」のスタックを2得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Quickdraw#description2": {
+   "source_sha1": "77dd174c42b5db7e7203b83ce7e80dd351f63ebd",
+   "plain_sha1": "dfd5b48e9480f82eae7991923ae11f117f32bd92",
+   "ja": "散弾が敵に当たるたびに、「クイックドロー」の残りクールダウンが0.5秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Quickdraw#description3": {
+   "source_sha1": "5157f7759c2f95b3a6b6410a0454a2e83958cd26",
+   "plain_sha1": "ed946ab920a31c87448c22ab81b6e88c9db8c0ce",
+   "ja": "「True Grit」：スタックごとに物理防御が増加し、その量の50%に等しい魔法防御が増加する。「クイックドロー」の再使用と、ミニオン以外へのダメージで「True Grit」の効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Quickdraw#description4": {
+   "source_sha1": "ce4d4f27c8526b9e6b15d107f66881ddc1431e5f",
+   "plain_sha1": "c93608c6ead4734f823d5ebfd4165ca088be129c",
+   "ja": "「クイックドロー」はグレイブスの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Collateral Damage#description": {
+   "source_sha1": "c35d26276201ead14b5129e09829b989f3b49a0b",
+   "plain_sha1": "08a70cd3bf22b73188ee155efc91684d21379183",
+   "ja": "発動効果：グレイブスは指定方向に炸裂弾を撃ち、命中した敵に物理ダメージを与えて、反対方向へ400ユニット反動で下がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Graves/Collateral Damage#description2": {
+   "source_sha1": "8c711fd3ac1730fe9c1e6be72a798b28cad98cbe",
+   "plain_sha1": "aaa6764a06f2d148bed45226bb45776f33fa0600",
+   "ja": "敵チャンピオンに当たるか射程の終わりに達すると、弾は扇形に爆発し、追加の敵に減ったダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Graves/New Destiny#description2": {
+   "source_sha1": "5ff33caba73267409d403f21bb2232afcf6d08d1",
+   "reason": "residual_markup"
+  },
+  "Template:Data Graves/New Destiny#description3": {
+   "source_sha1": "76278896bd6da09cd28667fcb3f607512fa754bd",
+   "reason": "residual_markup"
+  },
+  "Template:Data Graves/End of the Line#description2": {
+   "source_sha1": "f598c389cb61e1989fc667df4ba71f371a6168be",
+   "reason": "residual_markup"
+  }
+ }
+}

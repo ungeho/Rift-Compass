@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zyra/Garden of Thorns#description": {
+   "source_sha1": "ac4a14caaa1d82e4ed5bcf59ab0a6e8bf323ce0b",
+   "plain_sha1": "7d3b5e25564eb3f8ee74f19f6bc662cce05c674a",
+   "ja": "固有：一定時間ごとに、ザイラは近くに種を一つか二つ出し、種は30秒間残って周囲の範囲の視界を1秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Garden of Thorns#description2": {
+   "source_sha1": "1abedf2ceb0e0afc7b914c2ae69b35c823666f85",
+   "plain_sha1": "80ff9e323dc821fc03e3c42293d3d8fda5863a08",
+   "ja": "1秒後から、敵チャンピオンは種の上を移動して種を壊せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Garden of Thorns#description3": {
+   "source_sha1": "dc9a21f7054e6d7793ea809cbbfe26e70153ff68",
+   "plain_sha1": "f798c254ef28badbbc6e71c2e00603e505fef590",
+   "ja": "ザイラが一度に植えておける種は合計8個までで、「茨の楽園」で出た種より「狂い咲き」で出た種が優先して残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Deadly Spines#description": {
+   "source_sha1": "e15e24d10410b96f0367a05bd669feb5c0507b57",
+   "plain_sha1": "64e4642d5994821c5c59cc274ae7176c5d8f783e",
+   "ja": "発動効果：ザイラは指定地点にトゲを生やし、トゲは0.625秒の遅れの後に現れて、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Deadly Spines#description2": {
+   "source_sha1": "40e19391dd69cd2b7c2a546a1b5f49ac084d6a14",
+   "plain_sha1": "75ab6891e243dafbafd6fe67ebfd9f764c60eda9",
+   "ja": "「死華の棘」が種に当たると、種は8秒間残る「Thorn Spitter」に成長する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Rampant Growth#description": {
+   "source_sha1": "c05337228a7f7d8cf5f09e646a5a7950a780ef53",
+   "plain_sha1": "7479455e20673b58e75e8e7a7e273b82d952f3cb",
+   "ja": "発動効果：ザイラは指定地点に種を植え、種は60秒間残って周囲の範囲の視界を与えるが、1秒後に範囲は狭くなる。1.5秒後から、敵チャンピオンは種を踏んで壊せ、踏んだチャンピオンは2秒間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Rampant Growth#description2": {
+   "source_sha1": "d2f4f42fe88035c2b7ce80370e48a51a4c3a1cda",
+   "plain_sha1": "a609c41453d1b745320fdb5bc9f5abc5267f77e6",
+   "ja": "ザイラは一定時間ごとに種のチャージを得て、最大2まで蓄える。敵を倒すと種のチャージが35%溜まり、大型の敵を倒したときと敵チャンピオンのキルに関与したときは100%溜まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Grasping Roots#description": {
+   "source_sha1": "484c146574ede96c51e8ff0c247fae0e2cd74f5b",
+   "plain_sha1": "a63880a1baf6c97a80303324299e530ea1370473",
+   "ja": "発動効果：ザイラは指定方向にツタを走らせ、命中した敵に魔法ダメージを与えて、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Grasping Roots#description2": {
+   "source_sha1": "a0def3154b7d422e799f3d6f1d8305dd56e3d1f8",
+   "plain_sha1": "6108b2c5f69c64c1350a75b13cd823b25e6fd94d",
+   "ja": "「捕縛の根」が種に当たると、種は8秒間残る「Vine Lasher」に成長する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Stranglethorns#description": {
+   "source_sha1": "36f39a24f963ae8f0f845ee135f260a1523a115a",
+   "plain_sha1": "906bfe8678d5c310e8fb923d7cbe2ee96fcbfe4e",
+   "ja": "発動効果：ザイラは指定地点に巨大な茂みを呼び出し、茂みは広がりながら命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Stranglethorns#description2": {
+   "source_sha1": "52d9deb41cdc38abaafe46f5125236d4cd18774d",
+   "plain_sha1": "03f0362ee6428d034a7f67334d7f2c0325e0e08e",
+   "ja": "2秒後、茂みが上へ跳ね上がり、範囲内の敵を1秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zyra/Stranglethorns#description3": {
+   "source_sha1": "5050b53dd6169b5ae08be15ce05bf68fb6a7ed1e",
+   "plain_sha1": "56c299bbf9d15c8fe63bc0b42f6dd86ac3061d5b",
+   "ja": "茂みに当たった植物は激昂し、現在体力の50%を回復して、最大体力が50%増え、サイズが25%大きくなり、茂みが広がる間は効果時間が更新される。さらに連続で攻撃するようになり、一回の攻撃で二発撃って、一連の攻撃ごとに150%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

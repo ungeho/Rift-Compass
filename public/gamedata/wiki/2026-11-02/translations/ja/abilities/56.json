@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -29,6 +29,62 @@
    "source_sha1": "d5053946548a3c190d7d31f139423c24b988ac9c",
    "plain_sha1": "e2de67f49bff9c31111c134fe8564da3ae5bbc7e",
    "ja": "ノクターンはダッシュ中に、どのスキルもアイテムの発動効果も使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Umbra Blades#description3": {
+   "source_sha1": "cebb660633bc27498f6253fc69b02c1d19dea8a5",
+   "plain_sha1": "9fa6a04fc1925c7fdfe4796ccc1d50a9a724bdf3",
+   "ja": "通常攻撃のたびに「夢幻斬」のクールダウンが1秒短縮され、敵チャンピオンとモンスターに対しては3秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Duskbringer#description": {
+   "source_sha1": "0d9ed14f5210ca120938e837db032ccc6b511077",
+   "plain_sha1": "736044bc5d1699b5f5ee5796d36a3d6e617f7428",
+   "ja": "発動効果：ノクターンは指定方向に影の刃を放ち、その通り道に「Dusk Trail」を残して、命中した敵に物理ダメージを与える。命中した敵チャンピオンと大型モンスターは、動くと「Dusk Trail」を残す。「Dusk Trail」は5秒間残り、その後ゆっくり消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Duskbringer#description2": {
+   "source_sha1": "025340f8d7df20fa75355b6522441145bbd37937",
+   "plain_sha1": "a502fe626b9a57ae2b53b0d3f2a4107cf64d2a9d",
+   "ja": "「Dusk Trail」の上にいる間、ノクターンはゴースト状態になり、増加攻撃力と、合計の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Shroud of Darkness#description": {
+   "source_sha1": "36dcbff5fa4f5650cbd0f371c0b8c3724608c63a",
+   "plain_sha1": "730829dfb6c11d0698889821c4faf8ed155dddda",
+   "ja": "自動効果：ノクターンは攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Shroud of Darkness#description2": {
+   "source_sha1": "9f48b81bb928ac71e066c56f32c7f43cb8d55466",
+   "plain_sha1": "ce1e27b4e452557190e5f9bb31d1232212f6c2b6",
+   "ja": "発動効果：ノクターンは1.5秒間スペルシールドを得る。敵の効果を防ぐと、「漆黒の帳」の攻撃速度の増加が5秒間二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Unspeakable Horror#description": {
+   "source_sha1": "a117c3dd2d5117f21fa781ab65413b1373522253",
+   "plain_sha1": "b58151a8c9f9255fde55a6d74d406342994bdee2",
+   "ja": "自動効果：ノクターンは、近くのフィアーを受けた対象の方を向いている間、移動速度が90%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Unspeakable Horror#description2": {
+   "source_sha1": "4f7482c7bf0be3d33fd5937fcb46fb2c60c0e386",
+   "plain_sha1": "1e324bbc9ecb2fcf2c8c3e5b557e523d667ce703",
+   "ja": "発動効果：ノクターンは対象を苦しめ、自身と対象の間に2秒間テザーを作り、その間対象は0.5秒ごとに魔法ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Nocturne/Unspeakable Horror#description3": {
+   "source_sha1": "40ae82846fbff11fa79a195513e9660a2f468cc0",
+   "plain_sha1": "06b4bd73813ec5f84d6248ec617e67b3ac82d69e",
+   "ja": "効果時間の終わりまでにテザーが切れなければ、対象は一定時間フィアーを受け、その間90%のスロウを受ける。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Swain/Ravenous Flock#description": {
+   "source_sha1": "ed721413c0832e69ca01d33b78e70e88f8a8ab8f",
+   "plain_sha1": "202c075fc4df6884759ff56c2fd369e092ca8e05",
+   "ja": "固有：死んだ敵チャンピオンは16秒間「Soul Fragment」を残す。スウェインのカラスは近くに落ちた「Soul Fragment」を回収し、「帝国の眼」か「束縛の爪」の再発動が命中したチャンピオンからも「Soul Fragment」を引き抜く。カラスは「Soul Fragment」を回収するとスウェインのもとへ飛んで渡し、飛んでいる間は周囲の視界を与える。「Soul Fragment」：スタックごとにスウェインは増加体力を永続的に15得る。かけらを得るたびに、最大体力の6%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Death's Hand#description2": {
+   "source_sha1": "ca5aaf679c0a99c2df58258782265097a1ff5e1d",
+   "plain_sha1": "99adee817c20e9bfdec72457e67477db06df2803",
+   "ja": "近くに敵チャンピオンがいると、スウェインは詠唱中に自身が可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Vision of Empire#description": {
+   "source_sha1": "5ff68aeb4f66093eb9929b81f7545979c93207be",
+   "plain_sha1": "17d7da5b96555baa3c9d1aa969e98f1e517ed4a2",
+   "ja": "発動効果：スウェインは指定地点に悪魔の目を出し、2秒間その範囲の視界を与えて、1.5秒後に爆発させ、範囲内の敵に魔法ダメージ（ミニオンには半分）を与えて、1.5秒間50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Vision of Empire#description2": {
+   "source_sha1": "12d9ad2c9789d22b5ce26c12ccc227edf3caebd5",
+   "plain_sha1": "5897a472d046c70ea6b1354863b0781cff1dbfa5",
+   "ja": "命中した敵チャンピオンは6秒間可視化され、「Soul Fragment」を回収される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Nevermove#description": {
+   "source_sha1": "1384aaba9dea1d189a76dc0a9bafdf4852c9c5a6",
+   "plain_sha1": "1d40ac37a28d1c97a8ddfe6636605662a2ec6a7b",
+   "ja": "発動効果：スウェインは指定方向に悪魔の波を放つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Nevermove#description2": {
+   "source_sha1": "fdfad5f1ab006710fc99448bd4f1fd847b3f1243",
+   "plain_sha1": "be1bd3024eb79b112b36ac146afa5f7dce1078bd",
+   "ja": "最大射程に達すると、波はスウェインのもとへ戻りながら最初に命中した敵で爆発し、周囲の敵に魔法ダメージを与えて1.5秒間スネアを与え、その間可視化する。命中したチャンピオンがスネアを受けている間、「束縛の爪」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Nevermove#description3": {
+   "source_sha1": "629474b2551326e58602f52c984f11eb78834e10",
+   "plain_sha1": "bfdee48bce472dd07ec8b01493a2ecb94b64e502",
+   "ja": "再発動：スウェインはスネアを受けたチャンピオンを290ユニット引き寄せ、それぞれから「Soul Fragment」を回収し、自身は5秒間可視化される。対象がスウェインを越えて引き寄せられる場合は、スウェインに当たって跳ね返り、越えた分の距離だけノックバックされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonic Ascension#description": {
+   "source_sha1": "7177576c7edb0e3cd64940054663eff292f9a611",
+   "plain_sha1": "b3c061a3785b91fb80eb0bbd340285fe357cafdc",
+   "ja": "発動効果：スウェインは内なる悪魔を解き放ち、「Demonic Ascension」を得て「Demonic Energy」を50得る。「Demonic Ascension」は「Demonic Energy」で保たれ、「Demonic Energy」は0.5秒ごとに5減り、5秒たつと7.5ずつ減る。「Demonic Energy」がすべて0になると「Demonic Ascension」は終わる。少なくとも一体の敵チャンピオンから吸収している間は0.5秒ごとに10得て、チャンピオンのキルに関与すると最大の50まで回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonic Ascension#description2": {
+   "source_sha1": "cfa450aeec70e4708952b632a740f4d778ead321",
+   "plain_sha1": "a367af68a8f03e54d6715284585329ae9b828d68",
+   "ja": "「Demonic Ascension」：スウェインはゴースト状態になり、周囲の敵の生命力を吸い取り、0.5秒ごとに対象ごとに魔法ダメージを与えて自身を回復する。ミニオンとモンスターに対しては回復量が90%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonic Ascension#description3": {
+   "source_sha1": "cd4ac003e07bfc9bf200737e0e46383d246bd73c",
+   "plain_sha1": "8d563189f31fb54ecada2eb4f8ec92dbf88d7502",
+   "ja": "2秒後、スウェインは「Demonflare」を最大100回使用できるようになり、「Demonic Ascension」が切れた時点で「Demonflare」がクールダウン中でなければ、自動で使用する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonic Ascension#description4": {
+   "source_sha1": "9377c39991b4fd7f1e3b9a143bb99c5d96e39130",
+   "plain_sha1": "dfec6594120e9d8d5d06bd8e3ea2cf8b4378c606",
+   "ja": "このスキルが命中する対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonic Ascension#description5": {
+   "source_sha1": "926ce9093febc0d9853aee92e5269c281e87058e",
+   "plain_sha1": "3787349ed00ca5682a82d7c489551b33cb2b4c29",
+   "ja": "スウェインは「魔帝戴冠」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonflare#description": {
+   "source_sha1": "c0af941dba5c0ff5382c5fd70176e5aad53dbbf3",
+   "plain_sha1": "7c9133d5a443fb22d16c7f213bb60aa1858fb1c4",
+   "ja": "発動効果：スウェインは魂の炎の波動を放ち、周囲の敵に魔法ダメージを与えて、1.5秒かけて減衰する50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Swain/Demonflare#description2": {
+   "source_sha1": "8ce9348034d0165e794e2ce08ca57652ccc17ff8",
+   "plain_sha1": "e444e14f2d2f57cd21a896346f4bc0077767fc30",
+   "ja": "スウェインは「Demonflare」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Swain/Death's Hand#description": {
+   "source_sha1": "482f80b5bc39483d38aa89fc0c2bc31f2ee06bfe",
+   "reason": "residual_markup"
+  }
+ }
+}

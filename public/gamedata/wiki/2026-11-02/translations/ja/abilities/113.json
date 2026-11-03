@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Sejuani/Fury of the North#description": {
+   "source_sha1": "4e3785d317e7215b137bd8be91dd4340e37dff9f",
+   "plain_sha1": "8a6cd31dd6cf44781d8b844b5a922b7add469de3",
+   "ja": "固有 -「Icebreaker」：セジュアニにスタンを受けた敵は、その効果時間の間「Frozen」の印が付く。「Frozen」の敵へのセジュアニの次の通常攻撃かスキルは印を消費し、対象の最大体力の10%に等しい追加の魔法ダメージ（エピックモンスターには250が上限）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Fury of the North#description3": {
+   "source_sha1": "14e09ce35f4956734bd71d4b0ec8b182906aa636",
+   "plain_sha1": "5c8b5ba4ab477f40886240ae0a95fe93922d9c1f",
+   "ja": "「Frost Armor」：セジュアニはスロウの無効、攻撃速度低下（cripple）の無効、10（+ 増加物理防御の75%）の物理防御の増加、10（+ 増加魔法防御の75%）の魔法防御の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Arctic Assault#description": {
+   "source_sha1": "6bfec479e3e766a7b952ab5196ca721cdd782edf",
+   "plain_sha1": "956e670cbbab3693a8ba81408241ce6254035722",
+   "ja": "発動効果：ブリッスルは敵チャンピオンにぶつかるまで指定地点へダッシュし、通過した敵に魔法ダメージを与えて、0.5秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Arctic Assault#description3": {
+   "source_sha1": "e1a46a9d550bb9702e1e1114b5b7e2224f6f4d8f",
+   "plain_sha1": "e553c0eac614110de8dae07d094b234f97b294bd",
+   "ja": "「猪突凍進」は、セジュアニのほかのスキルの使用中にもそれを中断せずに使用できる（逆も同様）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Winter's Wrath#description": {
+   "source_sha1": "c8bd8c580245cab69aac32f69e32045db8e8311f",
+   "plain_sha1": "adce049d0909855d88d8ce54221be9feba671893",
+   "ja": "発動効果：詠唱時間の0.25秒後、セジュアニは指定方向の扇形の範囲にフレイルを振り、命中した敵に物理ダメージを与えて、命中したミニオンとモンスターをノックバックさせる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Winter's Wrath#description2": {
+   "source_sha1": "2b460ea9b01813cc0673444155ba1235673af33f",
+   "plain_sha1": "53c12d8a7455a4f05157df072100287aeed9a217",
+   "ja": "詠唱時間の後、セジュアニは同じ方向の直線上にフレイルを打ち出し、命中した敵に物理ダメージを与えて、0.25秒間75%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Winter's Wrath#description3": {
+   "source_sha1": "2bd43583e1a7cc84456399595e13986b48629efb",
+   "plain_sha1": "88cb87b43df2c99f1adae404b65139212e4260bd",
+   "ja": "セジュアニは「氷河の怒り」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Permafrost#description": {
+   "source_sha1": "37b026f9e35755a1f25ff8f858b837bf1072d04e",
+   "plain_sha1": "89ec25afe3fbe59bff8aec818d30fb8a529057d1",
+   "ja": "自動効果 -「Frostbrand」：「氷河の怒り」と、セジュアニおよび近くの近接の味方チャンピオンの通常攻撃（攻撃時効果）は、敵チャンピオン・中型と大型のモンスター・大型ミニオンに5秒間「Frost」のスタックを与える。付与のたびに効果時間が更新され、最大4回まで重なるが、対象が「Frozen」なら付与されない。「永久凍土」か「グレイシャルプリズン」の投げ縄が命中した敵は、すべての「Frost」のスタックを消費される。消費された後の8秒間、敵チャンピオンは「Frost」の影響を受けない。4スタックの敵に対して、セジュアニは「永久凍土」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Permafrost#description2": {
+   "source_sha1": "eb8866ab19e5e0339810e2f36f426e6c434a85a3",
+   "plain_sha1": "03a8447973e6cd2aa7aeb6d818d9a757ca616353",
+   "ja": "発動効果：セジュアニはカーソルに最も近い、「Frost」が4スタックの見えている敵に罠を投げ、魔法ダメージを与えて少し移動させ、1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Permafrost#description3": {
+   "source_sha1": "670e6a751062f03fa0c32f26503dbbbe553f810d",
+   "plain_sha1": "b3e807c3d47d15320393a9c4df31cdbb358e4233",
+   "ja": "「永久凍土」はセジュアニの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Glacial Prison#description": {
+   "source_sha1": "d6b3bbceb91d827e24b54def6c7d442442e99e6f",
+   "plain_sha1": "3065ec7632c1bcc2bb30f4e80a3e255c0c74dd7f",
+   "ja": "発動効果：セジュアニは指定方向に氷の投げ縄を投げ、投げ縄は敵チャンピオンに当たると止まって、魔法ダメージを与え、1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Glacial Prison#description2": {
+   "source_sha1": "babeb92bbf8e8082d818515efdb63397a96ae520",
+   "plain_sha1": "d8bb4256aa7f97034b4057355573d932756c50b5",
+   "ja": "投げ縄が425ユニット以上飛ぶと強化され、最大射程に達するか敵チャンピオンに当たると爆発して、増加した魔法ダメージを与え、代わりに1.5秒間スタンさせる。同じ時間、爆発の地点の周囲に吹雪ができ、範囲内の敵に30%のスロウを与えて、より小さい範囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Glacial Prison#description3": {
+   "source_sha1": "6ec4772d207365a6dd9c903e79b74e594e96b8c3",
+   "plain_sha1": "7192b213f9fa5b7a52675c030bfa332c99cead3a",
+   "ja": "2秒後、吹雪が砕けて範囲内の敵に増加した魔法ダメージを与え、1秒間80%のスロウを与えて、その敵を可視化し、その範囲の視界を0.5秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Sejuani/Glacial Prison#description4": {
+   "source_sha1": "a2b15caf676f10a5ca1791f0d1fb6c7ce14f6b1d",
+   "plain_sha1": "a2b15caf676f10a5ca1791f0d1fb6c7ce14f6b1d",
+   "ja": "投げ縄が命中した敵は、吹雪の効果を受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Sejuani/Fury of the North#description2": {
+   "source_sha1": "0724ecfb46cd80ed16879d6030c702ebdff96de9",
+   "reason": "residual_markup"
+  }
+ }
+}

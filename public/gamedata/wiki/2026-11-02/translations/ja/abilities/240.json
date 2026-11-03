@@ -1,0 +1,225 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kled/Skaarl the Cowardly Lizard#description2": {
+   "source_sha1": "b30743d3a4330d78dd3773cba589a73f603b1c24",
+   "plain_sha1": "d728d78f0cdff4c759cc0bf05a12ba463d467f55",
+   "ja": "体力が0未満になると、スカールは逃げ出し、クレッドは強制的に「Dismounted」になり、スカールの体力を超えたダメージはすべて無視される。降りると、クレッドは味方のネクサスの方向に飛び出し（地形は越えない）、自身のすべての行動妨害を解除して、0.5秒間行動できず、対象指定不可で、行動妨害を無効にする。降りると「Pocket Pistol」のクールダウンとチャージがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「フィアー」がない（原文：flee）"
+   ],
+   "allow_reason": "原文の flee はスカールが逃げ出す意味で、フィアー（CC）ではない"
+  },
+  "Template:Data Kled/Skaarl the Cowardly Lizard#description3": {
+   "source_sha1": "907d13de303e94ec943916c1f3c12483ae57a1ba",
+   "plain_sha1": "4519bd02c4042a3db8c0c083892f0c3654cfebf9",
+   "ja": "クレッドが「Dismounted」の間、基本体力と移動速度が下がるが、敵チャンピオンの方へ動いている間は移動速度が増加する。さらに、通常攻撃の射程が増加し、攻撃はチャンピオンに85%～100%（レベルに応じて）のダメージを与える。「トラバサミロープ」は「Pocket Pistol」に置き換わり、「ジャウスト」と「チャァァァァァァァジ！！！」は使えなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Skaarl the Cowardly Lizard#description4": {
+   "source_sha1": "4c1a1368625884799e9dde1bb27c12d4058a3c5e",
+   "plain_sha1": "aa306eefc271e93371fa05485cf97d4b576940fa",
+   "ja": "「Mounted」の間、回復と体力の自然回復はまずスカールの体力を回復し、スカールの体力が満タンのときにだけクレッドの体力に適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Skaarl the Cowardly Lizard#description5": {
+   "source_sha1": "d26dd887e6fa7c65c4c4bc77eaac78039aa9de78",
+   "plain_sha1": "09a9a13f5718de0ab0226931f6f7208fca0a4c38",
+   "ja": "詳細は、このスキルの「Dismounted」の部分を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description2": {
+   "source_sha1": "c4328c0c145729706f317c29e46ad8ff09781f42",
+   "plain_sha1": "db73ca4533ea611b47e01f2879ac15cb3adb7c91",
+   "ja": "クレッドは近くの見えている敵チャンピオンの方を向いている間と攻撃した後に、移動速度が70～155（レベルに応じて）増加するが、その敵への通常攻撃は攻撃力の85%～100%（レベルに応じて）の物理ダメージに減る。さらに、4（+ 増加体力の1%）に等しい物理防御と魔法防御の増加を得て、近くの見えている敵チャンピオン一体ごとに30%増え、最大10（+ 増加体力の2.5%）。さらに、スカールの「Courage」を回復して再び乗れるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description3": {
+   "source_sha1": "c2897d84ac5884a41b818c21a5bf1d83a07e53ea",
+   "plain_sha1": "41360694ddc3a15018d22a4a88267ff1b713f8e3",
+   "ja": "固有 -「Courage」：クレッドはチャンピオンへの通常攻撃を終えると「Courage」を15、レーンのミニオンを倒すか建物かエピックモンスターに通常攻撃すると5得る。「Pocket Pistol」を敵に当てても回復できる。「Courage」が100になると、スカールは即座に最大体力の40%～70%（レベルに応じて）を回復して0.25秒かけてクレッドと合流し、その後クレッドはすべての「Courage」を消費して「Mounted」になり、二人は0.25秒間通常攻撃の指示とスキルの使用ができない。乗ると「トラバサミロープ」と「ジャウスト」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description4": {
+   "source_sha1": "f6d3fb9002a20664f05659cea765ec9ed7d19bd1",
+   "plain_sha1": "f76da9b9ea742a1bcd6bcfd8339f7eaa1ba03a67",
+   "ja": "味方の泉にいる間は、0.25秒ごとに「Courage」が25溜まる。泉の外で合流した場合、スカールは「Frayed Nerves」になり、クレッドは30秒間「Courage」を得られない。「Dismounted」の状態で泉にいると「Frayed Nerves」は外れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description5": {
+   "source_sha1": "585f33aad21741f21f1855e9f8bc0c9ff87b6f0b",
+   "plain_sha1": "52c17e8377545c514473e706cfc6e128784abec0",
+   "ja": "クレッド自身の体力の状態は、その後に降りるときまで保たれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Bear Trap on a Rope#description": {
+   "source_sha1": "236fa389c55d143f6d3ba78a2489cbf33c79a28a",
+   "plain_sha1": "dd3cc506bad08933549b524351229aee877d25a4",
+   "ja": "発動効果：クレッドは指定方向にトラバサミを投げ、命中した敵に物理ダメージ（ミニオン・小型のペット・小型と中型のモンスターには150%）を与える。トラバサミは最初に命中した敵チャンピオン・大型のペット・大型モンスターに引っかかり、その敵を2.5秒間可視化して、クレッドと対象の間に1.75秒間テザーを作る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Bear Trap on a Rope#description2": {
+   "source_sha1": "0d1134f9e75f2ecc9f31bc8a7f74805daecf32a4",
+   "plain_sha1": "3677f9282ee4035ef2b4b253c625e3f50f8c7674",
+   "ja": "テザーの範囲は効果時間の間に狭まり、それまでに切れなければ、クレッドは対象を自身の方へ150ユニット引き寄せ、物理ダメージを与えて2.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Bear Trap on a Rope#description3": {
+   "source_sha1": "f0060b6275fb82663c70fe17a08aec05f55d0954",
+   "plain_sha1": "f0f54935f5c1b15b01f21ef7f921c4e7e5fcdcea",
+   "ja": "「ジャウスト」の間に「トラバサミロープ」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Pocket Pistol#description": {
+   "source_sha1": "cac0737d33178eb5c40f74ec7a7ed82e3e59e323",
+   "plain_sha1": "bf5d93527d1ae7e17cd6ea97d1a18a9878319230",
+   "ja": "発動効果：クレッドは指定方向に扇形に五発の散弾を撃ち、反対方向へ300ユニット反動で下がって、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Pocket Pistol#description2": {
+   "source_sha1": "b97e705667a91a04a94be259a257860fc6555043",
+   "plain_sha1": "eb2a23997f72d4c5f221872ad002ae32a054b9bb",
+   "ja": "クレッドは一定時間ごとに「Pocket Pistol」のチャージを得て、最大2まで蓄える。降りた後は両方のチャージを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Pocket Pistol#description3": {
+   "source_sha1": "67f82d9f228ee146615159908d5bb1bb772b7513",
+   "plain_sha1": "a3922773ea1936f1c1f58aa2e192f83764a27826",
+   "ja": "一つの対象に当たった二発目以降の散弾は、20%のダメージしか与えない。散弾は最初に当たった敵チャンピオンで止まる。敵チャンピオンかエピックモンスターに当たった散弾はそれぞれ「Courage」を5と2.5回復し、合計でチャンピオンからは25、エピックモンスターからは12.5まで回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Violent Tendencies#description": {
+   "source_sha1": "72384e1bb26a434e021a709725242465ab11d793",
+   "plain_sha1": "7232ee682553d02100de4168cca4e7acdfc12e8d",
+   "ja": "自動効果：クレッドは一定時間ごとに「狂暴の宴」を得て、次の通常攻撃から切れ始める。クールダウン中は、攻撃時効果のたびに「狂暴の宴」の残りクールダウンが0.5秒短縮され、チャンピオンに対しては1.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Violent Tendencies#description2": {
+   "source_sha1": "9e2c63744df5a29ba67bafea09fe0c80fbf0ac5f",
+   "plain_sha1": "e8edc85341ef04678c7d8e2d537502590472ce9b",
+   "ja": "「狂暴の宴」：クレッドは4秒間、またはそれより早く4回の攻撃を終えるまで、攻撃速度が150%増加する。四回目の攻撃は強化され、さらに物理ダメージを与える。対象の体力に応じたダメージは、モンスターに対しては200が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Violent Tendencies#description3": {
+   "source_sha1": "fed9a7052125ba22b94db462c2a392fc25e48d64",
+   "plain_sha1": "fed0892f0a047e268d603ab54c70ff1a705236ef",
+   "ja": "建物に対しては、四回目の攻撃は修正された追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Jousting#description": {
+   "source_sha1": "3099b8fce04015c43e1971c6d8a63f9870bb5aeb",
+   "plain_sha1": "5a194a5473501bf9329231ae97fcc6b91959a5cd",
+   "ja": "発動効果：スカールは指定方向にダッシュし（地形は越えない）、通過した敵に物理ダメージを与えて、命中したミニオン・ペット・小型と中型のモンスターを自身の方へ引き寄せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Jousting#description2": {
+   "source_sha1": "5231d5d728df4ab05876c514002b9857c41a4099",
+   "plain_sha1": "50472ccc900f86b6ba7619ef840c21e092695c34",
+   "ja": "敵チャンピオンか大型モンスターに当たると、スカールはその敵を突き抜けて決まった350ユニットダッシュし、3秒間印を付けて、その間可視化する。ダッシュが終わった後、二人は1秒間移動速度が50%増加する。対象に印が付いている間、最初のダッシュが終わってから0.5秒後に「ジャウスト」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Jousting#description3": {
+   "source_sha1": "351ab8aeaebcb64ffd2f718f29ca2b7592baa969",
+   "plain_sha1": "169745fa2e61ec32651cddb899eed754f15b851f",
+   "ja": "再発動：スカールは印を消費して印の付いた対象を突き抜けてダッシュし、最初の発動と同じ効果を与えるが、地形を越えてダッシュできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Jousting#description4": {
+   "source_sha1": "ec846df2da670ab71e53e22f0065412cf93988be",
+   "plain_sha1": "99de32f9b7f1983f43866aab21eabfb0555b4ab3",
+   "ja": "対象が死んでも印は残り、二人が離れすぎるかクレッドが降りると早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Jousting#description5": {
+   "source_sha1": "7628f1d453847cc25fae728944cee14f7628e65c",
+   "plain_sha1": "65d8292b67a00750388cb81cf3a5d237b350a8f8",
+   "ja": "どちらのダッシュ中にも「トラバサミロープ」と「チャァァァァァァァジ！！！」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Dismounted Jousting#description": {
+   "source_sha1": "be9f737e411e867d2ecbdf3dee1e1913020e22d3",
+   "plain_sha1": "5470623b7b496ff49f80e37a01b0034f44de3aaf",
+   "ja": "このスキルは「Dismounted」の間は使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Chaaaaaaaarge!!!#description": {
+   "source_sha1": "881bf89a517c7c49a65abfcbb6fd8a0aeb84949b",
+   "plain_sha1": "186e2c9bf39ac016f7d10f234aa8379c4472d179",
+   "ja": "発動効果：クレッドとスカールは指定地点に向かって突撃し、途中の地形を自動で迂回して、その間ゴースト状態で行動妨害を無効にし、半径1250の範囲の敵チャンピオンに可視化される。15秒以内に突撃が終わらなければ早めに終わる。突撃中にクレッドが降りると、突撃は即座に中断される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Chaaaaaaaarge!!!#description2": {
+   "source_sha1": "e7d3d8cfe1505347fff45ed7f8fa1d8b0fd82724",
+   "plain_sha1": "7c2c197c82606462fb0f8278f6b076e4555bb876",
+   "ja": "突撃中、二人は最初のシールドを得て、移動0.25秒ごとに追加の量を得る（2秒が上限）。シールドは突撃を終えた後2秒間続く。さらに、二人は通り道に方向のある気流を残し、気流は9秒間続く。気流をたどるレーンのミニオン以外の味方ユニットは「Mr. Kled's Wild Ride」を得る。突撃開始から0.5秒後、二人は0.25秒ごとに移動速度が増加し、3秒かけて合計950まで増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Chaaaaaaaarge!!!#description3": {
+   "source_sha1": "02e8b5d5b6731846a0f7e64587646bdd85f766d1",
+   "plain_sha1": "ce494dc446af711f05e176cff9d84418ff2fbc6c",
+   "ja": "「Mr. Kled's Wild Ride」：チャンピオンとの戦闘中は、移動速度が40%増加する。チャンピオンとの戦闘から3秒離れると、クレッドが突撃中ならクレッドの現在の移動速度まで、そうでなければ合計650まで移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Chaaaaaaaarge!!!#description4": {
+   "source_sha1": "01bd3af52ea94864b0ec43a54aed6700b0f946aa",
+   "plain_sha1": "aad976d3d4f1a034a77e312664b044d74629ba8b",
+   "ja": "クレッドとスカールは突撃の範囲内で最初に見えた敵チャンピオンへダッシュし、ダッシュ中その対象を可視化して、通り道で最初に見えた敵チャンピオンにぶつかると魔法ダメージ（突撃の時間に応じて0%～200%増加）を与え、150ユニットノックバックさせて（地形は越えない）、突撃を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kled/Dismounted Chaaaaaaaarge!!!#description": {
+   "source_sha1": "be9f737e411e867d2ecbdf3dee1e1913020e22d3",
+   "plain_sha1": "5470623b7b496ff49f80e37a01b0034f44de3aaf",
+   "ja": "このスキルは「Dismounted」の間は使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Kled/Skaarl the Cowardly Lizard#description": {
+   "source_sha1": "004a8289015069f77f5de415b9d8257d438befec",
+   "reason": "residual_markup"
+  },
+  "Template:Data Kled/Dismounted Skaarl the Cowardly Lizard#description": {
+   "source_sha1": "4b922b3a023631077a4d12addae567b13d2e6338",
+   "reason": "residual_markup"
+  }
+ }
+}

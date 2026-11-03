@@ -8,7 +8,7 @@
    "note": "移動不可。Ground（グラウンド）とは別"
   },
   {
-   "en": "\bground(s|ed)\b|\bgrounding\b",
+   "en": "\\bground(s|ed)\\b|\\bgrounding\\b",
    "ja": "グラウンド",
    "note": "移動スキル不可（grounded）。Root とは別。「the ground」（地面）は対象外"
   },
@@ -72,7 +72,7 @@
    "ja": "無敵"
   },
   {
-   "en": "\binvisib(le|ility)\b",
+   "en": "\\binvisib(le|ility)\\b",
    "ja": "インビジブル",
    "note": "Stealth の一種（真の視界でだけ見える）。Camouflage（カモフラージュ）とは別"
   },
@@ -162,8 +162,9 @@
    "ja": "現在体力"
   },
   {
-   "en": "\\bbonus health\\b",
-   "ja": "増加体力"
+   "en": "\\bbonus health\\b(?!\\s+regen)",
+   "ja": "増加体力",
+   "note": "bonus health regeneration（体力回復の増加）は対象外"
   },
   {
    "en": "\\bon-hit\\b",
@@ -205,6 +206,16 @@
    "en": "\\bchannel(s|ed|ing)?\\b",
    "ja": "詠唱",
    "note": "Data Dragon の公式の日本語（詠唱）に合わせる。詠唱時間（cast time）とは文脈で区別する"
+  },
+  {
+   "en": "\\ball(y|ies|ied)\\b",
+   "ja": "味方",
+   "note": "味方・味方の（自分を含むかは原文どおり）"
+  },
+  {
+   "en": "\\benem(y|ies)\\b",
+   "ja": "敵",
+   "note": "敵・敵の"
   },
   {
    "en": "\\bminion(s)?\\b",

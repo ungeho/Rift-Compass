@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -76,30 +76,32 @@
   },
   "Template:Data Mel/Golden Eclipse#description": {
    "source_sha1": "7d8b88bd52a7d56f831e6733ffdf20320477e935",
-   "ja": "自動効果：「灼熱の輝き」のスタックが蓄えるダメージが増える。",
+   "plain_sha1": "a15a4aaf46070d4054ddee2d7332050fd69b1a78",
+   "ja": "自動効果：「圧倒」のスタックが蓄えるダメージが増える。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
-   "plain_sha1": "426d1f0a6d81cdd06401f488a5ad6f01f5501750"
+   "translated_at": "2026-11-02"
   },
   "Template:Data Mel/Golden Eclipse#description2": {
    "source_sha1": "fa03dfd24887900addca81651301c11062ddc927",
-   "ja": "発動効果：「灼熱の輝き」の影響を受けているすべての敵に光の爆発を放ち、それぞれに魔法ダメージを与える。敵は詠唱時間の開始から1秒間可視化される。",
+   "plain_sha1": "bd313ce2e4e1e700179c179a21717d018daf126e",
+   "ja": "発動効果：メルは「圧倒」を受けているすべての敵に輝く爆発を放ち、それぞれに魔法ダメージを与える。詠唱時間の開始から1秒間、敵は可視化もされる。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
-   "plain_sha1": "2adf8e762534ad9f77cf8f64f5687be52731daff"
+   "translated_at": "2026-11-02"
   },
   "Template:Data Mel/Golden Eclipse#description3": {
    "source_sha1": "d1db5452d7411fb0fa1a5fcfb4979f2cbaf3be75",
-   "ja": "このスキルを使用するには、「灼熱の輝き」の影響を受けている敵チャンピオンが必要。",
+   "plain_sha1": "77c696968caba8877cab31f559dc95207a9e3ab2",
+   "ja": "このスキルを使用するには、「圧倒」を受けている敵チャンピオンが必要。",
    "status": "ai_translated_unreviewed",
-   "translated_at": "2026-11-02",
-   "plain_sha1": "35549c451bed94b75a37c6924d7538778e8d3bdb"
-  }
- },
- "withheld": {
+   "translated_at": "2026-11-02"
+  },
   "Template:Data Mel/Searing Brilliance#description2": {
    "source_sha1": "169be7e74a1888685d14c066a6a8382778df3e50",
-   "reason": "residual_markup"
+   "plain_sha1": "9470a118978aefcaeee51fbe7a00e5d6160bdc0d",
+   "ja": "「圧倒」：最初のスタックで、効果を受けた敵に50～80（「黄金蝕」のランクに応じて）（+ APの10%）の魔法ダメージを蓄え、ミニオンには50%になる。スタックごとに、さらに2～5（「黄金蝕」のランクに応じて）（+ APの0.75%）の魔法ダメージを対象に蓄える。蓄えた軽減後のダメージの合計が対象の現在体力とシールドを超えると、次に与えるスタックですべてを消費して、蓄えたダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
   }
- }
+ },
+ "withheld": {}
 }

@@ -1,0 +1,173 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Akshan/Dirty Fighting#description": {
+   "source_sha1": "370e17690e1c9399bce306348395a8d09f7822dd",
+   "plain_sha1": "67579afd391ad7d0980aecc9f6802dbdc4a5d1d5",
+   "ja": "固有：アクシャンが通常攻撃をするたびに、遅れて追加の一発を撃ち、攻撃力の50%（ミニオンには攻撃力の100%）の物理ダメージを与える。追加の一発を撃つ前に別の対象に攻撃の指示をすると、新しい対象に撃つ。二発目を代わりにキャンセルすると、1秒かけて減衰する20～75（レベルに応じて）×（1 + 攻撃速度の増加の100%）の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Dirty Fighting#description2": {
+   "source_sha1": "252509bb9820ea3fe7ef906c5cbf6f2d956cef41",
+   "plain_sha1": "fc90c1d3820091cf92970ea44929b9c9b417ab10",
+   "ja": "追加の一発は攻撃時効果を与え、攻撃開始時の効果を発動し、クリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Avengerang#description": {
+   "source_sha1": "a6a76b2ca387eb0fd68fc738b5c04a2fbac04f62",
+   "plain_sha1": "3ed17ab154e8e43a91a410da9172daeb6a9156b0",
+   "ja": "発動効果：アクシャンは指定方向にブーメランを投げ、ブーメランは弾道の周囲の視界を一瞬与えながら命中した敵に物理ダメージを与えて1秒間可視化し、対象に当たるたびに射程が伸びる。これが敵チャンピオンに命中すると、アクシャンは1秒かけて減衰する20%（+ AP 100ごとに5%）の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Avengerang#description2": {
+   "source_sha1": "e09ca415bf7eabbde33eb6eb8989037f99b4d1ea",
+   "plain_sha1": "b3e36667daaa86bc0757ae1d52a8c3f5d74cfcad",
+   "ja": "ブーメランが元の射程を過ぎ、直近500ユニットの間に対象に当たらなかった場合、アクシャンのもとへ戻りながら命中した敵に同じ効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Avengerang#description3": {
+   "source_sha1": "d39d240a0a759eab98044008cb10d7878b1f51e7",
+   "plain_sha1": "b837d0e13e790de119f70986ce5f5c84eb1f9702",
+   "ja": "「報復のブーメラン」は、チャンピオン以外には減少したダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Avengerang#description4": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Going Rogue#description": {
+   "source_sha1": "39bfc92b1525fe2195b90a97761d1040205bb99e",
+   "plain_sha1": "c9cc86c2fac1c6426ab53bc71607b79323e687fe",
+   "ja": "自動効果：アクシャンは、味方チャンピオンを倒した敵チャンピオンに60秒間「Scoundrel」の印を付ける。アクシャンが生きている状態で、ダメージを与えてから3秒以内に「Scoundrel」のキルに関与すると、追加で100 ゴールド（gold）を得て、その敵が倒した死亡中の味方チャンピオンすべてを1秒後に復活させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Going Rogue#description2": {
+   "source_sha1": "ec48ff2c41e9f294462d27b63ffd8a3f7ff184ba",
+   "plain_sha1": "f31136d2472d79cac32da22e6f6c4ed6b64f7525",
+   "ja": "アクシャンが「Scoundrel」の賞金を得ると、ほかの敵の印はすべて外れる。「Scoundrel」は次にキルするたびに印の効果時間が更新され、どのように死んでも印は外れる。アクシャンは死亡中の敵には「Scoundrel」の印を付けられない。味方は自チームの出撃地点で復活する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Going Rogue#description3": {
+   "source_sha1": "95568954d3699fe22dd2f975d1401cfde973312b",
+   "plain_sha1": "689bc6d22eae4989352b4e2fd8334313d3ea415e",
+   "ja": "発動効果：アクシャンはカモフラージュになり、地形の近くかブッシュの中にいる間は無期限に、それ以外では2秒間続く。この間、「Scoundrel」への軌跡が見え、5000ユニット以内の「Scoundrel」の方を向いている間は、減少マナの12%に等しいマナ回復の増加と移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Going Rogue#description4": {
+   "source_sha1": "957ced20d841ced08e0a8a5bf056103ea5bf4a4f",
+   "plain_sha1": "56ca9e644f9e6121ce1ca03f479709c11e57c3a7",
+   "ja": "「義賊の流儀」は1秒後から再発動でき、効果時間が終わると自動で再発動する。通常攻撃かスキルの使用で、「義賊の流儀」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Going Rogue#description5": {
+   "source_sha1": "a6b9e2d09f60fbceeb2a3c11334238b8438b1193",
+   "plain_sha1": "c2ccfe0bbbbb457449d2b947ce9b1ff26fe1af16",
+   "ja": "アクシャンは「義賊の流儀」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Going Rogue#description6": {
+   "source_sha1": "5c69d7e3610c5e5549026db7577820318472bb34",
+   "plain_sha1": "3cdaa06daad76c612fb1546baa3d6f287929880b",
+   "ja": "再発動：アクシャンは「義賊の流儀」を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Heroic Swing#description": {
+   "source_sha1": "0123a2703dfd1e0865fd810dfa069e7eb6795728",
+   "plain_sha1": "77efc8ab5980c262f628e894dbb12641c12f6b6a",
+   "ja": "発動効果：アクシャンは、クールダウンに入る前に「ヒーロースイング」を三回発動でき、三回目は二回目の0.5秒後からしか使えない。二回目と三回目は、攻撃か移動の指示でも使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Heroic Swing#description2": {
+   "source_sha1": "1d53fec4531584ceaaf9b8662b67436aa978cc88",
+   "plain_sha1": "656ef6f593298155fb6b7678c8fcf5a43460a6da",
+   "ja": "一回目：アクシャンは指定方向にフックを撃ち、フックは最初に当たった地形に刺さって、最大2.125秒間準備に入る。フックが付いている間、「ヒーロースイング」の二回目を使える。フックが付かなかったか、効果時間内にアクシャンが移動させられるか、移動不能・グラウンド・ポリモーフを受けると、準備は早く終わり、「ヒーロースイング」はキャンセルされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Heroic Swing#description4": {
+   "source_sha1": "3f03148190047fce33fa780fd72bd762efce1240",
+   "plain_sha1": "eeb490a3cfceca3a515660deb66b90a3b6c96273",
+   "ja": "三回目：アクシャンは指定地点へ跳んでスイングを終え（地形は越えない）、近くの見えている敵に最後の一発を撃つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Heroic Swing#description6": {
+   "source_sha1": "8c9b50e16028eab8b34ff6e1fe4e33ec556ddb2b",
+   "plain_sha1": "231c88069c311808d25185452f7d9d62339f13f2",
+   "ja": "三回目のダッシュ中に「報復のブーメラン」と「義賊の流儀」を使用できる。「当然の報い」は「ヒーロースイング」のどの時点でも使えるが、スイングの間は撃てない。アクシャンは「ダーティーファイト」のスタックを持つ敵チャンピオン、直近4秒以内に対象指定のスキルでダメージを与えた敵、最も近い敵の順に優先して撃つ。「ヒーロースイング」は、アクシャンのほかのスキルの使用中にも使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Comeuppance#description": {
+   "source_sha1": "86a72b9736c5c734741a9bbcfc8bfcf7d17275b9",
+   "plain_sha1": "22388626817195473614f532ebd9316b501fc992",
+   "ja": "発動効果：アクシャンは対象の敵チャンピオンに狙いを定めて2.5秒間詠唱を始め、詠唱の間とその後2秒間対象を可視化し、同じ時間、自身の位置の通常の視界を与える。効果時間の間、武器に弾を徐々に溜める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Comeuppance#description2": {
+   "source_sha1": "6c1867073c9097e5d15b35d94775bdcf41e4f927",
+   "plain_sha1": "c7798048d691605c304632d032e8a8a173e81239",
+   "ja": "詠唱中、0.5秒後から「当然の報い」を再発動でき、その後は自動で再発動する。詠唱をキャンセルすると、「当然の報い」は5秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Comeuppance#description4": {
+   "source_sha1": "c01ad21333319ca49935b626b6ee4ed25b58d07d",
+   "plain_sha1": "5cac597b7148d21a2489f720b7db95fcc1ce68af",
+   "ja": "各弾のダメージにはライフスティールが適用され、ミニオンを処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Akshan/Comeuppance#description5": {
+   "source_sha1": "2889ce0f923da3266259f5dd871e4a09c8b719a3",
+   "plain_sha1": "5712e4830054b6c6126cdd5ebee2a07e7f655202",
+   "ja": "アクシャンは「当然の報い」の詠唱中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Akshan/Dirty Fighting#description3": {
+   "source_sha1": "1484caff946abcc3909d5576373cb5566cf95d51",
+   "reason": "residual_markup"
+  },
+  "Template:Data Akshan/Heroic Swing#description3": {
+   "source_sha1": "eb43393b49b897ce5b452d3dbd1a02c552f8a6c3",
+   "reason": "residual_markup"
+  },
+  "Template:Data Akshan/Heroic Swing#description5": {
+   "source_sha1": "608c10db80dcc8d4a520b32d52493de93b39d423",
+   "reason": "residual_markup"
+  },
+  "Template:Data Akshan/Comeuppance#description3": {
+   "source_sha1": "78fae571db75004445bfb067104da9d49b9c7e76",
+   "reason": "residual_markup"
+  }
+ }
+}

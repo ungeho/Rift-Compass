@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Tryndamere/Battle Fury#description": {
+   "source_sha1": "77bd25e2d648ef8418c759b16e2727480d7bde8a",
+   "plain_sha1": "ed24b85d63f8809ddaba02e990a2be2f148f6b16",
+   "ja": "固有：トリンダメアは通常攻撃（攻撃時効果）のたびに「Fury」を5、クリティカルと敵を倒すたびに10得る。ダメージを与えも受けもしない状態が8秒続くと、毎秒「Fury」を5失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Battle Fury#description2": {
+   "source_sha1": "248db0a3dadb6ed648bc2b6fd778a94c4efda85e",
+   "plain_sha1": "314959824507120ec21fd3216e049ac6bb3d9351",
+   "ja": "トリンダメアは「Fury」に応じて0%～50%のクリティカル率を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Bloodlust#description": {
+   "source_sha1": "568905bd9a23bc0e35aee21aa520f5d45e03566a",
+   "plain_sha1": "d4b249356cb52a3ea236aef6e69933d42a398a34",
+   "ja": "自動効果：トリンダメアは減少体力に応じて増加攻撃力を得る。増加量は減少体力が90%のときに最大になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Bloodlust#description2": {
+   "source_sha1": "a1051fd6707c93b07c2751fbef0a5d694c465c6d",
+   "plain_sha1": "801f14f3400a8e2168764083573d07a8cba554f1",
+   "ja": "発動効果：トリンダメアは「Fury」をすべて消費して自身を回復する。消費した「Fury」一ポイントごとに回復量が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Mocking Shout#description": {
+   "source_sha1": "62c0f99b7836d635a222bd84188025f48e638020",
+   "plain_sha1": "b9fe3010324068f16d790af685c524a39a128562",
+   "ja": "発動効果：トリンダメアは周囲の敵チャンピオンの増加攻撃力を4秒間減らす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Mocking Shout#description2": {
+   "source_sha1": "1b59be99d01bae8a0044bd1eb34b7285bcb693bf",
+   "plain_sha1": "66827de55f83ddeaa69d57f783835f764c94dd35",
+   "ja": "さらに、周囲のすべての敵チャンピオンに3.25秒間呪いをかける。呪われた敵は、トリンダメアに背を向けている間スロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Mocking Shout#description3": {
+   "source_sha1": "015b308acdc807b1f088fd6dc31462a5a0c99731",
+   "plain_sha1": "94b62a2f72e53bf71384931cfc41c2226f341926",
+   "ja": "このスキルを使用するには、近くに敵チャンピオンが必要。対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Spinning Slash#description": {
+   "source_sha1": "ce0923d8fdb2f8d99e6ebf10b302c446db363a2d",
+   "plain_sha1": "fb777a05db33e566fd80ba9ec0b42fd07a4310de",
+   "ja": "発動効果：トリンダメアは指定地点へダッシュし、命中した敵に物理ダメージを与えて、命中した敵一体につき「Fury」を2得る（チャンピオンでは5）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Spinning Slash#description2": {
+   "source_sha1": "c189c51b8b44ba9c055218ac8064ca68603c2875",
+   "plain_sha1": "6381af31d17ae7e9a1bc18c5172a5f4b64ab82c8",
+   "ja": "クリティカルの命中（攻撃時効果）のたびに「スピンスラッシュ」の残りクールダウンが0.75秒短縮され、チャンピオンに対しては二倍の1.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Spinning Slash#description3": {
+   "source_sha1": "019fa158952d86fa925c37160fbc2af9716c5777",
+   "plain_sha1": "10f0bb91b30718fb895f6409f783315fb6fae1b8",
+   "ja": "ダッシュ中に「血の欲望」と「不死の憤激」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Undying Rage#description": {
+   "source_sha1": "d966addac62fcde3a770f8f73b4610bce104793e",
+   "plain_sha1": "c5709c203dab19928ea6157743a5ef752cbecef1",
+   "ja": "発動効果：トリンダメアは激怒し、即座に「Fury」を得て、5秒間体力の最低値を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Tryndamere/Undying Rage#description2": {
+   "source_sha1": "7937f123ebdf03538fd2acc880324b017c225462",
+   "plain_sha1": "79d2cb7d1912554ffefbcf8d04f82f1a3009e612",
+   "ja": "「不死の憤激」は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

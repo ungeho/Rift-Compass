@@ -1,0 +1,137 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Rell/Break the Mold#description": {
+   "source_sha1": "b58c2ac1b6d68fe4c22aefa9230a5f61292c5f51",
+   "plain_sha1": "f1786724d76e994eb86982bfa993f4d1af7208ab",
+   "ja": "固有：レルの通常攻撃は攻撃時効果として、合計物理防御の5%と合計魔法防御の5%の和に等しい追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Break the Mold#description2": {
+   "source_sha1": "bbf82a319bd31ad28277d44d7e6d483f9d74946a",
+   "plain_sha1": "d5a30a81f3e54116a901b06ab9b869a4e67d57b4",
+   "ja": "固有：ミニオン以外へのレルの通常攻撃（攻撃時効果）とスキルは、5秒間「革新の鬨」のスタックを与える。命中のたびに更新され、最大5回まで重なる。スタックごとに対象の物理防御と魔法防御が3%下がり、最大15%下がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Break the Mold#description3": {
+   "source_sha1": "63554147f52d69e2665ab8485114fa67e98f6299",
+   "plain_sha1": "dcbad47edcbd42ea6c482cfbd37076023d0617b5",
+   "ja": "レルは、効果を受けているすべての敵から下げた防御の合計に等しい、物理防御の増加と魔法防御の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Shattering Strike#description": {
+   "source_sha1": "9f1df06fc50309e8da421db537ef6c986c2b1172",
+   "plain_sha1": "79255efb6c0ee91ebd0b5e52846c501d70dcbdef",
+   "ja": "発動効果：レルは指定方向に槍を突き出して100ユニット前に踏み込み、命中したすべての敵のダメージを軽減するシールド（モンスターのシールドを除く）を壊してから、魔法ダメージを与えて0.65秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Shattering Strike#description2": {
+   "source_sha1": "c01adb301d09de678950abc674ebf96098a7f839",
+   "plain_sha1": "fbb9ca27dddf76193ae9e2f47a86cccff7a38f60",
+   "ja": "詠唱時間中に移動不能・グラウンド・サイレンスを受けていた場合、レルは詠唱時間の後に前へ踏み込まない。さらに詠唱時間の後0.35秒間は行動できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Crash Down#description": {
+   "source_sha1": "3243de9987a108700795463db79ee1736fc13ba5",
+   "plain_sha1": "cc731831d222be5bd7fbf2578597865b0bacfaa0",
+   "ja": "自動効果 -「Mounted Alacrity」：レルが「Mounted」の間、移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Crash Down#description2": {
+   "source_sha1": "8139fca77164d6c961e8edfb1237dc95e2732aa6",
+   "plain_sha1": "743abc8f943d028d96decb61ad81a824db63b449",
+   "ja": "発動効果：レルは「Dismounted」になって詠唱時間の間に指定地点へ跳び、壊されるか「Ferromancy: Mount Up」を使うまで続くシールドを自身に付与する。到着時に周囲の敵に魔法ダメージを与えて、0.8秒間スタンさせ、0.4秒間ノックアップさせる。その後さらに0.5秒かけて320ユニット前へ滑り（地形は越えない）、通り道のほかの敵にも効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Crash Down#description3": {
+   "source_sha1": "7a3b06d8f074a78cb812c9f48c16eef872bc445a",
+   "plain_sha1": "b3d06cadf303f5163d991251cf86ac9e9dc2583b",
+   "ja": "「Dismounted」の間、レルは「Ferromancy: Mount Up」を使える。リコールの詠唱を終えるか復活すると、レルはスキルを使わずに自動で「Mounted」の状態に戻り、「Ferromancy: Mount Up」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Crash Down#description4": {
+   "source_sha1": "b506b7006cbdf7dee787a342ffb8e1f67c3f6368",
+   "plain_sha1": "1d5eeb35774f6797b4bdf071d9508c249770ccb5",
+   "ja": "このスキルは、レルが「Mounted」の間だけ使用できる。ダッシュ中に「磁気嵐流」を使用でき、詠唱時間の開始時点で降りたものとして扱われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Mount Up#description": {
+   "source_sha1": "1754adae6ea7cdd346632ed2ab670c68f3596f27",
+   "plain_sha1": "52e8510a30c4a0a6862c4a486eafb8ab2c8ae44a",
+   "ja": "自動効果：レルが「Dismounted」の間、物理防御の増加が15%、魔法防御の増加が15%増え、攻撃速度が20%増加し、通常攻撃の射程が75増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Mount Up#description2": {
+   "source_sha1": "295ed9d2531467fa8e426cc13030a79832ba061e",
+   "plain_sha1": "2ded366ca08545614d9a19eb42e4145d518d8a38",
+   "ja": "発動効果：レルは「Mounted」になり、2秒かけて減衰する30%の移動速度の増加を得て、3.5秒以内の次の通常攻撃を強化する。強化された攻撃は詠唱時間が0.2秒になり、射程が100、攻撃速度が40%増加して、レルは対象の位置へ突進する。突進が到着するかぶつかると、通常攻撃は追加の魔法ダメージを与えて、対象を0.6秒間スタンさせ、0.4秒かけてレルの上を越えて150ユニット投げ飛ばす（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Mount Up#description3": {
+   "source_sha1": "20b0f08ff6e36e4357804f3ed4aa0c30ec69cf99",
+   "plain_sha1": "6e4653898c4da5ce2637a404f26716d6bb19357d",
+   "ja": "「Mounted」の間、レルは「フェロマンシー: 装着」を使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Ferromancy: Mount Up#description4": {
+   "source_sha1": "fe5f9a0318c1858cd5a4dde5a46fd59bf63bac28",
+   "plain_sha1": "bb19cfca4e627d11db93347468266130a061e5f1",
+   "ja": "「Ferromancy: Mount Up」はレルの通常攻撃タイマーをリセットする。このスキルは、レルが「Dismounted」の間だけ使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Full Tilt#description": {
+   "source_sha1": "a7c74a043cc85c7d58840614806334de522f6be3",
+   "plain_sha1": "abcc469440a91ce69636bb7044cd51f6312a5a0e",
+   "ja": "発動効果：レルは3秒間、自身と対象の味方チャンピオンを強化し、二人とも移動速度が15%増加して、強化した味方か見えている敵チャンピオンの方を向いている間は30%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Full Tilt#description3": {
+   "source_sha1": "8b0a377408e29fb7edc1f926185fcd54093881db",
+   "plain_sha1": "c4895902d49d33b6007cd6e862ada67e47b958e5",
+   "ja": "有効な対象なしで使うか、自身に使った場合、「重槍突貫」は範囲内の最も近い味方チャンピオンを自動で対象にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Rell/Magnet Storm#description": {
+   "source_sha1": "99398be13acc1386373926b646050e5788f0a01d",
+   "plain_sha1": "64914952768f85d00272af4b010542c0a547a542",
+   "ja": "発動効果：レルは磁力の怒りを爆発させ、周囲の敵を内側に引き寄せて、その後2秒間自身の周りに重力場を作る。重力場は0.25秒ごとに周囲の敵に魔法ダメージを与えて、自身の方へ引きずる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Rell/Break the Mold#description4": {
+   "source_sha1": "df99e5e698ca557c6a8035a828591a6786b29d77",
+   "reason": "residual_markup"
+  },
+  "Template:Data Rell/Full Tilt#description2": {
+   "source_sha1": "6a5196bf7705491337fdfc9933b458973f9b3421",
+   "reason": "residual_markup"
+  }
+ }
+}

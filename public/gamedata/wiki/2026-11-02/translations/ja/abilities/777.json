@@ -1,0 +1,127 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Yone/Way of the Hunter#description": {
+   "source_sha1": "4ac0141aa18c9d7c078e416d0a97ecf46cf0e6b3",
+   "plain_sha1": "49588d2564929fe58bb870b95125f7b0adc56b31",
+   "ja": "固有 -「Intent」：ヨネの合計クリティカル率は、ほかのすべての要因からの分が二倍になる。さらに、100%を超えるクリティカル率1%ごとに、増加攻撃力0.5に変換される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Way of the Hunter#description3": {
+   "source_sha1": "b74bf319dd484ea09293d6905d52558c5a5247f2",
+   "plain_sha1": "688a3b5ddcd44ad4565434591dbdcd464a0f79aa",
+   "ja": "固有 -「Steel and Spirit」：ヨネの通常攻撃は、攻撃開始時に「Steel Sword」と「Azakana Sword」で交互に行う。最初は「Steel Sword」で攻撃し、「Azakana Sword」での通常攻撃は攻撃力の50%の物理ダメージと攻撃力の50%の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Mortal Steel#description": {
+   "source_sha1": "b93a4a8e8e4eb7986024e89f5468de4692c178c7",
+   "plain_sha1": "ed8c209a47f9ac7ab486cb5d3b51ca576eb4ebc6",
+   "ja": "発動効果：ヨネは指定方向の直線上に「Steel Sword」を突き出し、命中した敵に物理ダメージを与えて、最初に命中した敵に攻撃時効果と攻撃開始時の効果を与える。「斬命刀」の攻撃力の係数に応じたダメージはクリティカルになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Mortal Steel#description2": {
+   "source_sha1": "ac92268237d466d6335fa0d9face8e3ea11f564c",
+   "plain_sha1": "953562624ad93840cb120bbde049fde6d7313a4b",
+   "ja": "これが少なくとも一体の敵に当たると、ヨネは6秒間「Gathering Storm」のスタックを得る。最大2回まで重なり、命中のたびに更新される。2スタックのとき、次の「斬命刀」はすべてを消費して新しい効果で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Mortal Steel#description3": {
+   "source_sha1": "f2e7f2eb2112801633558852e7fd63bd02d1b5c9",
+   "plain_sha1": "c6e8d3b312bc6473b91cf38c08433d592677a701",
+   "ja": "「Gathering Storm」のボーナス：ヨネは指定方向に決まった距離ダッシュし、同じ方向に旋風を放つ。どちらも同じ効果を与えて発動し、さらに通り道で命中した敵を0.75秒間ノックアップさせるが、同じ対象には二回効かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Mortal Steel#description4": {
+   "source_sha1": "3fb335e46d05d8ac000e01b7c84730e90e205b36",
+   "plain_sha1": "e5402f314ff10b3a2e4d6badb98157ce7a69b0d3",
+   "ja": "詠唱時間中にヨネが通常攻撃を封じる行動妨害を受けていた場合、詠唱時間の後の「斬命刀」の突きは対象に当たらないが、スキルのクールダウンは0.1秒にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Soul Unbound#description": {
+   "source_sha1": "315ec54d927064d3c91b747167e780df1341859c",
+   "plain_sha1": "86c56a0f23f5a1d0b62850d3b14af634a1fd3a1f",
+   "ja": "発動効果：ヨネは指定方向に決まった距離ダッシュし（地形も越える）、肉体を離れて5秒間「Spirit Form」になる。ヨネの肉体は対象指定不可で、発動した位置から同じ距離だけ後ろへ送られ（地形は越えない）、「縛魂の解放」が終わると戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Soul Unbound#description2": {
+   "source_sha1": "d8c08b05f2ae74297ffe16d04a7191c0c78e983a",
+   "plain_sha1": "a62e25d9af70153c97a2e14615206b1ae2751853",
+   "ja": "「Spirit Form」：ヨネはゴースト状態になり、移動速度が10%～30%（経過秒数に応じて）増加する。敵チャンピオンにダメージを与える通常攻撃とスキルは印を付け、印はヨネの攻撃とスキルがその対象に与えた軽減後の物理ダメージと魔法ダメージの一部を蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Soul Unbound#description3": {
+   "source_sha1": "92436969bad4b988719633c22348bb888cd70409",
+   "plain_sha1": "064a7abe6a59c58902fa187101094bd385cf0a21",
+   "ja": "発動すると、「狩鬼道」の今の剣の状態がリセットされる。「縛魂の解放」は0.5秒後から再発動でき、効果時間の後は自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Soul Unbound#description4": {
+   "source_sha1": "ffd99dbca8d20433c1414fecbe57694e83f7da89",
+   "plain_sha1": "604af443e1732eb65e46aaa2154aca2c390a3a90",
+   "ja": "再発動：ヨネは移動系の効果を受けない状態で肉体のもとへダッシュで戻り、「Spirit Form」を終えて、各チャンピオンの印を消費し、それぞれに蓄えたダメージの合計に等しい確定ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Soul Unbound#description5": {
+   "source_sha1": "bc51b4e1ab02945df8655f3d0cdf9e4763c0d861",
+   "plain_sha1": "34b80a56d608a68d86c31a7a0b69b732e57e6de5",
+   "ja": "ヨネが通常攻撃のモーション中か、何らかの状況で「縛魂の解放」を再発動できない場合（移動できない、スキルを使えないなど）、自動の再発動は遅れる。死亡したときや蘇生に入ったときも、「縛魂の解放」は即座に再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Fate Sealed#description": {
+   "source_sha1": "5886aa2d7b3ddd08bbbb366993d19458e65fc33f",
+   "plain_sha1": "7c95f3af6b7c533cbe8068d4588c2b4d7bfdf8fa",
+   "ja": "発動効果：ヨネは詠唱時間の間に一撃を構え、その後指定方向の範囲内のすべての敵に印を付けて打ち倒し、1秒間スタンさせる。最後に当たった敵チャンピオンの中心の200ユニット先へ、いなければ最大射程へブリンクする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Fate Sealed#description2": {
+   "source_sha1": "4fc58c7616d3b20ce5c6ceefe6e9a9923f0ea20d",
+   "plain_sha1": "5fdaf3bfb26d8ddff90bd101e1e7f3b50b7bc258",
+   "ja": "0.3秒後、同じ範囲に突風が走り、中の印の付いた敵に物理ダメージと魔法ダメージを等分に与えて、ヨネがブリンクした位置へ引き寄せ、0.75秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yone/Fate Sealed#description3": {
+   "source_sha1": "1e954398459708f183052daff81670497d079104",
+   "plain_sha1": "4cf80e5b39684e57906f295176df14fb529045c2",
+   "ja": "引き寄せた時点で、スタンは早く終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Yone/Way of the Hunter#description2": {
+   "source_sha1": "ddb5ab1d1131af00c93ec8a346b77a4d6537d6f9",
+   "reason": "residual_markup"
+  },
+  "Template:Data Yone/Spirit Cleave#description": {
+   "source_sha1": "587e8966406d5e1f67c3280d2803158cd143dcf9",
+   "reason": "residual_markup"
+  },
+  "Template:Data Yone/Spirit Cleave#description2": {
+   "source_sha1": "d80e386e1f2ad22f761f93b3af1ddacd7175931c",
+   "reason": "residual_markup"
+  }
+ }
+}

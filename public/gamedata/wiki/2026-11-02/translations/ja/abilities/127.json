@@ -1,0 +1,84 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Lissandra/Ice Shard#description": {
+   "source_sha1": "1583805e9cd88c577cdafa867f530e6f5dfee374",
+   "plain_sha1": "8bd279afa3ca165193e20d362a82821f729546e6",
+   "ja": "発動効果：リサンドラは指定方向に氷の破片を放ち、命中した敵に魔法ダメージを与えて、1.5秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Ice Shard#description2": {
+   "source_sha1": "8ef6a70c8625ab316097a149fd6069d1fa897348",
+   "plain_sha1": "5977839d2039ee444db784c896613e2afcceadb5",
+   "ja": "「アイスシャード」が敵に命中すると砕け、幅と最大射程が広がる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Ring of Frost#description": {
+   "source_sha1": "722473499eb86f4b6e121c7d9c79df9710cc8a95",
+   "plain_sha1": "6ca982eaad9298c2b766c008f55d4d22cb30e021",
+   "ja": "発動効果：リサンドラは周囲の敵を凍らせ、魔法ダメージを与えて、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Glacial Path#description": {
+   "source_sha1": "f567566f750de57db9083898aaf2aeb834d2fc51",
+   "plain_sha1": "8a1029235e069327ac85d83c250afbdfe185eb7b",
+   "ja": "発動効果：リサンドラは指定方向に氷の爪を送り、爪は1.25秒かけて減速しながら、通過した敵に魔法ダメージを与える。爪がある間、0.5秒後から「グラシアルパス」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Glacial Path#description2": {
+   "source_sha1": "2b46f97226d0b4deea37407fd40aa5acc52aee91",
+   "plain_sha1": "4cc49b6781442affbec03dd53aaa64f38f603b04",
+   "ja": "再発動：リサンドラは爪の現在の位置へブリンクし、爪の進行を終える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Frozen Tomb#description": {
+   "source_sha1": "20da5669c1cfe8ac7017d1ebedb617e92a0a63e1",
+   "plain_sha1": "35a2cd62a67da31f5c16d85debc9139031316b37",
+   "ja": "発動効果：リサンドラは自身か敵チャンピオンに「フローズングレイブ」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Frozen Tomb#description2": {
+   "source_sha1": "8368dee20b9dfc6c8ea4b8091c31225cd74a1af5",
+   "plain_sha1": "07ac2c1d0e9dc4f140f129bffef371a1a4dbfcf6",
+   "ja": "敵に使用：リサンドラは対象の敵チャンピオンを凍らせ、押し倒して1.5秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Frozen Tomb#description3": {
+   "source_sha1": "5b30f2aee6c2782b488a80d9a08a356aea0c57d4",
+   "plain_sha1": "f1706e1cbab57f72cddc372eab8f25f056cebbf9",
+   "ja": "自身に使用：リサンドラは即座に自身を氷に閉じ込め、2.5秒間固有時停止になって、効果時間の間0.25秒ごとに自身を回復する。回復量は発動時の減少体力に応じて0%～100%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lissandra/Frozen Tomb#description4": {
+   "source_sha1": "4601868e24dbf9cb932b8ec5e43097256fcc9cc1",
+   "plain_sha1": "26c0eeb10fd5d23555457157e73862e9198a31e8",
+   "ja": "「フローズングレイブ」は対象から1.5秒かけて広がる氷の地帯を作り、地帯は3秒間周囲を覆って、敵に魔法ダメージを与え、0.5秒間スロウを与える。地帯にいる間は0.25秒ごとに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Lissandra/Iceborn Subjugation#description": {
+   "source_sha1": "3bddd923281f0dfb94f69994402ab1abe1205f00",
+   "reason": "residual_markup"
+  }
+ }
+}

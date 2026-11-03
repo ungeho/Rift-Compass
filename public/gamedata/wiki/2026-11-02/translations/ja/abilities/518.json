@@ -1,0 +1,130 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Neeko/Inherent Glamour#description": {
+   "source_sha1": "fba593bc0733f30d730bb4d0dc3f8eee7125ba2b",
+   "plain_sha1": "141925e8e0ff605ba130f43c227e12e99e91cde9",
+   "ja": "固有：ニーコは味方チャンピオンの姿になる変装をいくつも持っており、「Disguise Menu」に表示される。メニューで変装を始める、別の変装に切り替える、自身を選んで今の変装を解く、のいずれでも「駆け巡る色彩」は0.5秒のクールダウンになる。変装していない間にチャンピオンかタワーからダメージを受けると、「駆け巡る色彩」は2秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Inherent Glamour#description4": {
+   "source_sha1": "71f443d392091bcab86e2cc49606484cbd1d431e",
+   "plain_sha1": "0e6b589b2684a5daef477beba350a6c05eb1acda",
+   "ja": "死亡・移動不能・タワーからのダメージで変装が解けると「駆け巡る色彩」は2秒のクールダウンになり、敵の出撃地点に入って解けた場合はクールダウンにならず、それ以外の方法で変装が解けると1秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Inherent Glamour#description5": {
+   "source_sha1": "b08f2aef87ab6bf20455d333edd9544f9249d93f",
+   "plain_sha1": "20a0728136f4ef63e7eefba8adae8d572403ed84",
+   "ja": "「ポップブロッサム」による変装の解除は、使用から0.5秒経つまで起こらない。スキルの使用を妨げる行動妨害や、スキルの使用を封じる行動不能を受けている間、ニーコは「駆け巡る色彩」を使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Blooming Burst#description": {
+   "source_sha1": "89f13e2a616a2b49b8ee75eb38249fbc51234a88",
+   "plain_sha1": "5e4c73a31743816e4aa9bb54d075f4bd108031dd",
+   "ja": "発動効果：ニーコは種を投げ、種は指定地点に着地すると弾けて、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Blooming Burst#description2": {
+   "source_sha1": "f9123e32b617921758c383092936b7e28524a974",
+   "plain_sha1": "e0fd14f768481829e92932ebe039ff18f03f1dc6",
+   "ja": "弾けたときに敵を倒すか、チャンピオンか大型モンスターに当たると、種は0.75秒後に花開いて再び弾け、同じ範囲の敵に魔法ダメージを与える。これは一回の使用につき最大2回起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Blooming Burst#description3": {
+   "source_sha1": "567432c728ef3f30a90923f6bb9989152b4b2971",
+   "plain_sha1": "f973bba4f66cac4c5b9bd1a89747356f9ecd4554",
+   "ja": "花開くたびに、モンスターには追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Shapesplitter#description": {
+   "source_sha1": "b11623050661edd8d8efdc75e62acebaeb2a0153",
+   "plain_sha1": "431f41866a30d10e7a484f9b9685cddcdfc5a2cf",
+   "ja": "自動効果：ニーコの通常攻撃は攻撃時効果として「シェイプスプリッター」のスタックを得て、攻撃のたびに更新され、最大2回まで重なる。2スタックのとき、次の通常攻撃は攻撃開始時にすべてを消費して飛翔物ではなくなり、追加の魔法ダメージを与えて、1秒間移動速度が増加する。この攻撃はモンスターに75の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Shapesplitter#description2": {
+   "source_sha1": "621e28440e8a45c5f0cfdb369e3b1645314b98c7",
+   "plain_sha1": "7c314dc926b42db2a261783ddb560b016a14b501",
+   "ja": "発動効果：ニーコは今の姿の分身を作り、その後二人とも即座に0.5秒間インビジブルになって、3秒間移動速度が増加する。分身がいる間、いつでも「シェイプスプリッター」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Shapesplitter#description3": {
+   "source_sha1": "8bb5541da0189260ab1f8cfecfa9f166991d0c9b",
+   "plain_sha1": "15e17ae85501b049736b488213960afceff79cd1",
+   "ja": "分身は3秒間残り、指定方向に決まった距離進み、味方からは対象指定不可で、敵からも出現から最初の0.5秒間は対象指定不可。分身はダメージを受けると、0.5秒後に早めに消える。スキル・サモナースペル・アイテムの発動効果を使うか、詠唱を始めると、分身は止まる。さらに、ニーコが「弾ける花弁」「からまれ！」を使うと分身もその詠唱モーションを行い、「ポップブロッサム」を使うと分身もその見た目の効果を出す。分身はニーコの次のエモートかリコールのモーションも一定時間行い（本来の時間より優先される）、その間は動けなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Shapesplitter#description4": {
+   "source_sha1": "2c983746a09d7e0d574623ae4bc2f82600a5aab8",
+   "plain_sha1": "155d22ea79ddd6d77841f1e6df59382df4563dd8",
+   "ja": "再発動：分身がエモートかリコールのモーションをしていなければ、ニーコは分身を指定地点へ向かわせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Tangle-Barbs#description": {
+   "source_sha1": "aeedf3be2e999dea1a76f1c640919c0760da5aa4",
+   "plain_sha1": "6a8480e97b0ae22e42ffe9f564147d300b2a2d5b",
+   "ja": "発動効果：ニーコは指定方向に魔法の渦を投げ、命中した敵に魔法ダメージを与えて、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Tangle-Barbs#description2": {
+   "source_sha1": "b21d1bdc0f67a1f1492b9b48eef499b6102080b5",
+   "plain_sha1": "b21d1bdc0f67a1f1492b9b48eef499b6102080b5",
+   "ja": "渦が少なくとも一体の敵に当たると、大きくなり、速度とスネアの効果時間が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Pop Blossom#description": {
+   "source_sha1": "a1ce874ba6736956a76ae5978b8296266fcc0d24",
+   "plain_sha1": "13b60c15097c0d5bdef71bd7fa64b140ee7486bf",
+   "ja": "発動効果：ニーコは1.25秒かけて霊的な力を溜め、自身の周りの範囲を示す。この範囲は、ニーコが変装していなければ敵にも見える。変装している場合、効果時間に入ってから0.5秒後に変装が解ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Pop Blossom#description2": {
+   "source_sha1": "db2dca13253a25270fae7cf8fc4aa29786f3df9c",
+   "plain_sha1": "1911271d751e999d5a4aa14057ce3a99298c703c",
+   "ja": "溜め終わると詠唱時間が始まり、ニーコは上に跳んで、周囲の敵を0.6秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Neeko/Pop Blossom#description3": {
+   "source_sha1": "b2182fbbfb3c53899bdbc690ac3e74ee68a83d9e",
+   "plain_sha1": "912be14cd6eb6a8e2ec58d570ec9dea1651a3450",
+   "ja": "詠唱時間が終わると着地して力を爆発させ、周囲の敵に魔法ダメージを与えて、0.75秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Neeko/Inherent Glamour#description2": {
+   "source_sha1": "54aabe8dc84c13a770bb4e5e831e83859b64f55c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Neeko/Inherent Glamour#description3": {
+   "source_sha1": "94ab54d8d25c71e62b24e9ca98a4791503d06c8e",
+   "reason": "residual_markup"
+  }
+ }
+}

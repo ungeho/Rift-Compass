@@ -1,0 +1,135 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Wukong/Stone Skin#description": {
+   "source_sha1": "24da9e8db40d6c736fc7a69a4d420ee4e0151c7b",
+   "plain_sha1": "f3f9ecd96185c4f57bbdb5f4f2057184d69848a7",
+   "ja": "固有：ウーコンは物理防御が4.5～10（レベルに応じて）増加し、5秒ごとに最大体力の0.35%を追加で回復する。ウーコンか分身が通常攻撃かスキルで敵チャンピオンかモンスターにダメージを与えるたびに、5秒間「Strength of Stone」のスタックを得る。命中のたびに効果時間が更新され、最大5回まで重なる。効果時間が終わると、スタックは毎秒一つずつ消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Stone Skin#description2": {
+   "source_sha1": "b68a88627d62745f3d05448e8dc6c5cab3172e4e",
+   "plain_sha1": "3221241f50adcd3715b63d015d1b437adb747074",
+   "ja": "「Strength of Stone」：スタックごとに「岩の皮膚」の効果が100%増え、最大で物理防御27～60（レベルに応じて）の増加と、5秒ごとに最大体力の2.1%の追加の回復になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Crushing Blow#description": {
+   "source_sha1": "3cc9421309264dcd046fae9ae9fa00019bc36972",
+   "plain_sha1": "325cc507422ceafbd54326e20819bf923f7663a1",
+   "ja": "発動効果：ウーコンは5秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が増加し、追加の物理ダメージを与えて、その後3秒間物理防御低下を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Crushing Blow#description2": {
+   "source_sha1": "8c4d3a9d7fcab095578c22e8bd59735a1ea209e0",
+   "plain_sha1": "60f0a3ca449827d3099c9159db4abf5b8ae6e29f",
+   "ja": "ウーコンか分身が敵にダメージを与えるたびに、「強棒打」のクールダウンが0.5秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Crushing Blow#description3": {
+   "source_sha1": "6a1fb867b3d18e616e67b66d17fb92f169749779",
+   "plain_sha1": "33a09599b9444fbdd38942e752889f90f497a6d9",
+   "ja": "「強棒打」はウーコンと分身の通常攻撃タイマーをリセットする。攻撃の動作中にほかのスキルを使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Warrior Trickster#description": {
+   "source_sha1": "64e93b92c60948e6f915a32bf0757b13c2f281db",
+   "plain_sha1": "39ba09a0686664da64f872470a8492094163c1be",
+   "ja": "発動効果：ウーコンは1秒間インビジブルになって指定方向へダッシュし、発動した位置に4秒間自身の分身を残す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Warrior Trickster#description2": {
+   "source_sha1": "a9943dffbc62e56e81fcc23407eefd431a3aff54",
+   "plain_sha1": "6f9005178148d9977a5e6a0b2e559bcd49a85339",
+   "ja": "分身は味方からは対象指定不可で、ウーコンが最後にダメージを与えた敵を優先して自動で通常攻撃できる。「強棒打」と「乱像猿技」の攻撃速度の増加の効果も得られ、ウーコンが「旋風猿舞」を使うと分身も使う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Warrior Trickster#description3": {
+   "source_sha1": "1678fb2601ec45f4debd7e37bdc706d29bc8e35b",
+   "plain_sha1": "1678fb2601ec45f4debd7e37bdc706d29bc8e35b",
+   "ja": "分身が与えるダメージは減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Warrior Trickster#description4": {
+   "source_sha1": "b468e074039488e7d02e467e5718f6468f8522c2",
+   "plain_sha1": "27e3b9d744952b85c7ec00975e5ab866929ffe34",
+   "ja": "ウーコンの分身の詳細は「Pets」を参照。ウーコンはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Nimbus Strike#description": {
+   "source_sha1": "4e658bec852f213175bf051afb31ca5104aa9d44",
+   "plain_sha1": "cc77faa168843e59de8a37b6601dc8532e7e535e",
+   "ja": "発動効果：ウーコンは対象の敵の位置へダッシュし、対象指定不可の分身を送って対象の近くの最大二体の追加の敵を攻撃し、魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Nimbus Strike#description2": {
+   "source_sha1": "5a3efe2a42488299ad5cf6c26f1cb3b006fd1139",
+   "plain_sha1": "ce74fa13b61030d76990578bd379fed4735f841b",
+   "ja": "到着すると、ウーコンは5秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Nimbus Strike#description3": {
+   "source_sha1": "60750362789029adab739495743e9764a48d2f43",
+   "plain_sha1": "95bbcaaf4240319853fb6b618d4648533f98e130",
+   "ja": "ダッシュ中に「強棒打」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Cyclone#description": {
+   "source_sha1": "7c3c16f67bde995473f6f6a78fd69b498b3d5ad7",
+   "plain_sha1": "db30f8a65096ea55c458678ebdf053b1165cb8bb",
+   "ja": "発動効果：ウーコンは最大2秒間棒を振り回し、ゴースト状態になって移動速度が20%増加する。棒は命中した敵に0.25秒ごとに物理ダメージを与え、一度だけ0.6秒間ノックアップさせることができる。同じ発動の中でウーコンか分身にすでに当たった敵は、「旋風猿舞」でノックアップしない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Cyclone#description2": {
+   "source_sha1": "342193b81eb243ffbd955c946b86d44af0fd17b0",
+   "plain_sha1": "c562fd1cdf7669dc0bad2f429fcb1587c04c0547",
+   "ja": "「旋風猿舞」は効果時間中、0.5秒後から再発動でき、効果時間が終わるか、ほかのスキルを使うと自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Cyclone#description3": {
+   "source_sha1": "48f3b68f8f5c57494d94edcd6be60c68fafabfe1",
+   "plain_sha1": "770cf632986ffbe14ef47b2ac15827f56852c52e",
+   "ja": "再発動：ウーコンは「旋風猿舞」を終える。1秒後から、最初の発動から8秒以内に「旋風猿舞」をもう一度使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Cyclone#description4": {
+   "source_sha1": "acaaba69e3d782a0f95f4e973387e211d2701f51",
+   "plain_sha1": "37e71996dbb37d8be7058864f351a0a36d6c375c",
+   "ja": "回転している間、「乱像猿技」の攻撃速度の増加の効果時間が更新され続ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Wukong/Cyclone#description5": {
+   "source_sha1": "60423a1fa7f0ca2d4361cfe3d6488a5c7060a415",
+   "plain_sha1": "ddd107900d06b41ca1462f836a5ed7b4f4b1d854",
+   "ja": "「旋風猿舞」のモンスターへのダメージは、毎秒200～600（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

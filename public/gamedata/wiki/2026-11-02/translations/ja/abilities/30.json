@@ -1,0 +1,84 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Karthus/Death Defied#description": {
+   "source_sha1": "6ce2452ae3f36931c34ba28a55936278b236a315",
+   "plain_sha1": "8f698a6ad3364b94814af9b613237974609a1d86",
+   "ja": "固有：致死ダメージを受けると、カーサスは7秒間ゾンビ状態になり、その間コストなしでスキルを使用できる。「冒涜」を習得していれば、「怨嗟の叫び」の間はずっとオンのままになる。効果時間のうち4秒が経過すると「鎮魂歌」は使えなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Death Defied#description2": {
+   "source_sha1": "f9bbf47fe19f451a4b1b0fbf16239faf52188bfb",
+   "plain_sha1": "0e1d34fa4974955b6aa7cd5d4dcbf72c145bc063",
+   "ja": "この状態の間、カーサスは対象指定不可で行動妨害を無効にし、すべてのダメージを受けないが、移動・通常攻撃の指示・サモナースペル・アイテムの発動はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Wall of Pain#description": {
+   "source_sha1": "3777f8516815764d5ecf86ae6e79be9fd256b6b7",
+   "plain_sha1": "76797628628a9486b908e2bc1945a5dfca6b6844",
+   "ja": "発動効果：カーサスは自身の向きと垂直に、指定地点に5秒間続く嘆きの壁を作り、柱と中央の周囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Wall of Pain#description2": {
+   "source_sha1": "bfb26b3d6b2327b9825005aaf9b33629be02c242",
+   "plain_sha1": "dc5572178b3b2cac706f9b111d587a35ae310287",
+   "ja": "壁に触れた敵は25%の魔法防御低下を受け、5秒間スロウを受ける（効果時間の間に減衰する）。これは一回の発動につき、各敵に一度だけ効く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Defile#description": {
+   "source_sha1": "7424d3208ecdfc7d36d726614638673ed8bcabf3",
+   "plain_sha1": "7926d63be325f4cf242184beff65710a4f457ba1",
+   "ja": "自動効果：カーサスは敵を倒すたびにマナを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Defile#description2": {
+   "source_sha1": "4a312080f3665cbda3336d728285cde24bf474d3",
+   "plain_sha1": "bc9a6a26efdde3053d6aa295d9df13c6dc3f8c85",
+   "ja": "切り替え：カーサスは死のオーラをまとい、0.25秒ごとに周囲のすべての敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Defile#description3": {
+   "source_sha1": "e92d91cced59df976cf4fee119455629f4feeb6b",
+   "plain_sha1": "75087d1500f2c9f2c41d4c9c3003cdaa07e2d0b9",
+   "ja": "「冒涜」をオフにすると、最後にもう一回ダメージを与える。マナコストを払えなくなると、「冒涜」は自動でオフになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Defile#description4": {
+   "source_sha1": "042e4672a1cd78ec65acf0c841e96d3a7aefe99a",
+   "plain_sha1": "44a074ebc28020d529c4a0f8bdaaadd52849855d",
+   "ja": "「怨嗟の叫び」の間は「冒涜」をオフにできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Karthus/Requiem#description": {
+   "source_sha1": "b14898b160e1155acebc60905d311dba818efa18",
+   "plain_sha1": "435f1712e7b884d18dad11cf4f5d8b07ec6dedc9",
+   "ja": "発動効果：カーサスは3秒間詠唱し、完了時に対象指定可能なすべての敵チャンピオンに魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Karthus/Lay Waste#description": {
+   "source_sha1": "4615a3769687ed761fca71a3bf9c3cfc6ded2cc1",
+   "reason": "residual_markup"
+  }
+ }
+}

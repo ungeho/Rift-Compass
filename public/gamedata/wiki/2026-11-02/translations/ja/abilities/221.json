@@ -1,0 +1,111 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zeri/Living Battery#description": {
+   "source_sha1": "4e1644d9932784e3369a0b697799f267d266ad26",
+   "plain_sha1": "500a0aee004bafbb91794003c55703ba2c16b020",
+   "ja": "固有：ゼリはどの手段でも40ユニット進むごとにチャージを1、「バーストファイア」を使うたびに10得て、最大100。通常攻撃はチャージを消費して修正されたダメージを与える。ゼリは試合開始時と復活時に最大のチャージを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Burst Fire#description": {
+   "source_sha1": "269e1cebb2aef2409fa9559c28cc3644612bfc86",
+   "plain_sha1": "07484f789c34aa4c45e148c4108844f743d93a18",
+   "ja": "発動効果：ゼリは詠唱時間の間に指定方向へ7発の弾を連射し、それぞれ最初に命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Burst Fire#description3": {
+   "source_sha1": "3979dff21d95bcc22b44c51cf7177055ec5d6106",
+   "plain_sha1": "d79f4a4472d10d0a1e2b138b3d1668be546e6a71",
+   "ja": "ゼリはサイレンスを受けていても「バーストファイア」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Spark Surge#description": {
+   "source_sha1": "26ed2e57fc655937b982fb1380718786eb2c5f5a",
+   "plain_sha1": "919bb4df2af8397b9573a6eeedd2d76aefdde249",
+   "ja": "発動効果：ゼリは指定方向へダッシュする。地形から50ユニット以内で「スパークサージ」を使うと、地形を越えてさらに遠くへダッシュし、周囲800ユニットの地形を越える視界を得て、1500ユニット以内に敵チャンピオンがいる間は自身が可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Spark Surge#description3": {
+   "source_sha1": "97dd392bf95078767d31b707d4b4b1abd1214e73",
+   "plain_sha1": "9db4045bd40dc834dbb18a7e7ac0ef77eef23e98",
+   "ja": "チャージした通常攻撃か「バーストファイア」が少なくとも一体の敵に命中するたびに、「スパークサージ」の残りクールダウンが0.5秒短縮され、後者がクリティカルなら1.5秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Spark Surge#description4": {
+   "source_sha1": "5337db03893132daec81cc4df0b13c840cb90ac2",
+   "plain_sha1": "ef54d32a7f8ff8456da9ac3f9c047fe994d57c09",
+   "ja": "「スパークサージ」はゼリの通常攻撃タイマーと「バーストファイア」のクールダウンをリセットする。ダッシュ中に「ウルトラショックレーザー」と「ライトニングクラッシュ」を使用できる。地形を越えてダッシュしている間はリコールを使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Lightning Crash#description": {
+   "source_sha1": "43d4824a346eca07d95eb361bf1a6a15e403b308",
+   "plain_sha1": "cff44385e3d422d4bb03a6a5471d0dcab1b8c4c4",
+   "ja": "発動効果：ゼリは電気の波動を放ち、周囲の敵に魔法ダメージを与える。これが少なくとも一体の敵チャンピオンに命中すると、5秒間「Overcharged」になる。スキルかチャージした攻撃を敵チャンピオンに当てると、効果時間が2.5秒延びる（元の効果時間が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Lightning Crash#description3": {
+   "source_sha1": "b8b62790aa67a0f013a83fa245a03c2f90880f3a",
+   "plain_sha1": "1d1ea6a719d35c58e7a4a95e926dd8f035ca2c85",
+   "ja": "「Overcharged」の間、ゼリは敵チャンピオンから2.5秒間続く「Hypercharged」のスタックを得られる。スキルかチャージした攻撃を当てた敵一体ごとに1スタック、クリティカルになったスキルでは3スタックを得る。命中のたびに「Hypercharged」の効果時間が更新される。「バーストファイア」は最初に当たった対象からだけスタックを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Lightning Crash#description4": {
+   "source_sha1": "5a4c50941db8cfc8d8b2fb4a3a8b8d0294d618e3",
+   "plain_sha1": "7301614deaeb490a87370fd1e8911352ec708ebe",
+   "ja": "「Hypercharged」：スタックごとに移動速度が1.5%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zeri/Lightning Crash#description5": {
+   "source_sha1": "ff4a763e7889d774d484e53b97d82c4aad0101c3",
+   "plain_sha1": "1f06248cf70dc80c3196da50c9ad701486edb801",
+   "ja": "ゼリは「ライトニングクラッシュ」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Zeri/Living Battery#description2": {
+   "source_sha1": "00255f45e2e802931fbd0b00f431082f219f2d0d",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zeri/Living Battery#description3": {
+   "source_sha1": "acdb3ee1af95d742b191eaf56e0f057e76ea9ca5",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zeri/Burst Fire#description2": {
+   "source_sha1": "89a45fe2d23bfe9c7eda7ffb898af7ac6e447894",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zeri/Ultrashock Laser#description": {
+   "source_sha1": "398572cc065ac51c5662a18dcd62e4b10f220a00",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zeri/Spark Surge#description2": {
+   "source_sha1": "cc2ed1aed7c0ea001fb307967fdc764001f6689b",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zeri/Lightning Crash#description2": {
+   "source_sha1": "8946159174170954306b4852b8da8782b3ac30be",
+   "reason": "residual_markup"
+  }
+ }
+}

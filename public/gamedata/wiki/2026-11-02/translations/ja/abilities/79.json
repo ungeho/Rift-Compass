@@ -1,0 +1,79 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Gragas/Happy Hour#description": {
+   "source_sha1": "7bbfec6643a78e92ebe699021a03df02dc62e58d",
+   "plain_sha1": "a6dcc45b1400743996664c0ac0aa73ce52d59efe",
+   "ja": "固有：一定時間ごとに、スキルを使用した後、グラガスは最大体力の5.5%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Barrel Roll#description": {
+   "source_sha1": "fa3d512147d91007b036c4cd6d5626030b10c9d4",
+   "plain_sha1": "09226c7070b195e6d31894441609e4056d66c638",
+   "ja": "発動効果：グラガスは指定地点に樽を転がし、樽は4秒間その場に残ってその範囲の視界を与える。着くと、樽は効果時間の最初の2秒で発酵し、ダメージとスロウの効果が最初の値の最大150%まで増える。樽が転がり終わった後、効果時間中いつでも「タル転がし」を再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Barrel Roll#description2": {
+   "source_sha1": "d7b0cad4bbfee319c8283042865d14b45477d8a6",
+   "plain_sha1": "0071cade8196ddc9c2e56a09fbb6208fb4541d33",
+   "ja": "再発動：グラガスは樽を爆発させ、周囲の敵に魔法ダメージ（ミニオンには30%減少）を与えて、2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Drunken Rage#description": {
+   "source_sha1": "576316a8bca0a41800262e92a72b0f2b2df90155",
+   "plain_sha1": "7db82b223331f8b7276fa384665b1531413e835e",
+   "ja": "発動効果：グラガスは0.75秒間詠唱して酒を飲み、2.5秒間ダメージ軽減を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Drunken Rage#description2": {
+   "source_sha1": "c2e5b9d874a19614bd0c7e44dff148db55217d3c",
+   "plain_sha1": "99fca20d087f1bafda74305f1c3fb2f796b0408d",
+   "ja": "詠唱を終えると、グラガスは5秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、対象と周囲の敵に追加の魔法ダメージ（建物には50%）を与える。対象の体力の割合に応じたダメージは、モンスターに対しては300が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Body Slam#description": {
+   "source_sha1": "2dba3439e2b22ac8e0cf8bd66ae51a8449d8fa2f",
+   "plain_sha1": "954953161f11a05efe341e57b56670fc5e725fc0",
+   "ja": "発動効果：グラガスは指定方向に突進し、敵にぶつかると止まって、周囲のすべての敵に魔法ダメージを与えてノックバックさせ（地形は越えない）、1秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Body Slam#description2": {
+   "source_sha1": "db0e11922b085dafb28306d4ad0428feab5571ca",
+   "plain_sha1": "4ab345bbc8a1a53f470cf583f070587b0991165d",
+   "ja": "グラガスが敵に命中させると、「ボディスラム」の残りクールダウンが40%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Body Slam#description3": {
+   "source_sha1": "3647810107b5179a28f517847fbeb73c30598502",
+   "plain_sha1": "52208a1fa3489e10da88f8beecfa2e611e9fa9b3",
+   "ja": "ダッシュ中に「タル転がし」と「ワシの奢りじゃ！」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Gragas/Explosive Cask#description": {
+   "source_sha1": "22a5b4deea87379169f871e94e7621d23ce06617",
+   "plain_sha1": "3808ae46a6e9c20f73b598094a7f690c549f250d",
+   "ja": "発動効果：グラガスは樽を投げ、樽は0.5秒かけて指定地点に飛んで着弾時に爆発し、範囲内のすべての敵に魔法ダメージを与えて、爆発の中心から900ユニットノックバックさせ（地形は越えない）、その範囲の視界を1秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

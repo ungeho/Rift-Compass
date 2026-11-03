@@ -1,0 +1,77 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Orianna/Clockwork Windup#description": {
+   "source_sha1": "2580945d0b8c5bb1727662eb83ebe073f275badc",
+   "plain_sha1": "fbacb69d7ab3684f1139087daeaa58666560121f",
+   "ja": "固有 -「The Ball」：オリアナは「The Ball」を連れていて、スキルで命令する。オリアナがスキルを使用するたびに、「The Ball」はすべてのスキルに0.01秒の共通クールダウンを生じる。さらに、「The Ball」はオリアナの近くにいるとオリアナに付き、オリアナが離れすぎると戻ってきて、その場合「オーダー: ショックウェーブ」に0.75秒のクールダウンが生じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Clockwork Windup#description3": {
+   "source_sha1": "293a0cd14ff1f88bd965af4d1ec48060022ee116",
+   "plain_sha1": "26aab03cc87046280422025c675331346267204b",
+   "ja": "「The Ball」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Command: Attack#description": {
+   "source_sha1": "cb3ed28656b0813be7f6081055136cce2ce4cea9",
+   "plain_sha1": "97e220499a423cca071de12f621b155cbcd64017",
+   "ja": "発動効果：オリアナは「The Ball」に指定地点へ飛んでとどまるよう命じ、通過した敵と到着時に周囲の敵に魔法ダメージを与える。最初の一体より後に命中した敵には70%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Command: Dissonance#description": {
+   "source_sha1": "6ecc2817bfedf6b0d53bb37c63748e27a938dc3e",
+   "plain_sha1": "9027d8f162b13948e3c1f855903ed71e526d61bc",
+   "ja": "発動効果：オリアナは「The Ball」に電気の波動を出すよう命じ、周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Command: Dissonance#description2": {
+   "source_sha1": "bc404c43fe0a10476f3e36f56ed3e9062553847c",
+   "plain_sha1": "c09bbfeebe1164cd80e854422f64ef18e6e63ffd",
+   "ja": "波動は3秒間続く電気の場を残し、場の中を動くオリアナと味方の移動速度を増やす。場の中を動く敵は同じ量のスロウを受け、出た後2秒かけて減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Command: Protect#description": {
+   "source_sha1": "38600450542a30d16bc1f791e3ff542b0f60fbb5",
+   "plain_sha1": "826ce2e40c95c864961b75aabaa2e732f7497224",
+   "ja": "自動効果：「The Ball」は、付いているユニットの物理防御と魔法防御を増やす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Command: Protect#description2": {
+   "source_sha1": "684804f1a0361f9bdc9c08f852f9fb9b6a966030",
+   "plain_sha1": "be7dea3d5d768766ab79ec039c56a42be7fb30cc",
+   "ja": "発動効果：オリアナは「The Ball」に自身か対象の味方チャンピオンのもとへ飛んで付くよう命じ、通過した敵に魔法ダメージを与えて、到着時に対象に2.5秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Orianna/Command: Shockwave#description": {
+   "source_sha1": "a4844dc90f62f975d11ba2181e7e50d3273f609a",
+   "plain_sha1": "5ab73e019639caf2300639bca108eb7b403465dd",
+   "ja": "発動効果：オリアナは「The Ball」に衝撃波を放つよう命じ、周囲の敵に魔法ダメージを与えて0.75秒間スタンさせ、325ユニット引き寄せる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Orianna/Clockwork Windup#description2": {
+   "source_sha1": "e282aa896cb995fb7b6bbe26cf02ee1255fd7f76",
+   "reason": "residual_markup"
+  }
+ }
+}

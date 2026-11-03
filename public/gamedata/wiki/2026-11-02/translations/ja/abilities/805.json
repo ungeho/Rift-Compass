@@ -1,0 +1,121 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Locke/Silver Stake#description": {
+   "source_sha1": "b47ece168d9746f130a82f85692e6a6768bd8522",
+   "plain_sha1": "912dacba90fa1174b64e1d27af75cc667b89b793",
+   "ja": "固有：ロックの通常攻撃は攻撃時効果として5～40（レベルに応じて）（+ APの10%）の追加の魔法ダメージを与え、対象の減少体力に応じて0%～100%増加し、最大10～80（レベルに応じて）（+ APの20%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ritual Nails#description": {
+   "source_sha1": "18af8f97f968a87bfc6e1ceb78bd3368d2619233",
+   "plain_sha1": "06844190ce145f68e6f2d302f3c502756a741fbc",
+   "ja": "発動効果：ロックは指定方向に釘を投げ、命中した敵に魔法ダメージを与えて、1秒間25%のスロウを与え、4秒間「Soul Nails」のスタックを与える。付与のたびに効果時間が更新され、最大3回まで重なる。2スタック以上の対象には、スロウが60%になり2秒間続く。「リチュアル・ネイル」は発動から4秒以内に追加のコストなしでさらに二回再発動でき、使用の間には0.5秒の固定クールダウンがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ritual Nails#description2": {
+   "source_sha1": "d3a8219dad6b9f07f868b61d36fc896df54758da",
+   "plain_sha1": "e530a8c88b9ba0a79a5a8f8440120a01cc24e35f",
+   "ja": "再発動：ロックは一回目の発動と同じ効果を行う。「リチュアル・ネイル」が終わったときに使わなかった再発動一回ごとに、スキルのクールダウンとマナコストの10%～40%（レベルに応じて）が戻り、残り二回なら最大20%～80%（レベルに応じて）戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ritual Nails#description3": {
+   "source_sha1": "25f6b735e212118dd677200beb757f7b2e83efdc",
+   "plain_sha1": "f2cf5108c9a78d55c479293a5d5cfbfcc89a1562",
+   "ja": "「Soul Nails」のスタックが付いた敵へのロックの次のダメージを与える通常攻撃か「灰塵の追撃」は、すべてのスタックを消費して、スタックの数に応じた追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Soul Ignition#description": {
+   "source_sha1": "a197d55311f0970a4c12173c81a634057c227492",
+   "plain_sha1": "58710fa3e19a0ff801fd24aaadac0fb84728ec96",
+   "ja": "発動効果：ロックは6秒間魂を燃やし、ゴースト状態になって、攻撃速度が40%～70%（レベルに応じて）、移動速度が40%（+ AP 100ごとに2%）増加する。移動速度は1.5秒経った後、1秒かけて20%まで減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Soul Ignition#description2": {
+   "source_sha1": "f8b58ac3a5c21e1f68512691f2c1817e1da5d063",
+   "plain_sha1": "c18ee09f6e9b6c50fe06f657eeb95487ca650fcb",
+   "ja": "さらに、効果中は、敵チャンピオンから受けた軽減後のダメージの100%に等しい量（上限あり）と、「ソウル・イグニッション」の体力コストで使った体力の合計を、体力バーに灰色の体力として蓄える。ロックはさらに、減少体力と「ソウル・イグニッション」の経過時間に応じて、最大20～200（レベルに応じて）（+ APの20%）の灰色の体力を自身に蓄える。この追加の灰色の体力のうち減少体力に応じた分は、現在体力が100～500（レベルに応じて）（+ APの60%）以下のときに最大になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Soul Ignition#description3": {
+   "source_sha1": "7fbeefc68e53147f99d2cedfe2c15c98e6a9e16e",
+   "plain_sha1": "f3ec22c5a368387669ce3dd0ab5e0c8dcf65f705",
+   "ja": "0.5秒後から、効果時間中に「ソウル・イグニッション」を再発動でき、その後は自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Soul Ignition#description4": {
+   "source_sha1": "dd63683e25a2d49d07135611594e37b4cf4582ab",
+   "plain_sha1": "f3d0ab755c3deba1f30813f77f1d285390c4ac59",
+   "ja": "再発動：ロックは「ソウル・イグニッション」を終え、灰色の体力を消費して同じ量を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Soul Ignition#description5": {
+   "source_sha1": "135d7c5b0e7a3891cf9c9063122713655d4276d4",
+   "plain_sha1": "6842a50dd9284073bbd98377fbaac83f3f4a808e",
+   "ja": "「ソウル・イグニッション」の再発動は、スキルの使用を妨げる行動妨害を受けている間も使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ashen Pursuit#description": {
+   "source_sha1": "cc1377519fc3b7dd5704865a0a8d5215f483ab32",
+   "plain_sha1": "533d36e2f15653391d16c04506e1f031fafeadce",
+   "ja": "発動効果：ロックは指定地点へブリンクし、到着時に周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ashen Pursuit#description2": {
+   "source_sha1": "94ed4e3ad252a1e955440fc1750afaf256d65199",
+   "plain_sha1": "e334eca0cf8b2f70bffddfc282dc00bb481b3bde",
+   "ja": "0.1秒の遅れの後、4秒以内の次の攻撃の指示を強化し、射程が275増加して対象の方向にダッシュし、途中の周囲の敵に魔法ダメージを与えて、命中した主対象に攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ashen Pursuit#description3": {
+   "source_sha1": "f4970a2c8694e1c2f3f340d8325ba9ee2ab1583c",
+   "plain_sha1": "3a3756693b6e2c00a7d0d178e1ddfb6dfda166a8",
+   "ja": "敵チャンピオンのキルに関与すると、クールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Ashen Pursuit#description4": {
+   "source_sha1": "69f80da04d14bc0d8af414b9d952c05a64735f35",
+   "plain_sha1": "31d65ba78d999f84fd2859ab3b6dcdb949c7279d",
+   "ja": "移動不能かグラウンドを受けている間、ロックはダッシュできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Purgatory#description": {
+   "source_sha1": "82dd688ccb5ccfe139cacd957fb33dd75350e44f",
+   "plain_sha1": "ed8efa1f84042ec3d902a1573cb266b6aac0ad07",
+   "ja": "発動効果：ロックはトーテムを投げ、トーテムは0.5秒かけて指定地点へ飛ぶ。着地して0.25秒後、トーテムは周囲の敵に食い込む釘を撃ち、魔法ダメージを与えて、2秒かけて減衰する99%のスロウを与え、1秒間可視化して、命中した敵チャンピオンに5秒間印を付ける。印の付いた敵は、体力が一定の割合を下回ると処刑される。処刑に成功すると、効果を受けたすべての対象の印の効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Locke/Purgatory#description2": {
+   "source_sha1": "634953481fcc80dc9cd004f12dead11362a3f5dc",
+   "plain_sha1": "e11c47de7b255ba4fe066233b7f3695934c0d7c0",
+   "ja": "すべての印が切れたとき、少なくとも一体のチャンピオンが処刑されていれば、トーテムは処刑されたすべてのチャンピオンの魂を封じ、2.25秒かけて地面に落ちる。その後「煉獄」の残りクールダウンと同じ時間（最低10秒）残る。ロックはトーテムの近くに移動して回収でき、封じた魂一つごとに「煉獄」の残りクールダウンを合計クールダウンの20%短縮し、永続的な「Sealed Champion」のスタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

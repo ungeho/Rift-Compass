@@ -1,0 +1,116 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Braum/Concussive Blows#description": {
+   "source_sha1": "10342a0a824dc6a63132d96731ead59bf7c1a5ef",
+   "plain_sha1": "8ef3d99454b89d3d0cb8260bfda2c299da2e169e",
+   "ja": "固有：ブラウムの通常攻撃と「冬の凍瘡」は、対象に4秒間「漢の拳」のスタックを一つ与える。付与のたびに効果時間が更新され、最大4回まで重なる。最初のスタックが付いた後は、どの味方チャンピオンの通常攻撃も攻撃時効果として対象にさらにスタックを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Concussive Blows#description2": {
+   "source_sha1": "bec42d258afd32fbe69083594dd619a4d468aade",
+   "plain_sha1": "71b4ea34366249329a638d89048e1038d2f92ec5",
+   "ja": "対象への四つ目のスタックですべて消費し、26～196（ブラウムのレベルに応じて）の魔法ダメージを与えて、1.25～1.75秒間（ブラウムのレベルに応じて）スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Concussive Blows#description3": {
+   "source_sha1": "084328d7c9aa43c5642e86acd69f4fc73b02cc26",
+   "plain_sha1": "7289388a57177264c13ba4679f808efb753d9486",
+   "ja": "この効果は、同じ対象には数秒に一度しか付かない。この無効の期間中、影響を受けた対象はブラウムの通常攻撃から、発動時のダメージの40%に等しい追加の魔法ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Winter's Bite#description": {
+   "source_sha1": "d8fe65f513988e4a783b71f6616d4ae1098738d2",
+   "plain_sha1": "11ae54dfcd50bca139143bcfa1402a1a73d8b4d3",
+   "ja": "発動効果：ブラウムは指定方向に盾から氷を放ち、最初に命中した敵に魔法ダメージを与えて、2秒かけて減衰する70%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield はブラウムの盾（物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Braum/Stand Behind Me#description": {
+   "source_sha1": "58450ded45ec15090f0c73147001879c52400e64",
+   "plain_sha1": "18630c49586485f926f88e6e22c0eeeb0189548c",
+   "ja": "発動効果：ブラウムはダッシュして、対象の味方と1500ユニット以内で最も近い見えている敵チャンピオンの間に入り、到着時に自身とその味方に3秒間物理防御と魔法防御の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Stand Behind Me#description2": {
+   "source_sha1": "fbc0f8d896348e2d88198ee154cb19b69a61909b",
+   "plain_sha1": "503f2a46faeed33a624bb0d32ca1fef33fe04cc5",
+   "ja": "「ワシに任せとけ！」を自身に使うと、即座に防御の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Stand Behind Me#description3": {
+   "source_sha1": "fe545cff9a1e5780eb586db35aec92e1af8d7260",
+   "plain_sha1": "61b47deab616fb179c732b10f04cde0eda794db6",
+   "ja": "ダッシュ中に「不破の盾」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Unbreakable#description": {
+   "source_sha1": "08d7fe31934477fd2ea8e997876dd94aa8914ba8",
+   "plain_sha1": "a30e3d4c494f976b3293cbb2a772a0e11855d6b0",
+   "ja": "発動効果：ブラウムは一定時間指定方向に盾を構え、前方に壁を作って、向かってくる敵の飛翔物をすべて受け止め、その方向の敵から盾越しに受けるダメージを軽減する。この方向からのチャンピオンの最初のダメージは100%軽減される。「不破の盾」はタワーには効かない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield はブラウムの盾（物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Braum/Unbreakable#description2": {
+   "source_sha1": "4c4ef9a5b3f486ee1ba0bf20b87ec89120c33cb8",
+   "plain_sha1": "e2d437dc762d85ae83a803799c87db459bb4ede2",
+   "ja": "盾を構えている間、ブラウムは移動速度が10%増加し、ゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield はブラウムの盾（物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Braum/Glacial Fissure#description": {
+   "source_sha1": "21198f79165ac053080e92df7ebb01855da6f06c",
+   "plain_sha1": "216ac99b89cf7ea55ad3822a63689ad73f350825",
+   "ja": "発動効果：ブラウムは空中に跳び上がって盾を地面に叩きつけ、衝撃から裂け目を作って指定方向へ進ませ、その通り道とブラウムの周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield はブラウムの盾（物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Braum/Glacial Fissure#description2": {
+   "source_sha1": "07714448380711022614233cd3b3aaf3e9626d96",
+   "plain_sha1": "1f778df15974b33986ee0871d64529a28a351cae",
+   "ja": "最初に当たった対象は最低0.6秒間ノックアップし、ブラウムから遠いほど長くなる。命中したほかのすべての敵は0.6秒間ノックアップする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Braum/Glacial Fissure#description3": {
+   "source_sha1": "bed9f3644bf614e589bc96a3307bd208ad9755b8",
+   "plain_sha1": "66a6fc4611bf1a90bbd55da81c23101fc9132765",
+   "ja": "裂け目の通り道に氷の地帯ができ、4秒間続いて範囲内の敵に0.25秒ごとにスロウを与える。地帯は効果時間が終わると、作られたときと同じ順番と速さで消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

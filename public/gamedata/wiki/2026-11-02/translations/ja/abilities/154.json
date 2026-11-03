@@ -1,0 +1,144 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zac/Cell Division#description2": {
+   "source_sha1": "4a267bd843d5cb7d1d8f59f2cc38f2b4cc2c71a5",
+   "plain_sha1": "823092b53d64d1f67fd02fa76eb19126387df31e",
+   "ja": "固有 -「Goo」：ザックがスキルを敵に当てるたびに、自身の塊をいくつか近くに飛ばし、塊は近くの見えている敵チャンピオンの方へ落ちて6秒間残る。*「スライムパンチ」：最初の命中で1個、二回目が別の敵に当たればさらに1個 *「スライムクラッシュ」：少なくとも一体の敵に当たれば1個 *「ブッ飛びスライム」：命中した敵チャンピオン一体ごとに1個、少なくとも一体の敵に当たれば最低1個 *「レッツバウンス！」：少なくとも一体の敵に当たった跳ねごとに1個",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Cell Division#description4": {
+   "source_sha1": "a8ac7b7e2817a5a4259eb246f19e5eaf2656ef0e",
+   "plain_sha1": "73c1923e80f06577283ed435507f40bdec2c8dda",
+   "ja": "固有 -「はぐれスライム」：一定時間ごとに、致死ダメージを受けるとザックは8～4秒間（レベルに応じて）蘇生状態になり、即座に最大体力の50%を回復して、その間対象指定不可で行動できなくなる。その後ザックは自身の位置から離れた所に四つの操作できない小さなスライムに分かれる（地形で止まる）。スライムが対象指定不可になってから1.5秒後、残りの時間をかけてザックの位置へ向かって動き始める。スライムが受けたダメージは（各スライムの最大体力を超えた分を除き）確定ダメージとしてザックにも伝わる。蘇生状態の間、ザックはスライムから伝わるダメージ以外のダメージを受けない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Cell Division#description5": {
+   "source_sha1": "5995b38d8177e82829d1e10b02dd61a981d18f82",
+   "plain_sha1": "05c3244c5b356ee7eb133eecdbabaf7493278aa1",
+   "ja": "効果時間の後、ザックは最大体力の10～50%で復活する。すべてのスライムが倒されると、ザックは処刑される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Cell Division#description6": {
+   "source_sha1": "e2d8790a81a5ed03c848b693c62409269552c4fb",
+   "plain_sha1": "e4abd404dc7b03b3317af7a81ab73780eb49baa5",
+   "ja": "小さなスライムのステータスと詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Stretching Strikes#description": {
+   "source_sha1": "86c2fa70c93ede5ddbf354c5d975aebbc91c4e2c",
+   "plain_sha1": "fd9b5850d34670a435cdac376be3b85c65c6a045",
+   "ja": "発動効果：ザックは指定方向に左腕を伸ばし、最初に命中した敵をつかんで魔法ダメージを与え、0.5秒間40%のスロウを与えて、ザックと対象の間に2秒間テザーを作り、その間対象を可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Stretching Strikes#description2": {
+   "source_sha1": "d790a00ff348e2eb1e5587c0ee5c041fda2a16e2",
+   "plain_sha1": "7e7c4bfedccdbbbafa82a6e11df4182661b15b20",
+   "ja": "テザーが続く間、ザックの次の通常攻撃は二回目の「スライムパンチ」に置き換わり、詠唱時間が0.25秒になって、通常攻撃の射程が25増加する。この攻撃は攻撃開始時の効果を発動するが、クリティカルにならず、攻撃時効果も与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Stretching Strikes#description3": {
+   "source_sha1": "83e0996396d275127307881e15d3207fa9e47d5a",
+   "plain_sha1": "0c2966ec9f0a0a26a3c0027f28d4993689e2ad7a",
+   "ja": "二つの「スライムパンチ」が別の対象に当たった場合、どちらも押し倒されて0.5秒間スネアを受け、二つ目の対象は最初の魔法ダメージと同じスロウを受ける。0.4秒の遅れの後、ザックは二体を互いの方へ300ユニット引き寄せる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Stretching Strikes#description4": {
+   "source_sha1": "5a6c56f04f8f8bb6bd08d0b67ac9ec2b3c762894",
+   "plain_sha1": "ab0fd2e71826717cc3566a7be2fa2b9e22f03470",
+   "ja": "二体が互いに700ユニット以内にいる場合は、代わりに移動系の効果でぶつけ合わされる。ぶつかると、二体とも0.25秒間ノックアップしてスタンし、衝突の範囲内のすべての敵が最初の魔法ダメージと同じスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Stretching Strikes#description5": {
+   "source_sha1": "26a58e241aadb6da0f7d0373c8c3941c4ac1eb1c",
+   "plain_sha1": "c07394a2d445508c557f5860e8297f89d787834e",
+   "ja": "二つの「スライムパンチ」（発動と強化された攻撃）は、どちらもザックの通常攻撃タイマーをリセットする。左腕が飛んでいる間、ザックは移動も攻撃もできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Unstable Matter#description": {
+   "source_sha1": "8fe2b8c38d9af76fabdc3aa994a53ff6af627679",
+   "plain_sha1": "64440174531c29d4e0abfd788092c9e55b393d25",
+   "ja": "発動効果：ザックは爆発して周囲の敵に魔法ダメージを与える。対象の最大体力の割合に応じたダメージは、ミニオンとモンスターに対しては200が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Unstable Matter#description2": {
+   "source_sha1": "48402648eae6d51668fa3f6ef4185bd77e05d951",
+   "plain_sha1": "9eb66cdb977ed96d48b48eca1809a7fc70c6441c",
+   "ja": "命中したアグロ中のモンスターを5秒間ゴースト状態にする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Unstable Matter#description3": {
+   "source_sha1": "679801fc92f97af8b959a077e19fc1da9b34f67d",
+   "plain_sha1": "8c2ab296b7b72b865734002e2a8200c7688a0933",
+   "ja": "ザックが「はぐれスライム」の塊を拾うたびに、「スライムクラッシュ」の残りクールダウンが1秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Elastic Slingshot#description": {
+   "source_sha1": "60822e62171a598feec4527322bed8cc5c239a23",
+   "plain_sha1": "3b1cd0ba09b8a7f9b5b0cdbe680e6fb92590cd6f",
+   "ja": "発動効果：ザックは最大4.5秒間溜め、指定方向の扇形の範囲で「ブッ飛びスライム」の射程を伸ばす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Elastic Slingshot#description2": {
+   "source_sha1": "41a4679432ea45d730972743b29042392b6b77a6",
+   "plain_sha1": "3b565ddc2928bc1bf09b5cedd2306a7bab68ced1",
+   "ja": "「ブッ飛びスライム」は効果時間中に再発動できる。ザックが自分で詠唱をキャンセルするか、再発動せずに最後まで溜めきると、「ブッ飛びスライム」の体力のコストとクールダウンの50%が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Elastic Slingshot#description3": {
+   "source_sha1": "d0fcbca5d76b30a297d2f78634fc86988f6959c0",
+   "plain_sha1": "925e2df0d06532690e8f74ec9bf5ba5464c954ad",
+   "ja": "再発動：ザックは扇形の範囲内の指定地点へ跳ぶ。着地時に周囲の敵に魔法ダメージを与えて、0.5秒間ノックアップとスタンを与え、「ブッ飛びスライム」を1秒より長く溜めていた場合は1秒になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Let's Bounce!#description": {
+   "source_sha1": "0c1ff64433885545a86c58f497a1d2d6b1d562cd",
+   "plain_sha1": "7540e44753eaf304b89eafdd04bf9af27a46c2db",
+   "ja": "発動効果：ザックは詠唱時間の後に跳ね、その後3秒間、毎秒さらに3回跳ねる。各跳ねは命中した敵に魔法ダメージを与え、1秒かけてノックバックさせ、同じ時間20%のスロウを与える。敵は複数の跳ねに当たることがあるが、二回目以降は50%のダメージで、ノックバックは与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zac/Let's Bounce!#description2": {
+   "source_sha1": "183c4cc784ad8d9cc2e323314572e4a0c43109eb",
+   "plain_sha1": "68c25271db7d39d17f61aa3891cac37395332188",
+   "ja": "「レッツバウンス！」の効果中、ザックは移動でき、ゴースト状態になって移動速度が20%～50%（効果時間に応じて）増加するが、通常攻撃・「スライムパンチ」・「ブッ飛びスライム」の指示ができなくなる。また、跳ねる範囲内の塊を自動ですべて取り込む。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Zac/Cell Division#description": {
+   "source_sha1": "ea4b3a23f5362f84b0ca5dff506e38e8e7266a08",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zac/Cell Division#description3": {
+   "source_sha1": "c1bdb632609a9e28377bb061343c57a9eea2a3ab",
+   "reason": "residual_markup"
+  }
+ }
+}

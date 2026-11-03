@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Lillia/Dream-Laden Bough#description": {
+   "source_sha1": "9a2676bd54551e643c9a0619dd12d70086b4bb77",
+   "plain_sha1": "877447b1513017d91205ade32dd3d735ae80bf08",
+   "ja": "固有：リリアのスキルは命中した敵に「Dream Dust」を与え、3秒かけて対象の最大体力の5%（+ AP 100ごとに1.25%）の合計魔法ダメージを与える。モンスターに対しては70～180（レベルに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Blooming Blows#description": {
+   "source_sha1": "e681b163da213bc1a428cdddd3f61aa7626c2fd6",
+   "plain_sha1": "0a1e6e7adb1e2cd4dc4a8e01fbb011b2949d500b",
+   "ja": "自動効果：リリアのスキルが少なくとも一体の敵に当たるたびに、6.5秒間「Prance」のスタックを得る。命中のたびに更新され、最大4回まで重なる。効果時間が終わると、スタックは1.5秒ごとに一つずつ切れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Blooming Blows#description2": {
+   "source_sha1": "697ae33110bc5e109162476368d8b57f0bdb56ff",
+   "plain_sha1": "a1d60dcf445addb859dde9d04c256e34579e0f75",
+   "ja": "「Prance」：スタックごとに、リリアは移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Blooming Blows#description3": {
+   "source_sha1": "91810a8a51a213d077623bdf52947dd3335b95ed",
+   "plain_sha1": "ff73e47315927b71f8be61484f8e8203fda1b4c4",
+   "ja": "発動効果：リリアは香炉を周りで振り回し、周囲の敵に魔法ダメージを与える。範囲の外縁で当たった敵は、さらに同じ量の追加の確定ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Blooming Blows#description4": {
+   "source_sha1": "b34bc5aabba123a7a223323f3356adba5be2ca88",
+   "plain_sha1": "015cf7ce1f0411c28c612e055bd032ce8bca7bf0",
+   "ja": "リリアは「花開く風」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Watch Out! Eep!#description2": {
+   "source_sha1": "f044ec31679b96f9d42b53b303c04d8048266d7e",
+   "plain_sha1": "f2cdbefe149c63675f287e5f3af48a1f73df9ff3",
+   "ja": "「ひゃっ、あぶない！」はミニオンに50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Swirlseed#description": {
+   "source_sha1": "6b675246301b74beb01b07a8c83e2be63b80440e",
+   "plain_sha1": "84afa22dccaeb6e98077c6728af271784f6311a5",
+   "ja": "発動効果：リリアは指定地点に種を放り投げ、種はどこまでも前に転がり続ける。地面にある種は敵か地形に当たると起爆し、扇形の範囲の敵に魔法ダメージを与えて、3秒間40%のスロウを与え、2秒間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Lilting Lullaby#description": {
+   "source_sha1": "b0d2ceffd8409c3f4323faa83e2a4a36ce22bd0b",
+   "plain_sha1": "b8b1f3d19150d2f66a401b5ee48e9d5040dd9c8d",
+   "ja": "発動効果：リリアは「Dream Dust」を受けているすべての敵チャンピオンに魔法の子守唄をかける。子守唄は0.3秒後に届き、1.5秒間眠気を与えて10%のスロウを与える。効果時間の後、対象は数秒間スリープになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Lilting Lullaby#description2": {
+   "source_sha1": "eebacfa1a5bb0e3c548149f9ef0760fe80965249",
+   "plain_sha1": "650d8c47944c0785d16d2d72dada6323de47ce0a",
+   "ja": "スリープ中の対象がチャンピオン・大型モンスター・タワーから受ける、持続ダメージ以外の次のダメージでこの効果が消費され、さらに魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lillia/Lilting Lullaby#description3": {
+   "source_sha1": "c98fea9503629fa22d8c1ad8541186d2ead9519f",
+   "plain_sha1": "8d52208b107412527d9e9a4e590a2ec104e6f273",
+   "ja": "このスキルを使用するには、「Dream Dust」を受けている敵チャンピオンが必要。リリアは「夢見の子守唄」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Lillia/Dream-Laden Bough#description2": {
+   "source_sha1": "6937701927df227a9483f585da79e3a8e3e57621",
+   "reason": "residual_markup"
+  },
+  "Template:Data Lillia/Watch Out! Eep!#description": {
+   "source_sha1": "d68f5aa923e5f599699dd433cb2fad497b725199",
+   "reason": "residual_markup"
+  }
+ }
+}

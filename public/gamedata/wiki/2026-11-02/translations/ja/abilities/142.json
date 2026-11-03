@@ -1,0 +1,123 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zoe/Paddle Star!#description": {
+   "source_sha1": "a525b6f256cbab5e9a1cd49edd45e5519b4c9b38",
+   "plain_sha1": "ab37eb062a22c1d815e6a84caef17e71601864ff",
+   "ja": "発動効果：ゾーイは指定方向に星を撃ち、星は敵に当たると爆発して、周囲で当たった敵に魔法ダメージを与える。合計のダメージは飛んだ距離に応じて0%～150%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Paddle Star!#description2": {
+   "source_sha1": "456539d3e2bf01bd70d79704dc256d102c9d1724",
+   "plain_sha1": "456ef0163ba016f17ca316e7ed37155beb6c39cc",
+   "ja": "星は最大射程で1秒間とどまり、その間、0.25秒後から「パドルスター」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Paddle Star!#description3": {
+   "source_sha1": "d0dc4b26b4870ca08c4b1c672be19f6b6f8c1cd7",
+   "plain_sha1": "eba6be650f2613c882c60b3512763e13370f0250",
+   "ja": "再発動：ゾーイは星を指定した経路へ向け直し、速度と範囲を強化して、発動時にダメージの倍率をリセットする。向け直した星は、ゾーイから800ユニット外側に達するまで進む。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Paddle Star!#description4": {
+   "source_sha1": "937e4f3377d8aa93f3c97ecce2b352675b84c4cc",
+   "plain_sha1": "fda661db4716451c257eea2285161b2867c99e31",
+   "ja": "「パドルスター」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Spell Thief#description": {
+   "source_sha1": "a2977fad071793ad6333cebe0b2fcf1a6e40d05f",
+   "plain_sha1": "d50e7dd3f4fa17d1272a74f56502e74bf138722a",
+   "ja": "自動効果 -「Wheeeee」：ゾーイが「スペルシーフ」かサモナースペルを使うたびに、一定時間移動速度が増加し、次の10秒間自身の周りを回る三つの弾を呼び出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Spell Thief#description2": {
+   "source_sha1": "0600b5e731057521b85acbe98307df0111f79c76",
+   "plain_sha1": "b81ca0f847fd380fecc06fa5c0f19b4cdb6ca156",
+   "ja": "完全な行動妨害を受けていなければ、ゾーイは範囲内で眠っていない最も近い敵（攻撃対象を優先）に弾を一つずつ撃ち、弾ごとに魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Spell Thief#description4": {
+   "source_sha1": "48803065eff649a6541b28bc6bd814e6fe262f2d",
+   "plain_sha1": "5927c5ed281e1970755de8634c86df641495cfdc",
+   "ja": "ゾーイは「Spell Shard」の上に直接移動すると拾うことができ、最大60秒間持てる。新しい「Spell Shard」を拾うと、今の物と置き換わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Spell Thief#description5": {
+   "source_sha1": "97494b80b9b29c624b7c532e6970276062c1f137",
+   "plain_sha1": "60c55b7858ac339ff573b27c11836e3a392f43a6",
+   "ja": "発動効果：ゾーイは拾った「Spell Shard」の発動効果を再現する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Sleepy Trouble Bubble#description": {
+   "source_sha1": "3a33625a31ed4a8759cb21f77e5c5b7758c3b014",
+   "plain_sha1": "61d88fd3ecd8ce7f2b838630c1d912015c6f1ad7",
+   "ja": "発動効果：ゾーイは指定方向に泡を蹴り、泡は最初に当たった敵で破裂するか、そうでなければ最大射程で1秒かけて少しずつ前に跳ねながらとどまり、その後5秒間罠になって、敵が触れると破裂する。泡は地形を一度だけ越えられ、越えた距離をすべて追加の射程として進むが、もう一度地形に入る場合は手前で落ちる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Sleepy Trouble Bubble#description2": {
+   "source_sha1": "cd7ac937cf3f6b252aa253d976aab9bd9bacf18b",
+   "plain_sha1": "54f71da40abb0f2fb7dfd274a07ffd651bb2256e",
+   "ja": "破裂は対象に魔法ダメージを与え、1.4秒間眠気を与えて徐々にスロウを強め、その後2.25秒間眠らせる。眠っている間、対象は30%の魔法防御低下を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Sleepy Trouble Bubble#description3": {
+   "source_sha1": "3d8d1fedcb55bcc41533d63eb066fce30e57a893",
+   "plain_sha1": "f0a207b5a26a2e264985ffdff8da25768e5b381c",
+   "ja": "眠りが付いてから3.25秒以内に、チャンピオン・大型モンスター・タワーから対象への持続しない次のダメージは、眠りが続いていれば早く終わらせ、与えた軽減後のダメージに等しい追加の確定ダメージ（「スリープバブル」のダメージが上限）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Sleepy Trouble Bubble#description4": {
+   "source_sha1": "0e8d238f3c158d3151215305b9d9c19b62d1b601",
+   "plain_sha1": "7a3af211372f3dcc5988af2590a4b7ef5832c4b1",
+   "ja": "泡が敵チャンピオンに当たると、「スリープバブル」のクールダウンの一定の割合が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Portal Jump#description": {
+   "source_sha1": "02ad25c65dc4382648877956c47ef9fe7a86cec1",
+   "plain_sha1": "6890562777506f82725af87b1d57f8f4ece4a11b",
+   "ja": "発動効果：0.15秒の遅れの後、ゾーイは指定方向へブリンクし、そこに0.95～1.25秒とどまって、その間移動速度は固定の0になり、地形を越える視界を得る。その後、発動した位置へブリンクで戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zoe/Portal Jump#description2": {
+   "source_sha1": "d113a325cc6164dd68ba38120775a5d06aa0a58e",
+   "plain_sha1": "0e520756fc85193d4fe18f093b93c20b0f37bdc4",
+   "ja": "「ポータルジャンプ」はゾーイの通常攻撃タイマーをリセットする。ゾーイは「ポータルジャンプ」の使用後と、ブリンクで戻った後に、短い間行動できなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Zoe/More Sparkles!#description": {
+   "source_sha1": "15989c9247b4984f3e540f89bc238d050f2d83e6",
+   "reason": "residual_markup"
+  },
+  "Template:Data Zoe/Spell Thief#description3": {
+   "source_sha1": "ca14550ceac1a8b251ea4a8ae7ff207f55b55664",
+   "reason": "residual_markup"
+  }
+ }
+}

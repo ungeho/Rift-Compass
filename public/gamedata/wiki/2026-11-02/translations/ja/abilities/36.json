@@ -1,0 +1,126 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Dr. Mundo/Goes Where He Pleases#description2": {
+   "source_sha1": "480574f33d60cf0d92dbbcbd92113b8997cd093a",
+   "plain_sha1": "d764ec59509e13918088c26c88a7b26541136408",
+   "ja": "自動効果：一定時間ごとに、ドクター・ムンドは次に自身にかかる敵の移動不能の効果を無効にする。一つ無効にすると、ドクター・ムンドは現在体力の4%の体力を消費し、移動不能の発生源のおおよその方向に525ユニット先へ容器を飛ばし、容器は7秒間地面に残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Goes Where He Pleases#description3": {
+   "source_sha1": "df3fd7a16c5b5ca4e697d3636e832ff1e26dd7c5",
+   "plain_sha1": "39825505a156a5d861b86ceff4689609f42b09e7",
+   "ja": "ドクター・ムンドは容器の近くに行くとそれを取り込み、最大体力の4%を回復して、「気ままな往診」のクールダウンが15秒短縮される。敵チャンピオンは近くに行くと容器を壊せる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Goes Where He Pleases#description4": {
+   "source_sha1": "732148109428e540347765ca1a22096a6cc3b45b",
+   "plain_sha1": "004b7af5e92810352a47402495fc69c64b705364",
+   "ja": "「気ままな往診」のクールダウンは復活時にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Infected Bonesaw#description": {
+   "source_sha1": "313d93e8a735cdc8991f337a469ebdb2dd4ae276",
+   "plain_sha1": "3b7ba5a22fe6eabd06f7a03abb225477b633e0d7",
+   "ja": "発動効果：ドクター・ムンドは指定方向に骨切りノコギリを投げ、最初に命中した敵に魔法ダメージを与えて、2秒間40%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Infected Bonesaw#description2": {
+   "source_sha1": "e1b4d003e8533f8e01d659d6719e2a53c12a2388",
+   "plain_sha1": "e57c77de75234be2c54d3ed0c9ae566af0245c4b",
+   "ja": "「骨切りノコギリ」のダメージには最低値があり、モンスターに対しては上限がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Infected Bonesaw#description3": {
+   "source_sha1": "dfc6c6dc2a708e5d8ed24e8c34a4e4a574256a01",
+   "plain_sha1": "f7ebe52a2a00b2645b99695f6b2b00f05a29fd0b",
+   "ja": "ノコギリが敵に命中すると、ドクター・ムンドは体力のコストの50%を回復し、チャンピオンかモンスターに対しては100%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Heart Zapper#description": {
+   "source_sha1": "96a5a4d7fef25e79a393c40da354f888d85f7f7e",
+   "plain_sha1": "dbcb267fa6bd758601ff736af6252c9782594afd",
+   "ja": "発動効果：ドクター・ムンドは最大3秒間除細動器を充電し、0.25秒ごとに周囲の敵に魔法ダメージを与えて、受けた軽減後のダメージの80%～95%（レベルに応じて）を体力バーの灰色の体力として蓄える。最初の0.75秒が過ぎると25%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Heart Zapper#description2": {
+   "source_sha1": "785ed27022cf2edcee5c036776d42308fa466e0a",
+   "plain_sha1": "d155a0d054467efa92c6ca3551c7ffeb13bfcd2f",
+   "ja": "「心臓ビリビリ」は効果時間中、0.5秒後から再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Heart Zapper#description3": {
+   "source_sha1": "abc540339e67430d09ca33eb8b2342e42920edf3",
+   "plain_sha1": "90442540685369565fd46b67dfad55320b582815",
+   "ja": "再発動：ドクター・ムンドは除細動器を爆発させ、周囲の敵に魔法ダメージを与えて、灰色の体力の50%を回復する。少なくとも一体の敵チャンピオンか大型モンスターに命中すると100%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Blunt Force Trauma#description": {
+   "source_sha1": "f86f5a9f2f65c4e797fe1d3a70cce0e7203bc1b1",
+   "plain_sha1": "57679fb0b2637d9202dfda3b92453bdd3656f1e6",
+   "ja": "自動効果：ドクター・ムンドは増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Blunt Force Trauma#description2": {
+   "source_sha1": "0c4650795a4657727c23460019614ee03c54c1e3",
+   "plain_sha1": "3ec3c4dc77e16f58799fec735363fe469a3ff104",
+   "ja": "発動効果：ドクター・ムンドは4秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、追加の物理ダメージ（ドクター・ムンドの減少体力に応じて0%～40%増加）を与える。対象が死ぬか小型モンスターの場合は直線状に吹き飛ばされ（地形は越えない）、通過したすべての敵は攻撃力の100%の物理ダメージと、「野蛮な痛み」の最低の追加ダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Blunt Force Trauma#description3": {
+   "source_sha1": "65cb5191644829e4e49544cf3684fe7267811c8c",
+   "plain_sha1": "122c46122713cb5527d47dfb9cdf30f5b0dbc321",
+   "ja": "「野蛮な痛み」と、それを発動させた攻撃のダメージは、ミニオンに対して140%、モンスターに対して140%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Blunt Force Trauma#description4": {
+   "source_sha1": "9c61e14128c9322b843f17c3e5a70ac76bc64fb1",
+   "plain_sha1": "1d8bc56e75259edcdc8e31850e4f5085032e9de9",
+   "ja": "「野蛮な痛み」はドクター・ムンドの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Maximum Dosage#description": {
+   "source_sha1": "15bdf8a72f30bc73f313cf9a1272b50b0e80c803",
+   "plain_sha1": "0979c5f0d817898bbe227b302f8b3b2c9af76038",
+   "ja": "発動効果：ドクター・ムンドは自身に薬品を注射して10秒間強化され、基本体力の増加、移動速度の増加、体力回復の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Dr. Mundo/Maximum Dosage#description2": {
+   "source_sha1": "c8bfa6c1d0ce0f9e264b41b882b9aa8e638653c1",
+   "plain_sha1": "b74a485fde64a4f969e84337cb169e6beca825da",
+   "ja": "ランク3では、発動時に1200ユニット以内にいる敵チャンピオン一体ごとに、「マキシマム投与」の基本体力の増加と体力回復の増加がそれぞれ5%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Dr. Mundo/Goes Where He Pleases#description": {
+   "source_sha1": "3c8724e774fdac014a18f7408beabf9acd53a7ab",
+   "reason": "residual_markup"
+  }
+ }
+}

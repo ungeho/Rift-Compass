@@ -1,0 +1,95 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Singed/Noxious Slipstream#description": {
+   "source_sha1": "cf8c861d17ed4e4a13b5effcce74b71d5eb3a953",
+   "plain_sha1": "d361df45137adcb9fdfe429f288bfec6a324911f",
+   "ja": "固有：シンジドがチャンピオンの近くを移動するたびに、2秒間「スリップストリーム」のスタックを得る。通過のたびに効果時間が更新され、最大25回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Noxious Slipstream#description2": {
+   "source_sha1": "e8566c582bf023c4a7f35ed8b44a0ef643ee75f2",
+   "plain_sha1": "a60b3a8a5fa49a2fffa27e8e02b28dadf3d7b768",
+   "ja": "「スリップストリーム」：スタックごとに移動速度が25%増加し、最大625%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Noxious Slipstream#description3": {
+   "source_sha1": "2db75d079839becf67bd46c3cbde1eb6004a2301",
+   "plain_sha1": "2db75d079839becf67bd46c3cbde1eb6004a2301",
+   "ja": "この効果は、同じ対象から数秒に一度しか起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Poison Trail#description": {
+   "source_sha1": "483b8c2315a8e35f2c6c83f85f3e0ecb930533aa",
+   "plain_sha1": "7e82527829a449aeef20e438962ffcf91240eeb2",
+   "ja": "切り替え：シンジドは通り道に3.25秒残る毒の雲を出し続ける。雲は範囲内の敵に毒を与える。マナコストを払えなくなると、「毒の軌跡」は自動でオフになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Poison Trail#description2": {
+   "source_sha1": "0ff237e2a9603aebc991dcc8f3f45d0c812bff22",
+   "plain_sha1": "9853a009913f241456e503691eb0e6db862e0185",
+   "ja": "毒：対象は2秒間、0.25秒ごとに魔法ダメージを受け、毒を受けていない状態で当たったときにもダメージを受ける。再び毒を受けると効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Poison Trail#description3": {
+   "source_sha1": "aa92684c745c507cc2f8759014656990d203e28e",
+   "plain_sha1": "f77a9dcb6776a47ef30aed213dfbb060bd873450",
+   "ja": "毒を受けている敵ミニオンが、次のダメージまでの間に味方ミニオンのダメージで倒れる場合、シンジドがそのキルを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Mega Adhesive#description": {
+   "source_sha1": "f364aee545e068007d9c19f8bec02079eaf65096",
+   "plain_sha1": "896e5ba9b388db8314a729c31de2e23d80ba8f77",
+   "ja": "発動効果：シンジドは強力な粘着剤をまき、0.375秒後に指定地点に落ちて3秒間残る範囲を作る。範囲内の敵はグラウンドとスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Fling#description2": {
+   "source_sha1": "cec9604ba4dea631f39a0854679e0a11181684e7",
+   "plain_sha1": "3b25281d3529263d3871aa63568cab4a7aa26d3d",
+   "ja": "移動系の効果を受けた後に対象が「強力粘着剤」の範囲に落ちると、一定時間スネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Singed/Insanity Potion#description": {
+   "source_sha1": "7c576c158c78260f3a8788e81f9868a42705521d",
+   "plain_sha1": "283ff6ff2a0654d59ad00c318e26b812397d8f45",
+   "ja": "発動効果：シンジドは25秒間自身を強化し、魔力・物理防御・魔法防御・移動速度・体力回復・マナ回復が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「増加体力」がない（原文：bonus health）"
+   ],
+   "allow_reason": "原文の bonus health regeneration は体力回復の増加で、増加体力（bonus health）ではない"
+  },
+  "Template:Data Singed/Insanity Potion#description2": {
+   "source_sha1": "0bdda93024deadbc798f4afc2b07b97f06221a1a",
+   "plain_sha1": "f6cc81460a698abf82a68ffa8ce2e233ccd018b9",
+   "ja": "この間、「毒の軌跡」は1秒間の「重傷」も与え、毒が続く間は0.25秒ごとに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Singed/Fling#description": {
+   "source_sha1": "94a740cacf6d1ccffbe1a8d71fc0db16dab125a1",
+   "reason": "residual_markup"
+  }
+ }
+}

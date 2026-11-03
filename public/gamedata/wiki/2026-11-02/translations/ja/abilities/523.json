@@ -1,0 +1,219 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Aphelios/The Hitman and the Seer#description": {
+   "source_sha1": "c430bd35927e34cf61ba5d9ca2f1231927c6d0a9",
+   "plain_sha1": "5609fde8613c726f898041f6be6b992c5b898e77",
+   "ja": "固有：アフェリオスは、姉のアルーンが作った5種類の「Moonstone Weapons」を使える。同時に二つの武器を装備し、一つはメイン、一つはサブになる。各武器には固有の通常攻撃と効果がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/The Hitman and the Seer#description2": {
+   "source_sha1": "95e847a7ebdb85ad9d7e54f886fe92e8a7b41731",
+   "plain_sha1": "fa1de7ed8a0734ee5ca5a41531ef5e998e1144c3",
+   "ja": "アフェリオスは、メインに「Calibrum」、サブに「Severum」を持ってゲームを始め、「Gravitum」「Infernum」「Crescendum」が控えとして順に並ぶ。武器は最初この順番だが、使い方によって並びが変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/The Hitman and the Seer#description4": {
+   "source_sha1": "875e8ef202642ad2012b0e60b60c55f338bc1bb0",
+   "plain_sha1": "0f0f2d1243b95bfe5de8060de13de7aa6be00fa3",
+   "ja": "固有 -「Weapon Master」：アフェリオスはスキルポイントでスキルを強化できない。「フェーズ」を持ってゲームを始め、レベル2で主要なスキルを、レベル6でアルティメットスキル「月光の祈り」を自動で得る。「月光の祈り」はレベル11と16で自動で強化される。アフェリオスは代わりにスキルポイントを使って、増加攻撃力・攻撃速度の増加・脅威を得られる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Calibrum#description": {
+   "source_sha1": "0e976953d5d2430ad887dc186ffc84abc89df84a",
+   "plain_sha1": "31c1e897bbbffb6ae2e3d41bf3135cef5bfa8412",
+   "ja": "「Calibrum」がメイン武器の間、アフェリオスは通常攻撃の射程が100増加する。スキルを通じて「Calibrum」でダメージを受けた敵は4.5秒間印が付き、その間可視化される。印の付いた対象へのアフェリオスの次の通常攻撃は、今のサブ武器を使い、射程が1800になり、弾速が上がり、対象に近いほど短くなる短い詠唱時間がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Calibrum#description2": {
+   "source_sha1": "611a8428c357c185ff036230f30426dce3e08526",
+   "plain_sha1": "e53cfb325b59db8f6d662b1bf4a59fc9eb7a58bc",
+   "ja": "強化された攻撃はすべての対象から印を消費し、消費した印一つごとに主対象に15（+ 増加攻撃力の15%）の追加の物理ダメージを与える。「Calibrum」が今のサブ武器の場合、代わりにメイン武器でこの攻撃を行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Severum#description": {
+   "source_sha1": "1af2fd6272a587a93e2e02ee49fb2f5499d2f54b",
+   "plain_sha1": "1bff76c1d635c30439d48dba148742f1b69663e1",
+   "ja": "「Severum」での通常攻撃は飛翔物ではなく、攻撃モーションが中断されない。「Severum」の攻撃は与えた軽減後のダメージの2%～8%（レベルに応じて）をアフェリオスに回復させ、スキルからの攻撃では5%～20%（レベルに応じて）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Gravitum#description": {
+   "source_sha1": "912e5b78be983f784dceaf2ba73ec7356eb0c3da",
+   "plain_sha1": "a638383041cfe4f7b6215dd65db9a392b6d1cf14",
+   "ja": "「Gravitum」での通常攻撃は敵に2.5秒間30%のスロウを与え、0.7秒後に15%まで減衰する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Infernum#description": {
+   "source_sha1": "26cd224d9473a5c35cdd3f5e47cc8cc832df0f9c",
+   "plain_sha1": "ff8a86bc66512f13e119df81694e14371a874372",
+   "ja": "「Infernum」での通常攻撃は炎の弾を撃ち、弾は到達すると対象の後ろへ扇形に4つの小さな弾に分かれ、通過した敵にダメージを与える。炎の弾は主対象に攻撃力の110%の物理ダメージを与える。いずれかの弾に当たった副対象は、元の攻撃のダメージの75%～100%（レベルに応じて）を受け、ミニオンには23%～30%（レベルに応じて）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Infernum#description2": {
+   "source_sha1": "7c7cd42ba5add71e5778172467149d137e887739",
+   "plain_sha1": "ebd60bd4c1efd4d3f413c489bf7471c6c0ac6a65",
+   "ja": "クリティカルのときは、代わりに50%広い扇形に6発の弾をばらまく。命中した副対象もクリティカルを受けたものとして扱われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Crescendum#description": {
+   "source_sha1": "6136292a895efc3ad8119493c46f1ca26a141132",
+   "plain_sha1": "fdb8db50644616c197a161e4059a1f1f39956861",
+   "ja": "「Crescendum」での通常攻撃は対象に刃を投げ、刃は0.2秒間とどまった後、アフェリオスのもとへ追尾して戻る。「Crescendum」を回収するまで通常攻撃の指示はできないが、受け止めると攻撃タイマーがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Crescendum#description2": {
+   "source_sha1": "47c291bca0869518ec69b4a3509fd821037cdb0e",
+   "plain_sha1": "51db9c680c5ff087f53cd2733020cdeac717f91f",
+   "ja": "「Crescendum」を投げる必要のあるスキルを使うたびに、アフェリオスは代わりに霊体の「Chakram」を対象に撃ち、それも同じように戻ってくる。アフェリオスは受け止めた「Chakram」を最大20まで蓄え、5秒間か、「Crescendum」の「Moonlight」が尽きるまで残る。新しい「Chakram」を受け止めるか、「Crescendum」でチャンピオンを攻撃すると、「Chakram」の効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Weapons of the Faithful#description": {
+   "source_sha1": "5a34b4ec81172f3f5fee693f84ab80d3ea6ab7db",
+   "plain_sha1": "320f74633811cbe7dc5990cc88b3fcf55e003960",
+   "ja": "アフェリオスの発動効果は、今のメイン武器によって変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Weapons of the Faithful#description2": {
+   "source_sha1": "4cef55d1a73a37bfff867d7722f047e6438f25e2",
+   "plain_sha1": "4cef55d1a73a37bfff867d7722f047e6438f25e2",
+   "ja": "それぞれの発動効果は、クールダウンを共有しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Moonshot#description": {
+   "source_sha1": "223fc744878724d500cff25f6e16ae4ab422cd31",
+   "plain_sha1": "6117351a8fe11d3feae5faa02a08b7bf3ca8c18a",
+   "ja": "発動効果：アフェリオスは指定方向にエネルギーの弾を撃ち、最初に命中した敵に80～170（レベルに応じて）（+ 増加攻撃力の42%～60%（レベルに応じて））（+ APの100%）の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Onslaught#description": {
+   "source_sha1": "459c07916d8c8fb91ccd85efb19552ce5c849659",
+   "plain_sha1": "6e444df5d2075407245e6c3f6bcc711b34a440c5",
+   "ja": "発動効果：アフェリオスは1.75秒間猛攻状態になり、移動速度が25%（+ AP 100ごとに10%）増加して、効果時間の間、最も近くの見えている敵（敵チャンピオンを優先）に最大6（+ 攻撃速度の増加100%ごとに2）回の攻撃を自動で行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Onslaught#description2": {
+   "source_sha1": "b3f68e4da73364dac4e4499f1501cb2d24990c62",
+   "plain_sha1": "0811fbe6a6a977a7b7a750acd0d43ec229228e0f",
+   "ja": "攻撃は「Severum」と今のサブ武器で交互に行い、それぞれ攻撃力の20%～41%（レベルに応じて）の物理ダメージを与えて、クリティカルの倍率の影響を受け、攻撃時効果を与えるが、攻撃時効果のダメージは25%の効果になる。通常攻撃を封じる行動妨害や、通常攻撃を封じる行動不能を受けている間、アフェリオスは攻撃できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Onslaught#description3": {
+   "source_sha1": "5f1d4c50e4b75be462f55eaf4ee2081c22592d54",
+   "plain_sha1": "e52d748a45bbc0e8eac314ec4fc61723320cc211",
+   "ja": "「Onslaught」の間、アフェリオスは「フェーズ」も「月光の祈り」も使えないが、移動はできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Binding Eclipse#description": {
+   "source_sha1": "90011d3f536cdf5a539f6cd5be29e058f1750542",
+   "plain_sha1": "7a2fa111fa1091d6fa72a4e786f0bbe9686fb5ac",
+   "ja": "「Gravitum」- 発動効果：アフェリオスは「Gravitum」のスロウを受けているすべての敵を引き寄せる力を解き放ち、50～140（レベルに応じて）（+ 増加攻撃力の32%～50%（レベルに応じて））（+ APの70%）の魔法ダメージを与えて、1秒間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Binding Eclipse#description2": {
+   "source_sha1": "3abe16d6d42c6ea5b75d44a183ec5fe3e1830e69",
+   "plain_sha1": "85c37976092f36df845b8b398eaffb2bc34ddff3",
+   "ja": "このスキルを使用するには、「Gravitum」の効果を受けている敵か、飛んでいる最中の「Gravitum」の弾が必要。飛んでいる最中の弾は強化され、対象に「Binding Eclipse」の効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Duskwave#description": {
+   "source_sha1": "bf782ed8a4d1ac61514bffcf204d09f7cdb339c5",
+   "plain_sha1": "cc50381d62eebd661ecd977de06a795ccb93ac4b",
+   "ja": "発動効果：アフェリオスは詠唱時間の間に指定方向の扇形にエネルギーの波を放ち、命中したすべての敵に20～110（レベルに応じて）（+ 増加攻撃力の15%～21%（レベルに応じて））（+ APの70%）の物理ダメージを与えて、それぞれを捕捉する。0.25秒後、捕捉した各対象に今のサブ武器で一斉に攻撃し、攻撃力の100%の物理ダメージを与えて攻撃時効果を与える。このダメージはクリティカルの倍率の影響を受ける。捕捉した対象には射程の制限がない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Sentry#description": {
+   "source_sha1": "0a1ffb5c7ee2d169b93f91c191739efd8d193ab6",
+   "plain_sha1": "a2e717c44fd2156721c247f541e7e0d2c2d5715d",
+   "ja": "発動効果：アフェリオスは指定地点に月の歩哨を置き、歩哨は0.35秒後に起動準備ができて、最大20秒間残る。その間は作動しておらず対象指定不可。範囲内に敵が入ると歩哨は作動し、残り時間が4秒になって対象指定可能になる。歩哨の体力は6で、遠隔の通常攻撃一回で3、スキルの命中一回で4のダメージを受ける。タワーの攻撃は歩哨を即座に壊す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Sentry#description3": {
+   "source_sha1": "2dcf3046395ba4bcac529b5d168255faa5da2924",
+   "plain_sha1": "0b84a29d553d508c2f18fa525ff0338f8b6c36bb",
+   "ja": "歩哨の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Phase#description": {
+   "source_sha1": "bf97d3ac58fc8596d9d23589022c32b94ff3e16b",
+   "plain_sha1": "443201aa2953f98e5c271ec1fad67992cb7035be",
+   "ja": "切り替え：アフェリオスは0.25秒かけて、メイン武器とサブ武器を入れ替える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Weapon Queue System#description": {
+   "source_sha1": "4720a9d84cf7ae3e96ea5102b14980a097c00e49",
+   "plain_sha1": "4720a9d84cf7ae3e96ea5102b14980a097c00e49",
+   "ja": "このスキルのアイコンは、控えの次の武器を表す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Weapon Queue System#description2": {
+   "source_sha1": "d954dcb41e605b2440332996281013f461f248b0",
+   "plain_sha1": "d5ac5b9e4062ced59374e9cc8289b58ed23b4be3",
+   "ja": "発動効果：アフェリオスは、アルーンが次に作る武器を文字で知らされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Aphelios/Moonlight Vigil#description": {
+   "source_sha1": "069e3fd5d2143aebf608aacda1e55378f8033ec2",
+   "plain_sha1": "3d6244a8bc32c88fec35fb5306f2a4cda1859ec4",
+   "ja": "発動効果：アフェリオスは指定方向に月の光を放ち、光は通り道の範囲の視界を一瞬与えて、敵チャンピオンを照らすと止まる。アルーンは照らされた対象を中心とした範囲を打ち、当たった敵チャンピオンに125～225（レベルに応じて）（+ 増加攻撃力の20%）（+ APの100%）の物理ダメージを与えて、命中した各対象を捕捉し、その範囲の視界を2秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Aphelios/The Hitman and the Seer#description3": {
+   "source_sha1": "70d1bf07fc691a1b521cf0616ed355d8483dadc9",
+   "reason": "residual_markup"
+  },
+  "Template:Data Aphelios/Severum#description2": {
+   "source_sha1": "9788c659633bb3bebad82754b9cf54197d9d1624",
+   "reason": "residual_markup"
+  },
+  "Template:Data Aphelios/Crescendum#description3": {
+   "source_sha1": "458644a458850ef0b52ccb30e7c883414c237709",
+   "reason": "residual_markup"
+  },
+  "Template:Data Aphelios/Sentry#description2": {
+   "source_sha1": "665f8d5c4b25fbde9d221b04639a805cf911c01c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Aphelios/Moonlight Vigil#description2": {
+   "source_sha1": "9c227bdfc6b5326b9008efa23518e6febb23bcc1",
+   "reason": "residual_markup"
+  }
+ }
+}

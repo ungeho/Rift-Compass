@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Xin Zhao/Determination#description": {
+   "source_sha1": "2d10e7b10d23a59c93d20c575e22067615909d6c",
+   "plain_sha1": "435e07c69a01cb3b4e5cc9c45277136b7e14daa7",
+   "ja": "固有：シン・ジャオの通常攻撃（攻撃時効果）と、「風成雷鳴」の最初の斬撃と突きが少なくとも一体の敵に命中するたびに、それぞれ「不退転」のスタックを得て、最大3回まで重なる。3スタック目ですべて消費し、攻撃力の15%～60%（レベルに応じて）（+ APの5%～20%〔レベルに応じて〕）の追加の物理ダメージを与え、シン・ジャオは最大体力の2%～5%（レベルに応じて）（+ APの40%～70%〔レベルに応じて〕）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Determination#description2": {
+   "source_sha1": "e50b7086dec3bdc8d10c31db8b1743d212db6baf",
+   "plain_sha1": "1ec124ee3a0dd291e648a0b3722f4f96d92bbe61",
+   "ja": "固有 -「Challenge」：「風成雷鳴」と、「三日月槍守」を習得していればシン・ジャオの通常攻撃と「兵貴神速」は、命中した特定の敵に3秒間「Challenged」の印を付ける。「Challenged」の印は一度に一体の敵にだけ付き、新しい対象に付けると前の対象からは外れる。「兵貴神速」と「三日月槍守」は「Challenged」の対象に対して特有の効果を持つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Three Talon Strike#description": {
+   "source_sha1": "9527953e701a6b37c599b82a5aaee20513034c43",
+   "plain_sha1": "31f53eeccdb094bce664966709b921ea9397b112",
+   "ja": "発動効果：シン・ジャオは5秒以内の次の三回の通常攻撃（攻撃開始時）を強化し、それぞれ攻撃モーションが中断されなくなり、追加の物理ダメージを与え、ほかのスキルの残りクールダウンを1秒短縮する。攻撃のたびに効果時間が更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Three Talon Strike#description2": {
+   "source_sha1": "56e069920b16c7963f5df0e5374fbf678966e324",
+   "plain_sha1": "8d0cb3e8d6b4f41daedefed85f51b35843674298",
+   "ja": "三回目の攻撃は対象を0.75秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Three Talon Strike#description3": {
+   "source_sha1": "f0a2d314fd3c0246ab4c779079ec2beb455aca40",
+   "plain_sha1": "fea3ba200b85ba0d5a54b11ac9aa6c0965d53bf8",
+   "ja": "「三槍撃」の追加ダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Three Talon Strike#description4": {
+   "source_sha1": "b826e19c48a6210ce2ba025ceaf4ec89c4c058d6",
+   "plain_sha1": "f9c1984a0fb9da6dc0c7e5de9cba7c9c3392f4d9",
+   "ja": "「三槍撃」はシン・ジャオの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Wind Becomes Lightning#description": {
+   "source_sha1": "3663c0eb6bfe4ae962c67f1c1d84ffbbe746134d",
+   "plain_sha1": "37ea1dafe5964981d7b2768b15881418fed1f83e",
+   "ja": "発動効果：シン・ジャオは詠唱時間の最初の0.15秒で弧状に4回斬りつけ、それぞれ範囲内の敵に物理ダメージを与える。残りの詠唱時間の後、指定方向に直線状に槍を突き出し、命中した敵に物理ダメージ（クリティカル率に応じて0%～33.3%増加）を与えて、1.5（+ AP 100ごとに0.5）秒間50%のスロウを与える。「風成雷鳴」はミニオンに50%～100%（レベルに応じて）のダメージを与える。突きの範囲で命中した最も遠いチャンピオンか大型モンスターには「Challenged」の印も付き、3秒間可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Wind Becomes Lightning#description3": {
+   "source_sha1": "5622bffa68fe922f5d843ddd4c84fdcfa39028d6",
+   "plain_sha1": "0e79db1bfeece216f9ab61fcdedf3f03af28bb29",
+   "ja": "「三槍撃」と「兵貴神速」の攻撃速度の増加の効果時間は、「風成雷鳴」の詠唱時間の分だけ後ろにずれる。近くに敵チャンピオンがいると、シン・ジャオは詠唱中に自身が可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Audacious Charge#description": {
+   "source_sha1": "860a7ec663f5e09d7dbb5060099969ff0f083160",
+   "plain_sha1": "ec1cc6da0a575915bd3989ebc5c6250b45473111",
+   "ja": "発動効果：シン・ジャオは対象の敵の位置へダッシュし、対象とその周囲の敵に魔法ダメージを与えて、命中したすべての対象に0.5秒間30%のスロウを与える。「Challenged」の対象に対しては「兵貴神速」の射程が伸びる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Audacious Charge#description2": {
+   "source_sha1": "ac02d17a53900ca0a53ab05814aa25e031315291",
+   "plain_sha1": "eb38cdf81d3c50cb7b10a5097a6a4584c96b4382",
+   "ja": "その後シン・ジャオは5秒間攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Audacious Charge#description3": {
+   "source_sha1": "3b5ddd241c3e44879e72d37061e868d067e6e3b5",
+   "plain_sha1": "cf2328296cef562139eb0075709ade2f23926d6f",
+   "ja": "ダッシュ中に「三槍撃」と「三日月槍守」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Crescent Guard#description": {
+   "source_sha1": "960c78c33cab3708c00627d219a192a0d8bd7cce",
+   "plain_sha1": "1304f96dd28969c90f5985981c4140b05d51c47d",
+   "ja": "自動効果：シン・ジャオの通常攻撃と「兵貴神速」は、命中した敵チャンピオンに「Challenged」の印を付ける。「兵貴神速」は、範囲内で命中した最も遠いチャンピオン、または主対象がチャンピオンならその主対象に印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Crescent Guard#description2": {
+   "source_sha1": "c159cb38710014c632b5ca3afd622a6fef12645c",
+   "plain_sha1": "91939b696f75ab5d1c14aa7e87cd6f22a12b3068",
+   "ja": "発動効果：シン・ジャオは周囲に槍を振り回し、周囲の敵に物理ダメージ（ミニオンとモンスターには600が上限）を与え、命中した対象のうち「Challenged」でないものを0.75秒かけて最大700ユニットノックバックさせ、同じ時間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xin Zhao/Crescent Guard#description3": {
+   "source_sha1": "e70a530ecbea79776f0ea0502ef66db86de81e65",
+   "plain_sha1": "8ba7388563164dcfeec959016c3cb1815e2062e2",
+   "ja": "その後4秒間、シン・ジャオは自身から遠く離れた敵チャンピオンからの攻撃に対して無敵になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Xin Zhao/Wind Becomes Lightning#description2": {
+   "source_sha1": "ecb4ed328a3162f1c960b13235689447425a6e78",
+   "reason": "residual_markup"
+  }
+ }
+}

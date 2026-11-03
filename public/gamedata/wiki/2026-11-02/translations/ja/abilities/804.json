@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Yunara/Vow of the First Lands#description": {
+   "source_sha1": "cbf5c1ed3f3644b26301d120bed5863ccd99d082",
+   "plain_sha1": "08eda4d04aa860f322f28807a67aedc23b28a77a",
+   "ja": "固有：ユナラのクリティカルは、10%（+ AP 100ごとに10%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Cultivation of Spirit#description": {
+   "source_sha1": "8ff140bfbd2524f09259683cd87c4fbf034c2564",
+   "plain_sha1": "71200e502c907154cfa9567d6e69ee5a8d48451d",
+   "ja": "自動効果：ユナラの通常攻撃は攻撃時効果として追加の魔法ダメージを与える。このスキルが発動していない間、通常攻撃は攻撃開始時に6秒間「Unleash」のスタックを一つ得て、チャンピオンに対しては2スタックになる。スタックは攻撃のたびに更新され、最大8回まで重なり、効果時間の後は0.5秒ごとに一つずつ切れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Cultivation of Spirit#description2": {
+   "source_sha1": "70ca76fec3ad34c018b55f4336b9dd6bd49c7e19",
+   "plain_sha1": "8794c7d13c9cc7b177a04d336d2972eee35a6c25",
+   "ja": "発動効果：ユナラは5秒間力を解き放つ：攻撃速度が増加し、さらに攻撃時効果として追加の魔法ダメージを与え、通常攻撃は弾速が上がり、攻撃モーションの時間が40%短くなって中断されなくなる。通常攻撃はさらに強化されて、対象の近くの各敵に広がり、攻撃力の30%の物理ダメージを与える。広がった各攻撃にはライフスティールと攻撃時効果が適用され、攻撃時効果のダメージは30%の効果になり、元の攻撃がクリティカルならクリティカルになる。広がった攻撃は、最大体力の30%未満のミニオンには250%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Cultivation of Spirit#description3": {
+   "source_sha1": "9383c17114213fab8564f29ea9239221531d7a3d",
+   "plain_sha1": "c269ace5f76dbc9cd2e380013079330e3808a9f3",
+   "ja": "「精神修養」はユナラの通常攻撃タイマーをリセットする。広がった攻撃が当たる対象は、見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Arc of Judgment#description": {
+   "source_sha1": "a98c9f35015010162fcf39d2fb5f050d59089ee3",
+   "plain_sha1": "0c4c852f3740c809178a0d173fda45f82d804c88",
+   "ja": "発動効果：ユナラは指定方向に回転する数珠を投げ、数珠は進みながら周囲の視界を一瞬与える。数珠は敵にぶつかっている間は大きく減速し、とどまりながら進んで残り時間がリセットされる。最大射程に達すると、命中した敵に関係なく広がってその場に1秒間とどまる。数珠が広がる前の各敵への最初の命中は魔法ダメージを与えて、1.5秒かけて減衰する99%のスロウを与える。とどまっている間、数珠は0.25秒ごとに、命中時のダメージの15%を魔法ダメージとして周囲の敵に与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Arc of Judgment#description2": {
+   "source_sha1": "ea6e75a053fc33abdf668858c3b6a5b7a10a14e9",
+   "plain_sha1": "9501b7765b44a810be7206e161fade057cd94b71",
+   "ja": "「裁きの弧」はミニオンに50%～100%（レベルに応じて）のダメージを与え、とどまる効果のダメージがあと6回で倒せる場合は処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Arc of Ruin#description": {
+   "source_sha1": "c3baae4181ee0fb95083f572538f7ef93079e95e",
+   "plain_sha1": "5cd7d59a17bc34191b17aee92747ee090988bcf0",
+   "ja": "発動効果：ユナラは指定方向に霊の魔法の光線を放ち、命中した敵に160～480（「自己超越」のランクに応じて）（+ 増加攻撃力の120%）（+ APの75%）の魔法ダメージを与えて、1秒かけて減衰する99%のスロウを与え、周囲の範囲の視界も与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Arc of Ruin#description2": {
+   "source_sha1": "243d9d19db77831c9a523e97d5084cf81d93bc3e",
+   "plain_sha1": "7347dc53de02922409690b29c81e46cade217b6f",
+   "ja": "このスキルはアルティメットスキルの効果の恩恵を受け、「Transcendent State」の間の「裁きの弧」の強化版である。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Kanmei's Steps#description": {
+   "source_sha1": "94684fbfe1f01132de7119a1402ccf60dfdaabb5",
+   "plain_sha1": "d15edc502a1fe87ab01fb3a2b341defab823ecf4",
+   "ja": "発動効果：ユナラは1.5秒間ゴースト状態になり、移動速度が増加する。近くの見えている敵チャンピオンの方を向いている間は、移動速度の効果が50%高くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Untouchable Shadow#description": {
+   "source_sha1": "010a00902f6b0767b15200b683b92766c5c52e72",
+   "plain_sha1": "456e954ab3c153d6d381eb27fb85fdcd47bd95d9",
+   "ja": "発動効果：ユナラは指定方向にダッシュする。「触れ得ぬ影」はユナラの通常攻撃タイマーをリセットする。ダッシュ中に「滅びの弧」を使用できる。このスキルはアルティメットスキルの効果の恩恵を受け、「Transcendent State」の間の「カンメイの歩み」の強化版である。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Transcend One's Self#description": {
+   "source_sha1": "0e8682589d67973fc257bd6f4efac76b65393713",
+   "plain_sha1": "a47bdee1690a96ea595ee9a1695cf66875bbf46d",
+   "ja": "自動効果：「滅びの弧」の基本ダメージと「触れ得ぬ影」のダッシュ速度は、「自己超越」のランクに応じて伸びる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yunara/Transcend One's Self#description2": {
+   "source_sha1": "aa797f113becf5dba00bd759eb749bf4c39f424e",
+   "plain_sha1": "172ac90e8bb02f8522f3e661daf8acb575d7b3c2",
+   "ja": "発動効果：ユナラは15秒間「Transcendent State」になり、その間各基本スキルが強化される：「精神修養」はコストなしで自動で発動し、効果時間が「Transcendent State」と同じになる。「裁きの弧」は「滅びの弧」に強化され、コストがなく、状態に入るときと出るときの両方で残りクールダウンが80%短縮される。「カンメイの歩み」は「触れ得ぬ影」に強化され、コストがなく、状態に入るときと出るときの両方でクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

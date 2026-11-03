@@ -1,0 +1,86 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kassadin/Void Stone#description": {
+   "source_sha1": "48fcace0e58941148e356ea0916df73d7a90c6da",
+   "plain_sha1": "cf799bf37f73dd7b8255b590b9a9fc5ba909dd9b",
+   "ja": "固有：カサディンは常にゴースト状態で、受ける魔法ダメージが10%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Null Sphere#description": {
+   "source_sha1": "39bf44b9bc50afa3334af5a53fa3f4e4cdb95776",
+   "plain_sha1": "45ee31d5ea9e92b946cb1bef60fa4f4094e6bda2",
+   "ja": "発動効果：カサディンは対象の敵にヴォイドのエネルギーの玉を撃ち、魔法ダメージを与えて、その敵の詠唱を中断させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Null Sphere#description2": {
+   "source_sha1": "84541a2c4fcd7486874b5e00a03db135aac26aec",
+   "plain_sha1": "97469b43c9160106e483a0bfae930a9753c537c1",
+   "ja": "さらに、1.5秒間魔法ダメージを吸収するシールドを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Nether Blade#description": {
+   "source_sha1": "4164bb92a0f4582c9e9094440450df5d4f195ee6",
+   "plain_sha1": "a4c6201c8becd8c335d640fdf509f4574a3ef0b3",
+   "ja": "自動効果：カサディンの通常攻撃は攻撃時効果として25（+ APの10%）の追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Nether Blade#description2": {
+   "source_sha1": "a09c83a42ae6bed453f0027c892fc393fe99df9c",
+   "plain_sha1": "89bdcd389c5159b9c3116805f01dbd2430784f37",
+   "ja": "発動効果：カサディンは5秒以内の次の通常攻撃（攻撃時効果）を強化し、攻撃モーションが中断されなくなり、射程が50増加し、さらに多い追加の魔法ダメージを与えて、マナを回復する。チャンピオンに対しては回復量が五倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Nether Blade#description3": {
+   "source_sha1": "ba4bb7ccfae90b65e72d81b26237cda6e0bb8b91",
+   "plain_sha1": "c85cdada0b4d86006e3c92839aa5f8806ab31032",
+   "ja": "「ネザーブレード」はカサディンの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Force Pulse#description": {
+   "source_sha1": "c3f04ece51c2cdc331938e46a538bcd2bc32aee0",
+   "plain_sha1": "8246313d1aabe927763efc72973bf3bd4aa7aafa",
+   "ja": "自動効果：カサディンか近くのチャンピオンがスキルを使用するたびに、「ヴォイドパルス」の残りクールダウンが0.75秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Force Pulse#description2": {
+   "source_sha1": "629d067dfa96e6996f1e174443bbe5c82340cfc5",
+   "plain_sha1": "183f4386edfe38f6f6635d19dc4adc313ee6479b",
+   "ja": "発動効果：カサディンは指定方向の扇形の範囲にヴォイドのエネルギーの波動を放ち、命中した敵に魔法ダメージを与えて1秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Riftwalk#description": {
+   "source_sha1": "987b2436643ce19f7371ec8b95f7c483ff936d49",
+   "plain_sha1": "bd597577d7fb0a3b8c6d783041b1e8720f22c27c",
+   "ja": "発動効果：カサディンは指定地点に向かってブリンクし、到着時に周囲のすべての敵に魔法ダメージを与える。その後15秒間「リフトウォーク」のスタックを得る。使用のたびに効果時間が更新され、最大4回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kassadin/Riftwalk#description2": {
+   "source_sha1": "2fc453c979d997c3e2a2d1cbeda91cf48d6fc1d9",
+   "plain_sha1": "fc5c551e57a2f9a21355196413816ac91dffdc53",
+   "ja": "「リフトウォーク」：スタックごとに、「リフトウォーク」は追加の魔法ダメージを与え、マナコストが増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

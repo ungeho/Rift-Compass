@@ -1,0 +1,98 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Riven/Runic Blade#description2": {
+   "source_sha1": "608bd04fc91c71ba4e71b86286ecd771c7582083",
+   "plain_sha1": "4c343a87d94f362b8875879053b1ed3f93003a70",
+   "ja": "追加のダメージはクリティカルの倍率の影響を受け、ライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Broken Wings#description": {
+   "source_sha1": "4fc44b1cf39eebbc923e142cddc00839b060623c",
+   "plain_sha1": "0aa2c0400af40570c2048035c56951a1d2e9b0f6",
+   "ja": "発動効果：リヴェンは、クールダウンに入る前に「折れた翼」を三回発動でき、発動と発動の間には0.3125秒の固定のクールダウンがある。前の発動から4秒以内に再発動しないと、クールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Broken Wings#description2": {
+   "source_sha1": "21f8e404d960d58d671deba81ad138aefea7ced5",
+   "plain_sha1": "49745f5050d84d68d8f606374ac06c77483fbe35",
+   "ja": "三回の発動それぞれで、リヴェンは剣で斬りつけ、範囲内で当たった敵に物理ダメージを与えて、通常攻撃タイマーをリセットし、「折れた翼」の対象がいれば、その対象に通常攻撃するよう命じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Broken Wings#description3": {
+   "source_sha1": "db4554603e55c86270e4aff86f67793c5dd82180",
+   "plain_sha1": "b35dea370712cc48c0c486e4161b02321e5f5d9b",
+   "ja": "一回目：リヴェンは現在向いている方向に225ユニット、または対象の敵に向かって最大225ユニットダッシュし、100ユニット先の範囲の敵を攻撃する。この発動では地形を越えられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Broken Wings#description4": {
+   "source_sha1": "19431ac2f426b5cdf82628960ea18e5ee1b1d3ef",
+   "plain_sha1": "7e68bda97d49a61f78f8f798488b1cc2e7b58324",
+   "ja": "二回目：リヴェンは一回目と同じ効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Broken Wings#description5": {
+   "source_sha1": "865a5bcbf425f408f193b2c984a9bd372d406949",
+   "plain_sha1": "bca91715aef52b2d12799b1a38f30ed4d7cced44",
+   "ja": "三回目：リヴェンは一回目と同じ効果をより広い範囲に与え、命中した敵を0.5秒かけて75ユニットノックバックさせる。この発動では地形を越えられる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Ki Burst#description": {
+   "source_sha1": "d4230b6e0880859baec577d1f0068336a488402f",
+   "plain_sha1": "20cb708f22d75c73aa989df9be5a998b975ddd26",
+   "ja": "発動効果：リヴェンはルーンのエネルギーを放ち、周囲の敵に物理ダメージを与えて0.75秒間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Valor#description": {
+   "source_sha1": "2b3d337ce15e3c64bc2397b927b07cf81c502ea7",
+   "plain_sha1": "2204960e245a6729af7ee4a43e5d04ca0f1f6fb1",
+   "ja": "発動効果：リヴェンは指定方向にダッシュし（地形は越えない）、自身に1.5秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Valor#description2": {
+   "source_sha1": "a4b5dc5d1d88a0e4117ddd5b7d9ad5d9e401373c",
+   "plain_sha1": "12411957e2cd0d6d5f481623a5ed73e392884030",
+   "ja": "リヴェンはダッシュ中にどのスキルも使用できる。最大射程より遠くを指定すると、「勇躍」は最大射程で発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Blade of the Exile#description": {
+   "source_sha1": "740f180ada10757d8aa2ab994fb454b5f973dbca",
+   "plain_sha1": "2ac92834b56ad5b2f3f11d7a7978bddc608a1905",
+   "ja": "発動効果：リヴェンは15秒間剣を強化し、攻撃力の20%の増加攻撃力、通常攻撃の射程75の増加、「折れた翼」と「気功破」の範囲の拡大を得る。0.5秒後から、効果時間中に「Wind Slash」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Riven/Wind Slash#description": {
+   "source_sha1": "c756be4e7b272d2dea93c0edaf3fdb4a8ca06e1d",
+   "plain_sha1": "598171fefebdc547e1c16f3b8fa2b49111677f61",
+   "ja": "発動効果：リヴェンは指定方向の扇形の範囲にエネルギーの波を放ち、命中した敵に物理ダメージ（対象の減少体力に応じて0%～200%増加）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Riven/Runic Blade#description": {
+   "source_sha1": "68968f4cea113264ee7757d61a03843ff856f613",
+   "reason": "residual_markup"
+  }
+ }
+}

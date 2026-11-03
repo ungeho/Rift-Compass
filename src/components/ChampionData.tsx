@@ -24,7 +24,7 @@ export interface TranslationFile {
   translator: string;
   review: string;
   entries: Record<string, { source_sha1: string; plain_sha1?: string; ja: string; status: string }>;
-  withheld: Record<string, { source_sha1: string; reason: string }>;
+  withheld: Record<string, { source_sha1: string; plain_sha1?: string; reason: string }>;
 }
 
 interface Manifest {
@@ -348,10 +348,13 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
         const tr = translations?.entries[id];
         // 訳は Wiki の原文（source_sha1）と訳の対象の英文（plain_sha1）の両方が一致するときだけ表示する（解析の修正で英文が変わった訳は古い）
         const ja = tr && tr.source_sha1 === src.source_sha1 && tr.plain_sha1 === src.plain_sha1 ? tr.ja : null;
-        const state = ja ? "translated" : src.residual || translations?.withheld[id] ? "withheld" : tr ? "stale" : "none";
-        return { key: k, en: src.plain.replace(/⟦[^⟧]*⟧/g, "［解析できない記法］"), residual: src.residual, ja, state };
+        // 保留の理由：未解決の記法（毎回の取り込みで判定）か、それ以外（英文の欠けなど。英文が同じ間だけ有効）
+        const w = translations?.withheld[id];
+        const manual = !src.residual && w && w.reason !== "residual_markup" && w.source_sha1 === src.source_sha1 && w.plain_sha1 === src.plain_sha1;
+        const state = ja ? "translated" : src.residual || manual ? "withheld" : tr ? "stale" : "none";
+        return { key: k, en: src.plain.replace(/⟦[^⟧]*⟧/g, "［解析できない記法］"), residual: src.residual, ja, state, reason: src.residual ? "residual_markup" : manual ? w!.reason : null };
       })
-    : ["description", "description2", "description3", "description4"].map((k) => ({ key: k, en: wikiPlain(t.params?.[k]), residual: false, ja: null as string | null, state: "none" })).filter((x) => x.en);
+    : ["description", "description2", "description3", "description4"].map((k) => ({ key: k, en: wikiPlain(t.params?.[k]), residual: false, ja: null as string | null, state: "none", reason: null as string | null })).filter((x) => x.en);
   const anyJa = desc.some((d) => d.ja);
   const updated = t.source.last_modified ? new Date(t.source.last_modified).toISOString().slice(0, 10) : "不明";
   return (
@@ -419,7 +422,9 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
               <p key={d.key} className={d.ja ? undefined : "muted"}>
                 {d.ja ??
                   (d.state === "withheld"
-                    ? "（この段落は翻訳を保留しています。Wiki の記法に解けない部分があるため、英語の原文を参照してください）"
+                    ? d.reason === "residual_markup"
+                      ? "（この段落は翻訳を保留しています。Wiki の記法に解けない部分があるため、英語の原文を参照してください）"
+                      : "（この段落は翻訳を保留しています。英語の原文の取り出しに欠けがあり、推測でしか訳せないため、Wiki の原典を参照してください）"
                     : d.state === "stale"
                       ? "（原文が更新されたため、古い訳は表示しません。英語の原文を参照してください）"
                       : "（この段落はまだ訳していません。英語の原文を参照してください）")}

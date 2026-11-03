@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -43,6 +43,97 @@
    "source_sha1": "e12b91b9a85820de01f77c89fef91abc3882a2b4",
    "plain_sha1": "50c9c4d59d9c523ee456c06efda74c0894dfb25b",
    "ja": "セナは「黒き霧の呪い」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Absolution#description": {
+   "source_sha1": "40c1e1bdb1e19417e6b00f68a7fbe641cc3cc208",
+   "plain_sha1": "844ef4810100326fbe6205c188ee8e81bd4b408c",
+   "ja": "固有 -「Weakened Soul」：セナの通常攻撃（攻撃時効果）とスキルは、命中した敵チャンピオンに4秒間印を付ける。印の付いた対象への次の攻撃かスキルの命中が印を消費し、セナは「Mist」のスタックを一つ得て、対象の現在体力の1%～10%（レベルに応じて）に等しい追加の物理ダメージを与え、対象は数秒間再び印を受けない。このダメージにはライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Absolution#description2": {
+   "source_sha1": "fefe044245a8802e51389a2f09915caca375edd3",
+   "plain_sha1": "6cded90244e4f2785c6e4682a2153afcb15bb367",
+   "ja": "固有：セナの近くで死んだ敵の亡骸から「Mist Wraith」が出ることがある。「Mist Wraith」は8秒間残り、セナは通常攻撃するか「ピアシングダークネス」「ドーニングシャドウ」を当てると即座に倒せて、8 ゴールド（gold）と「Mist」のスタックを一つ得る。* 敵チャンピオンと大型モンスターは「Mist Wraith」を出す。* エピックモンスターは「Mist Wraith」を2体出す。* セナが倒したミニオンと小型モンスターは5%の確率で出す。* セナが倒さなかった大型ミニオンは必ず出し、セナが倒さなかった小型ミニオンと小型モンスターは32%の確率で出す。* 味方チャンピオンのサポートのクエストのアイテムで処刑された小型ミニオンは8.4%の確率で出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Absolution#description3": {
+   "source_sha1": "fcbe2b25cf9b06673db39c75ba8f2592dff824ce",
+   "plain_sha1": "55c202ec107a0fdce03806ad339c04a07c67a599",
+   "ja": "「Mist」：「Mist」のスタックごとに増加攻撃力を0.75得る。20スタックごとに、通常攻撃の射程が20増加し、クリティカル率が10%増加する。さらに、100%を超えるクリティカル率1%ごとに、ライフスティール0.35%に変換される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Absolution#description4": {
+   "source_sha1": "a5003c8440bb6bb4bba44df1d682055b0b8fbc4b",
+   "plain_sha1": "1922bd6ed2d20def1d14facf32c36c09eb278ccb",
+   "ja": "固有 -「Relic Cannon」：セナの通常攻撃は攻撃時効果として攻撃力の20%の追加の物理ダメージを与え、0.5秒間、対象の移動速度の10%～20%（レベルに応じて）に等しい移動速度の増加を得る。このダメージにはライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Piercing Darkness#description": {
+   "source_sha1": "1c0a9bd7176e8c29d8f96caa2a19c60c30176197",
+   "plain_sha1": "aa1aad9d9151c0acd8386fb10e4e323e93ce2a32",
+   "ja": "発動効果：セナは対象のユニットの方向に光線を撃つ。光線は幅の広い光の線と、その中心の細い影の線からなる。影の線は命中した敵に物理ダメージを与えて、一定時間15%（+ 増加攻撃力100ごとに15%）（+ AP 100ごとに7%）のスロウを与える。敵チャンピオンへのダメージにはライフスティールが100%の効果で適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Piercing Darkness#description2": {
+   "source_sha1": "c464a34524e7be03215493b6024229634f57ef22",
+   "plain_sha1": "d3d04890b2d7def6b598ba2e019be9265ec838ed",
+   "ja": "光の線は、命中したセナと味方チャンピオンを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Piercing Darkness#description3": {
+   "source_sha1": "8f72d28303bff9ab2c41e5595f72eac736d5beae",
+   "plain_sha1": "a2f7b5ba7344d7c96a94779de8d4935801c16cee",
+   "ja": "「ピアシングダークネス」は、命中したタワー・ワード・ジャングルの植物・「Mist Wraith」など通常攻撃で作用するユニットに対して、通常攻撃一回分として扱われる。さらに、命中したチャンピオンとタワーに攻撃時効果を与え、命中したチャンピオン一体に攻撃開始時の効果を発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Piercing Darkness#description4": {
+   "source_sha1": "3f3c032d0b8f6714fa81494124e1b37deae33244",
+   "plain_sha1": "4ac9a2e12a81bed8cdedac6328f2ad7df3163a86",
+   "ja": "攻撃開始時のたびに、「ピアシングダークネス」の残りクールダウンが1秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Last Embrace#description": {
+   "source_sha1": "a1df23ff088015654e466b4b9d81759d00d3dcd3",
+   "plain_sha1": "19dbf2edf2c94fbe9a9d084b714f1ed61b25235d",
+   "ja": "発動効果：セナは指定方向に黒い霧の塊を投げ、最初に命中した敵に物理ダメージを与えて、1秒間取り付く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Last Embrace#description2": {
+   "source_sha1": "db813ef77a0d88a60b431fbabe4d568b1caa9103",
+   "plain_sha1": "4ba0d769cec3c494160964fe7720c07531991d57",
+   "ja": "効果時間の後か対象が死ぬと、黒い霧が対象から広がり、対象と周囲の敵に数秒間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Dawning Shadow#description": {
+   "source_sha1": "316cd53642c469e88c70e726e55709e6d54a69b4",
+   "plain_sha1": "d6fc872cd4196f53e970c9a08c945d938f530e33",
+   "ja": "発動効果：セナは指定方向に巨大な光線を撃つ。光線は幅の広い光の波と、その中心の細い影の波からなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Dawning Shadow#description2": {
+   "source_sha1": "433878a28d719369b28453917a3bbe59423f85cd",
+   "plain_sha1": "7b05aefe398bb7d447b6f0903b1019bb99cfd4b8",
+   "ja": "影の波は命中した敵チャンピオンに物理ダメージを与えて3秒間可視化し、すべての「Mist Wraith」にも当たる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Senna/Dawning Shadow#description3": {
+   "source_sha1": "0413d403cef3303ef8ef3b9c7eae2197fb114ea4",
+   "plain_sha1": "1097fa14e5c402b5cfa2ab2ab4e6b145215adc49",
+   "ja": "光の波は命中したセナと味方チャンピオンに3秒間シールドを付与し、通り道の範囲の視界を2秒間与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

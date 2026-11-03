@@ -1,0 +1,98 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Vex/Doom 'n Gloom#description": {
+   "source_sha1": "820b951f312e57e0338ec416a34120d6d3c733f4",
+   "plain_sha1": "5c555f3aaefa705ddde29cbb6e477cea6803d32c",
+   "ja": "自動効果 -「Doom」：一定時間ごとに、ヴェックスの次の基本スキルが強化され、命中した敵を0.75～1.5秒間（レベルに応じて）ひるませてフィアーを与え、その間60%～99%（ヴェックスからの距離に応じて）のスロウを与える。「ヤミとばし」で「Doom」が発動した場合、命中した敵は代わりに中心から逃げる。復活すると「Doom」のクールダウンはリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Doom 'n Gloom#description2": {
+   "source_sha1": "b3d2f6415ccedf34518cf20a1a6bde900ad9ca54",
+   "plain_sha1": "711728e9f5d07e029d45ea946dc433ce8e640755",
+   "ja": "固有 -「Gloom」：近くでダッシュかブリンクした敵チャンピオンとモンスターには、6秒間「Gloom」の印が付く。「Gloom」の付いた敵へのヴェックスの次の通常攻撃（飛翔物ではなくなる）か基本スキルの命中で、印が起爆する。「ヤミとばし」も「Gloom」を与えるが、起爆はできない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Mistral Bolt#description": {
+   "source_sha1": "7b83686e4844c1e49dc875efbbee3b434a031b79",
+   "plain_sha1": "6fac42f77e478429c529c15d6e5608d5bd9db0e7",
+   "ja": "発動効果：ヴェックスは指定方向に霧の波を放ち、命中した敵に魔法ダメージを与える。500ユニット進むと、波は加速するが幅も狭くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Personal Space#description": {
+   "source_sha1": "f6795b94f62c9939b87d96903200d69228461148",
+   "plain_sha1": "0246244afbf7f4ae46285c912301a8f5b7a931ca",
+   "ja": "発動効果：ヴェックスは詠唱時間の前に周囲に耳をつんざく叫びを放ち、周囲の敵に魔法ダメージを与えて、自身に2.5秒間シールドを付与する。ダッシュ中の敵に対しては、叫びの半径が少し大きくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Personal Space#description2": {
+   "source_sha1": "858dd2756561ff2caf05ca4a81b2981b801a0637",
+   "plain_sha1": "2b2377fe37e397bbfd4e720397938af29082addb",
+   "ja": "ヴェックスは「パーソナルスペース」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Looming Darkness#description": {
+   "source_sha1": "8686318300008f9dc995076d654ec57647c92313",
+   "plain_sha1": "690a2e876d2869e18245c9bfbfa00ae6df34e3b7",
+   "ja": "発動効果：ヴェックスは影を指定地点に投げて爆発させ、命中した敵に魔法ダメージを与えて、2秒間スロウを与える。爆発の半径は発動した距離に応じて大きくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Looming Darkness#description2": {
+   "source_sha1": "5531efcd057c7bba5c50cb95c358540c745c8c61",
+   "plain_sha1": "2cd1d2cb473d92789edf9fb91a442353b24af11c",
+   "ja": "「ヤミとばし」で敵を倒すと「Doom」のクールダウンの10%が戻り、チャンピオンを倒した場合は25%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Shadow Surge#description": {
+   "source_sha1": "e0062fd524b1c4670b298470372922e658c972e3",
+   "plain_sha1": "e0dcb75c2635cf9afca14c694c25e4787662871f",
+   "ja": "発動効果：ヴェックスは指定方向に影を飛ばし、影は軌道の周りの視界を与えて、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Shadow Surge#description2": {
+   "source_sha1": "2e87c396bab6588a0a7f3d9834b82155e7ca0820",
+   "plain_sha1": "1f2f0c956db85f143ecf90840eaf6809f59f3e7b",
+   "ja": "影は敵チャンピオンに当たると止まり、その敵に4秒間印を付けて、その間可視化する。対象に印が付いている間、「影法師」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Shadow Surge#description3": {
+   "source_sha1": "cec0bc9e0cdf05ec4578086e308bef17678cbf52",
+   "plain_sha1": "d5d0e227e88211fbdb4b0ab7d6c631665cb25010",
+   "ja": "再発動：ヴェックスは移動系の効果を受けない状態で印の付いた対象へダッシュする。到着時に印を消費して魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Vex/Shadow Surge#description4": {
+   "source_sha1": "dffc7131cf6fbf86ea5a58953bba93228208c9f7",
+   "plain_sha1": "4c3dda57d041b94e250ac8d9d755ee1945daaafb",
+   "ja": "「影法師」の印を付けてから8秒以内にその対象のキルに関与すると、ヴェックスは0.5秒後から12秒以内にコストなしで再び「影法師」を使え、同じ効果を繰り返す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Vex/Doom 'n Gloom#description3": {
+   "source_sha1": "10112c142a0d43166a8289a24a9c6528361e34c0",
+   "reason": "residual_markup"
+  }
+ }
+}

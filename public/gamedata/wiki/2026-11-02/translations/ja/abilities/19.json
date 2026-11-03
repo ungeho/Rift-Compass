@@ -1,0 +1,130 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Warwick/Jaws of the Beast#description2": {
+   "source_sha1": "e170e0c9d20ba45dc48eea604dcb721fdae5093e",
+   "plain_sha1": "a0bc6c6567a3137a8c28dbe961a8f4410b746b42",
+   "ja": "「野獣の牙」の効果中、ワーウィックは移動系の効果を受けず、対象に食らいついてその動きにすべてついていく。スキルを押し続けると追加の効果がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Jaws of the Beast#description3": {
+   "source_sha1": "b1c1c50742755c33d6dc78b51d0f6700b3454758",
+   "plain_sha1": "9a321fd9b0204db658d38390eeabb93c9ad336f0",
+   "ja": "押し続け：ワーウィックは噛みついた後、0.5秒間溜める（対象がダッシュか移動系の効果を受けている間は延長）。溜めの間に対象の後ろへ跳ぶ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Blood Hunt#description": {
+   "source_sha1": "75067980e1607c4d41f7032156fb24ea546d8bef",
+   "plain_sha1": "ad633fa6310a31796896da5b7dc2ce223615217c",
+   "ja": "自動効果：ワーウィックは、通常攻撃かスキルのダメージで対象を最大体力の50%未満にしたとき、またはその状態の対象にダメージを与えたときに、1.25秒間攻撃速度が増加する。しきい値未満の敵に通常攻撃かスキルでダメージを与えるたびに更新される。攻撃速度の増加をまだ得ていない場合は、しきい値未満の敵への攻撃モーションを始めた時点でも得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Blood Hunt#description2": {
+   "source_sha1": "653213b7cfc667561a82dcd2a6c49c6de459d286",
+   "plain_sha1": "615a0884443c343f8ca03ed7dff863255d176bd1",
+   "ja": "自動効果：ワーウィックは、自身か味方の発生源によって最大体力の50%未満になった敵チャンピオンをマップ全体で感知し、体力がしきい値より上に回復するまで「血の追跡」の印を付ける。その敵への軌跡が見え、軌跡をたどる間は移動速度が増加する。この増加はチャンピオンとの戦闘に入ると0.5秒間失われるが、3.5秒かけて再び増えていく。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Blood Hunt#description3": {
+   "source_sha1": "690b76bb0b03a7727ab0b501286fc63f75d7aa3a",
+   "plain_sha1": "1d4ea63f5d2aacb738b2b216c728e982bbb3284d",
+   "ja": "両方の自動効果による攻撃速度と移動速度の増加は、最大体力の25%未満の敵に対しては二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Blood Hunt#description4": {
+   "source_sha1": "5192b00fc5bb13808a21ba7c310ca1cf6feebd66",
+   "plain_sha1": "755d770b0074859869c2e181606989ca2225cc6b",
+   "ja": "発動効果：ワーウィックは詠唱時間の開始時に範囲内で最も近い敵チャンピオンを感知し、8秒間「血の追跡」の印を付けて、その敵の現在体力に関係なく、両方の自動効果のボーナスを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Blood Hunt#description5": {
+   "source_sha1": "c27acec087e9fa3404551a5e7278c49c5efbc84f",
+   "plain_sha1": "f962fe31c79a606c57ee2a4ab042bfb062c19dda",
+   "ja": "範囲内に敵チャンピオンが見つからなかった場合、「血の追跡」のクールダウンが30%短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Primal Howl#description": {
+   "source_sha1": "119279390bda827ad5c0fa36f837c4574153afa3",
+   "plain_sha1": "000aa3cd2f990edc1577488b93d5785527b16c0a",
+   "ja": "発動効果：ワーウィックは最大2.75秒間ダメージ軽減を得る。「怒りの咆哮」は1秒後から再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Primal Howl#description3": {
+   "source_sha1": "6280b7041722e9cd48488f2ca2cb76f3f9b4b29c",
+   "plain_sha1": "9a2d638006d342beacaff5f4cadd5c3a1bd4372d",
+   "ja": "再発動：ワーウィックは咆哮して「怒りの咆哮」の効果を終え、周囲の敵に1秒間フィアーを与えて、90%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Primal Howl#description4": {
+   "source_sha1": "9cc17d9f676f95b7fcf385ca37cd61deb7b603cb",
+   "plain_sha1": "cad0075f5b82f705d64516b6cfa24fd9b68f042c",
+   "ja": "「怒りの咆哮」の効果中に「絶狼牙連撃」の詠唱を始めると、ダメージ軽減を早く終わらせずに再発動を行う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Primal Howl#description5": {
+   "source_sha1": "d94a4ae0e82eabc397e4f0a5e204edb7567365da",
+   "plain_sha1": "d399f6658c6eb2fac046367c18cddcffcf110414",
+   "ja": "「怒りの咆哮」の再発動はワーウィックの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Infinite Duress#description": {
+   "source_sha1": "e857fae099bd943517b7492e8d8755f4a9901f13",
+   "plain_sha1": "b13c4472fe746278203656b5c6c3eb515ab22c97",
+   "ja": "発動効果：ワーウィックは行動妨害を無効にしながら指定方向へ跳び、敵チャンピオンに当たると止まる。その後、その敵を押し倒し、最大1.5秒間詠唱してサプレッションを与え、可視化し、0.25秒ごとに魔法ダメージを与える。その間ワーウィック自身も可視化される。このダメージにはライフスティールが適用される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Infinite Duress#description3": {
+   "source_sha1": "28532ccd467730b50b0ac77ad8d4983a6801a4a8",
+   "plain_sha1": "a8ea25677704edc16bf8db19e34c7dc414086add",
+   "ja": "ワーウィックは「絶狼牙連撃」の間に対象に与えた軽減後のダメージの100%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Infinite Duress#description4": {
+   "source_sha1": "52248def42b36c162c497888ff0c4a5b078ef2f1",
+   "plain_sha1": "10300763fe4cab45ea7ef2ff7209ca4ec4c1e77b",
+   "ja": "「絶狼牙連撃」は効果時間の間に、攻撃時効果と攻撃開始時の効果をそれぞれ3回発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Warwick/Infinite Duress#description5": {
+   "source_sha1": "169efc1811b424c6591e7f087e48af0a0ae709f0",
+   "plain_sha1": "55e5f004c2c996a915ffafb2a40e850162c9fb8e",
+   "ja": "ダッシュ中に「怒りの咆哮」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Warwick/Eternal Hunger#description": {
+   "source_sha1": "78233b5d2398089002cd2d4bcaa30a5d8caba8ac",
+   "reason": "residual_markup"
+  },
+  "Template:Data Warwick/Jaws of the Beast#description": {
+   "source_sha1": "db18c713fa5bc450c312ee2b4b41d32c777c5323",
+   "reason": "residual_markup"
+  }
+ }
+}

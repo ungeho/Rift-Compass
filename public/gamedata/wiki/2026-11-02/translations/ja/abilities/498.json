@@ -1,0 +1,106 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Xayah/Clean Cuts#description": {
+   "source_sha1": "6b72060d86f9080fdef1e70a59f4925a6a1459cb",
+   "plain_sha1": "9c2b10ef69109b8aba3fc3227621bc016ba72dc5",
+   "ja": "固有：ザヤが撃った羽は残り、最大射程の地面に6秒間刺さる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Clean Cuts#description3": {
+   "source_sha1": "df6b0df68ebf20799112ec8020dc9ced5d637464",
+   "plain_sha1": "795f5365b3c3019305c26bb047f607c6d007b4ba",
+   "ja": "固有 -「Lover's Leap」：ザヤかラカンのどちらかがリコールを詠唱しているとき、もう一方は近くに移動して自分のリコールを詠唱すると、一緒に帰還できる。二人とも、先に始めた方のリコールが完了した時点で基地に着く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Double Daggers#description": {
+   "source_sha1": "a02e4a731bcf6c6a72a8ca8bd835a6f236cef940",
+   "plain_sha1": "5b344f0254f9498bd150cc8b9d9febf8f9447d76",
+   "ja": "発動効果：ザヤは指定方向に羽を二本連続で投げ、それぞれ命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Double Daggers#description2": {
+   "source_sha1": "6894307e4ffec323bc95580bede3f858ee12a7be",
+   "plain_sha1": "6894307e4ffec323bc95580bede3f858ee12a7be",
+   "ja": "最初の一体より後に命中した対象は、50%減ったダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Deadly Plumage#description": {
+   "source_sha1": "981d8d12844b0eece8b59bde74f1e33f08e74824",
+   "plain_sha1": "ff8bfa361eef13f0e4643fb24ca7db4bf94bf4b3",
+   "ja": "発動効果：ザヤは4秒間猛攻状態になり、攻撃速度が増加して、通常攻撃は攻撃開始時に強化され、対象に小さい羽をもう一本撃つ。この羽は攻撃時効果として、元の攻撃のダメージの25%を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Deadly Plumage#description2": {
+   "source_sha1": "18d88c1620eb28a98f5931bdb74981f547f72386",
+   "plain_sha1": "688a447f1a07d2af21acfb3d95acddb3e90ff441",
+   "ja": "ザヤがこの攻撃を敵チャンピオンに当てるたびに、1.5秒間移動速度が30%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Deadly Plumage#description3": {
+   "source_sha1": "568b3ce95bbd84cd6bdf2a2b43ee03f1a36b349e",
+   "plain_sha1": "6ec3f00a99bcfaa88030f335f8d19a18733e88ef",
+   "ja": "発動時にラカンが近くにいると、ラカンも強化され、ザヤと同時に移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Bladecaller#description3": {
+   "source_sha1": "7dc08bc7a8f57b3e9fc9d4c1dbbac34c7949264a",
+   "plain_sha1": "12a8be6e7391bf88c21001903ba9f170f96e693d",
+   "ja": "少なくとも三本の羽が命中した対象は、1.25秒間スネアを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Bladecaller#description4": {
+   "source_sha1": "12196fe3c1ad479d57502c1c9a5d77b86fd33ad7",
+   "plain_sha1": "f5bd639eee73574b6d138594c177712984269482",
+   "ja": "このスキルを使用するには、刺さっている羽が必要。一本の羽は一回の通過で敵に一度しか当たらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Featherstorm#description": {
+   "source_sha1": "11f9e841f831c6f754d1ecb7e25e300bc07b85ce",
+   "plain_sha1": "ccba99963e2909788a959fcd5a65c4152887124d",
+   "ja": "発動効果：ザヤは空中に跳び、1.5秒間ゴースト状態で対象指定不可になる。1秒後、指定方向に扇形に5本の羽を撃ち、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Xayah/Featherstorm#description2": {
+   "source_sha1": "cfd3c37df55f290e01be615eb94c3251943e40da",
+   "plain_sha1": "68702e40698e9229f67f83eddb090a5a4e0b2c5a",
+   "ja": "「フェザーストーム」の間、ザヤは通常攻撃もスキルの使用もできないが、移動はできる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Xayah/Clean Cuts#description2": {
+   "source_sha1": "063662a16ec1163092112dc933a94c4c50790d67",
+   "reason": "residual_markup"
+  },
+  "Template:Data Xayah/Bladecaller#description": {
+   "source_sha1": "8d786fc500f8076d80d8d5f6178b2e1b91698287",
+   "reason": "residual_markup"
+  },
+  "Template:Data Xayah/Bladecaller#description2": {
+   "source_sha1": "637706465778e73f5672ac804177657699bcd701",
+   "reason": "residual_markup"
+  }
+ }
+}

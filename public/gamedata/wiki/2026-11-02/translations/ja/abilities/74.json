@@ -1,0 +1,149 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Heimerdinger/Hextech Affinity#description": {
+   "source_sha1": "cc55c347ccd519b7a3b2d4ed41c84cb325f7b930",
+   "plain_sha1": "86fcd8d9f7c851a2f203e86d321149693130b202",
+   "ja": "固有：ハイマーディンガーは、味方のタワーか、自身が設置した「H-28G革新砲」か「H-28Q Apex Turret」の近くにいる間、移動速度が20%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28G Evolution Turret#description": {
+   "source_sha1": "30ac0c369de66eda92d360d354e71d2f0c98aec6",
+   "plain_sha1": "3f2ce9b4d28a9a24fbedea2045ac586af46550a9",
+   "ja": "発動効果：ハイマーディンガーは指定地点に「H-28G革新砲」を設置し、壊されるまで残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28G Evolution Turret#description2": {
+   "source_sha1": "be3149afc31473b613183122ad5e021009e91112",
+   "plain_sha1": "ede1576f010549f32ca5c681b8df06ba2b1f6cc6",
+   "ja": "ハイマーディンガーは一定時間ごとに「Turret Kit」のチャージを得て、最大3まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28G Evolution Turret#description3": {
+   "source_sha1": "00dbcf3248e6d0b8534809f34e59496e37b74dfb",
+   "plain_sha1": "4e0c91ad9cc6273a03fd0fb72286f47e74e49328",
+   "ja": "「H-28G革新砲」は一度に3基まで設置でき、上限を超えて設置すると最も古いものが壊れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28G Evolution Turret#description4": {
+   "source_sha1": "4f4f0973860cf66f0fc7916f181921e92adcca87",
+   "plain_sha1": "148c3dfcc2eebc45108c9048e15d00e774f51bae",
+   "ja": "「H-28G革新砲」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28Q Apex Turret#description": {
+   "source_sha1": "484f75d32c38594bfd4c582e05f6cbf0b0d3c684",
+   "plain_sha1": "a34aba8cecd3813f88002168d983cfc1cbc9cd6c",
+   "ja": "「アップグレード！！！」- 発動効果：ハイマーディンガーは指定地点に「H-28Q Apex Turret」を設置し、8秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28Q Apex Turret#description2": {
+   "source_sha1": "46311dcb16ef6eaca3070c7460743085a1b18c8d",
+   "plain_sha1": "49cf68e69099343b47691a4b7b5f4b89b09692b6",
+   "ja": "「H-28Q Apex Turret」は「アップグレード！！！」のランクに応じて強くなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/H-28Q Apex Turret#description3": {
+   "source_sha1": "4831504ea3eaabf243ab9c93f974d4b432e36e51",
+   "plain_sha1": "eb2100714758b042ddffacb4bc65dbf048dfab9b",
+   "ja": "「H-28Q Apex Turret」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/Hextech Micro-Rockets#description": {
+   "source_sha1": "9d481b243fad04cf389570af3585b3abb58c9dc6",
+   "plain_sha1": "3e70ae2ef497da990c6cfab905c65613079c6978",
+   "ja": "発動効果：ハイマーディンガーは5発のロケットを放ち、ロケットは指定地点に集まった後、最大射程まで扇状に広がって、それぞれ最初に命中した敵に魔法ダメージを与える。ロケットが敵チャンピオンに命中するたびに、1000の範囲内のすべての「H-28G革新砲」のビームのチャージが20%溜まり、敵チャンピオンに5発命中すると最大の100%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/Hextech Micro-Rockets#description2": {
+   "source_sha1": "46f23c73fb1e11bdfd75a5226e98766f8ec474ca",
+   "plain_sha1": "03be4d452e7cf5b5e77b1eda766d96330d2c25a1",
+   "ja": "敵は複数のロケットを受けることがあるが、二発目以降のダメージは少ない。ミニオンに対しては、この少ないダメージが200%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/Hextech Rocket Swarm#description": {
+   "source_sha1": "e969847a4a17cd19303a762382a18ebec2cfbb01",
+   "plain_sha1": "3961fe836207617c91f511edf31476556436103d",
+   "ja": "「アップグレード！！！」- 発動効果：ハイマーディンガーは5発のロケットの波を素早く4回放ち、ロケットは指定地点に集まる。各ロケットは最初に命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/Hextech Rocket Swarm#description2": {
+   "source_sha1": "7c00cdfe654dd21690ec9015258e225379bc80c4",
+   "plain_sha1": "c06419209deb52fdc861468b5dc657ec8a96fddd",
+   "ja": "敵は複数のロケットを受けることがある。チャンピオンとモンスターは二発目から五発目までのダメージが少なく、六発目以降はさらに50%減る。ミニオンは代わりに、すべてのロケットから常に最初のダメージの100%を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/CH-2 Electron Storm Grenade#description": {
+   "source_sha1": "766c16cb5c8a6b8456ce9823fd34b714f6e9a0a6",
+   "plain_sha1": "6bb5a9a5b0e6d4dc6701ebc90b8e2c7db639831e",
+   "ja": "発動効果：ハイマーディンガーは指定地点にグレネードを投げ、着弾時に爆発させて、周囲の敵に魔法ダメージを与え、2秒間35%のスロウを与える。グレネードが敵チャンピオンに命中すると、着弾地点から1000の範囲内のすべての「H-28G革新砲」のビームのチャージが100%溜まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/CH-2 Electron Storm Grenade#description2": {
+   "source_sha1": "8a4912c8095391ea3c65e0f9d428eabfa5c43383",
+   "plain_sha1": "2a3c0bfe96a7cf13db3fdaeb3f1bb2740acdaff7",
+   "ja": "グレネードの着弾の中心で命中した敵は、さらに1.5秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/CH-3X Lightning Grenade#description": {
+   "source_sha1": "33665ef2b69760d5328c9042a7b0e0f59fca2f7d",
+   "plain_sha1": "5603c19e6c7a3d10af981828e2ad01c6687e1947",
+   "ja": "「アップグレード！！！」- 発動効果：ハイマーディンガーは指定地点に巨大なグレネードを投げ、グレネードは発動方向に決まった距離ずつ3回跳ねる。着地のたびに爆発して周囲の敵に魔法ダメージを与え、2秒間35%のスロウを与える。着弾の中心で命中した敵は、さらに1.5秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/CH-3X Lightning Grenade#description2": {
+   "source_sha1": "01dcbe57536e0e2a1c6c340ecb5db840c5101873",
+   "plain_sha1": "9678a69ffe8d0b2f037ea9bd7d6f71d9410ad2f2",
+   "ja": "敵チャンピオンは一回の発動につき一度だけダメージを受けるが、状況によってはスロウとスタンを複数回受けることがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/UPGRADE!!!#description": {
+   "source_sha1": "33570976cbc99c1bb49ea7d15ee13bd3942c7719",
+   "plain_sha1": "70b5a5081619c45917d3f02c319f3d2b4e7abadd",
+   "ja": "切り替え：ハイマーディンガーは次の基本スキルを強化して追加の効果を与え、使用すると強化を消費して「アップグレード！！！」はクールダウン全体に入る。強化されたスキルは基本のスキルと同じクールダウンで、修正されたダメージを与え、マナコストはかからない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/UPGRADE!!!#description2": {
+   "source_sha1": "ca819eb925421c86e39561ca1d0ecca92e75ee12",
+   "plain_sha1": "4b8fa610c64f797eb2977ff943d373f26132f8c5",
+   "ja": "「アップグレード！！！」は使用時に固定のクールダウンが生じ、オフに切り替えて強化を取り消すと、スキルは固定のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Heimerdinger/UPGRADE!!!#description3": {
+   "source_sha1": "550a6f69d4e400455d1a06832d3a09d61ab4cc4f",
+   "plain_sha1": "cbb16e2f41284d0769eb7b26b66c0144c6323bb6",
+   "ja": "「アップグレード！！！」は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

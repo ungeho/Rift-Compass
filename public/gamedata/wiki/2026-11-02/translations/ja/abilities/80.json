@@ -1,0 +1,156 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Pantheon/Mortal Will#description": {
+   "source_sha1": "90c3c51492bf7a73bd2861a961af30812e8d3239",
+   "plain_sha1": "97feb86f4bb4a86fa40ef190141883ebb28565af",
+   "ja": "固有：パンテオンは通常攻撃（攻撃時効果）を当てるかスキルを使用するたびに「定命の意志」のスタックを得て、最大5回まで重なる。5スタックで、次の基本スキルはスタックを消費して強化され、追加の効果を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Mortal Will#description2": {
+   "source_sha1": "25a22e1f0139bb3a41e86d67353fecb4ee3d1453",
+   "plain_sha1": "dc3a7bc0e06e9556460c0eb1cdd2f3eb850a3557",
+   "ja": "パンテオンは試合開始時、リコールの詠唱を終えたとき、復活時に「定命の意志」の最大スタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Comet Spear#description": {
+   "source_sha1": "9a4f69e5580b196b43a0c9f20cd64eb222bf89bc",
+   "plain_sha1": "3ea437bffc34a330f344395e0fa85f265a14a545",
+   "ja": "発動効果：パンテオンは最大4秒間、10%のスロウを受けながら溜め、詠唱0.35秒後から「彗星の槍」の射程が伸びる。「彗星の槍」は効果時間中に再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Comet Spear#description2": {
+   "source_sha1": "3a1e461bc4f945bdd891275fe7d4aea415e900f8",
+   "plain_sha1": "eba365b734a3acb2b449b4b663ddb31f0fc7eacd",
+   "ja": "再発動：パンテオンは指定方向に槍を投げ、命中した敵に物理ダメージを与える。最大体力の20%未満の敵へのダメージは増え、最初の一体より後の敵へのダメージは50%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Comet Spear#description3": {
+   "source_sha1": "c836bbc0e7b9e8daf08112351491e3ba9d297cd5",
+   "plain_sha1": "4546f709aaa69aac5bdd5e1bcd5669e32e9f687b",
+   "ja": "0.35秒以内にスキルを放すと、パンテオンは代わりに指定方向に槍を突き出し、命中した敵に物理ダメージ（最大体力の20%未満の敵には増加）を与え、「彗星の槍」のクールダウンの60%を戻す。突きのダメージは最初の一体より後の敵にも減らない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Comet Spear#description4": {
+   "source_sha1": "474bd3b7d07ed2f1147b3b524ceb494b7b002329",
+   "plain_sha1": "87e6d217a96751da35ba0c577ed8110642c1c86d",
+   "ja": "「彗星の槍」の合計ダメージは、モンスターに対しては80%、ミニオンに対しては70%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Comet Spear#description5": {
+   "source_sha1": "974c8bb23d4d842bb73f01fbed1dcc82a764a121",
+   "plain_sha1": "c446beb64c260990111a2ea369320853841a399e",
+   "ja": "溜めが中断されるか、再発動せずに最後まで溜めきると、「彗星の槍」はキャンセルされてクールダウン全体に入るが、マナコストの半分が戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Shield Vault#description": {
+   "source_sha1": "9ff97bced5abdefe5dfe2449edaeccaa567b2c12",
+   "plain_sha1": "33f546732d892cf55f33b451ec34d24a4c0bc565",
+   "ja": "発動効果：パンテオンは対象の敵の位置の前に跳ぶ。到着時に対象が800ユニット以内にいれば、物理ダメージを与えて1秒間スタンさせる。ミニオンとモンスターに対しては、「跳撃の盾」のダメージは最低60、上限150。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Shield Vault#description3": {
+   "source_sha1": "e6fc84ac60e202bfa9e75eba646cc7ca1c32b669",
+   "plain_sha1": "2471773bd8844c5e7df08581050f029aeed7c404",
+   "ja": "強化された「跳撃の盾」はパンテオンの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Aegis Assault#description2": {
+   "source_sha1": "2b17d1614d83a9a15f63a4de6942856f0b950a63",
+   "plain_sha1": "e5a6c52def973da66fcb3ba663534251ec47067c",
+   "ja": "「イージスの猛攻」は0.3秒後から再発動でき、効果時間が終わると自動で再発動する。「イージスの猛攻」の詠唱は行動妨害で中断されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Aegis Assault#description3": {
+   "source_sha1": "829de68de2baa216ce3369503e56b19b7ca37dc6",
+   "plain_sha1": "9cc2cb9111220f13dc423da2546c4ab7ea948b82",
+   "ja": "再発動：パンテオンは前方の扇形の範囲を盾で打ちつけ、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02",
+   "check_notes": [
+    "用語「シールド」がない（原文：shield）"
+   ],
+   "allow_reason": "原文の shield は盾（防具・物体）で、シールド（ダメージを防ぐ効果）ではない"
+  },
+  "Template:Data Pantheon/Aegis Assault#description5": {
+   "source_sha1": "42b41d003b02087f15fe9c2b3e0cfae9c65723ec",
+   "plain_sha1": "f41d12fcb32990bb1b32b4f292e1c13fb64abf54",
+   "ja": "パンテオンは「イージスの猛攻」の再発動の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Grand Starfall#description": {
+   "source_sha1": "b512dc9da23708fabe129e0082defa7c81ddda34",
+   "plain_sha1": "6b66814ffa835da3e67a5c9747fd97559b997271",
+   "ja": "自動効果：パンテオンは物理防御貫通を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Grand Starfall#description2": {
+   "source_sha1": "2fb9cf4e5c0b1214883e5b42f1cc6231a51fef9a",
+   "plain_sha1": "d4c5c1e861ad019a7264657c0ff389c93258cd79",
+   "ja": "発動効果：パンテオンは2秒間詠唱してから空へ跳び、姿を消して（vanish）行動妨害を無効にする。さらに2.25秒間詠唱を続け、詠唱開始から0.5秒で指定地点の周囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Grand Starfall#description3": {
+   "source_sha1": "461f5116af417fc3e0b636370ffb8ace36b71d64",
+   "plain_sha1": "0d9016a8b6b1ddce327b53a8a3477df0d065ba5b",
+   "ja": "詠唱開始から0.8秒後、パンテオンは0.2秒かけて指定地点に槍を投げ、着弾地点の近くの敵に40～190（「彗星の槍」のランクに応じて）（+ 増加攻撃力の115%）（+ APの50%）の物理ダメージを与えて、2秒間50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Grand Starfall#description4": {
+   "source_sha1": "46ac6bc2aa33e1da1425e03ea63bbdc94a5efe26",
+   "plain_sha1": "27cf804bdafeb8168031be91610702a91812a068",
+   "ja": "残りの1.25秒のうち、パンテオンは0.55秒後に落下し、自身とともに衝撃波を起こして0.7秒かけて指定地点の方へ進み、命中した敵に魔法ダメージを与える（範囲の端で当たった敵には最大50%減少）。詠唱を終えると、パンテオンは行動妨害の無効を失って指定地点に再び現れ、「定命の意志」の最大スタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Pantheon/Grand Starfall#description5": {
+   "source_sha1": "8a6748eff14ff13ccf0f5eba7cd980e6cd4b56e8",
+   "plain_sha1": "a34c5e267636119ff7eb9dc348c6694a28fa0cc4",
+   "ja": "最初の詠唱をキャンセルすると、「偉大なる星路」は30秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Pantheon/Comet Spear#description6": {
+   "source_sha1": "ad9c250936d08d0e4932cde9a0fda58d4f58f42e",
+   "reason": "residual_markup"
+  },
+  "Template:Data Pantheon/Shield Vault#description2": {
+   "source_sha1": "692f5f147c03968939f945be0f74ee53c2f0977e",
+   "reason": "residual_markup"
+  },
+  "Template:Data Pantheon/Aegis Assault#description": {
+   "source_sha1": "ab05a9f54e0d480b46a887d75d86ff5ac9fca240",
+   "reason": "residual_markup"
+  },
+  "Template:Data Pantheon/Aegis Assault#description4": {
+   "source_sha1": "4eba08adc7721c56f136c301cf7df0d7c7cf68f2",
+   "reason": "residual_markup"
+  }
+ }
+}

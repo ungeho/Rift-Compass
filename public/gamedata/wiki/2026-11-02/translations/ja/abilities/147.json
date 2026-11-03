@@ -1,0 +1,102 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Seraphine/Stage Presence#description2": {
+   "source_sha1": "b093bb696a25a86c94d8d32027ad70287b7059d7",
+   "plain_sha1": "4929cbaf2000f64570a81c942aeb37ced2bf8438",
+   "ja": "固有 -「Harmony」：セラフィーンのスキルの使用は、自身と近くの味方チャンピオンに6秒間続く「Note」を一つ与え、次の「Note」で更新され、各ユニットに最大4回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/High Note#description": {
+   "source_sha1": "2aefcc59c0095189b589851ea87d0ad83659aeed",
+   "plain_sha1": "2116713c6389113ed1c03d1bc1456fda41de29b9",
+   "ja": "発動効果：セラフィーンは指定地点に音波を飛ばし、音波は到着すると0.4秒かけて円形に広がって、範囲内の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/High Note#description2": {
+   "source_sha1": "df0d0182e2f257ff07e76941e122e3be249877f0",
+   "plain_sha1": "f2423952d6562543ebb23e8b01471a5391241096",
+   "ja": "チャンピオンとモンスターに対しては、対象の減少体力に応じてダメージが0%～75%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Surround Sound#description": {
+   "source_sha1": "d9cb14a764a0e83ecddddd599b20e087255d0abd",
+   "plain_sha1": "ad9a003b76839dd605dc584036ec8106a2e8d8ea",
+   "ja": "発動効果：セラフィーンは自身と近くの味方チャンピオンに2.5秒間シールドを付与する。同じ時間、自身は減衰する20%（+ AP 100ごとに2%）の移動速度の増加を得て、ほかの味方には8%（+ AP 100ごとに0.8%）の移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Surround Sound#description2": {
+   "source_sha1": "d8ce12c9856be04a54540193d57be1235963fa3f",
+   "plain_sha1": "b73df8ec6313ce8b919a854fa0195ab30048c954",
+   "ja": "発動時にセラフィーンがすでにシールドを持っていた場合、効果時間の後に「サラウンドサウンド」が波動を出し、自身と近くの味方チャンピオンを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Surround Sound#description3": {
+   "source_sha1": "5c9175f5e9d5ec326b6a2e6566bf0b227cf5b341",
+   "plain_sha1": "cba4d89a7cc9fccbb5124b5e68e6fcdd90bb2d0e",
+   "ja": "「サラウンドサウンド」のシールドと移動速度の増加は最大2回まで重なる。セラフィーンは「サラウンドサウンド」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Beat Drop#description": {
+   "source_sha1": "1030f1b25145702e10687be45d77c94f295652b5",
+   "plain_sha1": "5f371e1cd6dea46dfda46cb2cd790abd64801dca",
+   "ja": "発動効果：セラフィーンは指定方向に重い音波を撃ち、命中した敵に魔法ダメージ（ミニオンには70%）を与えて、数秒間99%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Beat Drop#description2": {
+   "source_sha1": "a7a2298b148fd425dbc827cb3966c55bd9362822",
+   "plain_sha1": "ca9849e89466acc4395f1f1734d12935ed0d3298",
+   "ja": "すでにスロウを受けている敵は、同じ時間スネアも受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Beat Drop#description3": {
+   "source_sha1": "034b1ee357ce90b24be11e5f123d211ea2fa2c69",
+   "plain_sha1": "ecf488112371bddab6145866e0f02df960712503",
+   "ja": "移動不能かグラウンドを受けている敵は、同じ時間スタンもする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Encore#description": {
+   "source_sha1": "971cc4282848b48c6cdbc8a785bd8e28cb06e4f6",
+   "plain_sha1": "911225fc64e0b51f4c2a075264a8f2ea94d194da",
+   "ja": "発動効果：セラフィーンは指定方向に魅了する力を放ち、命中した敵に魔法ダメージを与えてチャームを与え、その間可視化して、一定時間40%のスロウを与える。スロウは効果時間の間0.25秒ごとに15%ずつ強まり、最大99%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Seraphine/Encore#description2": {
+   "source_sha1": "b8a5af3f4a99b6f5ba4efc671d5c0fcc7b010594",
+   "plain_sha1": "6dbb3c3b1b3130e3e36bda079beeef5cbbe3d0a3",
+   "ja": "「アンコール」の飛翔物は、味方か敵のチャンピオン（セラフィーンを除く）に当たるたびに、残りの飛ぶ距離がリセットされる。当たった味方チャンピオンは「Note」を4得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Seraphine/Stage Presence#description": {
+   "source_sha1": "a9775a4f671abdec9f464e639594733785a11807",
+   "reason": "residual_markup"
+  },
+  "Template:Data Seraphine/Stage Presence#description3": {
+   "source_sha1": "23b20e0e0bc3bedfc1c83dc7b32d2565f3116a0b",
+   "reason": "residual_markup"
+  }
+ }
+}

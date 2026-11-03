@@ -1,0 +1,107 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Zilean/Time in a Bottle#description": {
+   "source_sha1": "bdf6760f30b30707848640c75187b6e5f1b0051e",
+   "plain_sha1": "99e797c12c4f97365363c3cf4ce65f7a9ce3f77f",
+   "ja": "固有：ジリアンは5秒ごとに2～12（レベルに応じて）の経験値を溜める（自身のレベルアップには数えない）。「タイムインボトル」は試合開始時にクールダウン中で、ジリアンと味方チャンピオンが最大レベルに達すると使えなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time in a Bottle#description2": {
+   "source_sha1": "27045a7188c670183f4b0b2243815cab74ef93bc",
+   "plain_sha1": "f0f74a49b1be1da9ee4035d562cbdb8e0e9b1a40",
+   "ja": "味方チャンピオン一体を次のレベルに上げるのに十分な経験値を溜めると、その味方を選んで、0.5秒の詠唱時間の後に1.2秒間詠唱できる。敵チャンピオンとの戦闘に入るかタワーからダメージを受けると、詠唱は中断されて使えなくなり、10秒のクールダウンになる。ジリアンが自分で中断した場合は1秒のクールダウンになり、タワーに通常攻撃して中断した場合は2秒になる。また、ジリアンがどのような行動妨害を受けても、詠唱は10秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time in a Bottle#description3": {
+   "source_sha1": "71f42b41d74ac0630e4459917b8b155f55140371",
+   "plain_sha1": "07231dd6b032287641bf7b968cf298550b25b92c",
+   "ja": "詠唱に成功すると、味方がレベルアップするのに必要な経験値と同じ量をその味方とジリアンの両方に与える。合計は溜めた経験値の最低15%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time in a Bottle#description4": {
+   "source_sha1": "974d5699b5145bdd231e59fde81a55fddbb535a8",
+   "plain_sha1": "24c4919f2c0fb135fd1ce14ab2507fa5b2153989",
+   "ja": "ジリアンは、スキルの使用を妨げる行動妨害や、スキルを封じる行動不能を受けている間は詠唱を始められない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time Bomb#description": {
+   "source_sha1": "78e5d0ef3a448cc70444851e42ec644e088b01e8",
+   "plain_sha1": "d5e0e20b68cd559180b743725c722e25f78d8c51",
+   "ja": "発動効果：ジリアンは指定地点に時限爆弾を投げる。爆弾は飛んでいる間とその場に残っている間、周囲の視界を一瞬与える。爆弾は中心に入ってきたユニットか、着弾時に直接当たったユニットに付き、そのユニットとその周囲を可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time Bomb#description2": {
+   "source_sha1": "f4636a9ca837d1b7b43966c74d6674b0e04c3deb",
+   "plain_sha1": "c92a37a507be7160e3f3f50d9e8b7242efc4d2dc",
+   "ja": "3秒後、または付いたユニットが死ぬと、爆弾は爆発して周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time Bomb#description3": {
+   "source_sha1": "3d2c8b518ead98205efaed70a1df6bf7298cb37a",
+   "plain_sha1": "785940a724f1e0dfba102000c7c245a5578b5604",
+   "ja": "同じユニットに別の爆弾が付くと即座に起爆し、周囲の敵を一定時間スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Rewind#description": {
+   "source_sha1": "f8c5becd5f5d99db7d1e8b02dc564dc012eac523",
+   "plain_sha1": "a2d76388db70f7bea8e892c8615d9962ace70171",
+   "ja": "発動効果：ジリアンは「タイムボム」と「タイムワープ」の残りクールダウンをそれぞれ10秒短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Rewind#description2": {
+   "source_sha1": "2255159af7b1ce2370e4981fdccebe7869ef81c7",
+   "plain_sha1": "900f9ba006b9c5bce9e9be4f4acd1a7a2873ae7a",
+   "ja": "このスキルを使用するには、「タイムボム」か「タイムワープ」のどちらかがクールダウン中である必要がある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time Warp#description": {
+   "source_sha1": "2d170eb13a320828c070ed01e5d40f005ddd491c",
+   "plain_sha1": "d4f3bce471dc731087c74c0f2dbb335806485abe",
+   "ja": "発動効果：ジリアンは対象のチャンピオンに2.5秒間「タイムワープ」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Time Warp#description2": {
+   "source_sha1": "f89c71ccd68b7110404243298b28bd5a4ea5c555",
+   "plain_sha1": "4e593ae1ae022c566faf5612de2a94409f14bbe4",
+   "ja": "「タイムワープ」：対象が味方なら移動速度が増加する。対象が敵ならスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Chronoshift#description": {
+   "source_sha1": "ec7f67eaee5852bf8b570dd9e725957a797c48b9",
+   "plain_sha1": "6aa46dc7aae1c7278e47a9c8c0d1fff5c153c03c",
+   "ja": "発動効果：ジリアンは対象の味方チャンピオンか自身に、5秒間守りの時のルーンを付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Zilean/Chronoshift#description2": {
+   "source_sha1": "1e832e96162694c16c20e99bee56bd557f8dfc34",
+   "plain_sha1": "2ae2f7d72a63b9080b8fb0e66b9693dc647412e8",
+   "ja": "効果時間中に対象が致死ダメージを受けると、3秒間蘇生状態になり、無敵・対象指定不可で行動できなくなる。その後、回復しながら復活する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

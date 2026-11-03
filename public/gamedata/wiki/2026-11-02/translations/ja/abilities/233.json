@@ -1,0 +1,154 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Briar/Crimson Curse#description2": {
+   "source_sha1": "8111a1bbe0654a2603b6e9eaf07c6a9198c4379e",
+   "plain_sha1": "7b5d93111b3dd69c0fd0ea86e3a1975c0abdc623",
+   "ja": "ブライアーには基本の体力回復がないが、あらゆる発生源からの回復の効果を0%～40%（減少体力に応じて）（+ 増加体力100ごとに0%～2.5%〔減少体力に応じて〕）高める。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Head Rush#description": {
+   "source_sha1": "9e9b99a33cf399767b032750e3048402871a48df",
+   "plain_sha1": "f4bf5cfb98a909170fe4530c2b9d45046fbe61dd",
+   "ja": "発動効果：ブライアーは対象のユニットへ跳ぶ。対象が敵なら、物理ダメージを与えて、攻撃時効果を与え、攻撃開始時の効果を発動し、0.85秒間スタンさせて、5秒間物理防御と魔法防御を低下させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Head Rush#description2": {
+   "source_sha1": "9a6ad869744415ebf7c6b7d8ab7525b393805296",
+   "plain_sha1": "956095c840da609e032cd1850be88b7e928d31f9",
+   "ja": "「ヘッドラッシュ」はブライアーの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Blood Frenzy#description": {
+   "source_sha1": "c3ebf8b3988512b1aa86f708e48c9898aaa0aa91",
+   "plain_sha1": "e5674df986a52516241dab3d360838d353bf9f14",
+   "ja": "発動効果：ブライアーは指定方向にダッシュする。到着時に近くに敵がいれば、5秒間「血の狂乱」を得て、その間「衝動噛み」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Blood Frenzy#description2": {
+   "source_sha1": "4a2c3b4cbcc54886d0dd4d1e68a47e29e1ddc6e4",
+   "plain_sha1": "5a3cc552e3442d3a4c8e3770c8c5f312f6e1ba8c",
+   "ja": "「血の狂乱」：ブライアーは首枷から解き放たれ、最も近い敵に強制的に通常攻撃するようになる。対象を可視化し、ゴースト状態・攻撃速度の増加・移動速度の増加を得て、通常攻撃を強化し、攻撃モーションが中断されなくなって、対象の周囲の敵に物理ダメージを与える。このダメージはクリティカルの倍率の影響を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Blood Frenzy#description3": {
+   "source_sha1": "a7d88ded6d649857b99eb62abbb195b216e4f967",
+   "plain_sha1": "f48098ca6f3746811d9ef9232e37bfaf60403862",
+   "ja": "ブライアーはチャンピオン、大型モンスターかミニオン、その他のユニットの順に優先して攻撃する。ミニオンかモンスターに「ヘッドラッシュ」を使うと、優先順位は大型モンスター・ミニオン・チャンピオン、その他のユニットの順に変わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Blood Frenzy#description4": {
+   "source_sha1": "99a2fd7b1ce143175232218337a2e88f6a41c344",
+   "plain_sha1": "e2496e840f69d7cdf323f72e98f283b13d3e8af2",
+   "ja": "「血の狂乱」の間、ブライアーは移動と攻撃の指示を受けられない。近くに有効な対象がいなくなるか「呪福の叫び」を使うと、狂乱は早く終わる。「血の狂乱」はブライアーの通常攻撃タイマーをリセットする。ダッシュ中に「ヘッドラッシュ」と「迫りくる死」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Snack Attack#description": {
+   "source_sha1": "e0a9a91c83a9600485fe92e151606b8decaf830a",
+   "plain_sha1": "8054f51c668934655e841acf28049c4875d8eca0",
+   "ja": "発動効果：ブライアーは「血の狂乱」の間、5秒以内の次の通常攻撃を強化して対象の敵に噛みつき、射程が50増加し、追加の物理ダメージを与えて、最大体力の5%と、与えた軽減後のダメージの一定の割合を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Snack Attack#description2": {
+   "source_sha1": "0e33646697af5b160cf1f37b0a6b899b9681f390",
+   "plain_sha1": "b73025a5dc78a1de870d36f4296a835e5831b508",
+   "ja": "「衝動噛み」はミニオンとモンスターに110%のダメージを与え、対象の体力の割合に応じたダメージは400が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Snack Attack#description3": {
+   "source_sha1": "e45eab3ad364e914e218dbea96eaf77e4bb92f65",
+   "plain_sha1": "9e4cb608f8b20376649acfb3ac23ad87b6e19a69",
+   "ja": "「衝動噛み」はブライアーの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Chilling Scream#description": {
+   "source_sha1": "e1e1360e46505449f542b546acbe7c3c2658fa5f",
+   "plain_sha1": "7aea80c186f9e852a652f7622fe474db61462aaa",
+   "ja": "発動効果：ブライアーは指定方向に叫ぶ準備をして最大1秒間溜め、その間「呪福の叫び」のダメージと射程が増え、35%のダメージ軽減を得て、0.25秒ごとに自身を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Chilling Scream#description2": {
+   "source_sha1": "82f859bbb9474faf39da7559ebc0f74a85745ab0",
+   "plain_sha1": "ae38d59de4aad4207fdc24e40a8984d10a37588d",
+   "ja": "「呪福の叫び」は効果時間中に再発動でき、その後は自動で再発動する。「呪福の叫び」の溜めは行動妨害で中断されない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Chilling Scream#description3": {
+   "source_sha1": "bc3104bbbb768eac2fbd64af46e135d6fb3585bd",
+   "plain_sha1": "99d9b55da5929f85b201bac4e24e61dd7563a1dc",
+   "ja": "再発動：ブライアーは発動時に狙った方向に叫び、命中した敵に魔法ダメージを与えて、0.5秒間80%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Chilling Scream#description4": {
+   "source_sha1": "f0b0ee76d06a0d3f1e07fc755cf56044765438ad",
+   "plain_sha1": "fa5d46397630544f5aa4309b818415b30557be46",
+   "ja": "「呪福の叫び」を最後まで溜めていた場合、命中した敵は575ユニットノックバックもされる。地形にぶつかると跳ね返り、追加の魔法ダメージを受けて、0.5秒間ノックアップし、1.5秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Certain Death#description": {
+   "source_sha1": "963aa338554a6799561d1d6ad5335753406e5598",
+   "plain_sha1": "82372b94c61b3ed9a8c58a43ff647b2dca033c50",
+   "ja": "発動効果：ブライアーは首枷の石を指定方向に蹴り、石は進みながら周囲の視界を一瞬与え、最初に命中した敵チャンピオンを獲物として印を付ける。印の付与は対象の詠唱を中断させる。印が付いている間、対象は可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Certain Death#description2": {
+   "source_sha1": "9f4221b30a2ee982283435ed804bcc08d4752eda",
+   "plain_sha1": "cb925c0cffabb9e2fca996b5e75006d4583f88b5",
+   "ja": "対象に命中すると、ブライアーは詠唱時間の間に自身のすべての行動妨害を解除して行動妨害を無効にし、その後移動系の効果を受けない状態で対象へダッシュする。到着時に印の付いた対象の周囲で爆発を起こし、対象と周囲の敵に魔法ダメージを与えて、印の付いていない対象すべてに1.5秒間フィアーを与え、その間35%のスロウを与える。その後「Hematomania」の状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Certain Death#description3": {
+   "source_sha1": "99cf00c45147d2ecda0eb2ef6b4c08d149ab5dfb",
+   "plain_sha1": "66437441fc41c9a51f83bc7f30ecc6792fe707ed",
+   "ja": "「Hematomania」：ブライアーは「血の狂乱」のすべての効果と、攻撃力の20%に等しい物理防御と魔法防御の増加、ライフスティール、さらなる移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Certain Death#description4": {
+   "source_sha1": "4cae9aba4a954d3c42fe6261ddf9232318a29ba1",
+   "plain_sha1": "f2e98b91b652bbcedd6fdf6d4bc8a34a499410a7",
+   "ja": "強化された狂乱の間、ブライアーは距離に関係なく、ほかのすべてのユニットより印の付いた対象を優先して攻撃する。その対象が無効になると、再び攻撃できるようになるまで通常の優先順位に戻る。「Hematomania」は、ブライアーか対象の死亡を含め、どの手段でも印が外れるまで続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Briar/Certain Death#description5": {
+   "source_sha1": "c609c888533826a8c2a6103fa4b63613313207f7",
+   "plain_sha1": "5c7bab89ce0648322717f3698b6fefeeefebbd2c",
+   "ja": "「呪福の叫び」を使うと、対象の印が外れて「Hematomania」が早く終わる。「Hematomania」の間の「ヘッドラッシュ」の使用では、狙う優先順位は変わらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Briar/Crimson Curse#description": {
+   "source_sha1": "12fe5619cd63404ca36c222e976627d76c41a3e0",
+   "reason": "residual_markup"
+  }
+ }
+}

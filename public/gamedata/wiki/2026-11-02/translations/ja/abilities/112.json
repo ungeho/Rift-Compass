@@ -1,0 +1,128 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Viktor/Glorious Evolution#description": {
+   "source_sha1": "07ebd09c1caf9b264f4388cafc609ef1f93f8f73",
+   "plain_sha1": "9dfca73b317d9b9d036fb99c00959f8082ca2551",
+   "ja": "固有：ヴィクターは、敵を倒して得る「Hex Fragments」を100消費して、各スキルを強化できる：* ミニオンとモンスターは「Hex Fragment」を1生む。* 攻城ミニオン・スーパーミニオン・エピックモンスターは10生む。* 敵チャンピオンのキルへの関与は20生む。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Glorious Evolution#description2": {
+   "source_sha1": "6b8b129c3bd11a0e1152fc77f587827e244b19c8",
+   "plain_sha1": "4c9adbf76cbea68bd2320c34efadf2aa9bc722b2",
+   "ja": "「アーケインストーム」は、ヴィクターの基本スキルをすべて強化した後に強化できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Siphon Power#description": {
+   "source_sha1": "6cdfe007ba9e1525d7847f47ca1164fde72d42d3",
+   "plain_sha1": "62ac85588cbfaf65707a0bc8f2bc5c9cb1340c64",
+   "ja": "発動効果：ヴィクターは対象の敵に吸収の装置を投げ、魔法ダメージを与える。さらに、30～130（レベルに応じて）（+ APの20%）のシールドを2秒間自身に付与し、4秒間「Discharge」を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Siphon Power#description2": {
+   "source_sha1": "f68d64f621fb605043a50c85cd7d698e6b1dbb73",
+   "plain_sha1": "94015a1ee0909168d40258d540ca308b61c710f3",
+   "ja": "「Discharge」：ヴィクターの次の通常攻撃は強化され、飛翔物でなくなり、修正された魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Siphon Power#description3": {
+   "source_sha1": "7c09504bcc0cf6b6451cf96aa6aa706a3d7b7b15",
+   "plain_sha1": "d617f35b04bcf4861c1423b0aaad4ddaf89d53a8",
+   "ja": "強化：「Turbocharge」— 装置が命中した後、ヴィクターは2.5秒間移動速度が30%増加し、シールドの量が60%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Gravity Field#description": {
+   "source_sha1": "a3a78a6c3809e71d099ea78a7855c3a61fc1ee6a",
+   "plain_sha1": "f6723c3af721561cdd99b919950ed2dca73c5dbf",
+   "ja": "発動効果：ヴィクターは指定地点に4.5秒間重力の場を置く。0.75秒の遅れの後に作動し、範囲内の敵に1秒間スロウを与え、範囲内にいる間は0.25秒ごとに更新される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Gravity Field#description2": {
+   "source_sha1": "a5d74c84b92a7fcd20f1192b5736c413ed535251",
+   "plain_sha1": "b37ca799d4da9fca5ae513e57dcfeda04ebf5d92",
+   "ja": "場は範囲内の敵に0.25秒ごとに「Heavy Gravity」のスタックを与え、最大5回まで重なる。五つ目のスタックですべて消費し、対象を押し倒して1.5秒間スタンさせる。押し倒しとスタンは、一回の発動につき敵一体あたり一度だけ起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Gravity Field#description3": {
+   "source_sha1": "c8c906a1f3614c923d0bfd8b1fb8d31d58625e70",
+   "plain_sha1": "969166b800b503c6cb51d77818d0ed90abe45408",
+   "ja": "強化：「Magnetize」— ヴィクターのほかのスキル（「アーケインストーム」の持続ダメージを除く）が、命中した敵に1秒間20%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Hextech Ray#description": {
+   "source_sha1": "de771a02c42393e0ba4cc063c515993164e3d60c",
+   "plain_sha1": "291a7703caa502baab44fbd327e628ff04667b5a",
+   "ja": "発動効果：ヴィクターは指定した経路に沿ってエネルギーの光線を放ち、命中した敵に魔法ダメージを与えて、その範囲の視界を一瞬与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Hextech Ray#description2": {
+   "source_sha1": "a746bd6ccbafdf00f76a03c947b5e7b67cbbe7cc",
+   "plain_sha1": "a7e1308c8b2e6a6c2ca0e1c4a87854ac86c3e6cd",
+   "ja": "強化：「Aftershock」— 1秒後に光線の通った経路が爆発し、命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Arcane Storm#description": {
+   "source_sha1": "6cc274338e0a6d7cb77dd948a8132f4510cfa679",
+   "plain_sha1": "ee345ef1c592679f96b30ea56a7bca5869ca9c72",
+   "ja": "発動効果：ヴィクターは指定地点に魔法の特異点を作り、範囲内の敵に魔法ダメージを与えて、その詠唱を中断させる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Arcane Storm#description2": {
+   "source_sha1": "394595d42eb351b320a2425823f50411f25d6262",
+   "plain_sha1": "c7728b57a4803217a4de2c4dd9e428e4d5eb661a",
+   "ja": "その後、特異点は6.5秒間動く嵐として残り、毎秒範囲内の敵に雷を落として魔法ダメージを与え、その半径と周囲の範囲の視界を与える。特異点は最初のダメージが命中した最も近いチャンピオンを狙って追いかける。ヴィクターに近いほど速く動く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Arcane Storm#description3": {
+   "source_sha1": "55622d8d8cab95b99e643fc40a92a4e797a9aa07",
+   "plain_sha1": "5ee39f69b4401496d20902a621d382fc25c3bcef",
+   "ja": "特異点がある間、「アーケインストーム」はいつでも再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Arcane Storm#description4": {
+   "source_sha1": "4a37466a3b4e73d1a133728afc562f36e126961e",
+   "plain_sha1": "a65d1bdeb4589eb4a45f4f99b5d761402c3b815d",
+   "ja": "再発動：ヴィクターは特異点を指定地点へ向かわせるか、残りの時間、対象の敵チャンピオンか自身を追いかけさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Arcane Storm#description5": {
+   "source_sha1": "0bfe37e6f07b8fbedc5de756c2bdbf7fc3ef4a74",
+   "plain_sha1": "628e1bd30ba23244fbc84762ec420133281a42b0",
+   "ja": "強化：「Perfect Storm」— 特異点が25%速く動く。さらに、「アーケインストーム」のダメージを受けた敵チャンピオンが倒されるたびに、嵐の大きさが40%増え、効果時間が3秒延びる。嵐の範囲は最大6回まで大きくなり、効果時間は元の長さまでしか延びない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viktor/Arcane Storm#description6": {
+   "source_sha1": "c50e4eee22a2f5cf75b5e526616b38cced09f498",
+   "plain_sha1": "0f1374f26cde80137740e6bb9cee314149ae78e6",
+   "ja": "「アーケインストーム」の再発動は、スキルの使用を妨げる行動妨害を受けていても使える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -36,6 +36,62 @@
    "source_sha1": "e6acadb0013fe0c6f541ed92b68815aa308b4001",
    "plain_sha1": "b06d919536c0d17769104cc4d3a17527bbb343a2",
    "ja": "「スゴイ毒ダ！」を受けている敵チャンピオンが死ぬと、「オイラだヨ！」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Deadly Venom#description": {
+   "source_sha1": "d8c79233e88bfa0869b7b632a346fb7e3904c4a9",
+   "plain_sha1": "72ac14ddd9c1c4f7fbd2832feec4f2127fe5a059",
+   "ja": "固有：トゥイッチの通常攻撃（攻撃時効果）のたびに6秒間「スゴイ毒ダ！」のスタックを与える。付与のたびに効果時間が更新され、最大6回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Deadly Venom#description2": {
+   "source_sha1": "7ad74474c915787bb82fb16ec96a7f5616be52e7",
+   "plain_sha1": "763956def11eb7d9ce4e3979f8fa927944c19d76",
+   "ja": "「スゴイ毒ダ！」：スタックごとに、対象は効果時間の間、毎秒1～5（レベルに応じて）（+ APの3%）の確定ダメージを受け、各回の最大は6～30（レベルに応じて）（+ APの18%）の確定ダメージになる。この効果は毒として扱われる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Venom Cask#description": {
+   "source_sha1": "012b4d581b4e98ac1124ae49e84ac4d12a683fd3",
+   "plain_sha1": "d323b25d18ded8ccf7596d7700ad0025c89cf447",
+   "ja": "発動効果：トゥイッチは指定地点に腐食液の樽を投げる。樽は着弾すると割れて、範囲の敵に「スゴイ毒ダ！」を与え、その範囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Venom Cask#description2": {
+   "source_sha1": "6c54bd2cca8ba6df3f8566692cd17579246960db",
+   "plain_sha1": "15115e31bba5756862541c3e042e32f475d14492",
+   "ja": "その後、範囲は3秒間汚染され、範囲内の敵に毎秒「スゴイ毒ダ！」のスタックを一つ与えて、スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Contaminate#description": {
+   "source_sha1": "b4033a2bd4ddb2cd9c669d6608a7cac8a04a4ff7",
+   "plain_sha1": "62069ac2f531ec277f3d7b3e04e9dc8f1291e228",
+   "ja": "発動効果：トゥイッチは「スゴイ毒ダ！」を受けている周囲の各敵に致死の毒を送り、物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Contaminate#description2": {
+   "source_sha1": "830c20dd5155c42a4d469ab284bd5b095733d2b2",
+   "plain_sha1": "1a93e4dfd1a7c26b902ad556945fa1c12613b226",
+   "ja": "「ボーン！」は、対象の「スゴイ毒ダ！」のスタックごとに追加の物理ダメージと、APの35%の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Contaminate#description3": {
+   "source_sha1": "d1e71f8dd02edf242da72dd2181bbc0320fedcb9",
+   "plain_sha1": "224681de6783fb1fbb2d768a7bd4aa833653881b",
+   "ja": "このスキルを使用するには、「スゴイ毒ダ！」を受けている敵が近くに必要。対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Twitch/Spray and Pray#description": {
+   "source_sha1": "3882fd151d850aff1f970cb7db88d94d3aaa9e71",
+   "plain_sha1": "900b5aeab6b18d05e0570c8d400380284208926f",
+   "ja": "発動効果：トゥイッチは6秒間、増加攻撃力と通常攻撃の射程300の増加を得て、その間の通常攻撃は、射程より少し遠くまで直線状に飛ぶ弾になり、命中したすべての敵ユニットにダメージを与える。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

@@ -164,3 +164,12 @@ test("変更履歴：版と行数だけ。アイテムの変更の文は保存�
   assert.ok(subj.length > 0);
   assert.ok(subj.every((s) => s.length <= 40 && !/\d/.test(s)));
 });
+
+test("説明の文：{{g|N}} はゴールドの数として残す（数だけにしない）", () => {
+  assert.equal(W.plainText("granting him {{g|1}} and {{as|1 ability power}}"), "granting him 1 gold and 1 ability power");
+});
+
+test("説明の文：アイコンだけのツールチップ（icononly）は文字を残さない", () => {
+  assert.equal(W.plainText("revealed to enemy champions in a {{tip|er|icononly = true}} 1250 radius"), "revealed to enemy champions in a 1250 radius");
+  assert.equal(W.plainText("{{tip|stasis|Stasis}} for 2.5 seconds"), "Stasis for 2.5 seconds");
+});

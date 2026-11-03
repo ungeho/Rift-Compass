@@ -1,0 +1,119 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Yorick/Shepherd of Souls#description2": {
+   "source_sha1": "52aed9a26d549f84b30292894badcc499071b1bd",
+   "plain_sha1": "7c0b1bb1f4732f5b243f507df8feebc270d7870b",
+   "ja": "ヨリックは「Awakening」と「悲嘆の霧」の印を使って、1秒の遅れの後、各墓から「Mist Walker」を一体ずつ起こし、墓を消費する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Shepherd of Souls#description3": {
+   "source_sha1": "7f7663c7b644b3c2ea214c25d6dbb828fc657c4f",
+   "plain_sha1": "a94d4fc03362dbc0b2e701bcab93a1afa91ecc76",
+   "ja": "固有 -「The Cursed Horde」：ヨリックか「The Maiden」の近くで、一度に最大4体の「Mist Walker」を出しておける。上限を超えて起こすと、最も近い一体が新しいものに置き換わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Shepherd of Souls#description4": {
+   "source_sha1": "e76fb2639360b9f45de19eb698fa5cfb8d7ff90c",
+   "plain_sha1": "4bfef331a3fe48ce4cb6a9bbb6970dfe2f821c96",
+   "ja": "「Mist Walker」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Last Rites#description": {
+   "source_sha1": "4e4ea5d5715110e269d9bbbc595ced509db615a0",
+   "plain_sha1": "c2f70f6cbca46c708f949b0ff74ba7d605740933",
+   "ja": "発動効果：ヨリックは5秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が50増加し、追加の物理ダメージを与えて、自身を回復する。チャンピオン以外に対しては回復量が50%減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Last Rites#description2": {
+   "source_sha1": "9dff587edeeb3aeae92431d049fca98f238502e0",
+   "plain_sha1": "ba25766b7ecbe60c0fc31d4b7f91099002970475",
+   "ja": "近くに墓が3つ以上あり、「葬送」が有効かクールダウン中の間、ヨリックは「Awakening」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Last Rites#description3": {
+   "source_sha1": "7ae3e68e814dc22b4ff2ffd445ed4ee96d708d35",
+   "plain_sha1": "32532786f257ea4ca6651560b1a762fe17e2cc64",
+   "ja": "「葬送」はヨリックの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Awakening#description": {
+   "source_sha1": "b79b54d290f857fc4a28b3a78f0a98debd51975b",
+   "plain_sha1": "c384297b842ec5bc8509ea02d3796c4d3bac30c6",
+   "ja": "発動効果：ヨリックは近くの各墓から、自身の命令に従う「Mist Walker」を掘り起こす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Dark Procession#description": {
+   "source_sha1": "78d1b7d3c108599f7c88d033aaeaad7b2015cb4a",
+   "plain_sha1": "4d3ac5282f9659fdd9459aa4011692aab68267cc",
+   "ja": "発動効果：ヨリックは指定地点の周囲に霊の輪を呼び出し、輪は0.75秒の遅れの後に現れて、壁に当たった敵を0.25秒かけて押しのける（地形は越えない）。210ユニット以内の敵は内側へ引き込まれ、それ以外は外へ押し出される。輪は4秒間、敵にとって通れない地形として残り、輪の内側の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Dark Procession#description2": {
+   "source_sha1": "b2d03a4e332ed53afed108e990c8b1d221f1367d",
+   "plain_sha1": "9341ef704b93fa65e128af55d91e0c47797a554b",
+   "ja": "「屍の列」を対象にできるのは、敵チャンピオンの通常攻撃とタワーだけ。壁はチャンピオンの攻撃1回につき1ダメージを受け、タワーの攻撃では即座に壊れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Mourning Mist#description": {
+   "source_sha1": "e3231110a0c198c5f4ddae5eb90a05d45d4ab3a4",
+   "plain_sha1": "c0070b3487f5c610bc92f975521554c10e0791c8",
+   "ja": "発動効果：ヨリックは黒い霧の塊を投げ、指定地点の範囲に飛び散らせて、命中した敵に魔法ダメージを与える。ミニオンに対しては最低値があり、モンスターに対しては上限がある。命中した敵チャンピオンとモンスターは、1.5秒間30%のスロウを受け、4秒間「Cursed」の印が付く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Mourning Mist#description2": {
+   "source_sha1": "5dd9169fa7f1f779970fc8335d662625a131f923",
+   "plain_sha1": "bd27fc5c0fbc8670a7831bd0978e1117f3cc0f9e",
+   "ja": "「Cursed」：対象は可視化されて物理防御低下を受け、近くの各墓から「Mist Walker」を最大4体まで起こし続ける。ヨリック・「Mist Walker」・「The Maiden」は、近くの「Cursed」の敵の方を向いている間、移動速度が増加する。「Mist Walker」は近くの「Cursed」の敵チャンピオンと大型モンスターに一度だけ飛びかかり、到着時に攻撃する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Eulogy of the Isles#description": {
+   "source_sha1": "7fa096d3ebc9982fe77746f949a590936da2fc51",
+   "plain_sha1": "aa485fbb1c9373040ed5da9bac998dd3290f94c9",
+   "ja": "発動効果：ヨリックは1.5秒かけて「Maiden of the Mist」と、その周囲の何体かの「Mist Walker」を指定地点に呼び出し、これらは「The Maiden」かヨリックが死ぬまで戦場に残る。「嘆きの墓標」は、発動から10秒後以降、「The Maiden」が生きている間に一度だけ再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Eulogy of the Isles#description2": {
+   "source_sha1": "06e1fd4b3d6de34ea7a07bb7be86ea46565bf38c",
+   "plain_sha1": "006f908125fe797e60fd73b11d98815bb00c5c2c",
+   "ja": "再発動：ヨリックは「The Maiden」を解き放ち、「The Maiden」は死ぬまで最も近いレーンを押す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yorick/Eulogy of the Isles#description3": {
+   "source_sha1": "b237cd96389d2fda11125d93ab3dcc281a1dcabd",
+   "plain_sha1": "fc7c2cda058c5e53ed8a4d5fa8bc63d119424fe5",
+   "ja": "「Maiden of the Mist」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Yorick/Shepherd of Souls#description": {
+   "source_sha1": "005a8000ee96f9000596ffdca24ecb6c97a2194d",
+   "reason": "residual_markup"
+  }
+ }
+}

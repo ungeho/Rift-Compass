@@ -1,0 +1,74 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Veigar/Phenomenal Evil Power#description": {
+   "source_sha1": "048d52ae122346185124980c76a51428f47e19e6",
+   "plain_sha1": "1693e9f48844f98f4f07a5f3e19cd56343a85a4d",
+   "ja": "固有：ベイガーは、スキルが命中した敵チャンピオン一体ごとに「Phenomenal Evil」のスタックを一つ、敵チャンピオンのキルに関与するたびに5スタックを得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Veigar/Phenomenal Evil Power#description2": {
+   "source_sha1": "1878ca4eb602b46fa0ab8cc45b835f1070760796",
+   "plain_sha1": "fee79326048b81577f827a922d6e382e8c9a193a",
+   "ja": "「Phenomenal Evil」：スタックごとに魔力が1増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Veigar/Baleful Strike#description": {
+   "source_sha1": "461c09654f8f066ad365f334979616c2065321fb",
+   "plain_sha1": "4dc8c4cc80fd7f6871e085ae4d3fbfa21ac0971b",
+   "ja": "発動効果：ベイガーは指定方向に闇の弾を放ち、最初に命中した二体の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Veigar/Baleful Strike#description2": {
+   "source_sha1": "79295a2386ec0ebbeb6cac5ad139d9ea14461962",
+   "plain_sha1": "b768e5d59ecba87facabc7de2b635a14fff346eb",
+   "ja": "これで敵を倒すと「Phenomenal Evil」のスタックを1得る。大型ミニオンとモンスターでは三倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Veigar/Dark Matter#description2": {
+   "source_sha1": "f322052d8eb14d7463548693c35c30c9fb0bb2cd",
+   "plain_sha1": "90a60c034f858e1d19dd9cf65b5beb6de2750af2",
+   "ja": "「ダークマター」のクールダウンは、「Phenomenal Evil」のスタックに応じて短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Veigar/Event Horizon#description": {
+   "source_sha1": "603ae7481d8b29d766cb7620f751496879eab572",
+   "plain_sha1": "d5b4c220b21f5b45b146b62f4217d52778abddf4",
+   "ja": "発動効果：ベイガーは指定地点に檻を作る。檻は0.5秒の遅れの後に立ち上がり、3秒間その場に残る。檻の縁にぶつかった敵は押し倒され、一定時間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Veigar/Event Horizon#description2": {
+   "source_sha1": "c036cae354ea3c5e49a5c08378f38419bbf5b90b",
+   "plain_sha1": "ff12433a5d718c0ee83d137060869ca7d8d2b077",
+   "ja": "「イベントホライズン」は、一回の発動につき各敵に一度だけ効く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Veigar/Dark Matter#description": {
+   "source_sha1": "2f048bc86bb8af875a22d4a2f37eb6aa07b1e31c",
+   "reason": "residual_markup"
+  },
+  "Template:Data Veigar/Primordial Burst#description": {
+   "source_sha1": "2c20217379781d67552a67e614848fc14ed6e784",
+   "reason": "residual_markup"
+  }
+ }
+}

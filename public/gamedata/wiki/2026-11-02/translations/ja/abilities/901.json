@@ -1,0 +1,88 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Smolder/Super Scorcher Breath#description2": {
+   "source_sha1": "4a11398d91b63318044c2390ae35c4bf88b4b872",
+   "plain_sha1": "28c2747e06677c84d18f4ea0b0481b0fd10aa4d6",
+   "ja": "「スーパーこげこげブレス」は「駆けだしドラゴン」のスタックの数に応じて、新しい効果で強化される：",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/Super Scorcher Breath#description3": {
+   "source_sha1": "9fd34da137817007530dbc71cee9f35cec5ca2f0",
+   "plain_sha1": "d6d03e0985d1ccf8d6537945765867455be6c8c5",
+   "ja": "段階1 - 25スタック：火の玉はぶつかると爆発し、周囲の敵に同じ物理ダメージを与える。爆発にはライフスティールが50%の効果で適用され、攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/Super Scorcher Breath#description4": {
+   "source_sha1": "b6adfca20fe1f018af747369a0c0d5eaf12d3c3f",
+   "plain_sha1": "d2f12540254e5fb98fa91858409f148a6c13c936",
+   "ja": "段階2 - 125スタック：火の玉はぶつかると弧状に2（+「駆けだしドラゴン」のスタック100ごとに0.8）発の炎の弾を放ち、弾は最大射程で爆発して、命中した敵に同じダメージの50%を与える。弾にはライフスティールが50%の効果で適用され、攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/Super Scorcher Breath#description5": {
+   "source_sha1": "fa06cd97d1b2c34d39d8716d66696163fcbd804c",
+   "plain_sha1": "c336549a2edb6cecd325415c65e51a408319193b",
+   "ja": "段階3 - 225スタック：命中した敵は3秒間燃え、効果時間の間に最大体力の、増加攻撃力100ごとに2.5%（+「駆けだしドラゴン」のスタック100ごとに0.5%）に等しい追加の確定ダメージを受ける。モンスターに対しては300が上限。燃焼は重ねて付与されると重なるが、前の燃焼の効果時間は更新されない。燃焼を受けている敵チャンピオンは、スモルダーのダメージで最大体力の6.5%未満になると処刑される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/Achooo!#description": {
+   "source_sha1": "1bcdda770f10f20dbd5fcf5dd5dffbdf83199abe",
+   "plain_sha1": "80d740091d292cfbb47a4b486651d3659ada893b",
+   "ja": "発動効果：スモルダーは指定方向に炎の塊をくしゃみで飛ばし、命中した敵に物理ダメージを与えて、1.5秒間35%のスロウを与える。塊は1200ユニット進むと弾速が落ちる。敵チャンピオンに当たると爆発を起こして周囲の敵に物理ダメージを与え、同じ対象への二回目以降の爆発は、前の爆発のダメージの75%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/Flap, Flap, Flap#description": {
+   "source_sha1": "c5cdc6f5b91379d8a08246be4bee92715d6a952c",
+   "plain_sha1": "d6ec3478869f3e02cbe9652ddffcf01d9dbf861b",
+   "ja": "発動効果：スモルダーは1.25秒間飛び立ち、ゴースト状態になって移動速度が75%増加し、遮られない視界と、地形の当たり判定を無視する能力を得る。飛んでいる間、最も近く最も傷ついた見えている敵（敵チャンピオンを優先）に最大5（+「駆けだしドラゴン」のスタック100ごとに1）発の弾を自動で撃ち、命中ごとに物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/Flap, Flap, Flap#description2": {
+   "source_sha1": "fa24feb6497b4ac0d12060aeeb45ffac5ab01aff",
+   "plain_sha1": "4a72f30798f4e4cc39737bfce1a7e08a990b7ea2",
+   "ja": "スモルダーがほかのスキルを使うか移動不能を受けると、「パタパタパタ」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/MMOOOMMMM!#description": {
+   "source_sha1": "5a12d2ec9166c1f3bd17d048757ecb247d1512ea",
+   "plain_sha1": "f98bf133b7c19f0a12434a653aff021712a29533",
+   "ja": "発動効果：スモルダーは母親に上空から攻撃するよう叫び、母親は自身の後ろから指定方向に向かって炎の波を吐き、波は進みながら周囲の視界を与える。波はスモルダーを回復し、命中した敵に物理ダメージを与え、中心にいる敵は50%増加したダメージを受けて、2秒間40%のスロウを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Smolder/MMOOOMMMM!#description2": {
+   "source_sha1": "10c4f30c59816fc063ebc6764d121eec8f76878a",
+   "plain_sha1": "e9fa4a0e4d1f67c497445bf2332c646ffa30df1d",
+   "ja": "「ママーッ！！」はミニオンとモンスターに50%のダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Smolder/Dragon Practice#description": {
+   "source_sha1": "4bf6c9338b1e82a068b31eb8837d87e755f8cec3",
+   "reason": "residual_markup"
+  },
+  "Template:Data Smolder/Super Scorcher Breath#description": {
+   "source_sha1": "addefd77fade5bfc7e379cd1dfc85c16e0046a9e",
+   "reason": "residual_markup"
+  }
+ }
+}

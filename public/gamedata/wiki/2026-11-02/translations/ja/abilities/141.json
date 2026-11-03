@@ -1,0 +1,149 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Kayn/The Darkin Scythe#description": {
+   "source_sha1": "0854a88e9878cbd5cce6b703e010af550832f468",
+   "plain_sha1": "e378147a6b94305266f96f20edd489af7714d49c",
+   "ja": "固有：ケインには、「Darkin Slayer」と「Shadow Assassin」の形態への進み具合を示す二つ目の経験値のバーがある。チャンピオンのキルへの関与と、チャンピオンに与えたダメージ（継続ダメージを除く）のたびに玉を集める。十分に集めると、近接と遠隔のどちらのチャンピオンから多く集めたかに応じて（それぞれ「Darkin Slayer」と「Shadow Assassin」）形態が解放され、もう一方の形態は後で解放される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/The Darkin Scythe#description2": {
+   "source_sha1": "de5e85ef0e1afb2544c82c8f3764233b470bdb2e",
+   "plain_sha1": "b14db24c3f92e94bbe3dfb421ed3898ba8131427",
+   "ja": "自チームの出撃地点の近くにいる間、ケインは形態を選んで6秒かけて変身でき、その間無敵・対象指定不可で行動できない。変身の終わりに体力とマナが全回復する。変身は選んだ形態に応じた自動効果のボーナスを与え、いくつかのスキルを永続的に強化する。変身を終えると一度だけ「Homeguard」を得る。ケインは、スキルの使用を妨げる行動妨害や、スキルを封じる行動不能を受けている間は変身を始められない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/The Darkin Scythe#description3": {
+   "source_sha1": "59556f485e48cfeabf31b6f5629b65867fe86894",
+   "plain_sha1": "60fe5164c07fbe04bd5d36f9b86d329d1d8cd593",
+   "ja": "「Shadow Assassin」のボーナス：敵チャンピオンとの戦闘に入ると、ケインは3秒間強化され、敵チャンピオンに与えた軽減後の物理ダメージと魔法ダメージの20%～40%（レベルに応じて）を追加の魔法ダメージとして与える。この効果は、チャンピオンとの戦闘から8秒より長く離れるまで再び発動せず、「真影侵壊」を再発動するとその時間がリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/The Darkin Scythe#description4": {
+   "source_sha1": "3621dcd30d70a60f3bbb510876b80144da536bf9",
+   "plain_sha1": "3fe4da9565a2e6629c9b0c3684546a621b2e88df",
+   "ja": "「Darkin Slayer」のボーナス：ラーストは、スキルで敵チャンピオンに与えた軽減後の物理ダメージの25%（+ 増加体力100ごとに0.5%）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Reaping Slash#description": {
+   "source_sha1": "ec051280c694c16b51e88d5d7d8b66466bfb4193",
+   "plain_sha1": "2209cd08e028fb4e1f0d4ccfcc92191c09f79049",
+   "ja": "発動効果：ケインは指定方向にダッシュし、通過した敵に物理ダメージを与える。その後大鎌を振り回し、周囲の敵に同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Reaping Slash#description2": {
+   "source_sha1": "347f7e335874ee79ea931d7bbc95e8031e6ba961",
+   "plain_sha1": "c52df54be61444f5b05e51748fdcace8be2b3b8f",
+   "ja": "「飛影斬」の二つのダメージは、どちらもミニオンとモンスターに40の追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Reaping Slash#description3": {
+   "source_sha1": "924d5afdb054b51764d8ea14b29ff8dd6f6dbfdc",
+   "plain_sha1": "67b7f373bb6cd7ea3cd8d9a60494c165ae88f143",
+   "ja": "「Darkin Slayer」のボーナス：「飛影斬」のダメージは修正され、一回の命中ごとに攻撃力の65%（+ 対象の最大体力の6%〔+ 増加攻撃力100ごとに3.5%〕）の物理ダメージ、合計で攻撃力の130%（+ 対象の最大体力の12%〔+ 増加攻撃力100ごとに7%〕）を与える。このダメージにはモンスターに対する上限があり、その上限に追加のダメージは含まれない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Blade's Reach#description": {
+   "source_sha1": "6e3159effe80e95dcaa42f508c99c4f86ed66ad9",
+   "plain_sha1": "4378955713aa5805bdb24dd97ea6bf8c65b91aa1",
+   "ja": "発動効果：ケインは指定方向に大鎌を振り、命中した敵に物理ダメージを与えて、1.5秒かけて減衰する90%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Blade's Reach#description2": {
+   "source_sha1": "0133efbae0bb25c7c88b9d4746634301e6e6ae84",
+   "plain_sha1": "cd14365276eb74aefe5fd3a9bec4a0270308a5ff",
+   "ja": "「Shadow Assassin」のボーナス：「刃影襲」の範囲が200ユニット伸びる。ケインは発動位置に対象指定不可の影を呼び出し、影がケインの代わりに0.55秒かけて「刃影襲」の振りを行い、スキルの詠唱時間がなくなる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Blade's Reach#description3": {
+   "source_sha1": "fd702146d53ec029dd21e0ae4467a9c1a52757e4",
+   "plain_sha1": "0cce102722e5c6b6e4e8fa40447318487689af79",
+   "ja": "「Darkin Slayer」のボーナス：「刃影襲」は命中した敵を1秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Shadow Step#description": {
+   "source_sha1": "f5b447ebafd1e1957051fc4926514873834ae990",
+   "plain_sha1": "32ac256ab6bb15448e14e7a15cb549c74c19b6c8",
+   "ja": "発動効果：ケインは一定時間、合計の移動速度が40%増加し、ゴースト状態になって、地形の当たり判定を無視できるようになる。直近3秒以内に敵チャンピオンと戦闘していた場合は、「影抜き」は代わりに1.5秒続く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Shadow Step#description2": {
+   "source_sha1": "dcf09ede84bfeac61b3d52b5c0bff3ebf32d99c1",
+   "plain_sha1": "73542300747513ba70a2c60622e99a00c776fc0d",
+   "ja": "「影抜き」を使ってから初めて地形に入ったときに、ケインは自身を回復し、地形の中にいる間は地形を越える視界を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Shadow Step#description3": {
+   "source_sha1": "c8f34dc23a014567f7571f49dbaaca82183cad01",
+   "plain_sha1": "f0cd80f41efe973bf1022c500cd86b310e49ed46",
+   "ja": "「影抜き」の効果中に敵チャンピオンからダメージを受けるか与えると、残りの効果時間が1.5秒になる。この効果は地形の外では1.5秒より長く続かず、ケインが通常攻撃をするか、移動不能かポリモーフを受けると即座にキャンセルされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Shadow Step#description4": {
+   "source_sha1": "c869bb317a4eddf150003ac41ecfb5a140e66bda",
+   "plain_sha1": "18135ea61bfd183ee8255a649c1df4d9cf2be11f",
+   "ja": "「Shadow Assassin」のボーナス：「影抜き」のクールダウンがすべてのランクで10秒になる。効果中はスロウ耐性が100%になり、地形に入ると残りの効果時間の間、合計の移動速度の増加が70%になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Umbral Trespass#description": {
+   "source_sha1": "3ffc0dc5a45237f86adf37f794a9c41fce24e32a",
+   "plain_sha1": "26dd51b12373eda30c37fb2f00e42125eeddef1c",
+   "ja": "自動効果：ケインは、直近3.15秒以内にダメージを与えた敵チャンピオンに印を付ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Umbral Trespass#description2": {
+   "source_sha1": "54d0524ac016e4ac4abf3ffaaca98fa49ca5e6f9",
+   "plain_sha1": "58d1335f5a46719953321d3c21d240963962ea6a",
+   "ja": "発動効果：ケインは姿を消し（vanish）、0.25秒かけて印の付いた敵チャンピオンへダッシュして、ダッシュの終わりにその体に入り込む。到着から0.5秒後、最大2秒間詠唱し、その間対象は可視化される。「真影侵壊」は詠唱中、0.1秒が経過した後に再発動でき、効果時間が終わるか中断されると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Umbral Trespass#description3": {
+   "source_sha1": "18d55642e3f8204fed39ea4e40c83837fa6ed0e3",
+   "plain_sha1": "c8fc806c368ef665fb0ab56ba2d34f1ea63261fe",
+   "ja": "再発動：0.5～0.75秒の遅れの後、ケインは対象に物理ダメージを与えて、指定方向に対象の体から飛び出し、ダッシュの終わりに対象から離れて再び対象指定可能になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Umbral Trespass#description4": {
+   "source_sha1": "0a5750291701e4fe5c6639cb160e3dace3a4e4c7",
+   "plain_sha1": "f3791000cb6a736643591e8f437dcc00e577f7d0",
+   "ja": "「Shadow Assassin」のボーナス：「真影侵壊」の発動の射程と飛び出す距離が200増加する。さらに、飛び出すと「緋眼の大鎌」のクールダウンがリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Kayn/Umbral Trespass#description5": {
+   "source_sha1": "a82d839caf0bf048ae013bff9766e9937b36de7a",
+   "plain_sha1": "dad10d955c5cf5c7134bd74f831e6cd0a9a715fb",
+   "ja": "「Darkin Slayer」のボーナス：「真影侵壊」は修正され、対象の最大体力の15%（+ 増加攻撃力100ごとに10%）に等しい物理ダメージを与え、再発動の遅れの後、ラーストは対象の最大体力の11.25%（+ 増加攻撃力100ごとに7.5%）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

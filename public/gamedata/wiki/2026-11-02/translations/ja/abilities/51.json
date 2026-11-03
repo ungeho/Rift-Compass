@@ -1,0 +1,102 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Caitlyn/Headshot#description": {
+   "source_sha1": "f6f7edba518ccdc3721552fc078c629d2f5a237c",
+   "plain_sha1": "787046010acce3b8fdff1b23fa18a6a8194d1b6d",
+   "ja": "固有：ケイトリンの通常攻撃（攻撃開始時）のたびに「Count」のスタックを得る。ブッシュの中にいる場合は二倍になる。5スタック（ブッシュの中では4スタック）で、次の通常攻撃（攻撃開始時）がすべてのスタックを消費して「ヘッドショット」になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Headshot#description3": {
+   "source_sha1": "2d3d6dfaafd5a9b5a03758c6323f66beb5100d3b",
+   "plain_sha1": "7b7ee014e855e936339085fa2d3b56f04a8f80d4",
+   "ja": "「ヨードルトラップ」を踏んだ敵か「L-90 カリバーネット」が命中した敵に対しては、1.8秒以内に1300の射程で、スタックを消費せずに追加の「ヘッドショット」を撃てる。それぞれの手段で与えられる「ヘッドショット」は一度に一つだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Piltover Peacemaker#description": {
+   "source_sha1": "5b8c7db5384ab2dd34661990c7338e679a086e30",
+   "plain_sha1": "412f5df15244fdefd888675faa358344459b4e3e",
+   "ja": "発動効果：ケイトリンは指定方向に貫通する弾を撃ち、最初に通過した敵に物理ダメージを与える。その後、弾の幅が広がり、それ以降に当たった敵には60%のダメージだけを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Piltover Peacemaker#description2": {
+   "source_sha1": "3a61781fdd2572024e0587d5943676dccd7230ce",
+   "plain_sha1": "559276e8bee9081519fc545e0aab2f55928a3cc3",
+   "ja": "「ヨードルトラップ」で可視化された敵は、「ピースメーカー」から常に全額のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Yordle Snap Trap#description": {
+   "source_sha1": "83f542a8935c8dcdf4cb907270564c17ad65c135",
+   "plain_sha1": "6bdf82f246382de85a24d612bef0432cc2b95cd6",
+   "ja": "発動効果：ケイトリンは指定地点に見える罠を置く。罠は対象指定不可で、1秒後に作動可能になり、一定時間残る。罠は置いてから1秒間、その範囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Yordle Snap Trap#description2": {
+   "source_sha1": "982dbe292bf031afd1903d87e9adfdecc9ed3d70",
+   "plain_sha1": "82c175abde8de256268e0d4ea244c971cdc1678b",
+   "ja": "ケイトリンは一定時間ごとに「ヨードルトラップ」のチャージを得て、上限まで蓄える。上限を超えて置くと、最も古い罠が壊れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Yordle Snap Trap#description3": {
+   "source_sha1": "f1a30d24e0d5c536a7e62cc3737efa6fdc038255",
+   "plain_sha1": "bfc550546e8f269ede715c4d3cf8ec52e336d38e",
+   "ja": "次に罠を踏んだ敵チャンピオンが罠を作動させ、1.5秒間スネアを受けて3秒間可視化され、このスキルで与えられる「ヘッドショット」から追加のダメージを受ける。罠にかかった対象は3秒間ほかの「ヨードルトラップ」を受けず、その間ほかの罠を作動させない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/90 Caliber Net#description": {
+   "source_sha1": "107fb84d18dcaf59aa4d075397a1659d1cbb1c01",
+   "plain_sha1": "f9c505a36156fa5076cdb58460fc769becf4d664",
+   "ja": "発動効果：ケイトリンは指定方向に網を撃ち、反対方向へ390ユニット跳び退く。網は最初に命中した敵に魔法ダメージを与え、1秒間50%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/90 Caliber Net#description2": {
+   "source_sha1": "d2c2ea7d0d8f2b03065644b2a4d230ee392506b9",
+   "plain_sha1": "2d88ea7c8c3ee593c1a17b05233677c237fd5e0b",
+   "ja": "詠唱時間の間に移動不能かグラウンドを受けた場合、ケイトリンは詠唱時間の後に跳び退かない。跳び退くダッシュの間に、どのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Ace in the Hole#description": {
+   "source_sha1": "d81301057b71038e59bd87043bbb706425c4769e",
+   "plain_sha1": "1812c13e823f35341c4f45837b875af505f92b3e",
+   "ja": "発動効果：ケイトリンは対象の敵チャンピオンに狙いを定めて1秒間詠唱し、その敵を可視化するとともに、自身も可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Caitlyn/Ace in the Hole#description2": {
+   "source_sha1": "a0dae4ab4df5e2c59d6331dfc58051a40a5ba0c5",
+   "plain_sha1": "50a87274ef434ac8cffdf2e223f44c38ea199219",
+   "ja": "「ブルズアイ」をキャンセルすると、5秒のクールダウンになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Caitlyn/Headshot#description2": {
+   "source_sha1": "8119a7841f92c84c99572594b24f884222dad643",
+   "reason": "residual_markup"
+  },
+  "Template:Data Caitlyn/Ace in the Hole#description3": {
+   "source_sha1": "633f7a45bc6f0a39c436a0d159169713179dde4d",
+   "reason": "residual_markup"
+  }
+ }
+}

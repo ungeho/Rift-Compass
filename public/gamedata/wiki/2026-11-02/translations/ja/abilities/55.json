@@ -1,0 +1,91 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Katarina/Voracity#description": {
+   "source_sha1": "ef04c015bc99d64579b3e27127e43c7ac590848f",
+   "plain_sha1": "819c03b67499f8fc6e727d5909567c8107bbf5e5",
+   "ja": "固有：ダメージを与えてから3秒以内にチャンピオンのキルに関与すると、カタリナのスキルの残りクールダウンが15秒短縮される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Voracity#description2": {
+   "source_sha1": "467d21fc2d1a6949956962ceff61db3eb232277d",
+   "plain_sha1": "847528ab49f993fde08fdb760be29f9ec16a6746",
+   "ja": "固有 -「Sinister Steel」：カタリナが短剣を拾うたびに周囲を切り裂き、周囲の敵に68～275（レベルに応じて）（+ 増加攻撃力の60%）（+ APの70%～100%〔レベルに応じて〕）の魔法ダメージを与え、命中した敵チャンピオンに攻撃時効果を与え、「瞬歩」の残りクールダウンを合計クールダウンの78%～96%（レベルに応じて）短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Voracity#description4": {
+   "source_sha1": "8c3104dcf74aaea904c80ee8df372e2203eb9da5",
+   "plain_sha1": "0f6f0fac5e109b38837265607207a831ce1701e8",
+   "ja": "短剣はその範囲の視界を与え、地面に落ちてから4秒で消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Bouncing Blade#description": {
+   "source_sha1": "a8b642e7421493950307c54e175305f6f2788be0",
+   "plain_sha1": "d485c369dd2b389ad00337a12b2353e45127908a",
+   "ja": "発動効果：カタリナは対象の敵に短剣を投げ、魔法ダメージを与える。到着すると、短剣はさらに近くの見えている敵へ最大二回跳ね、同じダメージを与える。跳ねるたびに0.15秒かけて次の対象へ移る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Preparation#description": {
+   "source_sha1": "4406010af2254fd628e0440c2cc184707bd291ac",
+   "plain_sha1": "d181b8075fbd3440118f1b0ba41f4490c4d9a342",
+   "ja": "発動効果：カタリナは現在の位置の真上に短剣を投げ上げ、短剣が1.25秒後に落ちるまで減衰する移動速度の増加を得て、同じ時間ゴースト状態になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Shunpo#description": {
+   "source_sha1": "ca2253dc243da9205a74ca7438b9c3a8e63975ce",
+   "plain_sha1": "12dae6923b110711604fedfe179d7d54bb78e299",
+   "ja": "発動効果：カタリナはカーソルに最も近いユニットか短剣の近くの地点へブリンクし、範囲内で最も近い敵に魔法ダメージを与えて、攻撃時効果を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Shunpo#description2": {
+   "source_sha1": "7b973d5e2c8dfe86d5d90a57220eb319336b72d5",
+   "plain_sha1": "6b9dfdbed59b2240cb806b0faa4b0ade73a78136",
+   "ja": "カタリナは、短剣の近く、敵チャンピオン、チャンピオン以外の敵、その他のユニットの順に、近くの地点へのブリンクを優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Shunpo#description3": {
+   "source_sha1": "7097cbc640ea6c605fb6166b6236997794d5e039",
+   "plain_sha1": "85f39033bea289e2a05aad2bfbfac3e8e0ba9233",
+   "ja": "「瞬歩」はカタリナの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Death Lotus#description": {
+   "source_sha1": "ccbe0bc7e3e852f52a438f6eceb62cf2d958a046",
+   "plain_sha1": "e4feea34a642b98962a4ff580a839bbfee2ceff8",
+   "ja": "発動効果：カタリナは最大2.5秒間詠唱し、0.166秒ごとに近くの最も近い敵チャンピオン最大3体に短剣を素早く投げ、その間自身は可視化される。短剣はそれぞれ物理ダメージと魔法ダメージを与え、攻撃時効果と攻撃開始時の効果を与えて（そのダメージの効果は減る）、対象に3秒間「重傷」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Katarina/Death Lotus#description2": {
+   "source_sha1": "cc8acc7f2326820e8ed84c52e2684c6ad39d5cea",
+   "plain_sha1": "24d4d441e93f6cc985c4155c595a0439d00a455d",
+   "ja": "このスキルを使用するには、500ユニット以内に敵チャンピオンが必要。このスキルが命中する対象は見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Katarina/Bouncing Blade#description2": {
+   "source_sha1": "c33ca239a2291ca9aeb7d3e62be34371239d03ad",
+   "reason": "residual_markup"
+  }
+ }
+}

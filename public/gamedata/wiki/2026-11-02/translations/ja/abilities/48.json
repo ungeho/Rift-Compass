@@ -1,0 +1,77 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Trundle/Chomp#description": {
+   "source_sha1": "4b856e42e6b2299b218d72f62df479dc0c14c01d",
+   "plain_sha1": "1244a210504f66e1f97b6ff61d9717c20e47a460",
+   "ja": "発動効果：トランドルは7秒以内の次の通常攻撃を強化し、攻撃モーションが中断されなくなり、射程が25増加し、追加の物理ダメージを与えて、対象に0.1秒間75%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Chomp#description2": {
+   "source_sha1": "fca55ceb9a0d3485d1a9221a7417977f7e50de15",
+   "plain_sha1": "48011aeadbc59a0afb42ea0e22d28c70634c1d71",
+   "ja": "強化された攻撃の後、トランドルは5秒間増加攻撃力を得て、同じ時間、対象の増加攻撃力をその量の半分だけ減らす。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Chomp#description3": {
+   "source_sha1": "c356758351c2eb5ec74ea470aa12f7f5b0ff0666",
+   "plain_sha1": "d3c54d576fd73fd3be61c7aeec51e89ad1b65632",
+   "ja": "「咬み付き」はトランドルの通常攻撃タイマーをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Frozen Domain#description": {
+   "source_sha1": "c12fd3afdddda44ce3bc36b30a300ab7858a7ea4",
+   "plain_sha1": "5396b06dd7be76ab7382be6de1596f5a794e7e79",
+   "ja": "発動効果：トランドルは指定地点を8秒間氷で覆う。範囲内にいる間、攻撃速度と移動速度が増加し、すべての回復の効果が25%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Pillar of Ice#description": {
+   "source_sha1": "d73f3ac47b7b25a06551af08c630116b7f2952e8",
+   "plain_sha1": "8bc692681dcb62b5785b8da9dfddca05506bb0ab",
+   "ja": "発動効果：トランドルは指定地点に6秒間氷の柱を立て、命中したユニットを中心から最大225ユニットノックバックさせる。柱は地形として扱われ、周囲の敵にスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Subjugate#description": {
+   "source_sha1": "94e9a1819247596f695534f8fe8f28449779944a",
+   "plain_sha1": "2d34a6f419d63dd0467f8ee1cc42ea3a826cf8ef",
+   "ja": "発動効果：トランドルは対象の敵チャンピオンから生命力を吸い取り、魔法ダメージを与えて同じ量を回復する。さらに、対象の現在の物理防御と魔法防御を40%減らし、減らした量をそれぞれ自身の物理防御と魔法防御の増加として得る。加えて、自身のサイズを18%大きくし、対象のサイズを9.9%小さくする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Subjugate#description2": {
+   "source_sha1": "e6e4dfdd63bd86139016a26963895fad21b42dd8",
+   "plain_sha1": "387e3fc246dd8e2ab861c1398f74391f9e9ce01a",
+   "ja": "吸収の合計のダメージ・回復・防御の低下のうち半分は発動時に、残りの半分はその後4秒間毎秒与えられる。サイズの変化は8秒間続き、効果時間の最初の2.25秒の間に、0.25秒ごとにトランドルのサイズを2%大きく、対象のサイズを1.1%小さくする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Trundle/Subjugate#description3": {
+   "source_sha1": "060097a19842e9bad62e1b8402dfca2854bec6cf",
+   "plain_sha1": "060097a19842e9bad62e1b8402dfca2854bec6cf",
+   "ja": "対象の防御の低下は、吸収が終わった後も4秒間残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Trundle/King's Tribute#description": {
+   "source_sha1": "f17e27f5bd60f70f0a8ac79158aa99ce8a3e7e09",
+   "reason": "residual_markup"
+  }
+ }
+}

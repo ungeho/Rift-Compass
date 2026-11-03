@@ -1,0 +1,144 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Yasuo/Way of the Wanderer#description": {
+   "source_sha1": "42059c62acda5cebf8a0fa3b491330456a8c93c8",
+   "plain_sha1": "d08071047871f661a984c2ce1efaed53555192da",
+   "ja": "固有 -「Intent」：ヤスオのほかのすべての発生源からの合計のクリティカル率は二倍になる。さらに、100%を超えるクリティカル率1%ごとに、増加攻撃力0.5に変換される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Steel Tempest#description": {
+   "source_sha1": "33b997eb722b3a8dd16cc1cc834380ab8add8559",
+   "plain_sha1": "4f0f4766f0de83b0cdf3a76e9f73ff55d969e0bf",
+   "ja": "発動効果：ヤスオは指定方向の直線上に剣を突き出し、命中した敵に物理ダメージを与えて、最初に命中した敵に攻撃時効果と攻撃開始時の効果を与える。「抜刀」の攻撃力の係数に応じたダメージはクリティカルになりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Steel Tempest#description2": {
+   "source_sha1": "c5b23ad555d64543783f00ebf987de254fe59714",
+   "plain_sha1": "dfb4556894d316116faf198df962b0056138bde9",
+   "ja": "「Steel Wind Rising」：これが少なくとも一体の敵に命中すると、ヤスオは6秒間「Gathering Storm」のスタックを得て、最大2回まで重なり、命中のたびに更新される。2スタックで、次の「抜刀」はすべてを消費して新しい効果で強化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Steel Tempest#description3": {
+   "source_sha1": "1a29af4caf8fd30fba2333e3223330dfbf775e18",
+   "plain_sha1": "8b5fdb9406db1ba65d9976fc5ba05c6a9a59fd66",
+   "ja": "「Gathering Storm」のボーナス：ヤスオは指定方向に竜巻を放ち、同じ効果を与えて発動させ、さらに命中した敵を0.9秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Steel Tempest#description4": {
+   "source_sha1": "6fe0f908b0e616388449d341e92e0b367e38bb50",
+   "plain_sha1": "4655df3fb25b275a5255193477e2a4332a46b2fe",
+   "ja": "詠唱時間の間に通常攻撃を封じる行動妨害を受けた場合、詠唱時間の後の「抜刀」の突きは対象に当たらないが、スキルのクールダウンは0.1秒にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Steel Tempest#description5": {
+   "source_sha1": "be7e5dbe789fa6beeb1d3aab3aaca74afec32c84",
+   "plain_sha1": "e7c2a9a6d33886d8dc6808f0c27deeb36469ed1a",
+   "ja": "「風薙ぎ」中に「抜刀」を使うと、発動は修正され、ヤスオはダッシュの終わりに自身の周囲を切り払い、周囲の敵に同じ効果を与えて発動させる。この切り払いは「Gathering Storm」のボーナスで強化でき、その場合は命中した敵にノックアップも与える。この形で使うと「抜刀」の詠唱時間はかからないが、ダッシュが終わった後0.5秒間、ヤスオは通常攻撃の指示ができない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Wind Wall#description": {
+   "source_sha1": "a2e5ec50f47127793b04e4b3ceeb5c223e4ee5b6",
+   "plain_sha1": "f073ad5408e2f2eb4d2df532b63a9d4b16ec47ca",
+   "ja": "発動効果：ヤスオは指定方向に4秒間風の壁を立て、壁にぶつかったタワー以外の敵の飛翔物をすべて破壊し、周囲の視界を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Wind Wall#description2": {
+   "source_sha1": "68f665c96fe728032c10963b6284e131dfa63450",
+   "plain_sha1": "ef9a0bb88b56bea8ff02a8352acea3bf66be15c5",
+   "ja": "壁は最初の0.6秒で指定方向へ進み、残りの時間でさらに50ユニット前へ流れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Sweeping Blade#description": {
+   "source_sha1": "bff6eed64b227032574e17a90a93baef2e3cb70e",
+   "plain_sha1": "b511313257f022e15d9d9d5889d03bf11de311b7",
+   "ja": "発動効果：ヤスオは対象の敵の方向に決まった距離ダッシュし、2秒間ゴースト状態になる（使用のたびに更新）。当たったとき対象に魔法ダメージを与え、5秒間「Ride the Wind」のスタックを得る。命中のたびに更新され、最大4回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Sweeping Blade#description2": {
+   "source_sha1": "c2e7c22cb2032bba1ad8159ad438afae4c407be0",
+   "plain_sha1": "956b129f7cc603f564f2f08bd0253496665af4eb",
+   "ja": "「Ride the Wind」：スタックごとに「風薙ぎ」のダメージが25%増え、最大スタックで100%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Sweeping Blade#description3": {
+   "source_sha1": "85082f380ba5ef1c1849639c4e2069f139cbcdef",
+   "plain_sha1": "babe673774a071cb4dc45e5046e79e4d9e29fdbd",
+   "ja": "「風薙ぎ」は、同じ対象には数秒に一度しか使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Sweeping Blade#description4": {
+   "source_sha1": "118b83ab09216cc2c899667288b4d999d18298d2",
+   "plain_sha1": "7c68f550b0ea792e49665a41539807fadb3251ac",
+   "ja": "ダッシュ中に移動不能かポリモーフの行動妨害を受けると、ヤスオは叩き落とされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Sweeping Blade#description5": {
+   "source_sha1": "c1e0510924d5e8845433f6dc1d2d6dbc0aa314e1",
+   "plain_sha1": "54c53cf07933d02f26548c1171d66517cd629502",
+   "ja": "ダッシュ中に「鬼哭啾々」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Last Breath#description": {
+   "source_sha1": "e865137201b18332711ccf418043edc484907e30",
+   "plain_sha1": "0f51a137763301ae90df488968dfae81c236676b",
+   "ja": "発動効果：ヤスオはカーソルに最も近い、ノックアップ状態の見えている敵チャンピオンの反対側へブリンクし、即座に「Flow」を最大にして、「Gathering Storm」のスタックをリセットする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Last Breath#description2": {
+   "source_sha1": "7329769471c3a8803ff7aef8dc627fd9f5a92729",
+   "plain_sha1": "e387b29a1b22fb2b1898db10efe92bc8ea7b3490",
+   "ja": "到着すると、周囲のノックアップ状態の敵チャンピオンすべてを1秒間ノックアップさせて可視化し、自身は行動できなくなって、効果時間の間に剣で切りつけ、その後物理ダメージを与える。この間にノックアップ状態になった周囲の敵チャンピオンも、残りの時間「鬼哭啾々」の効果を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Last Breath#description3": {
+   "source_sha1": "605269873e159a33ada44d28683b03b0c2e053e5",
+   "plain_sha1": "10a666c860d84c4ca087003c15ae9ecb7cc9cc6d",
+   "ja": "次の15秒間、ヤスオのクリティカルのダメージは対象の増加物理防御の60%を無視する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Yasuo/Last Breath#description4": {
+   "source_sha1": "48e8768c0296c04910498f4e3bf9483c11aef4d8",
+   "plain_sha1": "d743527782a15deb78a201015864652ea075b2ed",
+   "ja": "このスキルを使用するには、近くにノックアップ状態の敵チャンピオンが必要。ブリンク先が敵のタワー（ネクサスオベリスクを含む）の攻撃範囲内になる場合、「鬼哭啾々」は代わりにその外側に位置させようとする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Yasuo/Way of the Wanderer#description2": {
+   "source_sha1": "98409262d8eaf83f0d22f2460825a4c2013b22b2",
+   "reason": "residual_markup"
+  },
+  "Template:Data Yasuo/Way of the Wanderer#description3": {
+   "source_sha1": "2128532b58d2010ab1191bfdd4ebbc82b932e11e",
+   "reason": "residual_markup"
+  }
+ }
+}

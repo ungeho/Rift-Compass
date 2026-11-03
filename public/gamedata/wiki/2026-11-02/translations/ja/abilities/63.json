@@ -1,0 +1,116 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Brand/Blaze#description2": {
+   "source_sha1": "258207ee3e21f564cf44235d4464943d564afcef",
+   "plain_sha1": "7f81960cf6b5cc89e72e4885caea8c0b7843db46",
+   "ja": "「Ablaze」：「Ablaze」を受けている間、対象は4秒かけて最大体力の2%に等しい魔法ダメージを受ける。「Ablaze」のスタックはそれぞれ個別に対象にダメージを与え、すべてのスタックの効果時間が更新されても、各スタックが付いた時点に応じてダメージを与える。「Ablaze」はモンスターに一回ごとに270%のダメージを与え、このダメージはエピックではないモンスターには一回12.5～37.5（「Ablaze」のスタックに応じて）、エピックモンスターには一回20～60（「Ablaze」のスタックに応じて）が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Blaze#description3": {
+   "source_sha1": "eabfe451f2910ad1ef7f32e447c91a7942540cbb",
+   "plain_sha1": "f6b066c174cffd5c7fa1cacc901ec518ff47af4e",
+   "ja": "大型モンスターか敵チャンピオンに「Ablaze」を3スタック付けると、炎が不安定になって対象の周囲に炎の輪ができ、輪はその範囲の視界を与え、2秒後にスタックを消費して爆発する。爆発の範囲内のすべての敵は「Ablaze」のスタックを一つ受け、最大体力の6%～12%（レベルに応じて）（+ AP 100ごとに2%）に等しい魔法ダメージを受ける（モンスターには270～525〔レベルに応じて〕が上限）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Blaze#description4": {
+   "source_sha1": "bec906bc26f5bbf3526e3a7fefce7d08cddbf38b",
+   "plain_sha1": "ae44cb80519bb7ef35e46dadb0452a2064c49ee8",
+   "ja": "直近4秒以内に輪が爆発した敵には、ブランドは「Ablaze」を二つ以上重ねられない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Blaze#description5": {
+   "source_sha1": "597c8cd58cb6f7e202ba503139304b6e09b07d63",
+   "plain_sha1": "dc710656ad932703b1ccd53a24a2f3726213a6f0",
+   "ja": "三つ目のスタックを付けたスキルで対象が死んでも輪はでき、輪の爆発の前に対象が死んでも爆発は起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Sear#description": {
+   "source_sha1": "81d61317c15d1cccb509b980ac9281595ef18ca6",
+   "plain_sha1": "33011615369d5b5fa505f6bd5c90fc30ea1d5459",
+   "ja": "発動効果：ブランドは指定方向に火の玉を放ち、最初に命中した敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Sear#description2": {
+   "source_sha1": "af21fcde4396ae0953ee1cdab1ff26b29384df52",
+   "plain_sha1": "447dda07c4b6f3fc19475890b7de6a20a13afe98",
+   "ja": "「Ablaze」のボーナス：対象は1.75秒間スタンする。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Pillar of Flame#description2": {
+   "source_sha1": "1eb4ef9ff4a29008d76cbb9dfae11e08e7fbc797",
+   "plain_sha1": "fa4e3b8c0f0a56c2d7de463cf2e70e070961546a",
+   "ja": "「Ablaze」のボーナス：対象が受けるダメージが25%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Conflagration#description": {
+   "source_sha1": "808c861dffd86cc1895d7a363f2c4cbce1e4d24e",
+   "plain_sha1": "f773436e02004e30e10e1b63b87961cae48b7ae9",
+   "ja": "発動効果：ブランドは対象の敵に火をつけ、爆発で魔法ダメージを与えて、炎を対象から周囲の敵に広げ、同じダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Conflagration#description2": {
+   "source_sha1": "c60c6bbae92a52ec75f9f4995945b991356cd566",
+   "plain_sha1": "14b171fbdd0cc2f2de9a43fc1dba640a4bd61311",
+   "ja": "「Ablaze」のボーナス：「焼灼」の広がる範囲が二倍になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Pyroclasm#description": {
+   "source_sha1": "f4a1e96b9b74453c68cca47ff27fbefe1b387006",
+   "plain_sha1": "826dd24ababab560ec9dededc766166755097ef1",
+   "ja": "発動効果：ブランドは対象の敵に火の玉を放ち、火の玉は周囲の敵とブランドの間を最大四回跳ね、そのたびに敵に魔法ダメージを与える。跳ねる間には0.15秒の遅れがある。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Pyroclasm#description2": {
+   "source_sha1": "779709a1ad017bbd9b1e5e98254b612c36e0deaf",
+   "plain_sha1": "1c3eecd0af7ecbe1e7c374f1702935d9ececa842",
+   "ja": "「業火」は「Ablaze」を受けている敵チャンピオン、ほかの敵チャンピオン、そのほかの有効な跳ね先、ブランドの順に優先する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Pyroclasm#description3": {
+   "source_sha1": "ef97ae45b0acc5ec01fc2f653218cdae45f4e80c",
+   "plain_sha1": "4ca2c62b179fffa429bcf594afda8b6652c8cabe",
+   "ja": "「Ablaze」のボーナス：対象は0.25秒間スロウを受ける。これは同じ敵に何度でも効く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Brand/Pyroclasm#description4": {
+   "source_sha1": "355df91e57aebe71d360e4a7c081d86885c76af9",
+   "plain_sha1": "6b8239ae038c57855c57dd3e3dcbcb92aaf56552",
+   "ja": "火の玉が跳ねる先の対象は、見えている必要はない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Brand/Blaze#description": {
+   "source_sha1": "4d27deac97d8bd72bf9f2a948a30b09edaa5834f",
+   "reason": "residual_markup"
+  },
+  "Template:Data Brand/Pillar of Flame#description": {
+   "source_sha1": "e7b092492bb4032a5f582e60b18b95960f660036",
+   "reason": "residual_markup"
+  }
+ }
+}

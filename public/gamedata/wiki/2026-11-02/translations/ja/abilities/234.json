@@ -6,7 +6,7 @@
   "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
  },
  "translator": "AI（Claude Opus 5.5）",
- "method": "会話の中での翻訳。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・記法）を通したもの",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
  "review": "未レビュー（人による確認なし）",
  "glossary_version": "2026-11-02",
  "snapshot": "2026-11-02",
@@ -36,6 +36,90 @@
    "source_sha1": "5d46a3b3e4977c3a75a88a2100d3b0964127e5f0",
    "plain_sha1": "a1e25b6b8f1f1f79b0382a6104bf74d0ceb275d3",
    "ja": "「彷徨える苦悶」は、ヴィエゴのどのスキルの使用中にも使える。「亡霊の嘆き」の詠唱中に使った場合や、霧がある間に詠唱を始めた場合は、1秒間「彷徨える苦悶」のカモフラージュと移動速度の増加を得られない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Sovereign's Domination#description": {
+   "source_sha1": "621738f84839914170a30d9009a498e4997b4d70",
+   "plain_sha1": "45267c25430b3c733aab02dcd6fdafec14ff2ff5",
+   "ja": "固有：ヴィエゴが生きている状態で、ダメージを与えてから3秒以内に敵チャンピオンのキルに関与するたびに、そのチャンピオンの亡骸から8秒間「Mist Wraith」が出る。ヴィエゴは「Mist Wraith」に通常攻撃して取り込める：1秒構えた後にその位置へブリンクし、その間は対象指定不可（タワーを除く）で行動できない。その後「Possession」を得て、対象の最大体力の2%（+ 増加攻撃力100ごとに2.5%）（+ AP 100ごとに2%）（+ 増加体力100ごとに0.4%）（+ 攻撃速度の増加100%ごとに5%）を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Sovereign's Domination#description2": {
+   "source_sha1": "ae0541fd60eac120d0d6b3b4beab01539c965c8c",
+   "plain_sha1": "dee9962652b6bf672e9d12feb222b81189492b08",
+   "ja": "「Possession」：10秒間、ヴィエゴは敵チャンピオンの姿になり、その通常攻撃・基本スキル・アイテム（トリンケットを除く）・基本ステータス（ヴィエゴのレベルに応じて）を得る。さらに「ハートブレイカー」を無料で一回使えるようになり（最初は1.5秒のクールダウン）、2500ユニット以内の敵チャンピオンの方を向いている間は移動速度が10%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Sovereign's Domination#description3": {
+   "source_sha1": "7539abe725ad878d9bf5d34fdc363ceb13a499d7",
+   "plain_sha1": "163d16370cdbba72ead8e93cd13776db1383cf47",
+   "ja": "ヴィエゴは、乗り移ったチャンピオンのアイテムの発動効果や消耗品は使えず、「Possession」の間はショップも使えない。「ハートブレイカー」を使うか「Mist Wraith」を攻撃すると、「Possession」は即座に終わる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Sovereign's Domination#description4": {
+   "source_sha1": "21b2741ca818293feae038f190bce3cc32242fb8",
+   "plain_sha1": "54a088120b797d6b217dd3bbbcfaecf8802288ee",
+   "ja": "ヴィエゴは変身の前後で、現在体力の割合を保つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Blade of the Ruined King#description2": {
+   "source_sha1": "975b9db174ee1b9538ca008b7e7ad251955bbd66",
+   "plain_sha1": "6f599d073f8ac68318f2b187bf2c25fe997af877",
+   "ja": "さらに、ダメージを与えるスキルは命中した敵に4秒間印を付ける。印の付いた対象へのヴィエゴの次の通常攻撃は強化され、攻撃時効果として印を消費して二回目の攻撃を行い、攻撃力の20%（+ APの15%）の物理ダメージを与える。さらに二回目の攻撃で与えた軽減後のダメージの一部を回復する：ミニオンには100%、モンスターには125%、それ以外の対象には150%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Blade of the Ruined King#description5": {
+   "source_sha1": "145da26fb0b2ffc42640b7ba1ceb5504c17480be",
+   "plain_sha1": "29c704d088baf1ac472b97615c6db447f98acbbd",
+   "ja": "「滅びの王剣」の自動効果は「Possession」の間も残り、変身している間は二回目の攻撃が攻撃時効果の追加ダメージに変わる。この追加ダメージは攻撃時効果を与えなくなるが、（「Possession」のステータス・スキル・アイテムの効果に応じて）クリティカルにはなりうる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Spectral Maw#description": {
+   "source_sha1": "b62ddd848b50c997e0ee067f8615ebb118aa9639",
+   "plain_sha1": "d9c4b9a50759dfac044e001f5ec4d00a6b085753",
+   "ja": "発動効果：ヴィエゴは最大3秒間、10%のスロウを受けながら溜め、詠唱の最初の一秒の間に「亡霊の嘆き」の弾の射程とスタンの効果時間が増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Spectral Maw#description2": {
+   "source_sha1": "fa603e89649d1632219e5b7a430dac2409bdbe9b",
+   "plain_sha1": "fe6fb9a2967c6674f4b9b8c1faca1eba2593e0ec",
+   "ja": "「亡霊の嘆き」は効果時間中に再発動できる。再発動せずに最後まで溜めきると、「亡霊の嘆き」はキャンセルされてクールダウン全体に入る。溜めが中断されると、3秒のクールダウンに入る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Spectral Maw#description3": {
+   "source_sha1": "934d8f652097131757756f8c5614ff65af7bb341",
+   "plain_sha1": "f45b1529c2f72d4b0dc87ba32300535dc57c8e3f",
+   "ja": "再発動：ヴィエゴは指定方向に霧の爆風を放ち、同じ方向に決まった距離ダッシュする（地形は越えない）。霧は最初に命中した敵に魔法ダメージを与えて、0.25～1.25秒間（詠唱時間に応じて）スタンさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Spectral Maw#description4": {
+   "source_sha1": "3922a9130a4da05d58af53e30ac37410da5441b3",
+   "plain_sha1": "7be940ec43ee7365a28967fbb16f5ff59709429f",
+   "ja": "「亡霊の嘆き」はヴィエゴの通常攻撃タイマーをリセットする。ヴィエゴはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Heartbreaker#description": {
+   "source_sha1": "90c0fdb59b024f7c68b151f2df333d38eb2eb5dd",
+   "plain_sha1": "c1a42b7774db182037b16fba88f0fd772b8c5672",
+   "ja": "発動効果：ヴィエゴは詠唱時間の間に移動系の効果を受けなくなり、その後指定地点へブリンクする。到着時に近くで最も傷ついた敵チャンピオンを攻撃し、物理ダメージを与えて、0.25秒間99%のスロウを与え、攻撃時効果を与える。ほかの周囲の敵は近さに応じて最大400ユニットノックバックされる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Viego/Heartbreaker#description3": {
+   "source_sha1": "a0846b6db7457c7ebccba1175c7ef56e77b78eb9",
+   "plain_sha1": "fd7445f641f009d6fed7d12ce3d5961e939aac5e",
+   "ja": "「Possession」が解けたとき、「ハートブレイカー」がクールダウン中でなければ、1.5秒のクールダウンになる。",
    "status": "ai_translated_unreviewed",
    "translated_at": "2026-11-02"
   }

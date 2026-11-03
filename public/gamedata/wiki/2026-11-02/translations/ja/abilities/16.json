@@ -1,0 +1,86 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Soraka/Salvation#description": {
+   "source_sha1": "e481152801b18d1f44abf549b5bc2aa28b730c3c",
+   "plain_sha1": "91964f294bb4f1a4431e4d7090a489133660725d",
+   "ja": "固有：ソラカは、最大体力の40%未満の近くの味方チャンピオンの方を向いている間、移動速度が90%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Starcall#description": {
+   "source_sha1": "bd4cc7bcd7cb4f98e86964fd6068814f9a6c369a",
+   "plain_sha1": "c7a613234b078c8acf7aff5f53dd4d738be6abf3",
+   "ja": "発動効果：ソラカは指定地点に星を落とす。星は着弾の前からその範囲の視界を与え、0.25～1秒後（指定した距離に応じて）に着弾して、命中した敵に魔法ダメージを与え、1.5秒間30%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Starcall#description2": {
+   "source_sha1": "4930e69b8ca89dcfdcb734413a54db4cf59d8dac",
+   "plain_sha1": "86b2aaea19d4990ae52d1a0a4c1e1af4c0921ab3",
+   "ja": "敵チャンピオンに少なくとも一体命中すると、星屑がソラカに戻り、2.5秒間「Rejuvenation」を与える。ソラカが「Rejuvenation」を得ている間に「星霊の癒し」を使用すると、対象にも同じ時間「Rejuvenation」を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Starcall#description3": {
+   "source_sha1": "326ef7bcac3a5d72263d446bea9e0563361dbe74",
+   "plain_sha1": "94a5718e91a97c6d3cb810e4a58cdf8fe5cea87a",
+   "ja": "「Rejuvenation」：0.2秒ごとに回復し、効果時間の間に減衰する移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Astral Infusion#description": {
+   "source_sha1": "04e3fa16597c18882931fdc534f5ce9dbd4fea6d",
+   "plain_sha1": "9596faa03ea25c9ee3046985658830cfed7f3501",
+   "ja": "発動効果：ソラカは対象の味方チャンピオンを回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Astral Infusion#description2": {
+   "source_sha1": "04e97f49288020d322ee53b8df5318b57c77d4de",
+   "plain_sha1": "9696c87a70aa7b950032958e051a098c353600ec",
+   "ja": "「Rejuvenation」の効果中に使用すると、体力のコストが一定の割合減る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Astral Infusion#description3": {
+   "source_sha1": "48625353d833623a2dd4d355ac37ea6b8c53f80c",
+   "plain_sha1": "44f30e9e9448e340df9ca82acc7d06b231b57ddd",
+   "ja": "ソラカの体力が最大体力の5%未満のときは、「星霊の癒し」を使用できない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Equinox#description": {
+   "source_sha1": "df491df327766152f81b95fddd5827605fe7e0f6",
+   "plain_sha1": "1f7eace7fd3d7efed2c494790545de4851025f15",
+   "ja": "発動効果：ソラカは指定地点に天の領域を作り、発動時に範囲内の敵チャンピオンに魔法ダメージを与える。その後、領域は1.5秒間残り、範囲内の敵にサイレンスを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Equinox#description2": {
+   "source_sha1": "20df913c19de169d3a3d1716682a0035736089eb",
+   "plain_sha1": "333ea0748e31f4e10fbe1d541c93ded193924484",
+   "ja": "その後、領域が爆発して範囲内の敵チャンピオンに同じダメージを与え、一定時間スネアを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Soraka/Wish#description": {
+   "source_sha1": "5b2c3848f623d4a7173584545774f326c27dc487",
+   "plain_sha1": "44fb7efa349a9e05e2290a3dbe10206a6dd321e9",
+   "ja": "発動効果：ソラカは星に願い、自身とすべての味方チャンピオンを回復する。最大体力の40%未満の対象への回復量は50%増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

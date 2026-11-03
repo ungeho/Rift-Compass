@@ -70,3 +70,23 @@ test("保存した訳はすべて plain_sha1 を持ち、現在の英文と一�
   const tf = JSON.parse(fs.readFileSync(path.join(dir, "4.json"), "utf8"));
   assert.match(tf.entries["Template:Data Twisted Fate/Destiny#description"].ja, /可視化/);
 });
+
+test("用語集：各用語の正規表現に制御文字がなく（\b が文字化けしていない）、例の語に一致する", () => {
+  const g = JSON.parse(fs.readFileSync(path.join(__dirname, "../../src/gamedata/glossary.json"), "utf8"));
+  for (const t of g.terms) {
+    assert.doesNotMatch(t.en, /[\x00-\x1f]/, t.ja);
+    assert.doesNotThrow(() => new RegExp(t.en, "i"), t.ja);
+  }
+  const re = (ja) => new RegExp(g.terms.find((t) => t.ja === ja).en, "i");
+  assert.ok(re("味方").test("allied champions"));
+  assert.ok(re("敵").test("nearby enemies"));
+  assert.ok(re("インビジブル").test("becomes invisible"));
+  assert.ok(re("グラウンド").test("grounds enemies"));
+  assert.ok(re("増加体力").test("gains bonus health"));
+  assert.ok(!re("増加体力").test("bonus health regeneration"));
+});
+
+test("否定の検査：原文に否定があり訳にないときは不合格（「なければ」「なかった」は否定として扱う）", () => {
+  assert.ok(checkOne("Enemies cannot be hit twice.", "敵には二回命中する。").some((p) => /否定/.test(p)));
+  assert.equal(checkOne("If the tether is not broken, it roots.", "つながりが切れなければスネアを与える。").length, 0);
+});

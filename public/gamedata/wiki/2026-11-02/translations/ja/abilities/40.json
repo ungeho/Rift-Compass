@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Janna/Tailwind#description": {
+   "source_sha1": "ef6b801e53aa2268d44819cee5d25a10a769461c",
+   "plain_sha1": "99620842653ac2dca591eb0f15f9b5aad5d47aa3",
+   "ja": "固有：ジャンナは、自身の位置の方向を向いている近くの味方チャンピオンに、6%の移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Tailwind#description2": {
+   "source_sha1": "13d76c2671ccafd25a77922d3195c4254f3cbfc8",
+   "plain_sha1": "a678e6c8388764e2123db15f5aab5ae397f11ecf",
+   "ja": "ジャンナの通常攻撃（攻撃時効果）と「ゼファー」は、ジャンナの移動速度の増加量の30%に等しい追加の魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Howling Gale#description": {
+   "source_sha1": "481ea079ef9db638d8126ddce5861cdcbbbbf091",
+   "plain_sha1": "b9187c52ad6b71df011a7d55e4006bb9971c68d1",
+   "ja": "発動効果：ジャンナは現在の位置に竜巻を呼び、竜巻は3秒かけて溜まり、効果時間の間、毎秒、射程・速度・ダメージ・ノックアップの時間が増える。「ハウリングゲイル」の方向はこの発動で決まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Howling Gale#description2": {
+   "source_sha1": "a427032dfe365025b2897b861f730be91a9ff3b1",
+   "plain_sha1": "2f02be9273b12fdcf6e393a0aefd91d9e61c2bfe",
+   "ja": "「ハウリングゲイル」は効果時間中いつでも再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Howling Gale#description3": {
+   "source_sha1": "9031d9504f5560a6a293edaad83308fd284996ad",
+   "plain_sha1": "6810d49f32836278e407123ab2279649a98128f8",
+   "ja": "再発動：ジャンナは狙った方向へ1.25秒かけて竜巻を放ち、命中した敵に魔法ダメージを与えて、0.5～1.25秒間（溜めた秒数に応じて）ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Zephyr#description": {
+   "source_sha1": "ddd93cb17b0cd249c4ac3afa81f6089e26f13b98",
+   "plain_sha1": "0770e93b13efe1b29af590ee63d1479de94a65f5",
+   "ja": "自動効果：ジャンナはゴースト状態で、移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Zephyr#description2": {
+   "source_sha1": "e30dadd6938c593bcc6f5fc6570ef14ec1a7f0db",
+   "plain_sha1": "3daf08e667be8871208f201c9099eec412e397d8",
+   "ja": "発動効果：ジャンナは対象の敵に風の精霊を送り、魔法ダメージを与えて2秒間スロウを与える（最大99%）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Eye of the Storm#description": {
+   "source_sha1": "bf67f90d8fe11f75bdac0a820eadf63d8ca3be8d",
+   "plain_sha1": "677f022a714a78cc391127895bb243c37f086ed3",
+   "ja": "自動効果：ジャンナのスキルが少なくとも一体の敵チャンピオンにスロウかノックアップを与えるたびに、「ストームブレス」のクールダウンの20%が戻る。これは一回のスキルの使用につき一度起こる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Eye of the Storm#description2": {
+   "source_sha1": "72789e1dd90dd92521763ab63240a3c55f767918",
+   "plain_sha1": "4dc15c7e1f9f5271958ed126076eca16cb3a7f31",
+   "ja": "発動効果：ジャンナは対象の味方チャンピオンかタワー、または自身に4秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Eye of the Storm#description3": {
+   "source_sha1": "a9a61ec945d23919013fcfe042216684e3b75244",
+   "plain_sha1": "490fddfabaa3f9194e63dd46b8847a5fe6f7fc7b",
+   "ja": "シールドが残っている間、対象は増加攻撃力を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Monsoon#description": {
+   "source_sha1": "f86093367eb63fde9fd7f2927fe843ab03ff9101",
+   "plain_sha1": "89a71297c660728fb77e8d4c2dec2e54338c93e9",
+   "ja": "発動効果：ジャンナは突風を放ち、周囲のすべての敵を近さに応じて0.5秒かけて最大875ユニットノックバックさせる（地形は越えない）。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Janna/Monsoon#description2": {
+   "source_sha1": "301dece63f6ff76fa14aaf805477bf4fe54e33b5",
+   "plain_sha1": "7401e52922477e14331509bff06ce7a18feb73f1",
+   "ja": "さらに、ジャンナは最大3秒間詠唱し、0.25秒ごとに自身と周囲の味方を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

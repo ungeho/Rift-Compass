@@ -1,0 +1,107 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Jarvan IV/Martial Cadence#description": {
+   "source_sha1": "0f623fa362ee909d799d6138de82b353fbc4f557",
+   "plain_sha1": "f9565b028d64b9c1523aad7cdc4949ceb6a1f610",
+   "ja": "固有：ジャーヴァンⅣの通常攻撃は強化され、対象の現在体力の8%に等しい追加の物理ダメージを与える。最低20で、チャンピオン以外の対象には400が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Martial Cadence#description2": {
+   "source_sha1": "2db75d079839becf67bd46c3cbde1eb6004a2301",
+   "plain_sha1": "2db75d079839becf67bd46c3cbde1eb6004a2301",
+   "ja": "この効果は、同じ対象には数秒に一度しか起こらない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Dragon Strike#description": {
+   "source_sha1": "87545085ecf54db4069b9625cdfeb8437a75ee80",
+   "plain_sha1": "eb61ab7fdc96c775d523bfccdadbe0ed198114d5",
+   "ja": "発動効果：ジャーヴァンⅣは指定方向に槍を突き出し、命中した敵に物理ダメージを与えて、3秒間物理防御低下を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Dragon Strike#description2": {
+   "source_sha1": "de2fff6b8123628fb7e135fcfd5a5283ed5a5e87",
+   "plain_sha1": "be34308ca36f998f569e007e1b3c5b8c92098121",
+   "ja": "槍が置いてある「デマーシアの旗印」に届くと、ジャーヴァンⅣはその位置へダッシュし、自身の周囲と通り道の近くの敵を0.75秒間ノックアップさせる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Dragon Strike#description3": {
+   "source_sha1": "706d0f02b8d839e7891408d46e899e2ae6e225d5",
+   "plain_sha1": "d8ae440b2864f36947101e4b9b16822003b3624b",
+   "ja": "ジャーヴァンⅣはダッシュ中にどのスキルも使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Golden Aegis#description": {
+   "source_sha1": "307051421705dedc01948ffdb059c61fba56fe3f",
+   "plain_sha1": "ab8961f3ce4fc8c48d0d1068327dc4fe5fbafc8d",
+   "ja": "発動効果：ジャーヴァンⅣは周囲のすべての敵に2秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Golden Aegis#description2": {
+   "source_sha1": "0ebdb361d7ddd2c2daacd20f78ffed97353a3cd2",
+   "plain_sha1": "a786b8ba423e5533a8002cef23cf57e2df8a2d15",
+   "ja": "さらに、自身に4秒間シールドを付与する。シールドは「ゴールデンイージス」が命中した敵チャンピオン一体ごとに、最大体力の1.3%ずつ増える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Demacian Standard#description": {
+   "source_sha1": "a3c64ac528091af7b7ddcd108b7b1b0a41ccf26e",
+   "plain_sha1": "c9938a39f770a8a565453d91a83067f53b731186",
+   "ja": "自動効果：ジャーヴァンⅣは攻撃速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Demacian Standard#description2": {
+   "source_sha1": "076f3b36a5f9d1629d25331fb2e13e872f48f37c",
+   "plain_sha1": "ed58e8d29fec010c2d76b6dcbb2beea9cce1d8e0",
+   "ja": "発動効果：ジャーヴァンⅣは指定地点にデマーシアの旗を投げ、範囲内の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Demacian Standard#description3": {
+   "source_sha1": "5dc894c4ae57d09abe5cdf544ec83ce79e51573a",
+   "plain_sha1": "a6babd57a462a0ee119224de063dc9d1ed4dea67",
+   "ja": "旗はその後8秒間残り、周囲の視界を与え、周囲のすべての味方チャンピオンとジャーヴァンⅣ自身に「デマーシアの旗印」の自動効果の攻撃速度の増加を与えるオーラを出す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Cataclysm#description": {
+   "source_sha1": "1aaf7f68b0388a94191ee2fa406ac6d7079ad0c4",
+   "plain_sha1": "32f1623a6d1852d021188a67d57339ab167a033d",
+   "ja": "発動効果：ジャーヴァンⅣは移動系の効果を受けない状態で、0.35秒かけて対象の敵チャンピオンの位置へ跳び、到着時に周囲のすべての敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Cataclysm#description2": {
+   "source_sha1": "fa297e2633ce5b917027157fcef563c8e429729b",
+   "plain_sha1": "0916ddc677a71fefbcf53d4b1379370ae01f2775",
+   "ja": "着地すると、通れない地形の円を作り、0.15秒かけて円の内側の敵を押しのける。外縁にいる敵は円の外へ、それ以外の敵は内側へ引き寄せる。地形は3.5秒間続き、その範囲の視界を与える。地形がある間、0.75秒後から「決戦場」を再発動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jarvan IV/Cataclysm#description3": {
+   "source_sha1": "d01a358f20b822e5f5dddd54654acf8e8dff1277",
+   "plain_sha1": "6a7c5578354d5b2361afb1ad932f4f50cbe4ca86",
+   "ja": "再発動：ジャーヴァンⅣは「決戦場」で作った地形を壊す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

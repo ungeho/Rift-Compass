@@ -1,0 +1,107 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Malzahar/Void Shift#description": {
+   "source_sha1": "a97421e249c253aa656b529e1452670036b43897",
+   "plain_sha1": "e489d5e8e741014ffb011629c9c01e766f9f4cc0",
+   "ja": "固有：一定時間ごとに、マルザハールは「ヴォイドシフト」を得て、ミニオン以外からダメージを受けるか行動妨害を無効にするまで続き、その後0.25秒残ってから切れる。「ヴォイドシフト」：マルザハールは行動妨害を無効にし、ミニオン以外から受けるダメージを90%軽減する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Void Shift#description2": {
+   "source_sha1": "4a1f9e45e0033af4c96e4fc6986c48ededde8c83",
+   "plain_sha1": "b70b4f2ee842c53d6c0edf094f51ef8361925efc",
+   "ja": "マルザハールがミニオン以外からダメージを受けるか行動妨害の効果を受けるたびに「ヴォイドシフト」のクールダウンが更新され、復活時にリセットされる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Call of the Void#description": {
+   "source_sha1": "7d4e6be321dea45389c9b5af52ee50f694b92d3e",
+   "plain_sha1": "40a9961a5208d08bf2cb41993b68f9a491f3e8e8",
+   "ja": "発動効果：マルザハールは指定地点を中心にヴォイドへの門を二つ開き、その間の範囲の視界を得る。0.4秒後、門の間の敵は魔法ダメージを受け、一定時間サイレンスを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Void Swarm#description": {
+   "source_sha1": "d65d4e53945f6c8026c30b882677e1594dcff663",
+   "plain_sha1": "262cbd5cf4b90de4863728b05bdeb0cfce57fd6a",
+   "ja": "自動効果：マルザハールはほかのスキルを使用すると「Zz'Rot Swarm」のスタックを得て、最大2まで蓄える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Void Swarm#description2": {
+   "source_sha1": "f8af5357f76f28c0a95c372a8997377167d60f6a",
+   "plain_sha1": "905246024c2b6e45c63a301ca0b6081b12b2a8ee",
+   "ja": "発動効果：マルザハールは「Zz'Rot Swarm」のスタックをすべて消費し、0.5秒の遅れの後、指定地点に「Voidling」を一体呼び出す。その後、消費した「Zz'Rot Swarm」のスタックごとに追加の「Voidling」が呼び出され、それぞれ前の一体の0.5秒後に現れる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Void Swarm#description3": {
+   "source_sha1": "f98eac702f2ea969fde0269bb4310072e687e1c3",
+   "plain_sha1": "9d23c1c50d480b1b4da9295008ca9f5371a68b97",
+   "ja": "「Voidling」の攻撃は魔法ダメージを与え、エピックモンスターには50%減少し、「虚性侵蝕」に侵された敵ミニオンには200%増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Void Swarm#description4": {
+   "source_sha1": "e7492631c1a878ccd1689ddb128215781e15dffd",
+   "plain_sha1": "cf1bceeffe009146c97a52c182e5511b3bba1efe",
+   "ja": "「Voidling」の詳細は「Pets」を参照。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Malefic Visions#description": {
+   "source_sha1": "df09f0db6442fcdb071106e54c1436813fec4650",
+   "plain_sha1": "4acab2476089dd27c59d7045a33b12c3d70cfe91",
+   "ja": "発動効果：マルザハールは対象の敵の精神を侵し、4秒間0.25秒ごとに魔法ダメージを与える。「ヴォイドコール」か「ネザーグラスプ」でダメージを与えると更新される。「虚性侵蝕」は、ダメージで体力が10～30（レベルに応じて）未満になるミニオンを処刑する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Malefic Visions#description2": {
+   "source_sha1": "189edd22de58611994245fb7eeb416cb756e928a",
+   "plain_sha1": "330b9db665d0affbc18050b229a6901f7737ed3f",
+   "ja": "侵された状態で対象が死ぬと、「虚性侵蝕」は近くの最も近い敵に広がり、マルザハールは最大マナの2%を回復する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Nether Grasp#description": {
+   "source_sha1": "2207b2f89cf9455e41b78788d505bd75e3fdb64c",
+   "plain_sha1": "1ef4d1c325bfe4c3c7afe4973234e2871bce53a1",
+   "ja": "発動効果：マルザハールは対象の敵チャンピオンとつながって押し倒す。その後最大2.5秒間詠唱し、対象にサプレッションを与えて可視化し、0.25秒ごとに魔法ダメージを与える。その間マルザハール自身も可視化される。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Nether Grasp#description2": {
+   "source_sha1": "052448476f82557d8ea25583c5ba6fda617864da",
+   "plain_sha1": "0d70474b0e817ad492d5624a7ff21baa1f021255",
+   "ja": "サプレッションが解除されても、つながりが切れない限りマルザハールは詠唱を続ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Nether Grasp#description3": {
+   "source_sha1": "ad8139f73e77377bf06c8d798e0fb3b82fb08c73",
+   "plain_sha1": "d23d297533dbaefd6b3434bb95d7f86dddbf3362",
+   "ja": "さらに、発動時の対象の位置の足元に5秒間続く「Null Zone」が開き、範囲内の敵に0.5秒ごとに魔法ダメージ（ミニオンとモンスターには一回120が上限）を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Malzahar/Nether Grasp#description4": {
+   "source_sha1": "18c5960700bdd7f9ee1c96c2431e508577aea245",
+   "plain_sha1": "3ac943d4c9b96df6afc3cbfa20381d68a98a1b60",
+   "ja": "詠唱が中断されても「Null Zone」は残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}

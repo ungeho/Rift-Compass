@@ -1,0 +1,106 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Talon/Blade's End#description": {
+   "source_sha1": "8e3a201a763682b20597961ccb52c49140ae4017",
+   "plain_sha1": "abf1c3865b6caeb5b700fcd6dde9739cb3be4c27",
+   "ja": "固有：タロンのスキルは、命中した敵チャンピオンと大型モンスターに6秒間「Wound」のスタックを与える。通常攻撃と付与のたびに更新され、最大3回まで重なる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Noxian Diplomacy#description3": {
+   "source_sha1": "8511042ced6f9334c597d09f89123888662c4e07",
+   "plain_sha1": "756054df13f99a2962c876b9f115fb0f0014c467",
+   "ja": "「ノクサスの刃」はタロンの通常攻撃タイマーをリセットする。ダッシュ中に「シャドウアサルト」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Rake#description": {
+   "source_sha1": "21135f354038f91750806ba8c8a9814c33df3ae6",
+   "plain_sha1": "1d4e289f92ae38876bcb71e9191837783c727ba6",
+   "ja": "発動効果：タロンは指定方向の扇形の範囲に短剣を扇状に投げ、命中した敵に物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Rake#description2": {
+   "source_sha1": "f2cbadf6ce5d248d5714b95024c6518dd6530eef",
+   "plain_sha1": "b10ad043118d4e6caf236b481c0b9a748fe6e3dd",
+   "ja": "最大射程で短剣は0.7秒とどまった後、タロンのもとへ戻り、命中した敵に物理ダメージを与えて1秒間スロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Rake#description3": {
+   "source_sha1": "e388c3b4e7e203f4a1468e953b8cdd3140f090df",
+   "plain_sha1": "fc3663ee7eca200f89187575c799c66134bf7d6f",
+   "ja": "敵は行きと戻りのそれぞれで一度だけ命中する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Assassin's Path#description": {
+   "source_sha1": "596f9aca9ed3bf82a2dcb4ee804f7a96a9902751",
+   "plain_sha1": "e79bd3b7c5dee16f974fbc34b40e35953521d610",
+   "ja": "発動効果：タロンは近くの地形の指定した部分を越えて最大800ユニットダッシュし、その間地形を越える視界を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Assassin's Path#description2": {
+   "source_sha1": "2b997099149d2dea6e5534e160dc68d06454a691",
+   "plain_sha1": "59b041f47a8c5e8ea741c60feecdcdfce5856254",
+   "ja": "タロンは一定時間、同じ部分の地形に「暗殺者の跳躍」を使えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Assassin's Path#description3": {
+   "source_sha1": "f0f03c711f27a66cd7142d1dfcb6f4591a435624",
+   "plain_sha1": "466f13bb6c40f98e2407c599364ec8c853b350ab",
+   "ja": "ダッシュ中に「シャドウアサルト」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Shadow Assault#description": {
+   "source_sha1": "922f18f2df43ad52149a9b691a1fb29e9d920632",
+   "plain_sha1": "123a5d952e5c6651353dca2de6d717745e9de448",
+   "ja": "発動効果：タロンは自身の周囲に刃を輪の形に放ち、命中した敵に物理ダメージを与える。刃は最大射程で最大2.5秒とどまり、その間タロンはインビジブルになって移動速度が増加する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Shadow Assault#description2": {
+   "source_sha1": "21c8822add5e32344af16b406c53744f63e2047a",
+   "plain_sha1": "6eaf7fe273cd62ac680d3ffda95b9649abd45853",
+   "ja": "「シャドウアサルト」は効果時間中、1秒後から再発動でき、効果時間が終わるかタロンがステルスを解くと自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Talon/Shadow Assault#description3": {
+   "source_sha1": "317656fdf61b6951b66732b871fd9c0b93e3dc80",
+   "plain_sha1": "e505b8dd946ad9b3c19f7c417778549999ffac00",
+   "ja": "再発動：タロンはステルスを解いて刃を自身のもとへ集め、命中した敵に同じ物理ダメージを与える。通常攻撃か「ノクサスの刃」でステルスを解いた場合は、代わりに刃は対象のもとへ集まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Talon/Blade's End#description2": {
+   "source_sha1": "272d364928fad64651aec7a78b23626f8881b007",
+   "reason": "residual_markup"
+  },
+  "Template:Data Talon/Noxian Diplomacy#description": {
+   "source_sha1": "d25406ec103e318c8a9049b76dd04bb30960c92b",
+   "reason": "residual_markup"
+  },
+  "Template:Data Talon/Noxian Diplomacy#description2": {
+   "source_sha1": "ac785297395267d87cb15c75ce79d89844a5c31b",
+   "reason": "residual_markup"
+  }
+ }
+}

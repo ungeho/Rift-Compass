@@ -1,0 +1,116 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Skarner/Shattered Earth#description": {
+   "source_sha1": "3c4ca409746f52dea865f1d060a3728fb2324706",
+   "plain_sha1": "7ed08a0fa5f179e3ff916746cdfa743a877d3d60",
+   "ja": "発動効果：スカーナーは地面から岩を引き抜き、次の最大三回の通常攻撃を強化する（それぞれの間は5秒以内）。これらの攻撃は射程が25増加し、攻撃速度が増加し、対象と周囲の敵（建物を含む）に追加の物理ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Shattered Earth#description2": {
+   "source_sha1": "26b8805a5028cb3f787c7d4a7c60edd1a07b9f30",
+   "plain_sha1": "6147172097fd9147a8345b07310f38347e910f04",
+   "ja": "最後の攻撃は岩を叩きつけ、各対象の最大体力の11%の物理ダメージを追加で与えて、影響を受けた敵に1秒間40%のスロウを与える。追加のダメージはモンスターに対しては上限があり、建物には与えない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Shattered Earth#description3": {
+   "source_sha1": "4f7a95d4c9a33999bcf14d908db036ff11317ff4",
+   "plain_sha1": "c2d92a595ae7d472376b14c9be2c8f431b07794f",
+   "ja": "発動から0.5秒後、スカーナーは「砕けし大地」の間に「大地の怒り」を使えるようになる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Shattered Earth#description4": {
+   "source_sha1": "8fcfcab9962ce304014aaad8f0aef0b8988a3cb4",
+   "plain_sha1": "a905b224056e129d6a60e31d7a85463f1e9ebcc5",
+   "ja": "「砕けし大地」の使用はスカーナーの通常攻撃タイマーをリセットする。「イシュタルの衝動」の間は「砕けし大地」の効果時間が止まる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Upheaval#description": {
+   "source_sha1": "d107b43d8e58f1aba24144f9fb3407ffda2a6a08",
+   "plain_sha1": "16a55910787c82e7fbbe92a2849e9d9bd16649f2",
+   "ja": "発動効果：スカーナーは指定方向に岩を投げて「砕けし大地」を終える。岩は最初に命中した敵にぶつかると爆発し、対象と周囲の敵に、「砕けし大地」の最後の強化された攻撃と同じダメージとスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Seismic Bastion#description": {
+   "source_sha1": "a73e963d0f0eea2d8b9abd4b7196577a0877317a",
+   "plain_sha1": "a3bb47a4c297e0431cf9d394efcb2650eabdb6c9",
+   "ja": "発動効果：スカーナーは爪を地面に突き立て、2.5秒間最大体力の8%のシールドを自身に付与し、周囲に素早く広がる衝撃波を放って、命中した敵に魔法ダメージと1秒間20%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Seismic Bastion#description2": {
+   "source_sha1": "d17b532857e1afb750fcacef6b04f11cf1853ab7",
+   "plain_sha1": "e37f21a052fc11ab2cd3a31303b6540c231da5ad",
+   "ja": "スカーナーは「激震の砦」の詠唱時間中に移動できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Ixtal's Impact#description": {
+   "source_sha1": "ecb9e77c62be79b0de14dbf74a374d4222865248",
+   "plain_sha1": "3def1d368f4340b4e689d2cf25e7741405bae4f5",
+   "ja": "発動効果：スカーナーはカーソルの方向へ最大2.75秒間突進し、その間スロウを無効にし、ゴースト状態になり、地形の当たり判定を無視して、周囲650ユニットに地形を越える視界を得る。移動は自動で進み、ゆっくりした旋回で向きを変えられ、旋回の速さは時間とともに上がり、向きを変えるとリセットされる。「イシュタルの衝動」は1秒後から再発動でき、効果時間が終わると自動で再発動する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Ixtal's Impact#description3": {
+   "source_sha1": "5741d4ff6009960311be77f8be35af0a30d3ec80",
+   "plain_sha1": "da714d2868f72ec369c246f4d90ef4d0b6435991",
+   "ja": "スカーナーがつかんだ対象が地形にぶつかると、突進が終わって対象を放し、物理ダメージを与えて1.1秒間スタンさせ、「イシュタルの衝動」のクールダウンを35%短縮する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Ixtal's Impact#description4": {
+   "source_sha1": "d3d2d8b9d287fbd710ed0d53b1f707befb33a290",
+   "plain_sha1": "e04ed3050d3c2278cd7223603180904507e1e323",
+   "ja": "再発動：スカーナーは「イシュタルの衝動」を終える。対象をつかんでいれば、放す。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Ixtal's Impact#description5": {
+   "source_sha1": "fbc318aad6849905fa7df8243de81b9e9d91021a",
+   "plain_sha1": "f6e16f0c4d4812ae6acba4fe5dfa767e6a4c28ec",
+   "ja": "突進中にスカーナーが移動不能かグラウンドを受けるか、スキルの使用を妨げる行動妨害を受けると、「イシュタルの衝動」は即座に終わり、つかんだ対象は放される。つかんでいる間、対象はスカーナーの200ユニット前方に付く。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Impale#description": {
+   "source_sha1": "d95d11792904e9c1f56eeb708c518a7255318103",
+   "plain_sha1": "725222d38872eaa1a8192ac7524bd1714c762382",
+   "ja": "発動効果：スカーナーは詠唱時間の間に針を構え、指定方向の等脚台形の範囲に振り抜いて、命中した敵に魔法ダメージを与え、範囲内で最も近い敵チャンピオン最大3体を突き刺して1.5秒間サプレッションを与える。サプレッションの間、対象は可視化され、スカーナーに付く。敵チャンピオンを少なくとも一体突き刺すと、スカーナーは同じ時間40%の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Skarner/Impale#description2": {
+   "source_sha1": "c47903c186d93ae68a446fa23f5efa0a1248be0c",
+   "plain_sha1": "fa242e224fe8cf77fe3e7a47efecbb34eb1f6a47",
+   "ja": "「砕けし大地」中に「インペイル」を使用すると、スカーナーは「インペイル」の方向に自動で「大地の怒り」を使用する。「インペイル」の間、スカーナーは通常攻撃、「砕けし大地」や「イシュタルの衝動」の使用、フラッシュの使用ができない。突き刺している間、対象はスカーナーの300ユニット前方に付く。効果の終わりに、対象は同じ方向の200ユニット先に置かれる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Skarner/Threads of Vibration#description": {
+   "source_sha1": "e7edb1f3f0a77e701ce7ed0f1e158050f83055e8",
+   "reason": "residual_markup"
+  },
+  "Template:Data Skarner/Ixtal's Impact#description2": {
+   "source_sha1": "3b0ffa195d15e09de8e2a360bc2db10c7b8b7b7c",
+   "reason": "residual_markup"
+  }
+ }
+}

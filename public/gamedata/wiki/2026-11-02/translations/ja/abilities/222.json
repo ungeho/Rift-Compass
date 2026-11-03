@@ -1,0 +1,105 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Jinx/Get Excited!#description": {
+   "source_sha1": "cbc98d4bde3f6bff052cdf8d90744fdf0ef49122",
+   "plain_sha1": "14321ee6bbec3753ef81f5adca1e5a836c842f81",
+   "ja": "固有：ダメージを与えてから3秒以内に敵チャンピオン・エピックモンスター・タワー・インヒビターのキルに関与するたびに、ジンクスは6秒かけて減衰する175%の移動速度の増加を得る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Get Excited!#description2": {
+   "source_sha1": "431054f5ff9ea854ec38d6a4cea37f3f9f9a70d6",
+   "plain_sha1": "865376cc780d3c92e1b28bb647720267e406049d",
+   "ja": "さらに、同じ時間、攻撃速度の上限を超えられるようになり、「超エキサイティン！」のスタックを得て、最大5回まで重なる。二つ目以降のスタックを与えるのは、敵チャンピオンのキルへの関与だけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Get Excited!#description3": {
+   "source_sha1": "5947fa91c3249c4cf6bf4a50f57aaf95356a5648",
+   "plain_sha1": "7c8de227890230e613a593c5764b965a4b3815f8",
+   "ja": "「超エキサイティン！」：スタックごとに合計の攻撃速度が25%増加し、最大125%。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Switcheroo!#description2": {
+   "source_sha1": "9f8760c07952b81f0f25d0b0324125bc6bdcadb0",
+   "plain_sha1": "35c0305712378b74dcdae6b97531e556f08c57b3",
+   "ja": "「Pow-Pow」：「Pow-Pow」での通常攻撃は2.5秒間「Rev'd up」のスタックを与え、「Pow-Pow」での攻撃のたびに更新され、最大3回まで重なる。「Rev'd up」のスタックごとに攻撃速度が増加し、一つ目より後のスタックは50%の効果になる。効果時間が終わると、スタックは一つずつ消える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Switcheroo!#description3": {
+   "source_sha1": "1193febec8f550078047df51229738a65e35fae7",
+   "plain_sha1": "9150169b91fce57c412e1c67b457e92b3921818e",
+   "ja": "「Fishbones」：「Fishbones」での通常攻撃は攻撃開始時にマナを消費し、対象と周囲の敵に攻撃力の110%の修正された物理ダメージを与える。このダメージはクリティカルの倍率の影響を受ける。「Fishbones」を構えている間、ジンクスは射程が増加するが、攻撃速度の増加の10%を失う。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Switcheroo!#description4": {
+   "source_sha1": "c9e697d8f2ed6a14f21dbb2fded5a8656495505a",
+   "plain_sha1": "152be45248ded43c9ad7dea72853eb24af34211d",
+   "ja": "「Fishbones」に切り替えた後の最初の攻撃だけが、「Rev'd up」の効果を受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Zap!#description": {
+   "source_sha1": "8e02d43ec2c2090025a99053b6fa8eefd79af2b0",
+   "plain_sha1": "9ece4bc6ddc85814ce4b07f86315f69cc81ccb23",
+   "ja": "発動効果：ジンクスは指定方向に衝撃波を撃ち、最初に命中した敵に物理ダメージを与えて、2秒間可視化してスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Flame Chompers!#description": {
+   "source_sha1": "0827f503ee1a4ae2191f07cc8861e90f315f2dcf",
+   "plain_sha1": "960a811868e0221c732e55506338b2c7784c006f",
+   "ja": "発動効果：ジンクスは指定地点を中心に「Chomper」を3個投げ、0.4秒後に着地、0.5秒後に作動可能になり、5秒後に爆発して周囲の敵に魔法ダメージを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Flame Chompers!#description2": {
+   "source_sha1": "f8c6c52f381f5d11ab5c7320bef5aae390b105c7",
+   "plain_sha1": "a4dab06371627a4f9cc70fa58d38d95f38a57fc8",
+   "ja": "「Chomper」はそれぞれ敵チャンピオンに触れると爆発し、その敵を押し倒して1.5秒間スネアを与える。敵チャンピオンが受ける「Chomper」の効果は一つだけ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Super Mega Death Rocket!#description": {
+   "source_sha1": "80d5f43ad64c9bb2c9fb4b3998274270884e82ea",
+   "plain_sha1": "96e09227e2cbfeeecfb56929074b84e113919401",
+   "ja": "発動効果：ジンクスは指定方向に巨大なロケットを撃ち、ロケットは周囲の視界を一瞬与えながら進み、敵チャンピオンにぶつかると爆発する。爆発は周囲の敵に物理ダメージを与え、その範囲の視界を2秒間与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Super Mega Death Rocket!#description2": {
+   "source_sha1": "e506104b325662de419475b84deaf00dc6a9a86c",
+   "plain_sha1": "8b3d95eb33e7bcd939ff91457c9a4bc9d5e1386f",
+   "ja": "「スーパーメガデスロケット！」は10%～100%（進んだ距離に応じて）のダメージを与える。これは、対象の減少体力に応じた追加ダメージには影響しない。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Jinx/Super Mega Death Rocket!#description3": {
+   "source_sha1": "a5921f74ddffcf9a6e6e23eb1db5d757ef207691",
+   "plain_sha1": "c70835bc2253e625056be4d03cdd3517795965ec",
+   "ja": "主対象の周囲の敵は80%のダメージを受ける。対象の減少体力に応じた追加ダメージは、モンスターに対しては1200が上限。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {
+  "Template:Data Jinx/Switcheroo!#description": {
+   "source_sha1": "9971c7c3ae41626748897468b30feba024af0740",
+   "reason": "residual_markup"
+  }
+ }
+}

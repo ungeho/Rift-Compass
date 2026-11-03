@@ -1,0 +1,100 @@
+{
+ "license": {
+  "name": "CC BY-SA 3.0",
+  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "attribution": "League of Legends Wiki（wiki.leagueoflegends.com）の寄稿者",
+  "modification": "英語の原文（記法を簡略化したもの）を日本語に翻訳した"
+ },
+ "translator": "AI（Claude Opus 5.5）",
+ "method": "会話の中での一括翻訳（バッチ）。公式の日本語のスキル名（Data Dragon ja_JP）と用語集を使い、検査（数・用語・否定・記法）を通したもの",
+ "review": "未レビュー（人による確認なし）",
+ "glossary_version": "2026-11-02",
+ "snapshot": "2026-11-02",
+ "entries": {
+  "Template:Data Lulu/Pix, Faerie Companion#description": {
+   "source_sha1": "2c02e59a38ee7ae50775219306e3ab34af0966c9",
+   "plain_sha1": "afe55755056f3fb9f104a71eff03300e32c7ae2c",
+   "ja": "固有：ルルは、対象指定不可の妖精ピックスに助けられる。ピックスはルルについて回り、ルルが通常攻撃（攻撃開始時）をするたびに、その対象に向けて弾を3発連続で撃つ。弾はそれぞれ最初にぶつかった敵に5～39（レベルに応じて）（+ APの5%）の魔法ダメージを与え、一体の対象に三発すべて当たると合計15～117（レベルに応じて）（+ APの15%）になる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Pix, Faerie Companion#description2": {
+   "source_sha1": "aa565de9fb53a57818e5e8ec3dc4689a9a071f6b",
+   "plain_sha1": "9b4a396cf492817333bc596cab8318d82c327945",
+   "ja": "味方チャンピオンに「ピックス、おねがい！」を使うと、ピックスの助けがその味方に移り、ピックスはその味方の通常攻撃に合わせて弾を撃つ。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Pix, Faerie Companion#description3": {
+   "source_sha1": "5f2d7b1d5706febc6802cf6663116efda8f2deb5",
+   "plain_sha1": "7863a8eb190d13237f5ecef31836016a281d1ac9",
+   "ja": "ルルが離れすぎると、ピックスはルルのもとへ戻る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Glitterlance#description": {
+   "source_sha1": "44026e2dcdd9198896a6630d83591d144724a5a8",
+   "plain_sha1": "693ba7ce1ae080103b5c2040eb724a1d464ef95a",
+   "ja": "発動効果：ルルとピックスはそれぞれ指定地点に向けて魔法の弾を撃ち、それぞれ命中した敵に魔法ダメージ（ミニオンには70%）を与え、2秒かけて減衰する80%のスロウを与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Glitterlance#description2": {
+   "source_sha1": "dd5b5f7edf911b53ebb973799bda3a08ab541237",
+   "plain_sha1": "4b2a3a54bf28ad4e8a3b65b556b264b2dc17b739",
+   "ja": "敵は二発目の弾からは50%のダメージを受ける。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Whimsy#description": {
+   "source_sha1": "f5b3774acaad249f7199834411237d4f54f962b2",
+   "plain_sha1": "2f21a7af54bdbbe40c1208961a148f97595dd524",
+   "ja": "発動効果：ルルは自身かチャンピオンに「イタズラ」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Whimsy#description2": {
+   "source_sha1": "f652af05f66b5ac0d1fa60acd800b4894c2b25ef",
+   "plain_sha1": "997b9798781211151bcaf0f314b9c5489dd1c173",
+   "ja": "敵に使用：ルルは対象の敵チャンピオンに呪文をかけ、一定時間無害な小動物に変える（ポリモーフ）。その間移動速度が60低下し、同じ時間通常攻撃を封じる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Whimsy#description3": {
+   "source_sha1": "4ca8ff1befa8b5f7363b25e8ea065bf18cc3840c",
+   "plain_sha1": "e2161e6364bc72c3ac4d74aa72801042cd1c0793",
+   "ja": "自身・味方に使用：ルルは対象の味方チャンピオンか自身に即座に気まぐれな魔法をかけ、一定時間、攻撃速度の増加と25%（+ AP 100ごとに5%）の移動速度の増加を与える。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Help, Pix!#description": {
+   "source_sha1": "8b5ba6279f8617664ac52e9f1b7dfa57022c0ff9",
+   "plain_sha1": "a992c5ac2bff1f9beb331fa5a95ecfbb01a1814a",
+   "ja": "発動効果：ルルは自身か味方か敵に「ピックス、おねがい！」を使用できる。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Help, Pix!#description2": {
+   "source_sha1": "c87ba2e4180480049561f9d84e2c6b1e74eb67c9",
+   "plain_sha1": "fe073aecfc548efe61fde737d1188255fbb3f22b",
+   "ja": "敵に使用：ルルは対象の敵の向こう側に4秒間ピックスを送り、魔法ダメージを与えて、同じ時間可視化する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Help, Pix!#description3": {
+   "source_sha1": "f486b88ec1b700cd80ddebf3c0e83ba3eab82f99",
+   "plain_sha1": "58bd02276152e2189d5728355db59e0cc9517109",
+   "ja": "自身・味方に使用：ルルは対象の味方に6.25秒間ピックスを送る。対象がチャンピオンなら、2.5秒間シールドを付与する。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  },
+  "Template:Data Lulu/Wild Growth#description": {
+   "source_sha1": "ea9a0de381faeffa50b77d53b89a40a6f3fafbe0",
+   "plain_sha1": "1dcf19637d97c472d28ae5e27c5232a4c1748ba3",
+   "ja": "発動効果：ルルは自身か対象の味方チャンピオンを大きくし、周囲の敵を1秒間ノックアップさせる。次の7秒間、対象は増加体力とサイズの40%増加を得て、周囲の敵にスロウを与え、スロウは0.25秒残る。",
+   "status": "ai_translated_unreviewed",
+   "translated_at": "2026-11-02"
+  }
+ },
+ "withheld": {}
+}
