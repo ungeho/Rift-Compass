@@ -66,7 +66,7 @@ export function App() {
         {route.name === "decision" && <DecisionDetail id={route.id} example={route.example} />}
         {route.name === "note" && <NotePage id={route.id} />}
         {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} count={route.count} />}
-        {route.name === "data" && <DataPage section={route.section} />}
+        {route.name === "data" && <DataPage section={route.section} item={route.item} />}
         {route.name === "sources" && <SourcesPage q={route.q} kind={route.kind} lang={route.lang} />}
         {route.name === "source" && <SourceDetailPage id={route.id} />}
       </main>

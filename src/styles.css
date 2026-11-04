@@ -375,3 +375,18 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 @media (max-width: 600px) {
   .decision-page section[aria-labelledby="conditions-heading"] { grid-template-columns: minmax(0, 1fr); }
 }
+
+.item-tree { overflow-wrap: anywhere; margin: 12px 0; }
+.item-tree-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.item-tree-columns > div { min-width: 0; border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; }
+.item-tree-columns ul { list-style: none; padding: 0; }
+.item-tree-columns li { display: grid; gap: 4px; border-bottom: 1px solid var(--border); padding: 10px 0; }
+.item-tree-columns .muted { display: block; font-size: 0.82rem; }
+.item-tree-current { background: var(--accent-soft); padding: 8px; }
+.item-tree-link { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.item-tree-link > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.item-icon-frame { display: block; width: 40px; height: 40px; flex: 0 0 40px; }
+.item-icon-frame img { display: block; width: 40px; height: 40px; border-radius: 4px; }
+.item-icon-placeholder { display: flex; width: 40px; height: 40px; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--muted); font-size: 10px; text-align: center; }
+.item-tree-disclosure { margin: 12px 0; border-block: 1px solid var(--border); padding: 8px 0; }
+@media (max-width: 600px) { .item-tree-columns { grid-template-columns: minmax(0, 1fr); } }

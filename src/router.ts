@@ -21,7 +21,7 @@ export type Route =
   | { name: "decision"; id: string; example?: string }
   | { name: "note"; id: string }
   | { name: "explore"; topic: string; distance: number; count: ExploreCount }
-  | { name: "data"; section: string };
+  | { name: "data"; section: string; item?: string };
 
 /** 散策の距離の既定値（近い寄り）*/
 export const DEFAULT_EXPLORE_DISTANCE = 30;
@@ -48,7 +48,10 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "topic" && seg[1]) return { name: "topic", id: seg[1] };
   if (seg[0] === "topics") return { name: "topics" };
   if (seg[0] === "note" && seg[1]) return { name: "note", id: seg[1] };
-  if (seg[0] === "data") return { name: "data", section: seg[1] ?? "" };
+  if (seg[0] === "data") {
+    const item = seg[1] === "items" ? new URLSearchParams(queryString).get("item") : null;
+    return item ? { name: "data", section: "items", item } : { name: "data", section: seg[1] ?? "" };
+  }
   if (seg[0] === "source" && seg[1]) return { name: "source", id: seg[1] };
   const params = new URLSearchParams(queryString);
   if (seg[0] === "sources") return { name: "sources", q: params.get("q") || "", kind: ["website", "youtube"].includes(params.get("kind") || "") ? params.get("kind")! : "", lang: ["ja", "en", "ko", "unknown"].includes(params.get("lang") || "") ? params.get("lang")! : "" };
@@ -81,6 +84,7 @@ export function homeHref(q: string, filters: Filters = {}): string {
 }
 
 export const resourceHref = (id: string) => `#/r/${encodeURIComponent(id)}`;
+export const itemHref = (target: string) => `#/data/items?item=${encodeURIComponent(target)}`;
 export const sourceHref = (id: string) => `#/source/${encodeURIComponent(id)}`;
 export function sourcesHref(q = "", kind = "", lang = ""): string {
   const params = new URLSearchParams();

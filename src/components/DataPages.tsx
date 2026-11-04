@@ -2,9 +2,12 @@
 // 日本語は公式の Data Dragon（ja_JP）の名前と説明を使い、英語 Wiki の値・効果の文（CC BY-SA 3.0）は出典つきで別に示す。
 // 開いたページのファイルだけを読む（public/gamedata）。取得したデータの表示で、ゲーム内では検証していない。
 import { useEffect, useMemo, useState } from "react";
-import { itemReviewFor, ITEM_REVIEW_VERSION, ITEM_REVIEW_PATCH, ITEM_REVIEW_CHECKED } from "../gamedata/itemReviews";
-import { matchItemData, type ItemDataMatch } from "../gamedata/itemRules";
 import { showValues, wikiPlain, type ParsedValue } from "../gamedata/wikiAbility";
+import { matchItemData, type ItemDataMatch } from "../gamedata/itemRules";
+import { itemReviewFor, ITEM_REVIEW_VERSION, ITEM_REVIEW_PATCH, ITEM_REVIEW_CHECKED } from "../gamedata/itemReviews";
+import { ItemTree } from "./ItemTree";
+import { displayItemName, itemCategory } from "../gamedata/itemTree";
+import { itemHref } from "../router";
 import { effectKind, groupStats, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemModes, resolveItemStats, ITEM_REFERENCE_ERRORS, type ItemReferenceData, type ItemFieldResolution, type DdGold, type NamedEffect, type PriceRow, type UniqueInfo, type UniqueStatus } from "../gamedata/itemRules";
 
 const BASE = `${import.meta.env.BASE_URL}gamedata/`;
@@ -47,7 +50,7 @@ function useLoad<T>(loader: () => Promise<T>, deps: unknown[]) {
   return s;
 }
 
-export function DataPage({ section }: { section: string }) {
+export function DataPage({ section, item }: { section: string; item?: string }) {
   const s = SECTIONS.find((x) => x.id === section);
   return (
     <div className="detail">
@@ -66,7 +69,7 @@ export function DataPage({ section }: { section: string }) {
           ))}
         </ul>
       )}
-      {section === "items" && <Items />}
+      {section === "items" && <Items selected={item} />}
       {section === "runes" && <Runes />}
       {section === "summoners" && <Summoners />}
       {section === "units" && <Units />}
@@ -198,12 +201,12 @@ interface ItemEffectText extends WikiText {
 interface WikiItem {
   name: string;
   source: Source;
-  data?: { id?: number; tier?: number; type?: string[]; buy?: unknown; sell?: unknown; sellratio?: unknown; modes?: Record<string, boolean> | string; stats?: Record<string, unknown>; recipe?: string[] };
+  data?: { id?: number; tier?: number; type?: string[]; buy?: unknown; sell?: unknown; sellratio?: unknown; modes?: Record<string, boolean> | string; stats?: Record<string, unknown>; recipe?: string[]; champion?: unknown; ornn?: unknown; req?: unknown };
   effect_text?: Record<string, ItemEffectText>;
   limit_text?: WikiText;
   limit_groups?: { group: string; rule: string }[];
 }
-interface DdItem { id: number; name: Lang; plaintext: Lang; description: Lang; gold: DdGold; maps: Record<string, boolean>; from?: string[] }
+interface DdItem { id: number; name: Lang; plaintext: Lang; description: Lang; gold: DdGold; maps: Record<string, boolean>; from?: string[]; into?: string[] }
 interface ItemRulesFile { sources: Record<string, Source>; named_effects_outdated_if_new_patch: string | null; named_effects: NamedEffect[] }
 
 export function ItemVersionReview({ assessment, dd, version, officialItems }: { assessment: NonNullable<ReturnType<typeof itemReviewFor>>; dd?: DdItem; version: string; officialItems: readonly DdItem[] }) {
@@ -365,7 +368,7 @@ export function EffectCard({ item, k, e, tr, info, outdated }: { item: string; k
   );
 }
 
-function Items() {
+function Items({ selected = "" }: { selected?: string }) {
   const s = useLoad(async () => {
     const m = await get<Manifest>("manifest.json");
     const snap = m.current.wiki_snapshot;
@@ -381,19 +384,33 @@ function Items() {
     const modes = new Map(wiki.items.filter((x) => x.data).map((x) => [x.name, resolveItemModes(x.name, data)]));
     const matches = matchItemData(wiki.items, dd.items);
     const effectNames = new Map(wiki.items.map((x) => [x.name, Object.values(x.effect_text ?? {}).map((e) => e.name).filter((n): n is string => !!n)]));
-    return { wiki: wiki.items, byName, data, modes, effectNames, matches, officialItems: dd.items, ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
+    return { wiki: wiki.items, byName, data, modes, matches, effectNames, officialItems: dd.items, ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
   }, []);
   const [q, setQ] = useState("");
   const [scope, setScope] = useState("sr");
+  useEffect(() => {
+    if (selected && s.status === "ok") {
+      const heading = document.getElementById("selected-item-heading");
+      heading?.focus(); heading?.scrollIntoView({ block: "start" });
+    }
+  }, [selected, s.status]);
   const list = useMemo(() => {
     if (s.status !== "ok") return [];
     return s.data.wiki
       .filter((w) => w.data)
-      .filter((w) => scope === "all" || s.data.modes.get(w.name)?.sr === (scope === "sr" ? true : scope === "mode" ? false : null))
-      .filter((w) => matchName(q, w.name, s.data.matches.get(w.name)?.official?.name.ja));
-  }, [s, q, scope]);
+      .filter((w) => selected ? selected === `wiki:${w.name}` : scope === "all" || s.data.modes.get(w.name)?.sr === (scope === "sr" ? true : scope === "mode" ? false : null))
+      .filter((w) => !!selected || matchName(q, w.name, s.data.matches.get(w.name)?.official?.name.ja));
+  }, [s, q, scope, selected]);
   if (s.status !== "ok") return <p className="muted">{s.status === "loading" ? "読み込んでいます…" : `読み込めませんでした（${s.message}）`}</p>;
   const { rules, tr, byName, effectNames, ddVersion } = s.data;
+  if (selected.startsWith("dd:")) {
+    const candidates = s.data.officialItems.filter((d) => String(d.id) === selected.slice(3));
+    const d = candidates.length === 1 ? candidates[0] : undefined;
+    return <><p><a href="#/data/items">← アイテム一覧</a></p><h2 id="selected-item-heading" tabIndex={-1}>{d ? displayItemName(d.name.ja ?? d.name.en) : `ID ${selected.slice(3)}：対応未確認`}</h2>
+      {d ? <><p className="muted">公式データ単独の詳細（Data Dragon {ddVersion}）。Wikiとの対応を推測で結合していません。</p><PriceTable rows={priceRows(d, undefined, ddVersion)} />{d.description.ja && <OfficialText text={d.description.ja} version={ddVersion} />}<details><summary>公式の英語原文</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{d.description.en ?? "未収録"}</p></details></> : <p className="notice">{candidates.length ? "同じIDの公式データが複数あります。表示対象を確定できません。" : "このIDの公式データは未収録です。合成先が存在しないという意味ではありません。"}</p>}
+      <ItemTree current={d} all={s.data.officialItems} version={ddVersion} matches={s.data.matches} />
+    </>;
+  }
   /** 効果の文：参照（=>）を解き、description2 以降を親の効果にまとめる */
   const effectsOf = (w: WikiItem) => {
     const out: { item: string; k: string; e: ItemEffectText & { __parts?: Record<string, ItemEffectText> }; refFrom?: string }[] = [];
@@ -412,9 +429,11 @@ function Items() {
   };
   return (
     <>
-      <Filter q={q} setQ={setQ} scope={scope} setScope={setScope} scopes={[["sr", "サモナーズリフト"], ["mode", "モード専用"], ["unknown", "対応モード不明"], ["all", "すべて"]]} />
-      <p className="muted">公式データはIDと英語名の対応を照合できたものだけ結合します。同一性の照合は、説明・数値・パッチの一致やゲーム内仕様の検証ではありません。</p>
+      {selected ? <p><a href="#/data/items">← アイテム一覧</a>（詳細への直接リンクではモード絞り込みを適用しません）</p> : <Filter q={q} setQ={setQ} scope={scope} setScope={setScope} scopes={[["sr", "サモナーズリフト"], ["mode", "モード専用"], ["unknown", "対応モード不明"], ["all", "すべて"]]} />}
+      <p className="muted">SR対応には、専用強化・配布・施設用なども含まれます。SRで通常購入できる装備だけの一覧ではありません。</p>
+      {selected && list.length === 0 && <p className="empty">指定したアイテムは未収録、またはリンクの形式が不明です。別のアイテムへ自動対応させません。</p>}
       <p className="muted">{list.length}件。日本語の名前・説明・値段は Data Dragon {ddVersion}（公式）、ステータス・効果の構造と文は英語 Wiki の Module:ItemData。</p>
+      <p className="muted">公式データはIDと英語名の対応を照合できたものだけ結合します。同一性の照合は、説明・数値・パッチの一致やゲーム内仕様の検証ではありません。</p>
       <ul className="data-list">
         {list.map((w) => {
           const match = s.data.matches.get(w.name)!;
@@ -481,15 +500,18 @@ function Items() {
           </>;
           return (
             <li key={w.name}>
-              <details>
-                <summary>
-                  <strong>{dd?.name.ja ?? w.name}</strong>{" "}
+              <details open={!!selected}>
+                <summary id={selected ? "selected-item-heading" : undefined} tabIndex={selected ? -1 : undefined}>
+                  <strong>{dd ? displayItemName(dd.name.ja ?? dd.name.en) : w.name}</strong>{" "}<span className="badge">{itemCategory(w.data, dd)}</span>{" "}
                   <span className="muted">
                     {w.name}
                     {dd ? (!dd.gold.purchasable ? "・購入できない" : dd.gold.total === 0 ? "・無料" : `・${dd.gold.total}ゴールド`) : ""}
                   </span>
                 </summary>
+                <p><a href={itemHref(`wiki:${w.name}`)}>このアイテムの詳細リンク</a></p>
+                {typeof w.data?.req === "string" && <p className="muted">入手条件（保存Wikiの記載・現行性は未確認）：{wikiPlain(w.data.req)}</p>}
                 <ItemMatchNotice match={match} version={ddVersion} sr={mode.sr} />
+                <details className="item-tree-disclosure" open={!!selected}><summary>素材・上位合成先を確認する</summary><ItemTree current={dd} all={s.data.officialItems} version={ddVersion} matches={s.data.matches} /></details>
                 <PriceTable rows={priceRows(dd, assessment ? undefined : w.data, ddVersion, assessment ? undefined : w.limit_text?.plain, match.status === "unconfirmed")} />
                 {assessment && <ItemVersionReview assessment={assessment} dd={dd} version={ddVersion} officialItems={s.data.officialItems} />}
                 {(mode.chain.length > 1 || mode.error) && <p className="muted">モード分類：{mode.sr === null ? "不明（SR非対応とは判定していません）" : mode.sr ? "サモナーズリフト対応" : "モード専用"}。<ItemReference r={mode} items={byName} /></p>}
