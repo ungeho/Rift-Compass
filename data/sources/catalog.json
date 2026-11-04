@@ -1,0 +1,609 @@
+[
+  {
+    "id": "lol-guide",
+    "name": "LoL Guide：記事",
+    "url": "https://www.lol-guide.com/",
+    "kind": "website",
+    "description_ja": "日本語のLoL記事への入口。記事ごとの著者と確認範囲は個別の資料で確認できます。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [],
+    "topic_ids": [
+      "cat-basics"
+    ],
+    "collection_ids": [
+      "lol-guide"
+    ],
+    "coverage_ja": "記事URLをサイトマップから発見し、未知の記事のメタデータを取得。サイト全体の網羅ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "lolgaren",
+    "name": "LoLGaren",
+    "url": "https://lolgaren.com/",
+    "kind": "website",
+    "description_ja": "日本語のLoL記事を探せるサイト。記事の主張と現在の適用可能性は個別に確認してください。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [
+      "lolgaren"
+    ],
+    "coverage_ja": "WordPress公開APIから取得した候補。取得済み件数はサイトの現在の全記事数を示しません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-goru",
+    "name": "goru",
+    "url": "https://www.youtube.com/@goru6666",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@goru6666"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-goru"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-dopaenglish",
+    "name": "Dopa English",
+    "url": "https://www.youtube.com/@dopaenglish",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [
+      "@dopaenglish"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-dopaenglish"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-veigarv2",
+    "name": "Veigar v2",
+    "url": "https://www.youtube.com/@VeigarV2",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [
+      "@VeigarV2"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-veigarv2"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "lol-guide-glossary",
+    "name": "LoL Guide：用語集",
+    "url": "https://www.lol-guide.com/glossary",
+    "kind": "website",
+    "description_ja": "LoL Guideの用語集への入口。記事コレクションとは区別しています。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [],
+    "topic_ids": [
+      "cat-basics"
+    ],
+    "collection_ids": [
+      "lol-guide-glossary"
+    ],
+    "coverage_ja": "用語集URLを対象とする別コレクション。定義の内容を全件確認したものではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "riot-patch-notes-ja",
+    "name": "Riot Games：日本語パッチノート",
+    "url": "https://www.leagueoflegends.com/ja-jp/news/tags/patch-notes/",
+    "kind": "website",
+    "description_ja": "公式サイトの日本語パッチノートへの入口。個別パッチの内容・反映状況の確認は別です。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [],
+    "topic_ids": [
+      "patch-reading"
+    ],
+    "collection_ids": [
+      "riot-patch-notes-ja"
+    ],
+    "coverage_ja": "サイトマップのURLのみを記録。候補の題名・公開日・本文は未取得です。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-enty",
+    "name": "えんてぃ",
+    "url": "https://www.youtube.com/@entych925",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@entych925"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-enty"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-gariaru",
+    "name": "がりある",
+    "url": "https://www.youtube.com/@howchallelol",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@howchallelol"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-gariaru"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-el",
+    "name": "EL",
+    "url": "https://www.youtube.com/@lolplayerEL",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@lolplayerEL"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-el"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-evi",
+    "name": "Evi（えびンモTV）",
+    "url": "https://www.youtube.com/channel/UCqWIpAZsfdtfh6qNDs1XQNA",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "channel/UCqWIpAZsfdtfh6qNDs1XQNA"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-evi"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "loltheory-blog",
+    "name": "LoL Theory：ブログ",
+    "url": "https://blog.loltheory.gg/",
+    "kind": "website",
+    "description_ja": "英語のLoL記事への入口。記事ごとの著者や内容の確認状況は個別資料で確認してください。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [
+      "loltheory-blog"
+    ],
+    "coverage_ja": "ブログのサイトマップから取得した記事候補。サイト全体の機能や統計の網羅ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-wataneko",
+    "name": "watanekoLoL",
+    "url": "https://www.youtube.com/@LoLwataneko",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@LoLwataneko"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-wataneko"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "lolninja",
+    "name": "LoL忍者",
+    "url": "https://lolninja.net/",
+    "kind": "website",
+    "description_ja": "日本語の記事・翻訳への入口。翻訳と翻訳元を独立した裏付けとして数えないでください。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [
+      "lolninja"
+    ],
+    "coverage_ja": "WordPress公開APIの一部を対象に取得。サイト全体の全記事を収録したものではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-kreative",
+    "name": "Kreative",
+    "url": "https://www.youtube.com/@Kreative",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@Kreative"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-kreative"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-ceros",
+    "name": "Ceros",
+    "url": "https://www.youtube.com/@Ceros1207",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@Ceros1207"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-ceros"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-eugeo",
+    "name": "Eugeo",
+    "url": "https://www.youtube.com/@Eugeoch",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@Eugeoch"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-eugeo"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-nemesis",
+    "name": "Nemesis",
+    "url": "https://www.youtube.com/@Nemesis_lol",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [
+      "@Nemesis_lol"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-nemesis"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-nemesis2",
+    "name": "Nemesis",
+    "url": "https://www.youtube.com/@Nemesis2_lol",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [
+      "@Nemesis2_lol"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-nemesis2"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-broxah",
+    "name": "Broxah",
+    "url": "https://www.youtube.com/@BroxahLoL",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [
+      "@BroxahLoL"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-broxah"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-odoamne",
+    "name": "Odoamne",
+    "url": "https://www.youtube.com/@Odoamne",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "en"
+    ],
+    "aliases": [
+      "@Odoamne"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-odoamne"
+    ],
+    "coverage_ja": "チャンネル一覧の取得済み範囲（通常は新しい順の約30本）。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-botikalol",
+    "name": "ボチカ（BOTika）",
+    "url": "https://www.youtube.com/@BOTikaLOL",
+    "kind": "youtube",
+    "description_ja": "YouTubeチャンネルの動画への入口。専門分野・経歴・個々の動画内容を確認済みとするものではありません。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [
+      "@BOTikaLOL"
+    ],
+    "topic_ids": [],
+    "collection_ids": [
+      "yt-botikalol"
+    ],
+    "coverage_ja": "動画タブ・アップロードの再生リスト・公開再生リストの取得済み範囲。全動画の収録ではありません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "donekifu",
+    "name": "ドネキフ塾",
+    "url": "https://donekifu.jp/",
+    "kind": "website",
+    "description_ja": "日本語のレッスン記事への入口。監修者の発言と編集部の記述は区別して確認してください。",
+    "languages": [
+      "ja"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [
+      "donekifu"
+    ],
+    "coverage_ja": "既存収集設定で指定された10記事が対象。サイトの全レッスンを収録していません。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "既存の収集記録に基づく登録。現在の接続状態は再確認していません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "wardex",
+    "name": "Wardex",
+    "url": "https://wardex.app/",
+    "kind": "website",
+    "description_ja": "ユーザー提示の情報源。内容・専門分野・現在の接続状態は未確認です。",
+    "languages": [
+      "unknown"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [],
+    "coverage_ja": "自動収集は未設定です。情報源への外部リンクから探せます。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "ユーザー提示URL。接続確認は行っていません。"
+    },
+    "related_resource_ids": []
+  },
+  {
+    "id": "yt-dopagod",
+    "name": "@Dopagod",
+    "url": "https://www.youtube.com/@Dopagod",
+    "kind": "youtube",
+    "description_ja": "ユーザー提示の情報源。内容・専門分野・現在の接続状態は未確認です。",
+    "languages": [
+      "unknown"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [],
+    "coverage_ja": "自動収集は未設定です。情報源への外部リンクから探せます。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "ユーザー提示URL。接続確認は行っていません。"
+    },
+    "related_resource_ids": [
+      "res-yt-dopa-official-invade",
+      "res-yt-dopa-official-teacher-snowball"
+    ]
+  },
+  {
+    "id": "yt-pont-lol",
+    "name": "@Pont_LOL",
+    "url": "https://www.youtube.com/@Pont_LOL",
+    "kind": "youtube",
+    "description_ja": "ユーザー提示の情報源。内容・専門分野・現在の接続状態は未確認です。",
+    "languages": [
+      "unknown"
+    ],
+    "aliases": [],
+    "topic_ids": [],
+    "collection_ids": [],
+    "coverage_ja": "自動収集は未設定です。情報源への外部リンクから探せます。",
+    "presence": {
+      "status": "unconfirmed",
+      "checked_at": null,
+      "basis_ja": "ユーザー提示URL。接続確認は行っていません。"
+    },
+    "related_resource_ids": []
+  }
+]

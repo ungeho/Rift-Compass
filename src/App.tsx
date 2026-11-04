@@ -9,8 +9,11 @@ import { ExplorePage } from "./components/ExplorePage";
 import { NotePage } from "./components/NotePage";
 import { DataPage, SECTIONS } from "./components/DataPages";
 import { decisionById } from "./data/decisions";
+import { SourcesPage, SourceDetailPage } from "./components/SourcesPages";
 
 function pageTitle(route: Route): string {
+  if (route.name === "sources") return "情報源を探す";
+  if (route.name === "source") return "情報源の詳細";
   if (route.name === "resource") return index.resourceById.get(route.id)?.title ?? "資料";
   if (route.name === "topic") return index.topicById.get(route.id)?.label_ja ?? "Topic";
   if (route.name === "topics") return "Topic 一覧";
@@ -51,6 +54,7 @@ export function App() {
           <a href="#/decisions">判断材料（試験）</a>
           <a href="#/explore">散策（試験）</a>
           <a href="#/data">ゲームデータ</a>
+          <a href="#/sources">情報源を探す</a>
         </nav>
       </header>
       <main id="main" tabIndex={-1}>
@@ -63,6 +67,8 @@ export function App() {
         {route.name === "note" && <NotePage id={route.id} />}
         {route.name === "explore" && <ExplorePage topic={route.topic} distance={route.distance} count={route.count} />}
         {route.name === "data" && <DataPage section={route.section} />}
+        {route.name === "sources" && <SourcesPage q={route.q} kind={route.kind} lang={route.lang} />}
+        {route.name === "source" && <SourceDetailPage id={route.id} />}
       </main>
       <footer className="site-footer">
         <p>

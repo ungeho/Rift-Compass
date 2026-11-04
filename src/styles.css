@@ -299,3 +299,11 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 @media (max-width: 480px) { .data-price, .data-stats { grid-template-columns: 1fr; } .data-price dd, .data-stats dd { margin-bottom: 4px; } }
 .data-effect { border-left: 3px solid var(--border); padding: 2px 0 2px 8px; margin: 8px 0; }
 .data-list mark { background: var(--warning-bg); outline: 1px solid var(--warning-border); color: inherit; padding: 0 2px; border-radius: 2px; }
+
+.source-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+.source-list > li, .sources-page { min-width: 0; overflow-wrap: anywhere; }
+.source-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 16px 0; }
+.source-controls label { display: grid; gap: 4px; min-width: 0; flex: 1 1 150px; }
+.source-controls label:first-child { flex-basis: 280px; }
+.source-controls input, .source-controls select { width: 100%; min-width: 0; padding: 8px; font: inherit; }
+.source-pagination { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }

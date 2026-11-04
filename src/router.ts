@@ -12,6 +12,8 @@ import { FILTER_KEYS, type Filters } from "./search/search";
 
 export type Route =
   | { name: "home"; q: string; filters: Filters }
+  | { name: "sources"; q: string; kind: string; lang: string }
+  | { name: "source"; id: string }
   | { name: "resource"; id: string }
   | { name: "topic"; id: string }
   | { name: "topics" }
@@ -47,7 +49,9 @@ export function parseHash(hash: string): Route {
   if (seg[0] === "topics") return { name: "topics" };
   if (seg[0] === "note" && seg[1]) return { name: "note", id: seg[1] };
   if (seg[0] === "data") return { name: "data", section: seg[1] ?? "" };
+  if (seg[0] === "source" && seg[1]) return { name: "source", id: seg[1] };
   const params = new URLSearchParams(queryString);
+  if (seg[0] === "sources") return { name: "sources", q: params.get("q") || "", kind: ["website", "youtube"].includes(params.get("kind") || "") ? params.get("kind")! : "", lang: ["ja", "en", "ko", "unknown"].includes(params.get("lang") || "") ? params.get("lang")! : "" };
   if (seg[0] === "decision" && seg[1]) {
     const example = params.get("example");
     return example ? { name: "decision", id: seg[1], example } : { name: "decision", id: seg[1] };
@@ -77,6 +81,14 @@ export function homeHref(q: string, filters: Filters = {}): string {
 }
 
 export const resourceHref = (id: string) => `#/r/${encodeURIComponent(id)}`;
+export const sourceHref = (id: string) => `#/source/${encodeURIComponent(id)}`;
+export function sourcesHref(q = "", kind = "", lang = ""): string {
+  const params = new URLSearchParams();
+  if (q) params.set("q", q);
+  if (kind) params.set("kind", kind);
+  if (lang) params.set("lang", lang);
+  return `#/sources${params.size ? `?${params}` : ""}`;
+}
 export const topicHref = (id: string) => `#/topic/${encodeURIComponent(id)}`;
 export const noteHref = (id: string) => `#/note/${encodeURIComponent(id)}`;
 export function decisionsHref(topic = "", compare = ""): string {

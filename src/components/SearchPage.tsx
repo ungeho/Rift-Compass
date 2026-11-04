@@ -4,7 +4,7 @@ import { eraLabel, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/la
 import type { Level } from "../data/types";
 import { facetCounts, search, type FilterKey, type Filters, type Hit, type Unit } from "../search/search";
 import { externalSearchUrls } from "../lib/links";
-import { homeHref, rememberList, replaceHash, topicHref } from "../router";
+import { homeHref, rememberList, replaceHash, topicHref, sourcesHref } from "../router";
 import { ExternalLink } from "./common";
 import { QuestionEntrances, RelatedDecisions, RelatedExamples } from "./DecisionPages";
 import { RelatedNotes } from "./RelatedNotes";
@@ -90,6 +90,7 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
     <div className="search-page">
       <section className="hero" aria-labelledby="search-heading">
         <h1 id="search-heading">何を知りたいですか？</h1>
+        <p><a href={sourcesHref(q)}>情報源を探す：未収録の記事・動画への入口</a></p>
         <form role="search" onSubmit={(e) => e.preventDefault()}>
           <label htmlFor="q" className="visually-hidden">
             知りたいことを日本語または英語で入力

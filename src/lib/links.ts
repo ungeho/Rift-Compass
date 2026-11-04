@@ -31,3 +31,11 @@ export function externalSearchUrls(query: string): { google: string; youtube: st
 
 /** 外部リンクの安全な属性 */
 export const externalLinkProps = { target: "_blank", rel: "noopener noreferrer" } as const;
+
+/** 公開ディレクトリで案内できるURL。スクリプト・相対URL・認証情報付きURLは許可しない。 */
+export function safeExternalUrl(value: string): string | null {
+  try {
+    const u = new URL(value);
+    return ["https:", "http:"].includes(u.protocol) && !u.username && !u.password ? u.href : null;
+  } catch { return null; }
+}
