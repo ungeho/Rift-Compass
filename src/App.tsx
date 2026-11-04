@@ -1,15 +1,20 @@
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
+import { PageBoundary } from "./components/PageBoundary";
 import { index } from "./data/dataset";
 import { useRoute, type Route } from "./router";
-import { ResourceDetail } from "./components/ResourceDetail";
 import { SearchPage } from "./components/SearchPage";
-import { TopicIndex, TopicPage } from "./components/TopicPages";
 import { DecisionDetail, DecisionIndex } from "./components/DecisionPages";
 import { ExplorePage } from "./components/ExplorePage";
-import { NotePage } from "./components/NotePage";
-import { DataPage, SECTIONS } from "./components/DataPages";
+import { SECTIONS } from "./gamedata/sections";
 import { decisionById } from "./data/decisions";
-import { SourcesPage, SourceDetailPage } from "./components/SourcesPages";
+
+const ResourceDetail = lazy(() => import("./components/ResourceDetail").then(m => ({ default: m.ResourceDetail })));
+const TopicIndex = lazy(() => import("./components/TopicPages").then(m => ({ default: m.TopicIndex })));
+const TopicPage = lazy(() => import("./components/TopicPages").then(m => ({ default: m.TopicPage })));
+const NotePage = lazy(() => import("./components/NotePage").then(m => ({ default: m.NotePage })));
+const DataPage = lazy(() => import("./components/DataPages").then(m => ({ default: m.DataPage })));
+const SourcesPage = lazy(() => import("./components/SourcesPages").then(m => ({ default: m.SourcesPage })));
+const SourceDetailPage = lazy(() => import("./components/SourcesPages").then(m => ({ default: m.SourceDetailPage })));
 
 function pageTitle(route: Route): string {
   if (route.name === "sources") return "情報源を探す";
@@ -58,6 +63,7 @@ export function App() {
         </nav>
       </header>
       <main id="main" tabIndex={-1}>
+        <PageBoundary key={route.name}>
         {route.name === "home" && <SearchPage q={route.q} filters={route.filters} />}
         {route.name === "resource" && <ResourceDetail id={route.id} />}
         {route.name === "topic" && <TopicPage id={route.id} />}
@@ -69,6 +75,7 @@ export function App() {
         {route.name === "data" && <DataPage section={route.section} item={route.item} />}
         {route.name === "sources" && <SourcesPage q={route.q} kind={route.kind} lang={route.lang} />}
         {route.name === "source" && <SourceDetailPage id={route.id} />}
+        </PageBoundary>
       </main>
       <footer className="site-footer">
         <p>
