@@ -11,13 +11,13 @@ export function revealTopicItems(button: HTMLButtonElement, from: number, update
   });
 }
 /** 各パネルを保持し、切り替えても絞り込みや段階表示を失わない。 */
-export function TopicTabs({ tabs, initial }: { tabs: TopicTab[]; initial: string }) {
+export function TopicTabs({ tabs, initial, label = "Topic の情報" }: { tabs: TopicTab[]; initial: string; label?: string }) {
   const prefix = useId();
   const [active, setActive] = useState(initial);
   const buttons = useRef(new Map<string, HTMLButtonElement>());
   const selected = tabs.some((t) => t.id === active) ? active : tabs[0]?.id;
   return <div className="topic-tabs">
-    <div className="topic-tablist" role="tablist" aria-label="Topic の情報">
+    <div className="topic-tablist" role="tablist" aria-label={label}>
       {tabs.map((tab, i) => <button key={tab.id} ref={(el) => { if (el) buttons.current.set(tab.id, el); else buttons.current.delete(tab.id); }} type="button" role="tab" id={`${prefix}-tab-${tab.id}`} aria-controls={`${prefix}-panel-${tab.id}`} aria-selected={selected === tab.id} tabIndex={selected === tab.id ? 0 : -1} onClick={() => setActive(tab.id)} onKeyDown={(e) => {
         let next: number;
         if (e.key === "ArrowRight") next = (i + 1) % tabs.length;

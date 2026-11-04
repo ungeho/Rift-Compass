@@ -234,12 +234,12 @@ function basisText(bases: DecisionMatchBasis[]): string {
   return `「${bases[0].matched}」${parts.join("・")}`;
 }
 
-export function RelatedDecisions({ q }: { q: string }) {
+export function RelatedDecisions({ q, open = false }: { q: string; open?: boolean }) {
   const matches = decisionMatchesForQuery(q);
   if (matches.length === 0) return null;
   const expanded = matches[0].expandedQuery;
   return (
-    <details className="comparison-details related-decisions">
+    <details className="comparison-details related-decisions" open={open}>
       <summary>
         検索語に一致した判断材料 <span className="badge">判断材料（試験）</span>：{matches.length}件
       </summary>

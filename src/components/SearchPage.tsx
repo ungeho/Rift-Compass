@@ -3,12 +3,22 @@ import { index } from "../data/dataset";
 import { eraLabel, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/labels";
 import type { Level } from "../data/types";
 import { facetCounts, search, type FilterKey, type Filters, type Hit, type Unit } from "../search/search";
+import { noteMatchesForQuery } from "../data/noteSearch";
+import { decisionMatchesForQuery, examplesForQuery } from "../data/decisions";
 import { externalSearchUrls } from "../lib/links";
 import { homeHref, rememberList, replaceHash, topicHref, sourcesHref } from "../router";
 import { ExternalLink } from "./common";
 import { QuestionEntrances, RelatedDecisions, RelatedExamples } from "./DecisionPages";
 import { RelatedNotes } from "./RelatedNotes";
 import { ResourceCard } from "./ResourceCard";
+import { TopicTabs, revealTopicItems, type TopicTab } from "./TopicTabs";
+
+export const SEARCH_PAGE_SIZE = 20;
+function SearchHitList({ hits, partial = false }: { hits: Hit[]; partial?: boolean }) {
+  const [shown, setShown] = useState(SEARCH_PAGE_SIZE);
+  return <><ol className="result-list">{hits.slice(0, shown).map((h) => <li key={h.resource.id}><ResourceCard resource={h.resource} partial={partial} recognized={h.match === "recognized"} /></li>)}</ol>
+    {shown < hits.length && <button className="button" onClick={(e) => revealTopicItems(e.currentTarget, shown, () => setShown(shown + SEARCH_PAGE_SIZE))}>資料をさらに{Math.min(SEARCH_PAGE_SIZE, hits.length - shown)}件表示する（残り {hits.length - shown}件）</button>}</>;
+}
 
 const EXAMPLES = [
   "敵のスキルを避けた後に仕掛ける理由",
@@ -54,6 +64,8 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
   // IME（日本語入力）の変換中は URL と検索を更新せず、確定してから反映する。
   // 入力欄の表示は手元の draft で持ち、URL 側の変更（質問例のクリック・戻る操作）は変換中でなければ取り込む。
   const [draft, setDraft] = useState(q);
+  const queryInput = useRef<HTMLInputElement>(null);
+  const resultsHeading = useRef<HTMLHeadingElement>(null);
   const composing = useRef(false);
   useEffect(() => {
     if (!composing.current) setDraft(q);
@@ -78,25 +90,57 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
   const fullCount = main.filter((h) => h.match === "full").length;
   const recognizedCount = main.length - fullCount;
   const recognizedOnly = recognizedCount > 0;
+  const noteResult = useMemo(() => hasQuery ? noteMatchesForQuery(q) : undefined, [q]);
+  const decisionCount = useMemo(() => hasQuery ? decisionMatchesForQuery(q).length : 0, [q]);
+  const exampleCount = useMemo(() => hasQuery ? examplesForQuery(q).length : 0, [q]);
 
   useEffect(() => {
     rememberList(href);
   }, [href]);
 
-  const setFilter = (key: FilterKey, value: string) => replaceHash(homeHref(q, { ...filters, [key]: value || undefined }));
-  const clearFilters = () => replaceHash(homeHref(q));
+  const setFilter = (key: FilterKey, value: string, focusQuery = false) => {
+    replaceHash(homeHref(q, { ...filters, [key]: value || undefined }));
+    if (focusQuery) queryInput.current?.focus();
+  };
+  const clearFilters = () => { replaceHash(homeHref(q)); queryInput.current?.focus(); };
+
+  const resourceContent = <>
+    <h3 className="search-section-title">{hasQuery ? "資料の検索結果" : "公開資料"}</h3>
+    {hasQuery && main.length > 0 && recognizedOnly && (result.analysis.ignored.length > 0 ? (
+      <p className="notice">「{result.analysis.ignored.join("」「")}」は資料中に見つからなかったため、検索条件に含めていません。以下は、それ以外の条件（{result.analysis.units.map(unitLabel).join("・")}）にすべて一致した資料です。「{result.analysis.ignored.join("」「")}」について扱っているとは限りません。</p>
+    ) : <p className="notice">認識したTopicの一部には、対応する資料をまだ収録していません。以下は一致判定に使えた条件に一致した資料で、検索語のすべてを扱っているとは限りません。</p>)}
+    {hasQuery && main.length === 0 && partial.length > 0 && (subjectMatched.length > 0 ? (
+      <p className="notice">主題（{subjectUnits.map(unitLabel).join("・")}）に一致する資料は{subjectMatched.length}件あります。ただし、質問から取り出した語（{[...new Set(subjectMatched.flatMap((h) => missingTerms(h)))].map((u) => `「${u.matched}」`).join("")}など）が資料の題名・紹介文・Topic に見つからないため、「条件に一致」には数えていません。その資料が質問に答えているかは、各資料で確かめてください。</p>
+    ) : <p className="notice">すべての条件に一致する資料はありません。下に、一部の条件だけに関連する候補を条件ごとに表示しています。</p>)}
+    {result.hits.length === 0 ? <div className="empty">
+      <p><strong>この検索条件では、Rift Compass に登録された公開資料から一致する資料が見つかりませんでした。</strong></p>
+      <p className="muted">Rift Compass が収録している資料は一部だけです。ここで見つからなくても、その話題を扱う資料が存在しないという意味ではありません。</p>
+      <ul><li>別の言い方（例：「Lv2」「レベル2」「level 2 spike」）や英語でも試してください。</li><li>語を減らすと見つかる場合があります。</li>
+        {activeFilters.length > 0 && <li><button type="button" className="link-button" onClick={clearFilters}>絞り込みを解除する</button></li>}
+        <li><a href="#/topics">Topic 一覧から探す</a></li><li><a href={sourcesHref(q)}>情報源から未収録の記事・動画を探す</a></li></ul>
+    </div> : <>
+      {main.length > 0 && <SearchHitList key={`main-${href}`} hits={main} />}
+      {partial.length > 0 && <PartialCandidates key={`partial-${href}`} hits={partial} units={result.analysis.units} requiredKeys={result.requiredKeys} open={main.length === 0} />}
+    </>}
+  </>;
+  const resultTabs: TopicTab[] = [
+    { id: "resources", label: `資料 ${result.hits.length}件`, content: resourceContent },
+    { id: "notes", label: `知識ノート ${noteResult?.matches.length ?? 0}件`, content: <><h3>知識ノートの照合結果</h3>{noteResult?.matches.length ? <RelatedNotes q={q} result={noteResult} /> : <p>この検索語で一致する公開の知識ノートはありません。未収録の知識が存在しないという意味ではありません。</p>}</> },
+    { id: "decisions", label: `判断材料 ${decisionCount}件・具体例 ${exampleCount}件`, content: <><h3>判断材料・具体例の照合結果</h3><RelatedDecisions q={q} open /><RelatedExamples q={q} />{decisionCount + exampleCount === 0 && <p>この検索語で一致する判断材料・具体例はありません。別の言い方やTopicからも探せます。</p>}</> },
+  ];
+  const initialTab = result.hits.length > 0 ? "resources" : noteResult?.matches.length ? "notes" : decisionCount + exampleCount > 0 ? "decisions" : "resources";
 
   return (
     <div className="search-page">
       <section className="hero" aria-labelledby="search-heading">
         <h1 id="search-heading">何を知りたいですか？</h1>
-        <p><a href={sourcesHref(q)}>情報源を探す：未収録の記事・動画への入口</a></p>
-        <form role="search" onSubmit={(e) => e.preventDefault()}>
+        <form role="search" className="search-form" onSubmit={(e) => { e.preventDefault(); if (!composing.current) { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: "start" }); } }}>
           <label htmlFor="q" className="visually-hidden">
             知りたいことを日本語または英語で入力
           </label>
           <input
             id="q"
+            ref={queryInput}
             type="search"
             className="search-input"
             placeholder="例：Lv2先行が有利になる条件 / how to freeze a lane"
@@ -114,9 +158,12 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
               commit(e.currentTarget.value);
             }}
           />
+          <button type="submit" className="button primary">結果を見る</button>
+          {hasQuery && <button type="button" className="button" onClick={() => { setDraft(""); commit(""); queryInput.current?.focus(); }}>検索語を消す</button>}
         </form>
-        <div className="examples">
-          <span className="examples-label">質問の例：</span>
+        <p className="muted search-scope">資料・知識ノート・判断材料を別々に照合します。語の一致は、質問への正しい答えを保証しません。</p>
+        <details className="examples" open={!hasQuery}>
+          <summary className="examples-label">質問の例（{EXAMPLES.length}件）</summary>
           <ul className="chips">
             {EXAMPLES.map((ex) => (
               <li key={ex}>
@@ -126,21 +173,35 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
               </li>
             ))}
           </ul>
-        </div>
+        </details>
+        <nav className="search-entry-links" aria-label="検索以外の探し方">
+          <a href="#/topics">Topic 一覧から探す</a>
+          <a href={sourcesHref(q)}>情報源を探す：未収録の記事・動画への入口</a>
+          <a href="#/explore">知識を散策する</a>
+          <a href="#/data">ゲームデータを見る</a>
+        </nav>
       </section>
 
       {!hasQuery && activeFilters.length === 0 && (
         <>
-          <QuestionEntrances />
-          <TopicEntrances />
+          <div className="search-browse">
+            <details><summary>知りたいことから探す（質問の入口）</summary><QuestionEntrances /></details>
+            <details><summary>Topic から探す（分類別の入口）</summary><TopicEntrances /></details>
+          </div>
         </>
       )}
+
+      {activeFilters.length > 0 && <div className="active-filters" aria-label="現在の資料の絞り込み">
+        <strong>資料の絞り込み中：</strong>
+        {activeFilters.map((k) => <button key={k} type="button" className="chip removable" onClick={() => setFilter(k, "", true)}>{FILTER_LABELS[k]}：{OPTIONS[k].find((o) => o.value === filters[k])?.label ?? filters[k]}<span aria-hidden="true"> ×</span><span className="visually-hidden">（解除）</span></button>)}
+        <button type="button" className="link-button" onClick={clearFilters}>すべて解除</button>
+      </div>}
 
       <div className="results-layout">
         <aside className="filters" aria-label="絞り込み">
           <details open={filtersInitiallyOpen}>
             <summary>
-              絞り込み{activeFilters.length > 0 && <span className="count-pill">{activeFilters.length}</span>}
+              資料の絞り込み{activeFilters.length > 0 && <span className="count-pill">{activeFilters.length}</span>}
             </summary>
             {(Object.keys(FILTER_LABELS) as FilterKey[]).map((key) => {
               const counts = facetCounts(q, filters, key);
@@ -167,15 +228,16 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
           </details>
         </aside>
 
-        <section className="results" aria-live="polite" aria-labelledby="results-heading">
-          <h2 id="results-heading" className="results-heading">
+        <section className="results" aria-labelledby="results-heading">
+          <h2 id="results-heading" ref={resultsHeading} tabIndex={-1} className="results-heading">
             {hasQuery ? "検索結果" : "資料一覧"}{" "}
-            <span className="result-count">
+            <span className="result-count" role="status" aria-live="polite">
               {hasQuery
                 ? `条件に一致：${fullCount}件・認識できた条件に一致：${recognizedCount}件・関連候補：${partial.length}件`
                 : `${result.hits.length}件`}
             </span>
           </h2>
+          {hasQuery && <p className="muted search-scope">上の件数は資料のみです。タブの件数は一部一致の候補も含む別集計です。資料の絞り込みは、知識ノート・判断材料には適用しません。</p>}
 
           {hasQuery && (
             <div className="analysis">
@@ -190,90 +252,16 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
                 </p>
               )}
               {result.analysis.ignored.length > 0 && (
-                <p className="muted">資料中に見つからず、検索条件に含めなかった語：{result.analysis.ignored.join("、")}</p>
+                <p className="search-ignored">資料中に見つからず、検索条件に含めなかった語：{result.analysis.ignored.join("、")}</p>
               )}
               {result.hits.length > 0 && (
                 <p className="muted">検索語に一致した資料が、質問に直接答えているとは限りません。各資料の紹介と確認レベルを確かめてください。</p>
               )}
+              <details className="search-match-help"><summary>資料の一致区分について</summary><dl><dt>条件に一致：</dt><dd>検索の一致判定に使った条件を満たす資料です。</dd><dt>認識できた条件に一致：</dt><dd>資料にない語や、資料未収録のTopicを含む検索です。表示した資料が検索語のすべてを扱うとは限りません。</dd><dt>関連候補（一部一致）：</dt><dd>必須とした条件の一部だけに一致する資料です。一致しなかった条件も表示します。</dd></dl><p>いずれも資料の内容の正しさや、現在のパッチでの適合性を判定したものではありません。</p></details>
             </div>
           )}
 
-          {hasQuery && <RelatedExamples q={q} />}
-          {hasQuery && <RelatedDecisions q={q} />}
-          {hasQuery && <RelatedNotes q={q} />}
-
-          {activeFilters.length > 0 && (
-            <p className="active-filters">
-              絞り込み中：
-              {activeFilters.map((k) => (
-                <button key={k} type="button" className="chip removable" onClick={() => setFilter(k, "")}>
-                  {FILTER_LABELS[k]}：{OPTIONS[k].find((o) => o.value === filters[k])?.label ?? filters[k]}
-                  <span aria-hidden="true"> ×</span>
-                  <span className="visually-hidden">（解除）</span>
-                </button>
-              ))}
-            </p>
-          )}
-
-          {hasQuery && main.length > 0 && recognizedOnly && (
-            <p className="notice">
-              「{result.analysis.ignored.join("」「")}」は資料中に見つからなかったため、検索条件に含めていません。以下は、それ以外の条件（
-              {result.analysis.units.map(unitLabel).join("・")}）にすべて一致した資料です。「{result.analysis.ignored.join("」「")}」について扱っているとは限りません。
-            </p>
-          )}
-          {hasQuery && main.length === 0 && partial.length > 0 && (
-            subjectMatched.length > 0 ? (
-              <p className="notice">
-                主題（{subjectUnits.map(unitLabel).join("・")}）に一致する資料は{subjectMatched.length}件あります。ただし、質問から取り出した語（
-                {[...new Set(subjectMatched.flatMap((h) => missingTerms(h)))].map((u) => `「${u.matched}」`).join("")}
-                など）が資料の題名・紹介文・Topic に見つからないため、「条件に一致」には数えていません。その資料が質問に答えているかは、各資料で確かめてください。
-              </p>
-            ) : (
-              <p className="notice">
-                すべての条件に一致する資料はありません。下に、一部の条件だけに関連する候補を条件ごとに表示しています。
-              </p>
-            )
-          )}
-
-          {result.hits.length === 0 ? (
-            <div className="empty">
-              <p>
-                <strong>この検索条件では、Rift Compass に登録された公開資料から一致する資料が見つかりませんでした。</strong>
-              </p>
-              <p className="muted">
-                Rift Compass が収録している資料は一部だけです。ここで見つからなくても、その話題を扱う資料が存在しないという意味ではありません。
-              </p>
-              <ul>
-                <li>別の言い方（例：「Lv2」「レベル2」「level 2 spike」）や英語でも試してください。</li>
-                <li>語を減らすと見つかる場合があります。</li>
-                {activeFilters.length > 0 && (
-                  <li>
-                    <button type="button" className="link-button" onClick={clearFilters}>
-                      絞り込みを解除する
-                    </button>
-                  </li>
-                )}
-                <li>
-                  <a href="#/topics">Topic 一覧から探す</a>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <>
-              {main.length > 0 && (
-                <ol className="result-list">
-                  {main.map((h) => (
-                    <li key={h.resource.id}>
-                      <ResourceCard resource={h.resource} recognized={h.match === "recognized"} />
-                    </li>
-                  ))}
-                </ol>
-              )}
-              {partial.length > 0 && (
-                <PartialCandidates hits={partial} units={result.analysis.units} requiredKeys={result.requiredKeys} open={main.length === 0} />
-              )}
-            </>
-          )}
+          {hasQuery ? <TopicTabs key={href} label="検索結果の種類" tabs={resultTabs} initial={initialTab} /> : resourceContent}
 
           {hasQuery && <ExternalSearch query={q} />}
         </section>
@@ -324,13 +312,7 @@ function PartialCandidates({ hits, units, requiredKeys, open }: { hits: Hit[]; u
             {label} にだけ一致 <span className="result-count">{list.length}件</span>
           </h3>
           {missingOf.get(label) && <p className="muted partial-missing">一致しなかった条件：{missingOf.get(label)}</p>}
-          <ol className="result-list">
-            {list.map((h) => (
-              <li key={h.resource.id}>
-                <ResourceCard resource={h.resource} partial />
-              </li>
-            ))}
-          </ol>
+          <SearchHitList hits={list} partial />
         </section>
       ))}
     </details>

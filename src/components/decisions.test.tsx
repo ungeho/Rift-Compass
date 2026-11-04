@@ -1086,10 +1086,11 @@ describe("検索から判断材料への到達（資料の検索結果は変え�
     expect(analyzeQuery("Lv2先行が有利になる条件は？").units.map((x) => x.matched)).toEqual(["lv2先行"]);
   });
 
-  it("判断材料の欄は、資料の結果とは別に閉じた状態で出し、件数に含めない", () => {
+  it("判断材料は資料とは別タブに置き、資料の件数に含めない。タブ内は追加の展開操作なしで読める", () => {
     const markup = page("対面に負けている ウェーブ");
     const b = box(markup);
-    expect(b).not.toContain("open");
+    expect(markup).toMatch(/<section[^>]+id="[^"]*-panel-decisions"[^>]*hidden=""[^>]*>/);
+    expect(b).toContain('open=""');
     expect(text(b)).toContain("検索語に一致した判断材料");
     expect(text(b)).toContain("上の件数には含みません");
     expect(text(b)).toContain("質問への答えや推奨ではありません");
@@ -1118,12 +1119,14 @@ describe("検索結果の判断材料の欄：一致件数で切り捨てない"
   };
   const links = (html: string) => [...html.matchAll(/href="#\/decision\/([^"?]+)"/g)].map((m) => m[1]);
 
-  it("6件以上一致しても、閉じた欄に全件を正確な件数で出す（例：対面のロームを追うか）", () => {
+  it("6件以上一致しても、別タブに全件を正確な件数で出す（例：対面のロームを追うか）", () => {
     for (const q of ["対面がロームしたら追いかけるべき？", "リコール"]) {
       const found = decisionsForQuery(q).map((u) => u.id);
       expect(found.length).toBeGreaterThan(5);
-      const b = box(page(q));
-      expect(b).not.toContain("open");
+      const markup = page(q);
+      const b = box(markup);
+      expect(markup).toMatch(/<section[^>]+id="[^"]*-panel-decisions"[^>]*hidden=""[^>]*>/);
+      expect(b).toContain('open=""');
       expect(text(b)).toContain(`検索語に一致した判断材料 判断材料（試験） ：${found.length}件`);
       expect(links(b)).toEqual(found);
     }
@@ -1134,7 +1137,10 @@ describe("検索結果の判断材料の欄：一致件数で切り捨てない"
     for (const q of ["対面がロームしたら追いかけるべき？", "リコール"]) {
       const r = search(q);
       const markup = page(q);
-      expect(markup.indexOf('class="comparison-details related-decisions"')).toBeLessThan(markup.indexOf(`href="#/r/${r.hits[0].resource.id}"`));
+      const main = r.hits.filter((h) => h.match !== "partial").slice(0, 20).map((h) => h.resource.id);
+      const rendered = [...markup.matchAll(/<h3 class="card-title"><a href="#\/r\/([^"]+)"/g)].map((m) => m[1]);
+      expect(rendered.slice(0, main.length)).toEqual(main);
+      expect(text(markup)).toContain(`条件に一致：${r.hits.filter((h) => h.match === "full").length}件`);
       expect(text(markup)).toContain("上の件数には含みません");
     }
   });

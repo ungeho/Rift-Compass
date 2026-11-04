@@ -4,6 +4,9 @@ import { index } from "../data/dataset";
 import { NOTE_FIELD_LABELS, noteMatchesForQuery, type NoteMatch, type NoteMatchBasis } from "../data/noteSearch";
 import { plainText } from "../lib/plainText";
 import { NoteSummary } from "./ExplorePage";
+import { useState } from "react";
+import { revealTopicItems } from "./TopicTabs";
+import type { NoteSearchResult } from "../data/noteSearch";
 
 const topicLabel = (id: string) => index.topicById.get(id)?.label_ja ?? id;
 
@@ -56,8 +59,14 @@ function NoteMatchCard({ m, matched }: { m: NoteMatch; matched: string[] }) {
   );
 }
 
-export function RelatedNotes({ q }: { q: string }) {
-  const r = noteMatchesForQuery(q);
+function NoteMatches({ matches, matched }: { matches: NoteMatch[]; matched: string[] }) {
+  const [shown, setShown] = useState(20);
+  return <><ul className="result-list">{matches.slice(0, shown).map((m) => <NoteMatchCard key={m.note.id} m={m} matched={matched} />)}</ul>
+    {shown < matches.length && <button className="button" onClick={(e) => revealTopicItems(e.currentTarget, shown, () => setShown(shown + 20))}>知識ノートをさらに{Math.min(20, matches.length - shown)}件表示する（残り {matches.length - shown}件）</button>}</>;
+}
+
+export function RelatedNotes({ q, result }: { q: string; result?: NoteSearchResult }) {
+  const r = result ?? noteMatchesForQuery(q);
   if (r.matches.length === 0) return null;
   const matched = r.units.map((u) => u.matched);
   const full = r.matches.filter((m) => m.tier === "full");
@@ -81,20 +90,12 @@ export function RelatedNotes({ q }: { q: string }) {
       {!r.cues.negation && r.cues.condition && <p className="muted">検索語に条件の表現があります。各ノートの成立条件と例外が、知りたい状況に合うかを確かめてください。</p>}
       {r.ignored.length > 0 && <p className="muted">知識ノートに見つからず、ノートの照合に使わなかった語：{r.ignored.join("、")}</p>}
       {full.length > 0 && (
-        <ul className="result-list">
-          {full.map((m) => (
-            <NoteMatchCard key={m.note.id} m={m} matched={matched} />
-          ))}
-        </ul>
+        <NoteMatches key={`full-${q}`} matches={full} matched={matched} />
       )}
       {partial.length > 0 && (
         <details className="related-notes-partial">
           <summary>一部の条件だけに一致した関連候補：{partial.length}件</summary>
-          <ul className="result-list">
-            {partial.map((m) => (
-              <NoteMatchCard key={m.note.id} m={m} matched={matched} />
-            ))}
-          </ul>
+          <NoteMatches key={`partial-${q}`} matches={partial} matched={matched} />
         </details>
       )}
     </details>
