@@ -390,3 +390,15 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .item-icon-placeholder { display: flex; width: 40px; height: 40px; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--muted); font-size: 10px; text-align: center; }
 .item-tree-disclosure { margin: 12px 0; border-block: 1px solid var(--border); padding: 8px 0; }
 @media (max-width: 600px) { .item-tree-columns { grid-template-columns: minmax(0, 1fr); } }
+.skill-behavior { margin: 1rem 0; padding-block: .5rem; border-block: 1px solid var(--border, #ccc); }
+.skill-behavior h4, .skill-behavior h5 { margin: .5rem 0; }
+.skill-behavior-rules { padding-left: 1.25rem; }
+.skill-behavior-rules > li { margin-block: 1rem; }
+.skill-behavior dl { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: .25rem .75rem; }
+.skill-behavior dt { font-weight: 600; }
+.skill-behavior dd { margin: 0; overflow-wrap: anywhere; }
+.skill-behavior pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85em; }
+@media (max-width: 600px) {
+  .skill-behavior dl { grid-template-columns: minmax(0, 1fr); }
+  .skill-behavior dd { margin-bottom: .5rem; }
+}

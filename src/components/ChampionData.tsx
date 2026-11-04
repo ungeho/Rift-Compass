@@ -1,6 +1,7 @@
 // チャンピオンの Topic ページに出す基本データ（Data Dragon・Wiki の取り込み結果）。
 // 必要なチャンピオンのファイルだけを開いたときに読む（public/gamedata）。取得したデータの表示で、ゲーム内での検証ではない。
 import { useEffect, useState } from "react";
+import { SkillBehavior } from "./SkillBehavior";
 import { topicHref } from "../router";
 import {
   attackSpeedRow,
@@ -368,6 +369,7 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
         </span>
         {t.compare && <span className="badge">{t.compare.same ? "CD は Data Dragon と一致" : "CD が Data Dragon と違う（どちらが現行かは未確認）"}</span>}
       </div>
+      <SkillBehavior template={t} />
       {t.rank_note && (
         <div className="muted">
           値の数（{t.rank_note.value_counts.join("・")}）が Data Dragon の最大ランク（{t.rank_note.ddragon_maxrank}）と違います。Wiki の段階（究極スキルのランク・形態など）による値の可能性があります。
