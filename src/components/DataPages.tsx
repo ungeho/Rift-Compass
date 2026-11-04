@@ -284,9 +284,9 @@ function OfficialText({ text, version }: { text: string; version: string }) {
   );
 }
 
-function PriceTable({ rows }: { rows: PriceRow[] }) {
+export function PriceTable({ rows, wikiSource }: { rows: PriceRow[]; wikiSource?: Source }) {
   return (
-    <dl className="data-price">
+    <><dl className="data-price">
       {rows.map((r) => (
         <div key={r.label}>
           <dt>{r.label}</dt>
@@ -296,7 +296,7 @@ function PriceTable({ rows }: { rows: PriceRow[] }) {
           </dd>
         </div>
       ))}
-    </dl>
+    </dl>{wikiSource && rows.some((r) => r.label.startsWith("Wiki")) && <p className="muted wiki-price-provenance">Wiki価格・売却可否は保存原典の記録です。原典更新日時：{wikiSource.last_modified ?? "不明"}／取得日時：{wikiSource.fetched_at ?? "未記録"}。対象パッチと現行性はこの日時だけでは確定できません。<a href={wikiSource.url}>{wikiSource.title}</a>。公式価格との数値差は、レシピ変更やゲーム内仕様の誤りを証明するものではありません。</p>}</>
   );
 }
 
@@ -531,7 +531,7 @@ function Items({ selected = "" }: { selected?: string }) {
                 <ItemMatchNotice match={match} version={ddVersion} sr={mode.sr} />
                 {family && <EffectGroupReview family={family} version={ddVersion} />}
                 <details className="item-tree-disclosure" open={!!selected}><summary>素材・上位合成先を確認する</summary><ItemTree current={dd} all={s.data.officialItems} version={ddVersion} matches={s.data.matches} /></details>
-                <PriceTable rows={priceRows(dd, assessment ? undefined : w.data, ddVersion, assessment ? undefined : w.limit_text?.plain, match.status === "unconfirmed")} />
+                <PriceTable rows={priceRows(dd, assessment ? undefined : w.data, ddVersion, assessment ? undefined : w.limit_text?.plain, match.status === "unconfirmed")} wikiSource={assessment ? undefined : w.source} />
                 {assessment && <ItemVersionReview assessment={assessment} dd={dd} version={ddVersion} officialItems={s.data.officialItems} />}
                 {(mode.chain.length > 1 || mode.error) && <p className="muted">モード分類：{mode.sr === null ? "不明（SR非対応とは判定していません）" : mode.sr ? "サモナーズリフト対応" : "モード専用"}。<ItemReference r={mode} items={byName} /></p>}
                 {assessment ? <details className="legacy-item-data"><summary>保存Wiki Module（過去情報・再確認待ち）</summary><p className="notice">この欄は旧仕様を含む保存情報です。現在の購入・装備・効果の判断にそのまま使用しないでください。</p><p className="muted">原典更新日時：{w.source.last_modified ?? "不明"}／取得日時：{w.source.fetched_at ?? "未記録"}。ゲーム内の適用パッチはこの日時だけでは確定できません。</p><PriceTable rows={priceRows(undefined, w.data, ddVersion, w.limit_text?.plain).filter((r) => r.label !== "購入価格")} /><p>保存された素材：{w.data?.recipe?.join("＋") ?? "未収録"}</p>{wikiContent}</details> : wikiContent}

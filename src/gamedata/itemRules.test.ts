@@ -179,7 +179,7 @@ describe("値段", () => {
       expect(sell.value).toBe("0ゴールド");
       expect(sell.note).toMatch(/区別できない/);
     }
-    expect(priceRows(dd, undefined, "v").find((r) => r.label === "売却価格")!.note).toBe("Data Dragon の gold.sell");
+    expect(priceRows(dd, undefined, "v").find((r) => r.label === "売却価格")!.note).toContain("Data Dragon v の gold.sell");
   });
   it("Wiki と Data Dragon の値段が違うときは両方を示し、どちらが現在か決めない。売却できないのは明記があるときだけ", () => {
     const rows = priceRows({ ...dd, gold: { ...dd.gold, total: 3500 } }, { buy: 3450 }, "16.21.1");
@@ -187,8 +187,41 @@ describe("値段", () => {
     expect(rows.find((r) => r.label === "Wiki の購入価格")!.note).toMatch(/未確認/);
     expect(rows.some((r) => r.label === "売却")).toBe(false);
     const ns = priceRows({ gold: { base: 450, total: 450, sell: 0, purchasable: true } }, {}, "v", "Role Binding: ... Cannot be resold to the shop.");
-    expect(ns.find((r) => r.label === "売却")).toMatchObject({ value: "売却できない" });
-    expect(priceRows(dd, { sell: "No Sell" }, "v").find((r) => r.label === "売却")!.note).toMatch(/No Sell/);
+    expect(ns.find((r) => r.label === "売却")).toBeUndefined();
+    expect(ns.find((r) => r.label === "Wiki の売却可否")).toMatchObject({ value: "売却不可の記載" });
+    expect(priceRows(dd, { sell: "No Sell" }, "v").find((r) => r.label === "Wiki の売却可否")!.note).toMatch(/No Sell.*現在の売却可否は未確認/);
+  });
+  it("World Atlasの160Gと旧WikiのNo Sellを別原典の記録として示し、現行売却可否を断定しない", () => {
+    const w = readJson(`${SNAP}/items.json`).items.find((w: { name: string }) => w.name === "World Atlas");
+    const d = readJson("public/gamedata/ddragon/16.21.1/items.json").items.find((d: { id: number }) => d.id === w.data.id);
+    const rows = priceRows(d, w.data, "16.21.1", w.limit_text?.plain);
+    expect(rows.find((r) => r.label === "売却価格")).toMatchObject({ value: "160ゴールド" });
+    expect(rows.find((r) => r.label === "売却価格")!.note).toContain("16.21.1");
+    expect(rows.find((r) => r.label === "売却")).toBeUndefined();
+    expect(rows.find((r) => r.label === "Wiki の売却可否")!.note).toContain("現在の売却可否は未確認");
+    expect(w.data.sell).toBe("No Sell");
+  });
+  it("公式説明の売却不可と保存Wikiの記録は、同時に存在しても混合しない", () => {
+    const rows = priceRows({ ...dd, description: { ja: "売却不可" } }, { sell: "No Sell", sellratio: 0.7 }, "16.21.1");
+    expect(rows.find((r) => r.label === "売却")!.note).toContain("公式説明");
+    expect(rows.find((r) => r.label === "Wiki の売却可否")!.note).toContain("保存原典");
+    expect(rows.find((r) => r.label === "売却価格")!.value).toBe("2240ゴールド");
+    expect(rows.find((r) => r.label === "Wiki の売却の割合")!.note).toContain("計算しない");
+  });
+  it("現在の価格差集計はSR229件中、直接数値比較22件・安全な結合21件。売却差0は母数2件", () => {
+    const items = readJson(`${SNAP}/items.json`).items as { name: string; data: ItemReferenceData & { id: number; buy?: unknown; sell?: unknown } }[];
+    const official = readJson("public/gamedata/ddragon/16.21.1/items.json").items as { id: number; name: { en: string; ja: string }; maps: Record<string, boolean>; gold: { total: number; sell: number; purchasable: boolean } }[];
+    const data = new Map(items.map((w) => [w.name, w.data])), raw = new Map(official.map((d) => [d.id, d])), matches = matchItemData(items, official);
+    const sr = items.filter((w) => resolveItemModes(w.name, data).sr === true);
+    const buy = sr.filter((w) => typeof w.data.buy === "number" && raw.has(w.data.id));
+    const sell = sr.filter((w) => typeof w.data.sell === "number" && raw.has(w.data.id));
+    const diffs = buy.filter((w) => w.data.buy !== raw.get(w.data.id)!.gold.total);
+    expect(sr).toHaveLength(229); expect(items.filter((w) => resolveItemModes(w.name, data).sr === false)).toHaveLength(90);
+    expect(buy).toHaveLength(194); expect(sell).toHaveLength(2); expect(diffs).toHaveLength(22);
+    expect(sell.filter((w) => w.data.sell !== raw.get(w.data.id)!.gold.sell)).toHaveLength(0);
+    expect(diffs.filter((w) => matches.get(w.name)?.status === "matched")).toHaveLength(21);
+    expect(diffs.filter((w) => matches.get(w.name)?.official?.gold.purchasable === true)).toHaveLength(20);
+    expect(diffs.filter((w) => matches.get(w.name)?.status !== "matched").map((w) => w.name)).toEqual(["Slightly Magical Boots"]);
   });
 });
 

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { readFileSync } from "node:fs";
 import type { ComponentProps, ReactElement } from "react";
-import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, ItemMatchNotice, ItemVersionReview, SECTIONS } from "./DataPages";
+import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, ItemMatchNotice, ItemVersionReview, PriceTable, SECTIONS } from "./DataPages";
 
 import { ITEM_REVIEWS, itemReviewFor } from "../gamedata/itemReviews";
 
@@ -24,6 +24,24 @@ describe("参照を含むモード一覧", () => {
     expect(html).toContain("不明（対応モードを確定できません）");
     expect(html).not.toContain("記載なし");
     expect(html).not.toContain("0・1");
+  });
+});
+
+describe("価格の原典と時期", () => {
+  it("公式価格と異なるWiki価格には原典更新・取得日時・現行性未確認を示す", () => {
+    const source = { title: "Module:ItemData/data/A", url: "https://wiki.leagueoflegends.com/en-us/A", status: 200, last_modified: "Wed, 04 Jun 2025 00:00:00 GMT", fetched_at: "2026-11-02T00:00:00Z" };
+    const rows = priceRows({ gold: { base: 500, total: 3300, sell: 2310, purchasable: true } }, { buy: 3100 }, "16.21.1");
+    const html = renderToStaticMarkup(<PriceTable rows={rows} wikiSource={source} />);
+    for (const text of ["3300ゴールド", "3100ゴールド", "2310ゴールド", "Wiki の購入価格", "2025", "2026-11-02", "対象パッチと現行性はこの日時だけでは確定できません", "原典の記録"]) expect(html).toContain(text);
+    expect(html).toContain(`href="${source.url}"`);
+  });
+  it("価格未取得・Wiki出典日時不明を0にせず、公式だけならWiki注記を作らない", () => {
+    const source = { title: "A", url: "https://example.com/a", status: 200, last_modified: null };
+    const html = renderToStaticMarkup(<PriceTable rows={priceRows(undefined, { buy: 100 }, "16.21.1")} wikiSource={source} />);
+    expect(html).toContain("未取得"); expect(html).toContain("原典更新日時：不明"); expect(html).toContain("取得日時：未記録");
+    expect(html).not.toMatch(/>0ゴールド(?:<|（)/);
+    const official = renderToStaticMarkup(<PriceTable rows={priceRows({ gold: { base: 300, total: 300, sell: 210, purchasable: true } }, undefined, "16.21.1")} wikiSource={source} />);
+    expect(official).not.toContain("wiki-price-provenance");
   });
 });
 

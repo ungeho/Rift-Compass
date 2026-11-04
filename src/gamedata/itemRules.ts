@@ -174,7 +174,7 @@ export function priceRows(dd: { gold: DdGold; from?: string[]; description?: { j
       rows.push({ label: "購入", value: "ショップで購入できない", note: `Data Dragon の purchasable が false（値段の欄の値 ${g.total} は購入価格として扱わない）` });
     }
     // 売却価格の0は「0ゴールドで売れる」と「売却できない」をこの値だけでは区別できないので、どの場合も注記する
-    rows.push({ label: "売却価格", value: `${g.sell}ゴールド`, note: `Data Dragon の gold.sell${g.sell === 0 ? "。0 は「0ゴールドで売れる」のか「売却できない」のか、この値だけでは区別できない（下に明記があればそれに従う。なければ未確認）" : ""}` });
+    rows.push({ label: "売却価格", value: `${g.sell}ゴールド`, note: `Data Dragon ${ddVersion} の gold.sell${g.sell === 0 ? "。0 は「0ゴールドで売れる」のか「売却できない」のか、この値だけでは区別できない。各原典の売却可否の記載と現行性を別に確認する必要がある" : "。この数値だけでは現在売却できることの実証にはならない"}` });
   }
   if (wiki) {
     const ddTotal = dd?.gold.total;
@@ -183,12 +183,12 @@ export function priceRows(dd: { gold: DdGold; from?: string[]; description?: { j
     if (typeof wiki.sell === "number") rows.push({ label: "Wiki の売却価格", value: `${wiki.sell}ゴールド`, note: dd && dd.gold.sell !== wiki.sell ? `Data Dragon（${dd.gold.sell}）と異なる。どちらが現在の値かは未確認` : undefined });
     if (typeof wiki.sellratio === "number") rows.push({ label: "Wiki の売却の割合", value: `${Math.round(wiki.sellratio * 100)}%`, note: "Wiki のデータの値（Rift Compass はこの割合から売却価格を計算しない）" });
   }
-  // 売却できるか：明記があるときだけ（Wiki の sell = "No Sell"、制限の文、公式の説明の「売却不可」）
-  const noSell: string[] = [];
-  if (wiki && typeof wiki.sell === "string" && /no sell/i.test(wiki.sell)) noSell.push("Wiki のデータ（No Sell）");
-  if (limitEn && /cannot be (re)?sold/i.test(limitEn)) noSell.push("Wiki の制限の文");
-  if (dd?.description?.ja && /売却不可/.test(dd.description.ja)) noSell.push("公式の説明");
-  if (noSell.length) rows.push({ label: "売却", value: "売却できない", note: `明記：${noSell.join("・")}` });
+  // 公式説明と保存Wikiの記載を分ける。旧Wikiを現行の売却可否へ昇格させない。
+  if (dd?.description?.ja && /売却不可/.test(dd.description.ja)) rows.push({ label: "売却", value: "売却できない", note: `Data Dragon ${ddVersion} の公式説明に明記。ゲーム内では未実証` });
+  const wikiNoSell: string[] = [];
+  if (wiki && typeof wiki.sell === "string" && /no sell/i.test(wiki.sell)) wikiNoSell.push("Wiki のデータ（No Sell）");
+  if (limitEn && /cannot be (re)?sold/i.test(limitEn)) wikiNoSell.push("Wiki の制限の文");
+  if (wikiNoSell.length) rows.push({ label: "Wiki の売却可否", value: "売却不可の記載", note: `${wikiNoSell.join("・")}。保存原典の記録で、現在の売却可否は未確認。公式の価格欄の数値とも別に扱う` });
   return rows;
 }
 
