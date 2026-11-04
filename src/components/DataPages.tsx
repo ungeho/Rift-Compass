@@ -2,6 +2,7 @@
 // 日本語は公式の Data Dragon（ja_JP）の名前と説明を使い、英語 Wiki の値・効果の文（CC BY-SA 3.0）は出典つきで別に示す。
 // 開いたページのファイルだけを読む（public/gamedata）。取得したデータの表示で、ゲーム内では検証していない。
 import { useEffect, useMemo, useState } from "react";
+import { itemReviewFor, ITEM_REVIEW_VERSION, ITEM_REVIEW_PATCH, ITEM_REVIEW_CHECKED } from "../gamedata/itemReviews";
 import { matchItemData, type ItemDataMatch } from "../gamedata/itemRules";
 import { showValues, wikiPlain, type ParsedValue } from "../gamedata/wikiAbility";
 import { effectKind, groupStats, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemModes, resolveItemStats, ITEM_REFERENCE_ERRORS, type ItemReferenceData, type ItemFieldResolution, type DdGold, type NamedEffect, type PriceRow, type UniqueInfo, type UniqueStatus } from "../gamedata/itemRules";
@@ -14,7 +15,7 @@ const get = async <T,>(p: string): Promise<T> => {
 };
 type Lang = { en: string | null; ja: string | null };
 interface Manifest { current: { ddragon: string; wiki_snapshot?: string } }
-interface Source { title: string; url: string; status: number; last_modified: string | null }
+interface Source { title: string; url: string; status: number; last_modified: string | null; fetched_at?: string }
 interface HistoryEntry { name: string; source: Source; latest?: string; versions?: { version: string; subjects: string[]; lines: number }[] }
 
 const LICENSE = (
@@ -197,13 +198,39 @@ interface ItemEffectText extends WikiText {
 interface WikiItem {
   name: string;
   source: Source;
-  data?: { id?: number; tier?: number; type?: string[]; buy?: unknown; sell?: unknown; sellratio?: unknown; modes?: Record<string, boolean> | string; stats?: Record<string, unknown> };
+  data?: { id?: number; tier?: number; type?: string[]; buy?: unknown; sell?: unknown; sellratio?: unknown; modes?: Record<string, boolean> | string; stats?: Record<string, unknown>; recipe?: string[] };
   effect_text?: Record<string, ItemEffectText>;
   limit_text?: WikiText;
   limit_groups?: { group: string; rule: string }[];
 }
 interface DdItem { id: number; name: Lang; plaintext: Lang; description: Lang; gold: DdGold; maps: Record<string, boolean>; from?: string[] }
 interface ItemRulesFile { sources: Record<string, Source>; named_effects_outdated_if_new_patch: string | null; named_effects: NamedEffect[] }
+
+export function ItemVersionReview({ assessment, dd, version, officialItems }: { assessment: NonNullable<ReturnType<typeof itemReviewFor>>; dd?: DdItem; version: string; officialItems: readonly DdItem[] }) {
+  const { review, needsReview } = assessment;
+  return <section className="item-version-review" aria-label="対象時点と旧仕様の確認">
+    <p className="notice">保存Wiki Moduleには旧仕様が含まれます。効果・ステータス・価格・レシピ・制限を現行仕様として使用せず、下の「保存Wiki Module」に分けています。{needsReview && "データの版・名前・原典更新日時が確認記録と異なります。再確認待ちです。"}</p>
+    <h3>対象時点の公式収録情報：Data Dragon {version}</h3>
+    <p className="muted">確認記録：{ITEM_REVIEW_CHECKED}、対象はSR。{needsReview ? `照合記録は${ITEM_REVIEW_VERSION}用で、現在の読み込みデータへの適用は未確認です。` : `ゲームパッチ${ITEM_REVIEW_PATCH}との対応は既存の来歴記録による推定です。`}公式収録情報と、ゲーム内で実証した仕様を区別してください。他モードの補正は未確認です。</p>
+    {dd ? <>
+      {dd.description.ja && <OfficialText text={dd.description.ja} version={version} />}
+      <details><summary>公式の英語原文（Data Dragon {version}）</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{dd.description.en ?? "未収録"}</p></details>
+      <p>素材（Data Dragonのfrom）：{dd.from?.length ? dd.from.map((id) => {
+        const rows = officialItems.filter((x) => String(x.id) === id);
+        return `${rows.length === 1 ? rows[0].name.ja ?? rows[0].name.en : "名前未確認"}［ID ${id}］`;
+      }).join("＋") : "未収録"}。合成費用は価格欄を参照してください。</p>
+      <p>SR利用可能性（Data Dragon maps.11）：{dd.maps["11"] === true ? "対応あり" : dd.maps["11"] === false ? "対応なし" : "未収録"}。ゲーム内での確認ではありません。</p>
+      <p className="muted">公式原典：<a href={`https://ddragon.leagueoflegends.com/cdn/${encodeURIComponent(version)}/data/en_US/item.json`}>英語JSON</a>・<a href={`https://ddragon.leagueoflegends.com/cdn/${encodeURIComponent(version)}/data/ja_JP/item.json`}>日本語JSON</a></p>
+    </> : <p className="notice">公式データとの対応を確定できないため、公式情報は結合していません。旧Wikiから現行値を補いません。</p>}
+    <details className="comparison-details"><summary>変更記録と確認範囲</summary>
+      <p>Riot公式26.1〜26.21の対象名の記載と、Wiki記事の掲載履歴を確認。対象時点までの後続記録を照合しました。記録が見つからないことは、未記載の変更やゲーム内挙動が存在しないという証明ではありません。</p>
+      <ul>{review.changes.map((c) => <li key={c.patch}><a href={c.url}>{c.patch}</a>：{c.text}（この変更時点の記録）</li>)}</ul>
+      <p><a href={`https://wiki.leagueoflegends.com/en-us/${review.name.replace(/ /g, "_")}`}>Wiki記事・変更履歴</a>。Wiki Moduleとは更新時期が異なる原典です。</p>
+    </details>
+    <h4>対象時点の未確認事項</h4><ul>{review.unknowns.map((s) => <li key={s}>{s}</li>)}</ul>
+    <p className="muted">記録した数値や効果の説明は原典の記述です。翻訳完了・AIによる照合はゲーム内検証済みを意味しません。</p>
+  </section>;
+}
 
 export function ItemMatchNotice({ match, version, sr }: { match: ItemDataMatch; version: string; sr: boolean | null }) {
   if (match.status === "missing") return <p className="muted">公式データ：Data Dragon {version} に同じIDのデータはありません。Wikiの情報を表示しています。</p>;
@@ -354,7 +381,7 @@ function Items() {
     const modes = new Map(wiki.items.filter((x) => x.data).map((x) => [x.name, resolveItemModes(x.name, data)]));
     const matches = matchItemData(wiki.items, dd.items);
     const effectNames = new Map(wiki.items.map((x) => [x.name, Object.values(x.effect_text ?? {}).map((e) => e.name).filter((n): n is string => !!n)]));
-    return { wiki: wiki.items, byName, data, modes, effectNames, matches, ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
+    return { wiki: wiki.items, byName, data, modes, effectNames, matches, officialItems: dd.items, ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
   }, []);
   const [q, setQ] = useState("");
   const [scope, setScope] = useState("sr");
@@ -395,21 +422,10 @@ function Items() {
           const effects = effectsOf(w);
           const mode = s.data.modes.get(w.name)!;
           const limitJa = w.limit_text ? validJa(tr, `${w.name}#limit`, w.limit_text) : null;
-          return (
-            <li key={w.name}>
-              <details>
-                <summary>
-                  <strong>{dd?.name.ja ?? w.name}</strong>{" "}
-                  <span className="muted">
-                    {w.name}
-                    {dd ? (!dd.gold.purchasable ? "・購入できない" : dd.gold.total === 0 ? "・無料" : `・${dd.gold.total}ゴールド`) : ""}
-                  </span>
-                </summary>
-                <ItemMatchNotice match={match} version={ddVersion} sr={mode.sr} />
-                <PriceTable rows={priceRows(dd, w.data, ddVersion, w.limit_text?.plain, match.status === "unconfirmed")} />
+          const assessment = itemReviewFor(w.name, w.data?.id, w.source.last_modified, ddVersion);
+          const wikiContent = <>
                 <ItemStatTable item={w.name} items={byName} data={s.data.data} />
-                {(mode.chain.length > 1 || mode.error) && <p className="muted">モード分類：{mode.sr === null ? "不明（SR非対応とは判定していません）" : mode.sr ? "サモナーズリフト対応" : "モード専用"}。<ItemReference r={mode} items={byName} /></p>}
-                {dd?.description.ja && <OfficialText text={dd.description.ja} version={ddVersion} />}
+                {!assessment && dd?.description.ja && <OfficialText text={dd.description.ja} version={ddVersion} />}
                 {effects.length > 0 && (
                   <div>
                     <div className="muted">効果（英語 Wiki の文の日本語訳：AI・未レビュー。種類・固有・CD などの項目は Wiki のデータ、重複のルールは Rift Compass の整理）</div>
@@ -462,6 +478,22 @@ function Items() {
                   （League of Legends Wiki の寄稿者、{LICENSE}）。改変：記法を簡略化し、日本語に翻訳した（AI・未レビュー）。
                 </p>
                 <ItemModeList mode={mode} />
+          </>;
+          return (
+            <li key={w.name}>
+              <details>
+                <summary>
+                  <strong>{dd?.name.ja ?? w.name}</strong>{" "}
+                  <span className="muted">
+                    {w.name}
+                    {dd ? (!dd.gold.purchasable ? "・購入できない" : dd.gold.total === 0 ? "・無料" : `・${dd.gold.total}ゴールド`) : ""}
+                  </span>
+                </summary>
+                <ItemMatchNotice match={match} version={ddVersion} sr={mode.sr} />
+                <PriceTable rows={priceRows(dd, assessment ? undefined : w.data, ddVersion, assessment ? undefined : w.limit_text?.plain, match.status === "unconfirmed")} />
+                {assessment && <ItemVersionReview assessment={assessment} dd={dd} version={ddVersion} officialItems={s.data.officialItems} />}
+                {(mode.chain.length > 1 || mode.error) && <p className="muted">モード分類：{mode.sr === null ? "不明（SR非対応とは判定していません）" : mode.sr ? "サモナーズリフト対応" : "モード専用"}。<ItemReference r={mode} items={byName} /></p>}
+                {assessment ? <details className="legacy-item-data"><summary>保存Wiki Module（過去情報・再確認待ち）</summary><p className="notice">この欄は旧仕様を含む保存情報です。現在の購入・装備・効果の判断にそのまま使用しないでください。</p><p className="muted">原典更新日時：{w.source.last_modified ?? "不明"}／取得日時：{w.source.fetched_at ?? "未記録"}。ゲーム内の適用パッチはこの日時だけでは確定できません。</p><PriceTable rows={priceRows(undefined, w.data, ddVersion, w.limit_text?.plain).filter((r) => r.label !== "購入価格")} /><p>保存された素材：{w.data?.recipe?.join("＋") ?? "未収録"}</p>{wikiContent}</details> : wikiContent}
                 <HistoryLine h={s.data.hist[w.name]} />
               </details>
             </li>

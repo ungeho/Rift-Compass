@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { readFileSync } from "node:fs";
 import type { ComponentProps, ReactElement } from "react";
-import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, ItemMatchNotice, SECTIONS } from "./DataPages";
+import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, ItemMatchNotice, ItemVersionReview, SECTIONS } from "./DataPages";
+
+import { ITEM_REVIEWS, itemReviewFor } from "../gamedata/itemReviews";
 
 import { matchItemData, priceRows, resolveItemModes, type ItemReferenceData } from "../gamedata/itemRules";
 
@@ -22,6 +24,27 @@ describe("参照を含むモード一覧", () => {
     expect(html).toContain("不明（対応モードを確定できません）");
     expect(html).not.toContain("記載なし");
     expect(html).not.toContain("0・1");
+  });
+});
+
+describe("旧Wiki Moduleと対象時点の公式情報", () => {
+  const dd = JSON.parse(readFileSync("public/gamedata/ddragon/16.21.1/items.json", "utf8")).items;
+  it.each(ITEM_REVIEWS)("$name：公式原文・出典・素材・SR・未確認事項を分ける", (r) => {
+    const d = dd.find((d: { id: number }) => d.id === r.id);
+    const html = renderToStaticMarkup(<ItemVersionReview assessment={itemReviewFor(r.name, r.id, r.moduleModified, "16.21.1")!} dd={d} version="16.21.1" officialItems={dd} />);
+    for (const text of ["旧仕様", "現行仕様として使用せず", "16.21.1", "26.21", "推定", "対象はSR", "公式の英語原文", "未確認事項", "ゲーム内検証済みを意味しません"]) expect(html).toContain(text);
+    expect(html).toContain('lang="en"');
+    expect(html).toContain(d.description.en.replace(/&/g, "&amp;").replace(/'/g, "&#x27;"));
+    expect(html).toContain(`/cdn/16.21.1/data/en_US/item.json`);
+    for (const id of d.from) expect(html).toContain(`ID ${id}`);
+    for (const c of r.changes) { expect(html).toContain(c.url); expect(html).toContain(c.patch); }
+  });
+  it("公式対応不明や更新後は旧Wikiで補完せず、再確認待ちを明示する", () => {
+    const r = ITEM_REVIEWS[0];
+    const html = renderToStaticMarkup(<ItemVersionReview assessment={itemReviewFor(r.name, r.id, r.moduleModified, "next-version")!} version="next-version" officialItems={[]} />);
+    expect(html).toContain("再確認待ち");
+    expect(html).toContain("旧Wikiから現行値を補いません");
+    expect(html).not.toContain("公式の英語原文");
   });
 });
 
