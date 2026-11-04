@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import type { ComponentProps } from "react";
-import { DataPage, EffectCard, SECTIONS } from "./DataPages";
+import { readFileSync } from "node:fs";
+import type { ComponentProps, ReactElement } from "react";
+import { DataPage, EffectCard, HistoryLine, SECTIONS } from "./DataPages";
 
 describe("ゲームデータのページ（一覧）", () => {
   it("アイテム・ルーン・サモナースペル・モンスター・記事の区分と、出典・未検証の注記を示す", () => {
@@ -14,6 +15,36 @@ describe("ゲームデータのページ（一覧）", () => {
   });
   it("各区分は読み込み中の表示から始まる（ファイルは開いたときに読む）", () => {
     expect(renderToStaticMarkup(<DataPage section="items" />)).toContain("読み込んでいます");
+  });
+});
+
+describe("同じパッチ番号の変更履歴", () => {
+  type History = NonNullable<ComponentProps<typeof HistoryLine>["h"]>;
+  type Versions = NonNullable<History["versions"]>;
+  const { entries } = JSON.parse(readFileSync("public/gamedata/wiki/2026-11-02/history/items.json", "utf8")) as { entries: Record<string, History> };
+  const history = entries["Faerie Charm"];
+  const versions = history.versions!.filter((v) => v.version === "V9.23");
+  const keys = (vs: Versions) => {
+    const tree = HistoryLine({ h: { ...history, versions: vs } });
+    return (tree.props.children[1].props.children as ReactElement[]).map((row) => row.key);
+  };
+  it("実データのV9.23を両方残し、別の行の挿入・順序変更でも各履歴のキーを維持する", () => {
+    expect(versions).toHaveLength(2);
+    const original = keys(versions);
+    expect(new Set(original).size).toBe(2);
+    expect(keys(versions)).toEqual(original);
+    expect(keys([{ version: "V26.21", subjects: [], lines: 1 }, ...versions]).slice(1)).toEqual(original);
+    expect(keys([...versions].reverse())).toEqual([...original].reverse());
+    const html = renderToStaticMarkup(<HistoryLine h={{ ...history, versions }} />);
+    expect(html.match(/<li>/g)).toHaveLength(2);
+    expect(html.match(/V9\.23/g)).toHaveLength(2);
+  });
+  it("内容まで同じ履歴も削除せず、一意で再描画時に安定したキーを付ける", () => {
+    const repeated = [versions[0], { ...versions[0] }];
+    expect(new Set(keys(repeated)).size).toBe(2);
+    expect(keys(repeated)).toEqual(keys(repeated));
+    const html = renderToStaticMarkup(<HistoryLine h={{ ...history, versions: repeated }} />);
+    expect(html.match(/<li>/g)).toHaveLength(2);
   });
 });
 

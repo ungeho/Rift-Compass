@@ -89,22 +89,29 @@ function Filter({ q, setQ, scope, setScope, scopes }: { q: string; setQ: (v: str
 
 const matchName = (q: string, ...names: (string | null | undefined)[]) => !q || names.some((n) => (n ?? "").toLowerCase().includes(q.toLowerCase()));
 
-function HistoryLine({ h }: { h: HistoryEntry | undefined }) {
+export function HistoryLine({ h }: { h: HistoryEntry | undefined }) {
   if (!h || !h.versions) return <p className="muted">変更履歴：未取得</p>;
   if (!h.versions.length) return <p className="muted">変更履歴：ページに変更履歴の節がない（<a href={h.source.url}>原典</a>）</p>;
+  // 同じパッチの別履歴も、内容まで同じ履歴も残す。無関係な行の挿入ではキーを変えない。
+  const occurrences = new Map<string, number>();
   return (
     <details>
       <summary className="muted">
         変更履歴 {h.versions.length}版（最新 {h.latest}）
       </summary>
       <ul>
-        {h.versions.slice(0, 12).map((v) => (
-          <li key={v.version}>
-            {v.version}
-            {v.subjects.length > 0 && `：${v.subjects.slice(0, 4).join("、")}`}
-            （{v.lines}行）
-          </li>
-        ))}
+        {h.versions.slice(0, 12).map((v) => {
+          const identity = JSON.stringify(v);
+          const occurrence = occurrences.get(identity) ?? 0;
+          occurrences.set(identity, occurrence + 1);
+          return (
+            <li key={`${identity}:${occurrence}`}>
+              {v.version}
+              {v.subjects.length > 0 && `：${v.subjects.slice(0, 4).join("、")}`}
+              （{v.lines}行）
+            </li>
+          );
+        })}
       </ul>
       <p className="muted">
         版と変更の行数だけを示します（変更の文は保存していません）。変更の内容は <a href={h.source.url}>原典</a>（英語 Wiki、{LICENSE}）を参照してください。
