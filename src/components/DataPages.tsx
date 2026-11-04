@@ -2,6 +2,7 @@
 // 日本語は公式の Data Dragon（ja_JP）の名前と説明を使い、英語 Wiki の値・効果の文（CC BY-SA 3.0）は出典つきで別に示す。
 // 開いたページのファイルだけを読む（public/gamedata）。取得したデータの表示で、ゲーム内では検証していない。
 import { useEffect, useMemo, useState } from "react";
+import { matchItemData, type ItemDataMatch } from "../gamedata/itemRules";
 import { showValues, wikiPlain, type ParsedValue } from "../gamedata/wikiAbility";
 import { effectKind, groupStats, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemModes, resolveItemStats, ITEM_REFERENCE_ERRORS, type ItemReferenceData, type ItemFieldResolution, type DdGold, type NamedEffect, type PriceRow, type UniqueInfo, type UniqueStatus } from "../gamedata/itemRules";
 
@@ -204,6 +205,14 @@ interface WikiItem {
 interface DdItem { id: number; name: Lang; plaintext: Lang; description: Lang; gold: DdGold; maps: Record<string, boolean>; from?: string[] }
 interface ItemRulesFile { sources: Record<string, Source>; named_effects_outdated_if_new_patch: string | null; named_effects: NamedEffect[] }
 
+export function ItemMatchNotice({ match, version, sr }: { match: ItemDataMatch; version: string; sr: boolean | null }) {
+  if (match.status === "missing") return <p className="muted">公式データ：Data Dragon {version} に同じIDのデータはありません。Wikiの情報を表示しています。</p>;
+  if (match.status === "unconfirmed") return <p className="notice">公式データとの対応は未確認です（{match.reason === "ambiguous" ? "同じIDの対応が複数あり一意に決められない" : "IDは一致するが英語名の対応を確認できない"}）。候補：{match.candidates.map((d) => `${d.name.en ?? "英語名なし"}（ID ${d.id}）`).join("／")}（Data Dragon {version}）。公式名・説明・価格は結合せず、Wikiの情報を表示しています。{match.wikiNames.length > 1 && `同じIDのWikiレコード：${match.wikiNames.join("／")}`}</p>;
+  const d = match.official!;
+  const differs = sr !== null && typeof d.maps["11"] === "boolean" && sr !== d.maps["11"];
+  return <>{match.wikiNames.length > 1 && <p className="muted">同じIDのWikiレコード：{match.wikiNames.join("／")}。Data Dragon {version} とは英語名が対応するこのレコードだけを結合しています。</p>}{differs && <p className="notice">モード情報に差があります。WikiのSR対応：{sr ? "あり" : "なし"}／Data Dragon {version} のマップ11対応：{d.maps["11"] ? "あり" : "なし"}。表示範囲はWikiの分類に従います。どちらが現行かは未確認です。</p>}</>;
+}
+
 /** 訳が有効か（原文と英文の sha1 が両方一致し、解けない記法が残っていない）。有効なら訳の文 */
 const validJa = (tr: TrFile | null, id: string, t: WikiText) => {
   const e = tr?.entries[id];
@@ -343,8 +352,9 @@ function Items() {
     const byName = new Map(wiki.items.map((x) => [x.name, x]));
     const data = new Map(wiki.items.filter((x) => x.data).map((x) => [x.name, x.data!]));
     const modes = new Map(wiki.items.filter((x) => x.data).map((x) => [x.name, resolveItemModes(x.name, data)]));
+    const matches = matchItemData(wiki.items, dd.items);
     const effectNames = new Map(wiki.items.map((x) => [x.name, Object.values(x.effect_text ?? {}).map((e) => e.name).filter((n): n is string => !!n)]));
-    return { wiki: wiki.items, byName, data, modes, effectNames, dd: new Map(dd.items.map((x) => [x.id, x])), ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
+    return { wiki: wiki.items, byName, data, modes, effectNames, matches, ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
   }, []);
   const [q, setQ] = useState("");
   const [scope, setScope] = useState("sr");
@@ -353,7 +363,7 @@ function Items() {
     return s.data.wiki
       .filter((w) => w.data)
       .filter((w) => scope === "all" || s.data.modes.get(w.name)?.sr === (scope === "sr" ? true : scope === "mode" ? false : null))
-      .filter((w) => matchName(q, w.name, s.data.dd.get(w.data?.id ?? -1)?.name.ja));
+      .filter((w) => matchName(q, w.name, s.data.matches.get(w.name)?.official?.name.ja));
   }, [s, q, scope]);
   if (s.status !== "ok") return <p className="muted">{s.status === "loading" ? "読み込んでいます…" : `読み込めませんでした（${s.message}）`}</p>;
   const { rules, tr, byName, effectNames, ddVersion } = s.data;
@@ -376,10 +386,12 @@ function Items() {
   return (
     <>
       <Filter q={q} setQ={setQ} scope={scope} setScope={setScope} scopes={[["sr", "サモナーズリフト"], ["mode", "モード専用"], ["unknown", "対応モード不明"], ["all", "すべて"]]} />
+      <p className="muted">公式データはIDと英語名の対応を照合できたものだけ結合します。同一性の照合は、説明・数値・パッチの一致やゲーム内仕様の検証ではありません。</p>
       <p className="muted">{list.length}件。日本語の名前・説明・値段は Data Dragon {ddVersion}（公式）、ステータス・効果の構造と文は英語 Wiki の Module:ItemData。</p>
       <ul className="data-list">
         {list.map((w) => {
-          const dd = s.data.dd.get(w.data?.id ?? -1);
+          const match = s.data.matches.get(w.name)!;
+          const dd = match.official;
           const effects = effectsOf(w);
           const mode = s.data.modes.get(w.name)!;
           const limitJa = w.limit_text ? validJa(tr, `${w.name}#limit`, w.limit_text) : null;
@@ -393,7 +405,8 @@ function Items() {
                     {dd ? (!dd.gold.purchasable ? "・購入できない" : dd.gold.total === 0 ? "・無料" : `・${dd.gold.total}ゴールド`) : ""}
                   </span>
                 </summary>
-                <PriceTable rows={priceRows(dd, w.data, ddVersion, w.limit_text?.plain)} />
+                <ItemMatchNotice match={match} version={ddVersion} sr={mode.sr} />
+                <PriceTable rows={priceRows(dd, w.data, ddVersion, w.limit_text?.plain, match.status === "unconfirmed")} />
                 <ItemStatTable item={w.name} items={byName} data={s.data.data} />
                 {(mode.chain.length > 1 || mode.error) && <p className="muted">モード分類：{mode.sr === null ? "不明（SR非対応とは判定していません）" : mode.sr ? "サモナーズリフト対応" : "モード専用"}。<ItemReference r={mode} items={byName} /></p>}
                 {dd?.description.ja && <OfficialText text={dd.description.ja} version={ddVersion} />}

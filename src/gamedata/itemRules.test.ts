@@ -3,8 +3,62 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { effectKind, groupStats, hasPlaceholderZero, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemField, resolveItemModes, resolveItemStats, type ItemReferenceData, type NamedEffect } from "./itemRules";
 
+import { matchItemData, itemIdentityName } from "./itemRules";
+
 const SNAP = "public/gamedata/wiki/2026-11-02";
 const readJson = (p: string) => JSON.parse(readFileSync(p, "utf8"));
+
+describe("Wikiと公式アイテムの結合", () => {
+  const dd = { id: 1, name: { en: "Boots", ja: "ブーツ" }, maps: { "11": true } };
+  it("IDと英語名で照合し、日本語名を一致条件にしない", () => {
+    const w = { name: "Boots", data: { id: 1 } };
+    expect(matchItemData([w], [dd]).get(w.name)).toMatchObject({ status: "matched", official: dd });
+    expect(matchItemData([w], [{ ...dd, id: 2 }]).get(w.name)?.status).toBe("missing");
+    expect(matchItemData([w], [{ ...dd, name: { en: null, ja: "Boots" } }]).get(w.name)?.status).toBe("unconfirmed");
+  });
+  it("表記だけの差を扱うが、類似名や後継品を勝手に別名としない", () => {
+    expect(itemIdentityName("<rarityLegendary>Boots</rarityLegendary><br><subtitle>500</subtitle>")).toBe("boots");
+    expect(itemIdentityName("Arcane Sweeper (Trinket)")).toBe(itemIdentityName("Arcane Sweeper"));
+    expect(itemIdentityName("Anti-Tower Socks")).toBe(itemIdentityName("Anti-tower Socks"));
+    for (const en of ["Boots Upgrade", "ブーツ", "Other Boots"]) {
+      expect(matchItemData([{ name: "Boots", data: { id: 1 } }], [{ ...dd, name: { en, ja: "ブーツ" } }]).get("Boots")?.official).toBeUndefined();
+    }
+  });
+  it("重複IDは順序によらず名前の一意なレコードだけを結合する", () => {
+    const a = { name: "Old Boots", data: { id: 1 } }, b = { name: "Boots", data: { id: 1 } };
+    for (const list of [[a, b], [b, a]]) {
+      const result = matchItemData(list, [dd]);
+      expect(result.get(a.name)).toMatchObject({ status: "unconfirmed", candidates: [dd] });
+      expect(result.get(a.name)?.official).toBeUndefined();
+      expect(result.get(b.name)?.official).toBe(dd);
+    }
+  });
+  it("名前まで同じ候補・公式の重複IDは、モードや並び順から確定しない", () => {
+    const wiki = [{ name: "Boots", data: { id: 1 } }, { name: "BOOTS", data: { id: 1 } }];
+    for (const r of matchItemData(wiki, [dd]).values()) expect(r).toMatchObject({ status: "unconfirmed", reason: "ambiguous" });
+    expect(matchItemData(wiki.slice(0, 1), [dd, { ...dd, maps: { "11": false } }]).get("Boots")).toMatchObject({ status: "unconfirmed", reason: "ambiguous" });
+  });
+  it("モードの差だけで同名・同IDを別名へ結合せず、値も書き換えない", () => {
+    const wiki = [{ name: "Boots", data: { id: 1 } }];
+    const otherMode = { ...dd, maps: { "11": false } };
+    expect(matchItemData(wiki, [otherMode]).get("Boots")?.official).toBe(otherMode);
+    expect(otherMode.maps["11"]).toBe(false);
+  });
+  it("実データ319件の2重複グループを保持し、Zephyrへの公式データ流用を防ぐ", () => {
+    const wiki = readJson(`${SNAP}/items.json`).items;
+    const dd = readJson("public/gamedata/ddragon/16.21.1/items.json").items;
+    const before = JSON.stringify(wiki);
+    const result = matchItemData(wiki, dd);
+    expect([...result.values()].filter((r) => r.status === "matched")).toHaveLength(307);
+    expect([...result.values()].filter((r) => r.status === "missing")).toHaveLength(5);
+    expect([...result].filter(([, r]) => r.status === "unconfirmed").map(([name]) => name)).toEqual(["Base Turret Reinforced Armor (Turret Item)", "Black Spear", "Lane Swap Detector", "Luden's Companion", "Ohmwrecker (Turret Item)", "Slightly Magical Boots", "Zephyr"]);
+    expect(result.get("Gunmetal Greaves")?.official?.name.ja).toBe("ガンメタル ブーツ");
+    expect(result.get("Zephyr")?.official).toBeUndefined();
+    expect(result.get("Zephyr")?.wikiNames).toEqual(["Gunmetal Greaves", "Zephyr"]);
+    expect(result.get("Anvil Voucher")?.wikiNames).toHaveLength(5);
+    expect(JSON.stringify(wiki)).toBe(before);
+  });
+});
 
 describe("Wikiアイテムの同じ項目への参照", () => {
   const fixture = () => new Map<string, ItemReferenceData>([

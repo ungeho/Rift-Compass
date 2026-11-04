@@ -4,6 +4,39 @@
 
 // ---- ステータス ----
 
+export interface WikiItemIdentity { name: string; data?: { id?: number } }
+export interface OfficialItemIdentity { id: number; name: { en: string | null; ja: string | null }; maps: Record<string, boolean> }
+export interface ItemDataMatch<T extends OfficialItemIdentity = OfficialItemIdentity> {
+  status: "matched" | "unconfirmed" | "missing";
+  official?: T;
+  candidates: T[];
+  wikiNames: string[];
+  reason?: "name_mismatch" | "ambiguous";
+}
+/** 表示タグ・大文字小文字・Wikiの種別補足だけを除く。類似名・翻訳名から同一性を推測しない。 */
+export function itemIdentityName(name: string) {
+  return name.split(/<br\s*\/?\s*>/i)[0].replace(/<[^>]*>/g, "").replace(/\s*\((?:Trinket|Turret Item)\)$/i, "").normalize("NFKC").toLowerCase().trim().replace(/\s+/g, " ");
+}
+/** IDと英語名の両方で照合し、一意な対応のみ返す。重複はMapで上書きしない。 */
+export function matchItemData<T extends OfficialItemIdentity>(wiki: readonly WikiItemIdentity[], official: readonly T[]): Map<string, ItemDataMatch<T>> {
+  const result = new Map<string, ItemDataMatch<T>>();
+  for (const w of wiki) {
+    const candidates = official.filter((d) => d.id === w.data?.id);
+    const peers = wiki.filter((p) => p.data?.id === w.data?.id);
+    const wikiNames = peers.map((p) => p.name);
+    if (!candidates.length) { result.set(w.name, { status: "missing", candidates, wikiNames }); continue; }
+    const d = candidates[0];
+    const name = d.name.en && itemIdentityName(d.name.en);
+    const matching = name ? peers.filter((p) => itemIdentityName(p.name) === name) : [];
+    if (candidates.length === 1 && matching.length === 1 && matching[0] === w) {
+      result.set(w.name, { status: "matched", official: d, candidates, wikiNames });
+    } else {
+      result.set(w.name, { status: "unconfirmed", reason: candidates.length > 1 || matching.length > 1 ? "ambiguous" : "name_mismatch", candidates, wikiNames });
+    }
+  }
+  return result;
+}
+
 export interface ItemReferenceData { modes?: unknown; stats?: Record<string, unknown> }
 export interface ItemFieldResolution {
   value: unknown;
@@ -128,10 +161,10 @@ export interface PriceRow { label: string; value: string; note?: string }
  * 売却価格は Data Dragon の gold.sell をそのまま使い、購入価格から割合で計算しない。
  * Wiki の buy・sell・sellratio は Wiki の値として別に示す（Data Dragon と違うときは両方）
  */
-export function priceRows(dd: { gold: DdGold; from?: string[]; description?: { ja: string | null } } | undefined, wiki: { buy?: unknown; sell?: unknown; sellratio?: unknown } | undefined, ddVersion: string, limitEn?: string): PriceRow[] {
+export function priceRows(dd: { gold: DdGold; from?: string[]; description?: { ja: string | null } } | undefined, wiki: { buy?: unknown; sell?: unknown; sellratio?: unknown } | undefined, ddVersion: string, limitEn?: string, unconfirmed = false): PriceRow[] {
   const rows: PriceRow[] = [];
   if (!dd) {
-    rows.push({ label: "購入価格", value: "未取得", note: `Data Dragon ${ddVersion} にこのアイテムの ID がない` });
+    rows.push({ label: "購入価格", value: unconfirmed ? "対応未確認" : "未取得", note: unconfirmed ? `Data Dragon ${ddVersion} に同じIDの候補はあるが、対応を確定できないため結合していない` : `Data Dragon ${ddVersion} にこのアイテムの ID がない` });
   } else {
     const g = dd.gold;
     if (g.purchasable) {

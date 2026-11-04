@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { readFileSync } from "node:fs";
 import type { ComponentProps, ReactElement } from "react";
-import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, SECTIONS } from "./DataPages";
+import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, ItemMatchNotice, SECTIONS } from "./DataPages";
 
-import { resolveItemModes, type ItemReferenceData } from "../gamedata/itemRules";
+import { matchItemData, priceRows, resolveItemModes, type ItemReferenceData } from "../gamedata/itemRules";
 
 describe("参照を含むモード一覧", () => {
   it("直接値・参照値は解決後のモード名を表示し、参照文字列の文字位置を表示しない", () => {
@@ -22,6 +22,27 @@ describe("参照を含むモード一覧", () => {
     expect(html).toContain("不明（対応モードを確定できません）");
     expect(html).not.toContain("記載なし");
     expect(html).not.toContain("0・1");
+  });
+});
+
+describe("公式アイテムの対応状態", () => {
+  it("実際のZephyrを未確認とし、候補・版・Wikiレコードを示して価格を流用しない", () => {
+    const wiki = JSON.parse(readFileSync("public/gamedata/wiki/2026-11-02/items.json", "utf8")).items;
+    const dd = JSON.parse(readFileSync("public/gamedata/ddragon/16.21.1/items.json", "utf8")).items;
+    const r = matchItemData(wiki, dd).get("Zephyr")!;
+    const html = renderToStaticMarkup(<ItemMatchNotice match={r} version="16.21.1" sr={false} />);
+    for (const text of ["対応は未確認", "Gunmetal Greaves", "Zephyr", "16.21.1", "公式名・説明・価格は結合せず"]) expect(html).toContain(text);
+    const rows = priceRows(r.official as undefined, { buy: 2500 }, "16.21.1", undefined, true);
+    expect(rows[0]).toMatchObject({ value: "対応未確認" });
+    expect(rows.some((r) => r.label === "Wiki の購入価格" && r.value === "2500ゴールド")).toBe(true);
+    expect(rows.some((r) => r.label === "売却価格")).toBe(false);
+  });
+  it("公式データなしと対応未確認を区別し、同名でもモードの差は併記する", () => {
+    expect(renderToStaticMarkup(<ItemMatchNotice match={{ status: "missing", candidates: [], wikiNames: ["A"] }} version="x" sr={null} />)).toContain("同じIDのデータはありません");
+    const d = { id: 1, name: { en: "A", ja: "日本語" }, maps: { "11": false } };
+    const html = renderToStaticMarkup(<ItemMatchNotice match={{ status: "matched", official: d, candidates: [d], wikiNames: ["A"] }} version="x" sr={true} />);
+    expect(html).toContain("モード情報に差があります");
+    expect(html).toContain("どちらが現行かは未確認");
   });
 });
 
