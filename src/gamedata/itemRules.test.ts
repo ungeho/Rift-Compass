@@ -7,6 +7,12 @@ const SNAP = "public/gamedata/wiki/2026-11-02";
 const readJson = (p: string) => JSON.parse(readFileSync(p, "utf8"));
 
 describe("ステータスの分類と単位", () => {
+  it("明示された欠損値は不明と示し、0や未掲載の項目と区別する", () => {
+    const lines = groupStats({ hp: 0, ad: null, armor: undefined, mr: NaN }).flatMap((g) => g.lines);
+    expect(lines.find((l) => l.key === "hp")).toMatchObject({ value: "0", zero: true });
+    for (const key of ["ad", "armor", "mr"]) expect(lines.find((l) => l.key === key)).toMatchObject({ value: "不明", zero: false });
+    expect(lines.some((l) => l.key === "ap")).toBe(false);
+  });
   it("意味ごとに分け、固定値と割合を区別する（移動速度・物理防御貫通・基本自動回復）", () => {
     const g = groupStats({ ad: 40, lethality: 18, armpen: 30, ms: 4, msflat: 25, hp5: 100, hp5flat: 5, hp: 400, ah: 10, tenacity: 20 });
     const flat = Object.fromEntries(g.flatMap((x) => x.lines.map((l) => [l.key, `${x.label}:${l.label} ${l.value}`])));

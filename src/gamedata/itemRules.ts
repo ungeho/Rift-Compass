@@ -44,6 +44,7 @@ export interface StatLine { key: string; label: string; value: string; zero: boo
 /**
  * ステータスを意味ごとに分ける（そのアイテムが持つ分類だけ）。値が0のものは隠さず zero を付ける
  * （Wiki のデータの値が0。効果で決まる値・未設定の可能性があるため、画面では注記する）。
+ * 明示された null・undefined・有限でない数値は「不明」。項目そのものがなければ値を作らない。
  * 数でない値（spec など）は「その他」に文字のまま入れる
  */
 export function groupStats(stats: Record<string, unknown> | undefined, plain: (s: string) => string = (s) => s): { group: StatGroup; label: string; lines: StatLine[] }[] {
@@ -51,12 +52,14 @@ export function groupStats(stats: Record<string, unknown> | undefined, plain: (s
   for (const [key, v] of Object.entries(stats ?? {})) {
     const def = STAT_DEFS[key];
     let line: StatLine;
-    if (typeof v === "number") {
+    if (v == null || (typeof v === "number" && !Number.isFinite(v))) {
+      line = { key, label: def?.label ?? key, value: "不明", zero: false };
+    } else if (typeof v === "number") {
       line = { key, label: def?.label ?? key, value: `${v}${def?.unit === "percent" ? "%" : ""}`, zero: v === 0 };
     } else if (typeof v === "string") {
       line = { key, label: key === "spec" ? "そのほかの値" : def?.label ?? key, value: plain(v), zero: false };
     } else continue;
-    const g = typeof v === "number" && def ? def.group : "other";
+    const g = typeof v !== "string" && def ? def.group : "other";
     by.set(g, [...(by.get(g) ?? []), line]);
   }
   return ORDER.filter((g) => by.has(g)).map((g) => ({ group: g, label: STAT_GROUP_LABELS[g], lines: by.get(g)! }));

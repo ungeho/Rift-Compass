@@ -112,6 +112,7 @@ export interface KnownIssue {
 
 export interface StatRow {
   label: string;
+  hasGrowth: boolean;
   base: number | null;
   /** 計算に採用した成長値（既知の不具合で Data Dragon を除外したときは Wiki の値、どちらもなければ null＝不明）*/
   growth: number | null;
@@ -149,14 +150,14 @@ export function statRows(dd: DDragonChampion, wiki: WikiForm | null, knownIssues
     const conflict = !same(base, wikiBase) || (!excluded && !same(rawGrowth, wikiGrowth));
     const levels = calc(base, growth);
     const wikiLevels = conflict ? calc(wikiBase, wikiGrowth) : null;
-    return { label: s.label, base, growth, growthSource, rawGrowth, excluded, levels, wikiBase, wikiGrowth, wikiLevels, conflict, digits: s.digits };
+    return { label: s.label, hasGrowth: s.growth !== null, base, growth, growthSource, rawGrowth, excluded, levels, wikiBase, wikiGrowth, wikiLevels, conflict, digits: s.digits };
   });
 }
 
 export interface AttackSpeedRow {
   base: number | null;
   growthPercent: number | null;
-  /** 反映率は Wiki にだけある。ない場合は合計を計算しない */
+  /** 反映率は Wiki にだけある。ない場合は Lv2 以降の値を計算しない */
   ratio: number | null;
   levels: (number | null)[];
   wikiBase: number | null;
@@ -170,7 +171,12 @@ export function attackSpeedRow(dd: DDragonChampion, wiki: WikiForm | null): Atta
   const ratio = wiki ? num(wiki.stats?.as_ratio) : null;
   const wikiBase = wiki ? num(wiki.stats?.as_base) : null;
   const wikiGrowthPercent = wiki ? num(wiki.stats?.as_lvl) : null;
-  const levels = SHOWN_LEVELS.map((n) => (base === null || ratio === null ? null : totalAttackSpeed({ base, ratio, growthPercent: growthPercent ?? 0 }, n)));
+  const levels = SHOWN_LEVELS.map((n) => {
+    if (base === null) return null;
+    if (n === 1) return base;
+    if (ratio === null || growthPercent === null) return null;
+    return totalAttackSpeed({ base, ratio, growthPercent }, n);
+  });
   return { base, growthPercent, ratio, levels, wikiBase, wikiGrowthPercent, conflict: !same(base, wikiBase) || !same(growthPercent, wikiGrowthPercent) };
 }
 

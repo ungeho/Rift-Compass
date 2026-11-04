@@ -156,13 +156,13 @@ function WikiTextBlock({ rows, tr, source, title }: { rows: { id: string; label?
           {rows.map((r, i) => (
             <p key={r.id} className={ja[i] ? undefined : "muted"} style={{ whiteSpace: "pre-line" }}>
               {r.label && <strong>{r.label}：</strong>}
-              {ja[i] ?? (r.text.residual ? "（この段落は Wiki の記法に解けない部分があるため訳していません。英語の原文を参照してください）" : "（この段落の訳はまだないか、原文が更新されたため表示していません。英語の原文を参照してください）")}
+              {ja[i] ?? `（${translationNotice(tr, r.id, r.text)}）`}
             </p>
           ))}
         </div>
       )}
       {rows.flatMap((r) => r.text.level_notes ?? []).map((n, i) => <LevelNoteLine key={i} n={n} />)}
-      {!anyJa && rows.some((r) => r.text.residual) && <p className="muted">訳していない理由：Wiki の記法に解けない部分がある（表や、別のページの読み込み）。英語の原文の「［解析できない記法］」の部分は原典を参照してください。</p>}
+      {!anyJa && rows.map((r) => <p key={r.id} className="muted">{r.label && `${r.label}：`}{translationNotice(tr, r.id, r.text)}</p>)}
       <div className="muted">英語の原文（記法を簡略化）</div>
       {rows.map((r) => (
         <p key={r.id} lang="en" style={{ whiteSpace: "pre-line" }}>
@@ -202,6 +202,12 @@ const validJa = (tr: TrFile | null, id: string, t: WikiText) => {
   const e = tr?.entries[id];
   return e && !t.residual && e.source_sha1 === t.source_sha1 && e.plain_sha1 === t.plain_sha1 ? e.ja : null;
 };
+
+function translationNotice(tr: TrFile | null, id: string, text: WikiText): string {
+  if (text.residual) return "この段落は Wiki の記法に解けない部分があるため翻訳を保留しています。英語の原文と出典を参照してください";
+  if (tr?.entries[id]) return "原文または解析後の英文が更新されたため、古い訳は表示しません。英語の原文を参照してください";
+  return "この段落の日本語訳はまだありません。英語の原文を参照してください";
+}
 
 /** 公式の説明（Data Dragon）。値の欠けの可能性がある「0」に印を付ける（文は変えない） */
 function OfficialText({ text, version }: { text: string; version: string }) {
@@ -261,7 +267,7 @@ const UNIQUE_TEXT: Record<UniqueStatus, string> = {
   unlisted: "未確認：Named item effect の表に名前がない",
 };
 
-function EffectCard({ item, k, e, tr, info, outdated }: { item: string; k: string; e: ItemEffectText & { __parts?: Record<string, ItemEffectText> }; tr: TrFile | null; info: UniqueInfo | null; outdated: string | null }) {
+export function EffectCard({ item, k, e, tr, info, outdated }: { item: string; k: string; e: ItemEffectText & { __parts?: Record<string, ItemEffectText> }; tr: TrFile | null; info: UniqueInfo | null; outdated: string | null }) {
   const parts = Object.entries(e.__parts ?? {});
   const rows: [string, ItemEffectText][] = [[k, e], ...parts];
   const ja = rows.map(([kk, t]) => validJa(tr, `${item}#${kk}`, t));
@@ -275,15 +281,11 @@ function EffectCard({ item, k, e, tr, info, outdated }: { item: string; k: strin
         {e.name && <span>・{e.name}</span>}
       </div>
       {facts.length > 0 && <div className="muted">{facts.join("・")}（Wiki のデータの項目）</div>}
-      {ja.some(Boolean) ? (
-        rows.map(([kk], i) => (
-          <p key={kk} style={{ whiteSpace: "pre-line" }} className={ja[i] ? undefined : "muted"}>
-            {ja[i] ?? "（この段落の訳はありません。英語の原文を参照してください）"}
-          </p>
-        ))
-      ) : (
-        <p className="muted">（訳はありません。英語の原文を参照してください）</p>
-      )}
+      {rows.map(([kk, text], i) => (
+        <p key={kk} style={{ whiteSpace: "pre-line" }} className={ja[i] ? undefined : "muted"}>
+          {ja[i] ?? `（${translationNotice(tr, `${item}#${kk}`, text)}）`}
+        </p>
+      ))}
       {rows.flatMap(([, t]) => t.level_notes ?? []).map((n, i) => <LevelNoteLine key={i} n={n} />)}
       {info && e.name && (
         <div className="muted">

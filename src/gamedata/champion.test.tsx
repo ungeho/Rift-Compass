@@ -49,7 +49,33 @@ describe("基本データの表示用の行", () => {
     const as = attackSpeedRow(dd, w);
     expect(as.ratio).toBe(w.stats!.as_ratio);
     expect(as.levels[3]).toBeCloseTo(as.base! + ((as.growthPercent! * 17) / 100) * as.ratio!, 10);
-    expect(attackSpeedRow(dd, null).levels.every((x) => x === null)).toBe(true);
+    expect(attackSpeedRow(dd, null).levels).toEqual([as.base, null, null, null]);
+  });
+  it("攻撃速度の成長値の欠損を0に補わず、既知のLv1だけを示す。明示された0は計算できる", () => {
+    const dd = champ("Ahri");
+    const w = closestForm(dd, wiki(dd.key).forms)!;
+    const missing = { ...dd, stats: { ...dd.stats } };
+    delete missing.stats.attackspeedperlevel;
+    expect(attackSpeedRow(missing, w).levels).toEqual([dd.stats.attackspeed, null, null, null]);
+    const zero = { ...dd, stats: { ...dd.stats, attackspeedperlevel: 0 } };
+    expect(attackSpeedRow(zero, w).levels).toEqual(Array(4).fill(dd.stats.attackspeed));
+    expect(attackSpeedRow(dd, { ...w, stats: { ...w.stats, as_ratio: 0 } }).levels).toEqual(Array(4).fill(dd.stats.attackspeed));
+  });
+  it("ステータスの0・欠損・成長対象外を区別し、条件付き補正を基本値に混ぜない", () => {
+    const dd = champ("Ahri");
+    const missing: DDragonChampion = { ...dd, stats: { ...dd.stats, hp: 0, hpperlevel: 0 } };
+    delete missing.stats.armorperlevel;
+    delete missing.stats.attackspeedperlevel;
+    const rows = statRows(missing, null);
+    expect(rows.find((r) => r.label === "体力")!.levels).toEqual([0, 0, 0, 0]);
+    expect(rows.find((r) => r.label === "物理防御")!.levels).toEqual([dd.stats.armor, null, null, null]);
+    expect(rows.find((r) => r.label === "射程")!.hasGrowth).toBe(false);
+    const html = renderToStaticMarkup(<ChampionDataBody data={{ version: v, dd: missing, wiki: null, prev: null, knownIssues: [], patch: null }} />);
+    expect(html).toContain("対象外");
+    expect(html).toContain("不明");
+    expect(html).not.toContain("—%");
+    expect(html).toContain("アイテム・ルーンなどの増加は含みません");
+    expect(html).toContain("成長式に使う係数");
   });
   it("形態が複数あるチャンピオン（クレッド）は、違いの最も少ない形態と比べる", () => {
     const dd = champ("Kled");

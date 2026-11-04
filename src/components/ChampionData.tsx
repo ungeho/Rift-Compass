@@ -212,7 +212,7 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
                   </th>
                   <td>{fmt(r.base, r.digits)}</td>
                   <td>
-                    {r.excluded ? (r.growth === null ? "不明" : fmt(r.growth, 3)) : r.growth === null && r.wikiGrowth === null ? "—" : fmt(r.growth, 3)}
+                    {!r.hasGrowth ? "対象外" : r.growth === null ? "不明" : fmt(r.growth, 3)}
                     {r.growthSource === "wiki" && <sup className="mark">W</sup>}
                   </td>
                   {r.levels.map((v, i) => (
@@ -230,7 +230,7 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
                 {asNote && <sup className="mark">※{asNote.n}</sup>}
               </th>
               <td>{fmt(as.base, 3)}</td>
-              <td>{fmt(as.growthPercent, 2)}%</td>
+              <td>{as.growthPercent === null ? "不明" : `${fmt(as.growthPercent, 2)}%`}</td>
               {as.levels.map((v, i) => (
                 <td key={i}>
                   {v === null ? "—" : fmt(v, 3)}
@@ -242,6 +242,7 @@ export function ChampionDataBody({ data }: { data: Loaded }) {
         </table>
       </div>
       <ul className="stat-notes">
+        <li>「—」は値が未取得・不明、「対象外」はレベル成長を計算しない項目、0 は出典に記載された数値です。成長値は各レベルでそのまま加算する値ではなく、下記の成長式に使う係数です。</li>
         <li>
           <sup className="mark">W</sup>：Wiki（{wiki ? `revid ${wiki.source.revid}` : "未取得"}
           {form ? `・形態「${form.form}」` : ""}）の値で計算。<sup className="mark">R</sup>：攻撃速度の反映率（Wiki の値：{as.ratio === null ? "不明" : fmt(as.ratio, 3)}）で計算。
