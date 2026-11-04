@@ -307,3 +307,24 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .source-controls label:first-child { flex-basis: 280px; }
 .source-controls input, .source-controls select { width: 100%; min-width: 0; padding: 8px; font: inherit; }
 .source-pagination { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+
+/* Topic は参照関係を保持し、階層と情報の種類を分けて表示する。 */
+.topic-filter { display: grid; gap: 6px; max-width: 620px; margin: 14px 0; }
+.topic-filter input { width: 100%; min-width: 0; padding: 10px 12px; font: inherit; }
+.topic-tree details > summary, .topic-hierarchy > summary, .topic-aliases > summary, .topic-auxiliary > summary { cursor: pointer; padding: 8px 0; }
+.topic-tree details > p { margin: 4px 0 8px; }
+.topic-tree > li { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.topic-tree .muted { font-size: 0.85rem; font-weight: 400; }
+.topic-search-results { list-style: none; padding: 0; }
+.topic-search-results > li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.topic-search-results p { margin: 4px 0 0; font-size: 0.85rem; }
+.topic-search-results p a { display: inline-block; margin-right: 12px; }
+.topic-hierarchy, .topic-auxiliary { margin: 12px 0; border-block: 1px solid var(--border); }
+.topic-aliases { margin: 8px 0; }
+.topic-detail { overflow-wrap: anywhere; }
+.topic-tablist { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.topic-tablist [role="tab"] { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; cursor: pointer; }
+.topic-tablist [aria-selected="true"] { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.topic-tabpanel { padding-top: 8px; min-width: 0; }
+.topic-tabpanel[hidden] { display: none; }
+.topic-tabpanel:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }

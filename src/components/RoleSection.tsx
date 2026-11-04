@@ -5,6 +5,7 @@ import { index } from "../data/dataset";
 import { decisionsForRole, ROLE_TOPICS } from "../data/decisions";
 import { decisionHref, resourceHref, topicHref } from "../router";
 import { containsTerm, normalize } from "../search/search";
+import { revealTopicItems } from "./TopicTabs";
 
 type Lang = { en: string | null; ja: string | null };
 interface PositionEntry {
@@ -105,9 +106,10 @@ export function RoleSection({ topicId }: { topicId: string }) {
       )}
 
       <section aria-labelledby="role-resources-heading">
-        <h2 id="role-resources-heading">
+        <details className="topic-auxiliary">
+        <summary id="role-resources-heading">
           ポジション名を含む資料 <span className="result-count">{resources.length}件</span>
-        </h2>
+        </summary>
         <p className="muted">題名・紹介文にポジションの名前（別名を含む）がある公開資料です。語の一致で、そのポジションの解説とは限りません。</p>
         {resources.length === 0 ? (
           <p className="muted">該当する資料はありません。</p>
@@ -120,20 +122,26 @@ export function RoleSection({ topicId }: { topicId: string }) {
             ))}
           </ul>
         )}
+        </details>
       </section>
     </>
   );
 }
 
 export function RoleChampions({ topicId, data }: { topicId: string; data: PositionsFile }) {
+  const [q, setQ] = useState("");
+  const [shown, setShown] = useState(20);
   const r = data.roles[topicId];
   if (!r) return <p className="muted">このポジションの記載はありません。</p>;
   const clientIds = new Set(r.client.map((c) => c.id));
   const externalOnly = r.external.filter((c) => !clientIds.has(c.id));
-  const chips = (list: PositionEntry[]) => (
-    <ul className="chips">
-      {list.map((c) => (
-        <li key={c.id}>
+  const match = (c: PositionEntry) => normalize(`${c.name.ja ?? ""} ${c.name.en ?? ""}`).includes(normalize(q));
+  const client = r.client.filter(match), external = externalOnly.filter(match);
+  // 少量の名前リンクは保持したまま段階表示し、非表示のリンクをフォーカス対象から外す。
+  const chips = (list: PositionEntry[], label: string, visible = Infinity) => (
+    <ul className="chips" aria-label={label}>
+      {list.map((c, i) => (
+        <li key={c.id} hidden={i >= visible}>
           <a className="chip" href={topicHref(c.topic_id)}>
             {c.name.ja ?? c.name.en}
           </a>
@@ -149,14 +157,18 @@ export function RoleChampions({ topicId, data }: { topicId: string; data: Positi
       <h3>
         Riot クライアントの推奨 <span className="result-count">{r.client.length}体</span>
       </h3>
-      {chips(r.client)}
+      <label className="topic-filter">このポジションのチャンピオンを検索<input type="search" value={q} onChange={(e) => { setQ(e.target.value); setShown(20); }} /></label>
+      {q && <p role="status">推奨 {client.length}体 ・ 推奨以外 {external.length}体が一致</p>}
+      {chips(client, "推奨チャンピオン一覧", shown)}
+      {shown < client.length && <button className="button" onClick={(e) => revealTopicItems(e.currentTarget, shown, () => setShown(shown + 20))}>推奨チャンピオンをさらに{Math.min(20, client.length - shown)}体表示する（残り {client.length - shown}体）</button>}
+      {q && !client.length && !external.length && <p>一致するチャンピオンはありません。日本語・英語の名前でも探せます。</p>}
       {externalOnly.length > 0 && (
-        <>
-          <h3>
+        <details className="topic-auxiliary" open={q.trim() ? true : undefined}>
+          <summary>
             統計サイトなどでの使用（推奨には含まれない） <span className="result-count">{externalOnly.length}体</span>
-          </h3>
-          {chips(externalOnly)}
-        </>
+          </summary>
+          {chips(external, "推奨以外のチャンピオン一覧")}
+        </details>
       )}
       <p className="muted">
         全チャンピオンは <a href={topicHref("cat-champions")}>チャンピオン別</a> からもたどれます。
