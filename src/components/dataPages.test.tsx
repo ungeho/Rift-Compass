@@ -2,7 +2,50 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { readFileSync } from "node:fs";
 import type { ComponentProps, ReactElement } from "react";
-import { DataPage, EffectCard, HistoryLine, SECTIONS } from "./DataPages";
+import { DataPage, EffectCard, HistoryLine, ItemStatTable, ItemModeList, SECTIONS } from "./DataPages";
+
+import { resolveItemModes, type ItemReferenceData } from "../gamedata/itemRules";
+
+describe("参照を含むモード一覧", () => {
+  it("直接値・参照値は解決後のモード名を表示し、参照文字列の文字位置を表示しない", () => {
+    const data = new Map<string, ItemReferenceData>([["A", { modes: "=>B" }], ["B", { modes: { "classic sr 5v5": true, aram: false } }]]);
+    for (const name of ["A", "B"]) {
+      const html = renderToStaticMarkup(<ItemModeList mode={resolveItemModes(name, data)} />);
+      expect(html).toContain("classic sr 5v5");
+      expect(html).not.toContain("aram");
+      expect(html).not.toContain("0・1");
+    }
+  });
+  it("参照が解決できない場合、非対応やモード名を推測しない", () => {
+    const data = new Map<string, ItemReferenceData>([["A", { modes: "=>missing" }]]);
+    const html = renderToStaticMarkup(<ItemModeList mode={resolveItemModes("A", data)} />);
+    expect(html).toContain("不明（対応モードを確定できません）");
+    expect(html).not.toContain("記載なし");
+    expect(html).not.toContain("0・1");
+  });
+});
+
+describe("アイテムの参照ステータスの表示", () => {
+  it("数値と単位を示し、元と参照先へのリンクを保持する", () => {
+    const raw = JSON.parse(readFileSync("public/gamedata/wiki/2026-11-02/items.json", "utf8"));
+    const items: ComponentProps<typeof ItemStatTable>["items"] = new Map(raw.items.map((w: { name: string }) => [w.name, w]));
+    const html = renderToStaticMarkup(<ItemStatTable item="Chainlaced Crushers" items={items} />);
+    expect(html).toContain("行動妨害耐性 30%");
+    expect(html).toContain("参照値：");
+    for (const name of ["Chainlaced Crushers", "Mercury's Treads"]) expect(html).toContain(`href="${items.get(name)!.source.url.replace(/'/g, "&#x27;")}"`);
+    expect(html).not.toContain("=&gt;");
+    const direct = renderToStaticMarkup(<ItemStatTable item="Boots" items={items} />);
+    expect(direct).toContain("移動速度（固定値） 25");
+    expect(direct).not.toContain("参照値：");
+  });
+  it("参照失敗を不明と理由で示し、0に補完しない", () => {
+    const items: ComponentProps<typeof ItemStatTable>["items"] = new Map([["A", { name: "A", source: { title: "A", url: "https://example.com/a", status: 200, last_modified: null }, data: { stats: { hp: "=>missing", crit: 0 } } }]]);
+    const html = renderToStaticMarkup(<ItemStatTable item="A" items={items} />);
+    expect(html).toContain("体力 不明");
+    expect(html).toContain("参照先の記録なし");
+    expect(html).toContain("クリティカル率 0%（0）");
+  });
+});
 
 describe("ゲームデータのページ（一覧）", () => {
   it("アイテム・ルーン・サモナースペル・モンスター・記事の区分と、出典・未検証の注記を示す", () => {

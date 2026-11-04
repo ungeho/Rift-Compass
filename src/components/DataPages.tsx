@@ -3,7 +3,7 @@
 // 開いたページのファイルだけを読む（public/gamedata）。取得したデータの表示で、ゲーム内では検証していない。
 import { useEffect, useMemo, useState } from "react";
 import { showValues, wikiPlain, type ParsedValue } from "../gamedata/wikiAbility";
-import { effectKind, groupStats, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, type DdGold, type NamedEffect, type PriceRow, type UniqueInfo, type UniqueStatus } from "../gamedata/itemRules";
+import { effectKind, groupStats, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemModes, resolveItemStats, ITEM_REFERENCE_ERRORS, type ItemReferenceData, type ItemFieldResolution, type DdGold, type NamedEffect, type PriceRow, type UniqueInfo, type UniqueStatus } from "../gamedata/itemRules";
 
 const BASE = `${import.meta.env.BASE_URL}gamedata/`;
 const get = async <T,>(p: string): Promise<T> => {
@@ -196,7 +196,7 @@ interface ItemEffectText extends WikiText {
 interface WikiItem {
   name: string;
   source: Source;
-  data?: { id?: number; tier?: number; type?: string[]; buy?: unknown; sell?: unknown; sellratio?: unknown; modes?: Record<string, boolean>; stats?: Record<string, unknown> };
+  data?: { id?: number; tier?: number; type?: string[]; buy?: unknown; sell?: unknown; sellratio?: unknown; modes?: Record<string, boolean> | string; stats?: Record<string, unknown> };
   effect_text?: Record<string, ItemEffectText>;
   limit_text?: WikiText;
   limit_groups?: { group: string; rule: string }[];
@@ -247,7 +247,20 @@ function PriceTable({ rows }: { rows: PriceRow[] }) {
   );
 }
 
-function StatTable({ stats }: { stats: Record<string, unknown> | undefined }) {
+export function ItemModeList({ mode }: { mode: ReturnType<typeof resolveItemModes> }) {
+  return <p className="muted">使えるモード（Wiki）：{mode.error ? "不明（対応モードを確定できません）" : Object.entries(mode.value as Record<string, boolean>).filter(([, on]) => on === true).map(([name]) => name).join("・") || "記載なし"}</p>;
+}
+
+function ItemReference({ r, items }: { r: ItemFieldResolution; items: ReadonlyMap<string, WikiItem> }) {
+  return <span>Wiki参照：{r.chain.map((name, i) => <span key={`${i}:${name}`}>{i > 0 && " → "}{items.get(name) ? <a href={items.get(name)!.source.url}>{name}</a> : name}</span>)}{r.error && `（不明：${ITEM_REFERENCE_ERRORS[r.error]}）`}</span>;
+}
+
+export function ItemStatTable({ item, items, data }: { item: string; items: ReadonlyMap<string, WikiItem>; data?: ReadonlyMap<string, ItemReferenceData> }) {
+  const { stats, references } = resolveItemStats(item, data ?? new Map([...items].filter(([, w]) => w.data).map(([name, w]) => [name, w.data!])));
+  return <StatTable stats={stats} references={references} items={items} />;
+}
+
+function StatTable({ stats, references = {}, items = new Map() }: { stats: Record<string, unknown> | undefined; references?: Record<string, ItemFieldResolution>; items?: ReadonlyMap<string, WikiItem> }) {
   const groups = groupStats(stats, wikiPlain);
   if (!groups.length) return null;
   const anyZero = groups.some((g) => g.lines.some((l) => l.zero));
@@ -258,7 +271,7 @@ function StatTable({ stats }: { stats: Record<string, unknown> | undefined }) {
         {groups.map((g) => (
           <div key={g.group}>
             <dt>{g.label}</dt>
-            <dd>{g.lines.map((l) => `${l.label} ${l.value}${l.zero ? "（0）" : ""}`).join("・")}</dd>
+            <dd>{g.lines.map((l, i) => <span key={l.key}>{i > 0 && "・"}{l.label} {l.value}{l.zero ? "（0）" : ""}{references[l.key] && <span className="muted">（参照値：<ItemReference r={references[l.key]} items={items} />）</span>}</span>)}</dd>
           </div>
         ))}
       </dl>
@@ -328,8 +341,10 @@ function Items() {
       snap ? get<ItemRulesFile>(`wiki/${snap}/item_rules.json`).catch(() => null) : Promise.resolve(null),
     ]);
     const byName = new Map(wiki.items.map((x) => [x.name, x]));
+    const data = new Map(wiki.items.filter((x) => x.data).map((x) => [x.name, x.data!]));
+    const modes = new Map(wiki.items.filter((x) => x.data).map((x) => [x.name, resolveItemModes(x.name, data)]));
     const effectNames = new Map(wiki.items.map((x) => [x.name, Object.values(x.effect_text ?? {}).map((e) => e.name).filter((n): n is string => !!n)]));
-    return { wiki: wiki.items, byName, effectNames, dd: new Map(dd.items.map((x) => [x.id, x])), ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
+    return { wiki: wiki.items, byName, data, modes, effectNames, dd: new Map(dd.items.map((x) => [x.id, x])), ddVersion: dd.source.version, hist: hist?.entries ?? {}, tr, rules };
   }, []);
   const [q, setQ] = useState("");
   const [scope, setScope] = useState("sr");
@@ -337,7 +352,7 @@ function Items() {
     if (s.status !== "ok") return [];
     return s.data.wiki
       .filter((w) => w.data)
-      .filter((w) => (scope === "all" ? true : scope === "sr" ? !!w.data?.modes?.["classic sr 5v5"] : !w.data?.modes?.["classic sr 5v5"]))
+      .filter((w) => scope === "all" || s.data.modes.get(w.name)?.sr === (scope === "sr" ? true : scope === "mode" ? false : null))
       .filter((w) => matchName(q, w.name, s.data.dd.get(w.data?.id ?? -1)?.name.ja));
   }, [s, q, scope]);
   if (s.status !== "ok") return <p className="muted">{s.status === "loading" ? "読み込んでいます…" : `読み込めませんでした（${s.message}）`}</p>;
@@ -360,12 +375,13 @@ function Items() {
   };
   return (
     <>
-      <Filter q={q} setQ={setQ} scope={scope} setScope={setScope} scopes={[["sr", "サモナーズリフト"], ["mode", "モード専用"], ["all", "すべて"]]} />
+      <Filter q={q} setQ={setQ} scope={scope} setScope={setScope} scopes={[["sr", "サモナーズリフト"], ["mode", "モード専用"], ["unknown", "対応モード不明"], ["all", "すべて"]]} />
       <p className="muted">{list.length}件。日本語の名前・説明・値段は Data Dragon {ddVersion}（公式）、ステータス・効果の構造と文は英語 Wiki の Module:ItemData。</p>
       <ul className="data-list">
         {list.map((w) => {
           const dd = s.data.dd.get(w.data?.id ?? -1);
           const effects = effectsOf(w);
+          const mode = s.data.modes.get(w.name)!;
           const limitJa = w.limit_text ? validJa(tr, `${w.name}#limit`, w.limit_text) : null;
           return (
             <li key={w.name}>
@@ -378,7 +394,8 @@ function Items() {
                   </span>
                 </summary>
                 <PriceTable rows={priceRows(dd, w.data, ddVersion, w.limit_text?.plain)} />
-                <StatTable stats={w.data?.stats} />
+                <ItemStatTable item={w.name} items={byName} data={s.data.data} />
+                {(mode.chain.length > 1 || mode.error) && <p className="muted">モード分類：{mode.sr === null ? "不明（SR非対応とは判定していません）" : mode.sr ? "サモナーズリフト対応" : "モード専用"}。<ItemReference r={mode} items={byName} /></p>}
                 {dd?.description.ja && <OfficialText text={dd.description.ja} version={ddVersion} />}
                 {effects.length > 0 && (
                   <div>
@@ -431,7 +448,7 @@ function Items() {
                   )}
                   （League of Legends Wiki の寄稿者、{LICENSE}）。改変：記法を簡略化し、日本語に翻訳した（AI・未レビュー）。
                 </p>
-                <p className="muted">使えるモード（Wiki）：{Object.entries(w.data?.modes ?? {}).filter(([, v]) => v).map(([k]) => k).join("・") || "記載なし"}</p>
+                <ItemModeList mode={mode} />
                 <HistoryLine h={s.data.hist[w.name]} />
               </details>
             </li>

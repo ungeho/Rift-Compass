@@ -4,6 +4,60 @@
 
 // ---- ステータス ----
 
+export interface ItemReferenceData { modes?: unknown; stats?: Record<string, unknown> }
+export interface ItemFieldResolution {
+  value: unknown;
+  /** 参照元から終端まで。欠損・循環でも、たどった名前を保持する。 */
+  chain: string[];
+  error?: "missing_item" | "missing_field" | "cycle" | "invalid_type";
+}
+/** Wiki getter と同じく、参照先の同じキー経路を読む。元データは書き換えない。 */
+export function resolveItemField(item: string, path: readonly string[], items: ReadonlyMap<string, ItemReferenceData>): ItemFieldResolution {
+  const chain: string[] = [];
+  const seen = new Set<string>();
+  let name = item;
+  for (;;) {
+    chain.push(name);
+    if (seen.has(name)) return { value: undefined, chain, error: "cycle" };
+    seen.add(name);
+    let value: unknown = items.get(name);
+    if (!value) return { value: undefined, chain, error: "missing_item" };
+    for (const key of path) {
+      if (!value || typeof value !== "object" || !Object.hasOwn(value, key)) return { value: undefined, chain, error: "missing_field" };
+      value = (value as Record<string, unknown>)[key];
+    }
+    if (typeof value === "string" && value.startsWith("=>")) { name = value.slice(2); continue; }
+    return { value, chain };
+  }
+}
+
+export function resolveItemModes(item: string, items: ReadonlyMap<string, ItemReferenceData>): ItemFieldResolution & { sr: boolean | null } {
+  const r = resolveItemField(item, ["modes"], items);
+  const value = r.value;
+  if (!r.error && value && typeof value === "object" && !Array.isArray(value) && typeof (value as Record<string, unknown>)["classic sr 5v5"] === "boolean") {
+    return { ...r, sr: (value as Record<string, boolean>)["classic sr 5v5"] };
+  }
+  return { ...r, error: r.error ?? "invalid_type", sr: null };
+}
+
+export function resolveItemStats(item: string, items: ReadonlyMap<string, ItemReferenceData>) {
+  const original = items.get(item)?.stats;
+  const stats = { ...original };
+  const references: Record<string, ItemFieldResolution> = {};
+  for (const [key, value] of Object.entries(original ?? {})) {
+    if (typeof value !== "string" || !value.startsWith("=>")) continue;
+    const r = resolveItemField(item, ["stats", key], items);
+    const valid = !r.error && typeof r.value === "number" && Number.isFinite(r.value);
+    references[key] = valid ? r : { ...r, error: r.error ?? "invalid_type" };
+    stats[key] = valid ? r.value : null;
+  }
+  return { stats, references };
+}
+
+export const ITEM_REFERENCE_ERRORS: Record<NonNullable<ItemFieldResolution["error"]>, string> = {
+  missing_item: "参照先の記録なし", missing_field: "参照先の項目なし", cycle: "循環参照", invalid_type: "参照値の型が不正・数値等を確定できない",
+};
+
 /** 単位：flat は固定値、percent は割合（%）。Wiki の Module:ItemData/getter の isPercentage と同じ区別 */
 export interface StatDef { label: string; unit: "flat" | "percent"; group: StatGroup }
 export type StatGroup = "attack" | "magic" | "defense" | "resource" | "utility" | "other";

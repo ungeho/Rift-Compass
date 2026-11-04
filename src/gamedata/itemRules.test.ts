@@ -1,10 +1,83 @@
 // アイテムの詳しい表示の整理：値段（売却は gold.sell）・ステータスの分類と単位・公式の説明の値の欠け・固有効果の重複のルール
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { effectKind, groupStats, hasPlaceholderZero, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, type NamedEffect } from "./itemRules";
+import { effectKind, groupStats, hasPlaceholderZero, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemField, resolveItemModes, resolveItemStats, type ItemReferenceData, type NamedEffect } from "./itemRules";
 
 const SNAP = "public/gamedata/wiki/2026-11-02";
 const readJson = (p: string) => JSON.parse(readFileSync(p, "utf8"));
+
+describe("Wikiアイテムの同じ項目への参照", () => {
+  const fixture = () => new Map<string, ItemReferenceData>([
+    ["A", { modes: "=>B", stats: { hp: "=>B", tenacity: "=>B", ad: 0, armor: null, mr: undefined, spec: "text" } }],
+    ["B", { modes: "=>C", stats: { hp: "=>C", tenacity: 0 } }],
+    ["C", { modes: { "classic sr 5v5": true }, stats: { hp: 550 } }],
+  ]);
+  it("参照先の同じキーを連鎖して読み、経路を保持し、元データを変更しない", () => {
+    const data = fixture(), before = JSON.stringify([...data]);
+    expect(resolveItemField("A", ["stats", "hp"], data)).toEqual({ value: 550, chain: ["A", "B", "C"] });
+    expect(resolveItemModes("A", data)).toMatchObject({ sr: true, chain: ["A", "B", "C"] });
+    const result = resolveItemStats("A", data);
+    expect(result.stats).toMatchObject({ hp: 550, tenacity: 0, ad: 0, armor: null, mr: undefined, spec: "text" });
+    const lines = groupStats(result.stats).flatMap((g) => g.lines);
+    expect(lines.find((l) => l.key === "tenacity")).toMatchObject({ value: "0%", zero: true });
+    expect(lines.find((l) => l.key === "ad")).toMatchObject({ value: "0", zero: true });
+    for (const key of ["armor", "mr"]) expect(lines.find((l) => l.key === key)).toMatchObject({ value: "不明", zero: false });
+    expect(lines.some((l) => l.key === "ap")).toBe(false);
+    expect(JSON.stringify([...data])).toBe(before);
+  });
+  it.each(["missing", "field", "cycle", "self", "invalid"])("%s：参照失敗では数値を推測せず、モードもSR非対応としない", (kind) => {
+    const data = fixture();
+    if (kind === "missing") data.delete("B");
+    if (kind === "field") data.set("B", {});
+    if (kind === "cycle") data.set("C", { modes: "=>A", stats: { hp: "=>A" } });
+    if (kind === "self") data.set("A", { modes: "=>A", stats: { hp: "=>A" } });
+    if (kind === "invalid") data.set("C", { modes: [], stats: { hp: "550" } });
+    expect(resolveItemModes("A", data).sr).toBeNull();
+    expect(resolveItemModes("A", data).error).toBeDefined();
+    const r = resolveItemStats("A", data);
+    expect(r.stats.hp).toBeNull();
+    expect(r.references.hp.error).toBeDefined();
+    expect(groupStats(r.stats).flatMap((g) => g.lines).find((l) => l.key === "hp")).toMatchObject({ value: "不明", zero: false });
+  });
+  it.each([null, undefined, NaN, Infinity, true, {}, [], "550", ""])("数値でない参照終端%jは不明とする", (value) => {
+    const data = fixture(); data.set("C", { stats: { hp: value } });
+    expect(resolveItemStats("A", data).references.hp.error).toBe("invalid_type");
+    expect(resolveItemStats("A", data).stats.hp).toBeNull();
+  });
+  it("直接のtrue/falseと不明を区別する", () => {
+    const data = new Map<string, ItemReferenceData>([["true", { modes: { "classic sr 5v5": true } }], ["false", { modes: { "classic sr 5v5": false } }], ["empty", { modes: {} }]]);
+    expect(resolveItemModes("true", data).sr).toBe(true);
+    expect(resolveItemModes("false", data).sr).toBe(false);
+    expect(resolveItemModes("empty", data).sr).toBeNull();
+    expect(resolveItemModes("missing", data).sr).toBeNull();
+  });
+  it("実データ319件はSR227→229・その他92→90。変更されるのは2件だけ", () => {
+    const items = readJson(`${SNAP}/items.json`).items as { name: string; data: ItemReferenceData }[];
+    const data = new Map(items.map((w) => [w.name, w.data]));
+    const oldSR = items.filter((w) => (w.data.modes as Record<string, boolean>)?.["classic sr 5v5"]);
+    const resolved = items.map((w) => ({ name: w.name, ...resolveItemModes(w.name, data) }));
+    expect(items).toHaveLength(319); expect(oldSR).toHaveLength(227);
+    expect(resolved.filter((r) => r.sr === true)).toHaveLength(229);
+    expect(resolved.filter((r) => r.sr === false)).toHaveLength(90);
+    expect(resolved.filter((r) => r.sr === null)).toHaveLength(0);
+    expect(resolved.filter((r) => r.chain.length > 1).map((r) => r.name)).toEqual(["Fimbulwinter", "Muramana"]);
+  });
+  it("実データのステータス参照6項目を数値・単位・分類に戻し、直接値はすべて維持する", () => {
+    const items = readJson(`${SNAP}/items.json`).items as { name: string; data: ItemReferenceData }[];
+    const data = new Map(items.map((w) => [w.name, w.data]));
+    const actual: string[] = [];
+    for (const w of items) {
+      const r = resolveItemStats(w.name, data);
+      for (const [key, value] of Object.entries(w.data.stats ?? {})) {
+        if (!r.references[key]) { expect(r.stats[key]).toEqual(value); continue; }
+        const group = groupStats(r.stats).find((g) => g.lines.some((l) => l.key === key))!;
+        actual.push(`${w.name}#${key}:${group.group}:${group.lines.find((l) => l.key === key)!.value}`);
+        expect(r.references[key].error).toBeUndefined();
+      }
+    }
+    expect(actual).toEqual(["Chainlaced Crushers#tenacity:utility:30%", "Fimbulwinter#hp:defense:550", "Fimbulwinter#ah:utility:15", "Muramana#ad:attack:35", "Muramana#ah:utility:15", "Slightly Magical Boots#msflat:utility:25"]);
+  });
+});
 
 describe("ステータスの分類と単位", () => {
   it("明示された欠損値は不明と示し、0や未掲載の項目と区別する", () => {
