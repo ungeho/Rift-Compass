@@ -8,6 +8,7 @@ import { itemReviewFor, ITEM_REVIEW_VERSION, ITEM_REVIEW_PATCH, ITEM_REVIEW_CHEC
 import { ItemTree } from "./ItemTree";
 import { displayItemName, itemCategory } from "../gamedata/itemTree";
 import { itemHref } from "../router";
+import { reviewedEffectFor, EFFECT_REVIEWS, EFFECT_REVIEW_CHECKED, type ReviewedEffect } from "../gamedata/effectReviews";
 import { effectKind, groupStats, limitGroupJa, priceRows, splitPlaceholderZeros, uniqueInfo, resolveItemModes, resolveItemStats, ITEM_REFERENCE_ERRORS, type ItemReferenceData, type ItemFieldResolution, type DdGold, type NamedEffect, type PriceRow, type UniqueInfo, type UniqueStatus } from "../gamedata/itemRules";
 
 const BASE = `${import.meta.env.BASE_URL}gamedata/`;
@@ -209,6 +210,19 @@ interface WikiItem {
 interface DdItem { id: number; name: Lang; plaintext: Lang; description: Lang; gold: DdGold; maps: Record<string, boolean>; from?: string[]; into?: string[] }
 interface ItemRulesFile { sources: Record<string, Source>; named_effects_outdated_if_new_patch: string | null; named_effects: NamedEffect[] }
 
+export function EffectGroupReview({ family, version }: { family: ReviewedEffect; version: string }) {
+  const r = EFFECT_REVIEWS[family];
+  return <section className="effect-group-review" aria-label={`${family}の限定照合`}>
+    <p className="notice">{family}の限定照合：一般的な共有CDは未確認です。効果の重複・個別CD・装備制限・合成時のCD引継ぎを別々に扱います。</p>
+    <details className="comparison-details"><summary>{family}：条件・CD・装備制限の原典比較</summary>
+      <p className="muted">確認日 {EFFECT_REVIEW_CHECKED}。対象：SR・Data Dragon 16.21.1（ゲームパッチ26.21との対応は既存記録による推定）。確認方法：保存データ・Wiki個別記事と履歴・Riot公式25.18、26.1〜26.21の対象名を照合。ゲーム内検証は未実施。{version !== "16.21.1" && `現在は${version}を読み込んでいるため、この確認記録の適用は再確認待ちです。`}</p>
+      <dl className="info"><dt>条件・対象</dt><dd>{r.trigger}</dd><dt>効果の重複</dt><dd>{r.duplication}</dd><dt>個別CD・共有CD</dt><dd>{r.cooldown}</dd><dt>同時装備制限</dt><dd>{r.equip}</dd><dt>合成・売買時のCD</dt><dd>{r.transfer}</dd><dt>例外・モード差</dt><dd>{r.exceptions}</dd></dl>
+      {family === "Lifeline" && <p>Protoplasm Harnessは保存Wiki一覧に未収録ですが、<a href={itemHref("dd:2525")}>公式データ単独の詳細（ID2525）</a>を参照できます。表にあるArchangel's Staffは保存ModuleではLifelineを持たず、表の列挙だけで対象に加えません。</p>}
+      <ul>{r.sources.map((s) => <li key={s.url}><a href={s.url}>{s.label}</a></li>)}</ul>
+    </details>
+  </section>;
+}
+
 export function ItemVersionReview({ assessment, dd, version, officialItems }: { assessment: NonNullable<ReturnType<typeof itemReviewFor>>; dd?: DdItem; version: string; officialItems: readonly DdItem[] }) {
   const { review, needsReview } = assessment;
   return <section className="item-version-review" aria-label="対象時点と旧仕様の確認">
@@ -406,8 +420,11 @@ function Items({ selected = "" }: { selected?: string }) {
   if (selected.startsWith("dd:")) {
     const candidates = s.data.officialItems.filter((d) => String(d.id) === selected.slice(3));
     const d = candidates.length === 1 ? candidates[0] : undefined;
+    const family = d ? reviewedEffectFor(d.name.en ?? "", d.id) : null;
     return <><p><a href="#/data/items">← アイテム一覧</a></p><h2 id="selected-item-heading" tabIndex={-1}>{d ? displayItemName(d.name.ja ?? d.name.en) : `ID ${selected.slice(3)}：対応未確認`}</h2>
       {d ? <><p className="muted">公式データ単独の詳細（Data Dragon {ddVersion}）。Wikiとの対応を推測で結合していません。</p><PriceTable rows={priceRows(d, undefined, ddVersion)} />{d.description.ja && <OfficialText text={d.description.ja} version={ddVersion} />}<details><summary>公式の英語原文</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{d.description.en ?? "未収録"}</p></details></> : <p className="notice">{candidates.length ? "同じIDの公式データが複数あります。表示対象を確定できません。" : "このIDの公式データは未収録です。合成先が存在しないという意味ではありません。"}</p>}
+      {family && <EffectGroupReview family={family} version={ddVersion} />}
+      {d?.id === 323040 && <p className="notice">同名のSeraph's EmbraceでもID3040とは別レコードです。Lifelineの共有・装備・CDの照合結果は自動適用せず、対応範囲を確認待ちとします。</p>}
       <ItemTree current={d} all={s.data.officialItems} version={ddVersion} matches={s.data.matches} />
     </>;
   }
@@ -442,6 +459,7 @@ function Items({ selected = "" }: { selected?: string }) {
           const mode = s.data.modes.get(w.name)!;
           const limitJa = w.limit_text ? validJa(tr, `${w.name}#limit`, w.limit_text) : null;
           const assessment = itemReviewFor(w.name, w.data?.id, w.source.last_modified, ddVersion);
+          const family = reviewedEffectFor(w.name, w.data?.id);
           const wikiContent = <>
                 <ItemStatTable item={w.name} items={byName} data={s.data.data} />
                 {!assessment && dd?.description.ja && <OfficialText text={dd.description.ja} version={ddVersion} />}
@@ -511,6 +529,7 @@ function Items({ selected = "" }: { selected?: string }) {
                 <p><a href={itemHref(`wiki:${w.name}`)}>このアイテムの詳細リンク</a></p>
                 {typeof w.data?.req === "string" && <p className="muted">入手条件（保存Wikiの記載・現行性は未確認）：{wikiPlain(w.data.req)}</p>}
                 <ItemMatchNotice match={match} version={ddVersion} sr={mode.sr} />
+                {family && <EffectGroupReview family={family} version={ddVersion} />}
                 <details className="item-tree-disclosure" open={!!selected}><summary>素材・上位合成先を確認する</summary><ItemTree current={dd} all={s.data.officialItems} version={ddVersion} matches={s.data.matches} /></details>
                 <PriceTable rows={priceRows(dd, assessment ? undefined : w.data, ddVersion, assessment ? undefined : w.limit_text?.plain, match.status === "unconfirmed")} />
                 {assessment && <ItemVersionReview assessment={assessment} dd={dd} version={ddVersion} officialItems={s.data.officialItems} />}

@@ -30,7 +30,11 @@ export const ITEM_REVIEWS: readonly ItemReview[] = [
     ],
     unknowns: ["16.21.1の説明は7%・4秒を記載するが、再適用・個々のスキルとの相互作用・共有CDの挙動はゲーム内で未検証。", "装備制限はData Dragonに収録されていない。旧Moduleの制限を対象時点のルールとして流用しない。"],
   },
-
+  {
+    id: 3139, name: "Mercurial Scimitar", moduleModified: "Wed, 04 Jun 2025 01:59:42 GMT",
+    changes: [{ patch: "25.18", text: "攻撃力40→50、魔法防御40→35、Quicksilverの移動速度持続1.5→2秒。16.21.1のステータスは変更後と一致するが、公式説明は持続時間を省略している。", url: "https://www.leagueoflegends.com/en-us/news/game-updates/patch-25-18-notes" }],
+    unknowns: ["移動速度持続2秒は公式25.18の変更記録。以降26.21までの対象名の記録で更なる変更は見つからなかったが、ゲーム内で実測していない。", "CD90秒、移動速度50%、ゴースト化は保存Wikiの記載で、16.21.1の公式説明では省略。一般的な共有CD・同時装備・合成時のCD引継ぎとは別に確認が必要。"],
+  },
 ];
 
 export const ITEM_REVIEW_VERSION = "16.21.1";
