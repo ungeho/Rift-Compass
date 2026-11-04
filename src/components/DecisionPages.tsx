@@ -1,6 +1,6 @@
 // Phase 5D：判断材料（試験）の一覧と詳細。
-// 検索や推奨はしない。Topic による明示的な絞り込みと、出典・確認範囲の確認だけを提供する。
-import { useEffect } from "react";
+// 一覧内の明示的な絞り込みと、出典・確認範囲の閲覧。判断や推奨の自動生成はしない。
+import { useEffect, useRef, useState } from "react";
 import { index } from "../data/dataset";
 import {
   comparisons, comparisonsForUnit, criteriaCheckedAt, criteriaForUnit, decisionMatchesForQuery, sideWaveCheckedAt, waveTechniqueCheckedAt, criterionOf, decisionById, decisionsCheckedAt, diagramsForUnit, decisionsForTopic, exampleOf, examplesForQuery, examplesForUnit, isNone, QUESTION_ENTRANCES,
@@ -14,6 +14,7 @@ import { youtubeAt } from "../lib/links";
 import { normalize } from "../search/search";
 import { decisionHref, decisionsHref, homeHref, resourceHref } from "../router";
 import { ExternalLink, LevelBadge, NoteStatusBadge, TopicChips } from "./common";
+import { TopicTabs, revealTopicItems, type TopicTab } from "./TopicTabs";
 
 export function DecisionNotice() {
   return (
@@ -36,11 +37,13 @@ function StatusBadges({ u }: { u: DecisionUnit }) {
 }
 
 function authorsOf(u: DecisionUnit): string {
-  return [...new Set(u.evidence.map((e) => sourceById.get(e.source)?.author ?? "出典不明"))].join("、");
+  return [...new Set(u.evidence.map((e) => sourceById.get(e.source)?.author ?? "出典不明"))].join("、") || "出典の記録なし";
 }
 
 function coverageOf(u: DecisionUnit): string {
+  if (!u.evidence.length) return "出典の記録なし・確認範囲は不明";
   const all = u.evidence.map((e) => sourceById.get(e.source)?.coverage.status);
+  if (all.some((c) => c === undefined)) return "出典の記録不足・確認範囲は不明";
   return all.every((c) => c === "full") ? "出典の全体を確認" : "出典の一部だけを確認・未読の範囲あり";
 }
 
@@ -293,50 +296,78 @@ export function RelatedExamples({ q }: { q: string }) {
   );
 }
 
+export const DECISION_PAGE_SIZE = 20;
+
+function focusDecisionSection(id: string) {
+  const heading = document.getElementById(id);
+  heading?.focus();
+  heading?.scrollIntoView({ block: "start" });
+}
+
+/** 一覧内の文字列・分類の絞り込みのみ。順序や判断内容は変えない。 */
+export function filterDecisionList(list: DecisionUnit[], q: string, role: string, kind: string) {
+  const terms = normalize(q).split(/\s+/).filter(Boolean);
+  return list.filter((u) => {
+    const fields = normalize([u.statement_ja, u.problem_ja, u.scope.champions, u.scope.matchup, ...u.topic_ids.map(topicLabel)].join(" "));
+    return terms.every((term) => fields.includes(term)) && (!role || u.scope.roles.includes(role) || (role !== "all" && u.scope.roles.includes("all"))) && (!kind || u.kind === kind);
+  });
+}
+
+function DecisionResults({ list, topic }: { list: DecisionUnit[]; topic: string }) {
+  const [q, setQ] = useState("");
+  const [role, setRole] = useState("");
+  const [kind, setKind] = useState("");
+  const [shown, setShown] = useState(DECISION_PAGE_SIZE);
+  const input = useRef<HTMLInputElement>(null);
+  // Topic の変更時は一覧内の条件を初期化する。入力部品を再マウントせず、選択中のフォーカスは保つ。
+  useEffect(() => { setQ(""); setRole(""); setKind(""); setShown(DECISION_PAGE_SIZE); }, [topic]);
+  const found = filterDecisionList(list, q, role, kind);
+  const active = Boolean(q || role || kind);
+  const clear = () => { setQ(""); setRole(""); setKind(""); setShown(DECISION_PAGE_SIZE); input.current?.focus(); };
+  const t = index.topicById.get(topic);
+  return <section aria-labelledby="decision-results-heading">
+    <h2 id="decision-results-heading" tabIndex={-1}>{topic ? `Topic「${t?.label_ja ?? topic}」の判断材料：${list.length}件` : `判断材料の一覧：${list.length}件`}</h2>
+    <div className="decision-controls">
+      <div><label htmlFor="decision-query">一覧内を探す</label><input id="decision-query" ref={input} type="search" value={q} onChange={(e) => { setQ(e.target.value); setShown(DECISION_PAGE_SIZE); }} aria-describedby="decision-filter-help" placeholder="題名・状況・チャンピオン名・Topic" /></div>
+      <div><label htmlFor="decision-topic">Topic</label><select id="decision-topic" value={topic} onChange={(e) => { window.location.hash = decisionsHref(e.target.value); }}><option value="">すべて</option>{topic && !showcaseTopicIds().includes(topic) && <option value={topic}>{t?.label_ja ?? topic}</option>}{showcaseTopicIds().map((id) => <option key={id} value={id}>{topicLabel(id)}</option>)}</select></div>
+      <div><label htmlFor="decision-role">ロール</label><select id="decision-role" value={role} onChange={(e) => { setRole(e.target.value); setShown(DECISION_PAGE_SIZE); }}><option value="">すべて</option>{Object.entries(ROLE_LABELS).map(([id, label]) => <option key={id} value={id}>{label}{id !== "all" ? "（共通を含む）" : "のみ"}</option>)}</select></div>
+      <div><label htmlFor="decision-kind">種類</label><select id="decision-kind" value={kind} onChange={(e) => { setKind(e.target.value); setShown(DECISION_PAGE_SIZE); }}><option value="">すべて</option><option value="decision">{KIND_LABELS.decision}</option><option value="principle">{KIND_LABELS.principle}</option></select></div>
+    </div>
+    <p id="decision-filter-help" className="muted">題名・状況・対象の記述・Topic名を空白区切りの語ですべて照合します。チャンピオン名の記載は適用保証ではありません。一覧内の条件はこの画面内のみで有効で、Topicの切り替えで解除します。</p>
+    <p role="status" aria-live="polite">表示対象 {found.length}件／{list.length}件{active && <>（条件：{[q && `語「${q}」`, role && `ロール ${ROLE_LABELS[role]}${role !== "all" ? "・共通" : "のみ"}`, kind && KIND_LABELS[kind as DecisionUnit["kind"]]].filter(Boolean).join("／")}）</>}</p>
+    {active && <button type="button" className="button" onClick={clear}>一覧内の条件を解除</button>}
+    {topic && !t && <p className="empty">Topic「{topic}」は登録されていません。</p>}
+    {t && list.length === 0 && <p className="empty">このTopicには、試験表示の判断材料はありません。<a href={homeHref("", { topic })}>このTopicの教材を探す</a></p>}
+    {list.length > 0 && found.length === 0 && <p className="empty">この一覧内の条件に一致する判断材料はありません。未収録の知識や、ほかの条件で使える判断材料が存在しないという意味ではありません。</p>}
+    {found.length > 0 && <><ul className="result-list">{found.slice(0, shown).map((u) => <DecisionCard key={u.id} u={u} />)}</ul>
+      {shown < found.length && <button type="button" className="button" onClick={(e) => revealTopicItems(e.currentTarget, shown, () => setShown(shown + DECISION_PAGE_SIZE))}>判断材料をさらに{Math.min(DECISION_PAGE_SIZE, found.length - shown)}件表示する（残り {found.length - shown}件）</button>}</>}
+  </section>;
+}
+
 export function DecisionIndex({ topic, compare }: { topic: string; compare?: string }) {
   const t = topic ? index.topicById.get(topic) : undefined;
   const list = topic ? (t ? decisionsForTopic(topic) : []) : showcaseDecisions;
   const topicIds = showcaseTopicIds();
-  // Topic だけを指定したときは、絞り込み結果のカードを先に見せる。compare で比較を明示したときは、開いた比較が結果の下に埋もれないよう従来の順にする
-  const resultsFirst = Boolean(topic) && !compare;
-  const results = (
-    <>
-      {topic && (
-        <h2>
-          Topic「{t ? t.label_ja : topic}」の判断材料：{list.length}件
-        </h2>
-      )}
-      {topic && !t && <p className="empty">Topic「{topic}」は登録されていません。</p>}
-      {t && list.length === 0 && (
-        <p className="empty">
-          このTopicには、試験表示の判断材料はありません。
-          <a href={homeHref("", { topic })}>このTopicの教材を探す</a>
-        </p>
-      )}
-      {list.length > 0 && (
-        <ul className="result-list">
-          {list.map((u) => (
-            <DecisionCard key={u.id} u={u} />
-          ))}
-        </ul>
-      )}
-    </>
-  );
+  // 比較URLを明示したときだけ比較を先に出し、それ以外は一覧を優先する。
+  const resultsFirst = !compare;
+  const results = <DecisionResults list={list} topic={topic} />;
   return (
-    <div className="detail">
+    <div className="detail decision-page">
       <h1>判断材料（試験）</h1>
       <DecisionNotice />
       <p className="muted">
         Phase 5B・5E・6B と発見性レビューで抽出した判断材料のうち、試験的に{showcaseDecisions.length}件を表示しています。教材の検索とは別の画面です。似た状況でも条件で結論が変わる材料（有利／不利、押す／押さない、過去のパッチ）を並べてあるので、状況と成立条件を比べてください。
       </p>
 
-      {!topic && !compare && <QuestionEntrances />}
+      <nav className="decision-jumps" aria-label="判断材料一覧の移動先"><button type="button" className="link-button" onClick={() => focusDecisionSection("decision-results-heading")}>判断材料を探す</button><button type="button" className="link-button" onClick={() => focusDecisionSection("comparisons-heading")}>資料間の比較を読む（{comparisons.length}件）</button></nav>
+
+      {!topic && !compare && <details className="decision-entrances"><summary>質問の入口から探す</summary><QuestionEntrances /></details>}
 
       {/* 結果を先に出すときも、Topic の切り替えと資料間の比較はその下に残す */}
       {resultsFirst && results}
 
       <nav aria-label="Topic で絞り込む">
-        {resultsFirst && <h2>Topic を切り替える</h2>}
+        <h2>Topic を切り替える</h2>
         <ul className="chips">
           <li>
             <a className="chip" href={decisionsHref()} aria-current={topic ? undefined : "page"}>
@@ -354,7 +385,7 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
       </nav>
 
       <section aria-labelledby="comparisons-heading">
-        <h2 id="comparisons-heading">資料間の比較（試験）</h2>
+        <h2 id="comparisons-heading" tabIndex={-1}>資料間の比較（試験）</h2>
         <p className="muted">
           同じ目的について、資料ごとに数値や前提が違う目安を並べています。数値を平均したり、どれかを正しいと決めたりはしていません。数値は各資料の公開時期のもので、現行パッチでは確認しておらず、ゲーム内でも検証していません。
         </p>
@@ -389,7 +420,7 @@ function Item({ text }: { text: string }) {
 }
 
 function ListSection({ title, items }: { title: string; items: string[] }) {
-  if (!items.length) return null;
+  if (!items.length) return <div className="note-list"><h3>{title}</h3><p className="muted">この項目の記録はありません。存在しないと確認したものではありません。</p></div>;
   return (
     <div className="note-list">
       <h3>{title}</h3>
@@ -403,6 +434,7 @@ function ListSection({ title, items }: { title: string; items: string[] }) {
 }
 
 function SourceList({ u }: { u: DecisionUnit }) {
+  if (!u.evidence.length) return <p className="empty">出典の記録はありません。確認範囲は不明です。</p>;
   return (
     <ul className="decision-sources">
       {u.evidence.map((e, i) => (
@@ -680,8 +712,60 @@ export function DecisionDetail({ id, example }: { id: string; example?: string }
       </div>
     );
   }
+  const tabs: TopicTab[] = [
+    { id: "reasons", label: "理由・図解", content: <>
+      <section aria-labelledby="reasons-heading">
+        <h2 id="reasons-heading">理由</h2>
+        <ul className="reason-list">
+          {u.reasons.map((r) => (
+            <li key={r.text} className={`reason reason-${r.basis}`}>
+              <span className={`badge ${r.basis === "ai" ? "status status-inference" : ""}`}>{r.basis === "source" ? "原典の主張" : "AI の解釈"}</span> {r.text}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {diagramsForUnit(u.id).length > 0 && (
+        <section aria-labelledby="diagram-heading">
+          <h2 id="diagram-heading">図解（模式図）</h2>
+          {diagramsForUnit(u.id).map((d) => (
+            <DiagramView key={d.src} d={d} />
+          ))}
+        </section>
+      )}
+
+    </> },
+    { id: "examples", label: `具体例 ${examplesForUnit(u.id).length}件`, content: <>
+      {examplesForUnit(u.id).length > 0 && (
+        <section aria-labelledby="examples-heading">
+          <h2 id="examples-heading">具体例（別の出典）</h2>
+          <p className="muted">上の判断材料とは別の出典の具体例です。具体例の出典が裏付けるのは、その具体例だけです。</p>
+          {examplesForUnit(u.id).map((x) => (
+            <ExampleView key={x.id} x={x} />
+          ))}
+        </section>
+      )}
+
+      {examplesForUnit(u.id).length === 0 && <p className="empty">この判断材料に対応する具体例は未収録です。実例が存在しないという意味ではありません。</p>}
+    </> },
+    { id: "sources", label: `出典・確認範囲 ${u.evidence.length}件`, content: <>
+      <section aria-labelledby="sources-heading">
+        <h2 id="sources-heading">出典と確認範囲</h2>
+        <SourceList u={u} />
+      </section>
+
+    </> },
+    { id: "related", label: "関連情報", content: <>
+      <Relations u={u} />
+
+      <section aria-labelledby="topics-heading">
+        <h2 id="topics-heading">関連 Topic</h2>
+        <TopicChips ids={u.topic_ids.filter((t) => index.topicById.has(t))} />
+      </section>
+    </> },
+  ];
   return (
-    <div className="detail">
+    <div className="detail decision-page">
       {back}
       <DecisionNotice />
       <header className="detail-header">
@@ -689,8 +773,7 @@ export function DecisionDetail({ id, example }: { id: string; example?: string }
         <h1>{u.statement_ja}</h1>
         <p className="card-creator">出典：{authorsOf(u)}（{coverageOf(u)}）</p>
       </header>
-      <RelatedNav u={u} />
-
+      {relatedShowcased(u).length > 0 && <details className="decision-related"><summary>関係する判断材料（{relatedShowcased(u).length}件）</summary><RelatedNav u={u} /></details>}
       <section aria-labelledby="situation-heading">
         <h2 id="situation-heading">状況と行動</h2>
         <dl className="info">
@@ -717,48 +800,12 @@ export function DecisionDetail({ id, example }: { id: string; example?: string }
         </dl>
       </section>
 
-      <section aria-labelledby="reasons-heading">
-        <h2 id="reasons-heading">理由</h2>
-        <ul className="reason-list">
-          {u.reasons.map((r) => (
-            <li key={r.text} className={`reason reason-${r.basis}`}>
-              <span className={`badge ${r.basis === "ai" ? "status status-inference" : ""}`}>{r.basis === "source" ? "原典の主張" : "AI の解釈"}</span> {r.text}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {diagramsForUnit(u.id).length > 0 && (
-        <section aria-labelledby="diagram-heading">
-          <h2 id="diagram-heading">図解（模式図）</h2>
-          {diagramsForUnit(u.id).map((d) => (
-            <DiagramView key={d.src} d={d} />
-          ))}
-        </section>
-      )}
-
       <section aria-labelledby="conditions-heading">
         <h2 id="conditions-heading">条件・代替案・代償</h2>
         <ListSection title="成立条件" items={u.conditions_ja} />
         <ListSection title="例外" items={u.exceptions_ja} />
         <ListSection title="代替案" items={u.alternatives_ja} />
         <ListSection title="代償・リスク" items={u.costs_ja} />
-      </section>
-
-      {examplesForUnit(u.id).length > 0 && (
-        <section aria-labelledby="examples-heading">
-          <h2 id="examples-heading">具体例（別の出典）</h2>
-          <p className="muted">上の判断材料とは別の出典の具体例です。具体例の出典が裏付けるのは、その具体例だけです。</p>
-          {examplesForUnit(u.id).map((x) => (
-            <ExampleView key={x.id} x={x} />
-          ))}
-        </section>
-      )}
-
-      <section aria-labelledby="patch-heading">
-        <h2 id="patch-heading">パッチへの依存と未確認事項</h2>
-        <p>{u.patch_dependency_ja}</p>
-        <ListSection title="未確認事項" items={u.unknowns_ja} />
       </section>
 
       {criteriaForUnit(u.id).length > 0 && (
@@ -783,17 +830,15 @@ export function DecisionDetail({ id, example }: { id: string; example?: string }
         </section>
       )}
 
-      <section aria-labelledby="sources-heading">
-        <h2 id="sources-heading">出典と確認範囲</h2>
-        <SourceList u={u} />
+      <section aria-labelledby="patch-heading">
+        <h2 id="patch-heading">パッチへの依存と未確認事項</h2>
+        <p>{u.patch_dependency_ja}</p>
+        <ListSection title="未確認事項" items={u.unknowns_ja} />
       </section>
 
-      <Relations u={u} />
-
-      <section aria-labelledby="topics-heading">
-        <h2 id="topics-heading">関連 Topic</h2>
-        <TopicChips ids={u.topic_ids.filter((t) => index.topicById.has(t))} />
-      </section>
+      <h2>理由・具体例・出典を確認する</h2>
+      <p className="muted">具体例の出典は判断材料全体の根拠とは別です。出典の確認とゲーム内の実証を区別して確認してください。</p>
+      <TopicTabs key={`${id}:${example ?? ""}`} label="判断材料の補足情報" tabs={tabs} initial={target ? "examples" : "reasons"} />
       <p className="muted">抽出日 {decisionsCheckedAt}。</p>
     </div>
   );

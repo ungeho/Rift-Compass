@@ -11,7 +11,7 @@ import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
 import { comparisons, decisionMatchesForQuery, decisionsForQuery, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
-import { DecisionDetail, DecisionIndex } from "./DecisionPages";
+import { DecisionDetail, DecisionIndex, DECISION_PAGE_SIZE } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
 import { EVAL_QUERIES } from "../search/evaluationQueries";
 import { analyzeQuery, search } from "../search/search";
@@ -40,12 +40,13 @@ describe("表示している主張は実験データと一致する", () => {
     }
   });
 
-  it("一覧に9件の要旨と状況が出る", () => {
+  it("一覧の最初のページに元の順序で要旨と状況が出て、残り件数も示す", () => {
     const html = text(list());
-    for (const u of showcaseDecisions) {
+    for (const u of showcaseDecisions.slice(0, DECISION_PAGE_SIZE)) {
       expect(html).toContain(u.statement_ja);
       expect(html).toContain(u.problem_ja);
     }
+    expect(html).toContain(`残り ${showcaseDecisions.length - DECISION_PAGE_SIZE}件`);
   });
 
   it.each(SHOWCASE_IDS.map((id) => [id]))("%s：詳細に要旨・行動・理由・条件・未確認事項が出る", (id) => {
@@ -116,9 +117,9 @@ describe("出典・確認範囲・未確認事項", () => {
 });
 
 describe("推奨・自動回答に見せない", () => {
-  it("一覧と詳細に、検索欄も推奨の表現もない", () => {
+  it("一覧内の絞り込みがあっても、一覧と詳細を推奨・自動回答に見せない", () => {
     for (const markup of [list(), list("roaming"), ...SHOWCASE_IDS.map(detail)]) {
-      expect(markup).not.toMatch(/<input|<textarea/);
+      expect(markup).not.toContain("<textarea");
       expect(text(markup)).not.toMatch(OVERCLAIM);
       expect(text(markup)).toContain("自動で選んだ答えや推奨ではありません");
       expect(text(markup)).toContain("ゲーム内では検証していません");
@@ -424,7 +425,7 @@ describe("既存の判断材料の具体例（Evi 選手のムンド対ジャッ
 
   it("動画の5:30へのリンクは「原典の主張」のすぐ横に1つだけ出し、具体例の出典カードでは重ねて出さない", () => {
     const markup = detail(ID);
-    const example = markup.slice(markup.indexOf('id="examples-heading"'), markup.indexOf('id="patch-heading"'));
+    const example = markup.slice(markup.indexOf('id="examples-heading"'), markup.indexOf('id="sources-heading"'));
     const claim = example.match(/<li class="reason reason-source"><span class="badge">原典の主張<\/span>.*?<\/li>/s)![0];
     expect(claim).toContain('href="https://www.youtube.com/watch?v=1ZYEnr2BTe4&amp;t=330s"');
     expect(text(claim)).toContain("動画の5:30から見る");
@@ -1006,13 +1007,13 @@ describe("比較・発見性：詳細上部の関係リンクと、Topic 絞り�
     expect(markup).toContain('class="comparison-details"');
   });
 
-  it("Topic 未指定の一覧は、Topic の切り替え → 資料間の比較 → 一覧の順のまま", () => {
+  it("Topic 未指定でも一覧を先に出し、Topic 切り替えと比較への到達を保つ", () => {
     const markup = list();
     const nav = markup.indexOf('aria-label="Topic で絞り込む"');
     const cmp = markup.indexOf('id="comparisons-heading"');
     expect(nav).toBeLessThan(cmp);
-    expect(cmp).toBeLessThan(markup.indexOf('class="result-list"'));
-    expect(text(markup)).not.toContain("Topic を切り替える");
+    expect(markup.indexOf('class="result-list"')).toBeLessThan(nav);
+    expect(text(markup)).toContain("Topic を切り替える");
   });
 
   it("0件・存在しない Topic の表示と、?compare= の比較の展開を保つ", () => {

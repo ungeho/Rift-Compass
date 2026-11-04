@@ -355,3 +355,23 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
   .site-header nav { flex-wrap: wrap; gap: 8px 14px; }
   .site-header nav a { white-space: nowrap; }
 }
+
+/* 判断の状況・条件を先に示し、補足情報は既存のタブ操作で確認する。 */
+.decision-page { min-width: 0; overflow-wrap: anywhere; }
+.decision-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 12px 0; }
+.decision-controls > div { display: grid; gap: 4px; min-width: 0; flex: 1 1 145px; }
+.decision-controls > div:first-child { flex-basis: 100%; }
+.decision-controls input, .decision-controls select { width: 100%; min-width: 0; padding: 9px; font: inherit; }
+.decision-entrances, .decision-related { margin: 12px 0; border-block: 1px solid var(--border); }
+.decision-entrances > summary, .decision-related > summary { cursor: pointer; padding: 8px 0; }
+.decision-page > section[aria-labelledby="situation-heading"], .decision-page > section[aria-labelledby="conditions-heading"] { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 14px; margin: 16px 0; }
+.decision-page > section > h2:first-child { margin-top: 0; }
+.decision-page section[aria-labelledby="conditions-heading"] { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.decision-page section[aria-labelledby="conditions-heading"] > h2 { grid-column: 1 / -1; }
+.decision-page section[aria-labelledby="patch-heading"] { border-left: 3px solid var(--warning-border); padding-left: 12px; }
+.decision-page .topic-tabs { margin-top: 16px; }
+.decision-jumps { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 12px 0; }
+.decision-page h2[tabindex="-1"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .decision-page section[aria-labelledby="conditions-heading"] { grid-template-columns: minmax(0, 1fr); }
+}
