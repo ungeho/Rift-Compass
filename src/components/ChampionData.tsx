@@ -2,6 +2,7 @@
 // 必要なチャンピオンのファイルだけを開いたときに読む（public/gamedata）。取得したデータの表示で、ゲーム内での検証ではない。
 import { useEffect, useState } from "react";
 import { SkillBehavior } from "./SkillBehavior";
+import { wikiUpdatedDate } from "../gamedata/wikiDate";
 import { topicHref } from "../router";
 import {
   attackSpeedRow,
@@ -359,12 +360,12 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
       })
     : ["description", "description2", "description3", "description4"].map((k) => ({ key: k, en: wikiPlain(t.params?.[k]), residual: false, ja: null as string | null, state: "none", reason: null as string | null })).filter((x) => x.en);
   const anyJa = desc.some((d) => d.ja);
-  const updated = t.source.last_modified ? new Date(t.source.last_modified).toISOString().slice(0, 10) : "不明";
+  const updated = wikiUpdatedDate(t.source.last_modified);
   return (
     <div className="wiki-skill">
       <div>
         <a href={t.source.url}>{t.name}</a>
-        <span className="muted">
+        <span className="muted" title={t.source.last_modified ?? undefined}>
           （Wiki・{t.form !== t.name ? `形態 ${t.form}・` : ""}更新 {updated}）
         </span>
         {t.compare && <span className="badge">{t.compare.same ? "CD は Data Dragon と一致" : "CD が Data Dragon と違う（どちらが現行かは未確認）"}</span>}
