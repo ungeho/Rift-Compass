@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { index } from "../data/dataset";
 import { eraLabel, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/labels";
 import type { Level } from "../data/types";
@@ -58,6 +58,7 @@ function unitLabel(u: Unit): string {
   return `語「${u.matched}」`;
 }
 
+const mobileQuery = "(max-width: 760px)";
 export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
   const href = homeHref(q, filters);
   // filters はルートの解析ごとに新しいオブジェクトになるため、URL 文字列で依存を判定する
@@ -72,8 +73,41 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
     if (!composing.current) setDraft(q);
   }, [q]);
   const commit = (value: string) => replaceHash(homeHref(value, filters));
-  // スマートフォン幅では絞り込みを閉じた状態で始め、結果を先に見せる
-  const [filtersInitiallyOpen] = useState(() => typeof window === "undefined" || window.matchMedia("(min-width: 761px)").matches);
+  const [mobile, setMobile] = useState(() => typeof window !== "undefined" && window.matchMedia(mobileQuery).matches);
+  const filterDetails = useRef<HTMLDetailsElement>(null);
+  const filterRelocation = useRef<{ open: boolean; focusId: string | null } | null>(null);
+
+  useLayoutEffect(() => {
+    const saved = filterRelocation.current;
+    filterRelocation.current = null;
+    const details = filterDetails.current;
+    if (!saved || !details) return;
+    details.open = saved.open;
+    // A new focus outside the filter takes precedence over the old control.
+    if (saved.focusId === null || document.activeElement !== document.body) return;
+    const control = saved.focusId ? document.getElementById(saved.focusId) : null;
+    const target = details.open && control && details.contains(control) && !control.matches(":disabled")
+      ? control : details.querySelector("summary");
+    target?.focus({ preventScroll: true });
+  }, [mobile]);
+
+  useLayoutEffect(() => {
+    const media = window.matchMedia(mobileQuery);
+    const relocate = () => {
+      const details = filterDetails.current;
+      const focused = document.activeElement;
+      if (details) {
+        filterRelocation.current = {
+          open: details.open,
+          focusId: focused instanceof HTMLElement && details.contains(focused) ? focused.id : null,
+        };
+      }
+      setMobile(media.matches);
+    };
+    media.addEventListener("change", relocate);
+    if (media.matches !== mobile) relocate();
+    return () => media.removeEventListener("change", relocate);
+  }, [mobile]);
   const activeFilters = (Object.keys(FILTER_LABELS) as FilterKey[]).filter((k) => filters[k]);
   const hasQuery = q.trim() !== "";
   const main = result.hits.filter((h) => h.match !== "partial");
@@ -130,6 +164,37 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
     { id: "decisions", label: `判断材料 ${decisionCount}件・具体例 ${exampleCount}件`, content: <><h3>判断材料・具体例の照合結果</h3><RelatedDecisions q={q} open /><RelatedExamples q={q} />{decisionCount + exampleCount === 0 && <p>この検索語で一致する判断材料・具体例はありません。別の言い方やTopicからも探せます。</p>}</> },
   ];
   const initialTab = result.hits.length > 0 ? "resources" : noteResult?.matches.length ? "notes" : decisionCount + exampleCount > 0 ? "decisions" : "resources";
+  const resourceFilters = (
+    <aside className="filters" aria-label="絞り込み">
+      <details ref={filterDetails} open={!mobile}>
+        <summary>
+          資料の絞り込み{activeFilters.length > 0 && <span className="count-pill">{activeFilters.length}</span>}
+        </summary>
+        {(Object.keys(FILTER_LABELS) as FilterKey[]).map((key) => {
+          const counts = facetCounts(q, filters, key);
+          return (
+            <div className="filter" key={key}>
+              <label htmlFor={`f-${key}`}>{FILTER_LABELS[key]}</label>
+              <select id={`f-${key}`} value={filters[key] ?? ""} onChange={(e) => setFilter(key, e.target.value)}>
+                <option value="">すべて</option>
+                {OPTIONS[key].map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label}（{counts.get(o.value) ?? 0}）
+                  </option>
+                ))}
+              </select>
+            </div>
+          );
+        })}
+        <button id="clear-resource-filters" type="button" className="button" onClick={clearFilters} disabled={activeFilters.length === 0}>
+          絞り込みを解除
+        </button>
+        <p className="filter-note">
+          検索・絞り込み前の公開資料：{result.totalPublic}件（無料アクセス確認済み、確認レベルL2以上）。未確認の候補資料は含みません。
+        </p>
+      </details>
+    </aside>
+  );
 
   return (
     <div className="search-page">
@@ -187,35 +252,7 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
       </div>}
 
       <div className="results-layout">
-        <aside className="filters" aria-label="絞り込み">
-          <details open={filtersInitiallyOpen}>
-            <summary>
-              資料の絞り込み{activeFilters.length > 0 && <span className="count-pill">{activeFilters.length}</span>}
-            </summary>
-            {(Object.keys(FILTER_LABELS) as FilterKey[]).map((key) => {
-              const counts = facetCounts(q, filters, key);
-              return (
-                <div className="filter" key={key}>
-                  <label htmlFor={`f-${key}`}>{FILTER_LABELS[key]}</label>
-                  <select id={`f-${key}`} value={filters[key] ?? ""} onChange={(e) => setFilter(key, e.target.value)}>
-                    <option value="">すべて</option>
-                    {OPTIONS[key].map((o) => (
-                      <option key={o.value} value={o.value}>
-                        {o.label}（{counts.get(o.value) ?? 0}）
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              );
-            })}
-            <button type="button" className="button" onClick={clearFilters} disabled={activeFilters.length === 0}>
-              絞り込みを解除
-            </button>
-            <p className="filter-note">
-              表示対象は、無料アクセスを確認した確認レベルL2以上の資料（{result.totalPublic}件）です。未確認の候補資料は表示していません。
-            </p>
-          </details>
-        </aside>
+        {!mobile && resourceFilters}
 
         <section className="results" aria-labelledby="results-heading">
           <h2 id="results-heading" ref={resultsHeading} tabIndex={-1} className="results-heading">
@@ -250,7 +287,7 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
             </div>
           )}
 
-          {hasQuery ? <TopicTabs key={href} label="検索結果の種類" tabs={resultTabs} initial={initialTab} /> : resourceContent}
+          {hasQuery ? <TopicTabs resetKey={href} label="検索結果の種類" tabs={resultTabs} initial={initialTab} beforePanels={mobile ? resourceFilters : undefined} /> : <>{mobile && resourceFilters}{resourceContent}</>}
 
           {hasQuery && <ExternalSearch query={q} />}
         </section>

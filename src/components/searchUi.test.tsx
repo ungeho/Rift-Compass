@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { SearchPage, SEARCH_PAGE_SIZE } from "./SearchPage";
+import { TopicTabs } from "./TopicTabs";
 import { RelatedNotes } from "./RelatedNotes";
 import { search, type Filters } from "../search/search";
 import { index } from "../data/dataset";
@@ -87,4 +88,20 @@ describe("検索トップと結果の整理", () => {
     expect(html).toContain(`残り ${full.length - 20}件`);
     expect(html).toContain("知識ノートをさらに20件表示する");
   });
+});
+
+it("places shared result controls after the tabs and outside the tab panels", () => {
+  const html = renderToStaticMarkup(<TopicTabs initial="resources" tabs={[{ id: "resources", label: "資料", content: <p>資料結果</p> }]} beforePanels={<details><summary>資料の絞り込み</summary></details>} />);
+  expect(html).toMatch(/role="tablist"[\s\S]*<\/button><\/div><details><summary>資料の絞り込み<\/summary><\/details><section[^>]+role="tabpanel"/);
+});
+
+it("keeps the desktop sidebar and distinguishes the public corpus from search hits", () => {
+  const q = "Lv2先行";
+  const result = search(q, {});
+  const html = render(q);
+  expect(html).toMatch(/<aside class="filters"[^>]*><details open=""/);
+  expect(html.match(/<select id="f-/g)).toHaveLength(6);
+  expect(html.indexOf('class="filters"')).toBeLessThan(html.indexOf('id="results-heading"'));
+  expect(html).toContain(`検索・絞り込み前の公開資料：${result.totalPublic}件`);
+  expect(html).toContain(`資料 ${result.hits.length}件`);
 });

@@ -11,9 +11,13 @@ export function revealTopicItems(button: HTMLButtonElement, from: number, update
   });
 }
 /** 各パネルを保持し、切り替えても絞り込みや段階表示を失わない。 */
-export function TopicTabs({ tabs, initial, label = "Topic の情報" }: { tabs: TopicTab[]; initial: string; label?: string }) {
+export function TopicTabs({ tabs, initial, label = "Topic の情報", beforePanels, resetKey }: { tabs: TopicTab[]; initial: string; label?: string; beforePanels?: ReactNode; resetKey?: string }) {
   const prefix = useId();
-  const [active, setActive] = useState(initial);
+  const [selection, setSelection] = useState({ id: initial, key: resetKey });
+  // Reset results on URL changes while keeping controls outside the panels mounted.
+  if (selection.key !== resetKey) setSelection({ id: initial, key: resetKey });
+  const active = selection.key === resetKey ? selection.id : initial;
+  const setActive = (id: string) => setSelection({ id, key: resetKey });
   const buttons = useRef(new Map<string, HTMLButtonElement>());
   const selected = tabs.some((t) => t.id === active) ? active : tabs[0]?.id;
   return <div className="topic-tabs">
@@ -30,6 +34,7 @@ export function TopicTabs({ tabs, initial, label = "Topic の情報" }: { tabs: 
         buttons.current.get(tabs[next].id)?.focus();
       }}>{tab.label}</button>)}
     </div>
-    {tabs.map((tab) => <section className="topic-tabpanel" key={tab.id} id={`${prefix}-panel-${tab.id}`} role="tabpanel" aria-labelledby={`${prefix}-tab-${tab.id}`} hidden={selected !== tab.id} tabIndex={0}>{tab.content}</section>)}
+    {beforePanels}
+    {tabs.map((tab) => <section className="topic-tabpanel" key={JSON.stringify([resetKey, tab.id])} id={`${prefix}-panel-${tab.id}`} role="tabpanel" aria-labelledby={`${prefix}-tab-${tab.id}`} hidden={selected !== tab.id} tabIndex={0}>{tab.content}</section>)}
   </div>;
 }

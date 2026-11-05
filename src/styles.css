@@ -533,3 +533,7 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .champion-data .skill-behavior-rules dd { margin: 0; line-height: 1.6; }
 @media (max-width: 600px) { .champion-data .skill-behavior-rules dl { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 5px 8px; } }
 .champion-data .skill-behavior-rules { list-style: none; padding: 0; }
+
+@media (max-width: 760px) {
+  .search-page .results .filters { margin: 6px 0 4px; }
+}
