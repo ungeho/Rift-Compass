@@ -344,10 +344,53 @@ function DecisionResults({ list, topic }: { list: DecisionUnit[]; topic: string 
   </section>;
 }
 
+type DecisionQuestion = { question: string; href: string; area: string; destination: string };
+export function decisionQuestions(): DecisionQuestion[] {
+  return [...QUESTION_ENTRANCES.map(e => ({ question: e.question_ja, href: decisionHref(e.unit_id), area: "ウェーブ操作", destination: "判断材料へ" })), ...KNOWLEDGE_ENTRANCES.map(e => ({ question: e.question_ja, href: homeHref(e.question_ja), area: e.area_ja, destination: "検索へ" }))];
+}
+/** First occurrence of distinct existing areas, then fill from existing order. */
+export function previewDecisionQuestions(questions: DecisionQuestion[]) {
+  const selected: DecisionQuestion[] = [];
+  for (const q of questions) if (!selected.some(s => s.area === q.area) && selected.length < 3) selected.push(q);
+  for (const q of questions) if (selected.length < 3 && !selected.includes(q)) selected.push(q);
+  return selected;
+}
+export function DecisionQuestionEntrance({ questions = decisionQuestions() }: { questions?: DecisionQuestion[] }) {
+  const [expanded, setExpanded] = useState(false);
+  const preview = previewDecisionQuestions(questions);
+  const remaining = questions.length - preview.length;
+  return <section className="decision-entrances decision-question-preview" aria-labelledby="decision-question-heading">
+    <h2 id="decision-question-heading">質問の入口から探す</h2>
+    <p className="decision-entry-description">状況に近い質問を選んで、判断材料や検索結果へ進めます。</p>
+    <ul id="decision-question-options">{(expanded ? questions : preview).map((q, i) => <li key={q.href + i}><a href={q.href}>{q.question}</a><span className="muted"> — {q.destination}</span></li>)}</ul>
+    {!questions.length && <p className="muted">質問の入口は未収録です。</p>}
+    {remaining > 0 && <button type="button" className="link-button" aria-expanded={expanded} aria-controls="decision-question-options" onClick={() => setExpanded(!expanded)}>{expanded ? "質問を3件の表示に戻す" : `ほかの質問を表示（残り${remaining}件）`}</button>}
+  </section>;
+}
+
+export const DECISION_TOPIC_PREVIEW = 6;
+
+/** Preserve the existing Topic order; preview is not a popularity ranking. */
+export function DecisionTopicNavigation({ topic }: { topic: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const ids = showcaseTopicIds();
+  const visible = expanded ? [...ids] : ids.slice(0, DECISION_TOPIC_PREVIEW);
+  if (topic && index.topicById.has(topic) && !visible.includes(topic)) visible.push(topic);
+  const remaining = ids.filter(id => !visible.includes(id)).length;
+  return <nav className="decision-topic-navigation" aria-label="Topic で絞り込む">
+    <h2>Topic を切り替える</h2>
+    <p className="muted decision-topic-summary">{ids.length}分類。{topic ? `選択中：${topicLabel(topic)}` : "すべての判断材料を表示中"}。既存の並び順で表示しています。</p>
+    <ul className="chips" id="decision-topic-links">
+      <li><a className="chip" href={decisionsHref()} aria-current={topic ? undefined : "page"}>すべて（{showcaseDecisions.length}）</a></li>
+      {visible.map(id => <li key={id}><a className="chip" href={decisionsHref(id)} aria-current={id === topic ? "page" : undefined}>{topicLabel(id)}（{decisionsForTopic(id).length}）</a></li>)}
+    </ul>
+    {ids.length > DECISION_TOPIC_PREVIEW && <button type="button" className="link-button decision-topic-toggle" aria-expanded={expanded} aria-controls="decision-topic-links" onClick={() => setExpanded(!expanded)}>{expanded ? "Topicの表示をコンパクトに戻す" : `残り${remaining}分類を表示（全${ids.length}分類）`}</button>}
+  </nav>;
+}
+
 export function DecisionIndex({ topic, compare }: { topic: string; compare?: string }) {
   const t = topic ? index.topicById.get(topic) : undefined;
   const list = topic ? (t ? decisionsForTopic(topic) : []) : showcaseDecisions;
-  const topicIds = showcaseTopicIds();
   // 比較URLを明示したときだけ比較を先に出し、それ以外は一覧を優先する。
   const resultsFirst = !compare;
   const results = <DecisionResults list={list} topic={topic} />;
@@ -361,28 +404,12 @@ export function DecisionIndex({ topic, compare }: { topic: string; compare?: str
 
       <nav className="decision-jumps" aria-label="判断材料一覧の移動先"><button type="button" className="link-button" onClick={() => focusDecisionSection("decision-results-heading")}>判断材料を探す</button><button type="button" className="link-button" onClick={() => focusDecisionSection("comparisons-heading")}>資料間の比較を読む（{comparisons.length}件）</button></nav>
 
-      {!topic && !compare && <details className="decision-entrances"><summary>質問の入口から探す</summary><QuestionEntrances /></details>}
+      {!topic && !compare && <DecisionQuestionEntrance />}
 
       {/* 結果を先に出すときも、Topic の切り替えと資料間の比較はその下に残す */}
       {resultsFirst && results}
 
-      <nav aria-label="Topic で絞り込む">
-        <h2>Topic を切り替える</h2>
-        <ul className="chips">
-          <li>
-            <a className="chip" href={decisionsHref()} aria-current={topic ? undefined : "page"}>
-              すべて（{showcaseDecisions.length}）
-            </a>
-          </li>
-          {topicIds.map((id) => (
-            <li key={id}>
-              <a className="chip" href={decisionsHref(id)} aria-current={id === topic ? "page" : undefined}>
-                {index.topicById.get(id)!.label_ja}（{decisionsForTopic(id).length}）
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <DecisionTopicNavigation topic={topic} />
 
       <section aria-labelledby="comparisons-heading">
         <h2 id="comparisons-heading" tabIndex={-1}>資料間の比較（試験）</h2>

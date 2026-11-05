@@ -11,7 +11,7 @@ import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
 import { comparisons, decisionMatchesForQuery, decisionsForQuery, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
 import { parseHash, decisionHref, decisionsHref } from "../router";
-import { DecisionDetail, DecisionIndex, DECISION_PAGE_SIZE } from "./DecisionPages";
+import { decisionQuestions, DecisionDetail, DecisionIndex, DECISION_PAGE_SIZE } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
 import { EVAL_QUERIES } from "../search/evaluationQueries";
 import { analyzeQuery, search } from "../search/search";
@@ -351,9 +351,9 @@ describe("知りたいことから探す（発見性レビュー）", () => {
     ["敵の次のウェーブは、ミニマップのどこにいる？", "du-minimap-next-enemy-wave"],
   ];
 
-  it("優先の3件を含む疑問が、トップ画面と判断材料の一覧の両方から、試験表示の詳細へ1クリックでつながる", () => {
+  it("既存の疑問と詳細URLを、検索トップと判断材料用の全質問データで保持する", () => {
     for (const [q, id] of PRIORITY) expect(QUESTION_ENTRANCES).toContainEqual({ question_ja: q, unit_id: id });
-    for (const markup of [home(), list()]) {
+    for (const markup of [home()]) {
       expect(text(markup)).toContain("知りたいことから探す");
       for (const e of QUESTION_ENTRANCES) {
         expect(SHOWCASE_IDS).toContain(e.unit_id);
@@ -361,6 +361,7 @@ describe("知りたいことから探す（発見性レビュー）", () => {
         expect(text(detail(e.unit_id))).not.toContain("試験表示の対象にありません");
       }
     }
+    for (const e of QUESTION_ENTRANCES) expect(decisionQuestions()).toContainEqual(expect.objectContaining({ question: e.question_ja, href: decisionHref(e.unit_id) }));
     expect(new Set(QUESTION_ENTRANCES.map((e) => e.unit_id)).size).toBe(QUESTION_ENTRANCES.length);
   });
 

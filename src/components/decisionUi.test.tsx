@@ -1,8 +1,8 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { comparisons, criteriaForUnit, decisionsForTopic, examplesForUnit, NONE_FULL, NONE_PARTIAL, showcaseDecisions, sourceById } from "../data/decisions";
+import { comparisons, criteriaForUnit, decisionsForTopic, examplesForUnit, NONE_FULL, NONE_PARTIAL, showcaseDecisions, showcaseTopicIds, sourceById } from "../data/decisions";
 import { decisionHref, decisionsHref, parseHash } from "../router";
-import { DECISION_PAGE_SIZE, DecisionDetail, DecisionIndex, filterDecisionList } from "./DecisionPages";
+import { decisionQuestions, previewDecisionQuestions, DecisionQuestionEntrance, DECISION_PAGE_SIZE, DECISION_TOPIC_PREVIEW, DecisionTopicNavigation, DecisionDetail, DecisionIndex, filterDecisionList } from "./DecisionPages";
 
 const plain = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 const detail = (id: string, example?: string) => renderToStaticMarkup(<DecisionDetail id={id} example={example} />);
@@ -14,7 +14,7 @@ describe("判断材料の一覧内の絞り込み", () => {
     const ids = [...html.matchAll(/<h3 class="card-title"><a href="#\/decision\/([^"]+)"/g)].map((m) => m[1]);
     expect(ids).toEqual(showcaseDecisions.slice(0, DECISION_PAGE_SIZE).map((u) => u.id));
     expect(plain(html)).toContain(`残り ${showcaseDecisions.length - DECISION_PAGE_SIZE}件`);
-    expect(html).toContain('class="decision-entrances"><summary>');
+    expect(html).toContain('class="decision-entrances decision-question-preview"');
     expect(html).toContain('aria-label="判断材料一覧の移動先"');
     expect(html.indexOf('id="decision-results-heading"')).toBeLessThan(html.indexOf('id="comparisons-heading"'));
   });
@@ -93,4 +93,52 @@ describe("判断に必要な情報と補足の分離", () => {
     const sparse = showcaseDecisions.find((u) => !examplesForUnit(u.id).length)!;
     expect(plain(detail(sparse.id))).toContain("具体例は未収録です。実例が存在しないという意味ではありません");
   });
+});
+
+
+describe("判断材料の入口とTopicの段階表示", () => {
+ it("質問を選べる説明と開閉表示・検索への復帰を保つ", () => {
+  const html = renderToStaticMarkup(<DecisionIndex topic="" />);
+  for (const text of ["状況に近い質問を選んで", "ほかの質問を表示", "質問の入口から探す"]) expect(html).toContain(text);
+  expect(html).toContain('id="decision-question-options"');
+ });
+ it("既存順の先頭だけを示し、残り件数と全件への操作を明示する", () => {
+  const ids = showcaseTopicIds();
+  const html = renderToStaticMarkup(<DecisionTopicNavigation topic="" />);
+  const links = [...html.matchAll(/href="#\/decisions\?topic=([^"&]+)/g)].map(m => decodeURIComponent(m[1]));
+  expect(links).toEqual(ids.slice(0, DECISION_TOPIC_PREVIEW));
+  expect(html).toContain(`残り${ids.length - DECISION_TOPIC_PREVIEW}分類を表示（全${ids.length}分類）`);
+  expect(html).toContain('aria-expanded="false" aria-controls="decision-topic-links"');
+  expect(html).toContain('href="#/decisions" aria-current="page"');
+ });
+ it("初期範囲外の選択中Topicを件数・既存URLとともに表示する", () => {
+  const ids = showcaseTopicIds();
+  const selected = ids[DECISION_TOPIC_PREVIEW + 1];
+  const html = renderToStaticMarkup(<DecisionTopicNavigation topic={selected} />);
+  expect(html).toContain(`href="${decisionsHref(selected)}" aria-current="page"`);
+  expect(html).toContain(`（${decisionsForTopic(selected).length}）`);
+  expect(html).toContain(`残り${ids.length - DECISION_TOPIC_PREVIEW - 1}分類を表示`);
+  expect(html).toContain("選択中：");
+ });
+});
+
+
+describe("質問入口の初期プレビュー", () => {
+ it("既存の異なる分野の先頭3件を、元のリンクで最初から表示する", () => {
+  const all = decisionQuestions(); const chosen = previewDecisionQuestions(all);
+  expect(chosen).toHaveLength(3); expect(new Set(chosen.map(q => q.area)).size).toBe(3);
+  const html = renderToStaticMarkup(<DecisionQuestionEntrance />);
+  for (const q of chosen) { expect(all).toContain(q); expect(html).toContain(q.question); expect(html).toContain(q.href.replace(/&/g, "&amp;")); }
+  expect((html.match(/<li>/g) ?? [])).toHaveLength(3);
+  expect(html).toContain(`ほかの質問を表示（残り${all.length - 3}件）`);
+  expect(html).toContain('aria-expanded="false" aria-controls="decision-question-options"');
+ });
+ it("0～3件では全件を表示し、不要な開閉操作を出さない。同じ分野でも順序から補う", () => {
+  const all = decisionQuestions().slice(0, 3);
+  expect(previewDecisionQuestions(all)).toEqual(all);
+  for (let n = 0; n <= 3; n++) {
+   const html = renderToStaticMarkup(<DecisionQuestionEntrance questions={all.slice(0,n)} />);
+   expect((html.match(/<li>/g) ?? [])).toHaveLength(n); expect(html).not.toContain("aria-expanded");
+  }
+ });
 });
