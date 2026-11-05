@@ -9,6 +9,7 @@ import { ResourceCard } from "./ResourceCard";
 import { ChampionData } from "./ChampionData";
 import { RoleSection } from "./RoleSection";
 import { TopicTabs, revealTopicItems, type TopicTab } from "./TopicTabs";
+import { topicBrowseGroups } from "./TopicBrowser";
 import { DecisionCard, DecisionNotice } from "./DecisionPages";
 
 /** 知識ノートの段階表示の1回分（件数の上限ではない。「さらに表示」で全件に届く）*/
@@ -98,8 +99,7 @@ function TopicTree({ topic, path }: { topic: Topic; path: Set<string> }) {
 
 export function TopicIndex() {
   const [q, setQ] = useState("");
-  const categories = index.data.topics.filter((t) => t.kind === "category");
-  const ungrouped = index.data.topics.filter((t) => t.kind !== "category" && t.parent_ids.length === 0);
+  const { categories, roles, ungrouped } = topicBrowseGroups();
   const found = filterTopics(q);
   return (
     <div className="detail topic-index">
@@ -116,6 +116,7 @@ export function TopicIndex() {
         {categories.map((c) => (
           <TopicTree key={c.id} topic={c} path={new Set()} />
         ))}
+        <li className="topic-role-group"><details><summary>ロール別 <span className="muted">{roles.length}ロール</span></summary><ul>{roles.map(t => <TopicTree key={t.id} topic={t} path={new Set()} />)}</ul></details></li>
         {ungrouped.map((t) => <TopicTree key={t.id} topic={t} path={new Set()} />)}
       </ul>}
       {q.trim() && !found.length && <p>一致する Topic はありません。日本語・英語の名前や別名でも探せます。</p>}

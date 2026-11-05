@@ -335,10 +335,33 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .search-scope { font-size: 0.85rem; margin: 8px 0; }
 .search-page .examples { display: block; }
 .search-page .examples > summary { cursor: pointer; padding: 4px 0; }
-.search-entry-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.88rem; margin: 12px 0; }
-.search-browse { display: grid; gap: 8px; margin: 8px 0 16px; }
-.search-browse > details { border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; background: var(--surface); }
-.search-browse > details > summary { cursor: pointer; font-weight: 600; }
+.search-browse { margin: 12px 0 20px; }
+.search-browse > h2 { font-size: 1.1rem; margin: 8px 0 12px; }
+.topic-browser { min-width: 0; overflow-wrap: anywhere; }
+.topic-tree.topic-browser { padding: 0; list-style: none; }
+.topic-tree.topic-browser > li { border: 0; padding: 0; }
+.topic-browser .browse-disclosure { margin: 8px 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.topic-browser .browse-disclosure > summary { display: flex; align-items: center; gap: 8px; padding: 14px 12px; min-height: 56px; cursor: pointer; font-weight: 600; border-radius: var(--radius); }
+.browse-label { flex: 1; min-width: 0; }
+.browse-toggle { flex-shrink: 0; font-size: .82rem; color: var(--accent); white-space: nowrap; }
+.browse-disclosure > summary .when-open { display: none; }
+.browse-disclosure[open] > summary .when-open { display: inline; }
+.browse-disclosure[open] > summary .when-closed { display: none; }
+.topic-browser .browse-disclosure > summary:hover { background: var(--accent-soft); }
+.topic-browser .browse-disclosure > summary:focus-visible, .topic-browse-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.browse-content { padding: 0 12px 12px; min-width: 0; }
+.browse-topic-list, .browse-question-list { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 6px; }
+.browse-topic-list > li, .browse-question-list > li { min-width: 0; }
+.topic-browser [hidden] { display: none; }
+.topic-browse-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; min-height: 48px; border: 1px solid var(--border); border-radius: 6px; text-decoration: none; background: var(--bg); }
+.topic-browse-link > span:first-child { min-width: 0; }
+.topic-browse-link .muted { display: block; font-size: .8rem; font-weight: 400; }
+.topic-browse-link:hover { background: var(--accent-soft); border-color: var(--accent); text-decoration: underline; }
+.browse-link-action { flex-shrink: 0; font-size: .8rem; white-space: nowrap; }
+.browse-count, .browse-source-link { font-size: .85rem; }
+.search-browse .topic-tablist [role="tab"] { min-height: 44px; }
+.search-browse .topic-tabpanel .topic-tablist { gap: 6px; }
+.search-browse .topic-tabpanel .topic-tablist [role="tab"] { padding: 8px 10px; font-size: .88rem; }
 .search-page .active-filters { padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--accent-soft); }
 .search-page .results-heading .result-count { display: block; margin-top: 4px; }
 .search-ignored { border-left: 3px solid var(--warning-border); padding-left: 8px; }

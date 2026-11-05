@@ -17,13 +17,19 @@ function resourcePanel(html: string) {
 const resourceIds = (html: string) => [...html.matchAll(/<h3 class="card-title"><a href="#\/r\/([^"]+)"/g)].map((m) => m[1]);
 
 describe("検索トップと結果の整理", () => {
-  it("トップの主操作と入口を維持し、大量の補助情報を折りたたみ、資料には段階表示を使う", () => {
+  it("検索を主操作に保ち、探し方と分類はタブ、下位Topicは折りたたみに分ける", () => {
     const html = render("");
     expect(html).toContain('class="search-form"');
-    for (const href of ["#/topics", "#/sources", "#/explore", "#/data"]) expect(html).toContain(`href="${href}"`);
-    expect(html).toContain('class="search-browse"><details>');
+    expect(html).toContain('href="#/sources"');
+    expect(html).not.toContain('class="search-entry-links"');
+    expect(html).not.toContain('href="#/explore"');
+    expect(html).not.toContain('href="#/data"');
+    expect(html).toContain('aria-label="探し方"');
+    expect(html).toContain('aria-label="Topicの分類"');
+    expect(html).toContain('class="browse-disclosure"');
+    expect(html.indexOf('class="search-form"')).toBeLessThan(html.indexOf('class="search-browse'));
     expect(html).toContain("知りたいことから探す");
-    expect(html).toContain("Topic から探す");
+    expect(html).toContain("Topicから探す");
     expect(resourceIds(html)).toEqual(index.publicResources.slice(0, SEARCH_PAGE_SIZE).map((r) => r.id));
     expect(plain(html)).toContain(`資料一覧 ${index.publicResources.length}件`);
     expect(html).toContain(`残り ${index.publicResources.length - SEARCH_PAGE_SIZE}件`);

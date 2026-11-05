@@ -6,9 +6,10 @@ import { facetCounts, search, type FilterKey, type Filters, type Hit, type Unit 
 import { noteMatchesForQuery } from "../data/noteSearch";
 import { decisionMatchesForQuery, examplesForQuery } from "../data/decisions";
 import { externalSearchUrls } from "../lib/links";
-import { homeHref, rememberList, replaceHash, topicHref, sourcesHref } from "../router";
+import { homeHref, rememberList, replaceHash, sourcesHref } from "../router";
 import { ExternalLink } from "./common";
-import { QuestionEntrances, RelatedDecisions, RelatedExamples } from "./DecisionPages";
+import { RelatedDecisions, RelatedExamples } from "./DecisionPages";
+import { SearchBrowse } from "./SearchBrowse";
 import { RelatedNotes } from "./RelatedNotes";
 import { ResourceCard } from "./ResourceCard";
 import { TopicTabs, revealTopicItems, type TopicTab } from "./TopicTabs";
@@ -162,7 +163,7 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
           {hasQuery && <button type="button" className="button" onClick={() => { setDraft(""); commit(""); queryInput.current?.focus(); }}>検索語を消す</button>}
         </form>
         <p className="muted search-scope">資料・知識ノート・判断材料を別々に照合します。語の一致は、質問への正しい答えを保証しません。</p>
-        <details className="examples" open={!hasQuery}>
+        <details className="examples">
           <summary className="examples-label">質問の例（{EXAMPLES.length}件）</summary>
           <ul className="chips">
             {EXAMPLES.map((ex) => (
@@ -174,22 +175,10 @@ export function SearchPage({ q, filters }: { q: string; filters: Filters }) {
             ))}
           </ul>
         </details>
-        <nav className="search-entry-links" aria-label="検索以外の探し方">
-          <a href="#/topics">Topic 一覧から探す</a>
-          <a href={sourcesHref(q)}>情報源を探す：未収録の記事・動画への入口</a>
-          <a href="#/explore">知識を散策する</a>
-          <a href="#/data">ゲームデータを見る</a>
-        </nav>
+        {hasQuery && <p className="muted search-scope"><a href={sourcesHref(q)}>検索語に関連する情報源を探す →</a>（未収録の記事・動画への入口）</p>}
       </section>
 
-      {!hasQuery && activeFilters.length === 0 && (
-        <>
-          <div className="search-browse">
-            <details><summary>知りたいことから探す（質問の入口）</summary><QuestionEntrances /></details>
-            <details><summary>Topic から探す（分類別の入口）</summary><TopicEntrances /></details>
-          </div>
-        </>
-      )}
+      {!hasQuery && activeFilters.length === 0 && <SearchBrowse />}
 
       {activeFilters.length > 0 && <div className="active-filters" aria-label="現在の資料の絞り込み">
         <strong>資料の絞り込み中：</strong>
@@ -316,33 +305,5 @@ function PartialCandidates({ hits, units, requiredKeys, open }: { hits: Hit[]; u
         </section>
       ))}
     </details>
-  );
-}
-
-function TopicEntrances() {
-  const categories = index.data.topics.filter((t) => t.kind === "category");
-  return (
-    <section className="entrances" aria-labelledby="entrances-heading">
-      <h2 id="entrances-heading">Topic から探す</h2>
-      <ul className="entrance-grid">
-        {categories.map((c) => (
-          <li key={c.id} className="entrance">
-            <a className="entrance-title" href={topicHref(c.id)}>
-              {c.label_ja}
-              <span className="muted"> {c.label_en}</span>
-            </a>
-            <ul className="chips">
-              {(index.childrenOf.get(c.id) ?? []).map((t) => (
-                <li key={t.id}>
-                  <a className="chip" href={topicHref(t.id)}>
-                    {t.label_ja}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </section>
   );
 }

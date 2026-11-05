@@ -357,7 +357,9 @@ describe("知りたいことから探す（発見性レビュー）", () => {
       expect(text(markup)).toContain("知りたいことから探す");
       for (const e of QUESTION_ENTRANCES) {
         expect(SHOWCASE_IDS).toContain(e.unit_id);
-        expect(markup).toContain(`href="${decisionHref(e.unit_id)}">${e.question_ja}</a>`);
+        const anchor = [...markup.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].find(m => m[1] === decisionHref(e.unit_id));
+        expect(anchor).toBeDefined();
+        expect(text(anchor![2])).toContain(e.question_ja);
         expect(text(detail(e.unit_id))).not.toContain("試験表示の対象にありません");
       }
     }

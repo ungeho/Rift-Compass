@@ -68,9 +68,13 @@ describe("知りたいことから探す：ウェーブ操作と、そのほか�
   it("トップ画面に、判断材料へ移動する疑問と、検索結果へ移動する疑問の両方を出す", () => {
     const html = page("");
     const t = text(html);
-    expect(t).toContain("ウェーブ操作（判断材料に移動）");
-    expect(t).toContain("そのほかの分野（検索結果に移動）");
+    expect(t).toContain("ウェーブ操作の質問");
+    expect(t).toContain("そのほかの分野の質問");
     for (const e of QUESTION_ENTRANCES) expect(html).toContain(`href="${decisionHref(e.unit_id)}"`);
-    for (const e of KNOWLEDGE_ENTRANCES) expect(html).toContain(`href="${homeHref(e.question_ja).replace(/&/g, "&amp;")}">${e.question_ja}</a>`);
+    for (const e of KNOWLEDGE_ENTRANCES) {
+      const anchor = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].find(m => m[1] === homeHref(e.question_ja).replace(/&/g, "&amp;"));
+      expect(anchor).toBeDefined();
+      expect(text(anchor![2])).toContain(e.question_ja);
+    }
   });
 });

@@ -92,7 +92,7 @@ describe("画面全体の描画", () => {
     const html = text(renderToStaticMarkup(<SearchPage q="" filters={{}} />));
     expect(html).toContain("何を知りたいですか？");
     expect(html).toContain("質問の例");
-    expect(html).toContain("Topic から探す");
+    expect(html).toContain("Topicから探す");
     expect(html).toContain("資料一覧 133件");
   });
 
