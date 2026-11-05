@@ -473,6 +473,29 @@ button.chip { cursor: pointer; font: inherit; font-size: 0.85rem; }
 .item-official-reference { border-top: 1px solid var(--border); margin: 12px 0; padding-top: 5px; font-size: .9rem; }
 .item-price-note summary:focus-visible, .item-official-reference summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+/* Rune-only hierarchy: source-specific facts, then full reference text. */
+.rune-description { padding: 4px 0; overflow-wrap: anywhere; }
+.rune-classification { color: var(--muted); font-size: .85rem; margin: 4px 0 10px; }
+.rune-description h3 { font-size: 1rem; margin: 10px 0 6px; }
+.rune-description h3 > span { font-size: .8rem; font-weight: 400; color: var(--muted); margin-left: 6px; }
+.rune-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 6px 20px; margin: 0; }
+.rune-facts > div { border-bottom: 1px solid var(--border); padding: 5px 0; }
+.rune-facts dt { font-size: .8rem; color: var(--muted); }
+.rune-facts dd { margin: 2px 0 0; font-weight: 600; line-height: 1.6; }
+.rune-field-note { display: block; color: var(--muted); font-size: .85rem; font-weight: 400; }
+.rune-description .rune-scope { font-size: .8rem; line-height: 1.6; margin: 8px 0; }
+.rune-description .rune-caution { font-size: .85rem; border-left: 2px solid var(--border); padding-left: 8px; line-height: 1.6; }
+.rune-description summary { cursor: pointer; padding: 5px 0; min-height: 30px; }
+.rune-description summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rune-official, .rune-wiki { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 6px; }
+.rune-description p { line-height: 1.7; }
+
+@media (max-width: 600px) {
+  .rune-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; }
+  .rune-facts dd { font-size: .9rem; }
+  .rune-metadata { grid-template-columns: minmax(0, 1fr); }
+}
+
 .decision-entry-description { display: block; color: var(--muted); font-size: .85rem; margin-top: 3px; }
 .decision-topic-summary { font-size: .85rem; margin: 0 0 6px; }
 .decision-topic-toggle { padding: 6px 0; min-height: 36px; }

@@ -6,6 +6,7 @@ import { showValues, wikiPlain, type ParsedValue } from "../gamedata/wikiAbility
 import { matchItemData, type ItemDataMatch } from "../gamedata/itemRules";
 import { itemReviewFor, ITEM_REVIEW_VERSION, ITEM_REVIEW_PATCH, ITEM_REVIEW_CHECKED } from "../gamedata/itemReviews";
 import { itemEffectHighlights } from "../gamedata/itemEffectHighlights";
+import { runeHighlights } from "../gamedata/runeHighlights";
 import { ItemTree } from "./ItemTree";
 import { displayItemName, itemCategory } from "../gamedata/itemTree";
 import { itemHref } from "../router";
@@ -553,6 +554,33 @@ const RUNE_FIELD_JA: Record<string, string> = { cooldown: "クールダウン", 
 interface WikiRune { name: string; path: string; ddragon_id: number; source: Source; parsed?: Record<string, ParsedValue>; text?: Record<string, WikiText> }
 interface DdRune { id: number; path: Lang; slot: number; name: Lang; long: Lang }
 
+export function RuneDescription({ rune, wiki, version, tr }: { rune: DdRune; wiki?: WikiRune; version: string; tr: TrFile | null }) {
+  const highlights = runeHighlights(rune.id, version, rune.long);
+  const parsed = Object.entries(wiki?.parsed ?? {});
+  const descriptions = Object.entries(wiki?.text ?? {}).filter(([k, t]) => /^description\d*$/.test(k) && t.plain).sort(([a], [b]) => a.localeCompare(b, "en", { numeric: true }));
+  return <div className="rune-description">
+    <p className="rune-classification">{rune.path.ja ?? rune.path.en} ／ {rune.slot === 0 ? "キーストーン" : `スロット${rune.slot}`}</p>
+    {highlights && <section className="rune-overview" aria-label="公式収録説明の要点">
+      <h3>効果と発動条件 <span>公式収録説明の整理</span></h3>
+      <dl className="rune-facts">{highlights.facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+      <p className="muted rune-scope">Data Dragon {version} の日英説明に限定した整理。現行パッチ・ゲーム内での実証とは別です。</p>
+    </section>}
+    {rune.id === 9923 && highlights && <p className="rune-caution">表現差：回数延長は公式英語で「Attack resets」、日本語で「攻撃のモーションをキャンセル」と記載されています。3秒の境界も日英の表現を統一せず、全文を保持しています。Wikiのスタック規則とは別に確認してください。</p>}
+    <details className="rune-official" open={!highlights}>
+      <summary>公式説明全文 — Data Dragon {version}</summary>
+      {rune.long.ja ? <OfficialText text={rune.long.ja} version={version} /> : <p className="muted">公式の日本語説明は未収録です。</p>}
+      <details><summary>公式の英語原文</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{rune.long.en ?? "未収録"}</p></details>
+    </details>
+    <section className="rune-wiki" aria-label="Wiki由来の補足">
+      <h3>Wikiの補足 <span>公式説明とは別原典</span></h3>
+      {parsed.length > 0 && <dl className="rune-facts rune-metadata">{parsed.map(([k, v]) => <div key={k}><dt>{RUNE_FIELD_JA[k] ?? k}</dt><dd><strong>{showValues({ ...v, note: undefined })}{k === "cooldown" && !v.unit ? "秒" : ""}</strong>{v.note && <span className="rune-field-note">{v.note === "Starts after the effect ends." && "効果終了後にCD開始。"}<span lang="en">{v.note}</span></span>}</dd></div>)}</dl>}
+      <p className="muted rune-scope">保存Wikiの記載です。項目がないことは、CDや条件が存在しないことを意味しません。現行パッチへの適合は未確認です。</p>
+      {wiki && descriptions.length > 0 ? <WikiTextBlock title="詳細条件・例外・日本語訳・英語原文" rows={descriptions.map(([k, text], i) => ({ id: `${wiki.name}#${k}`, label: `補足${i + 1}`, text }))} tr={tr} source={wiki.source} /> : <p className="muted">Wikiの説明は未収録です。</p>}
+      {wiki && <p className="muted rune-scope"><a href={wiki.source.url}>{wiki.source.title}</a>／更新：{wiki.source.last_modified ?? "不明"}／取得：{wiki.source.fetched_at ?? "未記録"}</p>}
+    </section>
+  </div>;
+}
+
 function Runes() {
   const s = useLoad(async () => {
     const m = await get<Manifest>("manifest.json");
@@ -581,26 +609,13 @@ function Runes() {
               .filter((r) => (r.path.ja ?? r.path.en) === p)
               .map((r) => {
                 const w = s.data.wiki.get(r.id);
-                const parsed = Object.entries(w?.parsed ?? {});
                 return (
                   <li key={r.id}>
                     <details>
                       <summary>
                         <strong>{r.name.ja ?? r.name.en}</strong> <span className="muted">{r.name.en}・{r.slot === 0 ? "キーストーン" : `スロット${r.slot}`}</span>
                       </summary>
-                      {r.long.ja && <OfficialText text={r.long.ja} version={s.data.ddVersion} />}
-                      {parsed.length > 0 && <p>Wiki のデータの値：{parsed.map(([k, v]) => `${RUNE_FIELD_JA[k] ?? k} ${showValues(v)}${k === "cooldown" ? "秒" : ""}`).join("・")}</p>}
-                      {w?.text && (
-                        <WikiTextBlock
-                          title="Wiki の詳しい説明（発動条件・効果・スタック・クールダウン・レベルに応じた値・例外）"
-                          rows={Object.entries(w.text)
-                            .filter(([k, t]) => /^description\d*$/.test(k) && t.plain)
-                            .sort(([a], [b]) => a.localeCompare(b, "en", { numeric: true }))
-                            .map(([k, t]) => ({ id: `${w.name}#${k}`, text: t }))}
-                          tr={s.data.tr}
-                          source={w.source}
-                        />
-                      )}
+                      <RuneDescription rune={r} wiki={w} version={s.data.ddVersion} tr={s.data.tr} />
                       <HistoryLine h={s.data.hist[r.name.en ?? ""]} />
                     </details>
                   </li>
