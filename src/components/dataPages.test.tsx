@@ -92,20 +92,20 @@ describe("アイテムの参照ステータスの表示", () => {
     const raw = JSON.parse(readFileSync("public/gamedata/wiki/2026-11-02/items.json", "utf8"));
     const items: ComponentProps<typeof ItemStatTable>["items"] = new Map(raw.items.map((w: { name: string }) => [w.name, w]));
     const html = renderToStaticMarkup(<ItemStatTable item="Chainlaced Crushers" items={items} />);
-    expect(html).toContain("行動妨害耐性 30%");
+    expect(html).toContain("行動妨害耐性</dt><dd><strong>30%</strong>");
     expect(html).toContain("参照値：");
     for (const name of ["Chainlaced Crushers", "Mercury's Treads"]) expect(html).toContain(`href="${items.get(name)!.source.url.replace(/'/g, "&#x27;")}"`);
     expect(html).not.toContain("=&gt;");
     const direct = renderToStaticMarkup(<ItemStatTable item="Boots" items={items} />);
-    expect(direct).toContain("移動速度（固定値） 25");
+    expect(direct).toContain("移動速度（固定値）</dt><dd><strong>25</strong>");
     expect(direct).not.toContain("参照値：");
   });
   it("参照失敗を不明と理由で示し、0に補完しない", () => {
     const items: ComponentProps<typeof ItemStatTable>["items"] = new Map([["A", { name: "A", source: { title: "A", url: "https://example.com/a", status: 200, last_modified: null }, data: { stats: { hp: "=>missing", crit: 0 } } }]]);
     const html = renderToStaticMarkup(<ItemStatTable item="A" items={items} />);
-    expect(html).toContain("体力 不明");
+    expect(html).toContain("体力</dt><dd><strong>不明</strong>");
     expect(html).toContain("参照先の記録なし");
-    expect(html).toContain("クリティカル率 0%（0）");
+    expect(html).toContain("クリティカル率</dt><dd><strong>0%</strong>（0）");
   });
 });
 
@@ -158,14 +158,14 @@ describe("アイテム効果の説明と翻訳状態", () => {
   const text = { plain: "Deals 0 damage. ⟦unknown⟧", residual: false, source_sha1: "source", plain_sha1: "plain" };
   const render = (e: Effect, tr: ComponentProps<typeof EffectCard>["tr"] = null, k = "pass") => renderToStaticMarkup(
     <EffectCard item="Example" k={k} e={e} tr={tr} info={null} outdated={null} />,
-  );
+  ).replace(/<strong[^>]*>(.*?)<\/strong>/g, "$1");
   it("パッシブとアクティブ、固有効果の名前・CD0・複数段落を欠落させない", () => {
     const e = { ...text, name: "First effect", meta: { unique: true, cd: "0" }, __parts: { "pass.description2": { ...text, plain: "Second paragraph.", name: null } } };
     const html = render(e);
     expect(html).toContain("パッシブ");
     expect(html).toContain("固有（Unique）");
     expect(html).toContain("First effect");
-    expect(html).toContain("クールダウン 0秒");
+    expect(html).toContain("クールダウン</dt><dd>0秒");
     expect(html).toContain("Deals 0 damage.");
     expect(html).toContain("Second paragraph.");
     expect(html).toContain("［解析できない記法］");

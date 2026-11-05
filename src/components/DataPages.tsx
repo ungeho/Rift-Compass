@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { showValues, wikiPlain, type ParsedValue } from "../gamedata/wikiAbility";
 import { matchItemData, type ItemDataMatch } from "../gamedata/itemRules";
 import { itemReviewFor, ITEM_REVIEW_VERSION, ITEM_REVIEW_PATCH, ITEM_REVIEW_CHECKED } from "../gamedata/itemReviews";
+import { itemEffectHighlights } from "../gamedata/itemEffectHighlights";
 import { ItemTree } from "./ItemTree";
 import { displayItemName, itemCategory } from "../gamedata/itemTree";
 import { itemHref } from "../router";
@@ -224,7 +225,7 @@ export function ItemVersionReview({ assessment, dd, version, officialItems }: { 
     <h3>対象時点の公式収録情報：Data Dragon {version}</h3>
     <p className="muted">確認記録：{ITEM_REVIEW_CHECKED}、対象はSR。{needsReview ? `照合記録は${ITEM_REVIEW_VERSION}用で、現在の読み込みデータへの適用は未確認です。` : `ゲームパッチ${ITEM_REVIEW_PATCH}との対応は既存の来歴記録による推定です。`}公式収録情報と、ゲーム内で実証した仕様を区別してください。他モードの補正は未確認です。</p>
     {dd ? <>
-      {dd.description.ja && <OfficialText text={dd.description.ja} version={version} />}
+      {dd.description.ja && <OfficialText item text={dd.description.ja} version={version} />}
       <details><summary>公式の英語原文（Data Dragon {version}）</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{dd.description.en ?? "未収録"}</p></details>
       <p>素材（Data Dragonのfrom）：{dd.from?.length ? dd.from.map((id) => {
         const rows = officialItems.filter((x) => String(x.id) === id);
@@ -264,14 +265,14 @@ function translationNotice(tr: TrFile | null, id: string, text: WikiText): strin
 }
 
 /** 公式の説明（Data Dragon）。値の欠けの可能性がある「0」に印を付ける（文は変えない） */
-function OfficialText({ text, version }: { text: string; version: string }) {
+function OfficialText({ text, version, item = false }: { text: string; version: string; item?: boolean }) {
   const parts = splitPlaceholderZeros(text);
   const any = parts.some((p) => p.zero);
   return (
     <div>
       <div className="muted">公式の説明（Data Dragon {version}・日本語）</div>
       <p style={{ whiteSpace: "pre-line" }}>
-        {parts.map((p, i) => (p.zero ? <mark key={i} title="Data Dragon で値が埋め込まれていない箇所の可能性">0</mark> : <span key={i}>{p.text}</span>))}
+        {parts.map((p, i) => (p.zero ? <mark key={i} title="Data Dragon で値が埋め込まれていない箇所の可能性">0</mark> : <span key={i}>{item ? <ItemEffectText text={p.text} /> : p.text}</span>))}
       </p>
       {any && <p className="muted">印の「0」は、公式のデータで値が埋め込まれていない箇所の可能性があります（英語の説明では空欄）。実際の値は下の Wiki の効果の文を参照してください。</p>}
     </div>
@@ -280,17 +281,17 @@ function OfficialText({ text, version }: { text: string; version: string }) {
 
 export function PriceTable({ rows, wikiSource }: { rows: PriceRow[]; wikiSource?: Source }) {
   return (
-    <><dl className="data-price">
+    <><dl className="data-price item-prices">
       {rows.map((r) => (
         <div key={r.label}>
           <dt>{r.label}</dt>
           <dd>
-            {r.value}
-            {r.note && <span className="muted">（{r.note}）</span>}
+            <strong>{r.value}</strong>
+            {r.note && (/異なる|未確認|できない|売却不可/.test(r.note) ? <span className="muted">（{r.note}）</span> : <details className="item-price-note"><summary>出典・注意</summary><span className="muted">{r.note}</span></details>)}
           </dd>
         </div>
       ))}
-    </dl>{wikiSource && rows.some((r) => r.label.startsWith("Wiki")) && <p className="muted wiki-price-provenance">Wiki価格・売却可否は保存原典の記録です。原典更新日時：{wikiSource.last_modified ?? "不明"}／取得日時：{wikiSource.fetched_at ?? "未記録"}。対象パッチと現行性はこの日時だけでは確定できません。<a href={wikiSource.url}>{wikiSource.title}</a>。公式価格との数値差は、レシピ変更やゲーム内仕様の誤りを証明するものではありません。</p>}</>
+    </dl>{wikiSource && rows.some((r) => r.label.startsWith("Wiki")) && <details className="item-price-note"><summary>Wiki価格の来歴・確認範囲</summary><p className="muted wiki-price-provenance">Wiki価格・売却可否は保存原典の記録です。原典更新日時：{wikiSource.last_modified ?? "不明"}／取得日時：{wikiSource.fetched_at ?? "未記録"}。対象パッチと現行性はこの日時だけでは確定できません。<a href={wikiSource.url}>{wikiSource.title}</a>。公式価格との数値差は、レシピ変更やゲーム内仕様の誤りを証明するものではありません。</p></details>}</>
   );
 }
 
@@ -314,14 +315,14 @@ function StatTable({ stats, references = {}, items = new Map() }: { stats: Recor
   return (
     <div>
       <div className="muted">ステータス（英語 Wiki の Module:ItemData。% は割合、ほかは固定値）</div>
-      <dl className="data-stats">
+      <div className="item-stat-groups">
         {groups.map((g) => (
-          <div key={g.group}>
-            <dt>{g.label}</dt>
-            <dd>{g.lines.map((l, i) => <span key={l.key}>{i > 0 && "・"}{l.label} {l.value}{l.zero ? "（0）" : ""}{references[l.key] && <span className="muted">（参照値：<ItemReference r={references[l.key]} items={items} />）</span>}</span>)}</dd>
-          </div>
+          <section key={g.group} aria-label={g.label} data-stat-group={g.group}>
+            <h4>{g.label}</h4>
+            <dl className="item-stat-values">{g.lines.map((l) => <div key={l.key}><dt>{l.label}</dt><dd><strong>{l.value}</strong>{l.zero ? "（0）" : ""}{references[l.key] && <span className="muted item-stat-reference">参照値：<ItemReference r={references[l.key]} items={items} /></span>}</dd></div>)}</dl>
+          </section>
         ))}
-      </dl>
+      </div>
       {anyZero && <p className="muted">「（0）」は Wiki のデータの値が0のもの。効果で決まる値や、データで決まっていない値の可能性があり、実際の値は効果の文・公式の説明を参照してください。</p>}
     </div>
   );
@@ -334,45 +335,52 @@ const UNIQUE_TEXT: Record<UniqueStatus, string> = {
   unlisted: "未確認：Named item effect の表に名前がない",
 };
 
+// Emphasize literal numbers only; do not infer conditions or mechanics from prose.
+function ItemEffectText({ text }: { text: string }) {
+  return <>{text.split(/(\d+(?:[.,]\d+)*%?)/g).map((part, i) => i % 2 ? <strong key={i} className="item-effect-number">{part}</strong> : part)}</>;
+}
+
 export function EffectCard({ item, k, e, tr, info, outdated }: { item: string; k: string; e: ItemEffectText & { __parts?: Record<string, ItemEffectText> }; tr: TrFile | null; info: UniqueInfo | null; outdated: string | null }) {
   const parts = Object.entries(e.__parts ?? {});
   const rows: [string, ItemEffectText][] = [[k, e], ...parts];
   const ja = rows.map(([kk, t]) => validJa(tr, `${item}#${kk}`, t));
   const m = e.meta ?? {};
-  const facts = [m.cd && `クールダウン ${m.cd}秒`, m.recharge && `再チャージ ${m.recharge}秒`, m.charges && `チャージ ${m.charges}`, m.range && `射程 ${m.range}`, m.radius && `範囲 ${m.radius}`].filter(Boolean);
+  const highlights = itemEffectHighlights(item, k, e);
+  const facts = [["クールダウン", m.cd == null ? null : `${m.cd}秒`], ["再チャージ", m.recharge == null ? null : `${m.recharge}秒`], ["チャージ", m.charges], ["射程", m.range], ["範囲", m.radius]].filter(([, value]) => value != null && value !== "");
   return (
-    <div className="data-effect">
-      <div>
-        <strong>{effectKind(k)}</strong>
-        {m.unique && <span>・固有（Unique）</span>}
-        {e.name && <span>・{e.name}</span>}
-      </div>
-      {facts.length > 0 && <div className="muted">{facts.join("・")}（Wiki のデータの項目）</div>}
+    <section className="data-effect item-effect" aria-label={`${effectKind(k)}：${e.name ?? "名称未収録"}`}>
+      <header className="item-effect-heading">
+        <h4>{e.name ?? "効果名未収録"}</h4>
+        <span>{effectKind(k)}{m.unique && "・固有（Unique）"}</span>
+      </header>
+      <div className="muted item-effect-source">保存Wikiの説明・日本語訳（現行仕様の実証とは別）</div>
+      {highlights.length > 0 && <><dl className="item-effect-highlights">{highlights.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl><p className="muted item-highlight-scope">保存Wiki文から個別に整理。範囲の測定基準は原記法で中心→対象の端。現行パッチ・ゲーム内は未検証。</p></>}
+      {facts.length > 0 && <><dl className="item-effect-facts">{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd><strong>{value}</strong></dd></div>)}</dl><div className="muted">Wiki のデータの項目</div></>}
       {rows.map(([kk, text], i) => (
         <p key={kk} style={{ whiteSpace: "pre-line" }} className={ja[i] ? undefined : "muted"}>
-          {ja[i] ?? `（${translationNotice(tr, `${item}#${kk}`, text)}）`}
+          {ja[i] ? <ItemEffectText text={ja[i]} /> : `（${translationNotice(tr, `${item}#${kk}`, text)}）`}
         </p>
       ))}
       {rows.flatMap(([, t]) => t.level_notes ?? []).map((n, i) => <LevelNoteLine key={i} n={n} />)}
       {info && e.name && (
-        <div className="muted">
+        <details className="item-effect-provenance"><summary>重複・共有CD・原典の確認状態{info.cooldownRuleUnconfirmed ? "（共有CD未確認）" : ""}{outdated ? `／表は${outdated}以降、旧情報の可能性` : ""}</summary><div className="muted">
           効果の重複（Rift Compass の整理。同時に持てる数の制限・クールダウンとは別のルール）：{UNIQUE_TEXT[info.status]}
           {info.table?.group && `。互いに関係する効果：${info.table.group}`}
           {info.status === "shared_listed" && info.table && `。表のアイテム：${info.table.items.filter((x) => x !== item).join("、") || "なし"}${info.table.runes ? `（ルーン：${info.table.runes.join("、")}）` : ""}`}
           {info.status !== "shared_listed" && info.status !== "isolated_listed" && info.sameNameItems.length > 0 && `。データ上、同じ名前の効果を持つほかのアイテム：${info.sameNameItems.join("、")}（名前が同じでも重複のルールが同じとは限らない）`}
           {info.cooldownRuleUnconfirmed && "。クールダウンの共有：未確認（Item の記事の一般則は、同じ名前の効果を持つアイテムを同時に複数持てる場合のもの。同時に持てる数の制限があれば当てはまらない）"}
           。出典：Named item effect の表{outdated ? `。この表には Wiki で「パッチ ${outdated} 以降は古い可能性」の印があり、現在のパッチでも同じかは未確認` : ""}
-        </div>
+        </div></details>
       )}
       <details>
         <summary className="muted">英語の原文</summary>
         {rows.map(([kk, t]) => (
           <p key={kk} lang="en" style={{ whiteSpace: "pre-line" }}>
-            {t.plain.replace(/⟦[^⟧]*⟧/g, "［解析できない記法］")}
+            <ItemEffectText text={t.plain.replace(/⟦[^⟧]*⟧/g, "［解析できない記法］")} />
           </p>
         ))}
       </details>
-    </div>
+    </section>
   );
 }
 
@@ -416,7 +424,7 @@ function Items({ selected = "" }: { selected?: string }) {
     const d = candidates.length === 1 ? candidates[0] : undefined;
     const family = d ? reviewedEffectFor(d.name.en ?? "", d.id) : null;
     return <><p><a href="#/data/items">← アイテム一覧</a></p><h2 id="selected-item-heading" tabIndex={-1}>{d ? displayItemName(d.name.ja ?? d.name.en) : `ID ${selected.slice(3)}：対応未確認`}</h2>
-      {d ? <><p className="muted">公式データ単独の詳細（Data Dragon {ddVersion}）。Wikiとの対応を推測で結合していません。</p><PriceTable rows={priceRows(d, undefined, ddVersion)} />{d.description.ja && <OfficialText text={d.description.ja} version={ddVersion} />}<details><summary>公式の英語原文</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{d.description.en ?? "未収録"}</p></details></> : <p className="notice">{candidates.length ? "同じIDの公式データが複数あります。表示対象を確定できません。" : "このIDの公式データは未収録です。合成先が存在しないという意味ではありません。"}</p>}
+      {d ? <><p className="muted">公式データ単独の詳細（Data Dragon {ddVersion}）。Wikiとの対応を推測で結合していません。</p><PriceTable rows={priceRows(d, undefined, ddVersion)} />{d.description.ja && <OfficialText item text={d.description.ja} version={ddVersion} />}<details><summary>公式の英語原文</summary><p lang="en" style={{ whiteSpace: "pre-line" }}>{d.description.en ?? "未収録"}</p></details></> : <p className="notice">{candidates.length ? "同じIDの公式データが複数あります。表示対象を確定できません。" : "このIDの公式データは未収録です。合成先が存在しないという意味ではありません。"}</p>}
       {family && <EffectGroupReview family={family} version={ddVersion} />}
       {d?.id === 323040 && <p className="notice">同名のSeraph's EmbraceでもID3040とは別レコードです。Lifelineの共有・装備・CDの照合結果は自動適用せず、対応範囲を確認待ちとします。</p>}
       <ItemTree current={d} all={s.data.officialItems} version={ddVersion} matches={s.data.matches} />
@@ -456,7 +464,7 @@ function Items({ selected = "" }: { selected?: string }) {
           const family = reviewedEffectFor(w.name, w.data?.id);
           const wikiContent = <>
                 <ItemStatTable item={w.name} items={byName} data={s.data.data} />
-                {!assessment && dd?.description.ja && <OfficialText text={dd.description.ja} version={ddVersion} />}
+
                 {effects.length > 0 && (
                   <div>
                     <div className="muted">効果（英語 Wiki の文の日本語訳：AI・未レビュー。種類・固有・CD などの項目は Wiki のデータ、重複のルールは Rift Compass の整理）</div>
@@ -475,6 +483,7 @@ function Items({ selected = "" }: { selected?: string }) {
                     ))}
                   </div>
                 )}
+                {!assessment && dd?.description.ja && <details className="item-official-reference" open><summary>公式説明 — Data Dragon {ddVersion}（Wikiと別原典・差異は未照合）</summary><OfficialText item text={dd.description.ja} version={ddVersion} /></details>}
                 {((w.limit_groups ?? []).length > 0 || w.limit_text) && (
                   <div>
                     <div className="muted">制限（同時に持てる数・入手の条件）</div>
