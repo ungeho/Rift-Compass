@@ -133,9 +133,10 @@ describe("ステータス表の注記と、英語 Wiki のスキルの表示（2
   });
   it("スキル：英語 Wiki の値（ランク別の基礎値・係数・CD）を示し、Data Dragon の穴埋めは表示しない", () => {
     const html = render("Darius");
-    expect(html).toContain("Physical Damage (Blade)：50/80/110/140/170");
+    expect(html).toContain("Physical Damage (Blade)");
+    expect(html).toContain("<strong>50/80/110/140/170</strong>");
     expect(html).toContain("(+ 100/110/120/130/140% AD)");
-    expect(html).toContain("CD 9/7.75/6.5/5.25/4");
+    expect(html).toContain("CD</dt><dd><strong>9/7.75/6.5/5.25/4</strong>");
     expect(html).toContain("Template:Data_Darius/Decimate");
     // 説明の文（「穴埋め（{{ }}）は表示しません」）以外に {{ が残らない
     expect(html.replace("（{{ }}）", "")).not.toContain("{{");
@@ -157,8 +158,14 @@ describe("公開前の最終確認（2026-11-02）：数値の正確性・ライ
   };
   it("1つの {{st}} の複数の組を別の行にする（ダリウス Q の Blade と Handle の係数を混ぜない）", () => {
     const html = render("Darius");
-    expect(html).toContain("Physical Damage (Blade)：50/80/110/140/170 (+ 100/110/120/130/140% AD)<span class=\"calc-stage");
-    expect(html).toContain("Reduced Damage (Handle)：17.5/28/38.5/49/59.5 (+ 35/38.5/42/45.5/49% AD)");
+    const effects = [...html.matchAll(/<li><div class="skill-effect-title">[\s\S]*?<\/li>/g)].map(m => m[0]);
+    const blade = effects.find(x => x.includes("Physical Damage (Blade)"))!;
+    const handle = effects.find(x => x.includes("Reduced Damage (Handle)"))!;
+    expect(blade).toContain("50/80/110/140/170");
+    expect(blade).toContain("(+ 100/110/120/130/140% AD)");
+    expect(blade).not.toContain("(+ 35/38.5/42/45.5/49% AD)");
+    expect(handle).toContain("17.5/28/38.5/49/59.5");
+    expect(handle).toContain("(+ 35/38.5/42/45.5/49% AD)");
   });
   it("Wiki の英語の説明文には、出典・寄稿者・ライセンス・改変の内容・継承の条件を表示する", () => {
     const html = render("Lux");
@@ -180,7 +187,7 @@ describe("公開前の最終確認（2026-11-02）：数値の正確性・ライ
   });
   it("メル W の CD は Wiki と Data Dragon の両方を示す", () => {
     const html = render("Mel");
-    expect(html).toContain("CD 38/35/32/29/26");
+    expect(html).toContain("CD</dt><dd><strong>38/35/32/29/26</strong>");
     expect(html).toContain("CD 38/35/33/29/26秒");
     expect(html).toContain("CD が Data Dragon と違う（どちらが現行かは未確認）");
   });

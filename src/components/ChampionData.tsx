@@ -1,6 +1,7 @@
 // チャンピオンの Topic ページに出す基本データ（Data Dragon・Wiki の取り込み結果）。
 // 必要なチャンピオンのファイルだけを開いたときに読む（public/gamedata）。取得したデータの表示で、ゲーム内での検証ではない。
 import { useEffect, useState } from "react";
+import { SkillNumbers } from "./SkillNumbers";
 import { SkillBehavior } from "./SkillBehavior";
 import { wikiUpdatedDate } from "../gamedata/wikiDate";
 import { topicHref } from "../router";
@@ -18,8 +19,7 @@ import {
   type KnownIssue,
   type WikiByKey,
 } from "../gamedata/champion";
-import { derivedProperties, fieldLabel, reasonLabel, showRatio, showValues, wikiPlain, type WikiAbilityFile, type WikiAbilityTemplate } from "../gamedata/wikiAbility";
-import { INPUT_LABELS, STAGE_LABELS } from "../gamedata/damage";
+import { fieldLabel, reasonLabel, wikiPlain, type WikiAbilityFile, type WikiAbilityTemplate } from "../gamedata/wikiAbility";
 
 /** 説明文の日本語訳（public/gamedata/wiki/<取得日>/translations/ja/abilities/<キー>.json）*/
 export interface TranslationFile {
@@ -308,7 +308,7 @@ function SkillItem({ title, nameEn, ddLine, ddText, templates, loaded, translati
   return (
     <li>
       <strong>{title}</strong> <span className="muted">{nameEn}</span>
-      {ddText && <div>{ddText}</div>}
+      {ddText && <div className="skill-official-description"><div className="muted">公式 Data Dragon の説明</div>{ddText}</div>}
       {!loaded ? (
         <div className="muted">英語 Wiki のスキルのデータは未取得です。</div>
       ) : templates.length === 0 ? (
@@ -340,8 +340,6 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
       </div>
     );
   }
-  const parsed = Object.entries(t.parsed ?? {});
-  const derived = derivedProperties(t);
   // 説明の項目：取り込み時に読める英語にした text（なければ原文を簡略化）。訳は原文の sha1 が一致するものだけ使う
   const descKeys = Object.keys(t.text ?? {}).filter((k) => /^description/.test(k)).sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
   const desc = descKeys.length
@@ -376,44 +374,14 @@ function WikiTemplate({ t, translations }: { t: WikiAbilityTemplate; translation
           値の数（{t.rank_note.value_counts.join("・")}）が Data Dragon の最大ランク（{t.rank_note.ddragon_maxrank}）と違います。Wiki の段階（究極スキルのランク・形態など）による値の可能性があります。
         </div>
       )}
-      {parsed.length > 0 && (
-        <div>
-          {parsed.map(([k, v], i) => (
-            <span key={k}>
-              {i > 0 && "・"}
-              {fieldLabel(k)} {showValues(v)}
-            </span>
-          ))}
-        </div>
-      )}
-      {(t.leveling ?? []).length > 0 && (
-        <ul className="wiki-leveling">
-          {(t.leveling ?? []).map((l, i) => (
-            <li key={i}>
-              {wikiPlain(l.label)}：{l.base ? showValues(l.base) : <span className="muted">未解析（{reasonLabel(l.reason)}）</span>} {l.ratios.map((r) => showRatio(r)).join(" ")}
-              {l.calc && l.calc.stage !== "formula_parsed" && (
-                <span className={`calc-stage calc-${l.calc.stage}`}>
-                  {STAGE_LABELS[l.calc.stage]}
-                  {l.calc.stage === "computable" && l.calc.inputs?.length ? `（入力：${l.calc.inputs.map((x) => INPUT_LABELS[x]).join("・")}）` : ""}
-                  {l.calc.stage === "not_computable" && l.calc.missing?.length ? `（${l.calc.missing.join("・")}）` : ""}
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-      {derived.length > 0 && (
-        <div className="muted">
-          式から導ける性質（係数の対象から自動で判定。ゲーム内では未検証、戦術的な結論ではない）：{derived.map((d) => d.label_ja).join("／")}
-        </div>
-      )}
+      <SkillNumbers template={t} />
       {(t.unparsed ?? []).length > 0 && (
         <details>
           <summary className="muted">未解析の項目 {(t.unparsed ?? []).length}件</summary>
           <ul>
             {(t.unparsed ?? []).map((u, i) => (
               <li key={i}>
-                {fieldLabel(u.field)}（{reasonLabel(u.reason)}）：<span className="muted">{wikiPlain(t.params?.[u.field] ?? "").slice(0, 160) || "原文を参照"}</span>
+                {u.field === "speed" ? "速度（種類未確認）" : fieldLabel(u.field)}（{reasonLabel(u.reason)}）：<span className="muted">{wikiPlain(t.params?.[u.field] ?? "").slice(0, 160) || "原文を参照"}</span>
               </li>
             ))}
           </ul>
