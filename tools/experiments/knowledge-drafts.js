@@ -4,6 +4,8 @@
 //   node tools/experiments/knowledge-drafts.js rows                          全行の件数と、原典ごとの正式資料の有無
 //   node tools/experiments/knowledge-drafts.js draft 2:H15 3:R … [--out f]  指定した行の下書き（バッチ番号:行ID、または バッチ番号:原典の記号 で原典の全行）
 //   node tools/experiments/knowledge-drafts.js check <reviewed.json>         確認済みの下書きを作業用のコピーに入れて検証する
+//   node tools/experiments/knowledge-drafts.js apply <reviewed.json>         正式データへの反映の計画を表示する（読み取り専用。knowledge-apply.js）
+//   node tools/experiments/knowledge-drafts.js apply <reviewed.json> --write --confirm-plan <計画のハッシュ>   計画どおりに書き込む
 //
 // 方針（自動で埋めない項目は推測せず review に残す）
 // - 原典の URL・著者・公開日とパッチ・節・成立条件・関係の記述は、記録からそのまま写す
@@ -473,8 +475,45 @@ if (require.main === module) {
     const r = check(JSON.parse(fs.readFileSync(args[0], "utf8")));
     console.log(JSON.stringify(r, null, 1));
     if (r.errors.length) process.exit(1);
+  } else if (cmd === "apply") {
+    const { planApply, applyWrite } = require("./knowledge-apply");
+    const at = args.indexOf("--confirm-plan");
+    const confirmPlan = at >= 0 ? args[at + 1] : null;
+    const write = args.includes("--write");
+    const file = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--confirm-plan");
+    if (!file) {
+      console.error("使い方：apply reviewed.json [--write --confirm-plan <計画のハッシュ>]");
+      process.exit(2);
+    }
+    if (!write && confirmPlan) {
+      console.error("--confirm-plan は --write と一緒に使う（プレビューは何も書き込まない）");
+      process.exit(2);
+    }
+    if (write) {
+      const r = applyWrite({ reviewedFile: file, dataFile: DATA_FILE, confirmPlan, check });
+      console.log(JSON.stringify({ written: r.ok, data_file: path.relative(ROOT, DATA_FILE), refusals: r.refusals, plan_sha256: r.plan?.hashes.plan ?? null }, null, 1));
+      process.exit(r.ok ? 0 : 1);
+    }
+    const p = planApply({ reviewedText: fs.readFileSync(file, "utf8"), dataText: fs.readFileSync(DATA_FILE, "utf8"), check });
+    console.log(JSON.stringify({
+      mode: "preview（何も書き込んでいない）",
+      data_file: path.relative(ROOT, DATA_FILE),
+      data_sha256: p.hashes.data,
+      reviewed_sha256: p.hashes.reviewed,
+      output_sha256: p.hashes.output,
+      plan_sha256: p.hashes.plan,
+      can_write: p.ok,
+      refusals: p.refusals,
+      errors: p.errors,
+      pending_human_review: p.pending_human_review,
+      add: p.summary?.add ?? null,
+      annotate: p.summary?.annotate ?? null,
+      report: p.report,
+      next: p.ok ? `書き込むには：apply ${file} --write --confirm-plan ${p.hashes.plan}` : "書き込めない（refusals を見る）",
+    }, null, 1));
+    process.exit(p.ok ? 0 : 1);
   } else {
-    console.error("使い方：rows | draft 2:H15 … [--out file] | check reviewed.json");
+    console.error("使い方：rows | draft 2:H15 … [--out file] | check reviewed.json | apply reviewed.json [--write --confirm-plan <計画のハッシュ>]");
     process.exit(2);
   }
 }

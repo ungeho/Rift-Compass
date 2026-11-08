@@ -301,3 +301,201 @@ test("原典1件ごとの処理：原典の記号で全行を下書きにでき�
   assert.ok(after.every((d) => d.note.status === "unverified" && d.evidence.checked_level === null));
   assert.throws(() => draft(["2:Z"], data), /行がない/);
 });
+
+// ---- apply（knowledge-apply.js）。正式データは変えず、一時ディレクトリに写したデータで確かめる ----
+const os = require("os");
+const { spawnSync } = require("child_process");
+const { validate } = require("../validate-sample-data");
+const { planApply, applyWrite, structuralDiff, canon } = require("./knowledge-apply");
+const sha = (t) => require("crypto").createHash("sha256").update(t).digest("hex");
+/** 正式データ（実際の書式）を一時ディレクトリに写し、fixture の判断を置く */
+function applyEnv({ rows = roamingFixture(), eol = null } = {}) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "kd-apply-"));
+  let text = fs.readFileSync(DATA, "utf8");
+  if (eol === "\r\n") text = text.replace(/\r?\n/g, "\r\n");
+  const dataFile = path.join(dir, "sample-resources.json");
+  const reviewedFile = path.join(dir, "reviewed.json");
+  fs.writeFileSync(dataFile, text);
+  fs.writeFileSync(reviewedFile, JSON.stringify(rows));
+  const preview = () => planApply({ reviewedText: fs.readFileSync(reviewedFile, "utf8"), dataText: fs.readFileSync(dataFile, "utf8"), check });
+  const cleanup = () => fs.rmSync(dir, { recursive: true, force: true });
+  return { dir, dataFile, reviewedFile, original: text, preview, cleanup };
+}
+/** git の行単位の差分（追加・削除の行数） */
+function numstat(a, b) {
+  const r = spawnSync("git", ["diff", "--no-index", "--numstat", a, b], { encoding: "utf8" });
+  const [add, del] = r.stdout.trim().split(/\s+/).map(Number);
+  return { add: add || 0, del: del || 0 };
+}
+
+test("apply：プレビューは書き込まず、正しい計画のハッシュで書き込むと、check のコピーどおりの最小の差分になる", () => {
+  const realBefore = sha(fs.readFileSync(DATA, "utf8"));
+  const env = applyEnv();
+  try {
+    const p = env.preview();
+    assert.deepStrictEqual(p.refusals, []);
+    assert.ok(p.ok && p.hashes.plan);
+    assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), env.original); // プレビューは書き込まない
+    assert.deepStrictEqual(Object.fromEntries(Object.entries(p.summary.add).map(([k, v]) => [k, v.length])), { knowledge_notes: 9, evidence: 11, relations: 3 });
+    assert.deepStrictEqual(p.summary.annotate, [{ id: "kn-cannon-wave-timing", fields: ["notes_ja", "source_person"] }]);
+    // 計画のハッシュなしでは書かない
+    assert.strictEqual(applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, check }).ok, false);
+    const w = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check });
+    assert.deepStrictEqual(w.refusals, []);
+    const after = fs.readFileSync(env.dataFile, "utf8");
+    const saved = JSON.parse(after);
+    // 保存した内容は check のコピーと同じで、validate に通る
+    assert.strictEqual(canon(saved), canon(p.copy));
+    assert.deepStrictEqual(validate(saved), []);
+    // 既存の要素の並び・内容は同じ（追記したノート以外）。ほかの欄も同じ
+    const orig = JSON.parse(env.original);
+    for (const k of ["knowledge_notes", "evidence", "relations"]) {
+      assert.deepStrictEqual(saved[k].slice(0, orig[k].length).map((x) => x.id), orig[k].map((x) => x.id));
+      for (const [i, x] of orig[k].entries()) if (x.id !== "kn-cannon-wave-timing") assert.deepStrictEqual(saved[k][i], x);
+    }
+    for (const k of ["schema_version", "generated_at", "research_context", "topics", "resources"]) assert.deepStrictEqual(saved[k], orig[k]);
+    const cannon = saved.knowledge_notes.find((n) => n.id === "kn-cannon-wave-timing");
+    assert.ok(cannon.notes_ja.endsWith("（fixture の追記）") && cannon.source_person.endsWith("・fixture"));
+    // テキストの差分：削除行は、追記した2行（notes_ja・source_person）と、1行1件の根拠・関係の末尾に「,」が付く2行の、計4行だけ
+    // （ノートの末尾の「    }」は、git が新しいブロックの閉じ括弧と揃えるので、削除にならない）
+    const a = path.join(env.dir, "before.json");
+    fs.writeFileSync(a, env.original);
+    const ns = numstat(a, env.dataFile);
+    assert.strictEqual(ns.del, 4);
+    assert.strictEqual(ns.add, after.split("\n").length - env.original.split("\n").length + ns.del);
+    // ロック・一時ファイルは残らない
+    assert.deepStrictEqual(fs.readdirSync(env.dir).sort(), ["before.json", "reviewed.json", "sample-resources.json"]);
+    // 同じ計画をもう一度：正式データが変わったので計画のハッシュが一致せず拒否（check でも ID の重複になる）
+    assert.strictEqual(applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check }).ok, false);
+    assert.ok(env.preview().errors.some((e) => /既にある/.test(e)));
+  } finally {
+    env.cleanup();
+  }
+  assert.strictEqual(sha(fs.readFileSync(DATA, "utf8")), realBefore); // 実際の正式データは変わらない
+});
+
+test("apply：CRLF の正式データでも改行コードを保って書き込む", () => {
+  const env = applyEnv({ eol: "\r\n" });
+  try {
+    const p = env.preview();
+    assert.ok(p.ok, p.refusals.join("; "));
+    assert.ok(applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check }).ok);
+    assert.ok(!/[^\r]\n/.test(fs.readFileSync(env.dataFile, "utf8"))); // LF だけの行がない
+  } finally {
+    env.cleanup();
+  }
+});
+
+test("apply：書き込みを拒否する条件（エラー・確認待ち・変更・ハッシュ・旧形式・未決定・不正な操作）では、正式データを変えない", () => {
+  const r = rowsOf("P2", "P9");
+  const refuse = (rows, mutate) => {
+    const env = applyEnv({ rows });
+    try {
+      const p = env.preview();
+      const expected = mutate ? null : env.original;
+      const res = mutate ? mutate(env, p) : applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan ?? "x", check });
+      assert.strictEqual(res.ok, false);
+      if (expected !== null) assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), expected);
+      return p;
+    } finally {
+      env.cleanup();
+    }
+  };
+  const good = () => [row(r.P2, [newNote("kn-fx-ap", "ev-fx-ap")])];
+  // check のエラー（不正な ID・重複・未知の操作・競合する操作）
+  assert.ok(refuse([row(r.P2, [newNote("kn-roam-roles", "ev-fx-a1")])]).refusals.some((x) => /check のエラー/.test(x)));
+  assert.ok(refuse([row(r.P2, [newNote("kn-fx-a2", "ev-001")])]).refusals.some((x) => /check のエラー/.test(x)));
+  assert.ok(refuse([row(r.P2, [{ action: "rewrite_note", note_id: "kn-flash-cd" }])]).refusals.some((x) => /check のエラー/.test(x)));
+  assert.ok(refuse([row(r.P2, [{ action: "skip", reason_ja: "x" }, newNote("kn-fx-a3", "ev-fx-a3")])]).refusals.some((x) => /check のエラー/.test(x)));
+  // 人の確認待ち（文字列による検出）
+  const pending = [{ ...r.P2, decision: { reviewed_by: "AI の提案（人の確認待ち）", operations: [newNote("kn-fx-a4", "ev-fx-a4")] } }];
+  assert.ok(refuse(pending).refusals.some((x) => /人の確認待ち/.test(x)));
+  // 旧形式・decision のない行
+  assert.ok(refuse([{ ...r.P2, decision: { action: "skip", reason_ja: "x", reviewed_by: WHO } }]).refusals.some((x) => /旧形式/.test(x)));
+  assert.ok(refuse([...good(), { ...r.P9 }]).refusals.some((x) => /decision がない/.test(x)));
+  // 計画のハッシュが違う
+  refuse(good(), (env) => {
+    const res = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: "0".repeat(64), check });
+    assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), env.original);
+    return res;
+  });
+  // プレビューの後に入力が変わった
+  refuse(good(), (env, p) => {
+    fs.writeFileSync(env.reviewedFile, JSON.stringify([row(r.P2, [newNote("kn-fx-changed", "ev-fx-ap")])]));
+    const res = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check });
+    assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), env.original);
+    return res;
+  });
+  // プレビューの後に正式データが変わった
+  refuse(good(), (env, p) => {
+    fs.appendFileSync(env.dataFile, "\n");
+    const res = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check });
+    assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), env.original + "\n");
+    return res;
+  });
+});
+
+test("apply：保存の途中の失敗・同時実行では、正式データを壊さず、ロック・一時ファイルを残さない", () => {
+  const r = rowsOf("P2");
+  const env = applyEnv({ rows: [row(r.P2, [newNote("kn-fx-ap2", "ev-fx-ap2")])] });
+  try {
+    const p = env.preview();
+    // 置き換えの直前に失敗
+    const failed = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check, hooks: { beforeRename: () => { throw new Error("simulated"); } } });
+    assert.strictEqual(failed.ok, false);
+    assert.match(failed.refusals[0], /置き換えていない/);
+    assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), env.original);
+    assert.deepStrictEqual(fs.readdirSync(env.dir).sort(), ["reviewed.json", "sample-resources.json"]);
+    // 計画を作った後・置き換える前に、正式データがほかから変わった（直前の再確認で拒否し、変わった内容を上書きしない）
+    const raced = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check, hooks: { afterTempWrite: () => fs.appendFileSync(env.dataFile, " ") } });
+    assert.strictEqual(raced.ok, false);
+    assert.match(raced.refusals[0], /直前に正式データが変わった/);
+    assert.strictEqual(fs.readFileSync(env.dataFile, "utf8"), env.original + " ");
+    assert.deepStrictEqual(fs.readdirSync(env.dir).sort(), ["reviewed.json", "sample-resources.json"]);
+    fs.writeFileSync(env.dataFile, env.original);
+    // 実行中に、もう1つの apply を始める（ロックで拒否）
+    let inner;
+    const outer = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check, hooks: { beforeRename: () => { inner = applyWrite({ reviewedFile: env.reviewedFile, dataFile: env.dataFile, confirmPlan: p.hashes.plan, check }); } } });
+    assert.strictEqual(inner.ok, false);
+    assert.match(inner.refusals[0], /実行中/);
+    assert.strictEqual(outer.ok, true); // 先に始めた方は書き込める
+    assert.deepStrictEqual(fs.readdirSync(env.dir).sort(), ["reviewed.json", "sample-resources.json"]);
+  } finally {
+    env.cleanup();
+  }
+});
+
+test("apply：許可しない差分（削除・既存の欄の変更・並べ替え・Resource や Topic の変更・追記でない書き換え・重複）は拒否する", () => {
+  const data = JSON.parse(fs.readFileSync(DATA, "utf8"));
+  const refusals = (mutate) => { const c = JSON.parse(JSON.stringify(data)); mutate(c); return structuralDiff(data, c).refusals; };
+  assert.deepStrictEqual(refusals(() => {}), []);
+  assert.ok(refusals((c) => c.evidence.pop()).some((x) => /減る/.test(x)));
+  assert.ok(refusals((c) => { c.knowledge_notes[0].statement_ja = "x"; }).some((x) => /statement_ja/.test(x)));
+  assert.ok(refusals((c) => { c.knowledge_notes[0].status = "unverified"; }).some((x) => /status/.test(x)));
+  assert.ok(refusals((c) => { [c.relations[0], c.relations[1]] = [c.relations[1], c.relations[0]]; }).some((x) => /並べ替え/.test(x)));
+  assert.ok(refusals((c) => { c.resources[0].title = "x"; }).some((x) => /resources/.test(x)));
+  assert.ok(refusals((c) => { c.topics.push({ id: "t-fx" }); }).some((x) => /topics/.test(x)));
+  assert.ok(refusals((c) => { c.generated_at = "x"; }).some((x) => /generated_at/.test(x)));
+  const withNotes = data.knowledge_notes.find((n) => n.notes_ja);
+  assert.ok(refusals((c) => { c.knowledge_notes.find((n) => n.id === withNotes.id).notes_ja = "置き換え"; }).some((x) => /追記でない/.test(x)));
+  assert.ok(refusals((c) => { c.evidence.push({ ...c.evidence[0] }); }).some((x) => /重複/.test(x)));
+});
+
+test("apply：CLI はプレビューが既定で、--write には計画のハッシュが要る（実際の正式データは変えない）", () => {
+  const before = fs.readFileSync(DATA, "utf8");
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "kd-apply-cli-"));
+  try {
+    const f = path.join(dir, "reviewed.json");
+    fs.writeFileSync(f, JSON.stringify(roamingFixture()));
+    const cli = (...args) => spawnSync(process.execPath, [path.join(__dirname, "knowledge-drafts.js"), "apply", f, ...args], { encoding: "utf8" });
+    const prev = cli();
+    assert.strictEqual(prev.status, 0);
+    const out = JSON.parse(prev.stdout);
+    assert.ok(out.can_write && /^[0-9a-f]{64}$/.test(out.plan_sha256) && out.data_sha256 && out.reviewed_sha256);
+    assert.strictEqual(cli("--write").status, 1); // 計画のハッシュなし
+    assert.strictEqual(cli("--confirm-plan", out.plan_sha256).status, 2); // --write なしの確認は使い方の誤り
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+  assert.strictEqual(fs.readFileSync(DATA, "utf8"), before);
+});
