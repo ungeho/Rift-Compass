@@ -97,6 +97,22 @@
 - 同じ主張のノートや、同じノート・同じ資料の根拠は二重に登録しない。
 - 関係（relations）も追加できる。最後に既存の `validate` にかける。
 
+#### operations の形式（2026-11-08 追加）
+
+ローム収録のパイロット（`roaming-intake-pilot.md`）で使い捨てのスクリプトで補った判断を、`check` で書いて検証できるようにした。旧形式（`decision.action`）の動作・エラー文は変えていない。
+
+- 1行の `decision` に `operations`（配列）を書くと、書いた順に実行する。操作は `new_note`・`add_evidence`・`annotate_note`・`merged`・`skip` だけで、ほかはエラー。
+- **統合**：統合先の行の `new_note` に `merges_rows` と `merge_reason_ja`、統合元の行に `merged`（`into`・`reason_ja`）を書く。両側の宣言が一致しないとエラー。統合元の成立条件が統合先の成立条件・例外・補足にないときは、`conditions_handling_ja` に扱いを書かないとエラー（主張は合成しない）。
+- **1行から複数の操作・分割**：1行に `new_note` を複数、または `new_note` と `add_evidence` を並べられる。
+- **複数の根拠**：`new_note` の `evidence` は配列。1件目だけが行の下書きの根拠（資料・節・要約）を引き継ぐ。別の資料の根拠や2件目以降は、id・resource_id・locator・summary_ja をすべて書く（行の原典の値を別の資料に引き継がない）。同じ資料・同じ位置の根拠の重複はエラー。別の原典を独立した裏付けとは判定しない（補足に人が書く）。
+- **関係**：`{ to, type }`（このノートから）か、`{ from, to, type }`（既存ノートからこのノートへ、など）。このノートを含まない関係、7種以外の種類、存在しない参照先、自分自身への関係、同じ関係の重複はエラー。関係は全操作の後に確かめるので、同じ一括の後の行で作るノートを参照できる。
+- **既存ノートの補足**：`annotate_note` は `notes_ja` と `source_person` への追記だけ。ほかの欄を書くとエラー（主張・status・確認レベルは変えられない）。
+- `add_evidence` の二重登録（同じノート・同じ資料）は、旧形式では報告して飛ばすが、operations ではエラー（別の箇所なら `allow_same_resource` を明示）。
+- 実行順の制約：`add_evidence`・`annotate_note` の対象は、既存ノートか、それより前の操作で作ったノートだけ。
+- 結果の `pending_human_review` に、`reviewed_by`・`status_approved_by` が「人の確認待ち」などの値の行を返す。文字列があることを人の承認とは扱わない（エラーにはしないが、正式に登録する前に人が確かめる）。
+- テストなどで中身を確かめるときは、`check(reviewed, data, { withCopy: true })` で検証に使った作業用のコピーを結果の `copy` に含められる（CLI の出力には含めない）。
+- `check` は公開データを変えない。作業用のコピーで検証するだけで、正式データへの反映は今も別の手作業（`check` が通った内容を人が `data/sample-resources.json` に書く）。
+
 ### 全253行の下書きの結果
 
 | 項目 | 行数 |
