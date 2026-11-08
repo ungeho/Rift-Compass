@@ -1,9 +1,9 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { index } from "../data/dataset";
-import { publicNotes } from "../data/explorePool";
+import { publicEvidenceOf, publicNotes } from "../data/explorePool";
 import { noteHref, topicHref } from "../router";
-import { notesForTopic, TopicPage, TOPIC_NOTE_PAGE_SIZE } from "./TopicPages";
+import { matchesTopicNote, notesForTopic, TopicPage, TOPIC_NOTE_PAGE_SIZE } from "./TopicPages";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const publicIds = new Set(publicNotes.map((n) => n.id));
@@ -72,5 +72,40 @@ describe("Topic のページから知識ノートへ", () => {
   it("ノートのない Topic では欄を出さない", () => {
     const empty = index.data.topics.find((t) => notesForTopic(t.id).direct.length === 0 && notesForTopic(t.id).via.length === 0);
     if (empty) expect(text(renderToStaticMarkup(<TopicPage id={empty.id} />))).not.toContain("この Topic の知識ノート");
+  });
+});
+
+describe("Topic のノートの絞り込み：公開対象でない資料の根拠の要約では一致しない（P1）", () => {
+  const level2 = () => notesForTopic("level-2").direct;
+  const hits = (q: string) => level2().filter((n) => matchesTopicNote(q, n)).map((n) => n.id).sort();
+
+  it("ev-009・ev-011（公開対象でない資料）の要約にだけある語では、どのノートも一致しない", () => {
+    // 前提：語は非公開の根拠の要約にあり、ノート自身の記述と公開の根拠の要約にはない
+    const hidden = index.data.evidence.filter((e) => e.id === "ev-009" || e.id === "ev-011").map((e) => e.summary_ja).join(" ");
+    for (const q of ["403", "26.4"]) {
+      expect(hidden).toContain(q);
+      for (const n of level2()) {
+        const own = [n.statement_ja, ...(n.conditions_ja ?? []), ...(n.exceptions_ja ?? []), ...(n.falsifiers_ja ?? []), n.notes_ja ?? "", ...publicEvidenceOf(n.id).map((e) => e.summary_ja)].join(" ");
+        expect(own, `${n.id} ${q}`).not.toContain(q);
+      }
+      expect(hits(q), q).toEqual([]);
+    }
+  });
+
+  it("公開の根拠の要約・ノート自身の記述での一致は残る（同じ語が非公開の根拠にあっても妨げない）", () => {
+    // 公開の根拠の要約（ev-030「…必要体数を計算」）
+    expect(hits("必要体数")).toEqual(["kn-level2-minion-count"]);
+    // ノート自身の記述（本文の「Lv2」は非公開の ev-011 の要約にもある）
+    expect(hits("Lv2")).toEqual(expect.arrayContaining(["kn-level2-advantage", "kn-level2-minion-count", "kn-level2-xp"]));
+    // 補足欄の未確認の参考情報（ノート自身の記述）
+    expect(hits("流通する")).toEqual(["kn-level2-minion-count"]);
+  });
+
+  it("Topic のページに、公開対象でない資料の根拠の要約・資料の名前・発信者を出さず、ノートの件数・遷移は保つ", () => {
+    const html = renderToStaticMarkup(<TopicPage id="level-2" />);
+    const t = text(html);
+    for (const s of ["HTTP 403", "パッチ26.4", "Mobalytics", "Sheep Esports", "mobalytics.gg", "sheepesports"]) expect(t + html, s).not.toContain(s);
+    expect(level2().map((n) => n.id).sort()).toEqual(["kn-level2-advantage", "kn-level2-minion-count", "kn-level2-xp"]);
+    for (const id of ["kn-level2-advantage", "kn-level2-minion-count", "kn-level2-xp"]) expect(html).toContain(`href="${noteHref(id)}"`);
   });
 });

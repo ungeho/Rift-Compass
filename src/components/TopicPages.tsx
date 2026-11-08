@@ -2,7 +2,7 @@ import { useState } from "react";
 import { index } from "../data/dataset";
 import type { KnowledgeNote, Resource, Topic } from "../data/types";
 import { decisionsForTopic, ROLE_TOPICS } from "../data/decisions";
-import { publicNotes } from "../data/explorePool";
+import { publicEvidenceOf, publicNotes } from "../data/explorePool";
 import { decisionsHref, homeHref, topicHref, sourcesHref } from "../router";
 import { NoteSummary } from "./ExplorePage";
 import { ResourceCard } from "./ResourceCard";
@@ -157,13 +157,21 @@ function ResourceList({ resources, label }: { resources: Resource[]; label: stri
     {shown < resources.length && <button className="button" onClick={(e) => revealTopicItems(e.currentTarget, shown, () => setShown(shown + TOPIC_RESOURCE_PAGE_SIZE))}>{label}をさらに{Math.min(TOPIC_RESOURCE_PAGE_SIZE, resources.length - shown)}件表示する（残り {resources.length - shown}件）</button>}</>;
 }
 
+/**
+ * Topic のノートの絞り込み：主張・成立条件・例外・反証条件・補足・根拠の要約で照合する。
+ * 根拠の要約は公開対象の資料の根拠だけ（publicEvidenceOf。ノート検索の索引と同じ）。公開対象でない資料の記述では一致させない
+ */
+export function matchesTopicNote(q: string, n: KnowledgeNote): boolean {
+  return matchesTopicFilter(q, [n.statement_ja, ...(n.conditions_ja ?? []), ...(n.exceptions_ja ?? []), ...(n.falsifiers_ja ?? []), n.notes_ja ?? "", ...publicEvidenceOf(n.id).map((e) => e.summary_ja)]);
+}
+
 function TopicNotes({ notes }: { notes: ReturnType<typeof notesForTopic> }) {
   const [q, setQ] = useState("");
-  const match = (n: KnowledgeNote) => matchesTopicFilter(q, [n.statement_ja, ...(n.conditions_ja ?? []), ...(n.exceptions_ja ?? []), ...(n.falsifiers_ja ?? []), n.notes_ja ?? "", ...(index.evidenceByNote.get(n.id) ?? []).map((e) => e.summary_ja)]);
+  const match = (n: KnowledgeNote) => matchesTopicNote(q, n);
   const direct = notes.direct.filter(match), via = notes.via.filter((v) => match(v.note));
   return <section aria-labelledby="topic-notes-heading">
     <h2 id="topic-notes-heading">この Topic の知識ノート <span className="result-count">{notes.direct.length}件</span>{notes.via.length > 0 && <span className="result-count">（下位の Topic のノート {notes.via.length}件）</span>}</h2>
-    <p className="muted">根拠の資料がすべて公開されている知識ノートです。ゲーム内では検証していません。旧仕様（現行では適用できない）のノートは後ろに並べます。</p>
+    <p className="muted">公開対象の資料の根拠で成り立つ知識ノートです（それ以外の資料の記録は判定・絞り込みに使いません）。ゲーム内では検証していません。旧仕様（現行では適用できない）のノートは後ろに並べます。</p>
     <label className="topic-filter">主張・条件・例外・根拠の要約で絞り込む<input type="search" value={q} onChange={(e) => setQ(e.target.value)} /></label>
     {q && <p role="status">{direct.length + via.length}件が一致。語の一致は、質問に正しく答えることを示しません。</p>}
     {direct.length ? <NoteList key={`direct-${q}`} items={direct.map((note) => ({ note }))} label="この Topic のノート" /> : <p className="muted">{q ? "この条件で一致する直接のノートはありません。" : "この Topic が直接付いた知識ノートはありません。"}</p>}

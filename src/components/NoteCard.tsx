@@ -1,4 +1,5 @@
 import { index } from "../data/dataset";
+import { otherEvidenceOf, publicEvidenceOf } from "../data/explorePool";
 import { APPLICABILITY_LABELS, EVIDENCE_TYPE_LABELS, formatSeconds, KIND_LABELS, periodLabel, STATUS_LABELS } from "../data/labels";
 import type { KnowledgeNote } from "../data/types";
 import { youtubeAt } from "../lib/links";
@@ -22,7 +23,12 @@ function List({ title, items }: { title: string; items?: string[] }) {
 
 export function NoteCard({ note, currentResourceId }: { note: KnowledgeNote; currentResourceId?: string }) {
   const status = STATUS_LABELS[note.status];
-  const evidence = index.evidenceByNote.get(note.id) ?? [];
+  // 表示する根拠：通常公開の対象の資料の根拠（公開判定・検索・件数と同じ集合）。
+  // 公開対象でない資料の根拠は、いま開いている資料の詳細（警告つきの直接アクセス）のものだけを「この資料」として示し、
+  // ほかは資料の名前・発信者・URL・リンクを出さず、存在だけを知らせる（保存データからは消さない）
+  const others = otherEvidenceOf(note.id);
+  const evidence = [...publicEvidenceOf(note.id), ...others.filter((e) => e.resource_id === currentResourceId)];
+  const hiddenCount = others.filter((e) => e.resource_id !== currentResourceId).length;
   const gameTested = evidence.some((e) => e.evidence_type === "in_game_test");
   const h = note.historical;
 
@@ -87,6 +93,11 @@ export function NoteCard({ note, currentResourceId }: { note: KnowledgeNote; cur
               );
             })}
           </ul>
+        )}
+        {hiddenCount > 0 && (
+          <p className="muted note-other-evidence">
+            未確認の参考情報あり：通常公開の対象ではない資料に基づく記録が{hiddenCount}件あります。資料の確認状況により、確認済みの根拠としては表示していません。
+          </p>
         )}
       </div>
     </article>

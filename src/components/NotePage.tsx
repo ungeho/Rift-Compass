@@ -1,4 +1,4 @@
-// 知識ノートの詳細（#/note/<id>）。散策の対象になるノート（isPublicNote）だけを表示する。
+// 知識ノートの詳細（#/note/<id>）。散策の対象になるノート（isPublicNote、P1）だけを表示する。
 // 内容は既存の NoteCard（状態・成立条件・時期・根拠と資料の確認箇所）をそのまま使う。
 import { index } from "../data/dataset";
 import { isPublicNote, relatedPublicNotes } from "../data/explorePool";
@@ -30,7 +30,7 @@ export function NotePage({ id }: { id: string }) {
       <div className="detail">
         {back}
         <h1>知識ノートが見つかりません</h1>
-        <p>ID「{id}」の知識ノートは、表示の対象にありません（根拠のないノートや、公開していない資料を根拠に含むノートは表示しません）。</p>
+        <p>ID「{id}」の知識ノートは、表示の対象にありません（公開対象の資料の根拠で成り立たないノートは表示しません）。</p>
       </div>
     );
   }

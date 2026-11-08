@@ -6,6 +6,7 @@ import { plainText } from "../lib/plainText";
 import { decisionHref, decisionsHref, lastListHref, resourceHref } from "../router";
 import { ExternalLink, LevelBadge, TopicChips } from "./common";
 import { NoteCard } from "./NoteCard";
+import { isPublicNote } from "../data/explorePool";
 
 export function ResourceDetail({ id }: { id: string }) {
   const r = index.resourceById.get(id);
@@ -25,9 +26,11 @@ export function ResourceDetail({ id }: { id: string }) {
   }
 
   const level = LEVEL_LABELS[r.verification.level];
+  // この資料を根拠にした知識ノート。表示するのは、ノートの詳細・散策・ノート検索・Topic と同じ公開判定（isPublicNote、P1）を満たすものだけ
   const notes = [...new Set((index.evidenceByResource.get(r.id) ?? []).map((e) => e.note_id))]
     .map((nid) => index.noteById.get(nid))
-    .filter((n) => n !== undefined);
+    .filter((n) => n !== undefined)
+    .filter(isPublicNote);
   const original = r.derived_from ? index.resourceById.get(r.derived_from) : undefined;
   const translations = index.translationsOf.get(r.id) ?? [];
   const decisions = decisionsForResource(r.id);

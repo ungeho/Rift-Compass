@@ -4,7 +4,7 @@
 // 一致は「候補に含めた理由」であり、質問への正しい答えであることは示さない（否定・条件の向き・立場は判定しない）。
 import { containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidualTerms, type Unit } from "../search/search";
 import { index } from "./dataset";
-import { publicNotes } from "./explorePool";
+import { publicEvidenceOf, publicNotes } from "./explorePool";
 import type { KnowledgeNote } from "./types";
 
 /** 照合する記述の種類。exceptions・falsifiers は、主張と逆向きになりうる記述 */
@@ -62,7 +62,8 @@ interface NoteText {
 
 const noteTexts = new Map<string, NoteText>(
   publicNotes.map((n) => {
-    const ev = index.evidenceByNote.get(n.id) ?? [];
+    // 根拠の要約・発信者は、公開対象の資料の根拠だけ（公開対象でない資料の記述で一致・順位が変わらないように）
+    const ev = publicEvidenceOf(n.id);
     const topicName = n.topic_ids
       .flatMap((id) => {
         const t = index.topicById.get(id);

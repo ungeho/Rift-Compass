@@ -5,7 +5,7 @@
 //   #/topic/<id>    Topic 詳細
 //   #/decisions?topic=…  判断材料（試験）の一覧（Topic で絞り込み。compare=… で資料間の比較を開く）
 //   #/decision/<id>      判断材料（試験）の詳細（?example=… で、その具体例の位置へ移動する）
-//   #/note/<id>     知識ノートの詳細（散策の対象になる、根拠がすべて公開資料のノート）
+//   #/note/<id>     知識ノートの詳細（散策の対象になるノート：公開対象の資料の根拠が1件以上あり、その根拠だけでノートの状態の規則を満たすもの。P1）
 //   #/explore?topic=…&d=…&n=…  知識の散策（試験）。topic=all は Topic を限定しない「すべて」。d は興味からの距離（0〜100）、n は1回に抽選する件数（1・20・50・100。既定20）
 import { useSyncExternalStore } from "react";
 import { FILTER_KEYS, type Filters } from "./search/search";

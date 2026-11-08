@@ -5,7 +5,7 @@
 import { useMemo, useState } from "react";
 import { index } from "../data/dataset";
 import { decisionById } from "../data/decisions";
-import { explorePool, exploreTopics, isPublicNote } from "../data/explorePool";
+import { explorePool, exploreTopics, isPublicNote, otherEvidenceOf, publicEvidenceOf } from "../data/explorePool";
 import { APPLICABILITY_LABELS, KIND_LABELS, periodLabel } from "../data/labels";
 import { NoteStatusBadge } from "./common";
 import type { Evidence, KnowledgeNote } from "../data/types";
@@ -284,8 +284,10 @@ function reasonText(result: PickResult, topicLabel: string): string {
 }
 
 /** 散策の一覧に出す知識ノートの簡潔なカード。詳細（根拠・成立条件）は #/note/<id> の NoteCard で表示する */
-export function NoteSummary({ note, evidence = index.evidenceByNote.get(note.id) ?? [] }: { note: KnowledgeNote; evidence?: Evidence[] }) {
+export function NoteSummary({ note, evidence = publicEvidenceOf(note.id) }: { note: KnowledgeNote; evidence?: Evidence[] }) {
   const h = note.historical;
+  // 根拠の件数は、公開対象の資料の根拠だけ（ノートの詳細で表示する根拠の数と同じ）。それ以外は「参考情報あり」とだけ示す
+  const others = otherEvidenceOf(note.id).length;
   const gameTested = evidence.some((e) => e.evidence_type === "in_game_test") && note.last_checked_patch;
   return (
     <div className="note-summary">
@@ -295,6 +297,7 @@ export function NoteSummary({ note, evidence = index.evidenceByNote.get(note.id)
       <p className="note-statement">{plainText(note.statement_ja)}</p>
       <p className="muted">
         ゲーム内での検証：{gameTested ? `パッチ ${note.last_checked_patch} で検証` : "未実施"}・根拠の資料 {evidence.length}件
+        {others > 0 && "（ほかに未確認の参考情報あり。根拠の件数には含めていません）"}
       </p>
       {h && (
         <p className={h.current_applicability === "superseded" ? "notice" : "muted"}>

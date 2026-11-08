@@ -1,4 +1,5 @@
 // 知識の散策（試験）の画面と抽選対象の検査（実データ）
+import { createRequire } from "node:module";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { index, isPublic } from "../data/dataset";
@@ -161,16 +162,32 @@ describe("知識ノートを散策の対象にする", () => {
   const notes = index.data.knowledge_notes;
   const poolNotes = explorePool.filter((x) => x.kind === "note");
 
-  it("根拠が1件以上あり、根拠の資料がすべて公開対象のノートだけを対象にする（件数はデータから決める）", () => {
+  it("公開対象の資料の根拠だけで根拠状態の規則（validate）を満たすノートだけを対象にする（P1。件数はデータから決める）", () => {
+    // 期待値は実装（notePublicity.ts）を使わず、Node 側の検査（tools/validate-sample-data.js）で独立に求める：
+    // そのノートの根拠を公開対象の資料のものだけにしたデータで、そのノートの規則の誤りがなく、公開対象の資料の根拠が1件以上ある
+    const { validate } = createRequire(import.meta.url)("../../tools/validate-sample-data.js") as { validate: (d: unknown) => string[] };
+    const pubEv = (id: string) => index.data.evidence.filter((e) => e.note_id === id && isPublic(index.resourceById.get(e.resource_id)!));
     const expected = notes.filter((n) => {
-      const ev = index.data.evidence.filter((e) => e.note_id === n.id);
-      return ev.length > 0 && ev.every((e) => isPublic(index.resourceById.get(e.resource_id)!));
+      if (pubEv(n.id).length === 0) return false;
+      const copy = { ...index.data, evidence: index.data.evidence.filter((e) => e.note_id !== n.id || isPublic(index.resourceById.get(e.resource_id)!)) };
+      return validate(copy).every((x) => !x.startsWith(`${n.id}:`));
     });
     expect(poolNotes.map((x) => x.id).sort()).toEqual(expected.map((n) => n.id).sort());
     expect(publicNotes).toHaveLength(expected.length);
-    // 根拠のないノート・公開していない資料を根拠に含むノートは対象外
+    // 根拠のないノートは対象外。公開対象でない資料の根拠を含んでも、公開対象の資料の根拠だけで規則を満たすノートは対象（P1）
     expect(isPublicNote(index.noteById.get("kn-offense-as-defense")!)).toBe(false);
-    expect(isPublicNote(index.noteById.get("kn-level2-minion-count")!)).toBe(false);
+    expect(isPublicNote(index.noteById.get("kn-level2-minion-count")!)).toBe(true);
+    expect(isPublicNote(index.noteById.get("kn-level2-advantage")!)).toBe(true);
+    // P0（根拠の資料がすべて公開対象）との差は、この2件の追加だけ（意図しない公開・非公開の変化がない）
+    const p0 = notes.filter((n) => {
+      const ev = index.data.evidence.filter((e) => e.note_id === n.id);
+      return ev.length > 0 && ev.every((e) => isPublic(index.resourceById.get(e.resource_id)!));
+    });
+    const p1 = new Set(publicNotes.map((n) => n.id));
+    expect(p0.filter((n) => !p1.has(n.id))).toEqual([]);
+    expect([...p1].filter((id) => !p0.some((n) => n.id === id)).sort()).toEqual(["kn-level2-advantage", "kn-level2-minion-count"]);
+    expect(p0).toHaveLength(215);
+    expect(publicNotes).toHaveLength(217);
     // 追加した6件はすべて対象
     for (const id of ["kn-diagonal-objective-trade", "kn-diagonal-trade-exceptions", "kn-turret-plates-permanent-261", "kn-turret-plates-fell-14min-pre-261", "kn-objective-prep-1min", "kn-immobile-mage-not-alone"]) {
       expect(poolNotes.map((x) => x.id)).toContain(id);
@@ -223,8 +240,23 @@ describe("知識ノートを散策の対象にする", () => {
     // 旧仕様のノート：現行の仕様として表示しない
     const old = text(renderToStaticMarkup(<NotePage id="kn-turret-plates-fell-14min-pre-261" />));
     expect(old).toContain("現行では適用できない（仕様変更）");
+    // P1 で公開したノート：公開対象の資料の根拠だけを示し、公開対象でない資料へはリンクしない（存在だけを知らせる）
+    const mc = renderToStaticMarkup(<NotePage id="kn-level2-minion-count" />);
+    for (const r of ["res-riot-patch-26-1-en", "res-wiki-minion"]) expect(mc).toContain(`href="${resourceHref(r)}"`);
+    expect(mc).not.toContain(resourceHref("res-mobalytics-wave"));
+    expect(mc).not.toContain("mobalytics");
+    expect(mc).not.toContain("Mobalytics");
+    expect(text(mc)).toContain("未確認の参考情報あり：通常公開の対象ではない資料に基づく記録が1件あります");
+    // 流通する目安との一致は、確定的な主張（本文）から分け、未確認の参考情報として示す
+    expect(text(mc)).not.toMatch(/Lv2に達する。s*広く流通する/);
+    expect(text(mc)).toContain("未確認の参考情報：この計算の結果は、広く流通する");
+    const adv = renderToStaticMarkup(<NotePage id="kn-level2-advantage" />);
+    expect(adv).toContain(`href="${resourceHref("res-metabot-trading-2026")}"`);
+    expect(adv).not.toContain(resourceHref("res-sheep-level2-2026"));
+    expect(adv).not.toContain("Sheep Esports");
+    expect(text(adv)).not.toContain("1ウェーブ目でLv2に到達する手法");
     // 公開しないノート・存在しない ID は出さない
-    for (const id of ["kn-offense-as-defense", "kn-level2-minion-count", "no-such-note"]) {
+    for (const id of ["kn-offense-as-defense", "no-such-note"]) {
       expect(text(renderToStaticMarkup(<NotePage id={id} />))).toContain("知識ノートが見つかりません");
     }
   });
