@@ -93,7 +93,7 @@ describe("画面全体の描画", () => {
     expect(html).toContain("何を知りたいですか？");
     expect(html).toContain("質問の例");
     expect(html).toContain("Topicから探す");
-    expect(html).toContain("資料一覧 133件");
+    expect(html).toContain("資料一覧 134件"); // 2026-11-08 のローム収録のパイロットで公開資料が1件増えた
   });
 
   it("0件のとき、言い換えと絞り込み解除を案内する", () => {
@@ -105,9 +105,10 @@ describe("画面全体の描画", () => {
 
   it("一部一致のときは、条件に一致した資料と関連候補を分け、候補を条件ごとにまとめる", () => {
     // Phase 4B で Dopa のウェーブ管理を扱う資料を追加したため、検索語を VeigarV2 とロームの組み合わせに替えた
+    // 2026-11-08 のローム収録のパイロットで、Topic「ローム」の資料（res-loltheory-roaming）が関連候補に1件加わった（12件→13件）
     for (const q of ["VeigarV2 ローム", "VeigarV2のローム"]) {
       const html = text(renderToStaticMarkup(<SearchPage q={q} filters={{}} />));
-      expect(html, q).toContain("条件に一致：0件・認識できた条件に一致：0件・関連候補：12件");
+      expect(html, q).toContain("条件に一致：0件・認識できた条件に一致：0件・関連候補：13件");
       expect(html, q).toContain("すべての条件に一致する資料はありません");
       expect(html, q).toContain("発信者「Veigar v2」 にだけ一致");
       expect(html, q).toContain("Topic「ローム」 にだけ一致");

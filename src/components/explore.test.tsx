@@ -186,8 +186,9 @@ describe("知識ノートを散策の対象にする", () => {
     const p1 = new Set(publicNotes.map((n) => n.id));
     expect(p0.filter((n) => !p1.has(n.id))).toEqual([]);
     expect([...p1].filter((id) => !p0.some((n) => n.id === id)).sort()).toEqual(["kn-level2-advantage", "kn-level2-minion-count"]);
-    expect(p0).toHaveLength(215);
-    expect(publicNotes).toHaveLength(217);
+    // 2026-11-08 のローム収録のパイロットで、公開対象の資料だけを根拠にするノートを12件追加（P0・P1 の両方で対象）
+    expect(p0).toHaveLength(227);
+    expect(publicNotes).toHaveLength(229);
     // 追加した6件はすべて対象
     for (const id of ["kn-diagonal-objective-trade", "kn-diagonal-trade-exceptions", "kn-turret-plates-permanent-261", "kn-turret-plates-fell-14min-pre-261", "kn-objective-prep-1min", "kn-immobile-mage-not-alone"]) {
       expect(poolNotes.map((x) => x.id)).toContain(id);

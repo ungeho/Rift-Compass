@@ -35,11 +35,11 @@ test("すべての行を下書きにでき、status・確認レベルは昇格�
     // 原典の URL・著者・行の位置を保持する
     assert.ok(d.row && d.source && d.source.author);
   }
-  // 資料が付くのは、原典の URL が正式資料と一致する原典の行だけ（2026-11-01 時点：N・R、正式収録で H・K が加わった）
+  // 資料が付くのは、原典の URL が正式資料と一致する原典の行だけ（2026-11-01 時点：N・R、正式収録で H・K、2026-11-08 のローム収録のパイロットで P が加わった）
   const norm = normUrl;
   const formal = new Set(data.resources.map((r) => norm(r.url)));
   for (const d of ds) assert.strictEqual(Boolean(d.evidence.resource_id), Boolean(d.source.url && formal.has(norm(d.source.url))), d.row);
-  assert.deepStrictEqual([...new Set(ds.filter((d) => d.evidence.resource_id).map((d) => d.source.letter))].sort(), ["H", "K", "N", "R"]);
+  assert.deepStrictEqual([...new Set(ds.filter((d) => d.evidence.resource_id).map((d) => d.source.letter))].sort(), ["H", "K", "N", "P", "R"]);
 });
 
 test("相違・同じ著者・古い記述は、統合しない理由・注意として review に残す", () => {

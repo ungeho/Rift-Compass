@@ -431,7 +431,8 @@
   "decision": "candidate",
   "depth_confirmed": "deep",
   "method": "本文の全体（英語。図は未確認）",
-  "reason": "著者 Griffin Wood。ロームするロール、前提（押す・相手が見える・CD・味方）、機会費用（ウェーブ・プレート・キルの経験値の表）、時機、相手のロームへの対応、誘い、しないとき。知識15件（P1〜P15）"
+  "reason": "著者 Griffin Wood。ロームするロール、前提（押す・相手が見える・CD・味方）、機会費用（ウェーブ・プレート・キルの経験値の表）、時機、相手のロームへの対応、誘い、しないとき。知識15件（P1〜P15）",
+  "registered_as": "res-loltheory-roaming"
  },
  "https://lol-guide.com/articles/mjahs": {
   "checked_at": "2026-11-01",

@@ -124,7 +124,10 @@ describe("知識ノートの検索の規則", () => {
     const r = noteMatchesForQuery("スキルを外した相手");
     expect(r.matches.filter((m) => m.tier === "partial")).toEqual([]);
     const flash = noteMatchesForQuery("フラッシュ CD");
-    expect(flash.matches.filter((m) => m.tier === "full").map((m) => m.note.id)).toEqual(["kn-flash-cd", "kn-engage-when-flash-down"]);
+    // 2026-11-08 のローム収録で、主張に「マナ・CD」と「フラッシュ」の両方を含む kn-roam-prerequisites が加わった（ロームの前の確認として語の一致は正しい）
+    expect(flash.matches.filter((m) => m.tier === "full").map((m) => m.note.id)).toEqual(["kn-flash-cd", "kn-engage-when-flash-down", "kn-roam-prerequisites"]);
+    // 他のノートへの参照文（補足）にだけ語が現れるノートは、すべての条件に一致させない（ローム収録の監査 M1：補足の「重要な CD（フラッシュなど）」で偶然に完全一致していた）
+    expect(flash.matches.find((m) => m.note.id === "kn-roam-timing-windows")?.tier).not.toBe("full");
     expect(flash.matches.some((m) => m.tier === "partial")).toBe(true);
   });
 

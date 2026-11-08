@@ -122155,7 +122155,7 @@
    "loltheory-blog"
   ],
   "discovered_at": "2026-11-01",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-loltheory-roaming",
   "excerpt_features": {
    "roles": [],
    "topic_ids": [
@@ -122180,9 +122180,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "著者 Griffin Wood。ロームするロール、前提（押す・相手が見える・CD・味方）、機会費用（ウェーブ・プレート・キルの経験値の表）、時機、相手のロームへの対応、誘い、しないとき。知識15件（P1〜P15）",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-loltheory-roaming と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },

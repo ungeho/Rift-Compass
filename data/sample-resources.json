@@ -242,7 +242,7 @@
       "last_edited_at": "2026-08-22",
       "patch_context": { "stated_patch": "V26.01（変更履歴の最新記載）", "basis": "stated", "era": "current" },
       "access": { "free": true, "login_required": false },
-      "verification": { "level": "L3", "checked_at": "2026-10-27", "method": "webfetch", "notes": "Lv2=280XP、V26.01変更文を確認。ミニオン種別ごとのXP値はページ取得範囲内に記載なし。" }
+      "verification": { "level": "L3", "checked_at": "2026-10-27", "method": "webfetch", "notes": "Lv2=280XP、V26.01変更文を確認。ミニオン種別ごとのXP値はページ取得範囲内に記載なし。2026-11-08 に action=raw（2026-08-22 の版）で Champion kill bounties と履歴（V13.4・V14.10）を確認（ローム収録のパイロット）。" }
     },
     {
       "id": "res-wiki-cc-types",
@@ -326,7 +326,7 @@
       "published_at": null,
       "patch_context": { "stated_patch": null, "basis": "unknown", "era": "current" },
       "access": { "free": true, "login_required": false },
-      "verification": { "level": "L3", "checked_at": "2026-10-27", "method": "webfetch", "notes": "ページ前半（約45%）のみ取得。" }
+      "verification": { "level": "L3", "checked_at": "2026-10-27", "method": "webfetch", "notes": "ページ前半（約45%）のみ取得。2026-11-08 に action=raw（2026-10-13 の版）で Spawning・Wave Gold Value・V26.01 の履歴を確認（ローム収録のパイロット）。" }
     },
     {
       "id": "res-wiki-sight-ward",
@@ -1409,6 +1409,20 @@
       "patch_context": { "stated_patch": null, "basis": "inferred_from_date", "era": "season16" },
       "access": { "free": true, "login_required": false },
       "verification": { "level": "L3", "checked_at": "2026-11-01", "method": "fetch+本文抽出", "notes": "本文の全体を確認（英語、図は未確認。知識抽出の第2回 H1〜H18）。2026-08-25 更新。仕様の説明には、Wiki の Turret ページで照合したもの（第3回 U）と、照合していないものがある。" }
+    },
+    {
+      "id": "res-loltheory-roaming",
+      "url": "https://blog.loltheory.gg/roaming-lol/",
+      "title": "Roaming in League of Legends: When, How, and What It Costs",
+      "type": "article",
+      "language": "en",
+      "creator": { "name": "Griffin Wood (LoL Theory)", "kind": "media" },
+      "topic_ids": ["roaming", "role-mid"],
+      "summary_ja": "ローム（レーナーが持ち場を離れること）の判断。ロームするロールと向かないチャンピオン、離れる前の確認（ウェーブを押す・相手が見える・マナとCDとフラッシュ・味方が続ける・相手ジャングラーの位置）、機会費用（ウェーブ・プレート・キルの経験値の表）、時機、相手のロームへの対応、誘い、ロームしないとき、不利なとき、よくある誤りを扱う。",
+      "published_at": "2026-05-06",
+      "patch_context": { "stated_patch": null, "basis": "inferred_from_date", "era": "season16" },
+      "access": { "free": true, "login_required": false },
+      "verification": { "level": "L3", "checked_at": "2026-11-08", "method": "ブラウザで記事ページの本文を取得", "notes": "本文の全体と2つの表（ウェーブ・タワーのゴールド、キルの経験値）を確認（英語。記事に画像はない。知識抽出の第3回 P1〜P15）。著者・公開日・更新日（2026-08-25）は記事ページのメタデータで確認。ミニオンのゴールド・砲台の出現・キルの経験値の値は Wiki で照合したが、プレート・タワーのゴールドとキルのゴールドの一部は照合していない（docs/experiments/roaming-intake-pilot.md）。" }
     },
     {
       "id": "res-lg-qwgsg",
@@ -3426,7 +3440,8 @@
       "statement_ja": "大砲のウェーブは動く好機：ローム・リコールの前なら相手の処理に時間がかかり、ダイブなら相手が処理に追われて動きが制限され、スキルも当てやすい。",
       "topic_ids": ["wave-management", "tower-dive"],
       "status": "empirical",
-      "source_person": "ドネキフ塾（監修：Kreative）",
+      "notes_ja": "ロームの前の部分は、著者・言語の違う2つの原典が同じ判断を述べる（LoL Theory は、相手の処理が通常のウェーブより約6〜10秒長くなると目安を書く）。ダイブの部分の根拠はドネキフ塾だけ。",
+      "source_person": "ドネキフ塾（監修：Kreative）・Griffin Wood（LoL Theory）",
       "generalizability": "general",
       "patch_dependencies": [],
       "last_checked_patch": null
@@ -4553,6 +4568,157 @@
       "notes_ja": "Slow の定義（最も大きいスロウだけ）からの整理（Rift Compass の整理）。攻撃速度低下（cripple）は逆に乗算で重なる。ゲーム内では検証していない。",
       "patch_dependencies": ["system:crowd-control"],
       "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-definition-cost",
+      "kind": "principle",
+      "statement_ja": "ロームは、レーナーが持ち場のレーンを離れて別の場所に影響を与えること（ガンクは到着する側から見た呼び方）。ロームの価値は、得るもの（キル、相手にフラッシュを使わせる、プレート、視界など）と、離れている間に失うもの（CS・経験値、ウェーブを押していなければプレート、戻ったときの主導権）を比べて判断する。",
+      "topic_ids": ["roaming"],
+      "status": "empirical",
+      "notes_ja": "原典の目安：15分に2ウェーブを逃すと、小さな部品1つ分ほど。成果がなくても、相手にフラッシュを使わせ、自分のウェーブが相手のタワーに当たっていたなら悪くないこともある。原典は、押さずに離れると削られるプレートは Bulwark により1回の押しで通常1枚と書くが、その仕組みの説明（プレートを失うほど耐性が上がる）は Wiki に基づく kn-turret-bulwark（体力の割合で耐性のスタック）と書き方が違い、照合していないので主張に含めない。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-roles",
+      "kind": "principle",
+      "statement_ja": "ロームの主役はミッド（レーンが短く、川の入り口が近く、どのレーン・オブジェクトにも早く着く）。サポートが次で、CS は ADC が取るので失うのは主に経験値だが、育った相手のボットに ADC を1対2で残すと悪化する。トップはヘラルドの巣を除くどのオブジェクトからも最も遠く、歩いてのロームは着く前に戦いが終わっていることが多い（関わるなら主にテレポートで、それは別の判断）。",
+      "topic_ids": ["roaming", "role-mid", "role-support", "role-top"],
+      "status": "empirical",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "role_specific",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-immobile-mage",
+      "kind": "decision",
+      "statement_ja": "エンゲージも逃げる手段もない動けないコントロールメイジ（原典の例：ビクター・ゼラス・ベイガー）は、ロームしても到着先でキルの圧力を作れず、相手のミッドに CS を渡すだけになりやすい。ミッドでファームとプレートを取り、戦いが近くに来たときに参加できる状態でいる方が貢献しやすい。",
+      "topic_ids": ["roaming", "role-mid", "mage"],
+      "status": "empirical",
+      "conditions_ja": ["到着先でキルの圧力を作れないキット（エンゲージも逃げる手段もない）。チャンピオン名は原典の例"],
+      "exceptions_ja": ["不利なときでも、相手がロームに出たら反対側に回ってプレーできる（同じ原典の「不利なとき」の記述）"],
+      "notes_ja": "原典の言い方は「ロームすべきでない」だが、理由はキット（到着してキルの圧力を作れない）にある。kn-immobile-mage-not-alone（がりある）とは対象が近いが同じ主張ではない：あちらは視界がない・相手ジャングラーが怖いときに単独で動かないこと、こちらはロームそのものの損得。著者・言語が違う原典で、機動力の低いメイジが単独で動く価値は低いという方向は一致する。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "role_specific",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-prerequisites",
+      "kind": "decision",
+      "statement_ja": "ロームに出る前に、①ウェーブを押し切って相手のタワーに当てる ②相手のレーナーが見えている ③エンゲージのためのマナ・CD と、逃げるためのフラッシュがある ④味方が続ける（ピンで意図を伝え、返事を待つ）の4つを確かめる。相手ジャングラーの位置が分からなければ、視界を待つか、より深いジャングルの経路を通る（5つ目の確認）。",
+      "topic_ids": ["roaming", "wave-management", "jungle-tracking"],
+      "status": "empirical",
+      "conditions_ja": ["原典は、これらがそろわないロームを「コイン投げ」と呼ぶ"],
+      "notes_ja": "同じ原典の「よくある誤り」は、体力が低いまま出る（原典の例は体力40%で、CC1回で終わる）、ウェーブを押さずに川へ入る（相手のサポートがすぐにミッドの不在を知らせる。押してあれば相手は4〜8秒処理に追われる）、ワードなしで川に入る、味方の返事を待たずに出る、を挙げる。40%・4〜8秒は原典の例・目安で、閾値ではない。押してから動くことは kn-push-before-moving（ドネキフ塾）と同じ方向（別の著者）。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-wave-gold-siege-schedule",
+      "kind": "mechanic",
+      "statement_ja": "ミニオンのゴールドは近接20・キャスター14。砲台は時間とともに増え、Wiki の表では 0:30 で50・14:00 で59・25:00 で66・30:00 で69 として各時点のウェーブの価値を計算している。砲台は3ウェーブ目（1:30）から出て、14:00までは3ウェーブごと、14:00からは2ウェーブごと、25:00からは毎ウェーブ出る。14:00以降は砲台が出るウェーブで近接が1体減り、30:00以降はキャスターが1体減る（Wiki）。",
+      "topic_ids": ["wave-management"],
+      "status": "source_stated",
+      "notes_ja": "Wiki の Minion（2026-10-13 の版）の記載。砲台の出現の時刻は V26.01 で変わった（それ以前は4ウェーブ目から）。砲台のゴールドの増え方は、Wiki の Siege minion（2026-04-28 の版。正式資料には登録していない）に「50＋強化ごとに1」とある（強化は0:30から90秒ごと）。LoL Theory の表は砲台を「14:00まで50・14〜25分59・25分以降66」の段階として示しており、時間とともに少しずつ増える Wiki の説明を単純化している（相違として記録）。同じ仕様の説明なので、別の原典の独立した裏付けではない。",
+      "source_person": "League of Legends Wiki",
+      "patch_dependencies": ["system:minion-gold", "system:minion-spawn"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-champion-kill-xp",
+      "kind": "mechanic",
+      "statement_ja": "チャンピオンを倒したときの経験値（倒された側のレベル別）は、1人で受け取ると Lv1 42・Lv3 144・Lv6 234・Lv7 308・Lv9 486・Lv10 590、以降1レベルごとに+50。複数で分けるときの合計は、倒された側が Lv1〜6 なら66.6%・Lv7〜8 なら82%・Lv9以上なら90%になり、受け取る全員で等分する（Wiki）。",
+      "topic_ids": ["experience"],
+      "status": "source_stated",
+      "conditions_ja": ["倒れた位置から1600ユニット以内の味方が分け合う。キル・アシストを取った味方は、範囲や生死に関係なく受け取る（Wiki）"],
+      "exceptions_ja": ["受け取る側と倒された側のレベル差で、受け取る側ごとに増減する（Wiki の Comeback Bonus/Penalty）"],
+      "notes_ja": "値は V13.4、共有の比率は V14.10 の変更（Wiki の Experience (champion)、2026-08-22 の版）。LoL Theory の表も同じ値で、Lv6→Lv9 で1人の経験値がほぼ2倍になるので、Lv9 前のロームの成功は相手を大きく遅らせると説明する（著者の読み）。原典のキルのゴールド（同レベルのキルで約300）は照合していない。",
+      "source_person": "League of Legends Wiki",
+      "patch_dependencies": ["system:kill-xp"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-timing-windows",
+      "kind": "decision",
+      "statement_ja": "リコールの後はロームの好機になりやすい。押してからリコールしたなら、レーンに戻る前に、戻ってくるウェーブを待つ間に川を通って他のレーンへ寄れる。また、リコールした直後にミッドへ戻らず別のレーンへ向かうと、リコールを見た相手が警戒を緩めている間（原典は10〜20秒ほどと書く）に着ける。",
+      "topic_ids": ["roaming", "recall"],
+      "status": "empirical",
+      "conditions_ja": ["リコール直後に別のレーンへ向かうのは、向かう先に捕まえる手段（味方のイニシエートや味方ジャングラー）があるときに効く（原典）"],
+      "exceptions_ja": ["自分も向かう先もエンゲージがないと、相手は姿を見てから離れられる（原典の例：ゼラスは向かない）"],
+      "notes_ja": "10〜20秒は原典の目安。同じ原典の時機のうち、砲台のウェーブを押してから離れる時機は kn-cannon-wave-timing、相手のミッドがフラッシュを使った後の時機は kn-engage-when-flash-down に根拠として加えた。原典が同じ節で挙げる、相手がウルトでウェーブを処理した後（次の1分ほど）の時機は収録していない。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-enemy-roam-response",
+      "kind": "decision",
+      "statement_ja": "相手のミッドがロームしたら、追うのは着いて戦いを変えられるときだけ（味方ジャングラーが合わせている、行き先が近い、仕掛けるか守る手段がある）。間に合わないなら反対側で利益を取り（サイドレーンへの圧力・プレート・反対側のオブジェクト）、どちらもできなければ相手のウェーブを相手のタワーに押し、戻り道で相手のラプター・クルーグを取る。",
+      "topic_ids": ["roaming", "role-mid", "cat-macro"],
+      "status": "empirical",
+      "conditions_ja": ["反対側で利益を取る価値は、トップ側の方が大きい（普段は2人しかいないので人数差が大きい）。ボット側は既に4人いて、1人の追加の影響が小さい（原典）"],
+      "exceptions_ja": ["ドラゴンが出ている・まもなく出るときに、相手がトップへロームしたのを追うと、ドラゴンを失いやすい（原典。ジャングラーが90秒後のドラゴンを前にトップ側の相手に合わせる場合も同じ）"],
+      "notes_ja": "追っても毎回間に合わないなら、やり方が間違っているサイン（同じ原典の「よくある誤り」）。反対側で利益を取ることは kn-diagonal-objective-trade（がりある：相手がオブジェクトに人数をかけたとき）と同じ方向だが、こちらは相手のロームが起点。試験表示の判断材料 du-roam-do-not-chase・du-roam-counter-action も同じ方向（判断材料は試験データなので、関係は結んでいない）。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-bait",
+      "kind": "decision",
+      "statement_ja": "相手がロームにすぐ反応してくるなら、誘いが使える：川に向かって見せてから戻ってウェーブを押す（圧力だけのフェイク）、または川で追ってきた相手に振り向いて倒す（川の視界と、近距離の1対1に強いキットが要る）。逆に、近距離の1対1に強く視界を取れる相手（原典の例：ゼド・タロン・フィズ・カタリナ）が、コントロールワードを置いて川の近くの自陣で見えなくなったら、誘いを疑い、見えないまま追わずにウェーブを押して情報を待つ。",
+      "topic_ids": ["roaming", "role-mid", "vision"],
+      "status": "empirical",
+      "conditions_ja": ["誘いが効くかはレートに依存する。低レートでは相手が反応しないことが多く、そのときはウェーブを押せるか、ロームをそのまま成功させられる（原典）"],
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-when-not",
+      "kind": "decision",
+      "statement_ja": "ロームしない方がよいとき：ロームでオブジェクトの争いと反対側に行くことになる、自分のウェーブが自分側に押されてくる、相手のミッドに押し込まれている、相手ジャングラーやグローバルの R を持つチャンピオン（原典の例：シェン・ツイステッド・フェイト・パンテオン）の位置が見えない。",
+      "topic_ids": ["roaming", "wave-management", "jungle-tracking"],
+      "status": "empirical",
+      "exceptions_ja": ["オブジェクトの前でも、ボットへのロームがドラゴンの戦いの準備になるなら正しいことがある。問うべきは、ロームで争いに近づくか遠ざかるか（原典）"],
+      "notes_ja": "原典の例：ドラゴンが90秒後に湧き、相手ジャングラーがボット側にいるときのトップへのローム。ウェーブが自分側に来るときは、ウェーブを直してから行く。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-when-behind",
+      "kind": "decision",
+      "statement_ja": "不利なときのロームは「0/2ならロームしない」ほど単純ではない。レーンを捨てて他の場所で勝ちを狙うか、自分のレーンの被害を抑えてウェーブを早く処理し、相手をレーンに縛るか（相手がロームに出たら反対側に回る）を選ぶ。互角のときと同じロームを繰り返さない（キルの圧力がなく、またデスすると差が広がる）。",
+      "topic_ids": ["roaming", "playing-from-behind"],
+      "status": "empirical",
+      "conditions_ja": ["被害を抑える側は、不利なときにロームが苦手なチャンピオン（原典の例：エンゲージのないコントロールメイジで、レベルも負けている）に向く"],
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-roam-destination-and-return",
+      "kind": "decision",
+      "statement_ja": "ロームの行き先は、すでに大きく勝っているレーンより、負けているレーンの方が効果が大きい。仕掛けた後は長居せずに戻る（成功しても、茂みで余計に待つ時間は何も得ずに損になる。往復が長いほど元を取りにくい）。",
+      "topic_ids": ["roaming"],
+      "status": "empirical",
+      "conditions_ja": ["原典の例：4/0 のボットへのロームは見返りが小さい。4/0 は例で閾値ではない"],
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
     }
   ],
   "evidence": [
@@ -4874,7 +5040,23 @@
     { "id": "ev-317", "note_id": "kn-derived-qss-not-for-knockup", "resource_id": "res-wiki-tip-data", "evidence_type": "derivation", "locator": { "section": "Template:Tip data/Airborne（removal）" }, "summary_ja": "4つの浄化はノックアップの状態異常を外さない（前提）", "checked_level": "L3", "checked_at": "2026-11-03" },
     { "id": "ev-318", "note_id": "kn-derived-qss-not-for-knockup", "resource_id": "res-wiki-tip-data", "evidence_type": "derivation", "locator": { "section": "Template:Tip data/Suppression（removal）" }, "summary_ja": "クレンズとミカエルの祝福の例外（前提）", "checked_level": "L3", "checked_at": "2026-11-03" },
     { "id": "ev-319", "note_id": "kn-derived-slows-not-additive", "resource_id": "res-wiki-tip-data", "evidence_type": "derivation", "locator": { "section": "Template:Tip data/Slow（description2）" }, "summary_ja": "最も大きいスロウだけ（前提）", "checked_level": "L3", "checked_at": "2026-11-03" },
-    { "id": "ev-320", "note_id": "kn-derived-slows-not-additive", "resource_id": "res-wiki-tip-data", "evidence_type": "derivation", "locator": { "section": "Template:Tip data/Cripple（description2）" }, "summary_ja": "攻撃速度低下は乗算で重なる（対比）", "checked_level": "L3", "checked_at": "2026-11-03" }
+    { "id": "ev-320", "note_id": "kn-derived-slows-not-additive", "resource_id": "res-wiki-tip-data", "evidence_type": "derivation", "locator": { "section": "Template:Tip data/Cripple（description2）" }, "summary_ja": "攻撃速度低下は乗算で重なる（対比）", "checked_level": "L3", "checked_at": "2026-11-03" },
+    { "id": "ev-321", "note_id": "kn-roam-definition-cost", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "冒頭 / The Opportunity Cost of a Roam" }, "summary_ja": "ロームとガンクの違い（離れる側と到着する側）、ロームの機会費用（CS・経験値、プレート、主導権）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-322", "note_id": "kn-roam-roles", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Which Roles Roam (and Which Ones Should Not)" }, "summary_ja": "ミッドが主、サポートが次（ADC を1対2に残す制約）、トップはまれでテレポートが中心", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-323", "note_id": "kn-roam-immobile-mage", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Which Roles Roam (and Which Ones Should Not)" }, "summary_ja": "動けないコントロールメイジ（ビクター・ゼラス・ベイガー）はロームより、ミッドでファーム・プレートを取り戦いに備える", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-324", "note_id": "kn-roam-prerequisites", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "What Has to Be True Before You Roam / Common Roaming Mistakes" }, "summary_ja": "離れる前の4つの確認（押す・相手が見える・マナとCDとフラッシュ・味方が続ける）と、相手ジャングラーの位置の5つ目の確認。誤りの節の低体力・押さずに離れる・視界なし・返事なし", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-325", "note_id": "kn-wave-gold-siege-schedule", "resource_id": "res-wiki-minion", "evidence_type": "source_fact", "locator": { "section": "Spawning / Wave Gold Value（2026-10-13 の版、action=raw）" }, "summary_ja": "近接20・キャスター14・砲台50/59/66/69、砲台は3ウェーブ目から14:00まで3ごと・25:00まで2ごと・以降毎回", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-326", "note_id": "kn-wave-gold-siege-schedule", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "The Opportunity Cost of a Roam（表）/ Roam Timing Windows" }, "summary_ja": "同じ値・出現の間隔の説明（LoL Theory）。砲台のゴールドは時間帯ごとの段階として単純化して示す（30:00以降の69は記載なし）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-327", "note_id": "kn-champion-kill-xp", "resource_id": "res-wiki-experience", "evidence_type": "source_fact", "locator": { "section": "Champion kill bounties（2026-08-22 の版、action=raw）" }, "summary_ja": "1人の経験値 42;114;144;174;204;234;308;392;486;590、以降+50。共有は66.6%・82%・90%", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-328", "note_id": "kn-champion-kill-xp", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "The Opportunity Cost of a Roam（キルの経験値の表）" }, "summary_ja": "同じ値の説明（LoL Theory）。Lv6→Lv9 でほぼ2倍という著者の読み", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-329", "note_id": "kn-roam-timing-windows", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Roam Timing Windows（After a recall / Right after a base）" }, "summary_ja": "リコールの後、リコール直後に別のレーンへ（相手が10〜20秒警戒を緩める。捕まえる手段がある行き先で効く）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-330", "note_id": "kn-enemy-roam-response", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Reading the Enemy: When They Roam, What to Do" }, "summary_ja": "追うのは着いて役立てるときだけ、間に合わなければ反対側、どちらもできなければ相手のウェーブ・ラプター・クルーグ。ドラゴンが出ているときにトップへ追うとドラゴンを失う", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-331", "note_id": "kn-roam-bait", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Bait Roams (Yours) and Counter-Baiting (Theirs)" }, "summary_ja": "圧力だけのフェイクと川での返り討ち。レートに依存。近距離に強い相手（ゼド・タロン・フィズ・カタリナ）が見えなくなったら追わない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-332", "note_id": "kn-roam-when-not", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "When NOT to Roam" }, "summary_ja": "オブジェクトと逆側、ウェーブが自分側に来る、押し込まれている、相手ジャングラー・グローバルの R の位置が見えない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-333", "note_id": "kn-roam-when-behind", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "When NOT to Roam（roaming when you are behind）" }, "summary_ja": "0/2ならロームしないは単純すぎる。レーンを捨てるか、被害を抑えて相手を縛るか。同じロームを繰り返さない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-334", "note_id": "kn-roam-destination-and-return", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Common Roaming Mistakes" }, "summary_ja": "勝っているレーン（4/0）へ行く、戻るのを忘れる（茂みで20秒余計に待つ）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-335", "note_id": "kn-cannon-wave-timing", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Roam Timing Windows（The cannon wave）" }, "summary_ja": "砲台のウェーブを相手のタワーに当ててから離れると、相手は通常のウェーブより約6〜10秒長く処理に追われる（LoL Theory。秒数は原典の目安）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-336", "note_id": "kn-engage-when-flash-down", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Roam Timing Windows（After the enemy uses a key cooldown）" }, "summary_ja": "相手のミッドがフラッシュを使ったら、その後5分ほどは相手のレーンと相手がロームする先がガンクしやすい（LoL Theory）", "checked_level": "L3", "checked_at": "2026-11-08" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },
@@ -5041,6 +5223,15 @@
     { "id": "rel-162", "from": "kn-cc-immune-existing", "to": "kn-stasis-unremovable", "type": "context_of" },
     { "id": "rel-163", "from": "kn-channel-interrupt-cc", "to": "kn-cc-root", "type": "context_of" },
     { "id": "rel-164", "from": "kn-untargetable-applied-effects", "to": "kn-execute-limits", "type": "context_of" },
-    { "id": "rel-165", "from": "kn-resurrection-priority", "to": "kn-execute-limits", "type": "context_of" }
+    { "id": "rel-165", "from": "kn-resurrection-priority", "to": "kn-execute-limits", "type": "context_of" },
+    { "id": "rel-166", "from": "kn-roam-immobile-mage", "to": "kn-immobile-mage-not-alone", "type": "context_of" },
+    { "id": "rel-167", "from": "kn-roam-timing-windows", "to": "kn-cannon-wave-timing", "type": "context_of" },
+    { "id": "rel-168", "from": "kn-roam-timing-windows", "to": "kn-engage-when-flash-down", "type": "context_of" },
+    { "id": "rel-169", "from": "kn-enemy-roam-response", "to": "kn-diagonal-objective-trade", "type": "context_of" },
+    { "id": "rel-170", "from": "kn-roam-when-not", "to": "kn-roam-prerequisites", "type": "context_of" },
+    { "id": "rel-171", "from": "kn-roam-when-behind", "to": "kn-no-priority-wait", "type": "context_of" },
+    { "id": "rel-172", "from": "kn-push-before-moving", "to": "kn-roam-prerequisites", "type": "context_of" },
+    { "id": "rel-173", "from": "kn-wave-gold-siege-schedule", "to": "kn-roam-definition-cost", "type": "reason_for" },
+    { "id": "rel-174", "from": "kn-champion-kill-xp", "to": "kn-roam-definition-cost", "type": "reason_for" }
   ]
 }
