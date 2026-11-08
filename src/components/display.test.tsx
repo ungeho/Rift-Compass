@@ -93,7 +93,7 @@ describe("画面全体の描画", () => {
     expect(html).toContain("何を知りたいですか？");
     expect(html).toContain("質問の例");
     expect(html).toContain("Topicから探す");
-    expect(html).toContain("資料一覧 134件"); // 2026-11-08 のローム収録のパイロットで公開資料が1件増えた
+    expect(html).toContain("資料一覧 135件"); // 2026-11-08 のローム収録のパイロットと、同日のスプリットプッシュの収録で公開資料が1件ずつ増えた
   });
 
   it("0件のとき、言い換えと絞り込み解除を案内する", () => {

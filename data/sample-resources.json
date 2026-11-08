@@ -1425,6 +1425,20 @@
       "verification": { "level": "L3", "checked_at": "2026-11-08", "method": "ブラウザで記事ページの本文を取得", "notes": "本文の全体と2つの表（ウェーブ・タワーのゴールド、キルの経験値）を確認（英語。記事に画像はない。知識抽出の第3回 P1〜P15）。著者・公開日・更新日（2026-08-25）は記事ページのメタデータで確認。ミニオンのゴールド・砲台の出現・キルの経験値の値は Wiki で照合したが、プレート・タワーのゴールドとキルのゴールドの一部は照合していない（docs/experiments/roaming-intake-pilot.md）。" }
     },
     {
+      "id": "res-loltheory-split-push",
+      "url": "https://blog.loltheory.gg/split-push-lol/",
+      "title": "What Is Split Pushing in LoL? (And How to Do It)",
+      "type": "article",
+      "language": "en",
+      "creator": { "name": "Griffin Wood (LoL Theory)", "kind": "media" },
+      "topic_ids": ["cat-macro", "role-top"],
+      "summary_ja": "スプリットプッシュ（味方が別の場所にいる間に1人でサイドレーンを押す）の判断。成り立つ条件（1対1の脅威・ウェーブクリア・逃げ）、相手の3つの選択肢、1-3-1・1-4 という呼び方、テレポートの使い方、Reinforced Armor とインヒビター、向くチャンピオン、するとき・しないとき、失敗の型、バックドアとの違いを扱う。",
+      "published_at": "2026-05-06",
+      "patch_context": { "stated_patch": null, "basis": "inferred_from_date", "era": "season16" },
+      "access": { "free": true, "login_required": false },
+      "verification": { "level": "L3", "checked_at": "2026-11-08", "method": "ブラウザで記事ページの本文を取得", "notes": "本文の全体を確認（英語。記事に画像・表はない。知識抽出の第2回 I1〜I14）。著者・公開日・更新日（2026-11-07。抽出記録の時点は 2026-08-25 版）は記事ページのメタデータで確認。トップのロールクエストのテレポート（CD 390秒・シールド）は既存の Wiki のノートと一致。テレポートの基本の値・インヒビターの値は Wiki の該当ページ（正式資料に未登録）と照合しただけで、根拠にはしていない（docs/experiments/split-push-intake-pilot.md）。" }
+    },
+    {
       "id": "res-lg-qwgsg",
       "url": "https://www.lol-guide.com/articles/qwgsg",
       "title": "タワーダイブのやり方、コツを解説！",
@@ -2425,7 +2439,7 @@
       "statement_ja": "相手が一方のサイドのオブジェクトに人数をかけたら、反対側でタワー・オブジェクトなどの利益を取り、損を交換にする。",
       "topic_ids": ["decision-making", "cat-macro"],
       "status": "empirical",
-      "notes_ja": "根拠の3件はいずれも同じ著者（がりある）で、独立した裏付けではない。別の著者（ゆにか〔kldll〕、LoL Theory〔split-push〕）の同じ主張は、原典が正式資料になれば根拠に追加できる。",
+      "notes_ja": "根拠の3件はいずれも同じ著者（がりある）で、独立した裏付けではない。別の著者（ゆにか〔kldll〕、LoL Theory〔split-push〕）の同じ主張は、原典が正式資料になれば根拠に追加できる。2026-11-08 に LoL Theory の split-push の記事（res-loltheory-split-push）を正式資料にしたが、このノートの根拠には加えず、別のノート（kn-split-push-forced-choice）にした。あちらは攻める側がサイドを押して守る側に3つの選択肢を迫る判断で、相手が先に人数をかけたときの反対側の利益を述べるこのノートとは起点が違う（方向は同じ。著者は別）。",
       "source_person": "がりある",
       "generalizability": "general",
       "patch_dependencies": [],
@@ -4719,6 +4733,136 @@
       "generalizability": "general",
       "patch_dependencies": [],
       "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-requirements",
+      "kind": "decision",
+      "statement_ja": "スプリットプッシュ（味方が別の場所にいる間に1人でサイドレーンを押す）で相手に対応を迫れるのは、押す側が1対1で脅威になり、ウェーブを押し続けるウェーブクリアと、2人来たときに逃げる機動力を持つときだけ。そうでなければ相手は無視でき、4対5を渡すことになる。",
+      "topic_ids": ["cat-macro", "role-top"],
+      "status": "empirical",
+      "exceptions_ja": ["相手のトップが来て1対1に勝つと、スプリットは崩れ、相手はタワーの有利を持ったまま5対4になる。1対1に勝つか、逃げられることが条件（原典）"],
+      "notes_ja": "原典は Wiki のバックドアの対策の記述（逃げる手段がないと敵陣の奥で1人でいるのは危険）を引用し、ウェーブを速く押せても、決闘の強さか機動力がないチャンピオンはスプリットプッシャーではないと書く。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-forced-choice",
+      "kind": "principle",
+      "statement_ja": "スプリットプッシュでサイドのウェーブが相手のタワーを叩き始めると、守る側の選択肢は3つで、どれも損がある：1人で合わせる（ほかの場所が4対4になる）、2人以上で合わせる（オブジェクトの周りが4対3になる）、無視する（タワーを失い、続けて建物を取られればインヒビターの圧力になる）。",
+      "topic_ids": ["cat-macro"],
+      "status": "empirical",
+      "conditions_ja": ["1人で合わせられたときに得をするのは、味方が4対4で強いとき（原典）"],
+      "notes_ja": "対角線の交換（kn-diagonal-objective-trade、がりある）は、相手が人数をかけた側の反対で利益を取る判断で、攻める側から見ると同じ方向の考え。著者は別。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-131-14",
+      "kind": "principle",
+      "statement_ja": "「1-3-1」「1-4」は、コーチングや配信で使われるコミュニティの略語で、Wiki の用語ではない。1-3-1 は両サイドに1人ずつ・中央かオブジェクトの周りに3人（相手は両方のサイドに合わせると中央を手放す）、1-4 は1人がサイドを押し、4人がまとまって戦いかオブジェクトを迫る配置を指す。",
+      "topic_ids": ["cat-macro"],
+      "status": "empirical",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-tp-pattern",
+      "kind": "decision",
+      "statement_ja": "スプリットプッシュとテレポートの型：サイドのウェーブを相手のタワーに押し込む → オブジェクトが湧き、相手が寄る → 戦いの場にある味方のワードかミニオンにテレポートする。戦いは5対5（守りの1人がサイドに残れば5対4）になり、味方はサイドを押した分のマクロの有利を持つ。",
+      "topic_ids": ["cat-macro", "summoner-spells", "role-top"],
+      "status": "empirical",
+      "exceptions_ja": ["敵陣内のワードにテレポートすると、チャネルを始めたときに敵が視界を得られるほど近ければ、そのワードが見つかる（原典）"],
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-inhibitor-no-reinforced",
+      "kind": "mechanic",
+      "statement_ja": "（LoL Theory の説明）インヒビターとネクサスには Reinforced Armor がなく、ミニオンがいなくてもチャンピオンのダメージをそのまま受ける。そのため、インヒビターのタワーを壊した速いスプリットプッシャーは、すぐにインヒビターまで削れる。",
+      "topic_ids": ["cat-macro", "tower-dive"],
+      "status": "empirical",
+      "notes_ja": "Wiki の Turret（2026-10-08 の版）では Reinforced Armor はタワーの性質として書かれ、Wiki の Inhibitor（2026-09-29 の版。正式資料に未登録）に Reinforced Armor の記載はない。インヒビター・ネクサスにないことを Wiki が明記しているかは確認していない（反対の記述も見つけていない）。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-pusher-traits",
+      "kind": "principle",
+      "statement_ja": "スプリットプッシャーに求められる性質（原典）：ウェーブクリア（速くタワーに当てて Reinforced Armor を外す）、決闘の強さ（相手のトップに1対1で勝つか生き残る）、機動力・逃げる手段（1対2の詰めから生き残る）、CD 中でもウェーブを処理できること（次のウェーブが相手のタワーに着く前に処理する）。",
+      "topic_ids": ["cat-macro", "role-top"],
+      "status": "empirical",
+      "notes_ja": "原典の例：トリンダメア・フィオラ・カミール・ジャックス・ヨリック・ナサス。アイテムでは、原典はハルブレイカーをスプリットプッシュ用のアイテムとし、スペルブレードのアイテム（シーン・トリニティ・フォース・アイスボーン・ガントレット・リッチ・ベイン）もタワーへの追加ダメージがあると書く。チャンピオン・アイテムの効果は照合していない。原典は「次のウェーブは30秒後」と書くが、Wiki の Minion（2026-10-13 の版）では30秒は14:00までの間隔で、14:00から25秒・30:00から20秒（V26.01）。Wiki にスプリットプッシャーというチャンピオンの分類はない（原典）。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-before-objective",
+      "kind": "decision",
+      "statement_ja": "スプリットプッシュは、オブジェクトが湧く30〜60秒前には始めておく。ドラゴンが30秒後に湧くときにはもうトップを押しているべきで、湧く10秒前に回り始めるのでは遅い。オブジェクトの争いが始まる前に脅威ができていないと、相手はサイドを無視して5人でオブジェクトを取る。",
+      "topic_ids": ["cat-macro", "role-top"],
+      "status": "empirical",
+      "conditions_ja": ["スプリットする側の時機。オブジェクトの側の味方の準備（約1分前までのリコール）とは役割が違う", "30〜60秒は原典の目安"],
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-when",
+      "kind": "decision",
+      "statement_ja": "オブジェクトの時機に加えて、スプリットプッシュが正しいのは、味方の4人が4対5か4対4で戦えるとき、レーンかアイテムで有利なとき（原典の例：0/3 では決闘に負ける）、相手の構成に速いウェーブクリアがないとき（原典の例：シヴィア・カーサス・ジグスの構成では、次のウェーブで押し返される）。",
+      "topic_ids": ["cat-macro"],
+      "status": "empirical",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-when-not",
+      "kind": "decision",
+      "statement_ja": "スプリットプッシュが誤りになるのは、相手に複数のテレポートがある（合わせてから戦いに戻れる）、見つけたら1人で倒しに来る構成がある（原典の例：カミール・ノクターン・ジャーヴァン）、味方が人数の有利があっても4対4に勝てないほど不利なとき。",
+      "topic_ids": ["cat-macro"],
+      "status": "empirical",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-failures",
+      "kind": "decision",
+      "statement_ja": "スプリットプッシュの失敗の型：味方4人が4対5で全滅する（次に5人で来られ、テレポートも使っている）、テレポートが CD 中で戦いに入れない（リコール後のレーン復帰に使っていた）、相手がサイドを無視してバロンを取る（多くの場面で、4人のバロンとバフはサイドのタワー1本より大きい）、ウェーブがなく Reinforced Armor で建物を削れない、取ったインヒビターが復活するまでに勝ちにつなげられない。",
+      "topic_ids": ["cat-macro"],
+      "status": "empirical",
+      "notes_ja": "インヒビターの復活（5分）は Wiki の Inhibitor（正式資料に未登録）と一致。原典は、取ったインヒビターを5分以内にバロン・ネクサスのタワー・集団戦の勝ちにつなげないとマップが戻る、と書く。Reinforced Armor の軽減（80%）は Wiki の Turret の記載。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-split-push-vs-backdoor",
+      "kind": "principle",
+      "statement_ja": "スプリットプッシュとバックドアは、味方のウェーブとの関係で違う。スプリットプッシュは見せて相手に対応させる圧力（ウェーブがあり、押していることは相手に分かっている）。バックドアは、相手がオブジェクトにいる間に視界を避けて本陣に入り、味方のウェーブなしでインヒビターかネクサスを直接叩き、相手が戻れないことに賭ける。1試合の中で一方が他方に変わる（原典の例：バロン前にサイドを押す → テレポートで集団戦に入る → 勝てば押したウェーブが守りのいないインヒビターを叩く）。",
+      "topic_ids": ["cat-macro"],
+      "status": "empirical",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
     }
   ],
   "evidence": [
@@ -5056,7 +5200,20 @@
     { "id": "ev-333", "note_id": "kn-roam-when-behind", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "When NOT to Roam（roaming when you are behind）" }, "summary_ja": "0/2ならロームしないは単純すぎる。レーンを捨てるか、被害を抑えて相手を縛るか。同じロームを繰り返さない", "checked_level": "L3", "checked_at": "2026-11-08" },
     { "id": "ev-334", "note_id": "kn-roam-destination-and-return", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Common Roaming Mistakes" }, "summary_ja": "勝っているレーン（4/0）へ行く、戻るのを忘れる（茂みで20秒余計に待つ）", "checked_level": "L3", "checked_at": "2026-11-08" },
     { "id": "ev-335", "note_id": "kn-cannon-wave-timing", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Roam Timing Windows（The cannon wave）" }, "summary_ja": "砲台のウェーブを相手のタワーに当ててから離れると、相手は通常のウェーブより約6〜10秒長く処理に追われる（LoL Theory。秒数は原典の目安）", "checked_level": "L3", "checked_at": "2026-11-08" },
-    { "id": "ev-336", "note_id": "kn-engage-when-flash-down", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Roam Timing Windows（After the enemy uses a key cooldown）" }, "summary_ja": "相手のミッドがフラッシュを使ったら、その後5分ほどは相手のレーンと相手がロームする先がガンクしやすい（LoL Theory）", "checked_level": "L3", "checked_at": "2026-11-08" }
+    { "id": "ev-336", "note_id": "kn-engage-when-flash-down", "resource_id": "res-loltheory-roaming", "evidence_type": "empirical_claim", "locator": { "section": "Roam Timing Windows（After the enemy uses a key cooldown）" }, "summary_ja": "相手のミッドがフラッシュを使ったら、その後5分ほどは相手のレーンと相手がロームする先がガンクしやすい（LoL Theory）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-337", "note_id": "kn-split-push-requirements", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "冒頭 / The 1v1 Pressure Condition" }, "summary_ja": "1対1の脅威・ウェーブクリア・逃げる機動力がなければ無視され4対5。相手のトップに決闘で負ければ5対4", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-338", "note_id": "kn-split-push-forced-choice", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "How Split Push Works: The 4v5 Math" }, "summary_ja": "守る側の3つの選択肢（1人・2人以上・無視）とそれぞれの損", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-339", "note_id": "kn-split-131-14", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "The 1-3-1 and 1-4 Setups (Editorial Shorthand)" }, "summary_ja": "1-3-1・1-4 はコミュニティの略語。配置の説明", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-340", "note_id": "kn-role-quest-top-current", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Teleport: The Global Pressure Lever" }, "summary_ja": "トップのロールクエストの報酬：追加のアンリーシュド・テレポート（CD 390秒）、テレポートを持っていればチャネル後に最大体力35%のシールド（10秒）（LoL Theory の説明、2026-11-07 の版）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-341", "note_id": "kn-split-push-tp-pattern", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Teleport: The Global Pressure Lever" }, "summary_ja": "サイドを押す → オブジェクト → 相手が寄る → 戦いの場のワード・ミニオンにテレポート。敵陣内のワードは見つかることがある", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-342", "note_id": "kn-inhibitor-no-reinforced", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Reinforced Armor and Why Side Wave Timing Matters" }, "summary_ja": "インヒビターとネクサスには Reinforced Armor がない。インヒビターのタワーを割ればすぐインヒビターまで削れる", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-343", "note_id": "kn-split-pusher-traits", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "What Makes a Good Split Pusher" }, "summary_ja": "ウェーブクリア・決闘・機動力・CD 中のウェーブ処理の4つ。チャンピオンとアイテムの例", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-344", "note_id": "kn-split-push-before-objective", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "When to Split Push (and When to Group)" }, "summary_ja": "オブジェクトが30〜60秒後に湧くとき。30秒前には押していて、10秒前に回り始めるのでは遅い", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-345", "note_id": "kn-split-push-when", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "When to Split Push (and When to Group)" }, "summary_ja": "4対5・4対4で戦える、レーン・アイテムの有利、相手に速いウェーブクリアがない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-346", "note_id": "kn-split-push-when-not", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "When to Split Push (and When to Group)" }, "summary_ja": "相手に複数のテレポート、1人で倒しに来る構成、4対4でも勝てないほど不利", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-347", "note_id": "kn-split-push-failures", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Failure Modes" }, "summary_ja": "4対5の全滅、テレポートが CD、相手がバロン、Reinforced Armor で削れない、インヒビターの復活", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-348", "resource_id": "res-wiki-turret", "evidence_type": "source_fact", "locator": { "section": "Reinforced Armor（2026-10-08 の版、action=raw）" }, "summary_ja": "近くに敵のミニオン・召喚されたヘラルドがいないと、タワーは確定ダメージを含め80%軽減", "checked_level": "L3", "checked_at": "2026-11-08", "note_id": "kn-split-push-failures" },
+    { "id": "ev-349", "note_id": "kn-split-push-vs-backdoor", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Split Push vs. Backdoor" }, "summary_ja": "見せる圧力と見えない奇襲。1試合の中で一方が他方に変わる例", "checked_level": "L3", "checked_at": "2026-11-08" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },
@@ -5232,6 +5389,14 @@
     { "id": "rel-171", "from": "kn-roam-when-behind", "to": "kn-no-priority-wait", "type": "context_of" },
     { "id": "rel-172", "from": "kn-push-before-moving", "to": "kn-roam-prerequisites", "type": "context_of" },
     { "id": "rel-173", "from": "kn-wave-gold-siege-schedule", "to": "kn-roam-definition-cost", "type": "reason_for" },
-    { "id": "rel-174", "from": "kn-champion-kill-xp", "to": "kn-roam-definition-cost", "type": "reason_for" }
+    { "id": "rel-174", "from": "kn-champion-kill-xp", "to": "kn-roam-definition-cost", "type": "reason_for" },
+    { "id": "rel-175", "from": "kn-split-push-requirements", "to": "kn-split-push-forced-choice", "type": "condition_of" },
+    { "id": "rel-176", "from": "kn-split-push-forced-choice", "to": "kn-diagonal-objective-trade", "type": "context_of" },
+    { "id": "rel-177", "from": "kn-inhibitor-no-reinforced", "to": "kn-turret-reinforced-armor", "type": "context_of" },
+    { "id": "rel-178", "from": "kn-split-pusher-traits", "to": "kn-split-push-requirements", "type": "refines" },
+    { "id": "rel-179", "from": "kn-split-push-before-objective", "to": "kn-objective-prep-1min", "type": "context_of" },
+    { "id": "rel-180", "from": "kn-split-push-when", "to": "kn-split-push-before-objective", "type": "context_of" },
+    { "id": "rel-181", "from": "kn-split-push-when-not", "to": "kn-split-push-when", "type": "context_of" },
+    { "id": "rel-182", "from": "kn-turret-reinforced-armor", "to": "kn-split-push-failures", "type": "reason_for" }
   ]
 }

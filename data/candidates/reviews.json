@@ -376,7 +376,8 @@
   "decision": "candidate",
   "depth_confirmed": "deep",
   "method": "本文の全体（英語。図は未確認）",
-  "reason": "著者 Griffin Wood。スプリットの条件（1対1・ウェーブクリア・逃げ）、相手の3つの選択肢、テレポート、インヒビターの仕組み、するとき・しないとき・失敗例。知識14件（I1〜I14）"
+  "reason": "著者 Griffin Wood。スプリットの条件（1対1・ウェーブクリア・逃げ）、相手の3つの選択肢、テレポート、インヒビターの仕組み、するとき・しないとき・失敗例。知識14件（I1〜I14）",
+  "registered_as": "res-loltheory-split-push"
  },
  "https://blog.loltheory.gg/kiting-lol": {
   "checked_at": "2026-11-01",

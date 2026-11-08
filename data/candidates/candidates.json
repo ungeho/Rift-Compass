@@ -122325,7 +122325,7 @@
    "loltheory-blog"
   ],
   "discovered_at": "2026-11-01",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-loltheory-split-push",
   "excerpt_features": {
    "roles": [],
    "topic_ids": [],
@@ -122346,9 +122346,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "著者 Griffin Wood。スプリットの条件（1対1・ウェーブクリア・逃げ）、相手の3つの選択肢、テレポート、インヒビターの仕組み、するとき・しないとき・失敗例。知識14件（I1〜I14）",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-loltheory-split-push と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "deep"
  },
