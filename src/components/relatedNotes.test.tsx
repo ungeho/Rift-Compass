@@ -50,7 +50,14 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
 
   it("有利・不利、使う側・対策側の表現があるときは、ノートの立場・視点を判定していないことを示す", () => {
     expect(text(renderToStaticMarkup(<RelatedNotes q="有利なときのリコールのタイミング" />))).toContain("ノートが前提とする立場（有利な側か不利な側か）が知りたい状況と同じかは判定していません");
-    expect(text(renderToStaticMarkup(<RelatedNotes q="ジャックスのEの対策" />))).toContain("使う側・対策する側のどちらの視点で書かれているかは判定していません");
+    // 対策を求める検索：対象と結び付いた対策の記述は並び順の参考にするが、視点・正しさは判定しない
+    expect(text(renderToStaticMarkup(<RelatedNotes q="ジャックスのEの対策" />))).toContain("ノートの視点や答えの正しさを判定するものではありません");
+    // 対策を求めない検索（使い方・Topic の名前だけ）：並び順にも使っていないと示す
+    for (const q of ["カイトの使い方", "対面対策"]) {
+      const t = text(renderToStaticMarkup(<RelatedNotes q={q} />));
+      expect(t, q).toContain("ノートが使う側・対策する側のどちらの視点で書かれているかは判定していません（並び順にも使っていません）");
+      expect(t, q).not.toContain("並び順の参考にします");
+    }
     const plain = text(renderToStaticMarkup(<RelatedNotes q="ジャックスのE" />));
     expect(plain).not.toContain("判定していません。");
     // どの一致にも「一致は回答ではない」の説明が付く
@@ -66,6 +73,29 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(t).toContain("「仕様」：Topic「ゲームの基本仕様」›「ロールクエスト」");
     expect(t).toContain("種類はノートの分類で、ゲーム内での検証ではありません");
     expect(t).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
+  });
+
+  it("対策を求める検索の並び順を説明し、視点の注意と、正答を保証しない注意を出す（2026-11-09）", () => {
+    const t = text(renderToStaticMarkup(<RelatedNotes q="カイトへの対抗策" />));
+    expect(t).toContain("検索の対象と結び付いた対策の記述（例：「カイトされる側」）がノートの主張・成立条件にあるときは、同じ一致の区分の中でそのノートを先に並べることがあります（立場や内容が正しいかは判定していません）");
+    expect(t).toContain("検索の対象と結び付いた明示的な対策の記述は並び順の参考にしますが、ノートの視点や答えの正しさを判定するものではありません");
+    expect(t).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
+    expect(t).not.toContain("知識ノートに見つからず、ノートの照合に使わなかった語：対抗策");
+  });
+
+  it("照合・並び順の詳しい説明は最初は閉じた欄に置き、正答を保証しない注意は最初から見せる（2026-11-09）", () => {
+    const html = renderToStaticMarkup(<RelatedNotes q="カイトへの対抗策" />);
+    // 閉じた details（open 属性なし）の中に詳しい説明がある
+    const help = html.match(/<details class="related-notes-help">([\s\S]*?)<\/details>/);
+    expect(help).not.toBeNull();
+    const h = text(help![1]);
+    expect(h).toContain("検索条件・並び順の説明");
+    for (const s of ["根拠のある公開の知識ノートの主張・成立条件・例外・Topic の名前と、根拠の要約を検索語で照合します", "一部の条件だけに一致したノートは「関連候補」", "旧仕様の）ノートは、同じ区分の中で後ろに並べます", "主張・成立条件に検索語があるノートを", "「カイト」「カイティング」「kiting」は同じ意味の語", "種類はノートの分類で、ゲーム内での検証ではありません", "同じ一致の区分の中でそのノートを先に並べることがあります"]) expect(h, s).toContain(s);
+    // 詳しい説明の外（最初から見える部分）に、正答を保証しない注意がある
+    const visible = text(html.replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+    expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
+    expect(visible).toContain("並び順も答えの正しさを示しません");
+    expect(visible).not.toContain("「カイト」「カイティング」「kiting」は同じ意味の語");
   });
 
   it("一致するノートがなければ何も出さない", () => {

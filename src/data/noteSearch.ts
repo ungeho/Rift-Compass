@@ -112,7 +112,12 @@ const noteCorpus = [...noteTexts.values()].map((t) => Object.values(t.fields).jo
 const NEGATION = /ない|ません|なかった|べきでない|ずに|せず|やめ|控え|ダメ|だめ|\bnot\b|\bdon't\b|\bdont\b|\bavoid\b|\bnever\b|\bwithout\b|\bstop\b/;
 // 「有利」は資料の検索では一般語として捨てるが、立場が逆のノートを答えと取り違えないよう、注意の対象にする
 const STANCE = /有利|不利|勝って|負けて|リード|劣勢|優勢|\bahead\b|\bbehind\b|\bwinning\b|\blosing\b/;
-const SIDE = /対策|カウンター|対処|使う側|使い方|使い手|\bcounter\b|\bvs\b|\bagainst\b/;
+const SIDE = /対策|対抗|カウンター|対処|される側|使う側|使い方|使い手|\bcounter\b|\bvs\b|\bagainst\b/;
+/**
+ * 対策する側の情報を求める表現（2026-11-09）。並び順の補助（counterTargetMatch）だけに使い、照合の条件・注意（cues.side）とは別。
+ * 「使い方」「使う側」は使う側の表現なので含めない。Topic・発信者として取り出した語（例：Topic「対面対策」「カウンターピック」）では働かせない
+ */
+const COUNTER_REQUEST = /対策|対抗|カウンター|対処|される側|\bcounter\b|\bagainst\b/;
 const CONDITION = /とき|時|場合|条件|なら|ならば|たら|例外|\bif\b|\bwhen\b|\bunless\b/;
 
 /** ノートの語彙にない日本語の語を、どちらもノートの語彙にある2語（各2文字以上）に分ける。分けられなければ undefined */
@@ -136,6 +141,31 @@ function isKindLabelMatch(u: Unit, n: KnowledgeNote): boolean {
   return u.kind === "topic" && u.topic.kind === "category" && normalize(KIND_LABELS[n.kind]) === normalize(u.matched);
 }
 
+/**
+ * ノートの主張・成立条件に、検索の対象と結び付いた対策の記述があるか（2026-11-09）。並び順にだけ使い、一致の集合・理由は変えない。
+ * 結び付きは、対象の語（検索条件の語と、その明示的な同義語）を含む「〜される側」「〜への対策」「〜の対策」か、
+ * 「対策側」と書いたうえで対象の語も主張・成立条件にあり、その対象の Topic が直接付いているノートだけ。
+ * Topic に付いているだけ（例：多くの技術を含む「操作技術」、広い「マッチアップ」）では結び付きとみなさない。
+ * 例外・反証・補足・根拠の要約にある相手側の記述は見ない。判定できないノートは加点しない
+ */
+/** 検索語のうち Topic・発信者として取り出されずに残った部分に、対策を求める表現があるか（並び順の補助を働かせる条件） */
+export function isCounterRequest(query: string): boolean {
+  return COUNTER_REQUEST.test(matchQueryUnits(expandLevelAbbr(query)).residual);
+}
+
+export function counterTargetMatch(m: NoteMatch, units: Unit[]): boolean {
+  const t = noteTexts.get(m.note.id);
+  if (!t) return false;
+  const text = `${t.fields.statement}\n${t.fields.conditions}`;
+  return units.some((u, i) => {
+    if (u.kind === "creator" || m.bases[i].length === 0) return false;
+    if (u.kind === "topic" && u.topic.kind === "category") return false;
+    const words = [normalize(u.matched), ...rankSynonymsOf(u.matched)];
+    if (words.some((w) => text.includes(`${w}される側`) || text.includes(`${w}への対策`) || text.includes(`${w}の対策`))) return true;
+    return u.kind === "topic" && m.note.topic_ids.includes(u.topic.id) && text.includes("対策側") && words.some((w) => containsTerm(text, w));
+  });
+}
+
 const FIELD_ORDER: NoteField[] = ["statement", "conditions", "exceptions", "falsifiers", "notes", "applicability", "evidence", "topicName"];
 
 function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
@@ -147,6 +177,7 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
  * 照合：Topic は付いている Topic（下位の Topic を含む）か記述、発信者は根拠の資料の発信者、語はノートの記述。
  * 大分類の Topic の語が種類の表示名と同じときは、その種類のノートにも一致する（isKindLabelMatch）。
  * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
+ * 対策を求める検索では、検索の対象と結び付いた対策の記述があるものを先にする（counterTargetMatch）。
  * そのうえで、主張・成立条件で一致した条件が多いものを先にする（statementHitCount）。
  * 同じなら、同義語を含めて主張・成立条件で一致した条件が多いものを先にする（statementHitCountWithSynonyms）。同じならデータの順
  */
@@ -215,10 +246,18 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   const rank = (m: NoteMatch) => (m.tier === "full" ? 0 : 2) + (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
   const statementHits = new Map(result.matches.map((m) => [m, statementHitCount(m)]));
   const synonymHits = new Map(result.matches.map((m) => [m, statementHitCountWithSynonyms(m, units)]));
-  // 安定ソート：段・旧仕様が同じなら、主張・成立条件で検索語そのものが一致した条件が多いものを先に。
+  // 対策を求める表現が、Topic・発信者として取り出されずに残った部分にあるときだけ、対象と結び付いた対策の記述を持つノートを先にする
+  const counterRequest = COUNTER_REQUEST.test(residual);
+  const counterHits = new Map(result.matches.map((m) => [m, counterRequest && counterTargetMatch(m, units) ? 1 : 0]));
+  // 安定ソート：段・旧仕様が同じなら、対象と結び付いた対策の記述があるもの（対策を求める検索だけ）を先に。
+  // 次に、主張・成立条件で検索語そのものが一致した条件が多いものを先に。
   // 同じなら、同義語を含めて一致した条件が多いものを先に（同義語は直接の一致より優先しない）。それも同じならデータの順
   result.matches.sort(
-    (a, b) => rank(a) - rank(b) || statementHits.get(b)! - statementHits.get(a)! || synonymHits.get(b)! - synonymHits.get(a)!,
+    (a, b) =>
+      rank(a) - rank(b) ||
+      counterHits.get(b)! - counterHits.get(a)! ||
+      statementHits.get(b)! - statementHits.get(a)! ||
+      synonymHits.get(b)! - synonymHits.get(a)!,
   );
   return result;
 }

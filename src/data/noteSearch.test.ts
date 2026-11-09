@@ -4,7 +4,7 @@ import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
 import { containsTerm, normalize } from "../search/search";
-import { noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, type NoteMatch } from "./noteSearch";
+import { counterTargetMatch, isCounterRequest, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
   id: string;
@@ -140,10 +140,12 @@ describe("知識ノートの検索の規則", () => {
   it("段・旧仕様が同じなら、主張・成立条件で一致した条件が多いノートを先にし、同じなら同義語を含めた数、それも同じならデータの順（2026-11-09）", () => {
     const order = new Map(publicNotes.map((n, i) => [n.id, i]));
     const sup = (m: NoteMatch) => (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
-    const queries = [...QS.map((q) => q.text), "カイト", "カイティング", "kiting", "アタックムーブ", "サモナースペル", "プレート", "スロウ", "シャコ", "ローム"];
+    const queries = [...QS.map((q) => q.text), "カイト", "カイティング", "kiting", "アタックムーブ", "サモナースペル", "プレート", "スロウ", "シャコ", "ローム", "ゼドのRの対策", "CCへの対策", "対面対策"];
     for (const q of queries) {
       const { matches: ms, units } = noteMatchesForQuery(q);
       const syn = (m: NoteMatch) => statementHitCountWithSynonyms(m, units);
+      // 対策を求める検索だけ、旧仕様の次に、対象と結び付いた対策の記述があるものを先にする
+      const ctr = (m: NoteMatch) => (isCounterRequest(q) && counterTargetMatch(m, units) ? 1 : 0);
       for (let i = 1; i < ms.length; i++) {
         const [a, b] = [ms[i - 1], ms[i]];
         // 全条件一致が先、同じ段では旧仕様が後ろ（従来どおり）
@@ -151,6 +153,8 @@ describe("知識ノートの検索の規則", () => {
         if (a.tier !== b.tier) continue;
         expect(sup(a) - sup(b), `${q} ${a.note.id} ${b.note.id}`).toBeLessThanOrEqual(0);
         if (sup(a) !== sup(b)) continue;
+        expect(ctr(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(ctr(b));
+        if (ctr(a) !== ctr(b)) continue;
         expect(statementHitCount(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(statementHitCount(b));
         if (statementHitCount(a) !== statementHitCount(b)) continue;
         // 直接の一致が同じなら、同義語を含めた数
@@ -324,6 +328,68 @@ describe("知識ノートの検索の規則", () => {
     expect(both.units).toEqual([]);
     expect(both.ignored).toEqual([]);
     expect(both.matches).toEqual([]);
+  });
+
+  it("対策を求める検索では、検索の対象と結び付いた対策の記述があるノートを同じ段の中で先にする。一致の集合は変えない（2026-11-09）", () => {
+    const ids = (q: string) => noteMatchesForQuery(q).matches.map((m) => m.note.id);
+    const tiers = (q: string) => noteMatchesForQuery(q).matches.map((m) => `${m.note.id}:${m.tier}`).sort();
+    const anti = ["kn-anti-kite-tools", "kn-anti-kite-terrain"];
+    // カイトされる側の対抗手段のノートが1・2位。言い方（対抗策・対策・カウンター・される側）が違っても同じ
+    for (const [q, plain] of [
+      ["カイトへの対抗策", "カイト"],
+      ["カイト対策", "カイト"],
+      ["カイトへのカウンター", "カイト"],
+      ["カイトされる側の立ち回り", "カイト"],
+      ["カイティングへの対抗策", "カイティング"],
+      ["カイティング対策", "カイティング"],
+    ]) {
+      const r = noteMatchesForQuery(q);
+      expect(r.cues.side, q).toBe(true);
+      expect(r.units.map((u) => u.matched), q).toEqual([plain]);
+      expect(ids(q).slice(0, 2), q).toEqual(anti);
+      // 並び順だけを変える：一致の集合と段は、対策の表現のない検索と同じ
+      expect(tiers(q), q).toEqual(tiers(plain));
+    }
+    // 「対抗策」は照合の条件にも、ノートに見つからなかった語にもしない（「対策」と同じ扱い）
+    expect(noteMatchesForQuery("カイトへの対抗策").ignored).toEqual([]);
+    // 評価の質問の順位（N21・N36・N39・N41）
+    expect(ids("カイトへの対抗策").slice(0, 7)).toEqual([...anti, "kn-kite-timing", "kn-kite-vs-stutter-step", "kn-kite-learning-champions", "kn-kite-stats", "kn-kite-practice-drill"]);
+    expect(ids("カイティングへの対抗策").slice(0, 4)).toEqual([...anti, "kn-right-click-core-physical", "kn-kite-vs-stutter-step"]);
+    expect(ids("ジャックスのEの対策").slice(0, 2)).toEqual(["kn-jax-e-mechanic", "kn-vs-aa-negation-decision"]);
+    expect(ids("カイトの練習方法").slice(0, 2)).toEqual(["kn-kite-learning-champions", "kn-kite-practice-drill"]);
+
+    // 対象の違う対策のノートは上げない
+    // 「CCへの対策」：Mordekaiser の R・カイトへの対策は CC に触れるが、CC への対策ではない
+    const cc = noteMatchesForQuery("CCへの対策");
+    expect(cc.matches.filter((m) => counterTargetMatch(m, cc.units))).toEqual([]);
+    expect(ids("CCへの対策").slice(0, 3)).toEqual(["kn-dive-from-behind-wave", "kn-dive-hp-squishy", "kn-dive-champions"]);
+    // 「ゼドのRの対策」：ゼドの対策側のノートは1位。カイトへの対策は、補足の例にゼドがあるだけなので最後のまま
+    const zed = noteMatchesForQuery("ゼドのRの対策");
+    expect(zed.matches.filter((m) => counterTargetMatch(m, zed.units)).map((m) => m.note.id)).toEqual(["kn-zed-r-zhonya-timing"]);
+    expect(ids("ゼドのRの対策")[0]).toBe("kn-zed-r-zhonya-timing");
+    expect(ids("ゼドのRの対策").at(-1)).toBe("kn-anti-kite-tools");
+    // Topic（操作技術）に付いているだけのノートは、結び付いた対策とみなさない
+    const kite = noteMatchesForQuery("カイトへの対抗策");
+    expect(kite.matches.filter((m) => counterTargetMatch(m, kite.units)).map((m) => m.note.id)).toEqual(anti);
+
+    // 対策を求める表現がない検索・Topic の名前だけの検索では、並び順を変えない（注意 cues.side とは別の処理）
+    for (const q of ["カイトへの対抗策", "カイト対策", "カイトされる側の立ち回り", "CCへの対策", "ゼドのRの対策"]) expect(isCounterRequest(q), q).toBe(true);
+    for (const q of ["カイトの使い方", "ゼドのRの使い方", "対面対策", "カウンターピック", "カイト", "カイトの練習方法"]) expect(isCounterRequest(q), q).toBe(false);
+    expect(noteMatchesForQuery("カイトの使い方").cues.side).toBe(true);
+    expect(ids("カイトの使い方")).toEqual(ids("カイト"));
+    expect(ids("ゼドのRの使い方")[0]).toBe("kn-zed-r-mark");
+    for (const q of ["対面対策", "カウンターピック"]) {
+      const r = noteMatchesForQuery(q);
+      expect(r.cues.side, q).toBe(true);
+      expect(r.units.map((u) => u.kind), q).toEqual(["topic"]);
+      expect(ids(q)[0], q).toBe("kn-dive-stasis-pools");
+    }
+    expect(ids("カイト").slice(0, 2)).toEqual(["kn-kite-timing", "kn-kite-vs-stutter-step"]);
+    expect(ids("カイティング")[0]).toBe("kn-right-click-core-physical");
+    expect(ids("kiting")[0]).toBe("kn-right-click-core-physical");
+    expect(ids("スマイトの仕様")[0]).toBe("kn-smite-damage-261");
+    expect(ids("スマイトを使わずに")[0]).toBe("kn-smite-damage-261");
+    expect(ids("フラッシュがない相手には仕掛けない")[0]).toBe("kn-engage-when-flash-down");
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {

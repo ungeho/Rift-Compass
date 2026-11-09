@@ -2,7 +2,7 @@
 // 一致は候補に含めた理由であり、質問への答えであることは示さない。
 import { index } from "../data/dataset";
 import { KIND_LABELS } from "../data/labels";
-import { NOTE_FIELD_LABELS, noteMatchesForQuery, type NoteMatch, type NoteMatchBasis } from "../data/noteSearch";
+import { isCounterRequest, NOTE_FIELD_LABELS, noteMatchesForQuery, type NoteMatch, type NoteMatchBasis } from "../data/noteSearch";
 import { plainText } from "../lib/plainText";
 import { NoteSummary } from "./ExplorePage";
 import { useState } from "react";
@@ -80,15 +80,35 @@ export function RelatedNotes({ q, result }: { q: string; result?: NoteSearchResu
         {partial.length > 0 && `（ほかに一部一致の関連候補 ${partial.length}件）`}
       </summary>
       <p className="muted">
-        資料の検索結果とは別に、根拠のある公開の知識ノートの主張・成立条件・例外・Topic の名前と、根拠の要約を検索語で照合したものです。
-        「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。上の件数には含みません。現行で適用できない（旧仕様の）ノートは後ろに並べ、そのほかは、主張・成立条件に検索語があるノートを、Topic・補足などだけで一致したノートより先に並べます。「カイト」「カイティング」「kiting」は同じ意味の語として、主張・成立条件にある同義語も並び順にだけ使います（検索語そのものの一致より後ろ、一致の理由には含めません）。「仕様」のように、大分類の Topic の語がノートの種類の名前と同じときは、その種類のノートも一致として扱い、「ノートの種類」と示します（種類はノートの分類で、ゲーム内での検証ではありません）。
+        資料の検索結果とは別に、検索語に一致した公開の知識ノートを表示します（上の件数には含みません）。
+        「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。並び順も答えの正しさを示しません。
         {r.expandedQuery && <>略記は読み替えて照合しています（照合に使った検索語：{r.expandedQuery}）。</>}
       </p>
+      {/* 照合と並び順の詳しい説明は、最初は閉じておく（2026-11-09） */}
+      <details className="related-notes-help">
+        <summary>検索条件・並び順の説明</summary>
+        <ul className="muted">
+          <li>根拠のある公開の知識ノートの主張・成立条件・例外・Topic の名前と、根拠の要約を検索語で照合します。各ノートの「一致：」に、検索条件ごとに一致した箇所を示します。</li>
+          <li>すべての条件に一致したノートを先に出し、一部の条件だけに一致したノートは「関連候補」として後ろの閉じた欄に出します。</li>
+          <li>現行で適用できない（旧仕様の）ノートは、同じ区分の中で後ろに並べます。</li>
+          <li>主張・成立条件に検索語があるノートを、Topic・補足などだけで一致したノートより先に並べます。</li>
+          <li>「カイト」「カイティング」「kiting」は同じ意味の語として、主張・成立条件にある同義語も並び順にだけ使います（検索語そのものの一致より後ろ、一致の理由には含めません）。</li>
+          <li>「仕様」のように、大分類の Topic の語がノートの種類の名前と同じときは、その種類のノートも一致として扱い、「ノートの種類」と示します（種類はノートの分類で、ゲーム内での検証ではありません）。</li>
+          <li>検索語に「対策」「対抗策」などの表現があり、検索の対象と結び付いた対策の記述（例：「カイトされる側」）がノートの主張・成立条件にあるときは、同じ一致の区分の中でそのノートを先に並べることがあります（立場や内容が正しいかは判定していません）。</li>
+        </ul>
+      </details>
       {r.cues.negation && (
         <p className="notice">検索語に否定の表現があります。ノートの主張が検索語と同じ向きかどうかは判定していません。主張・成立条件・例外を確かめてください。</p>
       )}
       {r.cues.stance && <p className="notice">検索語に有利・不利の表現があります。ノートが前提とする立場（有利な側か不利な側か）が知りたい状況と同じかは判定していません。</p>}
-      {r.cues.side && <p className="notice">検索語に「対策」「使う側」などの表現があります。ノートが使う側・対策する側のどちらの視点で書かれているかは判定していません。</p>}
+      {r.cues.side && (
+        <p className="notice">
+          検索語に、対策する側・使う側の視点に関わる表現があります。
+          {isCounterRequest(q)
+            ? "検索の対象と結び付いた明示的な対策の記述は並び順の参考にしますが、ノートの視点や答えの正しさを判定するものではありません。"
+            : "ノートが使う側・対策する側のどちらの視点で書かれているかは判定していません（並び順にも使っていません）。"}
+        </p>
+      )}
       {!r.cues.negation && r.cues.condition && <p className="muted">検索語に条件の表現があります。各ノートの成立条件と例外が、知りたい状況に合うかを確かめてください。</p>}
       {r.ignored.length > 0 && <p className="muted">知識ノートに見つからず、ノートの照合に使わなかった語：{r.ignored.join("、")}</p>}
       {full.length > 0 && (
