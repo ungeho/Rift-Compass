@@ -168,9 +168,11 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     if (SIDE.test(term)) continue;
     if (containsTerm(noteCorpus, term)) push(term);
     else {
-      // 日本語の複合語（例：「タワープレート」）は、ノートの記述にある2語に分けられるときだけ、2語として照合する
+      // 日本語の複合語（例：「タワープレート」）は、ノートの記述にある2語に分けられるときだけ、2語として照合する。
+      // 分けた語にも、分けない語と同じ一般語の規則（splitResidualTerms）を当てる（2026-11-09）。
+      // 例：「カイトの練習方法」の「方法」は、「カイトの練習の方法」と同じく条件にしない
       const parts = splitCompound(term);
-      if (parts) parts.forEach(push);
+      if (parts) parts.filter((p) => splitResidualTerms(p).length > 0).forEach(push);
       else ignored.push(term);
     }
   }

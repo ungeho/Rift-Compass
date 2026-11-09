@@ -294,6 +294,38 @@ describe("知識ノートの検索の規則", () => {
     expect(noteMatchesForQuery("スマイトの基礎").matches.map((m) => m.note.id)).not.toContain("kn-smite-damage-261");
   });
 
+  it("複合語を分けた語にも一般語の規則を当てる：「〜練習方法」は「〜の練習」と同じ条件になる（2026-11-09）", () => {
+    const sig = (q: string) => {
+      const r = noteMatchesForQuery(q);
+      return JSON.stringify({ units: r.units.map((u) => u.key), ignored: r.ignored, matches: r.matches.map((m) => [m.note.id, m.tier, m.bases]) });
+    };
+    // 「方法」は一般語なので、複合語から分けても条件にしない。助詞で区切った入力・空白で区切った入力と、条件も結果も同じ
+    for (const [a, ...same] of [
+      ["カイトの練習方法", "カイトの練習", "カイト 練習"],
+      ["カイティングの練習方法", "カイティングの練習"],
+      ["アタックムーブの練習方法", "アタックムーブの練習"],
+      ["CSの練習方法", "CSの練習"],
+      ["練習方法", "練習の方法"],
+    ]) {
+      expect(noteMatchesForQuery(a).units.map((u) => u.matched)).not.toContain("方法");
+      for (const b of same) expect(sig(a), `${a} = ${b}`).toBe(sig(b));
+    }
+    const kite = noteMatchesForQuery("カイトの練習方法");
+    expect(kite.units.map((u) => [u.kind, u.matched])).toEqual([["topic", "カイト"], ["term", "練習"]]);
+    const ids = kite.matches.map((m) => m.note.id);
+    expect(kite.matches.find((m) => m.note.id === "kn-kite-practice-drill")?.tier).toBe("full");
+    expect(ids.indexOf("kn-kite-practice-drill")).toBeLessThan(ids.indexOf("kn-cs-practice-rules"));
+    // 一般語を含まない複合語は従来どおり2語に分ける。Topic の別名・ノートにある語そのものは分けない
+    expect(noteMatchesForQuery("タワープレート").units.map((u) => u.matched)).toEqual(["タワー", "プレート"]);
+    expect(noteMatchesForQuery("上達方法").units.map((u) => [u.kind, u.matched])).toEqual([["topic", "上達方法"]]);
+    expect(noteMatchesForQuery("学習方法").units.map((u) => [u.kind, u.matched])).toEqual([["term", "学習方法"]]);
+    // 分けた2語がどちらも一般語なら、条件にしない（単独の一般語と同じく、無視した語にも出さない）
+    const both = noteMatchesForQuery("方法理由");
+    expect(both.units).toEqual([]);
+    expect(both.ignored).toEqual([]);
+    expect(both.matches).toEqual([]);
+  });
+
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {
     expect(noteMatchesForQuery("").matches).toEqual([]);
     // 「バロン」は 2026-11-02 から tol2 のアタックムーブのノートにある語になったので、ノートにない語の例を「アタカン」にする
