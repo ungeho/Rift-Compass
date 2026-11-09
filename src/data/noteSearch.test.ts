@@ -3,7 +3,8 @@ import questions from "../../data/experiments/note-questions.json";
 import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
-import { noteMatchesForQuery, statementHitCount, type NoteMatch } from "./noteSearch";
+import { containsTerm, normalize } from "../search/search";
+import { noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
   id: string;
@@ -74,7 +75,7 @@ describe("知識ノートの検索（評価用の質問：data/experiments/note-
 
 describe("知識ノートの検索の規則", () => {
   it("資料の検索結果を変えない（ノートの照合は資料の検索とは別に行う）", () => {
-    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？"]) {
+    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト"]) {
       const before = search(q);
       noteMatchesForQuery(q);
       expect(search(q).hits.map((h) => h.resource.id)).toEqual(before.hits.map((h) => h.resource.id));
@@ -136,12 +137,13 @@ describe("知識ノートの検索の規則", () => {
     expect(ids.indexOf("kn-turret-plates-permanent-261")).toBeLessThan(ids.indexOf("kn-turret-plates-fell-14min-pre-261"));
   });
 
-  it("段・旧仕様が同じなら、主張・成立条件で一致した条件が多いノートを先にし、同じならデータの順（2026-11-09）", () => {
+  it("段・旧仕様が同じなら、主張・成立条件で一致した条件が多いノートを先にし、同じなら同義語を含めた数、それも同じならデータの順（2026-11-09）", () => {
     const order = new Map(publicNotes.map((n, i) => [n.id, i]));
     const sup = (m: NoteMatch) => (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
-    const queries = [...QS.map((q) => q.text), "カイト", "アタックムーブ", "サモナースペル", "プレート", "スロウ", "シャコ", "ローム"];
+    const queries = [...QS.map((q) => q.text), "カイト", "カイティング", "kiting", "アタックムーブ", "サモナースペル", "プレート", "スロウ", "シャコ", "ローム"];
     for (const q of queries) {
-      const ms = noteMatchesForQuery(q).matches;
+      const { matches: ms, units } = noteMatchesForQuery(q);
+      const syn = (m: NoteMatch) => statementHitCountWithSynonyms(m, units);
       for (let i = 1; i < ms.length; i++) {
         const [a, b] = [ms[i - 1], ms[i]];
         // 全条件一致が先、同じ段では旧仕様が後ろ（従来どおり）
@@ -150,8 +152,11 @@ describe("知識ノートの検索の規則", () => {
         expect(sup(a) - sup(b), `${q} ${a.note.id} ${b.note.id}`).toBeLessThanOrEqual(0);
         if (sup(a) !== sup(b)) continue;
         expect(statementHitCount(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(statementHitCount(b));
+        if (statementHitCount(a) !== statementHitCount(b)) continue;
+        // 直接の一致が同じなら、同義語を含めた数
+        expect(syn(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(syn(b));
         // 同点はデータの順（安定ソート）
-        if (statementHitCount(a) === statementHitCount(b)) expect(order.get(a.note.id)!, q).toBeLessThan(order.get(b.note.id)!);
+        if (syn(a) === syn(b)) expect(order.get(a.note.id)!, q).toBeLessThan(order.get(b.note.id)!);
       }
       expect(noteMatchesForQuery(q).matches.map((m) => m.note.id)).toEqual(ms.map((m) => m.note.id));
     }
@@ -167,6 +172,65 @@ describe("知識ノートの検索の規則", () => {
     expect(statementHitCount(tools)).toBe(1);
     // 補足・根拠の要約・Topic だけの一致は数えない
     expect(statementHitCount({ ...tools, bases: [[{ kind: "topic", topicId: "mechanics", matched: "カイト" }, { kind: "field", field: "notes", matched: "カイト" }, { kind: "field", field: "evidence", matched: "カイト" }]] })).toBe(0);
+  });
+
+  it("並び順だけに使う同義語（カイト・カイティング・kiting）：一致の集合・理由は変えず、直接の一致を先にする（2026-11-09）", () => {
+    const KITE = ["kn-kite-timing", "kn-kite-vs-stutter-step", "kn-kite-learning-champions", "kn-kite-stats", "kn-anti-kite-tools", "kn-anti-kite-terrain", "kn-kite-practice-drill"];
+    // グループは明示した3語だけ。同じ Topic（操作技術）の別名でも、関連する技術は同義語にしない
+    expect(rankSynonymsOf("カイト")).toEqual(["カイティング", "kiting"]);
+    expect(rankSynonymsOf("Kiting")).toEqual(["カイト", "カイティング"]);
+    for (const w of ["kite", "kites", "アタックムーブ", "スペーシング", "スタッターステップ", "オーブウォーク", "フィジカル", "引き撃ち"]) expect(rankSynonymsOf(w), w).toEqual([]);
+    // 英語の kiting は単語として照合する（kite・kites には一致しない）
+    expect(containsTerm(normalize("kite kites kited"), "kiting")).toBe(false);
+
+    const kite = noteMatchesForQuery("カイト"), kiting = noteMatchesForQuery("カイティング"), en = noteMatchesForQuery("kiting");
+    const ids = (r: typeof kite) => r.matches.map((m) => m.note.id);
+    // 一致の集合・段・理由・逆向きの印は同義語で変わらない（3語とも同じ Topic の別名なので、同じ集合になる）
+    for (const r of [kiting, en]) {
+      expect([...ids(r)].sort()).toEqual([...ids(kite)].sort());
+      for (const m of r.matches) {
+        const k = kite.matches.find((x) => x.note.id === m.note.id)!;
+        expect([m.tier, m.opposingOnly]).toEqual([k.tier, k.opposingOnly]);
+      }
+    }
+    // 入力語・一致の理由は書き換えない（同義語で一致した語を理由に足さない）
+    expect(kiting.units.map((u) => u.matched)).toEqual(["カイティング"]);
+    expect(en.units.map((u) => u.matched)).toEqual(["kiting"]);
+    expect(kiting.expandedQuery).toBeUndefined();
+    expect(kiting.matches.find((m) => m.note.id === "kn-kite-timing")!.bases).toEqual([[{ kind: "topic", topicId: "mechanics", matched: "カイティング" }]]);
+
+    // カイト：従来どおり主張にカイトがある7件が1〜7位。同義語（カイティング）だけのノートは8位
+    expect(ids(kite).slice(0, 7)).toEqual(KITE);
+    expect(ids(kite)[7]).toBe("kn-right-click-core-physical");
+    // カイティング：主張にカイティングをそのまま含む2件が先（直接の一致は同義語より先）、続いて同義語で一致した残りの6件
+    expect(ids(kiting).slice(0, 2)).toEqual(["kn-right-click-core-physical", "kn-kite-vs-stutter-step"]);
+    expect([...ids(kiting).slice(2, 8)].sort()).toEqual(KITE.filter((id) => id !== "kn-kite-vs-stutter-step").sort());
+    for (const m of kiting.matches.slice(2, 8)) expect([statementHitCount(m), statementHitCountWithSynonyms(m, kiting.units)]).toEqual([0, 1]);
+    // kiting：主張に kiting そのものはないので、同義語で一致した8件がデータの順で先
+    expect([...ids(en).slice(0, 8)].sort()).toEqual([...KITE, "kn-right-click-core-physical"].sort());
+    expect(statementHitCountWithSynonyms(en.matches[8], en.units)).toBe(0);
+    // カイティングへの対抗策：対抗策のノートが Topic だけの一致（39・40位）より前に来る
+    const anti = ids(noteMatchesForQuery("カイティングへの対抗策"));
+    for (const id of ["kn-anti-kite-tools", "kn-anti-kite-terrain"]) expect(anti.indexOf(id)).toBeLessThan(8);
+
+    // 同義語を重ねても、1つの条件は1と数える（同じ Topic の別名はもともと1つの条件にまとまる）
+    for (const q of ["カイト カイティング kiting", "kite kiting", "カイティングとスタッターステップの違い"]) {
+      const r = noteMatchesForQuery(q);
+      for (const m of r.matches) {
+        expect(statementHitCountWithSynonyms(m, r.units)).toBeLessThanOrEqual(r.matches[0].bases.length);
+        expect(statementHitCountWithSynonyms(m, r.units)).toBeGreaterThanOrEqual(statementHitCount(m));
+      }
+    }
+    expect(noteMatchesForQuery("カイト カイティング kiting").units).toHaveLength(1);
+    // 補足・根拠などの同義語は数えない（kn-attack-move-settings は補足に資料 ID の res-loltheory-kiting があるが、主張にカイトはない）
+    const am = en.matches.find((m) => m.note.id === "kn-attack-move-settings")!;
+    expect(am.bases[0].some((b) => b.kind === "field" && b.field === "notes")).toBe(true);
+    expect(statementHitCountWithSynonyms(am, en.units)).toBe(0);
+    // グループにない語の検索では、同義語を含めた数は直接の数と同じ（並び順は変わらない）
+    for (const q of ["アタックムーブ", "スペーシング", "スタッターステップ", "kite", "kites", "サモナースペル"]) {
+      const r = noteMatchesForQuery(q);
+      for (const m of r.matches) expect(statementHitCountWithSynonyms(m, r.units), `${q} ${m.note.id}`).toBe(statementHitCount(m));
+    }
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {

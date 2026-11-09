@@ -53,6 +53,19 @@ export interface NoteSearchResult {
   expandedQuery?: string;
 }
 
+/**
+ * 知識ノートの並び順にだけ使う同義語（2026-11-09）。照合・一致の集合・一致の理由には使わない。
+ * 同じ Topic の別名であることとは別に、意味が同じと確かめた語だけを置く
+ * （「アタックムーブ」「スペーシング」「スタッターステップ」などは関連する技術で、同義語ではない）
+ */
+const RANK_SYNONYM_GROUPS: string[][] = [["カイト", "カイティング", "kiting"]].map((g) => g.map(normalize));
+
+/** 検索語の同義語（自分を除く）。グループにない語は空 */
+export function rankSynonymsOf(term: string): string[] {
+  const t = normalize(term);
+  return RANK_SYNONYM_GROUPS.find((g) => g.includes(t))?.filter((w) => w !== t) ?? [];
+}
+
 const list = (xs: string[] | undefined) => (xs ?? []).map(normalize).join("\n");
 
 interface NoteText {
@@ -120,7 +133,8 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
  * 検索語に一致する公開の知識ノート。公開しないノート（isPublicNote でないもの）は対象にしない。
  * 照合：Topic は付いている Topic（下位の Topic を含む）か記述、発信者は根拠の資料の発信者、語はノートの記述。
  * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
- * そのうえで、主張・成立条件で一致した条件が多いものを先にする（statementHitCount）。同じならデータの順
+ * そのうえで、主張・成立条件で一致した条件が多いものを先にする（statementHitCount）。
+ * 同じなら、同義語を含めて主張・成立条件で一致した条件が多いものを先にする（statementHitCountWithSynonyms）。同じならデータの順
  */
 export function noteMatchesForQuery(query: string): NoteSearchResult {
   const q = normalize(query);
@@ -183,9 +197,28 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   }
   const rank = (m: NoteMatch) => (m.tier === "full" ? 0 : 2) + (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
   const statementHits = new Map(result.matches.map((m) => [m, statementHitCount(m)]));
-  // 安定ソート：段・旧仕様が同じなら、主張・成立条件で一致した条件が多いものを先に。それも同じならデータの順
-  result.matches.sort((a, b) => rank(a) - rank(b) || statementHits.get(b)! - statementHits.get(a)!);
+  const synonymHits = new Map(result.matches.map((m) => [m, statementHitCountWithSynonyms(m, units)]));
+  // 安定ソート：段・旧仕様が同じなら、主張・成立条件で検索語そのものが一致した条件が多いものを先に。
+  // 同じなら、同義語を含めて一致した条件が多いものを先に（同義語は直接の一致より優先しない）。それも同じならデータの順
+  result.matches.sort(
+    (a, b) => rank(a) - rank(b) || statementHits.get(b)! - statementHits.get(a)! || synonymHits.get(b)! - synonymHits.get(a)!,
+  );
   return result;
+}
+
+/**
+ * 主張・成立条件で、検索語そのものか、その同義語（rankSynonymsOf）が一致した検索条件の数。並び順にだけ使う。
+ * 一致した条件だけを対象にし、1つの条件に同義語がいくつあっても1と数える。補足・根拠・例外・反証での同義語は数えない
+ */
+export function statementHitCountWithSynonyms(m: NoteMatch, units: Unit[]): number {
+  const t = noteTexts.get(m.note.id);
+  return m.bases.filter((bs, i) => {
+    if (bs.length === 0) return false;
+    if (bs.some((b) => b.kind === "field" && (b.field === "statement" || b.field === "conditions"))) return true;
+    const u = units[i];
+    if (!t || u.kind === "creator") return false;
+    return rankSynonymsOf(u.matched).some((w) => containsTerm(t.fields.statement, w) || containsTerm(t.fields.conditions, w));
+  }).length;
 }
 
 /**
