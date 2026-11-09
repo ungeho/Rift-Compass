@@ -3,7 +3,7 @@ import questions from "../../data/experiments/note-questions.json";
 import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
-import { noteMatchesForQuery } from "./noteSearch";
+import { noteMatchesForQuery, statementHitCount, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
   id: string;
@@ -134,6 +134,39 @@ describe("知識ノートの検索の規則", () => {
   it("旧仕様（現行では適用できない）のノートは、同じ段の後ろに並べる", () => {
     const ids = noteMatchesForQuery("プレート").matches.map((m) => m.note.id);
     expect(ids.indexOf("kn-turret-plates-permanent-261")).toBeLessThan(ids.indexOf("kn-turret-plates-fell-14min-pre-261"));
+  });
+
+  it("段・旧仕様が同じなら、主張・成立条件で一致した条件が多いノートを先にし、同じならデータの順（2026-11-09）", () => {
+    const order = new Map(publicNotes.map((n, i) => [n.id, i]));
+    const sup = (m: NoteMatch) => (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
+    const queries = [...QS.map((q) => q.text), "カイト", "アタックムーブ", "サモナースペル", "プレート", "スロウ", "シャコ", "ローム"];
+    for (const q of queries) {
+      const ms = noteMatchesForQuery(q).matches;
+      for (let i = 1; i < ms.length; i++) {
+        const [a, b] = [ms[i - 1], ms[i]];
+        // 全条件一致が先、同じ段では旧仕様が後ろ（従来どおり）
+        expect(a.tier === "partial" && b.tier === "full", q).toBe(false);
+        if (a.tier !== b.tier) continue;
+        expect(sup(a) - sup(b), `${q} ${a.note.id} ${b.note.id}`).toBeLessThanOrEqual(0);
+        if (sup(a) !== sup(b)) continue;
+        expect(statementHitCount(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(statementHitCount(b));
+        // 同点はデータの順（安定ソート）
+        if (statementHitCount(a) === statementHitCount(b)) expect(order.get(a.note.id)!, q).toBeLessThan(order.get(b.note.id)!);
+      }
+      expect(noteMatchesForQuery(q).matches.map((m) => m.note.id)).toEqual(ms.map((m) => m.note.id));
+    }
+    // 「カイト」は Topic「操作技術」の別名：主張・成立条件にカイトがあるノートが、Topic だけで一致したノートより先
+    const kite = noteMatchesForQuery("カイト").matches;
+    const firstTopicOnly = kite.findIndex((m) => statementHitCount(m) === 0);
+    expect(firstTopicOnly).toBeGreaterThan(0);
+    expect(kite.slice(firstTopicOnly).every((m) => statementHitCount(m) === 0)).toBe(true);
+    expect(kite.slice(0, firstTopicOnly).map((m) => m.note.id)).toContain("kn-anti-kite-tools");
+    // 1つの条件が主張と成立条件の両方にあっても1と数える（kn-anti-kite-tools は「カイト」が主張・成立条件の両方にある）
+    const tools = kite.find((m) => m.note.id === "kn-anti-kite-tools")!;
+    expect(tools.bases[0].filter((b) => b.kind === "field").map((b) => (b as { field: string }).field)).toEqual(expect.arrayContaining(["statement", "conditions"]));
+    expect(statementHitCount(tools)).toBe(1);
+    // 補足・根拠の要約・Topic だけの一致は数えない
+    expect(statementHitCount({ ...tools, bases: [[{ kind: "topic", topicId: "mechanics", matched: "カイト" }, { kind: "field", field: "notes", matched: "カイト" }, { kind: "field", field: "evidence", matched: "カイト" }]] })).toBe(0);
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {

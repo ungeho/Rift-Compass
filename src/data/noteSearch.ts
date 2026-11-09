@@ -119,7 +119,8 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
 /**
  * 検索語に一致する公開の知識ノート。公開しないノート（isPublicNote でないもの）は対象にしない。
  * 照合：Topic は付いている Topic（下位の Topic を含む）か記述、発信者は根拠の資料の発信者、語はノートの記述。
- * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする
+ * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
+ * そのうえで、主張・成立条件で一致した条件が多いものを先にする（statementHitCount）。同じならデータの順
  */
 export function noteMatchesForQuery(query: string): NoteSearchResult {
   const q = normalize(query);
@@ -181,6 +182,17 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     result.matches.push({ note: n, bases, tier: full ? "full" : "partial", opposingOnly });
   }
   const rank = (m: NoteMatch) => (m.tier === "full" ? 0 : 2) + (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
-  result.matches.sort((a, b) => rank(a) - rank(b)); // 安定ソート：同じ順位ではデータの順
+  const statementHits = new Map(result.matches.map((m) => [m, statementHitCount(m)]));
+  // 安定ソート：段・旧仕様が同じなら、主張・成立条件で一致した条件が多いものを先に。それも同じならデータの順
+  result.matches.sort((a, b) => rank(a) - rank(b) || statementHits.get(b)! - statementHits.get(a)!);
   return result;
+}
+
+/**
+ * 主張・成立条件で一致した検索条件の数。1つの条件が主張と成立条件の両方にあっても1と数える。
+ * Topic が付いているだけ・根拠の要約・補足・例外・反証での一致は数えない
+ * （例：「カイト」は Topic「操作技術」の別名なので、操作技術のノートはすべて一致する。主張にカイトがあるノートを先にする）
+ */
+export function statementHitCount(m: NoteMatch): number {
+  return m.bases.filter((bs) => bs.some((b) => b.kind === "field" && (b.field === "statement" || b.field === "conditions"))).length;
 }
