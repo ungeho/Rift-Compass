@@ -233,6 +233,67 @@ describe("知識ノートの検索の規則", () => {
     }
   });
 
+  it("大分類の Topic の語がノートの種類の表示名（仕様）と同じときだけ、種類でも一致する（2026-11-09）", () => {
+    const basesOf = (r: ReturnType<typeof noteMatchesForQuery>, id: string) => r.matches.find((m) => m.note.id === id)?.bases;
+    // 「スマイトの仕様」：検索条件は変えない（大分類「仕様」＋語「スマイト」）
+    const smite = noteMatchesForQuery("スマイトの仕様");
+    expect(smite.units.map((u) => [u.kind, u.matched, u.kind === "topic" ? u.topic.id : ""])).toEqual([["topic", "仕様", "cat-basics"], ["term", "スマイト", ""]]);
+    expect(smite.ignored).toEqual([]);
+    const full = smite.matches.filter((m) => m.tier === "full");
+    expect(full[0].note.id).toBe("kn-smite-damage-261");
+    // スマイトのダメージのノートは基本仕様の Topic の下になく、「仕様」には種類だけで一致する（Topic の一致とは記録しない）
+    expect(basesOf(smite, "kn-smite-damage-261")).toEqual([
+      [{ kind: "noteKind", noteKind: "mechanic", matched: "仕様" }],
+      [{ kind: "field", field: "statement", matched: "スマイト" }],
+    ]);
+    const sm = full[0];
+    expect(sm.opposingOnly).toBe(false);
+    // 種類の一致は、主張・成立条件の一致として数えない
+    expect(statementHitCount(sm)).toBe(1);
+    expect(statementHitCountWithSynonyms(sm, smite.units)).toBe(1);
+    // 基本仕様の下の Topic で一致したノートは、Topic の一致も残る
+    expect(basesOf(smite, "kn-role-quest-jungle-current")![0]).toContainEqual({ kind: "topic", topicId: "cat-basics", matched: "仕様", viaTopicId: "role-quests" });
+
+    // 「フラッシュの仕様」：kn-flash-cd が一部一致から全条件一致の1位になる。「仕様」の理由は種類
+    const flash = noteMatchesForQuery("フラッシュの仕様");
+    const flashFull = flash.matches.filter((m) => m.tier === "full");
+    expect(flashFull[0].note.id).toBe("kn-flash-cd");
+    const ki = flash.units.findIndex((u) => u.matched === "仕様");
+    expect(flashFull[0].bases[ki]).toEqual([{ kind: "noteKind", noteKind: "mechanic", matched: "仕様" }]);
+
+    // 「タワーの仕様」：全条件一致は25件から29件。増えた4件は種類だけで「仕様」に一致した仕様のノート
+    const tower = noteMatchesForQuery("タワーの仕様");
+    const towerFull = tower.matches.filter((m) => m.tier === "full");
+    const ti = tower.units.findIndex((u) => u.matched === "仕様");
+    const kindOnly = towerFull.filter((m) => m.bases[ti].every((b) => b.kind === "noteKind"));
+    expect(towerFull).toHaveLength(29);
+    expect(kindOnly.map((m) => m.note.id).sort()).toEqual(["kn-homeguard-261", "kn-inhibitor-no-reinforced", "kn-invisible-counters", "kn-malzahar-voidlings"]);
+
+    // 種類の一致は、大分類の Topic の語で、ノートの種類の表示名と同じときだけ。種類が違うノートには付けない
+    for (const q of ["スマイトの仕様", "フラッシュの仕様", "タワーの仕様", "仕様変更"]) {
+      const r = noteMatchesForQuery(q);
+      for (const m of r.matches)
+        m.bases.forEach((bs, i) => {
+          for (const b of bs.filter((x) => x.kind === "noteKind")) {
+            const u = r.units[i];
+            expect(u.kind === "topic" && u.topic.kind === "category", `${q} ${m.note.id}`).toBe(true);
+            expect(b).toEqual({ kind: "noteKind", noteKind: "mechanic", matched: "仕様" });
+            expect(m.note.kind).toBe("mechanic");
+          }
+        });
+    }
+    // 大分類だけの検索は、種類で一致しても出さない（具体的な条件が必要という規則は変えない）
+    expect(noteMatchesForQuery("仕様").matches).toEqual([]);
+    expect(noteMatchesForQuery("ゲームの基本仕様").matches).toEqual([]);
+    // 表示名でない大分類の別名（基礎・メカニクス・mechanics）、語として残る種類の名前（判断・仮説）、別の Topic（旧仕様）、
+    // ロール・時期の大分類には、種類の一致を付けない
+    for (const q of ["スマイトの基礎", "フラッシュのメカニクス", "smite mechanics", "判断", "ウェーブの判断", "カイトの判断", "仮説", "トレードの仮説", "旧仕様のタワープレート", "現行のタワープレート", "ミッド カイト", "旧シーズン ステルス", "カイト", "カイティング", "kiting", "カイトの練習方法"]) {
+      const r = noteMatchesForQuery(q);
+      expect(r.matches.flatMap((m) => m.bases.flat()).filter((b) => b.kind === "noteKind"), q).toEqual([]);
+    }
+    expect(noteMatchesForQuery("スマイトの基礎").matches.map((m) => m.note.id)).not.toContain("kn-smite-damage-261");
+  });
+
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {
     expect(noteMatchesForQuery("").matches).toEqual([]);
     // 「バロン」は 2026-11-02 から tol2 のアタックムーブのノートにある語になったので、ノートにない語の例を「アタカン」にする

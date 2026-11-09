@@ -5,6 +5,7 @@
 import { containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidualTerms, type Unit } from "../search/search";
 import { index } from "./dataset";
 import { publicEvidenceOf, publicNotes } from "./explorePool";
+import { KIND_LABELS } from "./labels";
 import type { KnowledgeNote } from "./types";
 
 /** 照合する記述の種類。exceptions・falsifiers は、主張と逆向きになりうる記述 */
@@ -27,7 +28,9 @@ const OPPOSING_FIELDS: NoteField[] = ["exceptions", "falsifiers"];
 export type NoteMatchBasis =
   | { kind: "topic"; topicId: string; matched: string; viaTopicId?: string }
   | { kind: "creator"; creator: string; matched: string }
-  | { kind: "field"; field: NoteField; matched: string };
+  | { kind: "field"; field: NoteField; matched: string }
+  /** ノートの種類（kind）による一致。大分類の Topic として取り出した語が、種類の表示名（KIND_LABELS）と同じときだけ */
+  | { kind: "noteKind"; noteKind: KnowledgeNote["kind"]; matched: string };
 
 export interface NoteMatch {
   note: KnowledgeNote;
@@ -123,6 +126,16 @@ function splitCompound(term: string): [string, string] | undefined {
   return undefined;
 }
 
+/**
+ * 大分類の Topic として取り出した語が、ノートの種類の表示名（KIND_LABELS。例：mechanic は「仕様」）と同じか（2026-11-09）。
+ * 例：「スマイトの仕様」の「仕様」は大分類「ゲームの基本仕様」の別名で、種類が「仕様」のノートは、その Topic の下になくても一致する。
+ * 大分類の別名をすべて種類と同じ意味にはしない（「基礎」「メカニクス」は表示名ではないので対象外）。
+ * 語として残った「判断」「仮説」なども、大分類の Topic ではないので対象外。種類はノートの分類で、ゲーム内での検証ではない
+ */
+function isKindLabelMatch(u: Unit, n: KnowledgeNote): boolean {
+  return u.kind === "topic" && u.topic.kind === "category" && normalize(KIND_LABELS[n.kind]) === normalize(u.matched);
+}
+
 const FIELD_ORDER: NoteField[] = ["statement", "conditions", "exceptions", "falsifiers", "notes", "applicability", "evidence", "topicName"];
 
 function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
@@ -132,6 +145,7 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
 /**
  * 検索語に一致する公開の知識ノート。公開しないノート（isPublicNote でないもの）は対象にしない。
  * 照合：Topic は付いている Topic（下位の Topic を含む）か記述、発信者は根拠の資料の発信者、語はノートの記述。
+ * 大分類の Topic の語が種類の表示名と同じときは、その種類のノートにも一致する（isKindLabelMatch）。
  * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
  * そのうえで、主張・成立条件で一致した条件が多いものを先にする（statementHitCount）。
  * 同じなら、同義語を含めて主張・成立条件で一致した条件が多いものを先にする（statementHitCountWithSynonyms）。同じならデータの順
@@ -174,6 +188,7 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
           ...(direct ? [{ kind: "topic" as const, topicId: u.topic.id, matched: u.matched }] : []),
           ...via.map((id) => ({ kind: "topic" as const, topicId: u.topic.id, matched: u.matched, viaTopicId: id })),
           ...fieldBases(t, u.matched).filter((b) => b.kind === "field" && b.field !== "topicName"),
+          ...(isKindLabelMatch(u, n) ? [{ kind: "noteKind" as const, noteKind: n.kind, matched: u.matched }] : []),
         ];
       }
       if (u.kind === "creator") return t.creators.filter((c) => u.creators.has(c)).map((creator) => ({ kind: "creator", creator, matched: u.matched }));

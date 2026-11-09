@@ -57,6 +57,17 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(plain).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
   });
 
+  it("ノートの種類による一致は、Topic の一致と区別して「ノートの種類「仕様」」と示す（2026-11-09）", () => {
+    const html = renderToStaticMarkup(<RelatedNotes q="スマイトの仕様" />);
+    const t = text(html);
+    expect(html).toContain(`href="${noteHref("kn-smite-damage-261")}"`);
+    expect(t).toContain("一致：「仕様」：ノートの種類「仕様」 ／ 「スマイト」：主張");
+    // 基本仕様の下の Topic で一致したノートは、Topic の一致として示す
+    expect(t).toContain("「仕様」：Topic「ゲームの基本仕様」›「ロールクエスト」");
+    expect(t).toContain("種類はノートの分類で、ゲーム内での検証ではありません");
+    expect(t).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
+  });
+
   it("一致するノートがなければ何も出さない", () => {
     expect(renderToStaticMarkup(<RelatedNotes q="アタカン" />)).toBe("");
     expect(text(page("how to freeze a lane"))).toContain("検索語に一致した知識ノート");

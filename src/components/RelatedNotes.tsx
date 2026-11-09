@@ -1,6 +1,7 @@
 // 検索画面の「関連する知識ノート」。資料の検索結果とは別枠で、件数にも含めない。
 // 一致は候補に含めた理由であり、質問への答えであることは示さない。
 import { index } from "../data/dataset";
+import { KIND_LABELS } from "../data/labels";
 import { NOTE_FIELD_LABELS, noteMatchesForQuery, type NoteMatch, type NoteMatchBasis } from "../data/noteSearch";
 import { plainText } from "../lib/plainText";
 import { NoteSummary } from "./ExplorePage";
@@ -13,6 +14,7 @@ const topicLabel = (id: string) => index.topicById.get(id)?.label_ja ?? id;
 function basisText(b: NoteMatchBasis): string {
   if (b.kind === "topic") return `Topic「${topicLabel(b.topicId)}」${b.viaTopicId ? `›「${topicLabel(b.viaTopicId)}」` : ""}`;
   if (b.kind === "creator") return `根拠の発信者「${b.creator}」`;
+  if (b.kind === "noteKind") return `ノートの種類「${KIND_LABELS[b.noteKind]}」`;
   return NOTE_FIELD_LABELS[b.field];
 }
 
@@ -79,7 +81,7 @@ export function RelatedNotes({ q, result }: { q: string; result?: NoteSearchResu
       </summary>
       <p className="muted">
         資料の検索結果とは別に、根拠のある公開の知識ノートの主張・成立条件・例外・Topic の名前と、根拠の要約を検索語で照合したものです。
-        「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。上の件数には含みません。現行で適用できない（旧仕様の）ノートは後ろに並べ、そのほかは、主張・成立条件に検索語があるノートを、Topic・補足などだけで一致したノートより先に並べます。「カイト」「カイティング」「kiting」は同じ意味の語として、主張・成立条件にある同義語も並び順にだけ使います（検索語そのものの一致より後ろ、一致の理由には含めません）。
+        「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。上の件数には含みません。現行で適用できない（旧仕様の）ノートは後ろに並べ、そのほかは、主張・成立条件に検索語があるノートを、Topic・補足などだけで一致したノートより先に並べます。「カイト」「カイティング」「kiting」は同じ意味の語として、主張・成立条件にある同義語も並び順にだけ使います（検索語そのものの一致より後ろ、一致の理由には含めません）。「仕様」のように、大分類の Topic の語がノートの種類の名前と同じときは、その種類のノートも一致として扱い、「ノートの種類」と示します（種類はノートの分類で、ゲーム内での検証ではありません）。
         {r.expandedQuery && <>略記は読み替えて照合しています（照合に使った検索語：{r.expandedQuery}）。</>}
       </p>
       {r.cues.negation && (
