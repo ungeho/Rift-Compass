@@ -29,6 +29,11 @@ export type NoteMatchBasis =
   | { kind: "topic"; topicId: string; matched: string; viaTopicId?: string }
   | { kind: "creator"; creator: string; matched: string }
   | { kind: "field"; field: NoteField; matched: string }
+  /**
+   * 照合用の同義の表記（MATCH_SYNONYM_GROUPS）による一致（2026-11-10）。matched は検索語の表記、noteTerm はノートの記述で一致した表記。
+   * 直接の一致（kind: "field"）とは別に記録し、主張・成立条件での直接の一致の数（statementHitCount）には数えない
+   */
+  | { kind: "synonym"; field: NoteField; matched: string; noteTerm: string }
   /** ノートの種類（kind）による一致。大分類の Topic として取り出した語が、種類の表示名（KIND_LABELS）と同じときだけ */
   | { kind: "noteKind"; noteKind: KnowledgeNote["kind"]; matched: string };
 
@@ -67,6 +72,21 @@ const RANK_SYNONYM_GROUPS: string[][] = [["カイト", "カイティング", "ki
 export function rankSynonymsOf(term: string): string[] {
   const t = normalize(term);
   return RANK_SYNONYM_GROUPS.find((g) => g.includes(t))?.filter((w) => w !== t) ?? [];
+}
+
+/**
+ * 照合に使う同義の表記（2026-11-10）。並び順だけに使う RANK_SYNONYM_GROUPS とは別。
+ * 同じ Topic の別名をすべて同義とはしない（例：Topic「クールダウン」の別名「クールタイム」「スキル切れ」、
+ * 下位の「スキルヘイスト」「CDR」は含めない）。意味が同じ表記の組だけを置く。
+ * 使うのは、ノートが検索の対象（ほかの具体的な条件）にも主張・成立条件で直接一致するときだけ（synonymBasesAllowed）
+ */
+const MATCH_SYNONYM_GROUPS: string[][] = [["CD", "クールダウン"]];
+
+/** 検索語の照合用の同義の表記（自分を除く）。照合用の normalized と表示用の display */
+export function matchSynonymsOf(term: string): { normalized: string; display: string }[] {
+  const t = normalize(term);
+  const g = MATCH_SYNONYM_GROUPS.find((xs) => xs.some((w) => normalize(w) === t));
+  return g ? g.filter((w) => normalize(w) !== t).map((w) => ({ normalized: normalize(w), display: w })) : [];
 }
 
 const list = (xs: string[] | undefined) => (xs ?? []).map(normalize).join("\n");
@@ -168,6 +188,37 @@ export function counterTargetMatch(m: NoteMatch, units: Unit[]): boolean {
 
 const FIELD_ORDER: NoteField[] = ["statement", "conditions", "exceptions", "falsifiers", "notes", "applicability", "evidence", "topicName"];
 
+const isStatementLevel = (f: NoteField) => f === "statement" || f === "conditions";
+
+/**
+ * 照合用の同義の表記で、検索の対象の根拠にしない語（2026-11-10）。何の CD かを特定しない語だけを明示する。
+ * 立場を表す語（相手・敵・味方・自分）は、多くのノートで別の文脈（相手のタワー・相手のトップなど）に現れ、
+ * 「スキル」は CD の対象を特定しない（「スキルにも当たりやすい」と通常攻撃の CD のように、別の文脈で結び付く）。
+ * ノートの出現数による判定は使わない（無関係なノートの追加で判定が反転するため）。検索条件からは除かない
+ */
+const GENERIC_TARGET_WORDS = new Set(["相手", "敵", "味方", "自分", "スキル"].map(normalize));
+
+/** 検索の対象の根拠にできる語か（GENERIC_TARGET_WORDS でない語） */
+export function isTargetSpecific(term: string): boolean {
+  return !GENERIC_TARGET_WORDS.has(normalize(term));
+}
+
+/**
+ * 検索条件 i に照合用の同義の表記を使ってよいか（2026-11-10）。ノートが、ほかの具体的な条件（検索の対象）に、
+ * 主張・成立条件の記述で直接一致しているときだけ。同義の表記による一致そのもの・大分類の Topic・発信者・
+ * Topic が付いているだけの一致・何の CD かを特定しない語（GENERIC_TARGET_WORDS。例：「相手」「スキル」）は、対象の根拠にしない。対象のない検索（例：「CD」「クールダウン」だけ）では使わない
+ */
+export function synonymBasesAllowed(units: Unit[], directBases: NoteMatchBasis[][], i: number): boolean {
+  return units.some(
+    (v, j) =>
+      j !== i &&
+      v.kind !== "creator" &&
+      !(v.kind === "topic" && v.topic.kind === "category") &&
+      isTargetSpecific(v.matched) &&
+      directBases[j].some((b) => b.kind === "field" && isStatementLevel(b.field)),
+  );
+}
+
 function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
   return FIELD_ORDER.filter((f) => containsTerm(t.fields[f], matched)).map((field) => ({ kind: "field", field, matched }));
 }
@@ -176,10 +227,11 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
  * 検索語に一致する公開の知識ノート。公開しないノート（isPublicNote でないもの）は対象にしない。
  * 照合：Topic は付いている Topic（下位の Topic を含む）か記述、発信者は根拠の資料の発信者、語はノートの記述。
  * 大分類の Topic の語が種類の表示名と同じときは、その種類のノートにも一致する（isKindLabelMatch）。
+ * 「CD」「クールダウン」は、ノートが検索の対象にも直接一致するときだけ、もう一方の表記でも同じ条件に一致する（MATCH_SYNONYM_GROUPS・synonymBasesAllowed）。
  * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
  * 対策を求める検索では、検索の対象と結び付いた対策の記述があるものを先にする（counterTargetMatch）。
- * そのうえで、主張・成立条件で一致した条件が多いものを先にする（statementHitCount）。
- * 同じなら、同義語を含めて主張・成立条件で一致した条件が多いものを先にする（statementHitCountWithSynonyms）。同じならデータの順
+ * そのうえで、主張・成立条件で直接一致した条件が多いものを先にする（statementHitCount。照合用の同義の表記による一致は数えない）。
+ * 同じなら、同義語（並び順用・照合用）を含めて主張・成立条件で一致した条件が多いものを先にする（statementHitCountWithSynonyms）。同じならデータの順
  */
 export function noteMatchesForQuery(query: string): NoteSearchResult {
   const q = normalize(query);
@@ -210,6 +262,9 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   const cues = { negation: NEGATION.test(q), condition: CONDITION.test(q), stance: STANCE.test(q), side: SIDE.test(q) };
   const result: NoteSearchResult = { units, ignored, matches: [], cues, ...(expanded !== q ? { expandedQuery: expanded } : {}) };
   if (units.length === 0) return result;
+  // 照合用の同義の表記は、検索条件ごとに1回だけ求める（ノートごとには求めない）
+  const unitSynonyms = units.map((u) => (u.kind === "creator" ? [] : matchSynonymsOf(u.matched)));
+  const anySynonym = unitSynonyms.some((s) => s.length > 0);
 
   for (const n of publicNotes) {
     const t = noteTexts.get(n.id)!;
@@ -227,6 +282,20 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
       if (u.kind === "creator") return t.creators.filter((c) => u.creators.has(c)).map((creator) => ({ kind: "creator", creator, matched: u.matched }));
       return fieldBases(t, u.matched);
     });
+    // 照合用の同義の表記：同じ条件への一致として加える（条件の数は増やさない）。直接一致した記述の種類には重ねない
+    if (anySynonym) {
+      unitSynonyms.forEach((syns, i) => {
+        if (syns.length === 0 || !synonymBasesAllowed(units, bases, i)) return;
+        const u = units[i];
+        for (const s of syns) {
+          for (const f of FIELD_ORDER) {
+            if (u.kind === "topic" && f === "topicName") continue;
+            if (bases[i].some((b) => (b.kind === "field" || b.kind === "synonym") && b.field === f)) continue;
+            if (containsTerm(t.fields[f], s.normalized)) bases[i].push({ kind: "synonym", field: f, matched: u.matched, noteTerm: s.display });
+          }
+        }
+      });
+    }
     const hit = bases.filter((b) => b.length > 0).length;
     if (hit === 0) continue;
     // 具体的な条件（大分類以外の Topic・語・発信者）に1つ以上一致しないものは出さない（大分類だけの一致は広すぎるので、「マクロ」だけの検索では出さない）
@@ -239,7 +308,7 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     if (!full && (units.length < 2 || hit * 2 < units.length || (!topicHit && hit < 2))) continue;
     // Topic の名前（例：チャンピオン名）でも、ノートに Topic が付いておらず、名前が例外・反証の記述にだけあるときは同じ扱い
     const opposingOnly = bases.some(
-      (b, i) => units[i].kind !== "creator" && b.length > 0 && b.every((x) => x.kind === "field" && OPPOSING_FIELDS.includes(x.field)),
+      (b, i) => units[i].kind !== "creator" && b.length > 0 && b.every((x) => (x.kind === "field" || x.kind === "synonym") && OPPOSING_FIELDS.includes(x.field)),
     );
     result.matches.push({ note: n, bases, tier: full ? "full" : "partial", opposingOnly });
   }
@@ -263,14 +332,15 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
 }
 
 /**
- * 主張・成立条件で、検索語そのものか、その同義語（rankSynonymsOf）が一致した検索条件の数。並び順にだけ使う。
+ * 主張・成立条件で、検索語そのものか、その同義語（並び順用の rankSynonymsOf、照合用の同義の表記による一致）が一致した検索条件の数。並び順にだけ使う。
  * 一致した条件だけを対象にし、1つの条件に同義語がいくつあっても1と数える。補足・根拠・例外・反証での同義語は数えない
  */
 export function statementHitCountWithSynonyms(m: NoteMatch, units: Unit[]): number {
   const t = noteTexts.get(m.note.id);
   return m.bases.filter((bs, i) => {
     if (bs.length === 0) return false;
-    if (bs.some((b) => b.kind === "field" && (b.field === "statement" || b.field === "conditions"))) return true;
+    // 直接の一致と、照合用の同義の表記（kind: "synonym"）による一致。どちらも同じ1条件として数える
+    if (bs.some((b) => (b.kind === "field" || b.kind === "synonym") && isStatementLevel(b.field))) return true;
     const u = units[i];
     if (!t || u.kind === "creator") return false;
     return rankSynonymsOf(u.matched).some((w) => containsTerm(t.fields.statement, w) || containsTerm(t.fields.conditions, w));
@@ -279,7 +349,7 @@ export function statementHitCountWithSynonyms(m: NoteMatch, units: Unit[]): numb
 
 /**
  * 主張・成立条件で一致した検索条件の数。1つの条件が主張と成立条件の両方にあっても1と数える。
- * Topic が付いているだけ・根拠の要約・補足・例外・反証での一致は数えない
+ * Topic が付いているだけ・根拠の要約・補足・例外・反証での一致と、照合用の同義の表記による一致（kind: "synonym"）は数えない
  * （例：「カイト」は Topic「操作技術」の別名なので、操作技術のノートはすべて一致する。主張にカイトがあるノートを先にする）
  */
 export function statementHitCount(m: NoteMatch): number {

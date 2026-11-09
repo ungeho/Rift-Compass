@@ -98,6 +98,22 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(visible).not.toContain("「カイト」「カイティング」「kiting」は同じ意味の語");
   });
 
+  it("照合用の同義の表記による一致を、表記どおりの一致と区別して示す。説明は閉じた欄に置く（2026-11-10）", () => {
+    const html = renderToStaticMarkup(<RelatedNotes q="フラッシュのクールダウン" />);
+    const t = text(html);
+    expect(html).toContain(`href="${noteHref("kn-flash-cd")}"`);
+    expect(t).toContain("一致：「クールダウン」：主張（同義の表記「CD」）・根拠の要約（同義の表記「CD」） ／ 「フラッシュ」：Topic「サモナースペル」・主張");
+    // 表記どおりの検索では、同義の表記とは示さない
+    expect(text(renderToStaticMarkup(<RelatedNotes q="フラッシュのCD" />))).not.toContain("同義の表記「");
+    // 説明は閉じた欄の中だけ。最初から見える部分は従来の2文のまま
+    const help = text(html.match(/<details class="related-notes-help">([\s\S]*?)<\/details>/)![1]);
+    expect(help).toContain("「CD」と「クールダウン」は、検索の対象（例：「フラッシュ」。「相手」「スキル」は除く）も主張・成立条件にあるノートでだけ同じ語として照合し、「同義の表記」と示します");
+    expect(help).toContain("「カイト」「カイティング」「kiting」は同じ意味の語");
+    const visible = text(html.replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+    expect(visible).not.toContain("「CD」と「クールダウン」は");
+    expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
+  });
+
   it("一致するノートがなければ何も出さない", () => {
     expect(renderToStaticMarkup(<RelatedNotes q="アタカン" />)).toBe("");
     expect(text(page("how to freeze a lane"))).toContain("検索語に一致した知識ノート");

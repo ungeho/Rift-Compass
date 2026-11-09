@@ -4,7 +4,7 @@ import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
 import { containsTerm, normalize } from "../search/search";
-import { counterTargetMatch, isCounterRequest, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, type NoteMatch } from "./noteSearch";
+import { counterTargetMatch, isCounterRequest, isTargetSpecific, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
   id: string;
@@ -75,7 +75,7 @@ describe("知識ノートの検索（評価用の質問：data/experiments/note-
 
 describe("知識ノートの検索の規則", () => {
   it("資料の検索結果を変えない（ノートの照合は資料の検索とは別に行う）", () => {
-    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト"]) {
+    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD"]) {
       const before = search(q);
       noteMatchesForQuery(q);
       expect(search(q).hits.map((h) => h.resource.id)).toEqual(before.hits.map((h) => h.resource.id));
@@ -390,6 +390,110 @@ describe("知識ノートの検索の規則", () => {
     expect(ids("スマイトの仕様")[0]).toBe("kn-smite-damage-261");
     expect(ids("スマイトを使わずに")[0]).toBe("kn-smite-damage-261");
     expect(ids("フラッシュがない相手には仕掛けない")[0]).toBe("kn-engage-when-flash-down");
+  });
+
+  it("照合用の同義の表記（CD・クールダウン）：検索の対象にも主張・成立条件で直接一致したノートでだけ、同じ条件の一致として扱う（2026-11-10）", () => {
+    const ids = (r: ReturnType<typeof noteMatchesForQuery>, tier?: "full" | "partial") => r.matches.filter((m) => !tier || m.tier === tier).map((m) => m.note.id);
+    const synonymBases = (r: ReturnType<typeof noteMatchesForQuery>) => r.matches.flatMap((m) => m.bases.flat()).filter((b) => b.kind === "synonym");
+    // グループは CD とクールダウンの1組だけ。同じ Topic の別名・下位の Topic の語は同義にしない。並び順用の同義語とも別
+    expect(matchSynonymsOf("CD")).toEqual([{ normalized: "クールダウン", display: "クールダウン" }]);
+    expect(matchSynonymsOf("クールダウン")).toEqual([{ normalized: "cd", display: "CD" }]);
+    for (const w of ["クールタイム", "スキル切れ", "CDR", "クールダウン短縮", "スキルヘイスト", "ヘイスト", "攻撃速度", "カイト", "kiting"]) expect(matchSynonymsOf(w), w).toEqual([]);
+    expect(rankSynonymsOf("CD")).toEqual([]);
+    // 英字の CD は単語として照合する（CDR・CDN・ACD には一致しない）
+    for (const t of ["cdr", "cdn", "acd", "cd2"]) expect(containsTerm(t, "cd"), t).toBe(false);
+    for (const t of ["cd中", "cd 300秒", "基本cdは"]) expect(containsTerm(t, "cd"), t).toBe(true);
+
+    // フラッシュ：本文は「CD」。クールダウンの表記でも全条件一致の1位になり、条件の数は増えない
+    const cd = noteMatchesForQuery("フラッシュのCD"), cooldown = noteMatchesForQuery("フラッシュのクールダウン");
+    expect(cooldown.units.map((u) => u.key).sort()).toEqual(cd.units.map((u) => u.key).sort());
+    expect(cooldown.units).toHaveLength(2);
+    expect(ids(cd, "full")[0]).toBe("kn-flash-cd");
+    expect(ids(cooldown, "full")[0]).toBe("kn-flash-cd");
+    expect([...ids(cooldown, "full")].sort()).toEqual([...ids(cd, "full")].sort());
+    // 一致の理由：入力した表記（matched）・ノートの表記（noteTerm）・記述の種類（field）を、直接の一致と区別して記録する
+    const flash = cooldown.matches.find((m) => m.note.id === "kn-flash-cd")!;
+    const ci = cooldown.units.findIndex((u) => u.matched === "クールダウン");
+    expect(flash.bases[ci]).toEqual([
+      { kind: "synonym", field: "statement", matched: "クールダウン", noteTerm: "CD" },
+      { kind: "synonym", field: "evidence", matched: "クールダウン", noteTerm: "CD" },
+    ]);
+    // 同義の表記の一致は、主張・成立条件での直接の一致の数に入れない（並び順用の同義語を含めた数には入れる）
+    expect([statementHitCount(flash), statementHitCountWithSynonyms(flash, cooldown.units)]).toEqual([1, 2]);
+    // 「CD」と書いた検索では、本文の CD は直接の一致のまま
+    expect(cd.matches.find((m) => m.note.id === "kn-flash-cd")!.bases.flat().some((b) => b.kind === "synonym")).toBe(false);
+
+    // ジャックスE：「E」は1文字なので条件にしない。クールダウンの表記でも全条件一致の1位
+    for (const q of ["ジャックスEのCD", "ジャックスEのクールダウン"]) {
+      const r = noteMatchesForQuery(q);
+      expect(r.units, q).toHaveLength(2);
+      expect(ids(r, "full")[0], q).toBe("kn-jax-e-mechanic");
+    }
+
+    // 表記違いの組：全条件一致の集合が同じ（並び順は直接の一致を先にするので、同じとは限らない）
+    for (const [a, b] of [["相手の主要スキルのCD", "相手の主要スキルのクールダウン"], ["ヘイストでCDはどう変わる", "ヘイストでクールダウンはどう変わる"], ["フラッシュ CD 300秒", "フラッシュ クールダウン 300秒"]]) {
+      expect([...ids(noteMatchesForQuery(b), "full")].sort(), b).toEqual([...ids(noteMatchesForQuery(a), "full")].sort());
+    }
+    // 通常攻撃：対象（通常攻撃）が主張にあるノートは、どちらの表記でも全条件一致
+    const aaCd = noteMatchesForQuery("通常攻撃のCD"), aaCooldown = noteMatchesForQuery("通常攻撃のクールダウン");
+    for (const id of ["kn-aa-interval-from-attack-speed", "kn-kite-timing", "kn-aa-five-components", "kn-aa-as-a-skill"]) {
+      expect(ids(aaCd, "full"), id).toContain(id);
+      expect(ids(aaCooldown, "full"), id).toContain(id);
+    }
+    // 同じ段・同じ上位の条件なら、表記どおりの一致を先にする（同義の表記の一致は主張・成立条件での直接の一致の数に入らない）
+    for (const q of ["フラッシュのクールダウン", "通常攻撃のクールダウン", "テレポートのクールダウン", "エズリアルQのCD", "ヘイストでクールダウンはどう変わる"]) {
+      const r = noteMatchesForQuery(q);
+      const key = (m: NoteMatch) => [(m.tier === "full" ? 0 : 2) + (m.note.historical?.current_applicability === "superseded" ? 1 : 0), isCounterRequest(q) && counterTargetMatch(m, r.units) ? 0 : 1];
+      for (let i = 1; i < r.matches.length; i++) {
+        const [a, b] = [r.matches[i - 1], r.matches[i]];
+        if (JSON.stringify(key(a)) === JSON.stringify(key(b))) expect(statementHitCount(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(statementHitCount(b));
+      }
+    }
+
+    // 何の CD かを特定しない語（相手・敵・味方・自分・スキル）は対象の根拠にしない：相手のタワー・トップなど別の文脈の語と、自分側の CD が結び付かない。
+    // 明示した語の一覧で判定し、ノートの出現数は使わない（無関係なノートが増えても判定が変わらない）
+    for (const w of ["相手", "敵", "味方", "自分", "スキル"]) expect(isTargetSpecific(w), w).toBe(false);
+    for (const w of ["フラッシュ", "ジャックス", "通常攻撃", "テレポート", "主要スキル", "エズリアル"]) expect(isTargetSpecific(w), w).toBe(true);
+    // 「スキル」：同義の表記では全条件一致に上げない。表記どおりの一致（「スキルのCD」の本文の CD）はそのまま
+    expect(synonymBases(noteMatchesForQuery("スキルのクールダウン"))).toEqual([]);
+    const skillCd = noteMatchesForQuery("スキルのCD");
+    expect(skillCd.matches.filter((m) => m.bases.flat().some((b) => b.kind === "synonym")).every((m) => m.bases[skillCd.units.findIndex((u) => u.matched === "cd")].some((b) => b.kind !== "synonym"))).toBe(true);
+    expect(ids(skillCd, "full")).toEqual(expect.arrayContaining(["kn-jax-e-mechanic", "kn-kite-timing", "kn-cooldown-window"]));
+    for (const q of ["相手のクールダウン", "相手のスキルのクールダウン"]) {
+      const r = noteMatchesForQuery(q);
+      for (const id of ["kn-roam-prerequisites", "kn-split-pusher-traits", "kn-split-push-failures", "kn-engage-when-flash-down"]) {
+        const m = r.matches.find((x) => x.note.id === id);
+        expect(m?.tier, `${q} ${id}`).not.toBe("full");
+        expect(m?.bases.flat().some((b) => b.kind === "synonym") ?? false, `${q} ${id}`).toBe(false);
+      }
+    }
+
+    // 対象のない検索・グループにない語：同義の表記を使わず、従来の照合のまま
+    for (const q of ["CD", "クールダウン", "CD クールダウン", "CDR", "クールダウン短縮", "クールタイム", "フラッシュのクールタイム", "スキルヘイスト", "攻撃速度", "CDN"]) {
+      expect(synonymBases(noteMatchesForQuery(q)), q).toEqual([]);
+    }
+    expect(noteMatchesForQuery("CD クールダウン").units).toHaveLength(1);
+    expect(ids(noteMatchesForQuery("CDR"))).toEqual(["kn-cooldown-window"]);
+    expect(ids(noteMatchesForQuery("フラッシュのクールタイム"), "full")).toEqual([]);
+    // 対象の根拠にしないもの：Topic が付いているだけ（イグナイト・サモナースペル・旧仕様）、大分類（仕様）
+    for (const q of ["イグナイトのクールダウン", "旧仕様のクールダウン", "クールダウンの仕様"]) {
+      const r = noteMatchesForQuery(q);
+      expect(ids(r, "full"), q).not.toContain("kn-flash-cd");
+      expect(r.matches.find((m) => m.note.id === "kn-flash-cd")?.bases.flat().some((b) => b.kind === "synonym") ?? false, q).toBe(false);
+    }
+
+    // 同義の表記の一致は、ほかの具体的な条件への主張・成立条件での直接の一致があるときだけ。逆向きの印は同義の表記の一致にも当てる
+    for (const q of ["フラッシュのクールダウン", "通常攻撃のクールダウン", "クールダウン中の相手に仕掛けるべきか", "テレポートのクールダウン", "エズリアルQのCD", "スキルのCD"]) {
+      const r = noteMatchesForQuery(q);
+      for (const m of r.matches) {
+        m.bases.forEach((bs, i) => {
+          if (bs.some((b) => b.kind === "synonym")) expect(synonymBasesAllowed(r.units, m.bases, i), `${q} ${m.note.id}`).toBe(true);
+        });
+        const opposing = m.bases.some((bs, i) => r.units[i].kind !== "creator" && bs.length > 0 && bs.every((b) => (b.kind === "field" || b.kind === "synonym") && ["exceptions", "falsifiers"].includes(b.field)));
+        expect(m.opposingOnly, `${q} ${m.note.id}`).toBe(opposing);
+        expect(publicIds.has(m.note.id)).toBe(true);
+      }
+    }
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {

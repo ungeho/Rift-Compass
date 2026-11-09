@@ -15,6 +15,8 @@ function basisText(b: NoteMatchBasis): string {
   if (b.kind === "topic") return `Topic「${topicLabel(b.topicId)}」${b.viaTopicId ? `›「${topicLabel(b.viaTopicId)}」` : ""}`;
   if (b.kind === "creator") return `根拠の発信者「${b.creator}」`;
   if (b.kind === "noteKind") return `ノートの種類「${KIND_LABELS[b.noteKind]}」`;
+  // 照合用の同義の表記による一致：検索語とは別の表記でノートに書かれていたことを示す（2026-11-10）
+  if (b.kind === "synonym") return `${NOTE_FIELD_LABELS[b.field]}（同義の表記「${b.noteTerm}」）`;
   return NOTE_FIELD_LABELS[b.field];
 }
 
@@ -93,6 +95,7 @@ export function RelatedNotes({ q, result }: { q: string; result?: NoteSearchResu
           <li>現行で適用できない（旧仕様の）ノートは、同じ区分の中で後ろに並べます。</li>
           <li>主張・成立条件に検索語があるノートを、Topic・補足などだけで一致したノートより先に並べます。</li>
           <li>「カイト」「カイティング」「kiting」は同じ意味の語として、主張・成立条件にある同義語も並び順にだけ使います（検索語そのものの一致より後ろ、一致の理由には含めません）。</li>
+          <li>「CD」と「クールダウン」は、検索の対象（例：「フラッシュ」。「相手」「スキル」は除く）も主張・成立条件にあるノートでだけ同じ語として照合し、「同義の表記」と示します（表記どおりの一致が先。1語だけの検索では使いません）。</li>
           <li>「仕様」のように、大分類の Topic の語がノートの種類の名前と同じときは、その種類のノートも一致として扱い、「ノートの種類」と示します（種類はノートの分類で、ゲーム内での検証ではありません）。</li>
           <li>検索語に「対策」「対抗策」などの表現があり、検索の対象と結び付いた対策の記述（例：「カイトされる側」）がノートの主張・成立条件にあるときは、同じ一致の区分の中でそのノートを先に並べることがあります（立場や内容が正しいかは判定していません）。</li>
         </ul>
