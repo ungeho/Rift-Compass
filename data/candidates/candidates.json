@@ -120481,7 +120481,7 @@
    "loltheory-blog"
   ],
   "discovered_at": "2026-11-01",
-  "existing_resource_id": null,
+  "existing_resource_id": "res-loltheory-kiting",
   "excerpt_features": {
    "roles": [],
    "topic_ids": [
@@ -120506,9 +120506,9 @@
   ],
   "needs_review": [],
   "triage": {
-   "status": "candidate",
-   "reason": "著者 Griffin Wood。通常攻撃の3段階と後隙のキャンセル、用語の区別、アタックムーブの設定、練習向きのチャンピオン、カイトされる側の対策、練習法。知識10件（J1〜J10）",
-   "by": "review"
+   "status": "registered",
+   "reason": "既存資料 res-loltheory-kiting と同じ URL・動画",
+   "by": "rule"
   },
   "depth_confirmed": "medium"
  },

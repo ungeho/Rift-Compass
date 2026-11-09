@@ -1439,6 +1439,20 @@
       "verification": { "level": "L3", "checked_at": "2026-11-08", "method": "ブラウザで記事ページの本文を取得", "notes": "本文の全体を確認（英語。記事に画像・表はない。知識抽出の第2回 I1〜I14）。著者・公開日・更新日（2026-11-07。抽出記録の時点は 2026-08-25 版）は記事ページのメタデータで確認。トップのロールクエストのテレポート（CD 390秒・シールド）は既存の Wiki のノートと一致。テレポートの基本の値・インヒビターの値は Wiki の該当ページ（正式資料に未登録）と照合しただけで、根拠にはしていない（docs/experiments/split-push-intake-pilot.md）。" }
     },
     {
+      "id": "res-loltheory-kiting",
+      "url": "https://blog.loltheory.gg/kiting-lol/",
+      "title": "What Is Kiting in LoL? (And How to Do It)",
+      "type": "article",
+      "language": "en",
+      "creator": { "name": "Griffin Wood (LoL Theory)", "kind": "media" },
+      "topic_ids": ["mechanics", "role-bot"],
+      "summary_ja": "カイティング（攻撃しながら距離を取り、反撃を受けずにダメージを与え続ける）の解説。通常攻撃の3段階（振りかぶり・発射・後隙）と後隙を移動で打ち消すスタッターステップ、用語の区別、アタックムーブの設定、練習向きのチャンピオン、助けになるステータス、カイトされる側の対策と地形、練習法を扱う。",
+      "published_at": "2026-05-06",
+      "patch_context": { "stated_patch": null, "basis": "inferred_from_date", "era": "season16" },
+      "access": { "free": true, "login_required": false },
+      "verification": { "level": "L3", "checked_at": "2026-11-08", "method": "ブラウザで記事ページの本文を取得", "notes": "本文の全体を確認（英語。記事に画像・表・動画はない。知識抽出の第2回 J1〜J10）。著者・公開日・更新日（2026-08-25。抽出記録と同じ版）は記事ページのメタデータで確認。攻撃速度の上限（3.003、V25.S1.3 で2.5から）と通常攻撃の振りかぶりの取り消しは Wiki の Attack speed と一致。ラックスの E を「スネア」とする記述は Data Dragon（16.20.1）ではスロウで、原典の誤り。グインソーが攻撃速度の上限を外すという説明は、Wiki の上限を変える効果の一覧にない。プラクティスツールの木人・ボット（Intermediate まで）は Wiki の Practice Tool（正式資料に未登録）と照合しただけ。設定の名前・既定のキーは英語クライアントの説明で、日本語クライアントでは未確認（docs/experiments/kiting-intake-pilot.md）。" }
+    },
+    {
       "id": "res-lg-qwgsg",
       "url": "https://www.lol-guide.com/articles/qwgsg",
       "title": "タワーダイブのやり方、コツを解説！",
@@ -3252,7 +3266,7 @@
       "statement_ja": "アタックムーブ（A＋左クリック）を使うときは「カーソル付近のターゲットを優先攻撃」を ON にする（OFF だと自分に一番近い敵を狙う）。注意：敵が視界のないブッシュに入ると、後ろのワードを狙って意図しない方向へ動くことがある。チャンピオンオンリーターゲットを使っていても、アタックムーブはミニオンを攻撃する。",
       "topic_ids": ["mechanics", "vision"],
       "status": "empirical",
-      "notes_ja": "設定の名前は2022年のクライアントの表記。現行のクライアントでは名前・場所が変わっている可能性がある。",
+      "notes_ja": "設定の名前は2022年のクライアントの表記。現行のクライアントでは名前・場所が変わっている可能性がある。2026-11-08：LoL Theory の記事（res-loltheory-kiting、2026-08-25 更新）は、英語クライアントで Settings > Game > Game の「Attack Move on Cursor」、既定は OFF と説明している。日本語クライアントの現在の表記・場所は確認していない。",
       "source_person": "tol2",
       "generalizability": "general",
       "patch_dependencies": [],
@@ -4863,6 +4877,116 @@
       "generalizability": "general",
       "patch_dependencies": [],
       "last_checked_patch": null
+    },
+    {
+      "id": "kn-aa-windup-cancel",
+      "kind": "mechanic",
+      "statement_ja": "通常攻撃は、振りかぶり（攻撃が出る前）→ 発射（ダメージが確定する瞬間）→ その後の動作、の順に進む。振りかぶりの途中で移動などの別の命令を出すと攻撃は取り消され、ダメージは出ず、攻撃のタイマーも0に戻る。発射の後は、移動などの命令を出しても攻撃は損なわれない。",
+      "topic_ids": ["mechanics"],
+      "status": "source_stated",
+      "exceptions_ja": ["カリスタは、振りかぶり中に移動の命令を出しても攻撃を取り消せず、発射のときにその方向へ跳ぶ（LoL Theory の説明。Data Dragon 16.20.1 のパッシブの説明と照合しただけで、Wiki の根拠は支えていない）"],
+      "notes_ja": "仕様のノート。いつ移動しいつ撃つかという戦術の判断は kn-kite-timing（tol2・LoL Theory）にあり、このノートはその理由になる仕組みだけを述べる。Wiki の根拠（Attack speed）が支えるのは本文の、振りかぶりの取り消し・タイマーが0に戻ること・発射の後は命令を自由に出せること。「後隙（recovery）」は LoL Theory の呼び方で、Wiki は攻撃の後半を winddown・cooldown と呼ぶ。発射の後の移動の命令を最適化することを、Wiki はスタッターステップと呼ぶ。",
+      "source_person": "Griffin Wood",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-kite-vs-stutter-step",
+      "kind": "principle",
+      "statement_ja": "カイティング（目的：距離を保ちながら相手にダメージを与え続ける）とスタッターステップ（技術：攻撃が発射された後の動作を移動の命令で打ち消し、攻撃の合間に位置を変える）は別の概念。スタッターステップはカイトの主な手段だが、追いながら撃つスタッターステップも、最大射程からスロウのスキルで行うカイトもある。「オーブウォーク」は DotA 由来の用語で、LoL にその元の仕組み（攻撃を変化させるスキルで撃つ）はないが、LoL でもスタッターステップやカイトの意味で慣用的に使われる。",
+      "topic_ids": ["mechanics"],
+      "status": "empirical",
+      "notes_ja": "LoL Theory は、LoL のガイドがオーブウォークをスタッターステップ・カイトの同義語として使うのは誤りとし、コーチが「オーブウォークしろ」と言うときはスタッターステップによるカイトを指す、と書く。用語として正確なのはカイト・スタッターステップだという立場は著者のもの。Wiki のスタッターステップのページが同じ指摘をしているという原典の記述は確認していない（Wiki の Kiting は Terminology への転送で、Stutter stepping という名前のページはなかった）。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-attack-move-click",
+      "kind": "mechanic",
+      "statement_ja": "アタックムーブの入力は2つ。A キーの後に左クリック（2回の入力。クリックした地点へ向かいながら、途中で範囲に入った最初の敵を攻撃する。敵を直接クリックすれば通常の攻撃の命令。A を押している間は通常攻撃の射程が表示される）と、アタックムーブクリック（1回の入力。カーソルの位置をそのまま使い、射程は表示されない）。A キーだけでは攻撃しない。攻撃と移動を速く繰り返すときは、1回で済むアタックムーブクリックが多く使われる。",
+      "topic_ids": ["mechanics"],
+      "status": "empirical",
+      "conditions_ja": ["キー（A＋左クリック、Shift＋右クリック）は LoL Theory が既定として説明するキー割当で、キー設定で変えられる。現在の日本語クライアントの設定・表記は確認していない"],
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-kite-learning-champions",
+      "kind": "principle",
+      "statement_ja": "カイトの練習に向くチャンピオン（難易度は LoL Theory の著者の評価）：最も簡単なのはアッシュ（通常攻撃がスロウを与え、ダッシュがないのでカイトするしかなく、繰り返しが身につきやすい）。ヴェイン（同じ相手に攻撃を続け、Q の移動を混ぜる）とドレイヴン（斧を拾う位置に合わせて動く）は通常の繰り返しに別の要素が加わり、カリスタが最も難しい（攻撃のたびに跳び、振りかぶりを取り消せないので攻撃速度のビルドが要る）。",
+      "topic_ids": ["mechanics", "role-bot", "champ-ashe", "champ-vayne", "champ-kalista", "champ-draven"],
+      "status": "empirical",
+      "conditions_ja": ["ADC"],
+      "notes_ja": "ほかに向くチャンピオンとして、ケイトリン（最長の射程）・コグマウ・トリスターナ・トゥイッチ、マークスマン以外ではカシオペア（スキルを使い続けるので繰り返しが同じ）を挙げる。ケイルは高いレベルでカイトする、とも書く。Wiki のスタッターステップのページがこれらを挙げるという原典の記述は確認していない。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-kite-stats",
+      "kind": "principle",
+      "statement_ja": "カイトは、攻撃の頻度（攻撃速度）・移動の速さ（移動速度）・通常攻撃で相手を遅くできるか（オンヒットのスロウ）の3つで強くなる。攻撃速度が高いほど攻撃の間隔が短くなり、攻撃と移動の繰り返しが速く滑らかになる。ただし、カイトができるようになる最低限の攻撃速度はなく、低い攻撃速度でも繰り返しが遅くなるだけで成り立つ（例：レベル1のアッシュでもガレンをカイトできる）。",
+      "topic_ids": ["mechanics", "role-bot", "itemization"],
+      "status": "empirical",
+      "notes_ja": "原典の例：攻撃速度はバーサーカーグリーヴ・ファントムダンサー・ルーナンハリケーン、スロウはアッシュのパッシブ・ライライクリスタルセプター。アイテムの効果（ファントムダンサーの移動速度など）は照合していない。原典はレベル1のアッシュの攻撃速度を0.7と書くが、Data Dragon（16.20.1）の基本値は0.658。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-as-cap-3003",
+      "kind": "mechanic",
+      "statement_ja": "攻撃速度の上限は通常3.003（0.333秒に1回）、下限は0.2（5秒に1回）。上限はパッチ V25.S1.3（2025年2月）で2.5から変わった（ゲームの公開以来初めて）。一部のスキル・ルーンは上限を上げ（例：ベル＝ヴェスのパッシブ、ジンクスのパッシブ、ヘイルブレード）、一部は下げる（例：ゼリ）。",
+      "topic_ids": ["mechanics"],
+      "status": "source_stated",
+      "notes_ja": "原典は「一部のアイテムとスキルで上限を超えられる」と書くが、Wiki の一覧（上限を変える効果）にアイテムはない。",
+      "source_person": "Griffin Wood",
+      "generalizability": "general",
+      "patch_dependencies": ["system:attack-speed"],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-anti-kite-tools",
+      "kind": "decision",
+      "statement_ja": "カイトされる側（近接チャンピオン）は、カイトのうまいマークスマンに歩いて近づくだけでは負ける。対抗する手段は3つ：ギャップクローザー（ダッシュ・跳躍・ブリンクで攻撃と移動の繰り返しを飛ばす）、ハード CC（スネア・スタン・ノックアップ。当たれば相手は移動の命令を出せず、繰り返しが止まる。つなげるとさらに良い）、移動速度とスロウ（ゴーストなど）。",
+      "topic_ids": ["mechanics", "crowd-control"],
+      "status": "empirical",
+      "conditions_ja": ["カイトされる側の視点。逆にマークスマンの側は、フラッシュとピール（味方の守り）がないまま突進を持つ相手に捕まると、繰り返しを始める前に負ける（原典）"],
+      "notes_ja": "ここでのハード CC は効果の種類（スネア・スタン・ノックアップ）の意味で、「必ず当たる CC」の意味ではない。原典の例には方向を指定して撃つスキルも含まれ、原典は対象指定と方向指定を区別していない。原典の例：ギャップクローザーはアカリ・ゼド・カ＝ジックス・ダイアナ・イレリア・フィオラ・ヨネ、ハード CC はレオナの Q・ノーチラスの Q・アッシュの R・モルガナの Q、ゴーストはヘカリム・サイオン。原典の記述のうち2つは照合先と合わないので、本文に入れていない：(1) ハード CC の例に挙げる E のスキル1つを根（root）とするが、Data Dragon 16.20.1 ではスロウ（同じチャンピオンの根は Q。kn-lux-q-root）。(2) 移動速度の手段の例に挙げるアイテム1つ（Data Dragon のアイテム ID 6631）が「突進とスロウ」を持つとするが、Data Dragon 16.21.1 のアクティブは周囲へのダメージとスロウ、命中したチャンピオンの数に応じた移動速度の増加で、突進はない。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-anti-kite-terrain",
+      "kind": "decision",
+      "statement_ja": "カイトが最も強いのは、開けた場所での1対1・2対2。カイトされる側は、長いレーンで1人のときにうまい相手に捕まらないようにし、狭い通路・ジャングルのブッシュ・壁の周りで戦う。5対5で前衛がいると、カイトする側は対象を決めなければならず、側面を突かれやすい。",
+      "topic_ids": ["mechanics"],
+      "status": "empirical",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
+    },
+    {
+      "id": "kn-kite-practice-drill",
+      "kind": "decision",
+      "statement_ja": "カイトの練習（LoL Theory の手順）：(1) プラクティスツールでアッシュを使い、試合の中で敵の木人を出し、木人から離れながらアタックムーブで撃つ。すべての攻撃を当てつつ、止まる時間を作らない。慣れたら攻撃速度を上げて繰り返す。(2) 次に、ロビーで敵のボット（難易度 Intermediate）のガレンを加え、ミッドレーンの端から端までカイトする。ボットが Q やフラッシュで突っ込んできたらかわしながら攻撃を続ける（相手のスキルを読む負荷が加わり、実戦に近い）。",
+      "topic_ids": ["mechanics", "review-learning"],
+      "status": "empirical",
+      "notes_ja": "ボットの追加と難易度（Intro・Beginner・Intermediate）はプラクティスツールのロビーでの設定、木人（敵の木人は Shift＋B）は試合の中での操作（Wiki の Practice Tool。正式資料に未登録で、照合に使っただけ）。ボットのガレンが Q とフラッシュで突っ込んでくるのは原典の説明で、毎回その動きをするかは確認していない。攻撃速度を直接設定するコマンドは同じページの一覧に見つからず、ゴールドの追加・レベルアップで上げることになるとみられる。原典は「1日15分・2〜3週間の意識した練習が普通」と書くが、著者の目安で、習得にかかる期間の保証ではない。",
+      "source_person": "Griffin Wood（LoL Theory）",
+      "generalizability": "general",
+      "patch_dependencies": [],
+      "last_checked_patch": null
     }
   ],
   "evidence": [
@@ -5213,7 +5337,20 @@
     { "id": "ev-346", "note_id": "kn-split-push-when-not", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "When to Split Push (and When to Group)" }, "summary_ja": "相手に複数のテレポート、1人で倒しに来る構成、4対4でも勝てないほど不利", "checked_level": "L3", "checked_at": "2026-11-08" },
     { "id": "ev-347", "note_id": "kn-split-push-failures", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Failure Modes" }, "summary_ja": "4対5の全滅、テレポートが CD、相手がバロン、Reinforced Armor で削れない、インヒビターの復活", "checked_level": "L3", "checked_at": "2026-11-08" },
     { "id": "ev-348", "resource_id": "res-wiki-turret", "evidence_type": "source_fact", "locator": { "section": "Reinforced Armor（2026-10-08 の版、action=raw）" }, "summary_ja": "近くに敵のミニオン・召喚されたヘラルドがいないと、タワーは確定ダメージを含め80%軽減", "checked_level": "L3", "checked_at": "2026-11-08", "note_id": "kn-split-push-failures" },
-    { "id": "ev-349", "note_id": "kn-split-push-vs-backdoor", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Split Push vs. Backdoor" }, "summary_ja": "見せる圧力と見えない奇襲。1試合の中で一方が他方に変わる例", "checked_level": "L3", "checked_at": "2026-11-08" }
+    { "id": "ev-349", "note_id": "kn-split-push-vs-backdoor", "resource_id": "res-loltheory-split-push", "evidence_type": "empirical_claim", "locator": { "section": "Split Push vs. Backdoor" }, "summary_ja": "見せる圧力と見えない奇襲。1試合の中で一方が他方に変わる例", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-350", "note_id": "kn-aa-windup-cancel", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "How Kiting Works: The Three Phases of an Attack" }, "summary_ja": "振りかぶり・発射・後隙の3段階。振りかぶりを移動で取り消すと攻撃は無駄になりタイマーが戻る。発射の後の取り消しには不利益がない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-351", "resource_id": "res-wiki-attack-speed", "evidence_type": "source_fact", "locator": { "section": "Attack timer・Windup（action=raw、2026-11-08 取得。Last-Modified 2026-10-02 で、資料の確認日（2026-11-02、revid 4073067）より前の更新なので同じ版とみられる）" }, "summary_ja": "振りかぶりは発射の前ならどの命令でも取り消され、攻撃のタイマーは0に戻る。発射の後は命令を自由に出せる。振りかぶりを終えるには立ち止まっている必要がある", "checked_level": "L3", "checked_at": "2026-11-08", "note_id": "kn-aa-windup-cancel" },
+    { "id": "ev-352", "note_id": "kn-kite-timing", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "冒頭 / How Kiting Works" }, "summary_ja": "攻撃が発射された瞬間に移動の命令を出して後隙を打ち消し、次の攻撃が撃てるようになったらすぐ撃つ（攻撃・移動の繰り返し）。tol2 とは別の著者", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-353", "note_id": "kn-kite-vs-stutter-step", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "Kiting vs. Stutter-Stepping vs. Orb-Walking" }, "summary_ja": "カイティングは目的、スタッターステップは技術。オーブウォークは DotA の仕組みで LoL にはない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-354", "note_id": "kn-attack-move-settings", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "\"Attack Move on Cursor\" Setting" }, "summary_ja": "ON にするとアタックムーブの対象を自分の周りでなくカーソルの周りで探す。OFF（既定）だと、近くのタンクを殴ってしまう（英語クライアントの説明）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-355", "note_id": "kn-attack-move-click", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "How to Set Up Attack-Move / Kiting Quick Answers" }, "summary_ja": "A＋左クリックと Shift＋右クリック（1回の入力）の違い。A キーだけでは攻撃しない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-356", "note_id": "kn-kite-learning-champions", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "Champions Best for Learning to Kite" }, "summary_ja": "アッシュが最も簡単、カリスタが最も難しい。ヴェイン・ドレイヴンと、ほかのマークスマン・カシオペア", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-357", "note_id": "kn-kite-stats", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "Items and Stats That Help Kiting / Kiting Quick Answers" }, "summary_ja": "攻撃速度・移動速度・オンヒットのスロウの3つ。攻撃速度が上がるほど繰り返しが速くなるが、必要な攻撃速度の基準はない（レベル1のアッシュでもガレンをカイトできる）", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-358", "resource_id": "res-wiki-attack-speed", "evidence_type": "source_fact", "locator": { "section": "Cap and floor・Exceeding or altering the attack speed cap・Trivia（action=raw、2026-11-08 取得。Last-Modified 2026-10-02 で、資料の確認日（2026-11-02、revid 4073067）より前の更新なので同じ版とみられる）" }, "summary_ja": "上限 1/0.333、下限 1/5。上限を上げる・下げる効果の一覧。V25.S1.3（2025年2月）で2.5から3.003へ", "checked_level": "L3", "checked_at": "2026-11-08", "note_id": "kn-as-cap-3003" },
+    { "id": "ev-359", "evidence_type": "empirical_claim", "locator": { "section": "Items and Stats That Help Kiting" }, "summary_ja": "既定の上限は3.003（25.S1.3、2025年2月に2.5から）", "checked_level": "L3", "checked_at": "2026-11-08", "resource_id": "res-loltheory-kiting", "note_id": "kn-as-cap-3003" },
+    { "id": "ev-360", "note_id": "kn-anti-kite-tools", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "How to Not Get Kited (Counterplay)" }, "summary_ja": "ギャップクローザー・ハード CC（根・スタン・ノックアップ）・移動速度の3つ。マークスマンはフラッシュとピールがなければ負ける。例のうち E のスキルの根と、アイテム（ID 6631）の突進は照合先と合わない", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-361", "note_id": "kn-anti-kite-terrain", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "How to Not Get Kited (Counterplay)" }, "summary_ja": "開けた場所の1対1・2対2で最も強い。5対5では対象を決める必要があり側面を突かれる。狭い通路・茂み・壁の周りで戦う", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-362", "note_id": "kn-kite-practice-drill", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "Practice Drills" }, "summary_ja": "アッシュと木人で離れながら撃つ → 攻撃速度を上げる → ロビーで加えたボットのガレンを相手に、突っ込みをかわしながら撃つ。1日15分・2〜3週間は著者の目安", "checked_level": "L3", "checked_at": "2026-11-08" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },
@@ -5397,6 +5534,14 @@
     { "id": "rel-179", "from": "kn-split-push-before-objective", "to": "kn-objective-prep-1min", "type": "context_of" },
     { "id": "rel-180", "from": "kn-split-push-when", "to": "kn-split-push-before-objective", "type": "context_of" },
     { "id": "rel-181", "from": "kn-split-push-when-not", "to": "kn-split-push-when", "type": "context_of" },
-    { "id": "rel-182", "from": "kn-turret-reinforced-armor", "to": "kn-split-push-failures", "type": "reason_for" }
+    { "id": "rel-182", "from": "kn-turret-reinforced-armor", "to": "kn-split-push-failures", "type": "reason_for" },
+    { "id": "rel-183", "from": "kn-aa-windup-cancel", "to": "kn-kite-timing", "type": "reason_for" },
+    { "id": "rel-184", "from": "kn-kite-vs-stutter-step", "to": "kn-kite-timing", "type": "context_of" },
+    { "id": "rel-185", "from": "kn-attack-move-click", "to": "kn-attack-move-settings", "type": "context_of" },
+    { "id": "rel-186", "from": "kn-kite-learning-champions", "to": "kn-kite-practice-drill", "type": "context_of" },
+    { "id": "rel-187", "from": "kn-aa-interval-from-attack-speed", "to": "kn-kite-stats", "type": "reason_for" },
+    { "id": "rel-188", "from": "kn-as-cap-3003", "to": "kn-kite-stats", "type": "context_of" },
+    { "id": "rel-189", "from": "kn-anti-kite-tools", "to": "kn-kite-timing", "type": "context_of" },
+    { "id": "rel-190", "from": "kn-anti-kite-terrain", "to": "kn-anti-kite-tools", "type": "context_of" }
   ]
 }

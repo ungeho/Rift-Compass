@@ -88,7 +88,7 @@ test("正式資料は現行URL・動画IDの一致で対応。保存済みIDや�
   c.existing_resource_id = "res-invalid";
   const files = project(data);
   assert.equal(files.get(`${c.sources[0]}.json`).candidates.find((x) => x.key === c.key).resource_id, expected);
-  assert.equal(files.get("index.json").sources.reduce((n, s) => n + s.resource_ids.length, 0), 57); // 候補経由55（2026-11-08 のローム収録のパイロットで res-loltheory-roaming、同日のスプリットプッシュの収録で res-loltheory-split-push が加わった）＋明示的なDopagodの2資料
+  assert.equal(files.get("index.json").sources.reduce((n, s) => n + s.resource_ids.length, 0), 58); // 候補経由56（2026-11-08 のローム収録のパイロットで res-loltheory-roaming、同日のスプリットプッシュの収録で res-loltheory-split-push、カイティングの収録で res-loltheory-kiting が加わった）＋明示的なDopagodの2資料
   const unregistered = data.candidates.find((c) => !c.existing_resource_id && c.creator);
   unregistered.creator = data.dataset.resources[0].creator;
   const projected = project(data).get(`${unregistered.sources[0]}.json`).candidates.find((c) => c.key === unregistered.key);

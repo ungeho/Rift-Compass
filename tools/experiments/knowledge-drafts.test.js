@@ -35,11 +35,11 @@ test("すべての行を下書きにでき、status・確認レベルは昇格�
     // 原典の URL・著者・行の位置を保持する
     assert.ok(d.row && d.source && d.source.author);
   }
-  // 資料が付くのは、原典の URL が正式資料と一致する原典の行だけ（2026-11-01 時点：N・R、正式収録で H・K、2026-11-08 のローム収録のパイロットで P、同日のスプリットプッシュの収録で I が加わった）
+  // 資料が付くのは、原典の URL が正式資料と一致する原典の行だけ（2026-11-01 時点：N・R、正式収録で H・K、2026-11-08 のローム収録のパイロットで P、同日のスプリットプッシュの収録で I、カイティングの収録で J が加わった）
   const norm = normUrl;
   const formal = new Set(data.resources.map((r) => norm(r.url)));
   for (const d of ds) assert.strictEqual(Boolean(d.evidence.resource_id), Boolean(d.source.url && formal.has(norm(d.source.url))), d.row);
-  assert.deepStrictEqual([...new Set(ds.filter((d) => d.evidence.resource_id).map((d) => d.source.letter))].sort(), ["H", "I", "K", "N", "P", "R"]);
+  assert.deepStrictEqual([...new Set(ds.filter((d) => d.evidence.resource_id).map((d) => d.source.letter))].sort(), ["H", "I", "J", "K", "N", "P", "R"]);
 });
 
 test("相違・同じ著者・古い記述は、統合しない理由・注意として review に残す", () => {
@@ -289,14 +289,14 @@ test("operations：CLI の check は、エラーがあれば終了コード1で�
 
 test("原典1件ごとの処理：原典の記号で全行を下書きにでき、その原典を正式資料にすると全行に資料が付く（作業用のコピーで確認）", () => {
   const data = JSON.parse(fs.readFileSync(DATA, "utf8"));
-  // 未登録の原典の例（I は 2026-11-08 に正式資料になったので、まだ未登録の J に替えた）
-  const h = draft(["2:J"], data);
-  assert.strictEqual(h.length, 10);
+  // 未登録の原典の例（I・J は 2026-11-08 に正式資料になったので、まだ未登録の L に替えた）
+  const h = draft(["2:L"], data);
+  assert.strictEqual(h.length, 11);
   assert.ok(h.every((d) => d.evidence.resource_id === null));
   const copy = JSON.parse(JSON.stringify(data));
-  copy.resources.push({ id: "res-sim-j", url: h[0].source.url, creator: { name: h[0].source.author }, verification: { level: "L2" }, topic_ids: [] });
-  const after = draft(["2:J"], copy);
-  assert.ok(after.every((d) => d.evidence.resource_id === "res-sim-j"));
+  copy.resources.push({ id: "res-sim-l", url: h[0].source.url, creator: { name: h[0].source.author }, verification: { level: "L2" }, topic_ids: [] });
+  const after = draft(["2:L"], copy);
+  assert.ok(after.every((d) => d.evidence.resource_id === "res-sim-l"));
   // 資料を登録しても、status・確認レベルは決めない
   assert.ok(after.every((d) => d.note.status === "unverified" && d.evidence.checked_level === null));
   assert.throws(() => draft(["2:Z"], data), /行がない/);
