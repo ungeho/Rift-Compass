@@ -45,6 +45,11 @@ export type NoteMatchBasis =
    * 記述にあった（2026-11-10）。別名の表記違い（conceptVariant）とは別に記録する。その Topic が付いたノートだけに記録し、並び順には使わない
    */
   | { kind: "conceptPhrase"; field: NoteField; matched: string; notePhrase: string }
+  /**
+   * 年代の指定（例：「2013年」）が、主張・成立条件に書かれた年代（「2013年」「2013-11-20」のような年月日）に一致した（2026-11-10）。
+   * noteText はノートに書かれた表現。資料の公開日・確認日は対象外（補足・根拠の要約・時期の説明の年は使わない）
+   */
+  | { kind: "year"; field: NoteField; matched: string; noteText: string }
   /** ノートの種類（kind）による一致。大分類の Topic として取り出した語が、種類の表示名（KIND_LABELS）と同じときだけ */
   | { kind: "noteKind"; noteKind: KnowledgeNote["kind"]; matched: string };
 
@@ -75,6 +80,10 @@ export interface NoteSearchResult {
    */
   cues: { negation: boolean; condition: boolean; stance: boolean; side: boolean };
   expandedQuery?: string;
+  /** 年代の指定のうち、主張・成立条件に年代を書いた公開ノートがないため照合に使わなかったもの（例：「2026年」）（2026-11-10） */
+  yearsNotUsed?: string[];
+  /** 時代を表すあいまいな語（例：「昔」「今」）で、照合に使わなかったもの。特定の年・パッチには変換しない（2026-11-10） */
+  eraWordsNotUsed?: string[];
 }
 
 /**
@@ -142,8 +151,29 @@ const noteTexts = new Map<string, NoteText>(
   }),
 );
 
+/** 年代の指定として扱う検索語（4桁の年＋「年」）。年・月・日やパッチへの変換はしない */
+const YEAR_TERM = /^(\d{4})年$/;
+/** 主張・成立条件で年代として扱う表現：「2013年」「2013-11-20」「2013-11」（年の前が数字でない。年月日の形は後ろも数字でない）。「2000手前」のような数や「Preseason 2014」のような名前は対象外 */
+const yearInText = (text: string, year: string): string | undefined =>
+  text.match(new RegExp(`(?<!\\d)${year}(?:年|-\\d{1,2}(?:-\\d{1,2})?(?!\\d))`))?.[0];
+/** 年代として照合する記述の種類。補足・根拠の要約・時期の説明の年は、資料の公開日・確認日のことが多いので使わない */
+const YEAR_FIELDS: NoteField[] = ["statement", "conditions"];
+/** 時代を表すあいまいな語。照合には使わず、使わなかったことだけを示す */
+const ERA_WORDS = ["昔", "今", "旧", "当時", "以前", "最近", "現在"];
+
+function yearBases(t: NoteText, matched: string): NoteMatchBasis[] {
+  const year = matched.match(YEAR_TERM)![1];
+  return YEAR_FIELDS.flatMap((field) => {
+    const noteText = yearInText(t.fields[field], year);
+    return noteText ? [{ kind: "year" as const, field, matched, noteText }] : [];
+  });
+}
+
 /** 公開ノートの語彙（残りの語の採否に使う）*/
 const noteCorpus = [...noteTexts.values()].map((t) => Object.values(t.fields).join("\n")).join("\n");
+
+/** 主張・成立条件に年代として書かれた年（年代の指定を照合に使うかの判定）*/
+const yearsInNotes = new Set([...noteTexts.values()].flatMap((t) => YEAR_FIELDS.flatMap((f) => [...t.fields[f].matchAll(/(?<!\d)(\d{4})(?:年|-\d{1,2}(?:-\d{1,2})?(?!\d))/g)].map((m) => m[1]))));
 
 const NEGATION = /ない|ません|なかった|べきでない|ずに|せず|やめ|控え|ダメ|だめ|\bnot\b|\bdon't\b|\bdont\b|\bavoid\b|\bnever\b|\bwithout\b|\bstop\b/;
 // 「有利」は資料の検索では一般語として捨てるが、立場が逆のノートを答えと取り違えないよう、注意の対象にする
@@ -305,6 +335,7 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   const { units: base, residual } = matchQueryUnits(expanded);
   const units: Unit[] = [...base];
   const ignored: string[] = [];
+  const yearsNotUsed: string[] = [];
   const seen = new Set<string>();
   const push = (term: string) => {
     if (seen.has(term)) return;
@@ -315,6 +346,14 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     // 「対策」「使う側」などの視点の語は、注意（cues.side）で扱い、照合の条件にしない
     // （ノートの本文に「対策側：」と書いたノートだけが残り、仕様のノートが落ちるのを防ぐ）
     if (SIDE.test(term)) continue;
+    // 年代の指定（「2013年」）：主張・成立条件にその年代を書いた公開ノートがあるときだけ条件にする（2026-11-10）。
+    // 語としては照合しない（補足の「2022年の記事」のような資料の日付に一致させない）
+    const year = term.match(YEAR_TERM);
+    if (year) {
+      if (yearsInNotes.has(year[1])) push(term);
+      else yearsNotUsed.push(term);
+      continue;
+    }
     if (containsTerm(noteCorpus, term)) push(term);
     else {
       // 日本語の複合語（例：「タワープレート」）は、ノートの記述にある2語に分けられるときだけ、2語として照合する。
@@ -326,7 +365,14 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     }
   }
   const cues = { negation: NEGATION.test(q), condition: CONDITION.test(q), stance: STANCE.test(q), side: SIDE.test(q) };
-  const result: NoteSearchResult = { units, ignored, matches: [], cues, ...(expanded !== q ? { expandedQuery: expanded } : {}) };
+  // 時代を表すあいまいな語：照合の条件・無視した語のどれにも含まれないもの（1文字の語は条件から落ちるため、使わなかったことを示す）
+  const eraWordsNotUsed = ERA_WORDS.filter((w) => q.includes(w) && !units.some((u) => normalize(u.matched).includes(w)) && !ignored.some((x) => x.includes(w)));
+  const result: NoteSearchResult = {
+    units, ignored, matches: [], cues,
+    ...(expanded !== q ? { expandedQuery: expanded } : {}),
+    ...(yearsNotUsed.length > 0 ? { yearsNotUsed } : {}),
+    ...(eraWordsNotUsed.length > 0 ? { eraWordsNotUsed } : {}),
+  };
   if (units.length === 0) return result;
   // 照合用の同義の表記は、検索条件ごとに1回だけ求める（ノートごとには求めない）
   const unitSynonyms = units.map((u) => (u.kind === "creator" ? [] : matchSynonymsOf(u.matched)));
@@ -347,6 +393,7 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
         ];
       }
       if (u.kind === "creator") return t.creators.filter((c) => u.creators.has(c)).map((creator) => ({ kind: "creator", creator, matched: u.matched }));
+      if (YEAR_TERM.test(u.matched)) return yearBases(t, u.matched);
       return fieldBases(t, u.matched);
     });
     // Topic の具体例として登録した別名の条件：上位の Topic が付いているだけ（記述・種類での一致がない）なら、同じ具体例の別の表記を探す。

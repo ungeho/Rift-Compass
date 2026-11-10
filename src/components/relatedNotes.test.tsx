@@ -194,6 +194,26 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(text(part)).toContain("知識ノートをさらに12件表示する（残り 12件）");
   });
 
+  it("年代の指定の一致は「年代」と示し、使わなかった年・あいまいな時代の語を示す（2026-11-10）", () => {
+    const t = text(renderToStaticMarkup(<RelatedNotes q="2013年のピンクワード" />));
+    expect(t).toContain("検索語に一致した知識ノート 知識ノート ：1件（ほかに一部一致の関連候補 55件）");
+    expect(t).toContain("「2013年」：主張（年代「2013-11-20」）");
+    const y26 = text(renderToStaticMarkup(<RelatedNotes q="2026年のコントロールワード" />));
+    expect(y26).toContain("年代の指定「2026年」は、主張・成立条件にその年代を書いた知識ノートがないため、照合に使っていません。");
+    const old = text(renderToStaticMarkup(<RelatedNotes q="昔のピンクワード" />));
+    expect(old).toContain("時代を表す語「昔」は、特定の年やパッチに置き換えられないため、照合に使っていません。年代は「2013年」のように4桁の年で指定できます。");
+    // 年代を含まない検索には出さない
+    const plain = renderToStaticMarkup(<RelatedNotes q="ピンクワード" />).replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, "");
+    expect(text(plain)).not.toContain("年代の指定");
+    expect(text(plain)).not.toContain("時代を表す語");
+    // 説明は閉じた欄の中だけ
+    const html = renderToStaticMarkup(<RelatedNotes q="2013年のピンクワード" />);
+    const help = text(html.match(/<details class="related-notes-help">([\s\S]*?)<\/details>/)![1]);
+    expect(help).toContain("「2013年」のような4桁の年は、ノートの主張・成立条件に書かれた年代（「2013年」「2013-11-20」など）とだけ照合し、「年代」と示します。");
+    const visible = text(html.replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+    expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。並び順も答えの正しさを示しません。");
+  });
+
   it("一致するノートがなければ何も出さない", () => {
     expect(renderToStaticMarkup(<RelatedNotes q="アタカン" />)).toBe("");
     expect(text(page("how to freeze a lane"))).toContain("検索語に一致した知識ノート");

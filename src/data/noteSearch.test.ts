@@ -716,6 +716,53 @@ describe("知識ノートの検索の規則", () => {
     }
   });
 
+  it("年代の指定（「2013年」）：主張・成立条件に書かれた年代とだけ照合し、資料の日付・あいまいな語は使わない（2026-11-10）", () => {
+    const res = (q: string) => noteMatchesForQuery(q);
+    const tierOf = (q: string, tier: "full" | "partial") => res(q).matches.filter((m) => m.tier === tier).map((m) => m.note.id);
+    // 2013年：主張の「2013-11-20」（V3.14）に一致する歴史的なノートだけが全条件一致。年代の表現と記述の種類を記録する
+    const y13 = res("2013年のピンクワード");
+    expect(y13.units.map((u) => u.matched)).toEqual(["ピンクワード", "2013年"]);
+    expect(y13.ignored).toEqual([]);
+    expect(tierOf("2013年のピンクワード", "full")).toEqual(["kn-hist-ward-limit-v3-14"]);
+    expect(y13.matches[0].bases[1]).toEqual([{ kind: "year", field: "statement", matched: "2013年", noteText: "2013-11-20" }]);
+    // 現行のコントロールワードのノートは、2013年の仕様として全条件一致にしない（候補からは消さない）
+    for (const id of ["kn-control-ward-reveals", "kn-control-ward-not-invisible", "kn-control-ward-periodic-scan", "kn-ward-item-true-sight-wards-only"]) {
+      const m = y13.matches.find((x) => x.note.id === id)!;
+      expect(m.tier, id).toBe("partial");
+      expect(m.bases[1], id).toEqual([]);
+    }
+    expect(y13.matches.map((m) => m.note.id).sort()).toEqual(res("ピンクワード").matches.map((m) => m.note.id).sort());
+    // 2014年：「2014年1月時点」の主張のノートだけ。「Preseason 2014」のような名前・「2000手前」のような数は年代として扱わない
+    expect(tierOf("2014年のワード", "full")).toEqual(["kn-hist-ward-full-duration-2014"]);
+    expect(tierOf("2014年のワード", "partial")).toContain("kn-hist-ward-limit-v3-14");
+    expect(tierOf("2013年", "full")).toEqual(["kn-hist-ward-limit-v3-14"]);
+    expect(tierOf("2014年", "full")).toEqual(["kn-hist-ward-full-duration-2014"]);
+    expect(res("2000年").yearsNotUsed).toEqual(["2000年"]);
+    // 補足・根拠の要約の資料の日付（「2022年の記事」「2026-10-27」など）には一致させない
+    expect(tierOf("2022年のファーストウェーブ", "full")).toEqual(["kn-first-wave-melee-trim"]);
+    for (const id of ["kn-spacing-range-advantage", "kn-aa-interval-from-attack-speed", "kn-attack-move-settings", "kn-as-steroid-practice"]) expect(res("2022年").matches.map((m) => m.note.id), id).not.toContain(id);
+    expect(tierOf("2025年の攻撃速度上限", "full")).toEqual(["kn-as-cap-3003"]);
+    // 主張・成立条件にその年代を書いたノートがない年は照合に使わず、そのことを記録する（現行のノートを関連候補に落とさない）
+    const y26 = res("2026年のコントロールワード");
+    expect(y26.yearsNotUsed).toEqual(["2026年"]);
+    expect(y26.units.map((u) => u.matched)).toEqual(res("コントロールワード").units.map((u) => u.matched));
+    expect(tierOf("2026年のコントロールワード", "full")).toEqual(tierOf("コントロールワード", "full"));
+    // あいまいな時代の語は、年・パッチに変換せず、使わなかったことを記録する（照合の結果は語がない検索と同じ）
+    for (const [q, w] of [["昔のピンクワード", "昔"], ["今のピンクワード", "今"], ["旧ピンクワード", "旧"]]) {
+      const r = res(q);
+      expect(r.eraWordsNotUsed, q).toEqual([w]);
+      expect(r.matches.map((m) => [m.note.id, m.tier]), q).toEqual(res("ピンクワード").matches.map((m) => [m.note.id, m.tier]));
+    }
+    // 照合に使った語（Topic の別名「旧仕様」など）に含まれる字は、あいまいな語として示さない
+    expect(res("旧仕様のクールダウン").eraWordsNotUsed).toBeUndefined();
+    // 年代の指定のない検索・年の語を含まない検索は従来どおり
+    for (const q of ["ピンクワード", "コントロールワード", "control ward", "ビジョンワード", "スキルドッジ", "サモナースペル"]) {
+      const r = res(q);
+      expect(r.yearsNotUsed, q).toBeUndefined();
+      expect(r.matches.some((m) => m.bases.flat().some((b) => b.kind === "year")), q).toBe(false);
+    }
+  });
+
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {
     expect(noteMatchesForQuery("").matches).toEqual([]);
     // 「バロン」は 2026-11-02 から tol2 のアタックムーブのノートにある語になったので、ノートにない語の例を「アタカン」にする

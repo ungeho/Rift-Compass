@@ -21,6 +21,8 @@ function basisText(b: NoteMatchBasis): string {
   if (b.kind === "conceptVariant") return `${NOTE_FIELD_LABELS[b.field]}（同じものの別の表記「${b.noteTerm}」）`;
   // 同じ具体例を記述で別の言い方で書いた表現による一致（例：「スキルドッジ」で検索して「スキルショットを避ける」）（2026-11-10）
   if (b.kind === "conceptPhrase") return `${NOTE_FIELD_LABELS[b.field]}（同じことを表す記述「${b.notePhrase}」）`;
+  // 年代の指定の一致：ノートに書かれた年月日の表現を示す（2026-11-10）
+  if (b.kind === "year") return `${NOTE_FIELD_LABELS[b.field]}（年代「${b.noteText}」）`;
   return NOTE_FIELD_LABELS[b.field];
 }
 
@@ -117,6 +119,7 @@ export function RelatedNotes({ q, result }: { q: string; result?: NoteSearchResu
           <li>「イグナイト」「フラッシュ」「カイト」「アタックムーブ」など、広い Topic（サモナースペル・操作技術）の具体例として確かめた語で検索したときは、その語か同じものの別の表記（例：「カイト」と「カイティング」）が記述にあるノートだけを、その条件に一致したものとします。上位の Topic が付いているだけのノートは、1語の検索でも「上位の Topic との関係だけ」の関連候補として後ろの閉じた欄に出します。「スキルドッジ」は、確かめた記述の言い換え「スキルショットを避ける」も同じことを表すものとして扱い、「同じことを表す記述」と示します（別名の表記違いとは区別します）。</li>
           <li>「カイト」「カイティング」「kiting」は同じ意味の語として、主張・成立条件にある同義語も並び順にだけ使います（検索語そのものの一致より後ろ、一致の理由には含めません）。</li>
           <li>「CD」と「クールダウン」は、検索の対象（例：「フラッシュ」。「相手」「スキル」は除く）も主張・成立条件にあるノートでだけ同じ語として照合し、「同義の表記」と示します（表記どおりの一致が先。1語だけの検索では使いません）。</li>
+          <li>「2013年」のような4桁の年は、ノートの主張・成立条件に書かれた年代（「2013年」「2013-11-20」など）とだけ照合し、「年代」と示します。補足・根拠の要約にある資料の日付や、時期の説明の確認日には一致させません。主張・成立条件にその年代を書いたノートがない年と、「昔」「今」「旧」のようなあいまいな語は、照合に使わず、そのことを示します。</li>
           <li>「仕様」のように、大分類の Topic の語がノートの種類の名前と同じときは、その種類のノートも一致として扱い、「ノートの種類」と示します（種類はノートの分類で、ゲーム内での検証ではありません）。</li>
           <li>検索語に「対策」「対抗策」などの表現があり、検索の対象と結び付いた対策の記述（例：「カイトされる側」）がノートの主張・成立条件にあるときは、同じ一致の区分の中でそのノートを先に並べることがあります（立場や内容が正しいかは判定していません）。</li>
         </ul>
@@ -135,6 +138,8 @@ export function RelatedNotes({ q, result }: { q: string; result?: NoteSearchResu
       )}
       {!r.cues.negation && r.cues.condition && <p className="muted">検索語に条件の表現があります。各ノートの成立条件と例外が、知りたい状況に合うかを確かめてください。</p>}
       {r.ignored.length > 0 && <p className="muted">知識ノートに見つからず、ノートの照合に使わなかった語：{r.ignored.join("、")}</p>}
+      {r.yearsNotUsed && <p className="muted">年代の指定「{r.yearsNotUsed.join("」「")}」は、主張・成立条件にその年代を書いた知識ノートがないため、照合に使っていません。</p>}
+      {r.eraWordsNotUsed && <p className="muted">時代を表す語「{r.eraWordsNotUsed.join("」「")}」は、特定の年やパッチに置き換えられないため、照合に使っていません。年代は「2013年」のように4桁の年で指定できます。</p>}
       {full.length > 0 && (
         <NoteMatches key={`full-${q}`} matches={full} matched={matched} />
       )}
