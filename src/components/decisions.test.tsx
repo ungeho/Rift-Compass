@@ -10,12 +10,14 @@ import rawNewUnits from "../../data/experiments/new-decision-units.json";
 import { index } from "../data/dataset";
 import { readFileSync } from "node:fs";
 import { comparisons, decisionMatchesForQuery, decisionsForQuery, decisionsForResource, decisionsForTopic, DIAGRAMS, referencingDecisions, RELATION_LABELS, exampleOf, examplesForQuery, examplesForResource, examplesForUnit, NONE_PARTIAL, QUESTION_ENTRANCES, SHOWCASE_IDS, showcaseDecisions, sourceById, type DecisionUnit } from "../data/decisions";
-import { parseHash, decisionHref, decisionsHref } from "../router";
+import { parseHash, decisionHref, decisionsHref, noteHref } from "../router";
 import { decisionQuestions, DecisionDetail, DecisionIndex, DECISION_PAGE_SIZE } from "./DecisionPages";
 import { SearchPage } from "./SearchPage";
 import { EVAL_QUERIES } from "../search/evaluationQueries";
 import { analyzeQuery, search } from "../search/search";
 import { ResourceDetail } from "./ResourceDetail";
+import { NotePage } from "./NotePage";
+import { isPublicNote } from "../data/explorePool";
 import { TopicPage } from "./TopicPages";
 
 const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
@@ -1427,5 +1429,59 @@ describe("新規判断材料の8件目（lol-guide pdvmw ⑤＋hfhhp：育った
     expect(u.unknowns_ja.some((s) => s.includes("独立した裏付けではない") && s.includes("場面が違う"))).toBe(true);
     for (const s of ["リフトヘラルド15:00", "revid 4015021", "テレポートの現行の仕様は確認していない", "ゲーム内では確認していない"]) expect(u.patch_dependency_ja).toContain(s);
     for (const r of u.relations) expect(r.note_ja).toContain("AI の整理");
+  });
+});
+
+describe("資料の詳細から、根拠にした知識ノートの詳細へのリンク（2026-11-10）", () => {
+  const html = (id: string) => renderToStaticMarkup(<ResourceDetail id={id} />);
+  const LABEL = "この知識ノートの詳細を見る";
+  /** 「この知識ノートの詳細を見る」のリンクの [ノートID, aria-describedby] を、表示順に取り出す */
+  const detailLinks = (markup: string) =>
+    [...markup.matchAll(/<a href="#\/note\/([^"]+)" aria-describedby="([^"]+)">([^<]+)<\/a>/g)].filter((m) => m[3] === LABEL).map((m) => [decodeURIComponent(m[1]), m[2]]);
+  /** 資料の根拠から引いた公開ノート（画面のカードと同じ規則：重複なし・isPublicNote） */
+  const publicNotesOf = (rid: string) => [...new Set((index.evidenceByResource.get(rid) ?? []).map((e) => e.note_id))].filter((nid) => { const n = index.noteById.get(nid); return !!n && isPublicNote(n); });
+
+  it("公式の 26.2・26.3 のパッチノートから、サポートのロールクエストのノートの詳細へ移動できる", () => {
+    for (const rid of ["res-riot-patch-26-2-en", "res-riot-patch-26-3-en"]) {
+      const m = html(rid);
+      expect(detailLinks(m), rid).toEqual([["kn-role-quest-support-current", "note-kn-role-quest-support-current"]]);
+      // 説明として結び付けたカードの主張が、同じ画面にある
+      expect(m, rid).toContain('id="note-kn-role-quest-support-current"');
+      expect(parseHash(noteHref("kn-role-quest-support-current"))).toEqual({ name: "note", id: "kn-role-quest-support-current" });
+    }
+  });
+
+  it("複数のノートがある資料では、カードごとにそのノート自身の詳細へのリンクを、カードと同じ順に1つずつ出す", () => {
+    const rid = "res-wiki-cc-types";
+    const m = html(rid);
+    const links = detailLinks(m);
+    expect(links.length).toBeGreaterThan(1);
+    expect(links.map((l) => l[0])).toEqual(publicNotesOf(rid));
+    for (const [nid, desc] of links) expect(desc).toBe(`note-${nid}`);
+    // カードの順（主張の id の出現順）とリンクの順が同じ
+    expect([...m.matchAll(/<p class="note-statement" id="note-([^"]+)"/g)].map((x) => x[1])).toEqual(links.map((l) => l[0]));
+  });
+
+  it("ノートのない資料にはリンクを出さない", () => {
+    const m = html("res-wiki-trinket");
+    expect(publicNotesOf("res-wiki-trinket")).toEqual([]);
+    expect(text(m)).toContain("この資料に関連付けられた知識ノートはありません。");
+    expect(m).not.toContain(LABEL);
+  });
+
+  it("すべての資料で、リンクは公開ノートだけ・重複なし・根拠から引いた公開ノートと一致する（非公開のノートを新たに出さない）", () => {
+    const hidden = index.data.knowledge_notes.filter((n) => !isPublicNote(n)).map((n) => n.id);
+    expect(hidden.length).toBeGreaterThan(0);
+    for (const r of index.data.resources) {
+      const links = detailLinks(html(r.id)).map((l) => l[0]);
+      expect(links, r.id).toEqual(publicNotesOf(r.id));
+      expect(new Set(links).size, r.id).toBe(links.length);
+      for (const nid of links) expect(hidden, `${r.id} ${nid}`).not.toContain(nid);
+    }
+  });
+
+  it("ノートの詳細画面には、自分自身への「詳細を見る」リンクを出さない", () => {
+    const m = renderToStaticMarkup(<NotePage id="kn-role-quest-support-current" />);
+    expect(m).not.toContain(LABEL);
   });
 });

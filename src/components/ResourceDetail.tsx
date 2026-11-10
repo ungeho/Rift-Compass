@@ -3,7 +3,7 @@ import { decisionById, decisionsForResource, examplesForResource } from "../data
 import { BASIS_LABELS, CREATOR_KIND_LABELS, eraLabel, formatSeconds, LANGUAGE_LABELS, LEVEL_LABELS, TYPE_LABELS } from "../data/labels";
 import { youtubeAt } from "../lib/links";
 import { plainText } from "../lib/plainText";
-import { decisionHref, decisionsHref, lastListHref, resourceHref } from "../router";
+import { decisionHref, decisionsHref, lastListHref, noteHref, resourceHref } from "../router";
 import { ExternalLink, LevelBadge, TopicChips } from "./common";
 import { NoteCard } from "./NoteCard";
 import { isPublicNote } from "../data/explorePool";
@@ -197,8 +197,14 @@ export function ResourceDetail({ id }: { id: string }) {
             <p className="muted">
               Phase 0 時点で、現行パッチのゲーム内で検証した知識ノートはありません。「資料に記載あり」は、資料にそう書かれていることを確認したという意味です。
             </p>
+            {/* 各ノートの詳細（根拠の一覧・関連）へのリンク（2026-11-10）。同じ文言のリンクが並ぶので、カードの主張を説明として結び付ける */}
             {notes.map((n) => (
-              <NoteCard key={n.id} note={n} currentResourceId={r.id} />
+              <div key={n.id}>
+                <NoteCard note={n} currentResourceId={r.id} />
+                <p>
+                  <a href={noteHref(n.id)} aria-describedby={`note-${n.id}`}>この知識ノートの詳細を見る</a>
+                </p>
+              </div>
             ))}
           </>
         )}
