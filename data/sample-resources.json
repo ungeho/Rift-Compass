@@ -2263,6 +2263,34 @@
       "patch_context": { "stated_patch": "Last-Modified 2026-10-23（raw では revid を得られない）", "basis": "stated", "era": "current" },
       "access": { "free": true, "login_required": false },
       "verification": { "level": "L3", "checked_at": "2026-11-03", "method": "ページの raw（?action=raw）", "notes": "確認したページ：Vamp（2026-10-23、取得 2026-11-03）。記録は docs/experiments/wiki-knowledge-base.md（§9.9）。" }
+    },
+    {
+      "id": "res-riot-patch-26-2-en",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/patch-26-2-notes/",
+      "title": "Patch 26.2 Notes",
+      "type": "patch_notes",
+      "language": "en",
+      "creator": { "name": "Riot Games", "kind": "official" },
+      "topic_ids": ["role-quests", "role-support", "patch-reading"],
+      "summary_ja": "パッチ26.2の公式ノート。「Support Quest Usability」の節で、サポートのロールクエスト枠のキーをアイテム枠と二重に割り当てられるようにしたことと、次のパッチでコントロールワードを、クエスト達成時ではなく試合開始時からロールクエスト枠に入れると予告したことを記載。",
+      "published_at": "2026-01-21",
+      "patch_context": { "stated_patch": "26.2", "basis": "stated", "era": "season16" },
+      "access": { "free": true, "login_required": false },
+      "verification": { "level": "L3", "checked_at": "2026-11-10", "method": "webfetch", "notes": "Support Quest Usability の節を逐語で確認。ページの HTML 全体でコントロールワードへの言及はこの節だけ。ほかの節は確認していない。" }
+    },
+    {
+      "id": "res-riot-patch-26-3-en",
+      "url": "https://www.leagueoflegends.com/en-ph/news/game-updates/patch-26-3-notes/",
+      "title": "Patch 26.3 Notes",
+      "type": "patch_notes",
+      "language": "en",
+      "creator": { "name": "Riot Games", "kind": "official" },
+      "topic_ids": ["role-quests", "role-support", "patch-reading"],
+      "summary_ja": "パッチ26.3の公式ノート。「Support Control Wards」の節で、サモナーズリフトのサポートは試合開始時からコントロールワードがロールクエスト枠に入るようになったと記載（値段には触れていない）。",
+      "published_at": "2026-02-03",
+      "patch_context": { "stated_patch": "26.3", "basis": "stated", "era": "season16" },
+      "access": { "free": true, "login_required": false },
+      "verification": { "level": "L3", "checked_at": "2026-11-10", "method": "webfetch", "notes": "Support Control Wards の節を逐語で確認。ページの HTML 全体でコントロールワードへの言及はこの節だけ。ほかの節は確認していない。" }
     }
   ],
   "knowledge_notes": [
@@ -3646,10 +3674,10 @@
     {
       "id": "kn-role-quest-support-current",
       "kind": "mechanic",
-      "statement_ja": "サポートのロールクエスト：サポートアイテム（ワールドアトラス・ルーンコンパス）のクエストで得たゴールドと同じだけポイントになり、800ポイントで達成。クエストのポイントとは別に、ボット以外ではミニオンのゴールド・経験値がレベル5まで33%減る（サポートアイテムのクエストにも影響）。コントロールワードはロールクエスト枠に入れる。報酬は、サポートアイテムの強化（バウンティ・オブ・ワールドを経て上位のサポートアイテムへ）と、コントロールワードの値段40ゴールド。",
+      "statement_ja": "サポートのロールクエスト：サポートアイテム（ワールドアトラス・ルーンコンパス）のクエストで得たゴールドと同じだけポイントになり、800ポイントで達成。クエストのポイントとは別に、ボット以外ではミニオンのゴールド・経験値がレベル5まで33%減る（サポートアイテムのクエストにも影響）。コントロールワードはアイテム枠ではなくロールクエスト枠に入れ、サモナーズリフトでは試合開始時からこの枠に入る（26.3 から。26.1〜26.2 ではクエスト達成後）。達成後の報酬は、サポートアイテムの強化（バウンティ・オブ・ワールドを経て上位のサポートアイテムへ）と、コントロールワードの値段40ゴールド（値下げは 26.3 以降も達成後）。",
       "topic_ids": ["role-quests", "role-support"],
       "status": "source_stated",
-      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。V26.16 でポイントの量と、ボット以外のミニオンの減少（25%・レベル3まで→33%・レベル5まで）が変わった。",
+      "notes_ja": "Wiki の Role Quests（2026-10-27 更新、変更履歴は V26.19 まで）の表の値。V26.16 でポイントの量と、ボット以外のミニオンの減少（25%・レベル3まで→33%・レベル5まで）が変わった。コントロールワードの枠（2026-11-10 追記）：26.1 の公式ノートでは、枠への収納と40ゴールドへの値下げはどちらもクエスト達成後（After Quest Completion）。26.2 で枠のキーをアイテム枠と二重に割り当てられるようになり、次のパッチで試合開始時から枠に入れると予告された。26.3 の公式ノートで、サモナーズリフトのサポートは試合開始時から枠に入るようになった（値段には触れていない）。値下げが達成後のままであることは、Wiki の Role Quests の表（枠は Passive、40ゴールドは Rewards）と Control Ward の注記による。Wiki の Control Ward は、注記（達成時にワードが枠へ移る）と変更履歴（V26.03：試合開始時から枠に入る）が食い違う。Role Quests の変更履歴（V26.19 まで）に枠の時期の変更はない。V26.20 以降の変更は確認していない。",
       "generalizability": "general",
       "patch_dependencies": ["system:role-quests"],
       "last_checked_patch": null
@@ -5350,7 +5378,10 @@
     { "id": "ev-359", "evidence_type": "empirical_claim", "locator": { "section": "Items and Stats That Help Kiting" }, "summary_ja": "既定の上限は3.003（25.S1.3、2025年2月に2.5から）", "checked_level": "L3", "checked_at": "2026-11-08", "resource_id": "res-loltheory-kiting", "note_id": "kn-as-cap-3003" },
     { "id": "ev-360", "note_id": "kn-anti-kite-tools", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "How to Not Get Kited (Counterplay)" }, "summary_ja": "ギャップクローザー・ハード CC（根・スタン・ノックアップ）・移動速度の3つ。マークスマンはフラッシュとピールがなければ負ける。例のうち E のスキルの根と、アイテム（ID 6631）の突進は照合先と合わない", "checked_level": "L3", "checked_at": "2026-11-08" },
     { "id": "ev-361", "note_id": "kn-anti-kite-terrain", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "How to Not Get Kited (Counterplay)" }, "summary_ja": "開けた場所の1対1・2対2で最も強い。5対5では対象を決める必要があり側面を突かれる。狭い通路・茂み・壁の周りで戦う", "checked_level": "L3", "checked_at": "2026-11-08" },
-    { "id": "ev-362", "note_id": "kn-kite-practice-drill", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "Practice Drills" }, "summary_ja": "アッシュと木人で離れながら撃つ → 攻撃速度を上げる → ロビーで加えたボットのガレンを相手に、突っ込みをかわしながら撃つ。1日15分・2〜3週間は著者の目安", "checked_level": "L3", "checked_at": "2026-11-08" }
+    { "id": "ev-362", "note_id": "kn-kite-practice-drill", "resource_id": "res-loltheory-kiting", "evidence_type": "empirical_claim", "locator": { "section": "Practice Drills" }, "summary_ja": "アッシュと木人で離れながら撃つ → 攻撃速度を上げる → ロビーで加えたボットのガレンを相手に、突っ込みをかわしながら撃つ。1日15分・2〜3週間は著者の目安", "checked_level": "L3", "checked_at": "2026-11-08" },
+    { "id": "ev-363", "note_id": "kn-role-quest-support-current", "resource_id": "res-riot-patch-26-3-en", "evidence_type": "source_fact", "locator": { "section": "Support Control Wards" }, "summary_ja": "26.3 で、サモナーズリフトのサポートは試合開始時からコントロールワードがロールクエスト枠に入るようになった（値段への言及はない）", "checked_level": "L3", "checked_at": "2026-11-10" },
+    { "id": "ev-364", "note_id": "kn-role-quest-support-current", "resource_id": "res-riot-patch-26-2-en", "evidence_type": "source_fact", "locator": { "section": "Support Quest Usability" }, "summary_ja": "26.2 で、ロールクエスト枠のキーをアイテム枠と二重に割り当てられるようになり、次のパッチでコントロールワードを、クエスト達成時ではなく試合開始時から枠に入れると予告", "checked_level": "L3", "checked_at": "2026-11-10" },
+    { "id": "ev-365", "note_id": "kn-role-quest-support-current", "resource_id": "res-wiki-role-quests", "evidence_type": "source_fact", "locator": { "section": "Quests（Support）Passive・Rewards / Patch History" }, "summary_ja": "Passive に「コントロールワードはロールクエスト枠だけに入れる」、達成の報酬（Rewards）に「コントロールワードの値段が40に下がる」。変更履歴（V26.19 まで）に枠の時期の変更はない", "checked_level": "L3", "checked_at": "2026-11-10" }
   ],
   "relations": [
     { "id": "rel-001", "from": "kn-cooldown-window", "to": "kn-trade-on-key-cd", "type": "reason_for" },
