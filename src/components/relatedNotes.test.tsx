@@ -170,6 +170,21 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。並び順も答えの正しさを示しません。");
   });
 
+  it("スキルドッジの専用のノートは「同じことを表す記述」として示し、別名の表記違い・上位の Topic だけとは区別する（2026-11-10）", () => {
+    const html = renderToStaticMarkup(<RelatedNotes q="スキルドッジ" />);
+    const t = text(html);
+    expect(t).toContain("検索語に一致した知識ノート 知識ノート ：2件（ほかに関連候補 39件）");
+    expect(t).toContain("「スキルドッジ」：Topic「操作技術・フィジカル」・主張（同じことを表す記述「スキルショットを避ける」）");
+    expect(t).not.toContain("同じものの別の表記「スキルショットを避ける」");
+    const part = html.match(/<details class="related-notes-partial">([\s\S]*)<\/details>/)![1];
+    expect(text(part)).toContain("上位の Topic との関係だけの関連候補：39件");
+    expect(part).not.toContain(`href="${noteHref("kn-skill-dodge-perpendicular")}"`);
+    const help = text(html.match(/<details class="related-notes-help">([\s\S]*?)<\/details>/)![1]);
+    expect(help).toContain("「スキルドッジ」は、確かめた記述の言い換え「スキルショットを避ける」も同じことを表すものとして扱い、「同じことを表す記述」と示します（別名の表記違いとは区別します）。");
+    const visible = text(html.replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+    expect(visible).not.toContain("確かめた記述の言い換え");
+  });
+
   it("関連候補が多いときも、閉じた欄の中で「さらに表示」から全件に届く（2026-11-10）", () => {
     // カイト：全条件一致9件、関連候補32件（20件ずつ表示）
     const html = renderToStaticMarkup(<RelatedNotes q="カイト" />);

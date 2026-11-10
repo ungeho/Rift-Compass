@@ -4,7 +4,7 @@ import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
 import { containsTerm, normalize } from "../search/search";
-import { TOPIC_ALIAS_RELATIONS, validateTopicAliasRelations, type NarrowerAliasConcept } from "./topicAliasRelations";
+import { MIN_NOTE_PHRASE_LENGTH, TOPIC_ALIAS_RELATIONS, validateTopicAliasRelations, type NarrowerAliasConcept } from "./topicAliasRelations";
 import { counterTargetMatch, isBroaderTopicOnly, isCounterRequest, isTargetSpecific, labelOnlyTopicQuery, narrowerConceptOf, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
@@ -579,9 +579,16 @@ describe("知識ノートの検索の規則", () => {
 
   it("Topic の具体例として確かめた別名の関係データ（topicAliasRelations.ts）：実在する Topic の登録済みの別名だけ、重複・矛盾なし（2026-11-10）", () => {
     expect(validateTopicAliasRelations(index.data.topics, TOPIC_ALIAS_RELATIONS)).toEqual([]);
-    // 対象は、サモナースペルと操作技術の具体例だけ（スキルドッジは保留）
-    expect(TOPIC_ALIAS_RELATIONS.flatMap((r) => r.aliases).sort()).toEqual(["attack move", "barrier", "exhaust", "flash", "ignite", "kiting", "spacing", "アタックムーブ", "イグゾースト", "イグナイト", "カイティング", "カイト", "スペーシング", "バリア", "フラッシュ", "引き撃ち"].sort());
+    // 対象は、サモナースペルと操作技術の具体例だけ（2026-11-10 にスキルドッジを、記述の言い換えとともに追加）
+    expect(TOPIC_ALIAS_RELATIONS.flatMap((r) => r.aliases).sort()).toEqual(["attack move", "barrier", "exhaust", "flash", "ignite", "kiting", "spacing", "アタックムーブ", "イグゾースト", "イグナイト", "カイティング", "カイト", "スキルドッジ", "スペーシング", "バリア", "フラッシュ", "引き撃ち"].sort());
     const bad = (rs: NarrowerAliasConcept[]) => validateTopicAliasRelations(index.data.topics, rs);
+    // 記述の言い換えは、スキルドッジの「スキルショットを避ける」だけ
+    expect(TOPIC_ALIAS_RELATIONS.filter((r) => r.note_phrases).map((r) => [r.aliases, r.note_phrases])).toEqual([[["スキルドッジ"], ["スキルショットを避ける"]]]);
+    // 記述の言い換えは、Topic の名前・別名と同じ表現・短い一般語・重複を拒否する
+    expect(bad([{ topic_id: "mechanics", relation: "narrower", aliases: ["スペーシング"], note_phrases: ["カイト"] }])).toEqual(["記述の言い換えが Topic の名前・別名と同じ：mechanics カイト", "記述の言い換えが短すぎる：mechanics カイト"]);
+    expect(bad([{ topic_id: "mechanics", relation: "narrower", aliases: ["スペーシング"], note_phrases: ["避ける"] }])).toEqual(["記述の言い換えが短すぎる：mechanics 避ける"]);
+    expect(MIN_NOTE_PHRASE_LENGTH).toBeGreaterThan([..."スキル"].length);
+    expect(bad([{ topic_id: "mechanics", relation: "narrower", aliases: ["スペーシング"], note_phrases: ["間合いを管理する"] }, { topic_id: "mechanics", relation: "narrower", aliases: ["アタックムーブ"], note_phrases: ["間合いを管理する"] }])).toEqual(["記述の言い換えが重複：mechanics 間合いを管理する"]);
     expect(bad([{ topic_id: "no-such-topic", relation: "narrower", aliases: ["フラッシュ"] }])).toEqual(["不明な Topic：no-such-topic"]);
     // 対象の Topic にない別名（ほかの Topic の別名を含む）・表示名は拒否する
     expect(bad([{ topic_id: "summoner-spells", relation: "narrower", aliases: ["スマイト"] }])).toEqual(["Topic の別名にない：summoner-spells スマイト"]);
@@ -604,7 +611,7 @@ describe("知識ノートの検索の規則", () => {
       expect(narrowerConceptOf(u[0]), a).toBe(r);
     }
     // 未分類の別名・表示名・保留した語は対象にしない（従来どおり、関連候補へ移さない）
-    for (const q of ["サモスペ", "summoners", "フィジカル", "mechanical skill", "スキルドッジ", "サモナースペル", "操作技術・フィジカル", "CD", "ブラインド", "トリンケット", "ビルド"]) {
+    for (const q of ["サモスペ", "summoners", "フィジカル", "mechanical skill", "サモナースペル", "操作技術・フィジカル", "CD", "ブラインド", "トリンケット", "ビルド"]) {
       const r = res(q);
       expect(r.units.map((u) => narrowerConceptOf(u)), q).toEqual([undefined]);
       expect(r.matches.some((m) => m.broaderUnits || m.bases.flat().some((b) => b.kind === "conceptVariant")), q).toBe(false);
@@ -672,6 +679,40 @@ describe("知識ノートの検索の規則", () => {
         expect(m.opposingOnly, `${q} ${m.note.id}`).toBe(opposing);
       }
       if (r.units.length === 1) for (const m of r.matches.filter((x) => x.tier === "partial")) expect(isBroaderTopicOnly(m), `${q} ${m.note.id}`).toBe(true);
+    }
+  });
+
+  it("スキルドッジ：記述の言い換え「スキルショットを避ける」で専用のノートを全条件一致にし、操作技術が付いているだけのノートは関連候補にする（2026-11-10）", () => {
+    const res = (q: string) => noteMatchesForQuery(q);
+    const tierOf = (q: string, tier: "full" | "partial") => res(q).matches.filter((m) => m.tier === tier).map((m) => m.note.id);
+    const sd = res("スキルドッジ");
+    // 記述に「スキルドッジ」がある1件と、言い換えがある専用のノートの2件だけが全条件一致。候補の合計は従来の41件のまま
+    expect(tierOf("スキルドッジ", "full")).toEqual(["kn-right-click-core-physical", "kn-skill-dodge-perpendicular"]);
+    expect(sd.matches).toHaveLength(41);
+    expect(sd.matches.filter((m) => m.tier === "partial").every(isBroaderTopicOnly)).toBe(true);
+    // 一致の理由：直接の一致は記述（field）、専用のノートは言い換え（conceptPhrase、記述の種類つき）。別名の表記違い（conceptVariant）とは区別する
+    expect(sd.matches[0].bases[0].some((b) => b.kind === "field" && b.field === "statement")).toBe(true);
+    const ded = sd.matches.find((m) => m.note.id === "kn-skill-dodge-perpendicular")!;
+    expect(ded.bases[0]).toEqual([
+      { kind: "topic", topicId: "mechanics", matched: "スキルドッジ" },
+      { kind: "conceptPhrase", field: "statement", matched: "スキルドッジ", notePhrase: "スキルショットを避ける" },
+    ]);
+    expect(ded.broaderUnits).toBeUndefined();
+    // 練習方法：専用のノート（練習の手順を含む）が全条件一致。操作技術が付いているだけのノートは全条件一致にしない
+    expect(tierOf("スキルドッジの練習方法", "full")).toContain("kn-skill-dodge-perpendicular");
+    expect(tierOf("スキルドッジの練習方法", "full")).not.toContain("kn-cs-practice-rules");
+    // 言い換えの表現そのものでの検索は、別名ではないので従来どおり（語の照合。Topic の条件にはしない）
+    expect(res("スキルショットを避ける").units.every((u) => u.kind === "term")).toBe(true);
+    expect(tierOf("スキルショットを避ける", "full")[0]).toBe("kn-skill-dodge-perpendicular");
+    // 一般語だけ（「避ける」「スキル」）や、ほかの具体例（カイト・アタックムーブ・スペーシング）には言い換えを使わない
+    for (const q of ["カイト", "カイティング", "kiting", "アタックムーブ", "スペーシング", "カイトの練習方法", "カイトへの対抗策", "操作技術・フィジカル", "避ける", "スキル"]) {
+      expect(res(q).matches.some((m) => m.bases.flat().some((b) => b.kind === "conceptPhrase")), q).toBe(false);
+    }
+    expect(tierOf("カイト", "partial")).toContain("kn-skill-dodge-perpendicular");
+    expect(tierOf("アタックムーブ", "partial")).toContain("kn-skill-dodge-perpendicular");
+    // 言い換えは、その Topic が付いたノートだけに記録する（Topic が付いていないノートを候補に足さない）
+    for (const q of ["スキルドッジ", "スキルドッジの練習方法"]) {
+      for (const m of res(q).matches) if (m.bases.flat().some((b) => b.kind === "conceptPhrase")) expect(m.note.topic_ids, `${q} ${m.note.id}`).toContain("mechanics");
     }
   });
 

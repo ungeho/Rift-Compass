@@ -40,6 +40,11 @@ export type NoteMatchBasis =
    * 記述にあった（2026-11-10）。その Topic が付いたノートだけに記録する（候補を増やさない）。並び順には使わない
    */
   | { kind: "conceptVariant"; field: NoteField; matched: string; noteTerm: string }
+  /**
+   * 同じ具体例を記述で別の言い方で書いた表現（topicAliasRelations.ts の note_phrases。例：「スキルドッジ」に対する「スキルショットを避ける」）が
+   * 記述にあった（2026-11-10）。別名の表記違い（conceptVariant）とは別に記録する。その Topic が付いたノートだけに記録し、並び順には使わない
+   */
+  | { kind: "conceptPhrase"; field: NoteField; matched: string; notePhrase: string }
   /** ノートの種類（kind）による一致。大分類の Topic として取り出した語が、種類の表示名（KIND_LABELS）と同じときだけ */
   | { kind: "noteKind"; noteKind: KnowledgeNote["kind"]; matched: string };
 
@@ -261,6 +266,17 @@ function conceptVariantBases(t: NoteText, c: NarrowerAliasConcept, matched: stri
   return out;
 }
 
+/** 同じ具体例の記述の言い換え（note_phrases）が記述にあるか（Topic名は除く）。記述の種類ごとに最初の表現を1つ記録する */
+function conceptPhraseBases(t: NoteText, c: NarrowerAliasConcept, matched: string): NoteMatchBasis[] {
+  const out: NoteMatchBasis[] = [];
+  for (const f of FIELD_ORDER) {
+    if (f === "topicName") continue;
+    const hit = (c.note_phrases ?? []).find((p) => containsTerm(t.fields[f], normalize(p)));
+    if (hit) out.push({ kind: "conceptPhrase", field: f, matched, notePhrase: hit });
+  }
+  return out;
+}
+
 /** 関連候補のうち、すべての条件に一致したが、具体例の検索条件が上位の Topic との関係だけだったもの（一部の条件に一致しなかったものとは別の理由） */
 export function isBroaderTopicOnly(m: NoteMatch): boolean {
   return m.tier === "partial" && (m.broaderUnits?.length ?? 0) > 0 && m.bases.every((b) => b.length > 0);
@@ -338,7 +354,7 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     const broaderUnits: number[] = [];
     unitConcepts.forEach((c, i) => {
       if (!c || bases[i].length === 0 || bases[i].some((b) => b.kind !== "topic")) return;
-      const variants = conceptVariantBases(t, c, units[i].matched);
+      const variants = [...conceptVariantBases(t, c, units[i].matched), ...conceptPhraseBases(t, c, units[i].matched)];
       if (variants.length > 0) bases[i].push(...variants);
       else broaderUnits.push(i);
     });

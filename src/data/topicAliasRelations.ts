@@ -14,7 +14,15 @@ export interface NarrowerAliasConcept {
   topic_id: string;
   relation: "narrower";
   aliases: string[];
+  /**
+   * 同じ具体例を、ノートの記述で別の言い方で書いた表現（2026-11-10）。Topic の別名ではなく、検索語としては使わない。
+   * 公開ノートの記述で確かめた表現だけを置き、一般語（例：「避ける」「スキル」）だけの短い表現は置かない
+   */
+  note_phrases?: string[];
 }
+
+/** 記述の言い換えとして登録できる表現の最短の長さ（一般語1語だけの表現を防ぐ） */
+export const MIN_NOTE_PHRASE_LENGTH = 6;
 
 export const TOPIC_ALIAS_RELATIONS: NarrowerAliasConcept[] = [
   // サモナースペルの具体的なスペル（対応する Topic はない）
@@ -26,21 +34,32 @@ export const TOPIC_ALIAS_RELATIONS: NarrowerAliasConcept[] = [
   { topic_id: "mechanics", relation: "narrower", aliases: ["カイト", "カイティング", "kiting", "引き撃ち"] },
   { topic_id: "mechanics", relation: "narrower", aliases: ["アタックムーブ", "attack move"] },
   { topic_id: "mechanics", relation: "narrower", aliases: ["スペーシング", "spacing"] },
-  // 「スキルドッジ」は保留：専用のノート（kn-skill-dodge-perpendicular）は「スキルショットを避ける」と書いており、
-  // 登録済みの別名に別の表記がないため、専用のノートまで関連候補に移ってしまう
+  // 「スキルドッジ」の専用のノート（kn-skill-dodge-perpendicular）は「スキルショットを避ける」と書いている。
+  // 別名ではなく記述の言い換えとして登録する（なければ専用のノートまで関連候補に移る）
+  { topic_id: "mechanics", relation: "narrower", aliases: ["スキルドッジ"], note_phrases: ["スキルショットを避ける"] },
 ];
 
 const key = (topicId: string, alias: string) => `${topicId}|${normalize(alias)}`;
 
 /**
  * 関係のデータの誤り（なければ空の配列）。Topic が実在する・別名がその Topic の登録済みの別名である（表示名は不可）・
- * 同じ Topic と別名の組が2回以上現れない（正規化した表記で比べる）・関係の種類が既知である、を確かめる
+ * 同じ Topic と別名の組が2回以上現れない（正規化した表記で比べる）・関係の種類が既知である、を確かめる。
+ * 記述の言い換え（note_phrases）は、どの Topic の表示名・別名とも違い、十分に長く（MIN_NOTE_PHRASE_LENGTH 文字以上）、重複しないこと
  */
 export function validateTopicAliasRelations(topics: Topic[], relations: NarrowerAliasConcept[]): string[] {
   const errors: string[] = [];
   const byId = new Map(topics.map((t) => [t.id, t]));
   const seen = new Set<string>();
+  const topicWords = new Set(topics.flatMap((t) => [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en]).map(normalize));
+  const phrases = new Set<string>();
   for (const r of relations) {
+    for (const p of r.note_phrases ?? []) {
+      const n = normalize(p);
+      if (topicWords.has(n)) errors.push(`記述の言い換えが Topic の名前・別名と同じ：${r.topic_id} ${p}`);
+      if ([...n].length < MIN_NOTE_PHRASE_LENGTH) errors.push(`記述の言い換えが短すぎる：${r.topic_id} ${p}`);
+      if (phrases.has(n)) errors.push(`記述の言い換えが重複：${r.topic_id} ${p}`);
+      phrases.add(n);
+    }
     const t = byId.get(r.topic_id);
     if (!t) {
       errors.push(`不明な Topic：${r.topic_id}`);
