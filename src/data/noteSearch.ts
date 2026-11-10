@@ -6,6 +6,7 @@ import { containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidua
 import { index } from "./dataset";
 import { publicEvidenceOf, publicNotes } from "./explorePool";
 import { KIND_LABELS } from "./labels";
+import { aliasConceptIndex, aliasConceptKey, TOPIC_ALIAS_RELATIONS, type NarrowerAliasConcept } from "./topicAliasRelations";
 import type { KnowledgeNote } from "./types";
 
 /** 照合する記述の種類。exceptions・falsifiers は、主張と逆向きになりうる記述 */
@@ -34,6 +35,11 @@ export type NoteMatchBasis =
    * 直接の一致（kind: "field"）とは別に記録し、主張・成立条件での直接の一致の数（statementHitCount）には数えない
    */
   | { kind: "synonym"; field: NoteField; matched: string; noteTerm: string }
+  /**
+   * Topic の具体例として登録した別名（topicAliasRelations.ts）で検索したとき、同じ具体例の別の表記（例：「カイト」で検索して「カイティング」）が
+   * 記述にあった（2026-11-10）。その Topic が付いたノートだけに記録する（候補を増やさない）。並び順には使わない
+   */
+  | { kind: "conceptVariant"; field: NoteField; matched: string; noteTerm: string }
   /** ノートの種類（kind）による一致。大分類の Topic として取り出した語が、種類の表示名（KIND_LABELS）と同じときだけ */
   | { kind: "noteKind"; noteKind: KnowledgeNote["kind"]; matched: string };
 
@@ -45,6 +51,11 @@ export interface NoteMatch {
   tier: "full" | "partial";
   /** 語の一致が例外・反証の記述だけにある条件があるか（主張と逆向きの可能性） */
   opposingOnly: boolean;
+  /**
+   * Topic の具体例として登録した別名（例：「イグナイト」）で検索した条件のうち、その上位の Topic（例：サモナースペル）が付いているだけで、
+   * 記述にその具体例（別の表記を含む）がない条件の番号（2026-11-10）。1つでもあれば全条件一致にせず、関連候補（partial）にする。ないときは省く
+   */
+  broaderUnits?: number[];
 }
 
 export interface NoteSearchResult {
@@ -231,6 +242,30 @@ export function labelOnlyTopicQuery(normalizedQuery: string, units: Unit[], igno
   return u.kind === "topic" && u.topic.kind !== "category" && [u.topic.label_ja, u.topic.label_en].some((l) => normalize(l) === normalizedQuery);
 }
 
+const ALIAS_CONCEPTS = aliasConceptIndex(TOPIC_ALIAS_RELATIONS);
+
+/** 検索条件が、Topic の具体例として登録した別名（topicAliasRelations.ts）か。そうなら、その具体例のまとまり。表示名・未登録の別名は undefined */
+export function narrowerConceptOf(u: Unit): NarrowerAliasConcept | undefined {
+  return u.kind === "topic" ? ALIAS_CONCEPTS.get(aliasConceptKey(u.topic.id, u.matched)) : undefined;
+}
+
+/** 同じ具体例の別の表記が記述にあるか（Topic名は除く）。記述の種類ごとに最初の表記を1つ記録する */
+function conceptVariantBases(t: NoteText, c: NarrowerAliasConcept, matched: string): NoteMatchBasis[] {
+  const others = c.aliases.filter((a) => normalize(a) !== normalize(matched));
+  const out: NoteMatchBasis[] = [];
+  for (const f of FIELD_ORDER) {
+    if (f === "topicName") continue;
+    const hit = others.find((a) => containsTerm(t.fields[f], normalize(a)));
+    if (hit) out.push({ kind: "conceptVariant", field: f, matched, noteTerm: hit });
+  }
+  return out;
+}
+
+/** 関連候補のうち、すべての条件に一致したが、具体例の検索条件が上位の Topic との関係だけだったもの（一部の条件に一致しなかったものとは別の理由） */
+export function isBroaderTopicOnly(m: NoteMatch): boolean {
+  return m.tier === "partial" && (m.broaderUnits?.length ?? 0) > 0 && m.bases.every((b) => b.length > 0);
+}
+
 function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
   return FIELD_ORDER.filter((f) => containsTerm(t.fields[f], matched)).map((field) => ({ kind: "field", field, matched }));
 }
@@ -240,6 +275,8 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
  * 照合：Topic は付いている Topic（下位の Topic を含む）か記述、発信者は根拠の資料の発信者、語はノートの記述。
  * 大分類の Topic の語が種類の表示名と同じときは、その種類のノートにも一致する（isKindLabelMatch）。
  * 「CD」「クールダウン」は、ノートが検索の対象にも直接一致するときだけ、もう一方の表記でも同じ条件に一致する（MATCH_SYNONYM_GROUPS・synonymBasesAllowed）。
+ * Topic の具体例として登録した別名（例：「イグナイト」。topicAliasRelations.ts）の条件は、その語か同じ具体例の別の表記が記述にあるノートだけが満たす。
+ * 上位の Topic が付いているだけのノートは、全条件一致にせず関連候補（partial。条件が1つでも残す）にする（broaderUnits）。資料の検索には使わない。
  * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
  * 対策を求める検索では、検索の対象と結び付いた対策の記述があるものを先にする（counterTargetMatch）。
  * 検索が Topic の表示名だけのときは、その Topic（下位の Topic を含む）が付いたものを先にする（labelOnlyTopicQuery）。
@@ -277,6 +314,7 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   if (units.length === 0) return result;
   // 照合用の同義の表記は、検索条件ごとに1回だけ求める（ノートごとには求めない）
   const unitSynonyms = units.map((u) => (u.kind === "creator" ? [] : matchSynonymsOf(u.matched)));
+  const unitConcepts = units.map(narrowerConceptOf);
   const anySynonym = unitSynonyms.some((s) => s.length > 0);
 
   for (const n of publicNotes) {
@@ -294,6 +332,15 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
       }
       if (u.kind === "creator") return t.creators.filter((c) => u.creators.has(c)).map((creator) => ({ kind: "creator", creator, matched: u.matched }));
       return fieldBases(t, u.matched);
+    });
+    // Topic の具体例として登録した別名の条件：上位の Topic が付いているだけ（記述・種類での一致がない）なら、同じ具体例の別の表記を探す。
+    // あれば一致の理由として記録し、なければ上位の Topic との関係だけの条件として記録する（全条件一致にしない。候補からは外さない）
+    const broaderUnits: number[] = [];
+    unitConcepts.forEach((c, i) => {
+      if (!c || bases[i].length === 0 || bases[i].some((b) => b.kind !== "topic")) return;
+      const variants = conceptVariantBases(t, c, units[i].matched);
+      if (variants.length > 0) bases[i].push(...variants);
+      else broaderUnits.push(i);
     });
     // 照合用の同義の表記：同じ条件への一致として加える（条件の数は増やさない）。直接一致した記述の種類には重ねない
     if (anySynonym) {
@@ -314,16 +361,18 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
     // 具体的な条件（大分類以外の Topic・語・発信者）に1つ以上一致しないものは出さない（大分類だけの一致は広すぎるので、「マクロ」だけの検索では出さない）
     const specific = units.some((u, i) => bases[i].length > 0 && !(u.kind === "topic" && u.topic.kind === "category"));
     if (!specific) continue;
-    const full = hit === units.length;
+    const full = hit === units.length && broaderUnits.length === 0;
     // 一部一致は、条件が2つ以上あり、その半分以上に一致し、さらに「具体的な Topic に一致」か「2つ以上の条件に一致」したものだけ
-    // （「相手」のような一般的な1語だけの偶然の一致で候補を増やさない）
+    // （「相手」のような一般的な1語だけの偶然の一致で候補を増やさない）。
+    // ただし、すべての条件に一致し、具体例の条件が上位の Topic との関係だけのものは、条件が1つでも関連候補として残す（従来は全条件一致だった候補）
     const topicHit = units.some((u, i) => u.kind === "topic" && u.topic.kind !== "category" && bases[i].length > 0);
-    if (!full && (units.length < 2 || hit * 2 < units.length || (!topicHit && hit < 2))) continue;
+    const broaderOnly = broaderUnits.length > 0 && hit === units.length;
+    if (!full && !broaderOnly && (units.length < 2 || hit * 2 < units.length || (!topicHit && hit < 2))) continue;
     // Topic の名前（例：チャンピオン名）でも、ノートに Topic が付いておらず、名前が例外・反証の記述にだけあるときは同じ扱い
     const opposingOnly = bases.some(
       (b, i) => units[i].kind !== "creator" && b.length > 0 && b.every((x) => (x.kind === "field" || x.kind === "synonym") && OPPOSING_FIELDS.includes(x.field)),
     );
-    result.matches.push({ note: n, bases, tier: full ? "full" : "partial", opposingOnly });
+    result.matches.push({ note: n, bases, tier: full ? "full" : "partial", opposingOnly, ...(broaderUnits.length > 0 ? { broaderUnits } : {}) });
   }
   const rank = (m: NoteMatch) => (m.tier === "full" ? 0 : 2) + (m.note.historical?.current_applicability === "superseded" ? 1 : 0);
   const statementHits = new Map(result.matches.map((m) => [m, statementHitCount(m)]));

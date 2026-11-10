@@ -4,7 +4,8 @@ import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
 import { containsTerm, normalize } from "../search/search";
-import { counterTargetMatch, isCounterRequest, isTargetSpecific, labelOnlyTopicQuery, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
+import { TOPIC_ALIAS_RELATIONS, validateTopicAliasRelations, type NarrowerAliasConcept } from "./topicAliasRelations";
+import { counterTargetMatch, isBroaderTopicOnly, isCounterRequest, isTargetSpecific, labelOnlyTopicQuery, narrowerConceptOf, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
   id: string;
@@ -75,7 +76,7 @@ describe("知識ノートの検索（評価用の質問：data/experiments/note-
 
 describe("知識ノートの検索の規則", () => {
   it("資料の検索結果を変えない（ノートの照合は資料の検索とは別に行う）", () => {
-    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD", "サモナースペル", "クールダウン", "操作技術・フィジカル", "ローム"]) {
+    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD", "サモナースペル", "クールダウン", "操作技術・フィジカル", "ローム", "イグナイト", "フラッシュ", "カイト", "アタックムーブ", "引き撃ち", "barrier"]) {
       const before = search(q);
       noteMatchesForQuery(q);
       expect(search(q).hits.map((h) => h.resource.id)).toEqual(before.hits.map((h) => h.resource.id));
@@ -206,7 +207,12 @@ describe("知識ノートの検索の規則", () => {
     expect(kiting.units.map((u) => u.matched)).toEqual(["カイティング"]);
     expect(en.units.map((u) => u.matched)).toEqual(["kiting"]);
     expect(kiting.expandedQuery).toBeUndefined();
-    expect(kiting.matches.find((m) => m.note.id === "kn-kite-timing")!.bases).toEqual([[{ kind: "topic", topicId: "mechanics", matched: "カイティング" }]]);
+    // 並び順用の同義語は理由に足さない。2026-11-10 からは、具体例の別の表記（topicAliasRelations.ts）による一致を「conceptVariant」として別に記録する
+    // （「カイティング」の記述はなく、「カイト」が主張・補足などにある）。記述そのものの一致（field）・照合用の同義の表記（synonym）とは区別する
+    const kt = kiting.matches.find((m) => m.note.id === "kn-kite-timing")!.bases;
+    expect(kt[0][0]).toEqual({ kind: "topic", topicId: "mechanics", matched: "カイティング" });
+    expect(kt[0].slice(1).length).toBeGreaterThan(0);
+    expect(kt[0].slice(1).every((b) => b.kind === "conceptVariant" && b.noteTerm === "カイト" && b.matched === "カイティング")).toBe(true);
 
     // カイト：従来どおり主張にカイトがある7件が1〜7位。同義語（カイティング）だけのノートは8位
     expect(ids(kite).slice(0, 7)).toEqual(KITE);
@@ -569,6 +575,104 @@ describe("知識ノートの検索の規則", () => {
     expect(tw.bases[0]).toEqual([{ kind: "topic", topicId: "cooldown", matched: "クールダウン" }]);
     expect([tw.note.kind, tw.note.status, tw.tier]).toEqual(["hypothesis", "unverified", "full"]);
     expect(ids("クールダウン").slice(0, 2)).toEqual(["kn-cooldown-window", "kn-trade-on-key-cd"]);
+  });
+
+  it("Topic の具体例として確かめた別名の関係データ（topicAliasRelations.ts）：実在する Topic の登録済みの別名だけ、重複・矛盾なし（2026-11-10）", () => {
+    expect(validateTopicAliasRelations(index.data.topics, TOPIC_ALIAS_RELATIONS)).toEqual([]);
+    // 対象は、サモナースペルと操作技術の具体例だけ（スキルドッジは保留）
+    expect(TOPIC_ALIAS_RELATIONS.flatMap((r) => r.aliases).sort()).toEqual(["attack move", "barrier", "exhaust", "flash", "ignite", "kiting", "spacing", "アタックムーブ", "イグゾースト", "イグナイト", "カイティング", "カイト", "スペーシング", "バリア", "フラッシュ", "引き撃ち"].sort());
+    const bad = (rs: NarrowerAliasConcept[]) => validateTopicAliasRelations(index.data.topics, rs);
+    expect(bad([{ topic_id: "no-such-topic", relation: "narrower", aliases: ["フラッシュ"] }])).toEqual(["不明な Topic：no-such-topic"]);
+    // 対象の Topic にない別名（ほかの Topic の別名を含む）・表示名は拒否する
+    expect(bad([{ topic_id: "summoner-spells", relation: "narrower", aliases: ["スマイト"] }])).toEqual(["Topic の別名にない：summoner-spells スマイト"]);
+    expect(bad([{ topic_id: "summoner-spells", relation: "narrower", aliases: ["カイト"] }])).toEqual(["Topic の別名にない：summoner-spells カイト"]);
+    expect(bad([{ topic_id: "summoner-spells", relation: "narrower", aliases: ["サモナースペル"] }])).toEqual(["表示名は対象にしない：summoner-spells サモナースペル"]);
+    // 同じ Topic と別名の組（正規化して比べる）を2回登録できない（矛盾した分類・まとまりの重なりを防ぐ）
+    expect(bad([{ topic_id: "summoner-spells", relation: "narrower", aliases: ["flash"] }, { topic_id: "summoner-spells", relation: "narrower", aliases: ["Flash", "ignite"] }])).toEqual(["同じ Topic と別名の組が重複：summoner-spells Flash"]);
+    expect(bad([{ topic_id: "summoner-spells", relation: "related" as "narrower", aliases: ["バリア"] }])).toEqual(["未知の関係：summoner-spells related"]);
+    // 同じ語がほかの Topic にも登録されうる：Topic と別名の組で引くので、ほかの Topic の同じ語には広がらない
+    expect(bad([{ topic_id: "crowd-control", relation: "narrower", aliases: ["ブラインド"] }, { topic_id: "aa-negation", relation: "narrower", aliases: ["ブラインド"] }])).toEqual([]);
+  });
+
+  it("具体例の別名で検索したとき、上位の Topic が付いているだけのノートは全条件一致にせず関連候補にする。候補の集合は変えない（2026-11-10）", () => {
+    const res = (q: string) => noteMatchesForQuery(q);
+    const tierOf = (q: string, tier: "full" | "partial") => res(q).matches.filter((m) => m.tier === tier).map((m) => m.note.id);
+    // 照合の条件は従来どおり上位の Topic（matchQueryUnits は変えない）。具体例かどうかは知識ノートの側で判定する
+    for (const r of TOPIC_ALIAS_RELATIONS) for (const a of r.aliases) {
+      const u = res(a).units;
+      expect(u.map((x) => (x.kind === "topic" ? x.topic.id : x.kind)), a).toEqual([r.topic_id]);
+      expect(narrowerConceptOf(u[0]), a).toBe(r);
+    }
+    // 未分類の別名・表示名・保留した語は対象にしない（従来どおり、関連候補へ移さない）
+    for (const q of ["サモスペ", "summoners", "フィジカル", "mechanical skill", "スキルドッジ", "サモナースペル", "操作技術・フィジカル", "CD", "ブラインド", "トリンケット", "ビルド"]) {
+      const r = res(q);
+      expect(r.units.map((u) => narrowerConceptOf(u)), q).toEqual([undefined]);
+      expect(r.matches.some((m) => m.broaderUnits || m.bases.flat().some((b) => b.kind === "conceptVariant")), q).toBe(false);
+      expect(r.matches.every((m) => m.tier === "full"), q).toBe(true);
+    }
+
+    // イグナイト：記述にイグナイトがある2件だけが全条件一致。サモナースペルが付いているだけの6件は関連候補（消さない）
+    expect(tierOf("イグナイト", "full")).toEqual(["kn-stealth-break-actions", "kn-standard-reveal-not-stealth"]);
+    expect([...tierOf("イグナイト", "partial")].sort()).toEqual(["kn-flash-cd", "kn-engage-when-flash-down", "kn-smite-damage-261", "kn-dive-summoner-check", "kn-dive-flash-out-of-range", "kn-split-push-tp-pattern"].sort());
+    for (const m of res("イグナイト").matches.filter((x) => x.tier === "partial")) {
+      expect(isBroaderTopicOnly(m), m.note.id).toBe(true);
+      expect(m.broaderUnits).toEqual([0]);
+      expect(m.bases[0].every((b) => b.kind === "topic" && b.topicId === "summoner-spells"), m.note.id).toBe(true);
+    }
+    // 英語の表記（ignite・barrier）も同じ具体例。「barrier」はノートの「バリア」で全条件一致になる
+    expect(tierOf("ignite", "full")).toEqual(["kn-stealth-break-actions"]);
+    expect(tierOf("barrier", "full")).toEqual(tierOf("バリア", "full"));
+    expect(res("barrier").matches.find((m) => m.note.id === "kn-dive-summoner-check")!.bases[0]).toContainEqual({ kind: "conceptVariant", field: "statement", matched: "barrier", noteTerm: "バリア" });
+    // フラッシュ：直接の一致は全条件一致のまま（flash-cd が1位）。フラッシュに触れないスマイト・テレポートのノートだけが関連候補
+    expect(res("フラッシュ").matches[0].note.id).toBe("kn-flash-cd");
+    expect(tierOf("フラッシュ", "partial")).toEqual(["kn-smite-damage-261", "kn-split-push-tp-pattern"]);
+    // カイト：同じ具体例の表記（カイト・カイティング・kiting・引き撃ち）は同じ9件が全条件一致。操作技術全般のノートは関連候補
+    const kite9 = [...tierOf("カイト", "full")].sort();
+    expect(kite9).toHaveLength(9);
+    for (const q of ["カイティング", "kiting", "引き撃ち"]) expect([...tierOf(q, "full")].sort(), q).toEqual(kite9);
+    expect(tierOf("カイト", "partial")).toContain("kn-skill-three-layers");
+    expect(res("引き撃ち").matches.find((m) => m.note.id === "kn-kite-timing")!.bases[0].some((b) => b.kind === "conceptVariant" && b.noteTerm === "カイト")).toBe(true);
+    // アタックムーブ・スペーシングは、カイトとは別の具体例（カイトの記述だけでは一致しない）
+    expect(tierOf("アタックムーブ", "full")).toEqual(["kn-attack-move-settings", "kn-attack-move-brush-tower", "kn-attack-move-click", "kn-kite-practice-drill"]);
+    expect(tierOf("アタックムーブ", "partial")).toContain("kn-kite-timing");
+    expect(tierOf("スペーシング", "full")).toEqual(["kn-right-click-core-physical", "kn-spacing-range-advantage"]);
+
+    // 複合の検索：上位の Topic だけで全条件一致にしない。対象に直接一致するノートは全条件一致のまま（案D・案F・案A を壊さない）
+    expect(tierOf("フラッシュのクールダウン", "full")).toEqual(["kn-flash-cd", "kn-engage-when-flash-down", "kn-roam-prerequisites"]);
+    expect(tierOf("イグナイトの仕様", "full")).toEqual(["kn-stealth-break-actions", "kn-standard-reveal-not-stealth"]);
+    expect(tierOf("フラッシュの仕様", "partial")).toContain("kn-smite-damage-261");
+    expect(tierOf("カイトへの対抗策", "full").slice(0, 2)).toEqual(["kn-anti-kite-tools", "kn-anti-kite-terrain"]);
+    expect(tierOf("カイトの練習方法", "full")).toEqual(["kn-kite-learning-champions", "kn-kite-practice-drill"]);
+    expect(tierOf("カイトの練習方法", "partial")).toContain("kn-cs-practice-rules");
+    // Topic の表示名だけの検索（C3L1v）は対象外
+    expect(tierOf("サモナースペル", "partial")).toEqual([]);
+
+    // 規則：対象の語・複合の検索・すべての Topic の別名と表示名で、
+    // 関連候補へ移ったノートは、その条件が上位の Topic だけで、記述に同じ具体例のどの表記もない。条件が1つの検索の関連候補はこの理由のものだけ
+    const queries = [...new Set([...TOPIC_ALIAS_RELATIONS.flatMap((r) => r.aliases), ...index.data.topics.flatMap((t) => [t.label_ja, t.label_en, ...t.aliases_ja, ...t.aliases_en]), "フラッシュのクールダウン", "イグナイトのダメージ", "カイティング 攻撃速度", "バリアとフラッシュ", "フラッシュが落ちている相手に仕掛けるべき？"])];
+    for (const q of queries) {
+      const r = res(q);
+      for (const m of r.matches) {
+        expect(publicIds.has(m.note.id), q).toBe(true);
+        for (const i of m.broaderUnits ?? []) {
+          expect(narrowerConceptOf(r.units[i]), `${q} ${m.note.id}`).toBeDefined();
+          expect(m.bases[i].every((b) => b.kind === "topic"), `${q} ${m.note.id}`).toBe(true);
+          expect(m.tier, `${q} ${m.note.id}`).toBe("partial");
+        }
+        // 別の表記の一致は、その具体例のまとまりの語だけ（ほかの Topic・ほかの具体例には広げない）
+        m.bases.forEach((bs, i) => {
+          for (const b of bs) {
+            if (b.kind !== "conceptVariant") continue;
+            const c = narrowerConceptOf(r.units[i]);
+            expect(c?.aliases.map(normalize), `${q} ${m.note.id}`).toContain(normalize(b.noteTerm));
+            expect(m.note.topic_ids.some((id) => id === c!.topic_id || index.descendants(c!.topic_id).has(id)), `${q} ${m.note.id}`).toBe(true);
+          }
+        });
+        const opposing = m.bases.some((bs, i) => r.units[i].kind !== "creator" && bs.length > 0 && bs.every((b) => (b.kind === "field" || b.kind === "synonym") && ["exceptions", "falsifiers"].includes(b.field)));
+        expect(m.opposingOnly, `${q} ${m.note.id}`).toBe(opposing);
+      }
+      if (r.units.length === 1) for (const m of r.matches.filter((x) => x.tier === "partial")) expect(isBroaderTopicOnly(m), `${q} ${m.note.id}`).toBe(true);
+    }
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {

@@ -135,6 +135,50 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(text(third)).toContain("「クールダウン」：Topic「クールダウン」");
   });
 
+  it("具体例の語の検索で、上位の Topic との関係だけの関連候補を、一部の条件だけに一致した候補と区別して示す（2026-11-10）", () => {
+    const html = renderToStaticMarkup(<RelatedNotes q="イグナイト" />);
+    const t = text(html);
+    // 件数：全条件一致2件、ほかは「一部一致」ではなく「関連候補」
+    expect(t).toContain("検索語に一致した知識ノート 知識ノート ：2件（ほかに関連候補 6件）");
+    expect(t).not.toContain("一部一致の関連候補");
+    // 関連候補は従来どおり閉じた欄に、理由を区別した見出しで出す
+    const part = html.match(/<details class="related-notes-partial">([\s\S]*)<\/details>/);
+    expect(part).not.toBeNull();
+    expect(text(part![1])).toContain("上位の Topic との関係だけの関連候補：6件");
+    expect(text(part![1])).not.toContain("一部の条件だけに一致");
+    expect(text(part![1])).toContain("上位の Topic との関係だけ（関連候補）");
+    expect(text(part![1])).toContain("「イグナイト」：上位の Topic「サモナースペル」が付いているだけ（記述に「イグナイト」はありません）");
+    expect(part![1]).toContain(`href="${noteHref("kn-flash-cd")}"`);
+    // 全条件一致のノートは、記述での一致を示す
+    expect(t).toContain("「イグナイト」：Topic「サモナースペル」・主張");
+    // 同じ具体例の別の表記による一致は、表記どおりの一致・照合用の同義の表記と区別して示す
+    const kiting = text(renderToStaticMarkup(<RelatedNotes q="カイティング" />));
+    expect(kiting).toContain("（同じものの別の表記「カイト」）");
+    expect(text(renderToStaticMarkup(<RelatedNotes q="barrier" />))).toContain("主張（同じものの別の表記「バリア」）");
+    // 複数条件の検索で、一部の条件に一致しなかった候補だけのときは従来の表示のまま
+    expect(text(renderToStaticMarkup(<RelatedNotes q="フラッシュ CD" />))).toContain("一部の条件だけに一致した関連候補");
+    // 未分類の別名・表示名の検索は従来どおり（関連候補へ移さない）
+    for (const q of ["サモスペ", "サモナースペル", "CD"]) {
+      const outsideHelp = text(renderToStaticMarkup(<RelatedNotes q={q} />).replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+      expect(outsideHelp, q).not.toContain("上位の Topic との関係だけ");
+      expect(outsideHelp, q).not.toContain("関連候補");
+    }
+    // 説明は閉じた欄の中に置く。最初から見える説明は従来の2文のまま
+    const help = text(html.match(/<details class="related-notes-help">([\s\S]*?)<\/details>/)![1]);
+    expect(help).toContain("広い Topic（サモナースペル・操作技術）の具体例として確かめた語で検索したときは、その語か同じものの別の表記（例：「カイト」と「カイティング」）が記述にあるノートだけを、その条件に一致したものとします。上位の Topic が付いているだけのノートは、1語の検索でも「上位の Topic との関係だけ」の関連候補として後ろの閉じた欄に出します。");
+    const visible = text(html.replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+    expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。並び順も答えの正しさを示しません。");
+  });
+
+  it("関連候補が多いときも、閉じた欄の中で「さらに表示」から全件に届く（2026-11-10）", () => {
+    // カイト：全条件一致9件、関連候補32件（20件ずつ表示）
+    const html = renderToStaticMarkup(<RelatedNotes q="カイト" />);
+    const part = html.match(/<details class="related-notes-partial">([\s\S]*)<\/details>/)![1];
+    expect(text(part)).toContain("上位の Topic との関係だけの関連候補：32件");
+    expect(part.split('<li class="note-match">').length - 1).toBe(20);
+    expect(text(part)).toContain("知識ノートをさらに12件表示する（残り 12件）");
+  });
+
   it("一致するノートがなければ何も出さない", () => {
     expect(renderToStaticMarkup(<RelatedNotes q="アタカン" />)).toBe("");
     expect(text(page("how to freeze a lane"))).toContain("検索語に一致した知識ノート");
