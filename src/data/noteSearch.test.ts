@@ -575,7 +575,9 @@ describe("知識ノートの検索の規則", () => {
     expect(tw.bases[0]).toEqual([{ kind: "topic", topicId: "cooldown", matched: "クールダウン" }]);
     expect([tw.note.kind, tw.note.status, tw.tier]).toEqual(["hypothesis", "unverified", "full"]);
     expect(ids("クールダウン").slice(0, 2)).toEqual(["kn-cooldown-window", "kn-trade-on-key-cd"]);
-  });
+    // このテストだけ時間制限を 15 秒にする（全体の既定 5 秒は変えない。2026-11-10）：全 Topic の表示名・別名（約770語）を検索し、期待する順を求め直すため重い。
+    // 手元で約 1.7 秒。GitHub Actions では手元の約 2.9 倍かかった（Run #54：手元 約 2.1 秒 → 6,099ms で失敗）ため、約 5 秒と見込み、その約 3 倍の余裕を取る
+  }, 15_000);
 
   it("Topic の具体例として確かめた別名の関係データ（topicAliasRelations.ts）：実在する Topic の登録済みの別名だけ、重複・矛盾なし（2026-11-10）", () => {
     expect(validateTopicAliasRelations(index.data.topics, TOPIC_ALIAS_RELATIONS)).toEqual([]);

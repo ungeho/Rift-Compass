@@ -92,6 +92,14 @@ const ambiguousTextRegexCache = new WeakMap<DataIndex, Map<string, RegExp>>();
  * 曖昧な名前でなければ undefined を返す（呼び出し側の通常の照合に任せる）。知識ノートの記述の照合で使う。資料の検索・containsTerm は変えない
  */
 export function ambiguousNameInText(text: string, term: string, idx: DataIndex = defaultIndex): boolean | undefined {
+  return ambiguousNameRegex(term, idx)?.test(text);
+}
+
+/**
+ * 曖昧なチャンピオン名の照合に使う正規表現（検索語の解析と同じもの。g フラグなしで lastIndex の状態を持たない）。曖昧な名前でなければ undefined。
+ * 照合を繰り返す呼び出し側（知識ノートの記述の照合）が、検索語ごとに1回だけ求めて使う（2026-11-10）
+ */
+export function ambiguousNameRegex(term: string, idx: DataIndex = defaultIndex): RegExp | undefined {
   const t = normalize(term);
   if (!AMBIGUOUS_TERMS.has(t)) return undefined;
   let cache = ambiguousTextRegexCache.get(idx);
@@ -104,7 +112,7 @@ export function ambiguousNameInText(text: string, term: string, idx: DataIndex =
     re = new RegExp(m.regex.source);
     cache.set(t, re);
   }
-  return re.test(text);
+  return re;
 }
 
 function prepare(idx: DataIndex): Prepared {

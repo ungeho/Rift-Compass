@@ -2,7 +2,7 @@
 // 資料の検索（analyzeQuery）は、残りの語を公開資料の語彙で採否するため、知識ノートにしかない語（例：「Call for Help」「対角線」）を捨てる。
 // ここでは Topic・発信者の取り出し（matchQueryUnits）だけを共有し、残りの語は公開ノートの記述で採否する。資料の検索結果は変えない。
 // 一致は「候補に含めた理由」であり、質問への正しい答えであることは示さない（否定・条件の向き・立場は判定しない）。
-import { ambiguousNameInText, containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidualTerms, type Unit } from "../search/search";
+import { ambiguousNameRegex, containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidualTerms, type Unit } from "../search/search";
 import { index } from "./dataset";
 import { publicEvidenceOf, publicNotes } from "./explorePool";
 import { KIND_LABELS } from "./labels";
@@ -315,12 +315,15 @@ export function isBroaderTopicOnly(m: NoteMatch): boolean {
 /**
  * 検索語が記述にあるか。曖昧なチャンピオン名（例：「ナー」）は、検索語の解析と同じ規則で、ほかのカタカナ語の一部（「サモナー」「レーナー」）には一致させない（2026-11-10）
  */
-function termInText(text: string, term: string): boolean {
-  return ambiguousNameInText(text, term) ?? containsTerm(text, term);
+type TextMatcher = (text: string) => boolean;
+/** 照合の方法は検索条件ごとに1回だけ決める（ノート・記述の種類ごとには判定しない。2026-11-10） */
+function termMatcher(term: string): TextMatcher {
+  const re = ambiguousNameRegex(term);
+  return re ? (text) => re.test(text) : (text) => containsTerm(text, term);
 }
 
-function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
-  return FIELD_ORDER.filter((f) => termInText(t.fields[f], matched)).map((field) => ({ kind: "field", field, matched }));
+function fieldBases(t: NoteText, matched: string, inText: TextMatcher): NoteMatchBasis[] {
+  return FIELD_ORDER.filter((f) => inText(t.fields[f])).map((field) => ({ kind: "field", field, matched }));
 }
 
 /**
@@ -385,23 +388,24 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   const unitSynonyms = units.map((u) => (u.kind === "creator" ? [] : matchSynonymsOf(u.matched)));
   const unitConcepts = units.map(narrowerConceptOf);
   const anySynonym = unitSynonyms.some((s) => s.length > 0);
+  const unitMatchers = units.map((u) => termMatcher(u.matched));
 
   for (const n of publicNotes) {
     const t = noteTexts.get(n.id)!;
-    const bases = units.map((u): NoteMatchBasis[] => {
+    const bases = units.map((u, i): NoteMatchBasis[] => {
       if (u.kind === "topic") {
         const direct = n.topic_ids.includes(u.topic.id);
         const via = n.topic_ids.filter((id) => id !== u.topic.id && index.descendants(u.topic.id).has(id));
         return [
           ...(direct ? [{ kind: "topic" as const, topicId: u.topic.id, matched: u.matched }] : []),
           ...via.map((id) => ({ kind: "topic" as const, topicId: u.topic.id, matched: u.matched, viaTopicId: id })),
-          ...fieldBases(t, u.matched).filter((b) => b.kind === "field" && b.field !== "topicName"),
+          ...fieldBases(t, u.matched, unitMatchers[i]).filter((b) => b.kind === "field" && b.field !== "topicName"),
           ...(isKindLabelMatch(u, n) ? [{ kind: "noteKind" as const, noteKind: n.kind, matched: u.matched }] : []),
         ];
       }
       if (u.kind === "creator") return t.creators.filter((c) => u.creators.has(c)).map((creator) => ({ kind: "creator", creator, matched: u.matched }));
       if (YEAR_TERM.test(u.matched)) return yearBases(t, u.matched);
-      return fieldBases(t, u.matched);
+      return fieldBases(t, u.matched, unitMatchers[i]);
     });
     // Topic の具体例として登録した別名の条件：上位の Topic が付いているだけ（記述・種類での一致がない）なら、同じ具体例の別の表記を探す。
     // あれば一致の理由として記録し、なければ上位の Topic との関係だけの条件として記録する（全条件一致にしない。候補からは外さない）
