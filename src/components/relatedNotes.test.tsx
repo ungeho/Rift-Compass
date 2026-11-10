@@ -114,6 +114,27 @@ describe("検索画面の「検索語に一致した知識ノート」", () => {
     expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません");
   });
 
+  it("Topic の正式な名前だけの検索の並び順を、閉じた説明の欄で説明する。順位は検証状態を示さない（2026-11-10）", () => {
+    const html = renderToStaticMarkup(<RelatedNotes q="クールダウン" />);
+    const help = text(html.match(/<details class="related-notes-help">([\s\S]*?)<\/details>/)![1]);
+    const rule = "ただし、検索語が Topic の正式な名前だけ（例：「サモナースペル」「クールダウン」）のときは、その Topic（下位の Topic を含む）が付いたノートを、名前に触れているだけのノートより先に並べます。別名（例：「フラッシュ」「CD」「カイト」）や、ほかの語を含む検索では、主張・成立条件への一致を優先します。Topic が付いていることは、内容の正しさやゲーム内での検証を示しません。";
+    expect(help).toContain(rule);
+    // 通常の規則（主張・成立条件を先）の直後に、例外として置く
+    expect(help.indexOf("主張・成立条件に検索語があるノートを、Topic・補足などだけで一致したノートより先に並べます。")).toBeLessThan(help.indexOf(rule));
+    // 最初から見える部分は従来の2文のまま
+    const visible = text(html.replace(/<details class="related-notes-help">[\s\S]*?<\/details>/, ""));
+    expect(visible).not.toContain("Topic の正式な名前だけ");
+    expect(visible).toContain("「一致」は候補に含めた理由で、ノートがその質問に正しく答えていることを示しません。並び順も答えの正しさを示しません。");
+    // 「クールダウン」で3位に上がる未検証の仮説のノートは、カードに種類と検証状態を出す
+    const cards = html.split('<li class="note-match">').slice(1);
+    const third = cards[2];
+    expect(third).toContain(`href="${noteHref("kn-trade-window-6-8s")}"`);
+    expect(text(third)).toContain("仮説");
+    expect(text(third)).toContain("未検証の仮説");
+    expect(text(third)).toContain("ゲーム内での検証：未実施");
+    expect(text(third)).toContain("「クールダウン」：Topic「クールダウン」");
+  });
+
   it("一致するノートがなければ何も出さない", () => {
     expect(renderToStaticMarkup(<RelatedNotes q="アタカン" />)).toBe("");
     expect(text(page("how to freeze a lane"))).toContain("検索語に一致した知識ノート");

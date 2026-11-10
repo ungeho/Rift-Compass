@@ -219,6 +219,18 @@ export function synonymBasesAllowed(units: Unit[], directBases: NoteMatchBasis[]
   );
 }
 
+/**
+ * 検索全体が、大分類以外の Topic の正式な表示名（label_ja・label_en）そのものか（2026-11-10）。並び順にだけ使う。
+ * 条件が1つだけで、無視した語がなく、正規化した検索語が表示名と同じときだけ。別名（例：「フラッシュ」「CD」「カイト」）と、
+ * 表示名を含む複数語の検索（例：「フラッシュのクールダウン」）は対象にしない。
+ * 例：「サモナースペル」では、Topic が付いたノート（フラッシュの CD など）を、名前に触れているだけのノートより先にする
+ */
+export function labelOnlyTopicQuery(normalizedQuery: string, units: Unit[], ignored: string[]): boolean {
+  if (units.length !== 1 || ignored.length > 0) return false;
+  const u = units[0];
+  return u.kind === "topic" && u.topic.kind !== "category" && [u.topic.label_ja, u.topic.label_en].some((l) => normalize(l) === normalizedQuery);
+}
+
 function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
   return FIELD_ORDER.filter((f) => containsTerm(t.fields[f], matched)).map((field) => ({ kind: "field", field, matched }));
 }
@@ -230,6 +242,7 @@ function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
  * 「CD」「クールダウン」は、ノートが検索の対象にも直接一致するときだけ、もう一方の表記でも同じ条件に一致する（MATCH_SYNONYM_GROUPS・synonymBasesAllowed）。
  * 並び順：すべての条件に一致したもの → 一部だけ一致したもの。それぞれ、現行で適用できないもの（旧仕様）を後ろにする。
  * 対策を求める検索では、検索の対象と結び付いた対策の記述があるものを先にする（counterTargetMatch）。
+ * 検索が Topic の表示名だけのときは、その Topic（下位の Topic を含む）が付いたものを先にする（labelOnlyTopicQuery）。
  * そのうえで、主張・成立条件で直接一致した条件が多いものを先にする（statementHitCount。照合用の同義の表記による一致は数えない）。
  * 同じなら、同義語（並び順用・照合用）を含めて主張・成立条件で一致した条件が多いものを先にする（statementHitCountWithSynonyms）。同じならデータの順
  */
@@ -318,13 +331,18 @@ export function noteMatchesForQuery(query: string): NoteSearchResult {
   // 対策を求める表現が、Topic・発信者として取り出されずに残った部分にあるときだけ、対象と結び付いた対策の記述を持つノートを先にする
   const counterRequest = COUNTER_REQUEST.test(residual);
   const counterHits = new Map(result.matches.map((m) => [m, counterRequest && counterTargetMatch(m, units) ? 1 : 0]));
+  // Topic の表示名だけの検索（labelOnlyTopicQuery）では、その Topic（下位の Topic を含む）が付いたノートを、名前に触れているだけのノートより先にする
+  const labelOnly = labelOnlyTopicQuery(q, units, ignored);
+  const topicAttached = new Map(result.matches.map((m) => [m, labelOnly && m.bases[0].some((b) => b.kind === "topic") ? 1 : 0]));
   // 安定ソート：段・旧仕様が同じなら、対象と結び付いた対策の記述があるもの（対策を求める検索だけ）を先に。
+  // 次に、Topic の表示名だけの検索では、その Topic が付いたものを先に。
   // 次に、主張・成立条件で検索語そのものが一致した条件が多いものを先に。
   // 同じなら、同義語を含めて一致した条件が多いものを先に（同義語は直接の一致より優先しない）。それも同じならデータの順
   result.matches.sort(
     (a, b) =>
       rank(a) - rank(b) ||
       counterHits.get(b)! - counterHits.get(a)! ||
+      topicAttached.get(b)! - topicAttached.get(a)! ||
       statementHits.get(b)! - statementHits.get(a)! ||
       synonymHits.get(b)! - synonymHits.get(a)!,
   );

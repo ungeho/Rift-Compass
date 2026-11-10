@@ -4,7 +4,7 @@ import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
 import { containsTerm, normalize } from "../search/search";
-import { counterTargetMatch, isCounterRequest, isTargetSpecific, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
+import { counterTargetMatch, isCounterRequest, isTargetSpecific, labelOnlyTopicQuery, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
 
 interface NoteQuestion {
   id: string;
@@ -75,7 +75,7 @@ describe("知識ノートの検索（評価用の質問：data/experiments/note-
 
 describe("知識ノートの検索の規則", () => {
   it("資料の検索結果を変えない（ノートの照合は資料の検索とは別に行う）", () => {
-    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD"]) {
+    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD", "サモナースペル", "クールダウン", "操作技術・フィジカル", "ローム"]) {
       const before = search(q);
       noteMatchesForQuery(q);
       expect(search(q).hits.map((h) => h.resource.id)).toEqual(before.hits.map((h) => h.resource.id));
@@ -146,6 +146,9 @@ describe("知識ノートの検索の規則", () => {
       const syn = (m: NoteMatch) => statementHitCountWithSynonyms(m, units);
       // 対策を求める検索だけ、旧仕様の次に、対象と結び付いた対策の記述があるものを先にする
       const ctr = (m: NoteMatch) => (isCounterRequest(q) && counterTargetMatch(m, units) ? 1 : 0);
+      // Topic の表示名だけの検索だけ、対策の次に、その Topic（下位を含む）が付いたものを先にする（2026-11-10）
+      const label = labelOnlyTopicQuery(normalize(q), units, noteMatchesForQuery(q).ignored);
+      const att = (m: NoteMatch) => (label && m.bases[0].some((b) => b.kind === "topic") ? 1 : 0);
       for (let i = 1; i < ms.length; i++) {
         const [a, b] = [ms[i - 1], ms[i]];
         // 全条件一致が先、同じ段では旧仕様が後ろ（従来どおり）
@@ -155,6 +158,8 @@ describe("知識ノートの検索の規則", () => {
         if (sup(a) !== sup(b)) continue;
         expect(ctr(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(ctr(b));
         if (ctr(a) !== ctr(b)) continue;
+        expect(att(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(att(b));
+        if (att(a) !== att(b)) continue;
         expect(statementHitCount(a), `${q} ${a.note.id} ${b.note.id}`).toBeGreaterThanOrEqual(statementHitCount(b));
         if (statementHitCount(a) !== statementHitCount(b)) continue;
         // 直接の一致が同じなら、同義語を含めた数
@@ -494,6 +499,76 @@ describe("知識ノートの検索の規則", () => {
         expect(publicIds.has(m.note.id)).toBe(true);
       }
     }
+  });
+
+  it("Topic の正式な表示名だけの検索では、その Topic（下位を含む）が付いたノートを、名前に触れているだけのノートより先にする（2026-11-10）", () => {
+    const ids = (q: string) => noteMatchesForQuery(q).matches.map((m) => m.note.id);
+    const isLabelOnly = (q: string) => {
+      const r = noteMatchesForQuery(q);
+      return labelOnlyTopicQuery(normalize(q), r.units, r.ignored);
+    };
+    // 発動する：表示名（日本語・英語）そのもの。前後の空白は正規化で除く
+    for (const q of ["サモナースペル", "クールダウン", "操作技術・フィジカル", "Summoner spells", "Cooldown", "ローム", "ウェーブ管理", "ヘカリム", "リコール", "サモナースペル　"]) expect(isLabelOnly(q), q).toBe(true);
+    // 発動しない：別名・表示名を含む複数語の検索・無視した語や一般語・視点の語が残る検索・大分類
+    for (const q of ["フラッシュ", "イグナイト", "サモスペ", "CD", "クールタイム", "カイト", "引き撃ち", "フィジカル", "フラッシュのクールダウン", "カイトの練習方法", "カイトへの対抗策",
+      "サモナースペルの基本仕様", "サモナースペル 基本", "サモナースペルとは", "クールダウン管理", "CD クールダウン", "有利なときのリコール", "フリーズしないほうがいいとき", "ロームの対策", "基礎", "メカニクス", "仕様"]) expect(isLabelOnly(q), q).toBe(false);
+
+    // 並び順：従来のキー（段・旧仕様・対策・主張の一致数・同義語を含む一致数・データの順）に、表示名だけの検索でだけ「Topic が付いている」を対策の次に加えた順と同じ
+    const order = new Map(publicNotes.map((n, i) => [n.id, i]));
+    const expected = (q: string) => {
+      const r = noteMatchesForQuery(q);
+      const label = labelOnlyTopicQuery(normalize(q), r.units, r.ignored);
+      const key = (m: NoteMatch) => [
+        (m.tier === "full" ? 0 : 2) + (m.note.historical?.current_applicability === "superseded" ? 1 : 0),
+        isCounterRequest(q) && counterTargetMatch(m, r.units) ? 0 : 1,
+        label && m.bases[0].some((b) => b.kind === "topic") ? 0 : 1,
+        -statementHitCount(m),
+        -statementHitCountWithSynonyms(m, r.units),
+        order.get(m.note.id)!,
+      ];
+      const cmp = (a: number[], b: number[]) => a.reduce((d, x, i) => d || x - b[i], 0);
+      return [...r.matches].sort((a, b) => cmp(key(a), key(b))).map((m) => m.note.id);
+    };
+    const labels = index.data.topics.filter((t) => t.kind !== "category").flatMap((t) => [t.label_ja, t.label_en]);
+    const aliases = index.data.topics.flatMap((t) => t.aliases_ja);
+    for (const q of [...labels, ...aliases, "フラッシュのクールダウン", "カイトの練習方法", "カイトへの対抗策", "サモナースペルの基本仕様", "有利なときのリコール", "CD クールダウン", "ミニオンに狙われないで敵を殴る", "ジャックスのEの対策", "Call for Help トレード", "通常攻撃のクールダウン"]) {
+      expect(ids(q), q).toEqual(expected(q));
+    }
+
+    // サモナースペル（N46）：Topic が付いたノートが先。名前に触れているだけのノート（Topic なし）は後ろ。一致の集合・段は変えない
+    const ss = noteMatchesForQuery("サモナースペル");
+    expect(ss.units.map((u) => u.kind)).toEqual(["topic"]);
+    expect([ss.matches.filter((m) => m.tier === "full").length, ss.matches.filter((m) => m.tier === "partial").length]).toEqual([11, 0]);
+    expect(ids("サモナースペル").slice(0, 7)).toEqual(["kn-engage-when-flash-down", "kn-stealth-break-actions", "kn-flash-cd", "kn-smite-damage-261", "kn-dive-summoner-check", "kn-dive-flash-out-of-range", "kn-split-push-tp-pattern"]);
+    for (const m of ss.matches.slice(0, 7)) expect(m.note.topic_ids, m.note.id).toContain("summoner-spells");
+    for (const m of ss.matches.slice(7)) {
+      expect(m.note.topic_ids, m.note.id).not.toContain("summoner-spells");
+      // 名前に触れているだけ：Topic による一致はなく、主張に名前がある
+      expect(m.bases[0].some((b) => b.kind === "topic"), m.note.id).toBe(false);
+      expect(m.bases[0].some((b) => b.kind === "field" && b.field === "statement"), m.note.id).toBe(true);
+    }
+    // 別名・複数語の検索は、主張での一致を優先する従来の順（フラッシュの CD は全条件一致の1位のまま）
+    expect(ids("フラッシュ")[0]).toBe("kn-flash-cd");
+    expect(ids("フラッシュのクールダウン")[0]).toBe("kn-flash-cd");
+    expect(ids("カイト").slice(0, 2)).toEqual(["kn-kite-timing", "kn-kite-vs-stutter-step"]);
+
+    // ロームでは、Topic「ローム」が付いたノートを先にする（ウェーブの話でロームに触れたノートより先）
+    expect(ids("ローム").slice(0, 4)).toEqual(["kn-learning-order-after-wave", "kn-roam-definition-cost", "kn-roam-roles", "kn-roam-immobile-mage"]);
+    expect(ids("ヘカリム")[0]).toBe("kn-hecarim-w-drain");
+    // ウェーブ管理：ミニオンのアグロのノート（Topic が付いている）は残り、1位になる
+    expect(ids("ウェーブ管理")[0]).toBe("kn-minion-aggro-call-for-help");
+    // 操作技術・フィジカル：一致したノートはすべて Topic が付いているので、従来の順と同じ
+    expect(noteMatchesForQuery("操作技術・フィジカル").matches.every((m) => m.bases[0].some((b) => b.kind === "topic"))).toBe(true);
+
+    // クールダウン：未検証の仮説のノート（6〜8秒の踏み込める時間）が3位に上がる。Topic「クールダウン」が直接付いているため。
+    // 関連性の順であって検証状態ではない：種類・検証状態はノートのまま（画面のカードで「仮説」「未検証の仮説」と示す）
+    const cd = noteMatchesForQuery("クールダウン");
+    const tw = cd.matches.find((m) => m.note.id === "kn-trade-window-6-8s")!;
+    expect(ids("クールダウン").indexOf("kn-trade-window-6-8s")).toBe(2);
+    expect(tw.note.topic_ids).toContain("cooldown");
+    expect(tw.bases[0]).toEqual([{ kind: "topic", topicId: "cooldown", matched: "クールダウン" }]);
+    expect([tw.note.kind, tw.note.status, tw.tier]).toEqual(["hypothesis", "unverified", "full"]);
+    expect(ids("クールダウン").slice(0, 2)).toEqual(["kn-cooldown-window", "kn-trade-on-key-cd"]);
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {
