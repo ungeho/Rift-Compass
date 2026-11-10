@@ -2,7 +2,7 @@
 // 資料の検索（analyzeQuery）は、残りの語を公開資料の語彙で採否するため、知識ノートにしかない語（例：「Call for Help」「対角線」）を捨てる。
 // ここでは Topic・発信者の取り出し（matchQueryUnits）だけを共有し、残りの語は公開ノートの記述で採否する。資料の検索結果は変えない。
 // 一致は「候補に含めた理由」であり、質問への正しい答えであることは示さない（否定・条件の向き・立場は判定しない）。
-import { containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidualTerms, type Unit } from "../search/search";
+import { ambiguousNameInText, containsTerm, expandLevelAbbr, matchQueryUnits, normalize, splitResidualTerms, type Unit } from "../search/search";
 import { index } from "./dataset";
 import { publicEvidenceOf, publicNotes } from "./explorePool";
 import { KIND_LABELS } from "./labels";
@@ -312,8 +312,15 @@ export function isBroaderTopicOnly(m: NoteMatch): boolean {
   return m.tier === "partial" && (m.broaderUnits?.length ?? 0) > 0 && m.bases.every((b) => b.length > 0);
 }
 
+/**
+ * 検索語が記述にあるか。曖昧なチャンピオン名（例：「ナー」）は、検索語の解析と同じ規則で、ほかのカタカナ語の一部（「サモナー」「レーナー」）には一致させない（2026-11-10）
+ */
+function termInText(text: string, term: string): boolean {
+  return ambiguousNameInText(text, term) ?? containsTerm(text, term);
+}
+
 function fieldBases(t: NoteText, matched: string): NoteMatchBasis[] {
-  return FIELD_ORDER.filter((f) => containsTerm(t.fields[f], matched)).map((field) => ({ kind: "field", field, matched }));
+  return FIELD_ORDER.filter((f) => termInText(t.fields[f], matched)).map((field) => ({ kind: "field", field, matched }));
 }
 
 /**

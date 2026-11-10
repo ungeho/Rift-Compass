@@ -85,6 +85,28 @@ function ambiguousRegex(term: string, affixes: string[]): RegExp {
   return new RegExp(`(?:(?<=${aff})|(?<!${KATAKANA}))${body}(?:(?=${aff})|(?!${KATAKANA}))`, "g");
 }
 
+const ambiguousTextRegexCache = new WeakMap<DataIndex, Map<string, RegExp>>();
+/**
+ * 曖昧なチャンピオン名（ambiguousNames.json。例：「ナー」「アーリ」）が、検索語の解析（matchQueryUnits）と同じ規則で text に名前として現れるか（2026-11-10）。
+ * 前後が別のカタカナに続く一致（例：「サモナー」「レーナー」の「ナー」、「アーリー」の「アーリ」）は採らず、affixes の語・ほかのチャンピオン名との連結は採る。
+ * 曖昧な名前でなければ undefined を返す（呼び出し側の通常の照合に任せる）。知識ノートの記述の照合で使う。資料の検索・containsTerm は変えない
+ */
+export function ambiguousNameInText(text: string, term: string, idx: DataIndex = defaultIndex): boolean | undefined {
+  const t = normalize(term);
+  if (!AMBIGUOUS_TERMS.has(t)) return undefined;
+  let cache = ambiguousTextRegexCache.get(idx);
+  if (!cache) ambiguousTextRegexCache.set(idx, (cache = new Map()));
+  let re = cache.get(t);
+  if (!re) {
+    const m = prepare(idx).matchers.find((x) => x.kind === "topic" && x.key === t);
+    if (!m) return undefined;
+    // 検索語の解析と同じ正規表現を、状態（lastIndex）を共有しない形で使う
+    re = new RegExp(m.regex.source);
+    cache.set(t, re);
+  }
+  return re.test(text);
+}
+
 function prepare(idx: DataIndex): Prepared {
   const cached = preparedCache.get(idx);
   if (cached) return cached;

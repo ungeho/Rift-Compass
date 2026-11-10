@@ -3,7 +3,7 @@ import questions from "../../data/experiments/note-questions.json";
 import { analyzeQuery, search } from "../search/search";
 import { index } from "./dataset";
 import { publicNotes } from "./explorePool";
-import { containsTerm, normalize } from "../search/search";
+import { ambiguousNameInText, containsTerm, normalize } from "../search/search";
 import { MIN_NOTE_PHRASE_LENGTH, TOPIC_ALIAS_RELATIONS, validateTopicAliasRelations, type NarrowerAliasConcept } from "./topicAliasRelations";
 import { counterTargetMatch, isBroaderTopicOnly, isCounterRequest, isTargetSpecific, labelOnlyTopicQuery, narrowerConceptOf, matchSynonymsOf, noteMatchesForQuery, rankSynonymsOf, statementHitCount, statementHitCountWithSynonyms, synonymBasesAllowed, type NoteMatch } from "./noteSearch";
 
@@ -76,7 +76,7 @@ describe("知識ノートの検索（評価用の質問：data/experiments/note-
 
 describe("知識ノートの検索の規則", () => {
   it("資料の検索結果を変えない（ノートの照合は資料の検索とは別に行う）", () => {
-    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD", "サモナースペル", "クールダウン", "操作技術・フィジカル", "ローム", "イグナイト", "フラッシュ", "カイト", "アタックムーブ", "引き撃ち", "barrier"]) {
+    for (const q of ["ヴォイドグラブ", "コンディション", "タワーのプレートは、今も14分で落ちる？", "カイティング", "kiting", "カイト", "フラッシュのクールダウン", "ジャックスEのCD", "サモナースペル", "クールダウン", "操作技術・フィジカル", "ローム", "イグナイト", "フラッシュ", "カイト", "アタックムーブ", "引き撃ち", "barrier", "ナー", "フェイ", "パイク"]) {
       const before = search(q);
       noteMatchesForQuery(q);
       expect(search(q).hits.map((h) => h.resource.id)).toEqual(before.hits.map((h) => h.resource.id));
@@ -761,6 +761,50 @@ describe("知識ノートの検索の規則", () => {
       expect(r.yearsNotUsed, q).toBeUndefined();
       expect(r.matches.some((m) => m.bases.flat().some((b) => b.kind === "year")), q).toBe(false);
     }
+  });
+
+  it("曖昧なチャンピオン名（ambiguousNames.json）は、記述でも検索語の解析と同じ規則で照合し、ほかのカタカナ語の一部には一致させない（2026-11-10）", () => {
+    // 規則：前後が別のカタカナに続く一致は採らず、affixes の語（例：ミッド）との連結は採る。曖昧な名前でなければ判定しない（undefined）
+    expect(ambiguousNameInText(normalize("サモナースペル"), "ナー")).toBe(false);
+    expect(ambiguousNameInText(normalize("ミッドレーナー"), "ナー")).toBe(false);
+    expect(ambiguousNameInText(normalize("レナータ・グラスク"), "ナー")).toBe(false);
+    expect(ambiguousNameInText(normalize("（ケネン・ナー）"), "ナー")).toBe(true);
+    expect(ambiguousNameInText(normalize("アーリーゲーム"), "アーリ")).toBe(false);
+    expect(ambiguousNameInText(normalize("アーリのQ"), "アーリ")).toBe(true);
+    expect(ambiguousNameInText(normalize("ミッドアーリ"), "アーリ")).toBe(true);
+    expect(ambiguousNameInText(normalize("ツイステッド・フェイト"), "フェイ")).toBe(false);
+    expect(ambiguousNameInText(normalize("ジンクス"), "ジン")).toBe(false);
+    expect(ambiguousNameInText(normalize("パワースパイク"), "パイク")).toBe(false);
+    expect(ambiguousNameInText(normalize("サモナースペル"), "フラッシュ")).toBeUndefined();
+    // 資料の検索などが使う containsTerm（部分一致）は変えない
+    expect(containsTerm(normalize("サモナースペル"), "ナー")).toBe(true);
+
+    const res = (q: string) => noteMatchesForQuery(q);
+    const ids = (q: string) => res(q).matches.map((m) => m.note.id);
+    // ナー：「ケネン・ナー」と書いたノートだけ。「サモナースペル」「サモナーズリフト」「レーナー」「レナータ」だけのノートは一致しない
+    expect(ids("ナー")).toEqual(["kn-as-steroid-practice"]);
+    expect(res("ナー").matches[0].bases[0]).toEqual([{ kind: "field", field: "statement", matched: "ナー" }]);
+    for (const id of ["kn-engage-when-flash-down", "kn-cc-suppression", "kn-role-quest-support-current", "kn-midlaner-block-invade", "kn-dive-speed", "kn-resurrection-priority"]) expect(ids("ナー"), id).not.toContain(id);
+    expect(ids("ナーの通常攻撃")).toEqual(["kn-as-steroid-practice"]);
+    expect(res("ミッドナー").matches.filter((m) => m.tier === "full")).toEqual([]);
+    // 記述の種類が違っても同じ規則：根拠の要約（フェイ・ケイン）、補足（パイク）、主張（パイク）
+    expect(ids("フェイ")).toEqual(["kn-immobile-mage-not-alone"]);
+    expect(res("フェイ").matches[0].bases[0]).toEqual([{ kind: "field", field: "evidence", matched: "フェイ" }]);
+    expect(ids("ケイン")).toEqual(["kn-dive-champions"]);
+    expect(ids("パイク")).not.toContain("kn-side-or-teamfight-strength");
+    expect(ids("パイク")).toEqual(expect.arrayContaining(["kn-pyke-w-camouflage", "kn-camouflage-indicators", "kn-detection-levels"]));
+    expect(res("パイク").matches.find((m) => m.note.id === "kn-camouflage-indicators")!.bases[0]).toEqual([{ kind: "field", field: "notes", matched: "パイク" }]);
+    // Topic が直接付いたノートの一致は残す（ジン：Topic とノートの記述「ジン」）。「ジンクス」だけのノートは一致しない
+    expect(ids("ジン")).toEqual(["kn-stealthed-traps-reveal"]);
+    expect(res("ジン").matches[0].bases[0].some((b) => b.kind === "topic")).toBe(true);
+    expect(ids("ジン")).not.toContain("kn-as-cap-3003");
+    expect(ids("ゼリ")).toEqual(["kn-as-cap-3003"]);
+    // 新しい同義語は推測しない：英語名・ほかの語は従来どおり
+    expect(res("Gnar").matches).toEqual([]);
+    expect(res("ナーフ").ignored).toEqual(["ナーフ"]);
+    expect(res("アーリーゲーム").units).toEqual([]);
+    // 曖昧な名前ではない検索は従来どおり（サモナースペルは11件の全条件一致のまま）
+    expect(res("サモナースペル").matches.filter((m) => m.tier === "full")).toHaveLength(11);
   });
 
   it("空の検索語・ノートにない語だけの検索では何も出さない", () => {
